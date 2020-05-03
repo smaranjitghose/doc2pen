@@ -42,14 +42,14 @@ canvas{
     appearance: none;
     width: 25px;
     height: 25px;
-    background: #9b4dca;
+    background:	#8B0000;
     cursor: pointer;
   }
   
   .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
-    background: #9b4dca;
+    background:#8B0000;
     cursor: pointer;
   }
 

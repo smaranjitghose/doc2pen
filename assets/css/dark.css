@@ -14,7 +14,7 @@ body {
 }
 
 a {
-  color: rgb(199, 157, 226);
+  color: rgb(139,0,0);
 }
 
 a:focus,
@@ -23,5 +23,5 @@ a:hover {
 }
 
 .navigation .img {
-  fill: rgb(199, 157, 226);
+  fill: rgb(139,0,0);
 }
