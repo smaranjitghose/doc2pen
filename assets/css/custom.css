@@ -3,6 +3,8 @@ body {
   -webkit-font-smoothing: antialiased;
   color: rgb(185, 192, 198);
   background-color: #000;
+  display: inline;
+  position: relative;
 }
 
 .wrapper{
@@ -32,6 +34,11 @@ canvas{
   color:black;
 }
 
+.inline-btn:hover{
+  background-color: #272727 !important;
+  border: none !important;
+}
+
 .slidecontainer {
   width: 100%;
 }
@@ -40,7 +47,7 @@ canvas{
   -webkit-appearance: none;
   width: 100%;
   height: 25px;
-  background: #d3d3d3;
+  background: #272727;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
@@ -95,12 +102,13 @@ a:hover {
 
 .footer{
   text-align: center;
+  padding: 2.5rem 0 0 !important;
 }
 
 label{
   font-weight:100 !important;
 }
-/* 
-.column{
-  padding:5px !important;
-} */
+
+.octocat .octocat-arm, .octocat .octocat-body{
+  fill: #000 !important;
+}
