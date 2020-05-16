@@ -79,3 +79,29 @@ label {
   height: 6.5rem !important;
   width: 6.5rem !important;
 }
+input[type=range]::-webkit-slider-thumb {
+	background-color: #4c75f2;
+}
+input[type=range]::-moz-range-thumb {
+	background-color: #4c75f2;
+}
+input[type=range]::-ms-thumb {
+	background-color: #4c75f2;
+}
+
+/***** These are to edit the thumb and the text inside the thumb *****/
+input[type=range] + .thumb {
+	background-color: #ffffff;
+}
+input[type=range] + .thumb.active .value {
+	color: #4c75f2;
+	font-weight: 700;
+}
+input[type=range] {
+	position: relative;
+	border: none;
+	outline: none;
+	width: 100%;
+	margin: 15px 0;
+	padding: 0;
+}
