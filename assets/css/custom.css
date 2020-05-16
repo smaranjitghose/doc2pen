@@ -17,6 +17,7 @@ body {
       rgba(0, 0, 0, 0.808)
     ),
     url("../images/bg.jpg");
+    padding-top: 5rem !important;
 }
 
 #dataField {
@@ -69,7 +70,7 @@ label {
   font-weight: 100 !important;
 }
 
-.navbar {
+.navigation {
   background: #121212;
   border-bottom: none !important;
   height: 6.5rem;
