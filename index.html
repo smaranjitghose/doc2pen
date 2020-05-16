@@ -5,9 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Smaranjit Ghose">
 		<meta name="description" content="Convert your assignments into handwritten ones">
-		<title>Assignment Jugaad</title>
-		<link rel="icon" href="assets/images/logo.ico">
-		<meta property="og:image" content="https://raw.githubusercontent.com/smaranjitghose/guess_the_gibberish/master/assets/images/logo.ico?token=ALD3CX6RTK2IBDCFD3PPTRK6XAAEQ" />
+		<title>Doc2Pen</title>
+		<link rel="icon" href="assets/images/logo.png">
+		<meta property="og:image" content="https://raw.githubusercontent.com/smaranjitghose/guess_the_gibberish/master/assets/images/logo.png?token=ALD3CX6RTK2IBDCFD3PPTRK6XAAEQ" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
@@ -31,38 +31,28 @@
 	<body>
 		
 		<main class="wrapper">
-			<nav style="background-color: #121212;">
-				<div class="container">
+			<nav class="navbar">
+				<div class="container navbar-fixed">
 				<div class="nav-wrapper" >
 				  <a href="#!" class="brand-logo">Doc2Pen</a>
 				  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 				  <ul class="right hide-on-med-and-down">
 				</div>
 				</div>
+				<g transform="translate(0.000000,120)">
+					<path d="M623.2 192c-51.8 3.5-125.7 54.7-163.1 71.5-29.1 13.1-54.2 24.4-76.1 24.4-22.6 0-26-16.2-21.3-51.9 1.1-8 11.7-79.2-42.7-76.1-25.1 1.5-64.3 24.8-169.5 126L192 182.2c30.4-75.9-53.2-151.5-129.7-102.8L7.4 116.3C0 121-2.2 130.9 2.5 138.4l17.2 27c4.7 7.5 14.6 9.7 22.1 4.9l58-38.9c18.4-11.7 40.7 7.2 32.7 27.1L34.3 404.1C27.5 421 37 448 64 448c8.3 0 16.5-3.2 22.6-9.4 42.2-42.2 154.7-150.7 211.2-195.8-2.2 28.5-2.1 58.9 20.6 83.8 15.3 16.8 37.3 25.3 65.5 25.3 35.6 0 68-14.6 102.3-30 33-14.8 99-62.6 138.4-65.8 8.5-.7 15.2-7.3 15.2-15.8v-32.1c.2-9.1-7.5-16.8-16.6-16.2z" class=""></path>
+				</g>
 			  </nav>
-			
-			 
-			<!-- <nav class="navigation">
-				<section class="container">
-					<a class="navigation-title" href="/">
-						<svg class="img" version="1.1" viewBox="0 0 463 669">
-							<g transform="translate(0.000000,120)">
-								<path d="M623.2 192c-51.8 3.5-125.7 54.7-163.1 71.5-29.1 13.1-54.2 24.4-76.1 24.4-22.6 0-26-16.2-21.3-51.9 1.1-8 11.7-79.2-42.7-76.1-25.1 1.5-64.3 24.8-169.5 126L192 182.2c30.4-75.9-53.2-151.5-129.7-102.8L7.4 116.3C0 121-2.2 130.9 2.5 138.4l17.2 27c4.7 7.5 14.6 9.7 22.1 4.9l58-38.9c18.4-11.7 40.7 7.2 32.7 27.1L34.3 404.1C27.5 421 37 448 64 448c8.3 0 16.5-3.2 22.6-9.4 42.2-42.2 154.7-150.7 211.2-195.8-2.2 28.5-2.1 58.9 20.6 83.8 15.3 16.8 37.3 25.3 65.5 25.3 35.6 0 68-14.6 102.3-30 33-14.8 99-62.6 138.4-65.8 8.5-.7 15.2-7.3 15.2-15.8v-32.1c.2-9.1-7.5-16.8-16.6-16.2z" class=""></path>
-							</g>
-						</svg>
-						&nbsp;
-						<h1 class="title">Assignment Jugaad</h1>
-					</a>
-					<a href="https://github.com/smaranjitghose" title="Assignments Juggad" target="_blank">
+					<a href="https://github.com/smaranjitghose" title="Doc2Pen" target="_blank">
 						<svg class="octocat" viewBox="0 0 250 250"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path class="octocat-arm" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path><path class="octocat-body" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path></svg>
 					</a>
 				</section>
-			</nav> -->
+			</nav>
 			<section class="container" id="examples">
 				<h3 class="title">Write Text</h3>
 				<form onsubmit="return false">
 					<fieldset>
-						<textarea placeholder="Enter Text You want to be written a paper...." id="dataField" onkeyup="myData = this.value"></textarea>
+						<textarea placeholder="Enter the text you want to be written on paper..." id="dataField" onkeyup="myData = this.value"></textarea>
 					</fieldset>
 					<input class="button-primary button-large download-image hidden" type="file" id="pageUploader" onclick="">
 					<input class="button-primary button-large download-image hidden" type="file" id="fontUploader" onclick="">
@@ -75,16 +65,32 @@
 					</div>
 					<div class="row">
 						<div class="column">
+<<<<<<< HEAD
+							<label>Adjust X-axis</label>
+							<input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="slider">
+||||||| fcee7d5
+							<label>Adjust X axis</label>
+							<input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="slider">
+=======
 							<label>Adjust X axis</label>
 							<p class="range-field">
 							<input  type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" >
 							</p>
+>>>>>>> 66c01077ed926a34faf65d6dfe62e8b941e34021
 						</div>
 						<div class="column">
+<<<<<<< HEAD
+							<label>Adjust Y-axis</label>
+							<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="slider">
+||||||| fcee7d5
+							<label>Adjust Y axis</label>
+							<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="slider">
+=======
 							<label>Adjust Y axis</label>
 							<p class="range-field">
 							<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" >
 						</p>
+>>>>>>> 66c01077ed926a34faf65d6dfe62e8b941e34021
 						</div>
 						<div class="column">
 							<label>Font Size</label>
