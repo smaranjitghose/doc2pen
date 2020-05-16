@@ -32,13 +32,11 @@
 		
 		<main class="wrapper">
 			<nav style="background-color: #121212;">
-				<div class="container navbar-fixed">
+				<div class="container">
 				<div class="nav-wrapper" >
 				  <a href="#!" class="brand-logo">Doc2Pen</a>
 				  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 				  <ul class="right hide-on-med-and-down">
-				  </ul>
-				  
 				</div>
 				</div>
 			  </nav>
@@ -72,29 +70,31 @@
 						<button class="column button-primary button-medium inline-btn" id="btnPageUpload">Upload Page</button>
 						<button class="column button-primary button-large inline-btn" onclick="loadPage()">Default Page</button>
 						<button class="column button-primary button-large inline-btn" onclick="changeFont()">Switch Font</button>
-						<button class="column button-primary button-large inline-btn" id="btnFontUpload" onclick="uploadFont()">Upload Your Font</button><br/><br/>
+						<button class="column button-primary button-large inline-btn" id="btnFontUpload" onclick="uploadFont()">Upload Your Font</button>
 						<button class="column button-primary button-large download-image inline-btn" onclick="save(str(pageNum++))">Download Page</button>
 					</div>
 					<div class="row">
 						<div class="column">
 							<label>Adjust X axis</label>
-							<input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="slider">
+							<p class="range-field">
+							<input  type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" >
+							</p>
 						</div>
 						<div class="column">
 							<label>Adjust Y axis</label>
-							<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="slider">
+							<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" >
 						</div>
 						<div class="column">
 							<label>Font Size</label>
-							<input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)" class="slider">
+							<input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)">
 						</div>
 						<div class="column">
 							<label>Width</label>
-							<input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" class="slider">
+							<input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" >
 						</div>
 						<div class="column">
 							<label>Line Spacing</label>
-							<input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)" class="slider">
+							<input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)" >
 						</div>
 					</div>
 				</form>
