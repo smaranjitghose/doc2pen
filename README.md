@@ -6,5 +6,7 @@ A student's savior to submit those assignments by just typing them out and getti
 
 - [ ] Front End Development
 
-- [ ] Back End Development
-  - [ ] 
+- [ ] Back End Development (Flask)
+  - [ ] Saving Options
+  - [ ] Sharing Options
+  - [ ] Google Drive Integration
