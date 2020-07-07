@@ -1,3 +1,36 @@
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 0px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+.topnav a.active {
+  background-color: rebeccapurple;
+  color: white;
+}
+
+
+.topnav .icon {
+  display: none;
+}
+
+
 body {
   font-family: "Quicksand", sans-serif;
   -webkit-font-smoothing: antialiased;
