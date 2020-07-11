@@ -1,5 +1,12 @@
 <h1 align= "center"><b>Doc2Pen</b></h1>
 
+![Issues](https://img.shields.io/github/issues/smaranjitghose/doc2pen)
+![Pull Requests](https://img.shields.io/github/issues-pr/smaranjitghose/doc2pen?)
+![Forks](https://img.shields.io/github/forks/smaranjitghose/doc2pen)
+![Stars](	https://img.shields.io/github/stars/smaranjitghose/doc2pen)
+![License](https://img.shields.io/github/license/smaranjitghose/doc2pen)
+
+
 Are you a student burdened with writing assignments?
 
 <p align="center"><img width=50% src="https://media.giphy.com/media/l4EoOFliX6Vw4PD20/giphy.gif"></p>
