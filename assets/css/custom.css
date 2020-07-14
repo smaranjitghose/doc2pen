@@ -128,7 +128,7 @@ label{
     --color-back: rgba(0,0,0,0.8);
     --font-color: white;
     --button-color-hover: #272727;
-    --button-color: #9932CC;
+    --button-color: #9548bb;
     
     --color-sun-moon: linear-gradient(45deg, gray,white);  
     --glow1: #fff;
@@ -177,4 +177,5 @@ label{
     100%{
         box-shadow:0 0 10px 2px (--glow1); 
     }
-/*End of CSS for changing theme light and dark*/
+  }
+/* End of CSS for changing theme light and dark */
