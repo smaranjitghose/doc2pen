@@ -111,6 +111,26 @@ label{
     color: var(--font-color);
 }
 
+#text {
+  text-align: center;
+  float: left;
+  margin-top: 40px;
+  padding: 50px;
+  width: 50%;
+}
+
+#image {
+  margin-left: 100px;
+  margin-top: 100px;
+  width: 600px;
+  padding:50px;
+  float:left;
+}
+
+#image:hover {
+  box-shadow: 0 14px 28px rgba(156, 154, 154, 0.25), 0 10px 10px rgba(114, 111, 111, 0.22);
+}
+
 /*CSS for changing theme light and dark*/
 .theme-light {
     --color-primary: white;
@@ -177,4 +197,4 @@ label{
     100%{
         box-shadow:0 0 10px 2px (--glow1); 
     }
-/*End of CSS for changing theme light and dark*/
+  }
