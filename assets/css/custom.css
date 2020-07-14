@@ -106,3 +106,19 @@ input[type=range] {
 	margin: 15px 0;
 	padding: 0;
 }
+
+#text {
+  text-align: center;
+  float: left;
+  margin-top: 40px;
+  padding: 50px;
+  width: 50%;
+}
+
+#image {
+  margin-left: 100px;
+  margin-top: 100px;
+  width: 600px;
+  padding:50px;
+  float:left;
+}
