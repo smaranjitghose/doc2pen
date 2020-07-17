@@ -77,10 +77,12 @@ label {
   height: 6.5rem;
 }
 
+/*
 .octocat {
   height: 6.5rem !important;
   width: 6.5rem !important;
 }
+*/
 input[type=range]::-webkit-slider-thumb {
 	background-color: #4c75f2;
 }
