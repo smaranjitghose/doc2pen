@@ -44,7 +44,8 @@ function fontLoad()
   }
 }
 
-function changeFont() {
+function changeFont()
+{
   fontNum += 1;
   fontNum %= myFonts;
 }
