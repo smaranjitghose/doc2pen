@@ -10,7 +10,9 @@ yaxis = 20;
 fontsize = 30;
 w = 700;
 linespacing = false;
-function preload() {
+
+function preload()
+{
   fontLoad();
   loadPage();
 }
@@ -21,7 +23,8 @@ function setup() {
   rectMode(CORNER);
 }
 
-function draw() {
+function draw()
+ {
   image(img, 0, 0, width, height);
   textFont(myFont[fontNum]);
   textSize(fontsize);
@@ -33,8 +36,10 @@ function draw() {
   text(data, xaxis, yaxis, w, 900);
 }
 
-function fontLoad() {
-  for (var i = 0; i < myFonts; i++) {
+function fontLoad()
+{
+  for (var i = 0; i < myFonts; i++)
+   {
     myFont.push(loadFont("assets/fonts/font (" + str(i) + ").ttf"));
   }
 }
@@ -44,6 +49,7 @@ function changeFont() {
   fontNum %= myFonts;
 }
 
-function loadPage() {
+function loadPage() 
+{
   img = loadImage("assets/images/default_page.jpg");
 }
