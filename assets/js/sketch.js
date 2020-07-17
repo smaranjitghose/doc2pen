@@ -45,5 +45,5 @@ function changeFont() {
 }
 
 function loadPage() {
-  img = loadImage("pages/page (2).jpg");
+  img = loadImage("assets/images/default_page.jpg");
 }
