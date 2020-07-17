@@ -1,14 +1,26 @@
 /* CSS file for splash screen */
 
 @import url('https://fonts.googleapis.com/css?family=Barlow');
+.brand-logo {
+	display: inline-block;
+	height: 100%;
+	margin-left: 10px;
+	margin-top: 5px;
+}
 
-body { 
-    background-color: black;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.spinner-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #fff;
+	z-index: 999999;
+}
+.preloader-wrapper {
+	position: absolute;
+	top: 48%;
+	left: 48%;
 }
 .container {
 	width: 100%;
@@ -16,7 +28,8 @@ body {
 	overflow: hidden;
 }
 
-h1.main, p.demos {
+h1.main,
+p.demos {
 	-webkit-animation-delay: 3s;
 	-moz-animation-delay: 3s;
 	-ms-animation-delay: 3s;
@@ -60,7 +73,7 @@ h1.main, p.demos {
 	animation-delay: 0s;
 }
 
-.sp-container h2.frame-5  span {
+.sp-container h2.frame-5 span {
 	-webkit-animation: blurFadeIn 3s ease-in 2s backwards;
 	-moz-animation: blurFadeIn 1s ease-in 2s backwards;
 	-ms-animation: blurFadeIn 3s ease-in 2s backwards;
@@ -98,14 +111,14 @@ h1.main, p.demos {
 	transform: scale(5);
 }
 
-
 @-webkit-keyframes blurFadeInOut {
 	0% {
 		opacity: 0;
 		text-shadow: 0px 0px 40px #fff;
 		-webkit-transform: scale(1.3);
 	}
-	20%, 75% {
+	20%,
+	75% {
 		opacity: 1;
 		text-shadow: 0px 0px 1px #fff;
 		-webkit-transform: scale(1);
@@ -164,7 +177,8 @@ h1.main, p.demos {
 		text-shadow: 0px 0px 40px #fff;
 		-moz-transform: scale(1.3);
 	}
-	20%, 75% {
+	20%,
+	75% {
 		opacity: 1;
 		text-shadow: 0px 0px 1px #fff;
 		-moz-transform: scale(1);
@@ -218,7 +232,8 @@ h1.main, p.demos {
 		text-shadow: 0px 0px 40px #fff;
 		transform: scale(1.3);
 	}
-	20%, 75% {
+	20%,
+	75% {
 		opacity: 1;
 		text-shadow: 0px 0px 1px #fff;
 		transform: scale(1);
@@ -271,55 +286,54 @@ h1.main, p.demos {
 	}
 }
 
-.loading{
-    margin-top: 27%;
-    width:200px;
-    height:200px;
-    box-sizing: border-box;
-    border-radius: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: 14px solid #e74c3c;
-    position: relative;
-    animation: a1 2s linear infinite ;
+.loading {
+	margin-top: 27%;
+	width: 200px;
+	height: 200px;
+	box-sizing: border-box;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	border-top: 14px solid #e74c3c;
+	position: relative;
+	animation: a1 2s linear infinite;
+}
+.loading::before,
+.loading::after {
+	content: '';
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left: 0;
+	top: -10px;
+	box-sizing: border-box;
+	border-radius: 50%;
+}
+.loading::before {
+	border-top: 14px solid #e67e22;
+	transform: rotate(120deg);
+}
+.loading::after {
+	border-top: 14px solid #3498db;
+	transform: rotate(240deg);
+}
+.loading span {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	color: #fff;
+	text-align: center;
+	line-height: 200px;
+	animation: a2 2s linear infinite;
+}
 
+@keyframes a1 {
+	to {
+		transform: rotate(360deg);
+	}
 }
-.loading::before,.loading::after{
-    content:'';
-    width:200px;
-    height:200px;
-    position: absolute;
-    left:0;
-    top:-10px;
-    box-sizing: border-box;
-    border-radius: 50%;
-
-}
-.loading::before{
-    border-top: 14px solid #e67e22;
-    transform: rotate(120deg);
-}
-.loading::after{
-    border-top: 14px solid #3498db;
-    transform: rotate(240deg);
-}
-.loading span{
-    position: absolute;
-    width:200px;
-    height:200px;
-    color:#fff;
-    text-align: center;
-    line-height: 200px;
-    animation: a2 2s linear infinite;
-}
-
-@keyframes a1{
-    to{
-        transform: rotate(360deg);
-    }
-}
-@keyframes a2{
-    to{
-        transform: rotate(-360deg);
-    }
+@keyframes a2 {
+	to {
+		transform: rotate(-360deg);
+	}
 }
