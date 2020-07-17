@@ -35,7 +35,7 @@ function draw() {
 
 function fontLoad() {
   for (var i = 0; i < myFonts; i++) {
-    myFont.push(loadFont("fonts/font (" + str(i) + ").ttf"));
+    myFont.push(loadFont("assets/fonts/font (" + str(i) + ").ttf"));
   }
 }
 
