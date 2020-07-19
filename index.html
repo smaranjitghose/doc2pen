@@ -4,54 +4,60 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="assets/css/style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
     <body>
-      <div class="spinner-wrapper">
-        <div class="preloader-wrapper big active">
-          <div class="spinner-layer spinner-blue">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
+
+      <!-- Spinner Wheel -->
+        <div class="spinner-wrapper">
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
             </div>
-          </div>
-    
-          <div class="spinner-layer spinner-red">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-    
-          <div class="spinner-layer spinner-yellow">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-    
-          <div class="spinner-layer spinner-green">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-        </div>
-    </div>
       
+            <div class="spinner-layer spinner-red">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+      
+            <div class="spinner-layer spinner-yellow">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+      
+            <div class="spinner-layer spinner-green">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+      </div>
+    <!------------------------------------------>
+
+
+    <!-- Navigation Bar -->
         <nav class="white">
             <div class="nav-wrapper">
               <a href="#!" class="brand-logo black-text"><img width="40px" src="assets\images\favicon\logo.png"></a>
@@ -63,7 +69,9 @@
               </ul>
             </div>
           </nav>
+    <!--------------------->
         
+    <!---------- Mobile Sidenav------->
           <ul class="sidenav" id="mobile-demo">
             <li class="active" ><a href="index.html">Home</a></li>
             <li><a href="editor.html">Editor</a></li>
@@ -87,5 +95,52 @@
         hidePreloader();
         });
         </script>
-    </body>
+
+    <!---------------------------------->
+
+
+    <!-----------Main Body--------->
+    <div id="video">
+      <video autoplay loop>
+        <source src="assets/video/homepage/doc2pen video.m4v" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="title-text">
+        <div id="header">
+          <p id="doc2pen">Doc2Pen</p>
+          <p id="tagline">A Student's Life Saviour</p>
+        </div>
+
+        <div class="logo">
+          <img id="img-logo" src="/assets/favicon/logo.png">
+        </div>
+    </div>
+
+    <div class="what">
+        <p id="what-text">What is DOC2PEN?</p>
+        <img id="what-image" src="assets/images/To_do_list.svg">
+        <p id="what-ans">DOC2PEN is a student's saviour to submit the assignments by just typing them out and getting it handwritten on the go! It simply converts image to handwritten document and and also allow us to download documents easily.</p>
+    </div>
+
+    <div class="features-block">
+      <p id="key-title">Key Features</p>
+      <ul id="row">
+        <li id="column">Convert Typed Document to Handwritten</li>
+        <li id="column">Custom Fonts Available</li>
+        <li id="column">Download result in various formats</li>
+        <li id="column">Open Source</li>
+      </ul>
+    </div>
+
+    <div class="contribute-block">
+      <p id="contribute-heading">Think You can <br><span id="contribute">Contribute?</span></p>
+      <p id="contribute-text">If you have something in mind go ahead and open a pull request, we look forward for better contributions to make DOC2PEN better.</p>
+        <ul class="icon">
+          <li><a href="https://github.com/smaranjitghose/doc2pen"><img src="/assets/favicon/Github.svg"></a></li>
+        </ul>
+    </div>
+<!------------------------------->
+
+  </body>
   </html>
