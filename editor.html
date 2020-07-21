@@ -3,19 +3,16 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="Smaranjit Ghose">
+		<meta name="author" content="Smaranjit Ghose,Anush Bhatia">
 		<meta name="description" content="Convert your assignments into handwritten ones">
 		<title>Doc2Pen</title>
 		<link rel="icon" href="assets/images/logo.png">
 		<meta property="og:image" content="https://raw.githubusercontent.com/smaranjitghose/guess_the_gibberish/master/assets/images/logo.png?token=ALD3CX6RTK2IBDCFD3PPTRK6XAAEQ" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css">
-		<link rel="stylesheet" href="https://milligram.io/styles/main.css">
+		<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
 
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/custom.css">
+		<link rel="stylesheet" href="assets/css/style.css">
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
 		<script>
 		  window.dataLayer = window.dataLayer || [];
@@ -30,73 +27,75 @@
 	</head>
 	<body>
 		
-		<main class="wrapper">
-			<nav class="navigation">
-				<div class="navbar-fixed">
-				<div class="nav-wrapper" >
-				  <a href="#!" class="brand-logo">Doc2Pen</a>
-				  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<nav class="white">
+				<div class="nav-wrapper">
+				  <a href="index.html" class="brand-logo black-text">Doc2Pen</a>
+				  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="black-text material-icons">menu</i></a>
 				  <ul class="right hide-on-med-and-down">
-					<!-- <ul class="navbar-nav mr-auto "> -->
-						<li class="nav-item active">
-						  <a class="nav-link" href="index.html" style="font-size:130%;">Home<span class="sr-only"></span></a>
-						</li>
-					  <!-- </ul> -->
-					</ul> 
+					<li class="active"><a class="black-text" href="index.html">Home</a></li>
+					<li><a class="black-text" href="editor.html">Editor</a></li>
+					<li><a class="black-text" href="contact.html">Contact</a></li>
+				  </ul>
 				</div>
-				</div>
-				<g transform="translate(0.000000,120)">
-					<path d="M623.2 192c-51.8 3.5-125.7 54.7-163.1 71.5-29.1 13.1-54.2 24.4-76.1 24.4-22.6 0-26-16.2-21.3-51.9 1.1-8 11.7-79.2-42.7-76.1-25.1 1.5-64.3 24.8-169.5 126L192 182.2c30.4-75.9-53.2-151.5-129.7-102.8L7.4 116.3C0 121-2.2 130.9 2.5 138.4l17.2 27c4.7 7.5 14.6 9.7 22.1 4.9l58-38.9c18.4-11.7 40.7 7.2 32.7 27.1L34.3 404.1C27.5 421 37 448 64 448c8.3 0 16.5-3.2 22.6-9.4 42.2-42.2 154.7-150.7 211.2-195.8-2.2 28.5-2.1 58.9 20.6 83.8 15.3 16.8 37.3 25.3 65.5 25.3 35.6 0 68-14.6 102.3-30 33-14.8 99-62.6 138.4-65.8 8.5-.7 15.2-7.3 15.2-15.8v-32.1c.2-9.1-7.5-16.8-16.6-16.2z" class=""></path>
-				</g>
-				
 			  </nav>
+			
+			  <ul class="sidenav" id="mobile-demo">
+				<li class="active" ><a href="index.html">Home</a></li>
+				<li><a href="editor.html">Editor</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			  </ul>
+			
 					
                             <div class="container-fluid dark-light">
                                 <button id="switch" onclick="toggleTheme()">Light</button>
                                 <div class="animation1"></div>
                             </div>
-    
+							<center>
 			 <section class="container" id="examples">
 				<h3 class="title">Write Text</h3>
 				<form onsubmit="return false">
-					<fieldset>
-						<textarea placeholder="Enter the text you want to be written on paper..." id="dataField" onkeyup="myData = this.value"></textarea>
-					</fieldset>
+						<div class = "row">
+							<div class = "input-field col s12">
+							   <i class = "material-icons prefix">mode_edit</i>
+							   <textarea  placeholder="Enter the text you want to be written on paper..." id="dataField" onkeyup="myData = this.value" class = "materialize-textarea"></textarea>
+							   <label for = "text">Text</label>
+							</div>
+						 </div>
 					<input class="button-primary button-large download-image hidden" type="file" id="pageUploader" onclick="">
 					<input class="button-primary button-large download-image hidden" type="file" id="fontUploader" onclick="">
 					<div class="row">
-						<button class="column button-primary button-medium inline-btn" id="btnPageUpload">Upload Page</button>
-						<button class="column button-primary button-large inline-btn" onclick="loadPage()">Default Page</button>
-						<button class="column button-primary button-large inline-btn" onclick="changeFont()">Switch Font</button>
-						<button class="column button-primary button-large inline-btn" id="btnFontUpload" onclick="uploadFont()">Upload Your Font</button>
-						<button class="column button-primary button-large download-image inline-btn" onclick="save(str(pageNum++))">Download Page</button>
+						<div class="col m2  offset-m1"><a class="labels blue waves-effect waves-light btn" id="btnPageUpload">Upload Page</a></div>
+						<div class="col m2"><a class="labels blue waves-effect waves-light btn" onclick="loadPage()">Default Page</a></div>
+						<div class="col m2"><a class="labels blue waves-effect waves-light btn" onclick="changeFont()">Switch Font</a></div>
+						<div class="col m2 offset-s1"><a class="labels blue waves-effect waves-light btn" id="btnFontUpload" onclick="uploadFont()">Upload Your Font</a></div>
+						<div class="col m2"><a class="labels blue waves-effect waves-light btn" onclick="save(str(pageNum++))">Download Page</a></div>
 					</div>
-					<div class="row">
-						<div class="column">
+					<div class="row center ">
+						<div class="col s2 offset-s1">
 							<label>Adjust X axis</label>
 							<p class="range-field">
 							<input  type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" >
 							</p>
 						</div>
-						<div class="column">
+						<div class="col s2">
 							<label>Adjust Y axis</label>
 							<p class="range-field">
 							<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" >
 						</p>
 						</div>
-						<div class="column">
+						<div class="col s2">
 							<label>Font Size</label>
 							<p class="range-field">
 							<input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)">
 						</p>
 						</div>
-						<div class="column">
+						<div class="col s2">
 							<label>Width</label>
 							<p class="range-field">
 							<input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" >
 						</p>
 						</div>
-						<div class="column">
+						<div class="col s2">
 							<label>Line Spacing</label>
 							<p class="range-field">
 							<input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)" >
@@ -106,15 +105,20 @@
 				</form>
 				<div id="contributing"></div>
 			</section>
-
+		</center>
 			<footer class="footer">
 				<section class="container">
 					<p>Crafted with <a class="btn-floating pulse red"><i class="material-icons">favorite</i></a> by Smaranjit Ghose & Anush Bhatia.</p>
 				</section>
 			</footer>
-		</main>
+		<script src="assets/js/jquery.js" ></script>
+		<script type="text/javascript" src="assets/js/materialize.min.js"></script>
+		<script>
+			$(document).ready(function(){
+	  $('.sidenav').sidenav();
+	});
+		</script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script src="assets/js/script.js"></script>
 		<script src="assets/js/sketch.js"></script>
 	</body>
