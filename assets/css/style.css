@@ -298,6 +298,7 @@ p.demos {
 	position: relative;
 	animation: a1 2s linear infinite;
 }
+
 .loading::before,
 .loading::after {
 	content: '';
@@ -339,9 +340,8 @@ p.demos {
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	overflow-x: hidden !important;
-	width: 100%;
 }
 
 video {
@@ -349,56 +349,27 @@ video {
   	height: auto   !important;
 }
 
-.title-text {
-	margin:0px;
+.intro {
+	height: 90vh;
 	background-color: white;
-	height: 90vh;
-}
-
-#header { 
-	float: left;
-}
-
-#doc2pen {
-	margin:  200px 0px 5px 100px; 
-	font-weight: 500;
-	font-size: 100px;
-}
- 
-#tagline {
-	margin: 0px 0px 20px 100px;
-	font-size: 30px;
-	font-weight: 100;
-} 
-
-#img-logo {
-	float: right;
-	height: 400px;
-	width: 400px;
-	margin: 150px;
-}
-
-.what {
-	height: 90vh;
-	background-color: #d6e4f0;
 }
 
 
-#what-text {
+#intro-text {
 	font-weight: 300px;
 	font-size: 60px;
 	padding-top: 100px;
 	padding-left: 100px;
 }
 
-#what-image{
+#intro-image{
 	margin-left: 150px;
     width: 500px;
 	height: 400px;
 	float:left;
 }
 
-#what-ans {
+#intro-description {
 	text-align: center;
 	width: 500px;
 	height: 400px;
@@ -407,59 +378,115 @@ video {
 	font-size: 30px;
 }
 
-.features-block {
-	background-color: white;
-	height: 90vh;
+/* Cards CSS */
+.feature-block {
+	background-color: #ebecf1;
+	margin-top:50px;
+ 	height: 100vh;
 }
 
-#key-title {
-	font-size: 60px;
+#key-titles {
+	padding-top: 100px;
+	margin: 50px;
+	font-size: 40px;
 	font-weight: 300;
-	padding: 60px 100px 10px 100px;
 }
 
-#row {
-	margin-right: 150px;
-	float: right;
+.cards {
+	margin-left: 100px;
+	margin-top: 50px;
+	width: 1000px;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
 }
 
-#column {
-	font-size: 30px;
-	margin: 30px;
+.card {
+	margin: 20px;
 }
 
-.contribute-block{
-	background-color: #1e56a0;
-	height: 90vh;
+.card-image {
+	width: 170px;
+	height: 170px;
 }
 
-#contribute-heading {
-	font-size: 60px;
-	font-weight: 300;
-	padding: 60px 100px 0px 100px;
+.cards .card {
+	position: relative;
 }
 
-#contribute {
-	font-size: 80px;
+.cards .card .face {
+	width: 300px;
+	height: 200px;
+	transition: 0.5s;
 }
 
-#contribute-text {
+.cards .card .face.face1 {
+	position: relative;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	transform: translateY(100px);
+}
+
+.cards .card:hover .face.face1{
+	transform: translateY(0px);
+}
+
+.cards .card:hover .face.face1 p{
+	opacity: 0;
+}
+
+.cards .card .face.face2 {
+	position: relative;
+	background: grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	box-sizing: border-box;
+	box-shadow: 0 20px 50px whitesmoke;
+	transform: translateY(-100px);
+}
+
+.cards .card:hover .face.face2{
+	transform: translateY(0px);
+}
+
+.cards .card .face.face1 .content img {
+	max-width: 150px;
+}
+
+.cards .card:hover .face.face1 .content img{
+	max-width: 100px;
+	transition: 0.5s;
+	margin-top:20px;
+}
+
+.cards .card .face.face1 .content {
+	font-size: 20px;
+	transition: 0.5s;
+}
+
+.cards .card:hover .face.face1 .content{
+	opacity: 1;
+}
+
+.cards .card .face.face1 .content p {
+	margin: 10px 0 0;
+	padding: 0;
 	text-align: center;
-	width: 600px;
-	height: 400px;
-	margin-right: 200px;
-	float: right;
+	font-size: 1.5em;
+}
+
+/*--------------------------------------*/
+
+footer {
+	height: 60px;
 	font-size: 30px;
-}
-
-.icon img {
-	margin: 60px 0px 0px 200px;
-	float: left;
-    height: 80px;
-    width: 80px;
-}
-
-.footer {
+	padding: 10px;
+	color: white;
 	background-color: black;
-	width: 20px;
+	text-align: center;
 }

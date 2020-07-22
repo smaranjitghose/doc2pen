@@ -3,8 +3,15 @@
     <head>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+      
+      <!-- style sheet -->
       <link rel="stylesheet" href="assets/css/style.css">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+      <!--  -->
+
+      <!-- Font -->
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+      <!--  -->
+
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
@@ -60,7 +67,7 @@
     <!-- Navigation Bar -->
         <nav class="white">
             <div class="nav-wrapper">
-              <a href="#!" class="brand-logo black-text"><img width="40px" src="assets\images\favicon\logo.png"></a>
+              <a href="#!" class="brand-logo black-text"><img width="40px" src="assets\favicon\logo.png"></a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="black-text material-icons">menu</i></a>
               <ul class="right hide-on-med-and-down">
                 <li class="active"><a class="black-text" href="index.html">Home</a></li>
@@ -96,51 +103,91 @@
         });
         </script>
 
-    <!---------------------------------->
 
 
     <!-----------Main Body--------->
+
+    <!-- Video -->
     <div id="video">
       <video autoplay loop>
-        <source src="assets/video/homepage/doc2pen video.m4v" type="video/mp4">
+        <source src="assets/video/homepage/doc2pen_mp4.mp4" type="video/mp4">
       </video>
     </div>
 
-    <div class="title-text">
-        <div id="header">
-          <p id="doc2pen">Doc2Pen</p>
-          <p id="tagline">A Student's Life Saviour</p>
+    <!-- Intro Section -->
+    <div class="intro">
+        <p id="intro-text">What is DOC2PEN?</p>
+        <img width="50" height="50" id="intro-image" src="assets/images/To_do_list.svg">
+        <p id="intro-description">DOC2PEN is a student's saviour to submit the assignments by just typing them out and getting it handwritten on the go! It simply converts image to handwritten document and and also allow us to download documents easily.</p>
+    </div>
+    
+    <!-- Hover Card Section -->
+    <div class="feature-block">
+      <div>
+        <p id="key-titles">Key Features</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <img class="card-image" src="assets/images/contact_open_source_license.svg">
+              <p>Open Source</p>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p>Free to use</p>
+            </div>
+          </div>
         </div>
 
-        <div class="logo">
-          <img id="img-logo" src="/assets/favicon/logo.png">
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <img class="card-image" src="assets/images/custom_fonts_availabe.svg">
+              <p>Custom Fonts</p>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p>Use from a variety of custom fonts available</p>
+            </div>
+          </div>
         </div>
-    </div>
 
-    <div class="what">
-        <p id="what-text">What is DOC2PEN?</p>
-        <img id="what-image" src="assets/images/To_do_list.svg">
-        <p id="what-ans">DOC2PEN is a student's saviour to submit the assignments by just typing them out and getting it handwritten on the go! It simply converts image to handwritten document and and also allow us to download documents easily.</p>
-    </div>
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <img class="card-image" style="margin-left: 70px;" src="assets/images/accessible_from_mobile.svg">
+              <p>Mobile Phone Accessibility</p>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p>Use our Website from Mobile Phones</p>
+            </div>
+          </div>
+        </div>
 
-    <div class="features-block">
-      <p id="key-title">Key Features</p>
-      <ul id="row">
-        <li id="column">Convert Typed Document to Handwritten</li>
-        <li id="column">Custom Fonts Available</li>
-        <li id="column">Download result in various formats</li>
-        <li id="column">Open Source</li>
-      </ul>
-    </div>
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <img class="card-image" style="margin-left: 50px; margin-top: 50px;" src="assets/images/upload_any_doc_easily.svg">
+              <p>Download Options</p>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p>Download your page in Various formats like PDF/PNG/DOC/JPEG</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
 
-    <div class="contribute-block">
-      <p id="contribute-heading">Think You can <br><span id="contribute">Contribute?</span></p>
-      <p id="contribute-text">If you have something in mind go ahead and open a pull request, we look forward for better contributions to make DOC2PEN better.</p>
-        <ul class="icon">
-          <li><a href="https://github.com/smaranjitghose/doc2pen"><img src="/assets/favicon/Github.svg"></a></li>
-        </ul>
-    </div>
-<!------------------------------->
+    <!-- Footer Section -->
+    <footer><a href= "https://github.com/smaranjitghose/doc2pen" target="_blank">DOC2PEN</a></footer>
 
   </body>
   </html>
