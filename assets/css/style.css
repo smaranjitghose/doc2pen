@@ -334,3 +334,154 @@ p.demos {
 		transform: rotate(-360deg);
 	}
 }
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	overflow-x: hidden !important;
+}
+
+video {
+	width: 100%    !important;
+  	height: auto   !important;
+}
+
+.intro {
+	height: 90vh;
+	background-color: white;
+}
+
+
+#intro-text {
+	font-weight: 300px;
+	font-size: 60px;
+	padding-top: 100px;
+	padding-left: 100px;
+}
+
+#intro-image{
+	margin-left: 150px;
+    width: 500px;
+	height: 400px;
+	float:left;
+}
+
+#intro-description {
+	text-align: center;
+	width: 500px;
+	height: 400px;
+	margin-right: 200px;
+	float: right;
+	font-size: 30px;
+}
+
+/* Cards CSS */
+.feature-block {
+	background-color: #ebecf1;
+	margin-top:50px;
+ 	height: 100vh;
+}
+
+#key-titles {
+	padding-top: 100px;
+	margin: 50px;
+	font-size: 40px;
+	font-weight: 300;
+}
+
+.cards {
+	margin-left: 100px;
+	margin-top: 50px;
+	width: 1000px;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+
+.card {
+	margin: 20px;
+}
+
+.card-image {
+	width: 170px;
+	height: 170px;
+}
+
+.cards .card {
+	position: relative;
+}
+
+.cards .card .face {
+	width: 300px;
+	height: 200px;
+	transition: 0.5s;
+}
+
+.cards .card .face.face1 {
+	position: relative;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	transform: translateY(100px);
+}
+
+.cards .card:hover .face.face1{
+	transform: translateY(0px);
+}
+
+.cards .card:hover .face.face1 p{
+	opacity: 0;
+}
+
+.cards .card .face.face2 {
+	position: relative;
+	background: grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	box-sizing: border-box;
+	box-shadow: 0 20px 50px whitesmoke;
+	transform: translateY(-100px);
+}
+
+.cards .card:hover .face.face2{
+	transform: translateY(0px);
+}
+
+.cards .card .face.face1 .content img {
+	max-width: 150px;
+}
+
+.cards .card:hover .face.face1 .content img{
+	max-width: 100px;
+	transition: 0.5s;
+	margin-top:20px;
+}
+
+.cards .card .face.face1 .content {
+	font-size: 20px;
+	transition: 0.5s;
+}
+
+.cards .card:hover .face.face1 .content{
+	opacity: 1;
+}
+
+.cards .card .face.face1 .content p {
+	margin: 10px 0 0;
+	padding: 0;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+/*--------------------------------------*/
+
+footer {
+	height: 60px;
+	font-size: 30px;
+	padding: 10px;
+	color: white;
+	background-color: black;
+	text-align: center;
