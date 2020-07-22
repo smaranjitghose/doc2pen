@@ -5,9 +5,11 @@
 	display: inline-block;
 	height: 100%;
 	margin-left: 10px;
-	margin-top: 5px;
 }
-
+.labels {
+	margin: 10px;
+	text-align: center;
+}
 .spinner-wrapper {
 	position: fixed;
 	top: 0;
@@ -21,11 +23,6 @@
 	position: absolute;
 	top: 48%;
 	left: 48%;
-}
-.container {
-	width: 100%;
-	position: relative;
-	overflow: hidden;
 }
 
 h1.main,
