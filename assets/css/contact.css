@@ -1,0 +1,160 @@
+/*below CSS to add in new file contact.css*/
+/*....illustration and content....*/
+
+.our-team{
+    padding: 1% 3%;
+    background: rgba(8,59,73,0.2);
+    margin-top: 30px;  
+}
+.our-team h5{
+    font-family: Montserat;
+    text-align: center;
+    font-size: 30px;
+}
+.illustration-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    margin: 3% 0;
+}
+@media (max-width: 800px){
+    .illustration-text{
+        display: flex;
+        flex-direction: column;
+    }
+    .illustration-text .text{
+      text-align: center;
+    }
+}
+.illustration-text .text{
+/*    changed  */
+    margin: 5%; 
+    font-family: poppins;
+    font-size: 20px;
+}
+.illustration-text img{
+    width: 100%;
+    height: auto;
+}
+
+/*............card css.............*/ 
+
+/* mentor's card css start*/
+
+/* mentor's card css ends*/
+
+/* mentee's card css start*/
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 50px 30px;
+}
+
+.profile-card {
+    flex: 1 1 30%;
+    background: #fff;
+    padding: 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0 0 2px 0 #ccc;
+    transition: .3s;
+}
+
+.profile-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px -5px #ccc;
+}
+
+.profile-icon {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 25px 0 10px 0;
+}
+
+.profile-position {
+    font-size: 14px;
+    color: #777;
+}
+
+.links{
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+}
+
+@media screen and (max-width: 1000px) {
+    .profile-name {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .profile-container{
+        flex-direction: column;
+        
+    }
+    .profile-card {
+        padding: 20px 15px;
+        width: 90%;
+    }
+
+    .profile-name {
+        font-size: 16px;
+    }
+}
+/* mentee's card css ends*/
+
+
+/*.....Also Visit part.....*/
+
+i:hover{
+    color: #1496bb;
+}
+.git-linkedin{
+    transition-duration: 0.2s;
+}
+.git-linkedin:hover{
+    border: solid 1px black;
+    transform: scale(1.1);
+    border-radius: 5px;
+}
+
+.Also-visit h5{
+    font-family: Montserat;
+    font-size: 30px;
+    text-align: center;
+}
+.Also-visit ul li{
+    
+    list-style: none;
+    padding: 1%;
+    font-family: poppins;
+    font-size: 17px;
+    position: relative;
+    left: 37%;
+    
+}
+.Also-visit ul li a{
+    text-decoration: none;
+    color: inherit;
+}
+.Also-visit ul li button{
+    background: #1496bb;
+    transition-duration: 0.4s;
+    color: white;
+}
+.Also-visit ul li button:hover{
+    background: #0d3d56;
+    color: white;
+}
