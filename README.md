@@ -53,6 +53,12 @@ Addons:
   
 - [ ] Collection of Custom Fonts
 
+<h2 align="center"><b>Open Source Programs we have been a part of:</b></h2>
+<p align="center">
+<img width=20% src="assets/images/hakin_codes.png">&ensp;&ensp;&ensp;
+<img width=20% src="assets/images/psoc_logo.png">
+</p>
+
 <h2 align= "center"><b> Project Maintainers</b></h2>
 
 <p align="center">
@@ -63,7 +69,6 @@ Addons:
 <a href="https://github.com/smaranjitghose">
 <h4 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 <a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h4></a>
-
 
 <a href="./Code_of_conduct.md"><h2 align= "center"><b> Code of Conduct</b></h2></a> 
 <p align="center"><img width=35% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif"></p>
