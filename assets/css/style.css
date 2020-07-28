@@ -366,6 +366,8 @@ video {
 }
 
 #intro-description {
+    justify-self: center;
+    justify-self: center;
 	text-align: center;
 	width: 500px;
 	height: 400px;
@@ -399,11 +401,16 @@ video {
 
 .card {
 	margin: 20px;
+    grid-gap: 20px;
+    grid-template-columns: auto auto auto auto;
+    margin-left: -1.5%;
 }
 
 .card-image {
 	width: 170px;
 	height: 170px;
+    grid-gap: 2px;
+    grid-template-columns: auto auto auto auto;
 }
 
 .cards .card {
@@ -474,6 +481,58 @@ video {
 	padding: 0;
 	text-align: center;
 	font-size: 1.5em;
+}
+
+@media screen and (max-width: 64rem){
+  .cards{
+    width: calc(33.333333% - 2rem);
+  }
+}
+
+@media screen and (max-width: 48rem){
+  .cards{
+    width: calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 32rem){
+  .cards{
+    width: 100%;
+    margin: 0 0 2rem 0;
+  }
+}
+@media all and (max-width: 500px) {
+  .card {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: row;
+  }
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+}
+@media screen and (max-width: 1000px) {
+    .cards {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cards{
+        flex-direction: column;
+        
+    }
+    .card {
+        padding-left: 20px;
+        padding-right: 10px;
+        width: 50%;
+    }
+
+    .content {
+        font-size: 16px;
+    }
 }
 
 /*--------------------------------------*/
