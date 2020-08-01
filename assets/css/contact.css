@@ -3,7 +3,7 @@
 
 .our-team{
     padding: 1% 3%;
-    background: rgba(8,59,73,0.2);
+    background: #fff;
     margin-top: 30px;  
 }
 .our-team h5{
@@ -29,7 +29,7 @@
 .illustration-text .text{
 /*    changed  */
     margin: 5%; 
-    font-family: poppins;
+    font-family: Montserat;
     font-size: 20px;
 }
 .illustration-text img{
@@ -41,6 +41,77 @@
 
 /* mentor's card css start*/
 
+    #cards-mentor{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 85vh;
+    }
+
+    .mentor-container {
+      position: relative;
+      width: 1100px;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .mentor-container .card {
+      background: #fff;
+      position: relative;
+      max-width: 300px;
+      height: 245px;
+      margin: 30px 10px;
+      padding: 20px 15px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: 0 5px 20px rgba(0, 0, 0, 0.5);
+      transition: 0.3s ease-in-out;
+    }
+
+    .mentor-container .card:hover {
+      height: 400px;
+    }
+
+    .mentor-container .card .imgBx {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      top: -60px;
+      left: 5px;
+      box-sizing: 0 5px 20px rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .mentor-container .card .imgBx img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+
+    .mentor-container .card .content {
+      position: relative;
+      margin-top: -140px;
+      padding: 10px 15px;
+      text-align: center;
+      color: #111;
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+      visibility: hidden;
+    }
+
+    .mentor-container .card .content h5{
+        font-weight: bold;
+    }
+
+    .mentor-container .card:hover .content {
+      visibility: visible;
+      opacity: 1;
+      margin-top: -40px;
+      transition-delay: 0.2s;
+    }
+    
 /* mentor's card css ends*/
 
 /* mentee's card css start*/
@@ -70,8 +141,8 @@
 }
 
 .profile-icon {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -82,15 +153,11 @@
     margin: 25px 0 10px 0;
 }
 
-.profile-position {
-    font-size: 14px;
-    color: #777;
-}
-
 .links{
     display: flex;
     flex-direction: row;
-    margin-top: 8px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 @media screen and (max-width: 1000px) {
@@ -113,8 +180,49 @@
         font-size: 16px;
     }
 }
-/* mentee's card css ends*/
+/* mentee's card css ends */  
 
+/* Code of conduct and licence CSS*/
+
+.code-licence{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    width: 40%;
+    box-shadow: 0 0 25px -5px #ccc;
+    transition-duration: 0.4s;
+}
+.box:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 25px -5px #777;
+}
+.box a img{
+    width: 100%;
+    height: auto;
+    
+}
+@media (max-width: 800px){
+    .code-licence{
+    flex-direction: column;
+    }
+    .box a img{
+        width: 100%;
+        height: auto;
+    }
+    .box{
+        width: 90%;
+        margin: 10px auto;
+    }
+}
 
 /*.....Also Visit part.....*/
 
@@ -130,19 +238,23 @@ i:hover{
     border-radius: 5px;
 }
 
-.Also-visit h5{
+.Also-visit h5, .title{
     font-family: Montserat;
     font-size: 30px;
     text-align: center;
+}
+.Also-visit ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .Also-visit ul li{
     
     list-style: none;
     padding: 1%;
-    font-family: poppins;
+    font-family: Montserat;
     font-size: 17px;
-    position: relative;
-    left: 37%;
     
 }
 .Also-visit ul li a{
