@@ -3,7 +3,7 @@
 
 .our-team{
     padding: 1% 3%;
-    background: rgba(8,59,73,0.2);
+    background: #fff;
     margin-top: 30px;  
 }
 .our-team h5{
@@ -29,7 +29,7 @@
 .illustration-text .text{
 /*    changed  */
     margin: 5%; 
-    font-family: poppins;
+    font-family: Montserat;
     font-size: 20px;
 }
 .illustration-text img{
@@ -105,11 +105,6 @@
         font-weight: bold;
     }
 
-  .mentor-container .card .content h6{
-        color: #777;
-        margin: 15px auto;
-    }
-
     .mentor-container .card:hover .content {
       visibility: visible;
       opacity: 1;
@@ -146,8 +141,8 @@
 }
 
 .profile-icon {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -156,11 +151,6 @@
     font-size: 24px;
     font-weight: bold;
     margin: 25px 0 10px 0;
-}
-
-.profile-position {
-    font-size: 14px;
-    color: #777;
 }
 
 .links{
@@ -263,7 +253,7 @@ i:hover{
     
     list-style: none;
     padding: 1%;
-    font-family: poppins;
+    font-family: Montserat;
     font-size: 17px;
     
 }
