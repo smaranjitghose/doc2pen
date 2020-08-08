@@ -1,6 +1,39 @@
 <!DOCTYPE html>
   <html>
     <head>
+        
+        <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title><%= myClient.user.username %></%></title>
+
+	<!-- CSS JS Fonts Icons-->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+	<meta name="author" content="Mr¤KayJayDee">
+	<meta name="description" content="Discord bot made with ❤ by anushbhatia.">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="<%= myClient.user.username %>">
+	<meta property="og:description" content="Discord bot made with ❤ by anushbhatia.">
+	<meta property="og:image" content="<%= myClient.user.displayAvatarURL({format: 'png', size: 1024 }) %>" />
+	<meta name=theme-color content=#7289da>
+
+	<link rel="icon" type="image/png" style="border-radius: 50%;" href="<%= myClient.user.displayAvatarURL({format: 'png', size: 1024 }) %>">
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/dist/css/AdminLTE.min.css">
+	<link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
+	<link rel="stylesheet" href="/css/index.css" <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/bower_components/fastclick/lib/fastclick.js"></script>
+	<script src="/dist/js/adminlte.min.js"></script>
+	<script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="anushbhatia" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting. You can now buy me a server!" data-color="#7289da" data-position="right" data-x_margin="18" data-y_margin="18"></script>
+
+        
+        
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="assets/css/style.css">
@@ -8,7 +41,7 @@
         
         <link rel="stylesheet" href="assets/css/contact.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
+        </head>
 
     <body>
       <div class="spinner-wrapper">
@@ -221,6 +254,23 @@
             </div>
         </div>
     </section>
+        
+        <!-- bymeacoffee -->
+        
+        <body class="hold-transition skin-blue layout-top-nav">
+	<div class="wrapper">
+		<div class="content-wrapper" style="background-color: #23272a;">
+            
+<a href="https://www.patreon.com/smaranjitghose/creators" target="blank"><img class="bot-avatar" src="assets/images/Patreon.webp">
+</a>
+
+            			<img class="bot-avatar" src="<%= myClient.user.displayAvatarURL({format: 'png', size: 2048 }) %>" alt="">
+
+		</div>
+	</div>
+
+	
+</body>
 <!--  Also Visit section ends      -->
         
       <script src="assets/js/jquery.js" ></script>
@@ -242,4 +292,5 @@
         });
         </script>
     </body>
+      
   </html>
