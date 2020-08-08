@@ -26,7 +26,7 @@
 		</script>
 	</head>
 	<body>
-		
+
 			<nav class="white">
 				<div class="nav-wrapper">
 				  <a href="index.html" class="brand-logo black-text">Doc2Pen</a>
@@ -38,14 +38,14 @@
 				  </ul>
 				</div>
 			  </nav>
-			
+
 			  <ul class="sidenav" id="mobile-demo">
 				<li><a href="index.html">Home</a></li>
 				<li class="active" ><a href="editor.html">Editor</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			  </ul>
-			
-					
+
+
                             <div class="container-fluid dark-light">
                                 <button id="switch" onclick="toggleTheme()">Light</button>
                                 <div class="animation1"></div>
@@ -57,8 +57,9 @@
 						<div class = "row">
 							<div class = "input-field col s12">
 							   <i class = "material-icons prefix">mode_edit</i>
-							   <textarea  placeholder="Enter the text you want to be written on paper..." id="dataField" onkeyup="myData = this.value" class = "materialize-textarea"></textarea>
-							   <label for = "text">Text</label>
+							   <textarea  placeholder="Enter the text you want to be written on paper..." id="dataField" class = "materialize-textarea"></textarea>
+                 <span id="remainingCharacter"></span>
+								 <label for = "text">Text</label>
 							</div>
 						 </div>
 					<input class="button-primary button-large download-image hidden" type="file" id="pageUploader" onclick="">
