@@ -29,6 +29,27 @@ window.onload = function () {
     };
   };
 };
+
+// function to show Remaining Characters
+
+$(document).ready(function() {
+  var length = 0;
+  var maxCharacter = 1000;
+
+  $( '#dataField' ).keyup(function(){
+    length = this.value.length
+    if(length > maxCharacter){
+        return false;
+    }
+    else if (length > 0) {
+        $( "#remainingCharacter" ).html( "Remaining characters: " +( maxCharacter - length ) );
+    }
+    else {
+        $( "#remainingCharacter" ).html( "Remaining characters: " +( maxCharacter ) );
+    }
+  })
+});
+
             // function to set a given theme/color-scheme
             function setTheme(themeName) {
                 localStorage.setItem('theme', themeName);
