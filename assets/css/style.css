@@ -375,6 +375,50 @@ video {
 	float: right;
 	font-size: 30px;
 }
+/**index.html responsive and cards content changing **/
+
+.our-team{
+    padding: 1% 3%;
+    background: #fff;
+    margin-top: 30px;  
+}
+.our-team h5{
+    font-family: Montserat;
+    text-align: center;
+    font-size: 40px;
+}
+
+.illustration-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    margin: 3% 0;
+}
+@media (max-width: 800px){
+    .illustration-text{
+        display: flex;
+        flex-direction: column;
+    }
+    .illustration-text .text{
+      text-align: center;
+    }
+}
+.illustration-text .text{
+/*    changed  */
+    margin: 5%; 
+    font-family: Montserat;
+    font-size: 30px;
+}
+.illustration-text img{
+    width: 100%;
+    height: auto;
+}
+
+/**  **/
+
+
+
+
 
 /* Cards CSS */
 .feature-block {
