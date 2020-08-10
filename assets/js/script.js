@@ -52,10 +52,14 @@ window.onload = function () {
                 if (localStorage.getItem('theme') === 'theme-dark') {
                     setTheme('theme-dark');
                     footertext = document.getElementById("footertext");
+                    dataField = document.getElementById("dataField");
                     footertext.style.color = 'white';
+                    dataField.style.color = 'white';
                 } else {
                     setTheme('theme-light');
                     footertext = document.getElementById("footertext");
+                    dataField = document.getElementById("dataField");
                     footertext.style.color = 'black';
+                    dataField.style.color = 'black';
                 }
             })();
