@@ -34,7 +34,7 @@ window.onload = function () {
 
 $(document).ready(function() {
   var length = 0;
-  var maxCharacter = 10000;
+  var maxCharacter = 1000;
 
   $( '#dataField' ).keyup(function(){
     length = this.value.length
