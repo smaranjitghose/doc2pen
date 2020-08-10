@@ -39,16 +39,23 @@ window.onload = function () {
                 if (localStorage.getItem('theme') === 'theme-dark') {
                     setTheme('theme-light');
                     document.getElementById('switch').innerHTML="Dark";
+                    
+                    
                 } else {
                     document.getElementById('switch').innerHTML="Light";
                     setTheme('theme-dark');
+                  
                 }
             }
             // Immediately invoked function to set the theme on initial load
             (function () {
                 if (localStorage.getItem('theme') === 'theme-dark') {
                     setTheme('theme-dark');
+                    footertext = document.getElementById("footertext");
+                    footertext.style.color = 'white';
                 } else {
                     setTheme('theme-light');
+                    footertext = document.getElementById("footertext");
+                    footertext.style.color = 'black';
                 }
             })();
