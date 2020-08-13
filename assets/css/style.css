@@ -415,15 +415,101 @@ video {
 }
 
 /**  **/
+@media screen and (max-width: 800px) {
+    .feature-block{
+        flex-direction: column;
+        
+    }
+    .card {
+        padding: 20px 15px;
+        width: 90%;
+    }
 
+    .content {
+        font-size: 16px;
+    }
+}
 
 
 
 
 /* Cards CSS */
+
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.box {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background:#ebecf1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  flex-direction: auto;
+  user-select:none;
+}
+.box div {
+  width: 25vw;
+  background: #fff;
+  height: 25vw;
+  margin: 0 20px;
+  cursor: pointer;
+  pointer-events: all;
+  box-shadow: 5px 5px 0px 0 #3a1372;
+  overflow: hidden;
+  border-radius: 10px;
+  object-fit:cover;
+}
+.box div img {
+  width:80%;
+  height:80%;
+  transition: transform 1s;
+}
+
+.box div:hover {
+  filter: grayscale(0);
+}
+.box div:hover img {
+  transform: scale(1.2);
+}
+.box:hover div:not(:hover) {
+  filter: grayscale(1) blur(1px);
+}
+
+@media screen and (max-width: 1080px) {
+  .box {
+    flex-direction: column;
+  }
+  .box div {
+    margin: 20px 0;
+    height: 70vw;
+    width: 70vw;
+  }
+}
+.clearfix{
+    text-align: center;
+    color: azure;
+    font-size: 30px;
+}
+.content{
+    font-size: 20px;
+    text-align: center;
+    font-family: Poppins;
+}
+/* Cards CSS */
 .feature-block {
 	background-color: #ebecf1;
-	margin-top:50px;
+	margin-top:10px;
  	height: 100vh;
 }
 
@@ -579,4 +665,6 @@ video {
     }
 }
 
-/*--------------------------------------*/
+
+/*--------------------------------------* 
+
