@@ -7,6 +7,7 @@ body {
 #dataField {
 	height: 300px;
 }
+
 textarea {
 	border: solid 1px var(--button-color);
 }
@@ -47,24 +48,29 @@ label {
 	height: 6.5rem !important;
 	width: 6.5rem !important;
 }
+
 input[type=range]::-webkit-slider-thumb {
 	background-color: #4c75f2;
 }
+
 input[type=range]::-moz-range-thumb {
 	background-color: #4c75f2;
 }
+
 input[type=range]::-ms-thumb {
 	background-color: #4c75f2;
 }
 
 /***** These are to edit the thumb and the text inside the thumb *****/
-input[type=range] + .thumb {
+input[type=range]+.thumb {
 	background-color: #ffffff;
 }
-input[type=range] + .thumb.active .value {
+
+input[type=range]+.thumb.active .value {
 	color: #4c75f2;
 	font-weight: 700;
 }
+
 input[type=range] {
 	position: relative;
 	border: none;
@@ -73,6 +79,7 @@ input[type=range] {
 	margin: 15px 0;
 	padding: 0;
 }
+
 label {
 	color: var(--font-color);
 }
@@ -89,6 +96,7 @@ label {
 	--glow1: white;
 	--glow2: yellow;
 }
+
 .theme-dark {
 	--color-primary: black;
 	--color-back: rgba(0, 0, 0, 0.8);
@@ -100,6 +108,7 @@ label {
 	--glow1: #fff;
 	--glow2: gray;
 }
+
 .dark-light {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -107,8 +116,9 @@ label {
 	width: 120px;
 	position: relative;
 	left: 70%;
-	top: 30px;
+	top: 100px;
 }
+
 .dark-light button {
 	color: var(--font-color);
 	background: var(--color-primary);
@@ -117,11 +127,13 @@ label {
 	padding: 0 15px;
 	transition-duration: 0.4s;
 }
+
 .dark-light button:hover {
 	transform: scale(1.1);
 	color: var(--color-back);
 	background: var(--font-color);
 }
+
 .animation1 {
 	height: 35px;
 	width: 35px;
@@ -133,15 +145,24 @@ label {
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 }
+
 @keyframes glow {
 	0% {
 		box-shadow: 0 0 10px 2px var(--glow1);
 	}
+
 	50% {
 		box-shadow: 0 0 16px 4px var(--glow2);
 	}
+
 	100% {
 		box-shadow: 0 0 10px 2px (--glow1);
 	}
 }
+
 /* End of CSS for changing theme light and dark */
+
+/*Editorial page margin above heading */
+#examples h3.title {
+	margin-top: 100px;
+}
