@@ -307,7 +307,7 @@
     justify-content: center;
     margin: 30px;
 }
-.box{
+.box1{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -318,11 +318,11 @@
     box-shadow: 0 0 25px -5px #ccc;
     transition-duration: 0.4s;
 }
-.box:hover{
+.box1:hover{
     transform: scale(1.03);
     box-shadow: 0 0 25px -5px #777;
 }
-.box a img{
+.box1 a img{
     width: 100%;
     height: auto;
     
@@ -331,11 +331,11 @@
     .code-licence{
     flex-direction: column;
     }
-    .box a img{
+    .box1 a img{
         width: 100%;
         height: auto;
     }
-    .box{
+    .box1{
         width: 90%;
         margin: 10px auto;
     }
