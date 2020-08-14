@@ -9,10 +9,6 @@
     src: url("../fonts/Poppins/Poppins-Regular.otf") format("opentype");
 }
 
-.no-shadows {
-    box-shadow: none !important;
-}
-
 nav a.sidenav-trigger i {
     display: none;
 }
