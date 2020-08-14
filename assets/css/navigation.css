@@ -194,6 +194,7 @@ nav a.sidenav-trigger i {
     color: var(--font-color);
     background-color: var(--color-background);
     border-radius: 4px;
+    padding-top: 12px;
 }
 
 .theme-light .sidenav {
@@ -206,6 +207,7 @@ nav a.sidenav-trigger i {
     color: var(--font-color);
     background-color: var(--color-background);
     border-radius: 4px;
+    padding-top: 12px;
 }
 
 .theme-light .nav-wrapper ul li.active a,
