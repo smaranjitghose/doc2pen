@@ -8,7 +8,6 @@
   <!-- style sheet -->
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/navigation.css" />
-  <link rel="stylesheet" href="assets/css/index.css">
   <!--  -->
 
   <!-- Font -->
@@ -72,25 +71,19 @@
   </div>
   <div class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper ">
+      <div class="nav-wrapper">
         <div class="row">
           <div class="col s12">
             <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i
                 class="material-icons">menu</i></a>
-            <a href="#index.html" class="brand-logo">Doc<span>2</span>Pen </a>
+            <a href="index.html" class="brand-logo">Doc<span>2</span>Pen </a>
             <ul class="right">
               <li class="active"><a href="index.html">Home</a></li>
               <li><a href="editor.html">Editor</a></li>
               <li><a href="contact.html">Contact</a></li>
-              <!-- <li>
-                <a class="dark-toggle" href="#"
-                  onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-                  title="Dark/light"><i class="material-icons left">brightness_4</i> Toggle Dark
-                  Mode</a>
-              </li> -->
               <li>
                 <a class="dark-toggle" href="#" onclick="toggleTheme()" title="Dark/light"><i
-                    class="material-icons left">brightness_4</i> Toggle Dark
+                    class="material-icons left">brightness_high</i> Toggle Dark
                   Mode</a>
               </li>
             </ul>
@@ -105,14 +98,13 @@
     <li><a class="" href="editor.html">Editor</a></li>
     <li><a class="" href="contact.html">Contact</a></li>
     <li>
-      <div class="divider"></div>
+      <div class="divider black-text"></div>
     </li>
     <li>
-      <a class="btn dark-toggle" href="#"
-        onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-        title="Dark/light"><i class="material-icons left">brightness_4</i> Toggle Dark Mode</a>
+      <a class="dark-toggle" href="#" onclick="toggleTheme()" title="Dark/light"><i
+          class="material-icons left">brightness_high</i> Toggle Dark Mode</a>
 
-      <i class="material-icons left">brightness_4</i> Toggle Dark Mode</a>
+
     </li>
   </ul>
 
@@ -199,22 +191,6 @@
   </div>
 
   <script src="assets/js/sidenav.js"></script>
-  <script src="assets/js/script.js"></script>
-  <script>
-    function darkTheme() {
-      localStorage.setItem(
-        "mode",
-        (localStorage.getItem("mode") || "dark") === "dark" ? "light" : "dark"
-      );
-      if (localStorage.getItem("mode") === "dark") {
-        document.querySelector("body").classList.add("dark");
-        document.querySelector(".nav-wrapper").classList.add("#ffebee red lighten-5")
-
-      } else {
-        document.querySelector("body").classList.remove("dark")
-      }
-    }
-  </script>
 
 </body>
 

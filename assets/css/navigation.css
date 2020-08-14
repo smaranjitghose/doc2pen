@@ -9,7 +9,7 @@
     src: url("../fonts/Poppins/Poppins-Regular.otf") format("opentype");
 }
 
-.navbar-fixed nav {
+/* .navbar-fixed nav {
     background-color: #fff;
     font-size: 14px;
 }
@@ -59,7 +59,7 @@ nav a.sidenav-trigger i {
 .sidenav li a:hover {
     background-color: #fff;
     color: rgb(33, 150, 243, 0.9);
-}
+} */
 
 nav a.sidenav-trigger i {
 
@@ -79,4 +79,187 @@ nav a.sidenav-trigger i {
     .nav-wrapper ul li a {
         display: none;
     }
+}
+
+.divider {
+    background-color: rgb(33, 150, 243, 0.5);
+}
+
+/*CSS for changing theme light and dark*/
+.theme-light {
+    --color-primary: white;
+    --color-background: #fff;
+    --font-color: #000000;
+    --button-color-hover: #0d3d56;
+    --button-color: #1496bb;
+
+    --color-sun-moon: linear-gradient(45deg, yellow, red);
+    --glow1: white;
+    --glow2: yellow;
+}
+
+.theme-dark {
+    --color-primary: black;
+    --color-back: rgba(0, 0, 0, 0.8);
+    --font-color: white;
+    --button-color-hover: #272727;
+    --button-color: #9548bb;
+
+    --color-sun-moon: linear-gradient(45deg, gray, white);
+    --glow1: #fff;
+    --glow2: gray;
+
+    --color-background: rgb(56, 50, 50);
+}
+
+/* .dark-light {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    width: 120px;
+    position: relative;
+    left: 70%;
+    top: 30px;
+} */
+
+
+.theme-light .navbar-fixed nav {
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.theme-dark .navbar-fixed nav {
+    background-color: var(--color-background);
+    font-size: 14px;
+}
+
+.theme-light .nav-wrapper .brand-logo {
+    font-family: "KaushanScript";
+    color: var(--font-color);
+}
+
+.theme-dark .nav-wrapper .brand-logo {
+    font-family: "KaushanScript";
+    color: var(--font-color);
+}
+
+.theme-light .nav-wrapper .brand-logo {
+    font-family: "KaushanScript";
+    color: var(--font-color);
+}
+
+.nav-wrapper .brand-logo span {
+    color: rgba(47, 108, 158, 1);
+}
+
+.theme-light nav,
+.theme-light nav .nav-wrapper i,
+.theme-light nav a.sidenav-trigger,
+.theme-light nav a.sidenav-trigger i {
+
+    color: var(--font-color);
+}
+
+.theme-dark nav,
+.theme-dark nav .nav-wrapper i,
+.theme-dark nav a.sidenav-trigger,
+.theme-dark nav a.sidenav-trigger i {
+
+    color: var(--font-color);
+
+}
+
+.theme-light .nav-wrapper ul li a,
+.theme-light .sidenav li a {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    color: var(--font-color);
+    border-radius: 4px;
+}
+
+.theme-dark .nav-wrapper ul li a,
+.theme-dark .sidenav li a {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    color: var(--font-color);
+    border-radius: 4px;
+}
+
+.theme-dark .sidenav {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    color: var(--font-color);
+    background-color: var(--color-background);
+    border-radius: 4px;
+}
+
+.theme-light .sidenav {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    color: var(--font-color);
+    background-color: var(--color-background);
+    border-radius: 4px;
+}
+
+.theme-light .nav-wrapper ul li.active a,
+.theme-light .sidenav li.active a {
+    background-color: rgb(33, 150, 243, 0.8);
+    color: #fff;
+}
+
+.theme-dark .nav-wrapper ul li.active a,
+.theme-dark .sidenav li.active a {
+    background-color: rgb(33, 150, 243, 0.4);
+    color: #fff;
+}
+
+.theme-light .nav-wrapper ul li.active a:hover,
+.theme-light .sidenav li.active a:hover {
+    background-color: rgb(33, 150, 243, 0.5);
+    color: #ffffff;
+}
+
+.theme-dark .nav-wrapper ul li.active a:hover,
+.theme-dark .sidenav li.active a:hover {
+    background-color: rgb(33, 150, 243, 0.6);
+    color: #ffffff;
+}
+
+.theme-light .nav-wrapper ul li a:hover,
+.theme-light .sidenav li a:hover {
+    background-color: #fff;
+    color: rgb(33, 150, 243, 0.9);
+}
+
+.theme-dark .nav-wrapper ul li a:hover,
+.theme-dark .sidenav li a:hover {
+    /* background-color: rgb(33, 150, 243, 0.1); */
+    /* color: rgb(33, 150, 243); */
+    color: rgb(142, 199, 245);
+}
+
+.theme-light .sidenav li>a>i,
+.sidenav li>a>i.material-icons {
+    color: var(--font-color);
+}
+
+.theme-dark .sidenav li>a>i,
+.sidenav li>a>i.material-icons {
+    color: var(--font-color);
 }
