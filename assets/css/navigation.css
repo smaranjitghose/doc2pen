@@ -1,0 +1,82 @@
+/* Header section */
+@font-face {
+    font-family: KaushanScript;
+    src: url("../fonts/KaushanScript-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("../fonts/Poppins/Poppins-Regular.otf") format("opentype");
+}
+
+.navbar-fixed nav {
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.nav-wrapper .brand-logo {
+    font-family: "KaushanScript";
+    color: black;
+}
+
+.nav-wrapper .brand-logo span {
+    color: rgba(47, 108, 158, 1);
+}
+
+nav,
+nav .nav-wrapper i,
+nav a.sidenav-trigger,
+nav a.sidenav-trigger i {
+
+    color: black;
+}
+
+.nav-wrapper ul li a,
+.sidenav li a {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    color: #000;
+    border-radius: 4px;
+}
+
+.nav-wrapper ul li.active a,
+.sidenav li.active a {
+    background-color: rgb(33, 150, 243, 0.8);
+    color: #fff;
+}
+
+.nav-wrapper ul li.active a:hover,
+.sidenav li.active a:hover {
+    background-color: rgb(33, 150, 243, 0.5);
+    color: #ffffff;
+}
+
+.nav-wrapper ul li a:hover,
+.sidenav li a:hover {
+    background-color: #fff;
+    color: rgb(33, 150, 243, 0.9);
+}
+
+nav a.sidenav-trigger i {
+
+    display: none;
+}
+
+.nav-wrapper ul {
+    margin-right: 80px;
+}
+
+@media (max-width: 992px) {
+    nav a.sidenav-trigger i {
+
+        display: inline-block;
+    }
+
+    .nav-wrapper ul li a {
+        display: none;
+    }
+}
