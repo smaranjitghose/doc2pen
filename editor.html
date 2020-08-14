@@ -1,125 +1,162 @@
 <!doctype html>
-<html lang="en" class="theme-dark">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="Smaranjit Ghose,Anush Bhatia">
-		<meta name="description" content="Convert your assignments into handwritten ones">
-		<title>Doc2Pen</title>
-		<link rel="icon" href="assets/images/logo.png">
-		<meta property="og:image" content="https://raw.githubusercontent.com/smaranjitghose/guess_the_gibberish/master/assets/images/logo.png?token=ALD3CX6RTK2IBDCFD3PPTRK6XAAEQ" />
-		<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+<html lang="en">
 
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="assets/css/custom.css">
-		<link rel="stylesheet" href="assets/css/style.css">
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Smaranjit Ghose,Anush Bhatia">
+	<meta name="description" content="Convert your assignments into handwritten ones">
+	<title>Doc2Pen</title>
+	<link rel="icon" href="assets/images/logo.png">
+	<meta property="og:image"
+		content="https://raw.githubusercontent.com/smaranjitghose/guess_the_gibberish/master/assets/images/logo.png?token=ALD3CX6RTK2IBDCFD3PPTRK6XAAEQ" />
+	<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
 
-		  function gtag() {
-		    dataLayer.push(arguments);
-		  }
-		  gtag('js', new Date());
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/custom.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/navigation.css">
 
-		  gtag('config', '{{ site.google_analytics }}');
-		</script>
-	</head>
-	<body>
-		
-			<nav class="white">
-				<div class="nav-wrapper">
-				  <a href="index.html" class="brand-logo black-text">Doc2Pen</a>
-				  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="black-text material-icons">menu</i></a>
-				  <ul class="right hide-on-med-and-down">
-					<li><a class="black-text" href="index.html">Home</a></li>
-					<li class="active"><a class="black-text" href="editor.html">Editor</a></li>
-					<li><a class="black-text" href="contact.html">Contact</a></li>
-				  </ul>
-				</div>
-			  </nav>
-			
-			  <ul class="sidenav" id="mobile-demo">
-				<li><a href="index.html">Home</a></li>
-				<li class="active" ><a href="editor.html">Editor</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			  </ul>
-			
-					
-                            <div class="container-fluid dark-light">
-                                <button id="switch" onclick="toggleTheme()">Light</button>
-                                <div class="animation1"></div>
-                            </div>
-							<center>
-			 <section class="container" id="examples">
-				<h3 class="title">Write Text</h3>
-				<form onsubmit="return false">
-						<div class = "row">
-							<div class = "input-field col s12">
-							   <i class = "material-icons prefix">mode_edit</i>
-							   <textarea  placeholder="Enter the text you want to be written on paper..." id="dataField" onkeyup="myData = this.value" class = "materialize-textarea"></textarea>
-							   <label for = "text">Text</label>
-							</div>
-						 </div>
-					<input class="button-primary button-large download-image hidden" type="file" id="pageUploader" onclick="">
-					<input class="button-primary button-large download-image hidden" type="file" id="fontUploader" onclick="">
-					<div class="row">
-						<div class="col m2  offset-m1"><a class="labels blue waves-effect waves-light btn" id="btnPageUpload">Upload Page</a></div>
-						<div class="col m2"><a class="labels blue waves-effect waves-light btn" onclick="loadPage()">Default Page</a></div>
-						<div class="col m2"><a class="labels blue waves-effect waves-light btn" onclick="changeFont()">Switch Font</a></div>
-						<div class="col m2 offset-s1"><a class="labels blue waves-effect waves-light btn" id="btnFontUpload" onclick="uploadFont()">Upload Your Font</a></div>
-						<div class="col m2"><a class="labels blue waves-effect waves-light btn" onclick="save(str(pageNum++))">Download Page</a></div>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', '{{ site.google_analytics }}');
+	</script>
+</head>
+
+<body>
+
+	<!-- Navigation section -->
+	<div class="navbar-fixed">
+		<nav>
+			<div class="nav-wrapper">
+				<div class="row">
+					<div class="col s12">
+						<a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i
+								class="material-icons">menu</i></a>
+						<a href="index.html" class="brand-logo">Doc<span>2</span>Pen
+
+						</a>
+						<ul class="right">
+							<li><a href="index.html">Home</a></li>
+							<li class="active"><a href="editor.html">Editor</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<li><a class="dark-toggle" href="#" onclick="toggleTheme()" title="Dark/light"><i
+										class="material-icons left">brightness_high</i> Toggle Dark
+									Mode</a></li>
+						</ul>
 					</div>
-					<div class="row center ">
-						<div class="col s2 offset-s1">
-							<label>Adjust X axis</label>
-							<p class="range-field">
-							<input  type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" >
-							</p>
-						</div>
-						<div class="col s2">
-							<label>Adjust Y axis</label>
-							<p class="range-field">
-							<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" >
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<ul id="slide-out" class="sidenav">
+
+		<li><a class="" href="index.html">Home</a></li>
+		<li class="active"><a href="editor.html">Editor</a></li>
+		<li><a class="" href="contact.html">Contact</a></li>
+		<li>
+			<div class="divider"></div>
+		</li>
+		<li><a class="dark-toggle" href="#" onclick="toggleTheme()" title="Dark/light"><i
+					class="material-icons left">brightness_high</i> Toggle Dark Mode</a></li>
+	</ul>
+	<!-- Navigation section end-->
+
+
+
+	<div class="container-fluid dark-light">
+		<button id="switch" onclick="toggleTheme()">Light</button>
+		<div class="animation1"></div>
+	</div>
+	<center>
+		<section class="container" id="examples">
+			<h3 class="title">Write Text</h3>
+			<form onsubmit="return false">
+				<div class="row">
+					<div class="input-field col s12">
+						<i class="material-icons prefix">mode_edit</i>
+						<textarea placeholder="Enter the text you want to be written on paper..." id="dataField"
+							onkeyup="myData = this.value" class="materialize-textarea"></textarea>
+						<label for="text">Text</label>
+					</div>
+				</div>
+				<input class="button-primary button-large download-image hidden" type="file" id="pageUploader"
+					onclick="">
+				<input class="button-primary button-large download-image hidden" type="file" id="fontUploader"
+					onclick="">
+				<div class="row">
+					<div class="col m2  offset-m1"><a class="labels blue waves-effect waves-light btn"
+							id="btnPageUpload">Upload Page</a></div>
+					<div class="col m2"><a class="labels blue waves-effect waves-light btn" onclick="loadPage()">Default
+							Page</a></div>
+					<div class="col m2"><a class="labels blue waves-effect waves-light btn"
+							onclick="changeFont()">Switch Font</a></div>
+					<div class="col m2 offset-s1"><a class="labels blue waves-effect waves-light btn" id="btnFontUpload"
+							onclick="uploadFont()">Upload Your Font</a></div>
+					<div class="col m2"><a class="labels blue waves-effect waves-light btn"
+							onclick="save(str(pageNum++))">Download Page</a></div>
+				</div>
+				<div class="row center ">
+					<div class="col s2 offset-s1">
+						<label>Adjust X axis</label>
+						<p class="range-field">
+							<input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)">
 						</p>
-						</div>
-						<div class="col s2">
-							<label>Font Size</label>
-							<p class="range-field">
+					</div>
+					<div class="col s2">
+						<label>Adjust Y axis</label>
+						<p class="range-field">
+							<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)">
+						</p>
+					</div>
+					<div class="col s2">
+						<label>Font Size</label>
+						<p class="range-field">
 							<input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)">
 						</p>
-						</div>
-						<div class="col s2">
-							<label>Width</label>
-							<p class="range-field">
-							<input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" >
-						</p>
-						</div>
-						<div class="col s2">
-							<label>Line Spacing</label>
-							<p class="range-field">
-							<input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)" >
-						</p>
-						</div>
 					</div>
-				</form>
-				<div id="contributing"></div>
-			</section>
-		</center>
-			<footer class="footer">
-				<section class="container">
-					<p>Crafted with <a class="btn-floating pulse red"><i class="material-icons">favorite</i></a> by Smaranjit Ghose & Anush Bhatia.</p>
-				</section>
-			</footer>
-		<script src="assets/js/jquery.js" ></script>
-		<script type="text/javascript" src="assets/js/materialize.min.js"></script>
-		<script>
-			$(document).ready(function(){
-	  $('.sidenav').sidenav();
-	});
-		</script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
-		<script src="assets/js/script.js"></script>
-		<script src="assets/js/sketch.js"></script>
-	</body>
+					<div class="col s2">
+						<label>Width</label>
+						<p class="range-field">
+							<input type="range" min="100" max="800" value="700" oninput="w=float(this.value)">
+						</p>
+					</div>
+					<div class="col s2">
+						<label>Line Spacing</label>
+						<p class="range-field">
+							<input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)">
+						</p>
+					</div>
+				</div>
+			</form>
+			<div id="contributing"></div>
+		</section>
+	</center>
+	<footer class="footer">
+		<section class="container">
+			<p>Crafted with <a class="btn-floating pulse red"><i class="material-icons">favorite</i></a> by Smaranjit
+				Ghose & Anush Bhatia.</p>
+		</section>
+	</footer>
+	<script src="assets/js/jquery.js"></script>
+	<script type="text/javascript" src="assets/js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.sidenav').sidenav();
+		});
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script src="assets/js/sketch.js"></script>
+	<script src="assets/js/sidenav.js"></script>
+</body>
+
 </html>
