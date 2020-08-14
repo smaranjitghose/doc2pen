@@ -521,9 +521,11 @@ html {
 }
 
 .cards {
-	margin-left: 100px;
-	margin-top: 50px;
-	width: 1000px;
+	/* margin-left: 100px;
+	margin-top: 50px; */
+	margin: 10rem;
+	margin-left: 3rem;
+	/* width: 1000px; */
 	position: relative;
 	display: flex;
 	justify-content: space-between;
@@ -543,7 +545,7 @@ html {
     grid-template-columns: auto auto auto auto;
 }
 
-.cards .card {
+/* .cards .card {
 	position: relative;
 }
 
@@ -611,9 +613,9 @@ html {
 	padding: 0;
 	text-align: center;
 	font-size: 1.5em;
-}
+} */
 
-@media screen and (max-width: 64rem){
+/* @media screen and (max-width: 64rem){
   .cards{
     width: calc(33.333333% - 2rem);
   }
@@ -632,13 +634,13 @@ html {
   }
 }
 @media all and (max-width: 500px) {
-  .card {
+  .card { */
     /* On small screens, we are no longer using row direction but column */
-    flex-direction: row;
+    /* flex-direction: row;
   }
-}
+} */
 
-.cards{
+/* .cards{
     display: flex;
     flex-direction: row;
     margin-top: 8px;
@@ -663,7 +665,7 @@ html {
     .content {
         font-size: 16px;
     }
-}
+} */
 
 
 /*--------------------------------------* 
