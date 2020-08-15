@@ -44,11 +44,12 @@
 }
 
 .bot-avatar {
+    margin: 0 auto;
 	border-radius: 50%;
-	position: absolute;
+	position: relative;
 	/* margin-left: 100px;
     margin-top: 80px; */
-	width: 15%;
+	width: 60%;
 	z-index: 2;
 	transition: transform 0.2s;
 	align-items: center;
@@ -276,6 +277,9 @@
     justify-content: center;
     margin-top: 10px;
 }
+.open{
+    width: 25%;
+}
 
 @media screen and (max-width: 1000px) {
     .profile-name {
@@ -295,6 +299,9 @@
 
     .profile-name {
         font-size: 16px;
+    }
+    .open {
+        width: 35%;
     }
 }
 /* mentee's card css ends */  
