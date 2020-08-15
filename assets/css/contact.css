@@ -2,7 +2,9 @@
 /*....illustration and content....*/
 
 /** bymeacoffee**/
-
+body{
+    font-family: Montserat;
+}
 .buttons {
 	align-items: center;
 	text-align: center !important;
