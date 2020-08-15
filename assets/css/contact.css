@@ -282,7 +282,9 @@ body{
 .open{
     width: 15%;
 }
-
+.opensrc{
+    font-family: 'Montserrat',sans-serif;
+}
 @media screen and (max-width: 1000px) {
     .profile-name {
         font-size: 18px;
