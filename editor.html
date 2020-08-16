@@ -6,16 +6,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Smaranjit Ghose,Anush Bhatia">
 	<meta name="description" content="Convert your assignments into handwritten ones">
+	
 	<title>Doc2Pen</title>
+
+	<!-- Favicon -->
 	<link rel="icon" href="assets/images/logo.png">
+
 	<meta property="og:image"
 		content="https://raw.githubusercontent.com/smaranjitghose/guess_the_gibberish/master/assets/images/logo.png?token=ALD3CX6RTK2IBDCFD3PPTRK6XAAEQ" />
-	<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- CSS -->
+	<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
 	<link rel="stylesheet" href="assets/css/custom.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/navigation.css">
+	<!-- -->
+
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
+	<!--  -->
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
 	<script>
@@ -38,17 +49,17 @@
 			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
 					class="black-text material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a class="black-text" href="index.html">Home</a></li>
-				<li class="active"><a class="black-text" href="editor.html">Editor</a></li>
-				<li><a class="black-text" href="contact.html">Contact</a></li>
+				<li><a class="black-text texts" href="index.html">Home</a></li>
+				<li class="active"><a class="black-text texts" href="editor.html">Editor</a></li>
+				<li><a class="black-text texts" href="contact.html">Contact</a></li>
 			</ul>
 		</div>
 	</nav>
 
 	<ul class="sidenav" id="mobile-demo">
-		<li><a href="index.html">Home</a></li>
-		<li class="active"><a href="editor.html">Editor</a></li>
-		<li><a href="contact.html">Contact</a></li>
+		<li><a href="index.html" class="texts">Home</a></li>
+		<li class="active"><a href="editor.html" class="texts">Editor</a></li>
+		<li><a href="contact.html" class="texts">Contact</a></li>
 	</ul>
 
 
@@ -58,7 +69,7 @@
 	</div>
 	<center>
 		<section class="container" id="examples">
-			<h3 class="title">Write Text</h3>
+			<h3 class="heading">Write Text</h3>
 			<form onsubmit="return false">
 				<div class="row">
 					<div class="input-field col s12">
@@ -86,31 +97,31 @@
 				</div>
 				<div class="row center ">
 					<div class="col s2 offset-s1">
-						<label>Adjust X axis</label>
+						<label class="texts">Adjust X axis</label>
 						<p class="range-field">
 							<input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)">
 						</p>
 					</div>
 					<div class="col s2">
-						<label>Adjust Y axis</label>
+						<label class="texts">Adjust Y axis</label>
 						<p class="range-field">
 							<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)">
 						</p>
 					</div>
 					<div class="col s2">
-						<label>Font Size</label>
+						<label class="texts">Font Size</label>
 						<p class="range-field">
 							<input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)">
 						</p>
 					</div>
 					<div class="col s2">
-						<label>Width</label>
+						<label class="texts">Width</label>
 						<p class="range-field">
 							<input type="range" min="100" max="800" value="700" oninput="w=float(this.value)">
 						</p>
 					</div>
 					<div class="col s2">
-						<label>Line Spacing</label>
+						<label class="texts">Line Spacing</label>
 						<p class="range-field">
 							<input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)">
 						</p>
@@ -122,7 +133,7 @@
 	</center>
 	<footer class="footer">
 		<section class="container">
-			<p>Crafted with <a class="btn-floating pulse red"><i class="material-icons">favorite</i></a> by Smaranjit
+			<p>Crafted with &nbsp;<a class="btn-floating pulse red"><i class="material-icons">favorite</i></a> &nbsp;by Smaranjit
 				Ghose & Anush Bhatia.</p>
 		</section>
 	</footer>
