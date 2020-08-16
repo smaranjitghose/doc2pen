@@ -1,6 +1,16 @@
 /* CSS file for splash screen */
 
 @import url('https://fonts.googleapis.com/css?family=Barlow');
+.heading {
+	Font-Family: 'Playfair Display', Serif;
+	Font-Size: 48px;
+}
+
+.desp {
+	Font-Family: 'Source Sans Pro', Sans-Serif;
+	Font-Size: 16px;
+}
+
 .brand-logo {
 	display: inline-block;
 	height: 100%;
