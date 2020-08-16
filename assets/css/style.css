@@ -380,18 +380,21 @@ video {
 .our-team{
     padding: 1% 3%;
     background: #fff;
-    margin-top: 30px;  
+    margin-top: 30px;
+
 }
 .our-team h5{
-    font-family: Montserat;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
-    font-size: 40px;
+    font-size: 3.5em;
+		font-weight: 500;
+
 }
 
 .illustration-text{
     display: flex;
     flex-direction: row;
-    align-items: center; 
+    align-items: center;
     margin: 3% 0;
 }
 @media (max-width: 800px){
@@ -405,9 +408,12 @@ video {
 }
 .illustration-text .text{
 /*    changed  */
-    margin: 5%; 
-    font-family: Montserat;
+    margin: 5%;
+font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
+		padding:3% 5%;
+		font-weight: 600;
+
 }
 .illustration-text img{
     width: 100%;
@@ -418,7 +424,7 @@ video {
 @media screen and (max-width: 800px) {
     .feature-block{
         flex-direction: column;
-        
+
     }
     .card {
         padding: 20px 15px;
@@ -514,15 +520,16 @@ html {
 }
 
 #key-titles {
-	padding-top: 100px;
+	font-family: 'Montserrat', sans-serif;
+	padding-top: 5%;
 	margin: 50px;
-	font-size: 40px;
+	font-size: 70px;
 	font-weight: 300;
+	text-align: center;
 }
 
 .cards {
-	margin-left: 100px;
-	margin-top: 50px;
+	margin:5% 10% ;
 	width: 1000px;
 	position: relative;
 	display: flex;
@@ -530,8 +537,8 @@ html {
 }
 
 .card {
-	margin: 20px;
-    grid-gap: 20px;
+	margin: 5%;
+    grid-gap: 40px;
     grid-template-columns: auto auto auto auto;
     margin-left: -1.5%;
 }
@@ -573,7 +580,7 @@ html {
 
 .cards .card .face.face2 {
 	position: relative;
-	background: grey;
+	background: #d0a1d6;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -604,6 +611,7 @@ html {
 
 .cards .card:hover .face.face1 .content{
 	opacity: 1;
+
 }
 
 .cards .card .face.face1 .content p {
@@ -611,6 +619,8 @@ html {
 	padding: 0;
 	text-align: center;
 	font-size: 1.5em;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
 }
 
 @media screen and (max-width: 64rem){
@@ -646,25 +656,27 @@ html {
 @media screen and (max-width: 1000px) {
     .cards {
         font-size: 18px;
+
     }
 }
 
 @media screen and (max-width: 800px) {
     .cards{
         flex-direction: column;
-        
+
     }
     .card {
         padding-left: 20px;
         padding-right: 10px;
         width: 50%;
+				font-family: 'Cormorant Garamond', serif;
     }
 
     .content {
         font-size: 16px;
+
     }
 }
 
 
-/*--------------------------------------* 
-
+/*--------------------------------------*
