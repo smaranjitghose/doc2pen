@@ -5,6 +5,9 @@
 body{
     font-family: 'Montserrat', sans-serif;
 }
+#op_sc, #help{
+    font-size: 20px;
+}
 .buttons {
 	align-items: center;
 	text-align: center !important;
@@ -127,9 +130,11 @@ body{
     margin-top: 30px;  
 }
 .our-team h5{
-    font-family: Montserat;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
+}
+.our-team p{
+	padding-left: 0px;
 }
 .illustration-text{
     display: flex;
@@ -137,6 +142,7 @@ body{
     align-items: center; 
     margin: 3% 0;
 }
+
 @media (max-width: 800px){
     .illustration-text{
         display: flex;
@@ -153,7 +159,7 @@ body{
     font-size: 20px;
 }
 .illustration-text img{
-    width: 100%;
+    width: 75%;
     height: auto;
 }
 
@@ -223,6 +229,7 @@ body{
 
     .mentor-container .card .content h5{
         font-weight: bold;
+        font-size: 20px;
     }
 
     .mentor-container .card:hover .content {
@@ -367,8 +374,7 @@ i:hover{
 }
 
 .Also-visit h5, .title{
-    font-family: Montserat;
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
 }
 .Also-visit ul{
