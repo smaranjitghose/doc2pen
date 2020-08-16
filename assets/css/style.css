@@ -2,15 +2,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Barlow');
 .heading {
-	Font-Family: 'Playfair Display', Serif;
-	Font-Size: 48px;
+	font-family: 'Arvo', serif;;
+	font-size: 48px;
 }
-
-.desp {
-	Font-Family: 'Source Sans Pro', Sans-Serif;
-	Font-Size: 16px;
+.texts {
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
 }
-
 .brand-logo {
 	display: inline-block;
 	height: 100%;
@@ -346,7 +344,7 @@ p.demos {
 }
 
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Lato', sans-serif;
 	overflow-x: hidden !important;
 }
 
@@ -392,10 +390,13 @@ video {
     background: #fff;
     margin-top: 30px;  
 }
+
 .our-team h5{
-    font-family: Montserat;
     text-align: center;
-    font-size: 40px;
+}
+
+.our-team p{
+	padding-left: 15px;
 }
 
 .illustration-text{
@@ -420,7 +421,7 @@ video {
     font-size: 30px;
 }
 .illustration-text img{
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 
@@ -456,6 +457,11 @@ html {
   margin: 0;
   box-sizing: border-box;
 }
+
+.content .texts{
+	color: white;
+}
+
 .box {
   width: 100%;
   height: auto;
@@ -524,7 +530,6 @@ html {
 }
 
 #key-titles {
-	padding-top: 100px;
 	margin: 50px;
 	font-size: 40px;
 	font-weight: 300;
