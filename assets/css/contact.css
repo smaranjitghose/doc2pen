@@ -237,13 +237,13 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    margin: 50px 30px;
+    margin: 30px 50px;
 }
 
 .profile-card {
     flex: 1 1 30%;
     background: #fff;
-    padding: 20px 60px;
+    padding: 20px 30px;     /* originally 20 60*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -267,7 +267,7 @@
 .profile-name {
     font-size: 24px;
     font-weight: bold;
-    margin: 25px 0 10px 0;
+    margin: 10px 0 10px 25px;
 }
 
 .links{
@@ -350,7 +350,9 @@ i:hover{
     transition-duration: 0.2s;
 }
 .git-linkedin:hover{
-    border: solid 1px black;
+/*    border: solid 1px black;*/
+    color: brown;
+    box-shadow: 2px 2px brown;
     transform: scale(1.1);
     border-radius: 5px;
 }
@@ -386,4 +388,65 @@ i:hover{
 .Also-visit ul li button:hover{
     background: #0d3d56;
     color: white;
+}
+
+.contri
+{
+    position: relative;
+    perspective: 40em;
+    display: grid;
+    transform-style: preserve-3d;
+    font-family: sans-serif;
+    padding: 30px;
+}
+.contri-card
+{
+    grid-area: 1/1;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+    background: #f7f7f7;
+    justify-content: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 900;
+    backface-visibility: hidden;
+    box-shadow: 0 10px 30px -3px rgba(0,0,0,1);
+    opacity: 1;
+    cursor: pointer;
+}
+.contri-card .write
+{
+    color: #000;
+    display: inline-block;
+    transform: translate(-1px,1px) scale(0.75);
+}
+.contri:before
+{
+    --bw: 7px;
+    content: '';
+    grid-area: 1/1;
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+    margin-top: calc(-1 * var(--bw));
+    margin-left: calc(-1 * var(--bw));
+    transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+    pointer-events: none;
+    border: var(--bw) solid #f0a500;
+    box-sizing: content-box;
+} 
+.contri:hover > div,
+.contri:hover:before
+{
+    transform: none;
+    opacity: 1;
+}
+.contri > div,
+.contri:before
+{
+    will-change: transform;
+    transition: 0.3s transform cubic-bezier(.25, .46, .45, 1);
+    
 }
