@@ -378,21 +378,21 @@ video {
 /**index.html responsive and cards content changing **/
 
 .our-team{
-    padding: 1% 3%;
+    padding: 1% 2%;
     background: #fff;
-    margin-top: 30px;  
+    /* margin-top: 1rem;   */
 }
 .our-team h5{
-    font-family: Montserat;
+    /* font-family: Montserat; */
     text-align: center;
-    font-size: 40px;
+    font-size: 3rem;
 }
 
 .illustration-text{
     display: flex;
     flex-direction: row;
     align-items: center; 
-    margin: 3% 0;
+    margin: 2% 0;
 }
 @media (max-width: 800px){
     .illustration-text{
@@ -407,7 +407,7 @@ video {
 /*    changed  */
     margin: 5%; 
     font-family: Montserat;
-    font-size: 30px;
+    font-size: 1.75rem;
 }
 .illustration-text img{
     width: 100%;
@@ -445,6 +445,8 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
 }
 .box {
   width: 100%;
@@ -507,25 +509,26 @@ html {
     font-family: Poppins;
 }
 /* Cards CSS */
-.feature-block {
+/* .feature-block {
 	background-color: #ebecf1;
 	margin-top:10px;
  	height: 100vh;
-}
+} */
 
 #key-titles {
 	padding-top: 100px;
 	margin: 50px;
 	font-size: 40px;
 	font-weight: 300;
+	font-family: 'Bitter', serif; 
+	color: #3366CC; 
+	padding-top: 0%;
 }
 
-.cards {
-	/* margin-left: 100px;
-	margin-top: 50px; */
-	margin: 10rem;
-	margin-left: 3rem;
-	/* width: 1000px; */
+/* .cards {
+	margin-left: 100px;
+	margin-top: 50px;
+	width: 1000px;
 	position: relative;
 	display: flex;
 	justify-content: space-between;
@@ -545,7 +548,7 @@ html {
     grid-template-columns: auto auto auto auto;
 }
 
-/* .cards .card {
+.cards .card {
 	position: relative;
 }
 
@@ -613,9 +616,9 @@ html {
 	padding: 0;
 	text-align: center;
 	font-size: 1.5em;
-} */
+}
 
-/* @media screen and (max-width: 64rem){
+@media screen and (max-width: 64rem){
   .cards{
     width: calc(33.333333% - 2rem);
   }
@@ -632,15 +635,15 @@ html {
     width: 100%;
     margin: 0 0 2rem 0;
   }
-}
-@media all and (max-width: 500px) {
+} */
+/* @media all and (max-width: 500px) {
   .card { */
     /* On small screens, we are no longer using row direction but column */
     /* flex-direction: row;
   }
 } */
 
-/* .cards{
+.cards{
     display: flex;
     flex-direction: row;
     margin-top: 8px;
@@ -656,17 +659,133 @@ html {
         flex-direction: column;
         
     }
-    .card {
+    /* .card {
         padding-left: 20px;
         padding-right: 10px;
         width: 50%;
-    }
+    } */
 
     .content {
         font-size: 16px;
     }
-} */
+}
 
 
-/*--------------------------------------* 
+/*--------------------------------------*/ 
 
+/* Added CSS (Modified ones are there above) */
+
+#features {
+	position: relative;
+    z-index: 1;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+.card-layout {
+	margin: 2rem;
+	padding: 2rem;
+}
+  
+.card-image-feature {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #6C63FF;
+	overflow: hidden;
+	width: 100%;
+	height: 0;
+	transition: .5s ease;
+}
+
+.card-layout:hover .overlay {
+	height: 40%;
+}
+
+.text-overlay {
+	color: white;
+	font-size: 1rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+	padding: 2%;
+}
+
+.align-vertical {
+	top: 50%;
+	left: 50%;
+}
+
+.small-hr {
+    height: 3px;
+    background: #6C63FF;
+    display: block;
+    margin: 0;
+	width: 100%;
+}
+
+.editor-button {
+	align-self: center;
+}
+
+.editor-button button {
+	/* border-radius: 30px;
+	background: white;
+	color: #6c63ff;
+	margin-left: 35%;
+	padding: 5%;
+	font-family: 'Lato', sans-serif;
+	vertical-align: middle;
+	font-size: 1.25rem;
+	border: #6c63ff solid 3px;
+	text-decoration: none; */
+	width:140px;
+	height:50px;
+	border:2px solid #34495e;
+	text-align:center;
+	cursor:pointer;
+	position:relative;
+	box-sizing:border-box;
+	overflow:hidden;
+	margin-left: 35%;
+}
+
+.editor-button button span {
+	font-family:'Lato', sans-serif;
+	font-size:1.25rem;
+	color:#34495e;
+	text-decoration:none;
+	line-height:50px;
+	transition:all .5s ease;
+	z-index:2;
+	position:relative;
+}
+
+.button-effect {
+	width:140px;
+	height:50px;
+	left:-140px;
+	background:#6C63FF;
+	position:absolute;
+	transition:all .5s ease;
+	z-index:1;
+}
+
+.editor-button button:hover .button-effect{
+	left:0;
+}
+
+.editor-button button:hover span{
+	color:#fff;
+}
