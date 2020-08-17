@@ -542,7 +542,7 @@ html {
 }
 
 .card-image {
-	width: 170px;
+	width: 98%;
 	height: 170px;
     grid-gap: 2px;
     grid-template-columns: auto auto auto auto;

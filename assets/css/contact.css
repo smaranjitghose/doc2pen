@@ -2,7 +2,9 @@
 /*....illustration and content....*/
 
 /** bymeacoffee**/
-
+body{
+    font-family: 'Montserrat', sans-serif;
+}
 .buttons {
 	align-items: center;
 	text-align: center !important;
@@ -44,11 +46,12 @@
 }
 
 .bot-avatar {
+    margin: 0 auto;
 	border-radius: 50%;
-	position: absolute;
+	position: relative;
 	/* margin-left: 100px;
     margin-top: 80px; */
-	width: 15%;
+	width: 60%;
 	z-index: 2;
 	transition: transform 0.2s;
 	align-items: center;
@@ -194,7 +197,7 @@
 
     .mentor-container .card .imgBx {
       position: relative;
-      width: 260px;
+      width: 96%;
       height: 260px;
       top: -60px;
       left: 5px;
@@ -249,7 +252,7 @@
     align-items: center;
     border-radius: 4px;
     box-shadow: 0 0 2px 0 #ccc;
-    transition: .3s;
+    transition: .3s ease;
 }
 
 .profile-card:hover {
@@ -276,7 +279,12 @@
     justify-content: center;
     margin-top: 10px;
 }
-
+.open{
+    width: 15%;
+}
+.opensrc{
+    font-family: 'Montserrat',sans-serif;
+}
 @media screen and (max-width: 1000px) {
     .profile-name {
         font-size: 18px;
@@ -295,6 +303,9 @@
 
     .profile-name {
         font-size: 16px;
+    }
+    .open {
+        width: 35%;
     }
 }
 /* mentee's card css ends */  
@@ -316,10 +327,10 @@
     margin: 10px;
     width: 40%;
     box-shadow: 0 0 25px -5px #ccc;
-    transition-duration: 0.4s;
+    transition: 0.4s ease;
 }
 .box1:hover{
-    transform: scale(1.03);
+    transform: scale(1.05);
     box-shadow: 0 0 25px -5px #777;
 }
 .box1 a img{
