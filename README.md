@@ -70,6 +70,8 @@ Addons:
 <h4 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 <a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h4></a>
 
+[![](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/images/0)](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/links/0)[![](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/images/1)](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/links/1)[![](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/images/2)](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/links/2)[![](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/images/3)](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/links/3)[![](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/images/4)](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/links/4)[![](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/images/5)](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/links/5)[![](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/images/6)](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/links/6)[![](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/images/7)](https://sourcerer.io/fame/smaranjitghose/smaranjitghose/doc2pen/links/7)
+
 <a href="./Code_of_conduct.md"><h2 align= "center"><b> Code of Conduct</b></h2></a> 
 <p align="center"><img width=35% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif"></p>
 
