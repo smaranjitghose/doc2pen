@@ -4,7 +4,7 @@ body{
 	font-family: "montserrat",sans-serif;
 	min-height: 100vh;
 	background-color:#cccccc1c;
-	
+
 }
 
 .container{
@@ -21,7 +21,7 @@ body{
 	margin: 0;
 	font-weight: 900;
 	letter-spacing: 20px;
-	
+	font-family: 'Montserrat', sans-serif;
 }
 
 .container a{
