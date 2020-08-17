@@ -23,15 +23,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" />
       <!--  -->
 
-      <!-- Video.js -->
-      <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
-      <!--  -->
-
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-      <!-- Video.js support for IE-8 -->
-      <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-      <!--  -->
     </head>
 
     <body>
@@ -91,7 +83,7 @@
           </div>
       </nav>
         
-      <ul class="sidenav" id="mobile-demo">
+      <ul class="sidenav" id="mobile-demo" style="width: 100%;">
         <li class="active" ><a href="index.html">Home</a></li>
         <li><a href="editor.html">Editor</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -118,24 +110,30 @@
 
     <!-----------Main Body--------->
 
-    <!-- Video -->
-    <div id="video">
-      <video
-        id="my-video"
-        class="video-js"
-        preload="auto"
-        poster="assets/images/cover_video.png"
-        data-setup="{}"
-        autoplay
-        loop
-      >
-        <source src="assets/video/homepage/doc2pen.mp4" type="video/mp4" />
-        <source src="assets/video/homepage/doc2pen.webm" type="video/webm" />
-      </video>
+    <!-- GIF section -->
+    <div class="gif-wrapper">
+      <img src="assets/video/homepage/doc2pen.gif" alt="gif of doc2pen" class="kenburns-top gif-layout">
+      <br><br>
+      <button class="heartbeat" onclick="location.href='#intro-wrap'">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="48" height="48"
+          viewBox="0 0 172 172"
+          style=" fill:#000000;"
+        >
+          <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+            <path d="M0,172v-172h172v172z" fill="none"></path>
+            <path d="M86,172c-47.49649,0 -86,-38.50351 -86,-86v0c0,-47.49649 38.50351,-86 86,-86v0c47.49649,0 86,38.50351 86,86v0c0,47.49649 -38.50351,86 -86,86z" fill="#d2dedd"></path>
+            <g fill="#2196f3">
+              <path d="M131.37765,50.70627l-7.56294,-7.56294l-37.81471,37.44412l-37.81471,-37.44412l-7.56294,7.56294l45.37765,45.37765z"></path>
+              <path d="M131.37765,83.47902l-7.56294,-7.56294l-37.81471,37.63067l-37.81471,-37.63067l-7.56294,7.56294l45.37765,45.37765z"></path>
+            </g>
+          </g>
+        </svg>
+      </button>
     </div>
 
     <!-- Intro Section -->
-    <div class="our-team">
+    <div class="our-team" id="intro-wrap">
         <h5 id="key-titles">What is Doc2Pen?</h5>
         <div class="illustration-text">
             <div class="illustration" data-aos="fade-right" data-aos-duration="1250">
@@ -156,12 +154,11 @@
     <div id="features">
       <div class="row d-flex justify-content-center">
         <div class="col-m-2 card card-layout" data-aos="zoom-in" data-aos-duration="1100" style="width: 18rem">
-          
           <div class="card-body">
             <img class="card-img-top" src="assets/images/contact_open_source_license.svg" alt="Card image cap" style="height: 25vh;">
             <h5 class="card-title text-center align-vertical">Open Source</h5>
             <div class="overlay">
-              <p class="text-overlay" style="padding-inline: 1%; font-size: 0.85rem;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="text-overlay" style="padding-inline: 1%; font-size: 0.90rem;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
           </div>
           <hr class="small-hr" />
@@ -202,8 +199,8 @@
     <!-- Button redirecting to the editor -->
 
     <div class="editor-button">
-      <h5 id="key-titles">Why wait more?</h5>
-      <p class="text-center" style="font-family: 'Lato', sans-serif; font-size: 1.5rem;">Check out the editor already!</p>
+      <h5 id="key-titles" style="margin-bottom: 2rem;">Why wait more?</h5>
+      <p class="text-center" style="font-family: 'Lato', sans-serif; font-size: 1.5rem;">Check out the editor already!</p><br>
       <button onclick="location.href='editor.html'">
         <div class="button-effect"></div>
         <span>Editor</span>
