@@ -4,7 +4,7 @@
 .brand-logo {
 	display: inline-block;
 	height: 100%;
-	margin-left: 10px;
+	margin-left: 2rem;
 }
 .labels {
 	margin: 10px;
@@ -300,7 +300,7 @@ p.demos {
 	content: '';
 	width: 200px;
 	height: 200px;
-	position: absolute;
+	position: relative;
 	left: 0;
 	top: -10px;
 	box-sizing: border-box;
@@ -685,6 +685,8 @@ html {
 .card-layout {
 	margin: 2rem;
 	padding: 2rem;
+	padding-top: 1.75rem;
+	padding-bottom: 0%;
 }
   
 .card-image-feature {
@@ -706,7 +708,7 @@ html {
 }
 
 .card-layout:hover .overlay {
-	height: 40%;
+	height: 38%;
 }
 
 .text-overlay {
@@ -733,6 +735,7 @@ html {
     display: block;
     margin: 0;
 	width: 100%;
+	margin-bottom: 0;
 }
 
 .editor-button {
@@ -740,16 +743,6 @@ html {
 }
 
 .editor-button button {
-	/* border-radius: 30px;
-	background: white;
-	color: #6c63ff;
-	margin-left: 35%;
-	padding: 5%;
-	font-family: 'Lato', sans-serif;
-	vertical-align: middle;
-	font-size: 1.25rem;
-	border: #6c63ff solid 3px;
-	text-decoration: none; */
 	width:140px;
 	height:50px;
 	border:2px solid #34495e;
@@ -758,7 +751,7 @@ html {
 	position:relative;
 	box-sizing:border-box;
 	overflow:hidden;
-	margin-left: 35%;
+	margin-left: 33%;
 }
 
 .editor-button button span {

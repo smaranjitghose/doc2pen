@@ -23,7 +23,15 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" />
       <!--  -->
 
+      <!-- Video.js -->
+      <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+      <!--  -->
+
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <!-- Video.js support for IE-8 -->
+      <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+      <!--  -->
     </head>
 
     <body>
@@ -112,8 +120,17 @@
 
     <!-- Video -->
     <div id="video">
-      <video autoplay loop>
-        <source src="assets/video/homepage/doc2pen.mp4" type="video/mp4">
+      <video
+        id="my-video"
+        class="video-js"
+        preload="auto"
+        poster="assets/images/cover_video.png"
+        data-setup="{}"
+        autoplay
+        loop
+      >
+        <source src="assets/video/homepage/doc2pen.mp4" type="video/mp4" />
+        <source src="assets/video/homepage/doc2pen.webm" type="video/webm" />
       </video>
     </div>
 
@@ -139,11 +156,12 @@
     <div id="features">
       <div class="row d-flex justify-content-center">
         <div class="col-m-2 card card-layout" data-aos="zoom-in" data-aos-duration="1100" style="width: 18rem">
-          <img class="card-img-top" src="assets/images/contact_open_source_license.svg" alt="Card image cap" style="height: 25vh;">
+          
           <div class="card-body">
+            <img class="card-img-top" src="assets/images/contact_open_source_license.svg" alt="Card image cap" style="height: 25vh;">
             <h5 class="card-title text-center align-vertical">Open Source</h5>
             <div class="overlay">
-              <p class="text-overlay" style="padding-inline: 1%;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="text-overlay" style="padding-inline: 1%; font-size: 0.85rem;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
           </div>
           <hr class="small-hr" />
@@ -224,8 +242,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
-    </script>       
-
+    </script>
 
   </body>
 </html>
