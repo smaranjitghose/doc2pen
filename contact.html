@@ -9,12 +9,13 @@
         
 
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap 4 css-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- -->
         
 	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -152,7 +153,7 @@
         
         <div class="profile-container">
 
-          <div class="profile-card mb-5">
+          <div class="profile-card">
                 <img src="assets/images/a2.png" alt="image1" class="profile-icon" />
                 <div class="profile-name">Aman Patel</div>
                 <div class="links">
@@ -161,7 +162,7 @@
                 </div>
           </div>
 
-          <div class="profile-card mb-5">
+          <div class="profile-card">
                 <img src="assets/images/shi2.png" alt="image2" class="profile-icon" />
                 <div class="profile-name">Shilpe Saxena</div>
                 <div class="links">
@@ -170,7 +171,7 @@
                 </div>
           </div>
 
-          <div class="profile-card mb-5">
+          <div class="profile-card">
                 <img src="assets/images/v2.png" alt="image3" class="profile-icon" />
                 <div class="profile-name">Varun Verma</div>
                 <div class="links">
@@ -179,7 +180,7 @@
                 </div>
           </div>
 
-          <div class="profile-card mb-5">
+          <div class="profile-card">
                 <img src="assets/images/sonali2.png" alt="image3" class="profile-icon" />
                 <div class="profile-name">Sonali</div>
                 <div class="links">
@@ -221,7 +222,7 @@
             </div>
         </section>
         
-<!--  Also Visit section starts        -->
+<!--  Also Visit section starts        
     <section>
         <div class="container">
             <div class="Also-visit">
@@ -232,19 +233,47 @@
             </div>
         </div>
     </section>
-        
-        <!-- bymeacoffee -->
-        <section>
-            <div class="wrapper">
-                <div class="content-wrapper">
-                    <a href="https://www.patreon.com/smaranjitghose/creators" target="blank"><img class="bot-avatar" src="assets/images/Patreon.webp"></a>
-                    <img class="bot-avatar" src="<%= myClient.user.displayAvatarURL({format: 'png', size: 2048 }) %>" alt="">
-                </div>
-            </div>
-        </section>
+  -->
+     <!--- Open Source Contribution Section-->
 
-<!--  Also Visit section ends      -->
-        
+    <div class="container mt-2 opensrc">
+      <h3 class='text-center'>Open Source Contribution</h3> 
+        <hr>
+      <div class="row">
+        <div class="col-md-12 text-center col-sm-12">
+          <img class="open" src="./assets/images/hakin_codes.png"  alt="">
+        <img class="open" src="./assets/images/psoc_logo.png"  alt="">
+    </div>
+
+  </div>
+    </div>
+         
+        <!--Sponsorship Section-->
+        <div class="container mt-5 opensrc"> 
+          <h4 class="text-center">Help Us Grow</h4>
+          <hr>
+          <div class="row">
+                <div class="col-md-4 col-sm-12 text-center">
+              <p>
+                We hope you have enjoyed using Doc2Pen and if you feel like it has helped you out and want to support the team, you can help us by donating or backing us on <b>Patreon</b>. Any amount would help support and continue development on this project and wiil be greatly appreciated.
+              </p>
+                </div>
+
+                <div class="col-md-4 col-sm-12">
+                  <div class="text-center">
+               <a href="https://www.patreon.com/smaranjitghose/creators" target="blank"><img class="bot-avatar" src="assets/images/Patreon.webp"></a>
+               <img class="bot-avatar" src="<%= myClient.user.displayAvatarURL({format: 'png', size: 2048 }) %>" alt="">
+             </div>
+             </div>
+
+            <div class="col-md-4 mt-2 text-center col-sm-12">
+                   <h5>Connect on Github</h5>
+                  Visit our <a href="https://github.com/smaranjitghose/doc2pen" target="_blank"><i class="fa fa-github fa-2x" style="color: black;"></i></a> and give us a <i class="fa fa-star-o fa-2x"></i>
+            </div>
+               
+
+            </div>
+            </div>    
       <script src="assets/js/jquery.js" ></script>
       <script type="text/javascript" src="assets/js/materialize.min.js"></script>
       <script>
