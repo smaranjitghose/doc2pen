@@ -3,7 +3,7 @@
 
 /** bymeacoffee**/
 body{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 #op_sc, #help{
     font-size: 20px;
@@ -290,7 +290,7 @@ body{
     width: 15%;
 }
 .opensrc{
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Lato',sans-serif;
 }
 @media screen and (max-width: 1000px) {
     .profile-name {
