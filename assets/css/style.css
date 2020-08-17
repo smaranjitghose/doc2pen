@@ -62,6 +62,7 @@ p.demos {
 	-moz-animation: blurFadeInOut 3s ease-in backwards;
 	-ms-animation: blurFadeInOut 3s ease-in backwards;
 	animation: blurFadeInOut 3s ease-in backwards;
+	font-family: 'Montserrat', sans-serif;
 }
 .sp-container h2.frame-1 {
 	-webkit-animation-delay: 0s;
@@ -409,7 +410,7 @@ video {
 .illustration-text .text{
 /*    changed  */
     margin: 5%;
-font-family: 'Cormorant Garamond', serif;
+font-family: 'Montserrat', sans-serif;
     font-size: 30px;
 		padding:3% 5%;
 		font-weight: 600;
@@ -669,7 +670,7 @@ html {
         padding-left: 20px;
         padding-right: 10px;
         width: 50%;
-				font-family: 'Cormorant Garamond', serif;
+			font-family: 'Montserrat', sans-serif;
     }
 
     .content {

@@ -20,6 +20,7 @@ body{
 	font-size: 22px;
 	font-weight: -500;
 	padding: 0 8px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .bat,
@@ -124,18 +125,19 @@ body{
 .our-team{
     padding: 1% 3%;
     background: #fff;
-    margin-top: 30px;  
+    margin-top: 30px;
 }
 .our-team h5{
-    font-family: Montserat;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
 }
 .illustration-text{
     display: flex;
     flex-direction: row;
-    align-items: center; 
+    align-items: center;
     margin: 3% 0;
+    font-family: 'Montserrat', sans-serif;
 }
 @media (max-width: 800px){
     .illustration-text{
@@ -148,16 +150,19 @@ body{
 }
 .illustration-text .text{
 /*    changed  */
-    margin: 5%; 
-    font-family: Montserat;
+    margin: 5%;
+  font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
 .illustration-text img{
     width: 100%;
     height: auto;
 }
-
-/*............card css.............*/ 
+.title{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+}
+/*............card css.............*/
 
 /* mentor's card css start*/
 
@@ -166,6 +171,7 @@ body{
       justify-content: center;
       align-items: center;
       min-height: 85vh;
+      font-family: 'Montserrat', sans-serif;
     }
 
     .mentor-container {
@@ -231,7 +237,7 @@ body{
       margin-top: -40px;
       transition-delay: 0.2s;
     }
-    
+
 /* mentor's card css ends*/
 
 /* mentee's card css start*/
@@ -271,6 +277,7 @@ body{
     font-size: 24px;
     font-weight: bold;
     margin: 25px 0 10px 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .links{
@@ -294,7 +301,7 @@ body{
 @media screen and (max-width: 800px) {
     .profile-container{
         flex-direction: column;
-        
+
     }
     .profile-card {
         padding: 20px 15px;
@@ -303,12 +310,13 @@ body{
 
     .profile-name {
         font-size: 16px;
+        font-family: 'Montserrat', sans-serif;
     }
     .open {
         width: 35%;
     }
 }
-/* mentee's card css ends */  
+/* mentee's card css ends */
 
 /* Code of conduct and licence CSS*/
 
@@ -336,7 +344,7 @@ body{
 .box1 a img{
     width: 100%;
     height: auto;
-    
+
 }
 @media (max-width: 800px){
     .code-licence{
@@ -367,8 +375,8 @@ i:hover{
 }
 
 .Also-visit h5, .title{
-    font-family: Montserat;
-    font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
     text-align: center;
 }
 .Also-visit ul{
@@ -378,12 +386,12 @@ i:hover{
     align-items: center;
 }
 .Also-visit ul li{
-    
+
     list-style: none;
     padding: 1%;
-    font-family: Montserat;
+  font-family: 'Montserrat', sans-serif;
     font-size: 17px;
-    
+
 }
 .Also-visit ul li a{
     text-decoration: none;
