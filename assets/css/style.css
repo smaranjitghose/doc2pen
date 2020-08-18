@@ -353,7 +353,7 @@ video {
 
 
 #intro-text {
-	font-weight: 300px;
+	font-weight: normal;
 	font-size: 60px;
 	padding-top: 100px;
 	padding-left: 100px;
@@ -388,7 +388,7 @@ video {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     font-size: 3.5em;
-		font-weight: 500;
+		font-weight:normal;
 
 }
 
@@ -413,7 +413,7 @@ video {
 font-family: 'Montserrat', sans-serif;
     font-size: 30px;
 		padding:3% 5%;
-		font-weight: 600;
+		font-weight:normal;
 
 }
 .illustration-text img{
@@ -525,7 +525,7 @@ html {
 	padding-top: 5%;
 	margin: 50px;
 	font-size: 70px;
-	font-weight: 300;
+	font-weight: normal;
 	text-align: center;
 }
 
@@ -621,7 +621,7 @@ html {
 	text-align: center;
 	font-size: 1.5em;
 	font-family: 'Montserrat', sans-serif;
-	font-weight: 400;
+	font-weight: normal;
 }
 
 @media screen and (max-width: 64rem){
