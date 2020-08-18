@@ -2,6 +2,8 @@ body {
 	color: var(--font-color);
 	background-color: var(--color-primary);
 	display: inline;
+	margin: 0;
+	padding: 0;
 }
 
 #dataField {
