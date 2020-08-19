@@ -1,14 +1,14 @@
 myData = `The quick brown fox jumps over the lazy dog`;
-let img,
-  myFont = [];
-myFonts = 7;
-imgNum = 1;
-fontNum = 0;
-pageNum = 1;
-xaxis = 20;
-yaxis = 20;
-fontsize = 30;
-w = 700;
+let img = [],
+  myFont = [],
+myFonts = 7,
+imgNum = 8,
+fontNum = 0,
+pageNum = 0,
+xaxis = 20,
+yaxis = 20,
+fontsize = 30,
+w = 700,
 linespacing = false;
 
 function preload()
@@ -25,7 +25,7 @@ function setup() {
 
 function draw()
  {
-  image(img, 0, 0, width, height);
+  image(img[pageNum], 0, 0, width, height);
   textFont(myFont[fontNum]);
   textSize(fontsize);
   fill("#264180");
@@ -52,5 +52,13 @@ function changeFont()
 
 function loadPage() 
 {
-  img = loadImage("assets/images/default_page.jpg");
+  for (var i = 0; i < imgNum; i++)
+  {
+    img.push(loadImage("assets/images/pages/page (" + str(i) + ").jpg"));
+  }
+}
+
+function changePage(){
+  pageNum += 1;
+  pageNum %= imgNum;
 }
