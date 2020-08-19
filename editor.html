@@ -14,6 +14,8 @@
 		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="assets/css/navigation.css">
 
+		<!--jquery link-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     	<!--Icons-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		
@@ -57,14 +59,16 @@
 	</div>
 	<center>
 		<section class="container" id="examples">
-			<h3 class="title">Write Text</h3>
+			<h3 class="title">Write Your Text </h3>
+			<h6>Word Limit (10000 words only)</h6>
 			<form onsubmit="return false">
 				<div class="row">
 					<div class="input-field col s12">
 						<i class="material-icons prefix">mode_edit</i>
-						<textarea placeholder="Enter the text you want to be written on paper..." id="dataField"
-							onkeyup="myData = this.value" class="materialize-textarea"></textarea>
+						<textarea placeholder="Enter the text you want to be written on paper..." name="dataField" id="dataField"
+						onkeyup= "myData = this.value" class="materialize-textarea"></textarea>
 						<label for="text">Text</label>
+						<span style="float: right; color:green; font-weight:bold;" id="count-words">10000</span> 
 					</div>
 				</div>
 				<input class="button-primary button-large download-image hidden" type="file" id="pageUploader"
