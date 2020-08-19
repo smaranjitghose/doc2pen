@@ -56,8 +56,8 @@ window.onload = function () {
         //word count and limit
             $("#dataField").on('keydown', function(e) {
       var words = $.trim(this.value).length ? this.value.match(/\S+/g).length : 0;
-      if (words <= 5) {
-          $('#count-words').text(5-words)
+      if (words <= 10000) {
+          $('#count-words').text(10000-words)
       }
       else{
           if (e.which !== 8) e.preventDefault();
