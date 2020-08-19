@@ -607,10 +607,10 @@ margin: 10px;
 
 .cards .card {
 	position: relative;
-	box-shadow: 2em 2em 2em rgba(0,0,0,.3);
+	box-shadow: 1em 1em 1em rgba(0,0,0,.3);
 	 border: solid #6C63FF;
   /* padding: 10px; */
-  border-radius: 50px 30px;
+  border-radius: 50px 50px;
 flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -631,7 +631,7 @@ flex-direction: column;
 	align-items: center;
 	z-index: 1;
 	transform: translateY(100px);
-
+border-radius: 50px 50px 0 0 ;
 }
 
 .cards .card:hover .face.face1{
@@ -649,10 +649,9 @@ flex-direction: column;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 20px;
-	box-sizing: border-box;
-	box-shadow: 0 20px 50px whitesmoke;
-	  border-radius: 50px 30px;
+	padding: 10px;
+ border: solid #FFF;
+	border-radius: 50px 50px;
 	transform: translateY(-100px);
 }
 
@@ -665,9 +664,9 @@ flex-direction: column;
 }
 
 .cards .card:hover .face.face1 .content img{
-	/* max-width: 100px; */
-	transition: 0.5s;
-	margin-top:20px;
+	 max-width: 130px; 
+	transition: 0.7s;
+	margin-top:30px;
 }
 
 .cards .card .face.face1 .content {
@@ -738,11 +737,11 @@ grid-gap: auto;
 	/* padding: 2rem;
 	padding-top: 1.75rem;
 	padding-bottom: 0%; */
- display: grid;
+ /*display: grid;
   grid-gap: 40px;
    grid-template-columns: auto auto auto auto;
   box-shadow: 2em 2em 2em rgba(0,0,0,.3);
-	/* border: 2px solid black;
+	 border: 2px solid black;
   /* padding: 10px;
   border-radius: 50px 30px;
 }
@@ -801,6 +800,7 @@ grid-gap: auto;
 }
 
 .editor-button button {
+	align-self: center;
 	width:140px;
 	height:50px;
 	border:2px solid #34495e;
@@ -824,6 +824,7 @@ grid-gap: auto;
 }
 
 .button-effect {
+align-self: center;
 	width:140px;
 	height:50px;
 	left:-140px;
