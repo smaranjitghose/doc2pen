@@ -52,3 +52,14 @@ window.onload = function () {
                     setTheme('theme-light');
                 }
             })();
+
+           <!--word count-->
+            function wordCount(self,maxlimit){
+              var spaces = self.value.match(/\S+/g);
+              var words = spaces ? spaces.length :0;
+              if ( words > maxlimit ) {
+                return false;
+              }else{
+             document.getElementById("count-words").innerHTML = words + "words";}
+           
+            }
