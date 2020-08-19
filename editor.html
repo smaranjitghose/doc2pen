@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="assets/css/custom.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/navigation.css">
+	<link rel="stylesheet" href="assets/css/drop.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
@@ -59,20 +60,17 @@
 	</div>
 	<center>
 		<section class="container" id="examples">
-			<h3 class="title">Write Text </h3>
+			<h3 class="title">Write Your Text </h3>
+			<h6>Word Limit (10000 words only)</h6>
 			<form onsubmit="return false">
 				<div class="row">
 					<div class="input-field col s12">
 						<i class="material-icons prefix">mode_edit</i>
 						
 						<textarea placeholder="Enter the text you want to be written on paper..." name="dataField" id="dataField"
-						onkeyup= "myData = this.value,wordCount(this,5)" class="materialize-textarea"></textarea>
-						
+						onkeyup= "myData = this.value" class="materialize-textarea"></textarea>
 						<label for="text">Text</label>
-						<span style="float: right" id="count-words">0</span>
-						
-						
-						
+						<span style="float: right; color:green; font-weight:bold;" id="count-words">10000</span> 
 					</div>
 				</div>
 				<input class="button-primary button-large download-image hidden" type="file" id="pageUploader"
@@ -91,6 +89,7 @@
 					<div class="col m2"><a class="labels blue waves-effect waves-light btn"
 							onclick="save(str(pageNum++))">Download Page</a></div>
 				</div>
+	
 				<div class="row center ">
 					<div class="col s2 offset-s1">
 						<label>Adjust X axis</label>
@@ -145,6 +144,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
 	<script src="assets/js/script.js"></script>
 	<script src="assets/js/sketch.js"></script>
+	<script src="assests/js/drop.js"></script>
 </body>
 
 </html>

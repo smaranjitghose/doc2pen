@@ -52,14 +52,14 @@ window.onload = function () {
                     setTheme('theme-light');
                 }
             })();
-
-           <!--word count-->
-            function wordCount(self,maxlimit){
-              var spaces = self.value.match(/\S+/g);
-              var words = spaces ? spaces.length :0;
-              if ( words > maxlimit ) {
-                return false;
-              }else{
-             document.getElementById("count-words").innerHTML = words + "words";}
-           
-            }
+            
+        //word count and limit
+            $("#dataField").on('keydown', function(e) {
+      var words = $.trim(this.value).length ? this.value.match(/\S+/g).length : 0;
+      if (words <= 5) {
+          $('#count-words').text(5-words)
+      }
+      else{
+          if (e.which !== 8) e.preventDefault();
+      }
+    });
