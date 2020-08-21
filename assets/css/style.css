@@ -5,7 +5,7 @@ html,body
     width: 100%;
     margin: 0px;
     padding: 0px;
-	overflow-x: hidden; 
+	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
 
@@ -379,7 +379,7 @@ body {
 				transform-origin: top;
 	}
 }
-  
+
 .gif-wrapper {
 	text-align: center;
 	z-index: 0;
@@ -393,8 +393,8 @@ body {
 .heartbeat {
 	animation: beat .45s infinite alternate;
 	transform-origin: center;
-	border: none; 
-	text-decoration: none; 
+	border: none;
+	text-decoration: none;
 	background: white;
 }
 
@@ -451,7 +451,8 @@ body {
     display: flex;
     flex-direction: row;
 
-    align-items: center; 
+    align-items: center;
+
     margin: 2% 0;
 
 }
@@ -467,7 +468,8 @@ body {
 .illustration-text .text{
 /*    changed  */
 
-    margin: 5%; 
+    margin: 5%;
+
     font-family: Montserat;
     font-size: 1.75rem;
 
@@ -572,11 +574,11 @@ html {
     font-family: 'Montserrat', sans-serif;
 }
 /* Cards CSS */
-/* .feature-block {
+.feature-block {
 	background-color: #ebecf1;
 	margin-top:10px;
  	height: 100vh;
-} */
+}
 
 #key-titles {
 	font-family: 'Montserrat', sans-serif;
@@ -585,43 +587,55 @@ html {
 
 	font-size: 40px;
 	font-weight: 300;
-	font-family: 'Bitter', serif; 
-	color: #3366CC; 
+	font-family: 'Bitter', serif;
+	color: #3366CC;
 	padding-top: 0%;
 }
 
-/* .cards {
-	margin-left: 100px;
-	margin-top: 50px;
 
-	width: 1000px;
+.cards {
+	 /* margin-left: 100px;  */
+margin: 10px;
+	width: inherit;
+
 	position: relative;
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-gap: auto;
+  grid-template-columns: auto auto auto auto;
+	justify-content: space-evenly;
 }
 
 .card {
-	margin: 5%;
-    grid-gap: 40px;
-    grid-template-columns: auto auto auto auto;
-    margin-left: -1.5%;
+
+	margin: inherit;
+
+    /* margin-left: -1.5%; */
+
 }
 
 .card-image {
-	width: 98%;
-	height: 170px;
+	width: inherit;
+	height: inherit;
     grid-gap: 2px;
     grid-template-columns: auto auto auto auto;
 }
 
 .cards .card {
 	position: relative;
+	box-shadow: 1em 1em 1em rgba(0,0,0,.3);
+	 border: solid #6C63FF;
+  /* padding: 10px; */
+  border-radius: 50px 50px;
+flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .cards .card .face {
-	width: 300px;
+	width: 280px;
 	height: 200px;
 	transition: 0.5s;
+
 }
 
 .cards .card .face.face1 {
@@ -632,10 +646,12 @@ html {
 	align-items: center;
 	z-index: 1;
 	transform: translateY(100px);
+border-radius: 50px 50px 0 0 ;
 }
 
 .cards .card:hover .face.face1{
 	transform: translateY(0px);
+
 }
 
 .cards .card:hover .face.face1 p{
@@ -644,13 +660,15 @@ html {
 
 .cards .card .face.face2 {
 	position: relative;
-	background: #d0a1d6;
+
+	background:  #6C63FF;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 20px;
-	box-sizing: border-box;
-	box-shadow: 0 20px 50px whitesmoke;
+	padding: 10px;
+ border: solid #FFF;
+	border-radius: 50px 50px;
 	transform: translateY(-100px);
 }
 
@@ -663,13 +681,13 @@ html {
 }
 
 .cards .card:hover .face.face1 .content img{
-	max-width: 100px;
-	transition: 0.5s;
-	margin-top:20px;
+	 max-width: 130px; 
+	transition: 0.7s;
+	margin-top:30px;
 }
 
 .cards .card .face.face1 .content {
-	font-size: 20px;
+	font-size: 16px;
 	transition: 0.5s;
 }
 
@@ -687,54 +705,43 @@ html {
 	font-weight: normal;
 }
 
-@media screen and (max-width: 64rem){
-  .cards{
-    width: calc(33.333333% - 2rem);
-  }
-}
-
-@media screen and (max-width: 48rem){
-  .cards{
-    width: calc(50% - 2rem);
-  }
-}
-
-@media screen and (max-width: 32rem){
-  .cards{
-    width: 100%;
-    margin: 0 0 2rem 0;
-  }
-} */
-/* @media all and (max-width: 500px) {
-  .card { */
-    /* On small screens, we are no longer using row direction but column */
-    /* flex-direction: row;
-  }
-} */
-
-.cards{
-    display: flex;
-    flex-direction: row;
-    margin-top: 8px;
-}
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     .cards {
         font-size: 18px;
 
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .cards{
-        flex-direction: column;
+display: grid;
+grid-gap: auto;
+ justify-content: space-evenly;
+    grid-template-columns: auto auto;
 
     }
-    /* .card {
+ .card {
+	display: grid;
         padding-left: 20px;
         padding-right: 10px;
-        width: 50%;
+        width: auto;
 
-    } */
+    }
+
+}
+
+@media screen and (max-width: 600px)  {
+    .cards{
+
+       display: grid;
+grid-gap: auto;
+    grid-template-columns: auto;
+
+
+    }
+     .card {
+        padding-left: 20px;
+        padding-right: 10px;
+
+        width: auto;
+
+    }
+
 
     .content {
         font-size: 16px;
@@ -743,11 +750,8 @@ html {
 }
 
 
-
-/*--------------------------------------*/ 
-
 /* Added CSS (Modified ones are there above) */
-
+/*
 #features {
 	position: relative;
     z-index: 1;
@@ -757,11 +761,18 @@ html {
 
 .card-layout {
 	margin: 2rem;
-	padding: 2rem;
+	/* padding: 2rem;
 	padding-top: 1.75rem;
-	padding-bottom: 0%;
+	padding-bottom: 0%; */
+ /*display: grid;
+  grid-gap: 40px;
+   grid-template-columns: auto auto auto auto;
+  box-shadow: 2em 2em 2em rgba(0,0,0,.3);
+	 border: 2px solid black;
+  /* padding: 10px;
+  border-radius: 50px 30px;
 }
-  
+
 .card-image-feature {
 	display: block;
 	width: 100%;
@@ -809,13 +820,14 @@ html {
     margin: 0;
 	width: 100%;
 	margin-bottom: 0;
-}
+} */
 
 .editor-button {
 	align-self: center;
 }
 
 .editor-button button {
+	align-self: center;
 	width:140px;
 	height:50px;
 	border:2px solid #34495e;
@@ -839,6 +851,7 @@ html {
 }
 
 .button-effect {
+align-self: center;
 	width:140px;
 	height:50px;
 	left:-140px;
@@ -855,4 +868,3 @@ html {
 .editor-button button:hover span{
 	color:#fff;
 }
-

@@ -3,10 +3,29 @@
 	<head>
 		<!--SEO-->
 		<meta charset="utf-8">
+
+		<!-- Google -->
 		<title>Doc2Pen | Editor </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="author" content="Smaranjit Ghose">
 		<meta name="description" content="Convert your assignments into handwritten ones">
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://doc2pen.smaranjitghose.codes/">
+		<meta property="og:title" content="Doc2Pen">
+		<meta property="og:description" content="Convert your assignments into handwritten ones and also allow us to download documents easily.">
+		<meta property="og:image" content="https://user-images.githubusercontent.com/40017559/90778869-cc08b900-e31a-11ea-954c-b5ae760f5242.png">
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://doc2pen.smaranjitghose.codes/">
+		<meta property="twitter:title" content="Doc2Pen">
+		<meta property="twitter:description" content="Convert your assignments into handwritten ones and also allow us to download documents easily.">
+		<meta property="twitter:image" content="https://user-images.githubusercontent.com/40017559/90778869-cc08b900-e31a-11ea-954c-b5ae760f5242.png">
+
+		<!-- Logo in Page Title -->
+		<link rel="shortcut icon" href="https://user-images.githubusercontent.com/40017559/90778869-cc08b900-e31a-11ea-954c-b5ae760f5242.png">
 
 		<!--CSS-->
 		<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
@@ -14,6 +33,8 @@
 		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="assets/css/navigation.css">
 
+		<!--jquery link-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     	<!--Icons-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		
@@ -57,14 +78,16 @@
 	</div>
 	<center>
 		<section class="container" id="examples">
-			<h3 class="title">Write Text</h3>
+			<h3 class="title">Write Your Text </h3>
+			<h6>Word Limit (10000 words only)</h6>
 			<form onsubmit="return false">
 				<div class="row">
 					<div class="input-field col s12">
 						<i class="material-icons prefix">mode_edit</i>
-						<textarea placeholder="Enter the text you want to be written on paper..." id="dataField"
-							onkeyup="myData = this.value" class="materialize-textarea"></textarea>
+						<textarea placeholder="Enter the text you want to be written on paper..." name="dataField" id="dataField"
+						onkeyup= "myData = this.value" class="materialize-textarea"></textarea>
 						<label for="text">Text</label>
+						<span style="float: right; color:green; font-weight:bold;" id="count-words">10000</span> 
 					</div>
 				</div>
 				<input class="button-primary button-large download-image hidden" type="file" id="pageUploader"
@@ -74,7 +97,7 @@
 				<div class="row">
 					<div class="col m2  offset-m1"><a class="labels blue waves-effect waves-light btn"
 							id="btnPageUpload">Upload Page</a></div>
-					<div class="col m2"><a class="labels blue waves-effect waves-light btn" onclick="loadPage()">Default
+					<div class="col m2"><a class="labels blue waves-effect waves-light btn" onclick="changePage()">Switch
 							Page</a></div>
 					<div class="col m2"><a class="labels blue waves-effect waves-light btn"
 							onclick="changeFont()">Switch Font</a></div>
