@@ -70,6 +70,11 @@ Addons:
 <h4 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 <a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h4></a>
 
+<h2 align = "center">Current Contributors</h2>
+
+<p align = "center"><a href="https://github.com/smaranjitghose/doc2pen/graphs/contributors"><img src="https://contributors-img.web.app/image?repo=smaranjitghose/doc2pen" />
+</a></p>
+
 <a href="./Code_of_conduct.md"><h2 align= "center"><b> Code of Conduct</b></h2></a> 
 <p align="center"><img width=35% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif"></p>
 

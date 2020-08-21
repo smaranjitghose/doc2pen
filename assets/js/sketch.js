@@ -2,6 +2,7 @@ myData = `The quick brown fox jumps over the lazy dog`;
 let img,
   myFont = [];
 myFonts = 7;
+myPages = 7;
 imgNum = 1;
 fontNum = 0;
 pageNum = 1;
@@ -40,7 +41,7 @@ function draw()
 function fontLoad()
 {
   for (var i = 0; i < myFonts; i++)
-   {
+  {
     myFont.push(loadFont("assets/fonts/font (" + str(i) + ").ttf"));
   }
 }
@@ -57,5 +58,5 @@ function changeFont()
 
 function loadPage() 
 {
-  img = loadImage("assets/images/default_page.jpg");
+  img = loadImage("assets/images/pages/page (0).jpg");
 }

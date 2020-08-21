@@ -27,8 +27,9 @@ textarea {
 	font-size: 0.65rem;
 	margin: 0;
 	background: #1496bb;
-	border-radius: 15px;
+	/* border-radius: 15px; */
 	padding: 0.5%;
+	box-shadow: 2px 1px #636161, -2px -1px #fdf2f2;
 }
 
 .button-style:hover {

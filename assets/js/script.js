@@ -1,3 +1,7 @@
+
+
+
+
 window.onload = function () {
   var fileupload = document.getElementById("pageUploader");
   var button = document.getElementById("btnPageUpload");
@@ -9,7 +13,9 @@ window.onload = function () {
     var reader = new FileReader();
     reader.readAsDataURL(fileupload.files[0]);
     reader.onload = function (e) {
-      img = loadImage(e.target.result);
+      img.push(loadImage(e.target.result));
+      imgNum += 1;
+      pageNum = imgNum - 1;
     };
   };
 
@@ -28,6 +34,7 @@ window.onload = function () {
       fontNum = myFonts - 1;
     };
   };
+
 };
 // function to set a given theme/color-scheme
 function setTheme(themeName) {
