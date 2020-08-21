@@ -1,9 +1,14 @@
+html,body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+}
+
 body {
 	color: var(--font-color);
 	background-color: var(--color-primary);
 	display: inline;
-	margin: 0;
-	padding: 0;
 }
 
 #dataField {
@@ -11,15 +16,28 @@ body {
 }
 textarea {
 	border: solid 1px var(--button-color);
+	width: 100%;
 }
 
 .hidden {
 	display: none;
 }
 
+.button-style {
+	font-size: 0.65rem;
+	margin: 0;
+	background: #1496bb;
+	border-radius: 15px;
+	padding: 0.5%;
+}
+
+.button-style:hover {
+	transform: scale(1.1);
+}
+
 .inline-btn {
-	margin-right: 10px !important;
-	margin-left: 10px !important;
+	margin-right: 3rem !important;
+	margin-left: 3rem !important;
 	color: var(--color-primary);
 	background: var(--button-color);
 	border: solid 1px var(--button-color);
@@ -28,6 +46,28 @@ textarea {
 .inline-btn:hover {
 	background-color: var(--button-color-hover) !important;
 	border: none !important;
+}
+
+.container {
+	left: 50%;
+}
+
+.criteria-class {
+	width: 45vw; 
+	padding: 1%; 
+	margin-right: 1%;
+}
+
+.contribute-wrapper {
+	padding: 1%;
+	margin: 1rem;
+}
+
+#contributing {
+	margin: 0%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .footer {
@@ -102,15 +142,16 @@ label {
 	--glow1: #fff;
 	--glow2: gray;
 }
-.dark-light {
-	display: grid;
+/* .dark-light {
+	/* display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-column-gap: 10px;
 	width: 120px;
-	position: relative;
+	position: relative; 
 	left: 70%;
 	top: 30px;
-}
+	--font-color: white;
+} */
 .theme-light #dataField{
 	color:black;
 }
@@ -131,8 +172,8 @@ label {
 	background: var(--font-color);
 }
 .animation1 {
-	height: 35px;
-	width: 35px;
+	height: 2.5rem;
+	width: 2.5rem;
 	background: var(--color-sun-moon);
 	border-radius: 50%;
 	box-shadow: 0 0 12px 3px #fff;
@@ -153,3 +194,18 @@ label {
 	}
 }
 /* End of CSS for changing theme light and dark */
+
+@media (max-width: 1500px) {
+	.criteria-class {
+		width: 100%;
+		/* display: flex; 
+		justify-content: center; */
+	}
+	.contribute-wrapper {
+		margin: 0 auto;
+	}
+	/* .container {
+		display: flex;
+		justify-content: center;
+	} */
+}

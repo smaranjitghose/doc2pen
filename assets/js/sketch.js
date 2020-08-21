@@ -25,6 +25,7 @@ function setup() {
 
 function draw()
  {
+  // background(0, 100, 200);
   image(img, 0, 0, width, height);
   textFont(myFont[fontNum]);
   textSize(fontsize);
@@ -43,6 +44,10 @@ function fontLoad()
     myFont.push(loadFont("assets/fonts/font (" + str(i) + ").ttf"));
   }
 }
+
+// function windowResized() {
+//   resizeCanvas((windowWidth), (windowHeight));
+// }
 
 function changeFont()
 {
