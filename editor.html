@@ -125,9 +125,9 @@
 
 				
 				<!--nav bar for editing features-->
-				<nav class="nav-extended blue">
+				<nav class="nav-extended blue edit-features">
 					<div class="nav-wrapper">
-						<ul>
+      			<ul>
 							<li><a id="btnPageUpload">Upload Page</a></li>
 							<li><a onclick="changePage()">Switch Page</a></li>
 							<li><a onclick="changeFont()">Switch Font</a></li>
@@ -137,16 +137,17 @@
 							<li><a onclick="save(str(pageNum++))">Download</a></li>
 						</ul>
 					</div>
+
 					<div class="nav-content">
 						<div class="row center">
 							<div class="col s2 offset-s1">
-								<label class="white-text"> Adjust X axis</label>
+								<label class="white-text">X axis</label>
 								<p class="range-field">
 									<input type="range"  min="1" max="200" value="20" oninput="xaxis=float(this.value)">
 								</p>
 							</div>
 							<div class="col s2">
-								<label class="white-text">Adjust Y axis</label>
+								<label class="white-text">Y axis</label>
 								<p class="range-field">
 									<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)">
 								</p>
