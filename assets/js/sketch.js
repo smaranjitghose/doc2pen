@@ -62,3 +62,13 @@ function changePage(){
   pageNum += 1;
   pageNum %= imgNum;
 }
+
+function chooseFont(x){
+  fontNum = x;
+  fontNum %= myFonts;
+}
+
+function choosePage(x){
+  pageNum = x;
+  pageNum %= imgNum;
+}

@@ -68,3 +68,5 @@ $("#dataField").on("keydown", function (e) {// function event
     if (e.which !== 8) e.preventDefault();//prevent user to enter more text
   }
 });
+
+$(".dropdown-trigger").dropdown();
