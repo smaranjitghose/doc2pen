@@ -18,7 +18,13 @@ function preload()
 }
 
 function setup() {
-  canvas = createCanvas(750, 1000);
+  let canvasHeight;
+  if(screen.width <= 995){
+    canvasHeight = screen.width * 0.9
+  } else {
+    canvasHeight = screen.width * 0.73;
+  }
+  canvas = createCanvas(0.86*canvasHeight, canvasHeight);
   canvas.parent("contributing");
   rectMode(CORNER);
 }
@@ -60,5 +66,15 @@ function loadPage()
 
 function changePage(){
   pageNum += 1;
+  pageNum %= imgNum;
+}
+
+function chooseFont(x){
+  fontNum = x;
+  fontNum %= myFonts;
+}
+
+function choosePage(x){
+  pageNum = x;
   pageNum %= imgNum;
 }
