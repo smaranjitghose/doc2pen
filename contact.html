@@ -12,7 +12,8 @@
       <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="assets/css/style.css">
       <link rel="stylesheet" href="assets/css/contact.css">
-      
+      <link rel="stylesheet" href="assets/css/navigation.css">
+
       <!--Bootstrap-->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
@@ -85,10 +86,11 @@
           </div>
         </div>
     </div>
-      
-        <nav class="white">
+
+        <!--Navbar-->      
+        <nav class="white" style="font-family: 'Montserrat', sans-serif;">
             <div class="nav-wrapper">
-              <a href="#!" class="brand-logo black-text">Doc2Pen</a>
+              <a href="index.html" class="brand-logo black-text">Doc<span class="blue-text">2</span>Pen</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="black-text material-icons">menu</i></a>
               <ul class="right hide-on-med-and-down">
                 <li ><a class="black-text" href="index.html">Home</a></li>
@@ -97,13 +99,88 @@
               </ul>
             </div>
           </nav>
-        
+
           <ul class="sidenav" id="mobile-demo">
             <li><a href="index.html">Home</a></li>
             <li><a href="editor.html">Editor</a></li>
             <li  class="active" ><a href="contact.html">Contact</a></li>
           </ul>
-        
+          </br>
+
+          <!--Contact section-->
+          <section id="contact">
+            <div class="container">
+              <h5 class="title">Get in Touch</h5>
+              </br>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="illustration">
+                    <img class="contact-side" src="assets/images/contactbg.png" alt="team-pic">
+                </div>
+                </div>
+                <div class="col-md-6">
+                  <form class="contactt">
+                    <div class="form-group">
+                      <div class="input-group-prepend" style="  padding-right: 5px;">
+                        <span class="icon input-group-text" style="height: 46px; width:35px">
+                          <i class="fa fa-user"></i>&nbsp
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" name="name" value="" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group-prepend" style="  padding-right: 5px;">
+                        <span class="icon input-group-text" style="height: 46px; width:35px">
+                          <i class="fa fa-envelope"></i>
+                        </span>
+                      </div>
+                      <input type="email" class="form-control" name="email" value="" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group-prepend" style="  padding-right: 5px;">
+                        <span class="icon input-group-text" style="height: 46px; width:35px">
+                          <i class="fa fa-phone"></i>&nbsp
+                        </span>
+                      </div>
+                      <input type="tel" class="form-control" name="phone" value="" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group-prepend" style="  padding-right: 5px;">
+                        <span class="icon input-group-text" style="height: 79px; width:35px">
+                          <i class="fa fa-paper-plane-o" aria-hidden="true"></i>&nbsp
+                        </span>
+                      </div>
+                      <textarea class="form-control" name="message" rows="3" placeholder="Message"></textarea>
+                    </div>
+                    <button class="gradient-button gradient-button-4 float-right">Submit</button>
+                  </form>
+                </div>
+              </div>
+              </div>
+          </section>
+
+          <!--Map section-->
+          <section id="googlemap">
+            <div class="container">
+              <h5 class="title">Location</h5>
+              </br>
+              <div class="row">        
+                <div class="col-md-6">
+                  <div class="illustration  text-center">
+                    <img class="map-side" src="assets/images/location.png" alt="team-pic">
+                    <div class="text">
+                      <h1>Mumbai</h1>
+                      <p>Lorem ipsum, lorem ipsum - 400123</p>
+                  </div>
+                </div>
+                </div>
+                <div class="col-md-6">
+                  <div id="googleMap" frameborder="0" style="border:0" allowfullscreen></div>
+                </div>        
+              </div>
+              </div>
+          </section>
+     
     <!--   header with illustrations and contents   -->
         <header>
             <div class="our-team">   
@@ -236,14 +313,24 @@
     </section>                     
 <!--  Mentee's Cards div starts -->
 <!--  Card Css ends  -->
-        
-         
+      <!--Map script-->
+      <script>
+      function myMap() {
+      var mapProp= {
+        center:new google.maps.LatLng(20.593683,78.962883),
+        zoom:5,
+      };
+      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwBNNqr6mhDwUV04NEexaI4elCBzGzveQ&callback=myMap"></script>
+
       <script src="assets/js/jquery.js" ></script>
       <script type="text/javascript" src="assets/js/materialize.min.js"></script>
       <script>
-          $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
+              $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
       </script>
       <script>
         $(document).ready(function() {

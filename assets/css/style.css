@@ -34,6 +34,10 @@ html,body
 	left: 48%;
 }
 
+.nav-wrapper a:hover{
+		text-decoration: none;
+}
+
 /* h1.main,
 p.demos {
 	-webkit-animation-delay: 3s;

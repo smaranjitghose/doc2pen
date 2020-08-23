@@ -12,6 +12,7 @@
       <link rel="stylesheet" href="assets/css/style.css">
       <link rel="stylesheet" href="assets/css/footer.css">
       <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
+      <link rel="stylesheet" href="assets/css/navigation.css">
 
       <!-- Font -->
       <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -22,8 +23,11 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
       <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+      <!--jquery link-->
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	
       <!-- Animate On Scroll library -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" />
     </head>
@@ -73,9 +77,10 @@
         </div>
       </div>
 
-      <nav class="white">
+       <!--Navbar-->  
+      <nav class="white" style="font-family: 'Montserrat', sans-serif;">
           <div class="nav-wrapper">
-            <a href="index.html" class="brand-logo black-text">Doc2Pen</a>
+            <a href="index.html" class="brand-logo black-text">Doc<span class="blue-text">2</span>Pen</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="black-text material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
               <li class="active"><a class="black-text" href="index.html">Home</a></li>
