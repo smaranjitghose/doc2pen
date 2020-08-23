@@ -106,6 +106,7 @@
           />
           
           </div>
+          <!--Upload from GDrive button added-->
           <div class="row">
             <div class="dropdown show col m2">
               <a class="labels blue waves-effect waves-light btn" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -116,35 +117,8 @@
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" id="btnPageUpload">Upload from Computer</a>
                 <a class="dropdown-item" id="authorize_button">Upload from GDrive</a>
-                <!-- <a class="dropdown-item" href="#">Something else here</a> -->
               </div>
             </div>
-            <!-- Button trigger modal -->
-
-            <!-- <pre id="content" style="white-space: pre-wrap;"></pre> -->
-            <!-- <div class="col m2 offset-m1">
-              <a
-                class="labels blue waves-effect waves-light btn"
-                id="btnPageUpload"
-                >Upload Page</a>
-              >
-            </div> -->
-            <!-- Add buttons to initiate auth sequence and sign out -->
-            <!-- <button id="authorize_button">
-              Authorize
-            </button> -->
-            <!-- <div class="dropdown">
-              <button onclick="myFunction()" class="dropbtn labels blue waves-effect waves-light btn">Upload Page</button>
-              <div id="myDropdown" class="dropdown-content">
-                <a class="dropdown-item" id="btnPageUpload">Upload from Computer</a>
-                <a class="dropdown-item" id="authorize_button">Upload from GDrive</a>
-              </div>
-            </div> -->
-            <!-- <div class="col m2">
-              <button id="signout_button" class="labels blue waves-effect waves-light btn" style="display: none;">Sign Out</button>
-            </div> -->
-            
-
             
             <div class="col m2">
               <a
@@ -239,6 +213,7 @@
             </div>
           </div>
         </form><br>
+        <!-- Google drive file list -->
         <div id="content" class="align-bottom"></div><br>
         <div id="contributing"></div>
       </section>
@@ -254,6 +229,7 @@
         </p>
       </section>
     </footer>
+    <!-- Bootstrap script -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -264,36 +240,15 @@
         $(".sidenav").sidenav();
       });
     </script>
-    <!-- <script>
-      /* When the user clicks on the button, 
-      toggle between hiding and showing the dropdown content */
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-      
-      // Close the dropdown if the user clicks outside of it
-      window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
-          }
-        }
-      }
-      </script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/sketch.js"></script>
+    <!-- Google drive interation script -->
     <script async defer src="https://apis.google.com/js/api.js"
     onload="this.onload=function(){};handleClientLoad()"
     onreadystatechange="if (this.readyState === 'complete') this.onload()">
   </script>
     <script src="assets/js/gdrive.js"></script>
-    <!-- <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script> -->
     
   </body>
 </html>

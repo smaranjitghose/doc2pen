@@ -13,10 +13,7 @@ var DISCOVERY_DOCS = [
 var SCOPES = "https://www.googleapis.com/auth/drive.metadata.readonly";
 
 var authorizeButton = document.getElementById("authorize_button");
-var signoutButton = document.getElementById("signout_button");
-
-// Get the button that opens the modal
-var btn = document.getElementById("content");
+// var signoutButton = document.getElementById("signout_button");
 
 /**
  *  On load, called to load the auth2 library and API client library.
@@ -116,7 +113,3 @@ function listFiles() {
       }
     });
 }
-
-btn.onclick = function (listFiles) {
-  modal.style.display = "block";
-};
