@@ -307,7 +307,7 @@ p.demos {
 		opacity: 1;
 		transform: scale(1) rotate(0deg);
 	}
-} */
+} 
 
 .loading {
 	margin-top: 27%;
@@ -359,7 +359,7 @@ p.demos {
 	to {
 		transform: rotate(-360deg);
 	}
-}
+}*/
 
 body {
 	font-family: 'Montserrat', sans-serif;
@@ -857,4 +857,8 @@ align-self: center;
 
 .editor-button button:hover span{
 	color:#fff;
+}
+
+#p5_loading{
+	visibility: hidden;
 }
