@@ -16,3 +16,6 @@ i.right{
   display: flex;
 
 }
+input[type=range]+.thumb .value{
+  display: none !important;
+}
