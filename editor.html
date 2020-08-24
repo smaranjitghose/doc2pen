@@ -3,22 +3,45 @@
 	<head>
 		<!--SEO-->
 		<meta charset="utf-8">
+
+		<!-- Google -->
 		<title>Doc2Pen | Editor </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="author" content="Smaranjit Ghose">
 		<meta name="description" content="Convert your assignments into handwritten ones">
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://doc2pen.smaranjitghose.codes/">
+		<meta property="og:title" content="Doc2Pen">
+		<meta property="og:description" content="Convert your assignments into handwritten ones and also allow us to download documents easily.">
+		<meta property="og:image" content="https://user-images.githubusercontent.com/40017559/90778869-cc08b900-e31a-11ea-954c-b5ae760f5242.png">
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://doc2pen.smaranjitghose.codes/">
+		<meta property="twitter:title" content="Doc2Pen">
+		<meta property="twitter:description" content="Convert your assignments into handwritten ones and also allow us to download documents easily.">
+		<meta property="twitter:image" content="https://user-images.githubusercontent.com/40017559/90778869-cc08b900-e31a-11ea-954c-b5ae760f5242.png">
+
+		<!-- Logo in Page Title -->
+		<link rel="shortcut icon" href="https://user-images.githubusercontent.com/40017559/90778869-cc08b900-e31a-11ea-954c-b5ae760f5242.png">
 
 		<!--CSS-->
 		<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
 		<link rel="stylesheet" href="assets/css/custom.css">
 		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="assets/css/navigation.css">
+		<link rel="stylesheet" href="assets/css/editor.css">
 
 		<!--jquery link-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     	<!--Icons-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">  
+		</script>   
+
     	<!-- Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
 		<script>
@@ -53,10 +76,10 @@
 	</ul>
 
 
-	<div class="container-fluid dark-light">
+	<!-- <div class="container-fluid dark-light">
 		<button id="switch" onclick="toggleTheme()">Light</button>
 		<div class="animation1"></div>
-	</div>
+	</div> -->
 	<center>
 		<section class="container" id="examples">
 			<h3 class="title">Write Your Text </h3>
@@ -75,50 +98,84 @@
 					onclick="">
 				<input class="button-primary button-large download-image hidden" type="file" id="fontUploader"
 					onclick="">
-				<div class="row">
-					<div class="col m2  offset-m1"><a class="labels blue waves-effect waves-light btn"
-							id="btnPageUpload">Upload Page</a></div>
-					<div class="col m2"><a class="labels blue waves-effect waves-light btn" onclick="loadPage()">Default
-							Page</a></div>
-					<div class="col m2"><a class="labels blue waves-effect waves-light btn"
-							onclick="changeFont()">Switch Font</a></div>
-					<div class="col m2 offset-s1"><a class="labels blue waves-effect waves-light btn" id="btnFontUpload"
-							onclick="uploadFont()">Upload Your Font</a></div>
-					<div class="col m2"><a class="labels blue waves-effect waves-light btn"
-							onclick="save(str(pageNum++))">Download Page</a></div>
-				</div>
-				<div class="row center ">
-					<div class="col s2 offset-s1">
-						<label>Adjust X axis</label>
-						<p class="range-field">
-							<input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)">
-						</p>
+
+				
+				<!-- Dropdown List For fonts -->
+				<ul id = "dropdown-font" class = "dropdown-content">  
+					<li><a onclick="chooseFont(0)" class="blue-text">Tarale</a></li>  
+					<li><a onclick="chooseFont(1)" class="blue-text">Liu Jian Mao Cao</a></li>  
+					<li><a onclick="chooseFont(2)" class="blue-text">Caveat</a></li>  
+					<li><a onclick="chooseFont(3)" class="blue-text">Homemade Apple</a></li>  
+					<li><a onclick="chooseFont(4)" class="blue-text">Dewebeauty Demo</a></li>  
+					<li><a onclick="chooseFont(5)" class="blue-text">Antro Vectra</a></li>  
+					<li><a onclick="chooseFont(6)" class="blue-text">Muiden Castle Script</a></li>  
+			 </ul>
+
+				<!-- Dropdown List For pages -->
+				<ul id = "dropdown-page" class = "dropdown-content">  
+					<li><a onclick="choosePage(0)" class="blue-text">Default</a></li>  
+					<li><a onclick="choosePage(1)" class="blue-text">Ruled with margin(thick-lines)</a></li>  
+					<li><a onclick="choosePage(2)" class="blue-text">Ruled Designer</a></li>  
+					<li><a onclick="choosePage(3)" class="blue-text">Plain Designer</a></li>  
+					<li><a onclick="choosePage(4)" class="blue-text">Ruled with margin(thin-lines)</a></li>  
+					<li><a onclick="choosePage(5)" class="blue-text">Ruled without margin</a></li>  
+					<li><a onclick="choosePage(6)" class="blue-text">Plain white texture</a></li>  
+					<li><a onclick="choosePage(7)" class="blue-text">Plain grey texture</a></li>  
+			 </ul>
+
+				
+				<!--nav bar for editing features-->
+				<nav class="nav-extended blue edit-features">
+					<div class="nav-wrapper">
+      			<ul>
+							<li><a id="btnPageUpload">Upload Page</a></li>
+							<li><a onclick="changePage()">Switch Page</a></li>
+							<li><a onclick="changeFont()">Switch Font</a></li>
+							<li><a id="btnFontUpload" onclick="uploadFont()">Upload Font</a></li>
+							<li><a class="dropdown-trigger" data-target="dropdown-page">Choose Page<i class="material-icons right">arrow_drop_down</i></a></li>
+							<li><a class="dropdown-trigger" data-target="dropdown-font">Choose Font<i class="material-icons right">arrow_drop_down</i></a></li>
+							<li><a onclick="save(str(pageNum++))">Download</a></li>
+						</ul>
 					</div>
-					<div class="col s2">
-						<label>Adjust Y axis</label>
-						<p class="range-field">
-							<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)">
-						</p>
+
+					<div class="nav-content">
+						<div class="row center">
+							<div class="col s2">
+								<label class="white-text">X axis</label>
+								<p class="range-field">
+									<input type="range"  min="1" max="200" value="20" >
+								</p>
+							</div>
+							<div class="col s2">
+								<label class="white-text">Y axis</label>
+								<p class="range-field">
+									<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)">
+								</p>
+							</div>
+							<div class="col s2">
+								<label class="white-text">Font Size</label>
+								<p class="range-field">
+									<input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)">
+								</p>
+							</div>
+							<div class="col s2">
+								<label class="white-text">Width</label>
+								<p class="range-field">
+									<input type="range" min="100" max="800" value="700" oninput="w=float(this.value)">
+								</p>
+							</div>
+							<div class="col s2">
+								<label class="white-text">Line Spacing</label>
+								<p class="range-field">
+									<input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)">
+								</p>
+							</div>
+						</div>
 					</div>
-					<div class="col s2">
-						<label>Font Size</label>
-						<p class="range-field">
-							<input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)">
-						</p>
-					</div>
-					<div class="col s2">
-						<label>Width</label>
-						<p class="range-field">
-							<input type="range" min="100" max="800" value="700" oninput="w=float(this.value)">
-						</p>
-					</div>
-					<div class="col s2">
-						<label>Line Spacing</label>
-						<p class="range-field">
-							<input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)">
-						</p>
-					</div>
-				</div>
+				</nav>
+								
+
+				<!--nav bar for editing features end-->
 			</form>
 			<div id="contributing"></div>
 		</section>

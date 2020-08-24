@@ -1,14 +1,14 @@
 myData = `The quick brown fox jumps over the lazy dog`;
-let img,
-  myFont = [];
-myFonts = 7;
-imgNum = 1;
-fontNum = 0;
-pageNum = 1;
-xaxis = 20;
-yaxis = 20;
-fontsize = 30;
-w = 700;
+let img = [],
+  myFont = [],
+myFonts = 7,
+imgNum = 8,
+fontNum = 0,
+pageNum = 0,
+xaxis = 20,
+yaxis = 20,
+fontsize = 30,
+w = 700,
 linespacing = false;
 
 function preload()
@@ -18,14 +18,20 @@ function preload()
 }
 
 function setup() {
-  canvas = createCanvas(750, 1000);
+  let canvasHeight;
+  if(screen.width <= 995){
+    canvasHeight = screen.width * 0.9
+  } else {
+    canvasHeight = screen.width * 0.73;
+  }
+  canvas = createCanvas(0.86*canvasHeight, canvasHeight);
   canvas.parent("contributing");
   rectMode(CORNER);
 }
 
 function draw()
  {
-  image(img, 0, 0, width, height);
+  image(img[pageNum], 0, 0, width, height);
   textFont(myFont[fontNum]);
   textSize(fontsize);
   fill("#264180");
@@ -52,5 +58,23 @@ function changeFont()
 
 function loadPage() 
 {
-  img = loadImage("assets/images/default_page.jpg");
+  for (var i = 0; i < imgNum; i++)
+  {
+    img.push(loadImage("assets/images/pages/page (" + str(i) + ").jpg"));
+  }
+}
+
+function changePage(){
+  pageNum += 1;
+  pageNum %= imgNum;
+}
+
+function chooseFont(x){
+  fontNum = x;
+  fontNum %= myFonts;
+}
+
+function choosePage(x){
+  pageNum = x;
+  pageNum %= imgNum;
 }
