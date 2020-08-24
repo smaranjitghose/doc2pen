@@ -1,22 +1,54 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="theme-dark">
 	<head>
+		<!--SEO-->
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="Smaranjit Ghose,Anush Bhatia">
+
+		<!-- Google -->
+		<title>Doc2Pen | Editor </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Smaranjit Ghose">
+
 		<meta name="description" content="Convert your assignments into handwritten ones">
 		<title>Doc2Pen</title>
 		<link rel="icon" href="assets/images/logo.png">
 		<meta property="og:image" content="https://raw.githubusercontent.com/smaranjitghose/guess_the_gibberish/master/assets/images/logo.png?token=ALD3CX6RTK2IBDCFD3PPTRK6XAAEQ" />
 		<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
 
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://doc2pen.smaranjitghose.codes/">
+		<meta property="og:title" content="Doc2Pen">
+		<meta property="og:description" content="Convert your assignments into handwritten ones and also allow us to download documents easily.">
+		<meta property="og:image" content="https://user-images.githubusercontent.com/40017559/90778869-cc08b900-e31a-11ea-954c-b5ae760f5242.png">
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://doc2pen.smaranjitghose.codes/">
+		<meta property="twitter:title" content="Doc2Pen">
+		<meta property="twitter:description" content="Convert your assignments into handwritten ones and also allow us to download documents easily.">
+		<meta property="twitter:image" content="https://user-images.githubusercontent.com/40017559/90778869-cc08b900-e31a-11ea-954c-b5ae760f5242.png">
+
+		<!-- Logo in Page Title -->
+		<link rel="shortcut icon" href="https://user-images.githubusercontent.com/40017559/90778869-cc08b900-e31a-11ea-954c-b5ae760f5242.png">
+
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<!--	-->
 
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--CSS-->
+		<link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
+		<link rel="stylesheet" href="assets/css/navigation.css">
 		<link rel="stylesheet" href="assets/css/custom.css">
-		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/editor.css">
+
+		<!--jquery link-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    	<!--Icons-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<!-- Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
 		<script>
 		  window.dataLayer = window.dataLayer || [];
@@ -49,69 +81,107 @@
 			<li><a href="contact.html">Contact</a></li>
 		</ul>
 
-		<div class="d-flex dark-light" style="float: right; padding: 1%;">
+		<!-- <div class="d-flex dark-light" style="float: right; padding: 1%;">
 			<div class="animation1"></div>
 			<button id="switch" class="waves-effect waves-light btn" onclick="toggleTheme()" style="margin-left: 0.5rem; box-shadow: 2px 1px #636161, -2px -1px #fdf2f2;">Dark</button>
-		</div>
+		</div> -->
+
+		<!-- Dropdown list for Fonts-->
+		<ul id = "dropdown-font" class = "dropdown-content">  
+			<li><a onclick="chooseFont(0)" class="blue-text">Tarale</a></li>  
+			<li><a onclick="chooseFont(1)" class="blue-text">Liu Jian Mao Cao</a></li>  
+			<li><a onclick="chooseFont(2)" class="blue-text">Caveat</a></li>  
+			<li><a onclick="chooseFont(3)" class="blue-text">Homemade Apple</a></li>  
+			<li><a onclick="chooseFont(4)" class="blue-text">Dewebeauty Demo</a></li>  
+			<li><a onclick="chooseFont(5)" class="blue-text">Antro Vectra</a></li>  
+			<li><a onclick="chooseFont(6)" class="blue-text">Muiden Castle Script</a></li>  
+	 	</ul>
+
+		<!-- Dropdown List For pages -->
+		<ul id = "dropdown-page" class = "dropdown-content">  
+			<li><a onclick="choosePage(0)" class="blue-text">Default</a></li>  
+			<li><a onclick="choosePage(1)" class="blue-text">Ruled with margin(thick-lines)</a></li>  
+			<li><a onclick="choosePage(2)" class="blue-text">Ruled Designer</a></li>  
+			<li><a onclick="choosePage(3)" class="blue-text">Plain Designer</a></li>  
+			<li><a onclick="choosePage(4)" class="blue-text">Ruled with margin(thin-lines)</a></li>  
+			<li><a onclick="choosePage(5)" class="blue-text">Ruled without margin</a></li>  
+			<li><a onclick="choosePage(6)" class="blue-text">Plain white texture</a></li>  
+			<li><a onclick="choosePage(7)" class="blue-text">Plain grey texture</a></li>  
+	 	</ul>
+
+		<!-- Navbar for editing features -->
+		<nav class="nav-extended blue edit-features">
+			<div class="nav-wrapper" style="display: flex; justify-content: center;">
+				<ul>
+					<li><a id="btnPageUpload">Upload Page</a></li>
+					<li><a onclick="changePage()">Switch Page</a></li>
+					<li><a onclick="changeFont()">Switch Font</a></li>
+					<li><a id="btnFontUpload" onclick="uploadFont()">Upload Font</a></li>
+					<li><a class="dropdown-trigger" data-target="dropdown-page">Choose Page<i class="material-icons right">arrow_drop_down</i></a></li>
+					<li><a class="dropdown-trigger" data-target="dropdown-font">Choose Font<i class="material-icons right">arrow_drop_down</i></a></li>
+					<li><a onclick="save(str(pageNum++))">Download</a></li>
+				</ul>
+			</div>
+
+			<div class="nav-content">
+				<div class="row" style="display: flex; justify-content: center;">
+					<div class="col-m-2" style="padding: 0; margin: 1rem;">
+						<label class="white-text">Adjust X axis</label>
+						<p class="range-field">
+						<input  type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" >
+						</p>
+					</div>
+					<div class="col-m-2" style="padding: 0; margin: 1rem;">
+						<label class="white-text">Adjust Y axis</label>
+						<p class="range-field">
+						<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" >
+					</p>
+					</div>
+					<div class="col-m-2" style="padding: 0; margin: 1rem;">
+						<label class="white-text">Font Size</label>
+						<p class="range-field">
+						<input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)">
+					</p>
+					</div>
+					<div class="col-m-2" style="padding: 0; margin: 1rem;">
+						<label class="white-text">Width</label>
+						<p class="range-field">
+						<input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" >
+					</p>
+					</div>
+					<div class="col-m-2" style="padding: 0; margin: 1rem;">
+						<label class="white-text">Line Spacing</label>
+						<p class="range-field">
+						<input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)" >
+					</p>
+					</div>
+				</div>
+			</div>
+		</nav>
 		
 		<div class="row" style="width: 100%;">
-			<div class="col-m-4 criteria-class">
-				<section class="container" id="examples" style="width: 100%; margin-left: 0.5rem;">
-					<h3 class="title text-center">Write Text</h3>
+			<div class="col-m-5 criteria-class">
+				<section class="container" id="examples" style="width: 100%; ">
+					<h3 class="title">Write Your Text </h3>
+					<h6 class="title">Word Limit (10000 words only)</h6>
 					<form onsubmit="return false">
 						<div class = "row" style="display: flex; justify-content: center;">
-							<div class = "input-field col s12">
+							<div class = "input-field col s12"	>
 								<i class = "material-icons prefix">mode_edit</i>
 								<textarea  placeholder="Enter the text you want to be written on paper..." id="dataField" onkeyup="myData = this.value" class = "materialize-textarea"></textarea>
 								<label for = "text">Text</label>
+								<span style="float: right; color:green; font-weight:bold;" id="count-words">10000</span>
 							</div>
 						</div>
 						<input class="button-primary button-large download-image hidden" type="file" id="pageUploader" onclick="">
 						<input class="button-primary button-large download-image hidden" type="file" id="fontUploader" onclick="">
-						<div class="row" style="display: flex; justify-content: center;">
-							<div class="col-m-2" style="padding: 0; margin: 1rem;"><a class="btn btn-primary button-style" id="btnPageUpload">Upload Page</a></div>
-							<div class="col-m-2" style="padding: 0; margin: 1rem;"><a class="btn btn-primary button-style" onclick="loadPage()">Default Page</a></div>
-							<div class="col-m-2" style="padding: 0; margin: 1rem;"><a class="btn btn-primary button-style" onclick="changeFont()">Switch Font</a></div>
-							<div class="col-m-2" style="padding: 0; margin: 1rem;"><a class="btn btn-primary button-style" id="btnFontUpload" onclick="uploadFont()">Upload Your Font</a></div>
-							<div class="col-m-2" style="padding: 0; margin: 1rem;"><a class="btn btn-primary button-style" onclick="save(str(pageNum++))">Download Page</a></div>
-						</div>
-						<div class="row" style="display: flex; justify-content: center;">
-							<div class="col-m-2" style="padding: 0; margin: 1rem;">
-								<label>Adjust X axis</label>
-								<p class="range-field">
-								<input  type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" >
-								</p>
-							</div>
-							<div class="col-m-2" style="padding: 0; margin: 1rem;">
-								<label>Adjust Y axis</label>
-								<p class="range-field">
-								<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" >
-							</p>
-							</div>
-							<div class="col-m-2" style="padding: 0; margin: 1rem;">
-								<label>Font Size</label>
-								<p class="range-field">
-								<input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)">
-							</p>
-							</div>
-							<div class="col-m-2" style="padding: 0; margin: 1rem;">
-								<label>Width</label>
-								<p class="range-field">
-								<input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" >
-							</p>
-							</div>
-							<div class="col-m-2" style="padding: 0; margin: 1rem;">
-								<label>Line Spacing</label>
-								<p class="range-field">
-								<input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)" >
-							</p>
-							</div>
-						</div>
 					</form>
 				</section>
 			</div>
 
-			<div class="col-m-8 contribute-wrapper">
+			<div class="col-m-2 v1"></div>
+
+			<div class="col-m-5 contribute-wrapper">
 				<div id="contributing"></div>
 			</div>
 		</div>

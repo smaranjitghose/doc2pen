@@ -1,0 +1,60 @@
+html,body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+	height: 100%;
+}
+
+/* For the textarea where data to be converted is entered  */
+#dataField {
+	height: 300px;
+}
+
+/* For titles */
+.title {
+	text-align: center;
+}
+
+/* Used in categories of navbar */
+.white-text {
+	font-size: medium;
+	font-weight: bolder;
+}
+
+/* Wrapping the text section */
+.criteria-class {
+	width: 45vw; 
+	padding: 1%; 
+	margin-right: 0.5%;
+}
+
+/* Wrapping the canvas */
+.contribute-wrapper {
+	padding: 1%;
+	padding-right: 0%;
+}
+
+/* To provide responsiveness of the website */
+@media (max-width: 1460px) {
+	/* To keep the textbox and page at the center in tablet/mobile view */
+	.criteria-class, .contribute-wrapper {
+		margin: 0 auto;
+		width: 100%;
+	}
+}
+
+@media (min-width: 1460px) {
+	/* Displaying a line in the middle in desktop view */
+	.v1 {
+		border-left: 2px solid black;
+		height: 140vh;
+		margin-left: 0%;
+	}
+}
+
+@media (max-width: 740px) {
+	.contribute-wrapper {
+		margin-left: 15%;
+	}
+}

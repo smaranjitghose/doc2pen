@@ -11,14 +11,6 @@ body {
 	display: inline;
 }
 
-#dataField {
-	height: 300px;
-}
-textarea {
-	border: solid 1px var(--button-color);
-	width: 100%;
-}
-
 .hidden {
 	display: none;
 }
@@ -34,6 +26,7 @@ textarea {
 
 .button-style:hover {
 	transform: scale(1.1);
+	transition-duration: 0.4s;
 }
 
 .inline-btn {
@@ -47,21 +40,6 @@ textarea {
 .inline-btn:hover {
 	background-color: var(--button-color-hover) !important;
 	border: none !important;
-}
-
-.container {
-	left: 50%;
-}
-
-.criteria-class {
-	width: 45vw; 
-	padding: 1%; 
-	margin-right: 1%;
-}
-
-.contribute-wrapper {
-	padding: 1%;
-	margin: 1rem;
 }
 
 #contributing {
@@ -196,17 +174,3 @@ label {
 }
 /* End of CSS for changing theme light and dark */
 
-@media (max-width: 1500px) {
-	.criteria-class {
-		width: 100%;
-		/* display: flex; 
-		justify-content: center; */
-	}
-	.contribute-wrapper {
-		margin: 0 auto;
-	}
-	/* .container {
-		display: flex;
-		justify-content: center;
-	} */
-}
