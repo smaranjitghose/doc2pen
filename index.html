@@ -21,6 +21,8 @@
 
       <!-- Icons -->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
       <!-- Bootstrap -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -78,23 +80,89 @@
       </div>
 
        <!--Navbar-->  
-      <nav class="white" style="font-family: 'Montserrat', sans-serif;">
+        <!-- <nav class="white" style="font-family: 'Montserrat', sans-serif;">
           <div class="nav-wrapper">
             <a href="index.html" class="brand-logo black-text">Doc<span class="blue-text">2</span>Pen</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="black-text material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-              <li class="active"><a class="black-text" href="index.html">Home</a></li>
-              <li><a class="black-text" href="editor.html">Editor</a></li>
-              <li><a class="black-text" href="contact.html">Contact</a></li>
+              <li class=" active"><a class="abc text" href="index.html">Home</a></li>
+              <li><a class="text" href="editor.html">Editor</a></li>
+              <li><a class="text" href="contact.html">Contact</a></li>
             </ul>
           </div>
-      </nav>
+      </nav> -->
 
-      <ul class="sidenav" id="mobile-demo" style="width: 100%;">
-        <li class="active" ><a href="index.html">Home</a></li>
-        <li><a href="editor.html">Editor</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <nav class="white" style="font-family: 'Montserrat', sans-serif;">
+       <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo black-text">Doc<span class="blue-text">2</span>Pen</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="black-text material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li class="active">
+            <a href="index.html">
+              <div class="icon">
+                <i class="fa fa-home" aria-hidden="true"></i>
+              </div>
+              <div class="name" data-text="home">
+                Home
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="editor.html">
+              <div class="icon">
+                <i class="fa fa-file-text" aria-hidden="true"></i>
+              </div>
+              <div class="name" data-text="home">
+                Editor
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html">
+              <div class="icon">
+                <i class="fa fa-users" aria-hidden="true"></i>
+              </div>
+              <div class="name" data-text="home">
+                Team
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo" style="width: 75%; font-family: 'Montserrat', sans-serif;">
+        <li class="active">
+          <a href="index.html">
+            <div class="icon">
+              <i class="fa fa-home" aria-hidden="true"></i>
+            </div>
+            <div class="name" data-text="home">
+              Home
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="editor.html">
+            <div class="icon">
+              <i class="fa fa-file-text" aria-hidden="true"></i>
+            </div>
+            <div class="name" data-text="home">
+              Editor
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <div class="icon">
+              <i class="fa fa-users" aria-hidden="true"></i>
+            </div>
+            <div class="name" data-text="home">
+              Team
+            </div>
+          </a>
+        </li>
+    </ul>
 
       <script src="assets/js/jquery.js" ></script>
       <script type="text/javascript" src="assets/js/materialize.min.js"></script>

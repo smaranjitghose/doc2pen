@@ -28,6 +28,8 @@
       <!--Icons-->
 
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
       
       <!-- Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
@@ -89,24 +91,77 @@
 
         <!--Navbar-->      
         <nav class="white" style="font-family: 'Montserrat', sans-serif;">
-            <div class="nav-wrapper">
-              <a href="index.html" class="brand-logo black-text">Doc<span class="blue-text">2</span>Pen</a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="black-text material-icons">menu</i></a>
-              <ul class="right hide-on-med-and-down">
-                <li ><a class="black-text" href="index.html">Home</a></li>
-                <li><a class="black-text" href="editor.html">Editor</a></li>
-                <li class="active"><a class="black-text" href="contact.html">Contact</a></li>
-              </ul>
-            </div>
-          </nav>
-
-          <ul class="sidenav" id="mobile-demo">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="editor.html">Editor</a></li>
-            <li  class="active" ><a href="contact.html">Contact</a></li>
-          </ul>
-          </br>
-
+          <div class="nav-wrapper">
+           <a href="index.html" class="brand-logo black-text">Doc<span class="blue-text">2</span>Pen</a>
+           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="black-text material-icons">menu</i></a>
+           <ul class="right hide-on-med-and-down">
+             <li>
+               <a href="index.html">
+                 <div class="icon">
+                   <i class="fa fa-home" aria-hidden="true"></i>
+                 </div>
+                 <div class="name" data-text="home">
+                   Home
+                 </div>
+               </a>
+             </li>
+             <li>
+               <a href="editor.html">
+                 <div class="icon">
+                   <i class="fa fa-file-text" aria-hidden="true"></i>
+                 </div>
+                 <div class="name" data-text="home">
+                   Editor
+                 </div>
+               </a>
+             </li>
+             <li  class="active">
+               <a href="contact.html">
+                 <div class="icon">
+                   <i class="fa fa-users" aria-hidden="true"></i>
+                 </div>
+                 <div class="name" data-text="home">
+                   Team
+                 </div>
+               </a>
+             </li>
+           </ul>
+         </div>
+       </nav>
+   
+       <ul class="sidenav" id="mobile-demo" style="width: 75%; font-family: 'Montserrat', sans-serif;">
+           <li>
+             <a href="index.html">
+               <div class="icon">
+                 <i class="fa fa-home" aria-hidden="true"></i>
+               </div>
+               <div class="name" data-text="home">
+                 Home
+               </div>
+             </a>
+           </li>
+           <li>
+             <a href="editor.html">
+               <div class="icon">
+                 <i class="fa fa-file-text" aria-hidden="true"></i>
+               </div>
+               <div class="name" data-text="home">
+                 Editor
+               </div>
+             </a>
+           </li>
+           <li  class="active">
+             <a href="contact.html">
+               <div class="icon">
+                 <i class="fa fa-users" aria-hidden="true"></i>
+               </div>
+               <div class="name" data-text="home">
+                 Team
+               </div>
+             </a>
+           </li>
+       </ul>
+      </br>
           <!--Contact section-->
           <section id="contact">
             <div class="container">
@@ -115,14 +170,14 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="illustration">
-                    <img class="contact-side" src="assets/images/contactbg.png" alt="team-pic">
+                    <img class="contact-side" src="assets/images/contactbg.svg" alt="team-pic">
                 </div>
                 </div>
                 <div class="col-md-6">
                   <form class="contactt">
                     <div class="form-group">
                       <div class="input-group-prepend" style="  padding-right: 5px;">
-                        <span class="icon input-group-text" style="height: 46px; width:35px">
+                        <span class="iconn input-group-text" style="height: 46px; width:35px">
                           <i class="fa fa-user"></i>&nbsp
                         </span>
                       </div>
@@ -166,17 +221,17 @@
               </br>
               <div class="row">        
                 <div class="col-md-6">
+                  <div id="googleMap" frameborder="0" style="border:0" allowfullscreen></div>
+                </div>  
+                <div class="col-md-6">
                   <div class="illustration  text-center">
-                    <img class="map-side" src="assets/images/location.png" alt="team-pic">
+                    <img class="map-side" src="assets/images/location.svg" alt="team-pic">
                     <div class="text">
                       <h1>Mumbai</h1>
-                      <p>Lorem ipsum, lorem ipsum - 400123</p>
+                      <p>Lorem ipsum, lorem ipsum </br>400123</p>
                   </div>
                 </div>
-                </div>
-                <div class="col-md-6">
-                  <div id="googleMap" frameborder="0" style="border:0" allowfullscreen></div>
-                </div>        
+                </div>      
               </div>
               </div>
           </section>
@@ -319,9 +374,103 @@
       var mapProp= {
         center:new google.maps.LatLng(20.593683,78.962883),
         zoom:5,
+        styles: [
+        { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+        { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+        { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+        {
+          featureType: "administrative.locality",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#d59563" }]
+        },
+        {
+          featureType: "poi",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#d59563" }]
+        },
+        {
+          featureType: "poi.park",
+          elementType: "geometry",
+          stylers: [{ color: "#263c3f" }]
+        },
+        {
+          featureType: "poi.park",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#6b9a76" }]
+        },
+        {
+          featureType: "road",
+          elementType: "geometry",
+          stylers: [{ color: "#38414e" }]
+        },
+        {
+          featureType: "road",
+          elementType: "geometry.stroke",
+          stylers: [{ color: "#212a37" }]
+        },
+        {
+          featureType: "road",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#9ca5b3" }]
+        },
+        {
+          featureType: "road.highway",
+          elementType: "geometry",
+          stylers: [{ color: "#746855" }]
+        },
+        {
+          featureType: "road.highway",
+          elementType: "geometry.stroke",
+          stylers: [{ color: "#1f2835" }]
+        },
+        {
+          featureType: "road.highway",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#f3d19c" }]
+        },
+        {
+          featureType: "transit",
+          elementType: "geometry",
+          stylers: [{ color: "#2f3948" }]
+        },
+        {
+          featureType: "transit.station",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#d59563" }]
+        },
+        {
+          featureType: "water",
+          elementType: "geometry",
+          stylers: [{ color: "#17263c" }]
+        },
+        {
+          featureType: "water",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#515c6d" }]
+        },
+        {
+          featureType: "water",
+          elementType: "labels.text.stroke",
+          stylers: [{ color: "#17263c" }]
+        }
+      ]
       };
       var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      marker = new google.maps.Marker({
+        map,
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+        position: { lat: 20.593683, lng: 78.962883 }
+      });
+      marker.addListener("click", toggleBounce);
       }
+      function toggleBounce() {
+      if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
+    }
       </script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwBNNqr6mhDwUV04NEexaI4elCBzGzveQ&callback=myMap"></script>
 

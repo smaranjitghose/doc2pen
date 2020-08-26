@@ -39,7 +39,7 @@ body{
     margin-bottom:30px;
 }
 
-.icon {
+.iconn {
   height: 46px; 
   width:35px;
   border: none;
@@ -58,8 +58,7 @@ body{
 
 .contact-side{
   /* top:50px; */
-  margin-top: 40px;
-  height: 200px;
+  height: 250px;
   width: 400;
   min-height: 180px;
   min-width: 300px;
@@ -88,6 +87,14 @@ body{
 .gradient-button-4:hover { background-position: right center; }
 
 /* map */
+
+.map-side{
+  margin-top: 20px;
+  height: 250px;
+  width: 400;
+  min-height: 180px;
+  min-width: 300px;
+}
 
 #googlemap #googleMap{
   width:100%;

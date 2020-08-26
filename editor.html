@@ -20,6 +20,7 @@
 		
 		<!--Icons-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 		
 		 <!--jquery link-->
 		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -42,24 +43,77 @@
 <body>
 	
 	 <!--Navbar-->  
-	<nav class="white">
+	 <nav class="white" style="font-family: 'Montserrat', sans-serif;">
 		<div class="nav-wrapper">
-			<a href="index.html" class="brand-logo black-text">Doc<span class="blue-text">2</span>Pen</a>
-			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
-					class="black-text material-icons">menu</i></a>
-			<ul class="right hide-on-med-and-down">
-				<li><a class="black-text" href="index.html">Home</a></li>
-				<li class="active"><a class="black-text" href="editor.html">Editor</a></li>
-				<li><a class="black-text" href="contact.html">Contact</a></li>
-			</ul>
-		</div>
-	</nav>
-
-	<ul class="sidenav" id="mobile-demo">
-		<li><a href="index.html">Home</a></li>
-		<li class="active"><a href="editor.html">Editor</a></li>
-		<li><a href="contact.html">Contact</a></li>
-	</ul>
+		 <a href="index.html" class="brand-logo black-text">Doc<span class="blue-text">2</span>Pen</a>
+		 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="black-text material-icons">menu</i></a>
+		 <ul class="right hide-on-med-and-down">
+		   <li>
+			 <a href="index.html">
+			   <div class="icon">
+				 <i class="fa fa-home" aria-hidden="true"></i>
+			   </div>
+			   <div class="name" data-text="home">
+				 Home
+			   </div>
+			 </a>
+		   </li>
+		   <li  class="active">
+			 <a href="editor.html">
+			   <div class="icon">
+				 <i class="fa fa-file-text" aria-hidden="true"></i>
+			   </div>
+			   <div class="name" data-text="home">
+				 Editor
+			   </div>
+			 </a>
+		   </li>
+		   <li>
+			 <a href="contact.html">
+			   <div class="icon">
+				 <i class="fa fa-users" aria-hidden="true"></i>
+			   </div>
+			   <div class="name" data-text="home">
+				 Team
+			   </div>
+			 </a>
+		   </li>
+		 </ul>
+	   </div>
+	 </nav>
+ 
+	 <ul class="sidenav" id="mobile-demo" style="width: 75%; font-family: 'Montserrat', sans-serif;">
+		 <li>
+		   <a href="index.html">
+			 <div class="icon">
+			   <i class="fa fa-home" aria-hidden="true"></i>
+			 </div>
+			 <div class="name" data-text="home">
+			   Home
+			 </div>
+		   </a>
+		 </li>
+		 <li  class="active">
+		   <a href="editor.html">
+			 <div class="icon">
+			   <i class="fa fa-file-text" aria-hidden="true"></i>
+			 </div>
+			 <div class="name" data-text="home">
+			   Editor
+			 </div>
+		   </a>
+		 </li>
+		 <li>
+		   <a href="contact.html">
+			 <div class="icon">
+			   <i class="fa fa-users" aria-hidden="true"></i>
+			 </div>
+			 <div class="name" data-text="home">
+			   Team
+			 </div>
+		   </a>
+		 </li>
+	 </ul>
 
 
 	<div class="container-fluid dark-light">
