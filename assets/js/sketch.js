@@ -31,6 +31,10 @@ function setup() {
 
 defInk = "#264180";//Default ink
 
+function chooseBlue(){
+  defInk = "#264180"
+}
+
 function chooseRed(){
   defInk = "red";
 }
