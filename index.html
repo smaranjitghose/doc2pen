@@ -50,49 +50,10 @@
     </head>
 
     <body>
-      <div class="spinner-wrapper">
-        <div class="preloader-wrapper big active">
-          <div class="spinner-layer spinner-blue">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-
-          <div class="spinner-layer spinner-red">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-
-          <div class="spinner-layer spinner-yellow">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-
-          <div class="spinner-layer spinner-green">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-        </div>
+      <div class="loader">
+        <img src="assets/images/splash.gif" />
       </div>
+      
 
       <nav class="white">
           <div class="nav-wrapper">
@@ -113,24 +74,7 @@
       </ul>
 
       <script src="assets/js/jquery.js" ></script>
-      <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-      <script>
-        $(document).ready(function(){
-          $('.sidenav').sidenav();
-        });
-      </script>
-      <script>
-        $(document).ready(function() {
-          //Preloader
-          preloaderFadeOutTime = 1500;
-          function hidePreloader() {
-            var preloader = $('.spinner-wrapper');
-            preloader.fadeOut(preloaderFadeOutTime);
-          }
-          hidePreloader();
-        });
-      </script>
-
+      <script src="assets/js/materialize.min.js"></script>
     <!-----------Main Body--------->
 
     <!-- GIF section -->

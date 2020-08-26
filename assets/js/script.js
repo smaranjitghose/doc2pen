@@ -1,7 +1,4 @@
 
-
-
-
 window.onload = function () {
   var fileupload = document.getElementById("pageUploader");
   var button = document.getElementById("btnPageUpload");
@@ -34,29 +31,7 @@ window.onload = function () {
       fontNum = myFonts - 1;
     };
   };
-};// function to set a given theme/color-scheme
-function setTheme(themeName) {
-  localStorage.setItem("theme", themeName);
-  document.documentElement.className = themeName;
-}
-// function to toggle between light and dark theme
-function toggleTheme() {
-  if (localStorage.getItem("theme") === "theme-dark") {
-    setTheme("theme-light");
-    document.getElementById("switch").innerHTML = "Dark";
-  } else {
-    document.getElementById("switch").innerHTML = "Light";
-    setTheme("theme-dark");
-  }
-}
-// Immediately invoked function to set the theme on initial load
-(function () {
-  if (localStorage.getItem("theme") === "theme-dark") {
-    setTheme("theme-dark");
-  } else {
-    setTheme("theme-light");
-  }
-})();
+};
 
 //word count and limit function
 
@@ -68,3 +43,5 @@ $("#dataField").on("keydown", function (e) {// function event
     if (e.which !== 8) e.preventDefault();//prevent user to enter more text
   }
 });
+
+$(".dropdown-trigger").dropdown();
