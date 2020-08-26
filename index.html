@@ -3,10 +3,31 @@
     <head>
       <!--SEO-->
       <meta charset="utf-8">
-      <title>Doc2Pen</title>
+
+      <!-- Google -->
+      <title>Doc2Pen | Convert your Assignments into Handwritten Docs</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="author" content="Smaranjit Ghose">
       <meta name="description" content="Convert your assignments into handwritten ones">
+      <meta name="keyword" content="Doc2Pen, assignment generator, assignment editor, assignment writing, text to handwriting,
+                  my text in handwriting, handwriting text generator, write assignment online, convert text to image, realistic handwriting generator">
+
+      <!-- Open Graph / Facebook -->
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://doc2pen.smaranjitghose.codes/">
+      <meta property="og:title" content="Doc2Pen">
+      <meta property="og:description" content="Convert your assignments into handwritten ones and also allow us to download documents easily.">
+      <meta property="og:image" content="https://user-images.githubusercontent.com/40017559/90778869-cc08b900-e31a-11ea-954c-b5ae760f5242.png">
+
+      <!-- Twitter -->
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:url" content="https://doc2pen.smaranjitghose.codes/">
+      <meta property="twitter:title" content="Doc2Pen">
+      <meta property="twitter:description" content="Convert your assignments into handwritten ones and also allow us to download documents easily.">
+      <meta property="twitter:image" content="https://user-images.githubusercontent.com/40017559/90778869-cc08b900-e31a-11ea-954c-b5ae760f5242.png">
+
+      <!-- Logo in Page Title -->
+      <link rel="shortcut icon" href="https://user-images.githubusercontent.com/40017559/90778869-cc08b900-e31a-11ea-954c-b5ae760f5242.png">
 
       <!-- CSS -->
       <link rel="stylesheet" href="assets/css/style.css">
@@ -35,49 +56,10 @@
     </head>
 
     <body>
-      <div class="spinner-wrapper">
-        <div class="preloader-wrapper big active">
-          <div class="spinner-layer spinner-blue">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-
-          <div class="spinner-layer spinner-red">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-
-          <div class="spinner-layer spinner-yellow">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-
-          <div class="spinner-layer spinner-green">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-        </div>
+      <div class="loader">
+        <img src="assets/images/splash.gif" />
       </div>
+      
 
        <!--Navbar-->  
         <!-- <nav class="white" style="font-family: 'Montserrat', sans-serif;">
@@ -118,7 +100,7 @@
             </a>
           </li>
           <li>
-            <a href="contact.html">
+            <a href="team.html">
               <div class="icon">
                 <i class="fa fa-users" aria-hidden="true"></i>
               </div>
@@ -153,7 +135,7 @@
           </a>
         </li>
         <li>
-          <a href="contact.html">
+          <a href="team.html">
             <div class="icon">
               <i class="fa fa-users" aria-hidden="true"></i>
             </div>
@@ -165,24 +147,7 @@
     </ul>
 
       <script src="assets/js/jquery.js" ></script>
-      <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-      <script>
-        $(document).ready(function(){
-          $('.sidenav').sidenav();
-        });
-      </script>
-      <script>
-        $(document).ready(function() {
-          //Preloader
-          preloaderFadeOutTime = 1500;
-          function hidePreloader() {
-            var preloader = $('.spinner-wrapper');
-            preloader.fadeOut(preloaderFadeOutTime);
-          }
-          hidePreloader();
-        });
-      </script>
-
+      <script src="assets/js/materialize.min.js"></script>
     <!-----------Main Body--------->
 
     <!-- GIF section -->

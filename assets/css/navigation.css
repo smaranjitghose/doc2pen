@@ -30,28 +30,28 @@ ul li{
     padding-right: 10px;
 }
 
-nav ul a{
+.white ul a{
     color: #000;
 }
-nav ul li.active {
+.white ul li.active {
     background-color: #25adec; 
     color:#fff;
     border-radius: 5px 40px;
 }
 
-nav ul li.active a{
+.white ul li.active a{
     background-color: #25adec; 
     color: #fff;
     border-radius: 5px 40px;
 }
 
-nav ul li:hover a {
+.white ul li:hover a {
     background-color: #73cdf7;
     color:#fff;
     border-radius: 5px 40px;
 }
 
-nav ul li:focus a {
+.white ul li:focus a {
     background-color: #73cdf7;
     color:#fff;
     border-radius: 5px 40px;
