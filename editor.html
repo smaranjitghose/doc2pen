@@ -127,6 +127,14 @@
 					<li><a onclick="choosePage(7)" class="blue-text">Plain grey texture</a></li>  
 			 </ul>
 
+			 <!-- Dropdown List For pen colours -->
+			 <ul id = "dropdown-color" class = "dropdown-content">  
+				<li><a onclick="chooseBlue()" class="blue-text">Blue</a></li>  
+				<li><a onclick="chooseRed()" class="red-text">Red</a></li>  
+				<li><a onclick="chooseBlack()" class="black-text">Black</a></li>  
+				<li><a onclick="chooseGreen()" class="green-text">Green</a></li>   
+			</ul>
+
 				
 				<!--nav bar for editing features-->
 				<nav class="nav-extended blue edit-features">
@@ -138,6 +146,7 @@
 							<li><a id="btnFontUpload" onclick="uploadFont()">Upload Font</a></li>
 							<li><a class="dropdown-trigger" data-target="dropdown-page">Choose Page<i class="material-icons right">arrow_drop_down</i></a></li>
 							<li><a class="dropdown-trigger" data-target="dropdown-font">Choose Font<i class="material-icons right">arrow_drop_down</i></a></li>
+							<li><a class="dropdown-trigger" data-target="dropdown-color">Choose Colour<i class="material-icons right">arrow_drop_down</i></a></li>
 							<li><a onclick="save(str(pageNum++))">Download</a></li>
 						</ul>
 					</div>
