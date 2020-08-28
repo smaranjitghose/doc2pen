@@ -38,18 +38,35 @@ function setup() {
   // rectMode(CORNER);
 }
 
+defInk = "#264180";//Default ink
+
+function chooseBlue(){
+  defInk = "#264180"
+}
+
+function chooseRed(){
+  defInk = "red";
+}
+function chooseGreen(){
+  defInk = "green";
+}
+function chooseBlack(){
+  defInk = "black";
+}
+
 function draw()
 {
   image(img[pageNum], 0, 0, width, height);
   textFont(myFont[fontNum]);
   textSize(fontsize);
-  fill("#264180");
+  fill(defInk);
   if (linespacing) {
     textLeading(linespacing);
   }
   data = "\n" + myData;
   text(data, xaxis, yaxis, w, 900);
 }
+
 
 function fontLoad()
 {
@@ -88,3 +105,4 @@ function choosePage(x){
   pageNum = x;
   pageNum %= imgNum;
 }
+

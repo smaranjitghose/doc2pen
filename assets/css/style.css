@@ -828,6 +828,7 @@ grid-gap: auto;
 	box-sizing:border-box;
 	overflow:hidden;
 	margin-left: 33%;
+	margin-bottom: 30px;
 }
 
 .editor-button button span {
