@@ -19,3 +19,74 @@ i.right{
 input[type=range]+.thumb .value{
   display: none !important;
 }
+p.range-field span.thumb span.value{
+  display: block;
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+input[type=range]{
+  width: 100%!important;
+}
+.writing-area{
+  /* border-right: 2px solid black; */
+  padding: 0 40px 0 20px!important;
+}
+.preview-area{
+  border-left: 1px solid black;
+  margin: 30px auto;
+  padding: 0 30px!important;
+}
+.vertical-bar{
+  display: flex!important;
+  flex-direction: column!important;
+}
+.vertical-bar li a{
+  line-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.vertical-bar li a i{
+  font-size: 14px;
+  line-height: 15px;
+  height: 20px;
+}
+.vertical-bar li a.edit{
+  margin: 0;
+  padding: 10px 5px;
+}
+.pr-0{
+  padding-right: 0;
+}
+p.range-field{
+  padding: 0;
+  margin: auto;
+  width: 120px;
+}
+#dataField{
+  height: 500px;
+}
+
+@media only screen and (max-width: 600px){
+  .vertical-bar{
+    display: flex!important;
+    flex-direction: row!important;
+    flex-wrap: wrap;
+  }
+  .vertical-bar li a{
+    line-height: 20px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding: 0 10px;
+    text-align: left;
+  }
+ input[type=range]{
+    width: 70%!important;
+    margin-top: 5px;
+  }
+  .p.range-field{
+    padding: 0;
+    margin: auto;
+    width: 50px;
+  }
+}

@@ -85,7 +85,10 @@
 		<div class="animation1"></div>
 	</div> -->
 	<center>
-		<section class="container" id="examples">
+		<section id="examples">
+		<div class="row">
+		<div class="col s12 l5 writing-area">
+			<!-- <section class="container"> -->
 			<h3 class="title">Write Your Text </h3>
 			<h6>Word Limit (10000 words only)</h6>
 			<form onsubmit="return false">
@@ -98,6 +101,14 @@
 						<span style="float: right; color:green; font-weight:bold;" id="count-words">10000</span> 
 					</div>
 				</div>
+			</form>
+			<!-- </section> -->
+		</div>
+		<div class="col s12 l7 preview-area">
+			<!-- <section class="container"> -->
+				<div class="row">
+				<div class="col s12 m3 vertical-menubar">
+			<form onsubmit="return false">
 				<input class="button-primary button-large download-image hidden" type="file" id="pageUploader"
 					onclick="">
 				<input class="button-primary button-large download-image hidden" type="file" id="fontUploader"
@@ -106,25 +117,25 @@
 				
 				<!-- Dropdown List For fonts -->
 				<ul id = "dropdown-font" class = "dropdown-content">  
-					<li><a onclick="chooseFont(0)" class="blue-text">Tarale</a></li>  
-					<li><a onclick="chooseFont(1)" class="blue-text">Liu Jian Mao Cao</a></li>  
-					<li><a onclick="chooseFont(2)" class="blue-text">Caveat</a></li>  
-					<li><a onclick="chooseFont(3)" class="blue-text">Homemade Apple</a></li>  
-					<li><a onclick="chooseFont(4)" class="blue-text">Dewebeauty Demo</a></li>  
-					<li><a onclick="chooseFont(5)" class="blue-text">Antro Vectra</a></li>  
-					<li><a onclick="chooseFont(6)" class="blue-text">Muiden Castle Script</a></li>  
+					<li><a onclick="chooseFont(0)" class="blue-text edit">Tarale</a></li>  
+					<li><a onclick="chooseFont(1)" class="blue-text edit">Liu Jian Mao Cao</a></li>  
+					<li><a onclick="chooseFont(2)" class="blue-text edit">Caveat</a></li>  
+					<li><a onclick="chooseFont(3)" class="blue-text edit">Homemade Apple</a></li>  
+					<li><a onclick="chooseFont(4)" class="blue-text edit">Dewebeauty Demo</a></li>  
+					<li><a onclick="chooseFont(5)" class="blue-text edit">Antro Vectra</a></li>  
+					<li><a onclick="chooseFont(6)" class="blue-text edit">Muiden Castle Script</a></li>  
 			 </ul>
 
 				<!-- Dropdown List For pages -->
 				<ul id = "dropdown-page" class = "dropdown-content">  
-					<li><a onclick="choosePage(0)" class="blue-text">Default</a></li>  
-					<li><a onclick="choosePage(1)" class="blue-text">Ruled with margin(thick-lines)</a></li>  
-					<li><a onclick="choosePage(2)" class="blue-text">Ruled Designer</a></li>  
-					<li><a onclick="choosePage(3)" class="blue-text">Plain Designer</a></li>  
-					<li><a onclick="choosePage(4)" class="blue-text">Ruled with margin(thin-lines)</a></li>  
-					<li><a onclick="choosePage(5)" class="blue-text">Ruled without margin</a></li>  
-					<li><a onclick="choosePage(6)" class="blue-text">Plain white texture</a></li>  
-					<li><a onclick="choosePage(7)" class="blue-text">Plain grey texture</a></li>  
+					<li><a onclick="choosePage(0)" class="blue-text edit">Default</a></li>  
+					<li><a onclick="choosePage(1)" class="blue-text edit">Ruled with margin(thick-lines)</a></li>  
+					<li><a onclick="choosePage(2)" class="blue-text edit">Ruled Designer</a></li>  
+					<li><a onclick="choosePage(3)" class="blue-text edit">Plain Designer</a></li>  
+					<li><a onclick="choosePage(4)" class="blue-text edit">Ruled with margin(thin-lines)</a></li>  
+					<li><a onclick="choosePage(5)" class="blue-text edit">Ruled without margin</a></li>  
+					<li><a onclick="choosePage(6)" class="blue-text edit">Plain white texture</a></li>  
+					<li><a onclick="choosePage(7)" class="blue-text edit">Plain grey texture</a></li>  
 			 </ul>
 
 			 <!-- Dropdown List For pen colours -->
@@ -139,45 +150,45 @@
 				<!--nav bar for editing features-->
 				<nav class="nav-extended blue edit-features">
 					<div class="nav-wrapper">
-      			<ul>
+      			<ul class="vertical-bar">
 							<li><a id="btnPageUpload">Upload Page</a></li>
 							<li><a onclick="changePage()">Switch Page</a></li>
 							<li><a onclick="changeFont()">Switch Font</a></li>
 							<li><a id="btnFontUpload" onclick="uploadFont()">Upload Font</a></li>
-							<li><a class="dropdown-trigger" data-target="dropdown-page">Choose Page<i class="material-icons right">arrow_drop_down</i></a></li>
-							<li><a class="dropdown-trigger" data-target="dropdown-font">Choose Font<i class="material-icons right">arrow_drop_down</i></a></li>
-							<li><a class="dropdown-trigger" data-target="dropdown-color">Choose Colour<i class="material-icons right">arrow_drop_down</i></a></li>
+							<li><a class="dropdown-trigger pr-0" data-target="dropdown-page">Choose Page<i class="material-icons right">arrow_drop_down</i></a></li>
+							<li><a class="dropdown-trigger pr-0" data-target="dropdown-font">Choose Font<i class="material-icons right">arrow_drop_down</i></a></li>
+							<li><a class="dropdown-trigger pr-0" data-target="dropdown-color">Choose Colour<i class="material-icons right">arrow_drop_down</i></a></li>
 							<li><a onclick="save(str(pageNum++))">Download</a></li>
 						</ul>
 					</div>
 
 					<div class="nav-content">
-						<div class="row center">
-							<div class="col s2">
+						<div class="center vertical-bar">
+							<div>
 								<label class="white-text">X axis</label>
 								<p class="range-field">
-									<input type="range"  min="1" max="200" value="20" >
+									<input type="range"  min="1" max="200" value="20" oninput="xaxis=float(this.value)" >
 								</p>
 							</div>
-							<div class="col s2">
+							<div>
 								<label class="white-text">Y axis</label>
 								<p class="range-field">
 									<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)">
 								</p>
 							</div>
-							<div class="col s2">
+							<div>
 								<label class="white-text">Font Size</label>
 								<p class="range-field">
 									<input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)">
 								</p>
 							</div>
-							<div class="col s2">
+							<div>
 								<label class="white-text">Width</label>
 								<p class="range-field">
 									<input type="range" min="100" max="800" value="700" oninput="w=float(this.value)">
 								</p>
 							</div>
-							<div class="col s2">
+							<div>
 								<label class="white-text">Line Spacing</label>
 								<p class="range-field">
 									<input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)">
@@ -190,7 +201,13 @@
 
 				<!--nav bar for editing features end-->
 			</form>
-			<div id="contributing"></div>
+			</div>
+			<div class="col s12 m9 canvas">
+			<div id="contributing" class="center"></div>
+			</div>
+			</div>
+			</div>
+			</div>
 		</section>
 	</center>
 	<script src="assets/js/jquery.js"></script>

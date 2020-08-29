@@ -18,13 +18,22 @@ function preload()
 }
 
 function setup() {
-  let canvasHeight;
-  if(screen.width <= 995){
-    canvasHeight = screen.width * 0.9
+  // let canvasWidth;
+  var elmnt = document.querySelector(".vertical-menubar");
+  var canvasElmnt = document.querySelector(".canvas");
+  if(screen.width>600){
+    let canvasWidth = canvasElmnt.offsetWidth;
+    let canvasHeight = elmnt.offsetHeight;
+    console.log(canvasHeight);
+    console.log(screen.width);
+    console.log(canvasWidth);
+    canvas = createCanvas(0.99 * canvasWidth, canvasHeight); 
+    
   } else {
-    canvasHeight = screen.width * 0.73;
+    let canvasWidth = elmnt.offsetWidth * 0.95;
+    let canvasHeight = canvasWidth*4/3;
+    canvas = createCanvas(canvasWidth, canvasHeight); 
   }
-  canvas = createCanvas(0.86*canvasHeight, canvasHeight);
   canvas.parent("contributing");
   rectMode(CORNER);
 }
