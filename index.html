@@ -5,10 +5,12 @@
       <meta charset="utf-8">
 
       <!-- Google -->
-      <title>Doc2Pen</title>
+      <title>Doc2Pen | Convert your Assignments into Handwritten Docs</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="author" content="Smaranjit Ghose">
       <meta name="description" content="Convert your assignments into handwritten ones">
+      <meta name="keyword" content="Doc2Pen, assignment generator, assignment editor, assignment writing, text to handwriting,
+                  my text in handwriting, handwriting text generator, write assignment online, convert text to image, realistic handwriting generator">
 
       <!-- Open Graph / Facebook -->
       <meta property="og:type" content="website">
@@ -48,49 +50,10 @@
     </head>
 
     <body>
-      <div class="spinner-wrapper">
-        <div class="preloader-wrapper big active">
-          <div class="spinner-layer spinner-blue">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-
-          <div class="spinner-layer spinner-red">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-
-          <div class="spinner-layer spinner-yellow">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-
-          <div class="spinner-layer spinner-green">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-        </div>
+      <div class="loader">
+        <img src="assets/images/splash.gif" />
       </div>
+      
 
       <nav class="white">
           <div class="nav-wrapper">
@@ -111,24 +74,7 @@
       </ul>
 
       <script src="assets/js/jquery.js" ></script>
-      <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-      <script>
-        $(document).ready(function(){
-          $('.sidenav').sidenav();
-        });
-      </script>
-      <script>
-        $(document).ready(function() {
-          //Preloader
-          preloaderFadeOutTime = 1500;
-          function hidePreloader() {
-            var preloader = $('.spinner-wrapper');
-            preloader.fadeOut(preloaderFadeOutTime);
-          }
-          hidePreloader();
-        });
-      </script>
-
+      <script src="assets/js/materialize.min.js"></script>
     <!-----------Main Body--------->
 
     <!-- GIF section -->
