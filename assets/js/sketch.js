@@ -22,11 +22,20 @@ function setup() {
   if(screen.width <= 995){
     canvasHeight = screen.width * 0.9
   } else {
-    canvasHeight = screen.width * 0.73;
+    canvasHeight = screen.width * 0.65;
   }
   canvas = createCanvas(0.86*canvasHeight, canvasHeight);
   canvas.parent("contributing");
   rectMode(CORNER);
+  // let canvasHeight;
+  // if(screen.width <= 995){
+  //   canvasHeight = screen.width * 0.9
+  // } else {
+  //   canvasHeight = screen.width * 0.73;
+  // }
+  // canvas = createCanvas(0.86*canvasHeight, canvasHeight);
+  // canvas.parent("contributing");
+  // rectMode(CORNER);
 }
 
 defInk = "#16264C";//Default ink colour
@@ -52,7 +61,7 @@ function chooseGolden(){
 }
 
 function draw()
- {
+{
   image(img[pageNum], 0, 0, width, height);
   textFont(myFont[fontNum]);
   textSize(fontsize);
@@ -68,10 +77,11 @@ function draw()
 function fontLoad()
 {
   for (var i = 0; i < myFonts; i++)
-   {
+  {
     myFont.push(loadFont("assets/fonts/font (" + str(i) + ").ttf"));
   }
 }
+
 
 function changeFont()
 {

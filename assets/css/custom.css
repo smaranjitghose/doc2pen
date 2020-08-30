@@ -1,25 +1,37 @@
+html,body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+}
+
 body {
 	color: var(--font-color);
 	background-color: var(--color-primary);
 	display: inline;
-	margin: 0;
-	padding: 0;
-}
-
-#dataField {
-	height: 300px;
-}
-textarea {
-	border: solid 1px var(--button-color);
 }
 
 .hidden {
 	display: none;
 }
 
+.button-style {
+	font-size: 0.65rem;
+	margin: 0;
+	background: #1496bb;
+	/* border-radius: 15px; */
+	padding: 0.5%;
+	box-shadow: 2px 1px #636161, -2px -1px #fdf2f2;
+}
+
+.button-style:hover {
+	transform: scale(1.1);
+	transition-duration: 0.4s;
+}
+
 .inline-btn {
-	margin-right: 10px !important;
-	margin-left: 10px !important;
+	margin-right: 3rem !important;
+	margin-left: 3rem !important;
 	color: var(--color-primary);
 	background: var(--button-color);
 	border: solid 1px var(--button-color);
@@ -28,6 +40,13 @@ textarea {
 .inline-btn:hover {
 	background-color: var(--button-color-hover) !important;
 	border: none !important;
+}
+
+#contributing {
+	margin: 0%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .footer {
@@ -59,3 +78,98 @@ input[type=range]::-ms-thumb {
 	background-color: #4c75f2;
 }
 
+/***** These are to edit the thumb and the text inside the thumb *****/
+input[type=range] + .thumb {
+	background-color: #ffffff;
+}
+input[type=range] + .thumb.active .value {
+	color: #4c75f2;
+	font-weight: 700;
+}
+input[type=range] {
+	position: relative;
+	border: none;
+	outline: none;
+	width: 100%;
+	margin: 15px 0;
+	padding: 0;
+}
+label {
+	color: var(--font-color);
+}
+
+/*CSS for changing theme light and dark*/
+.theme-light {
+	--color-primary: white;
+	--color-back: rgba(225, 225, 225, 0.8);
+	--font-color: #000000;
+	--button-color-hover: #0d3d56;
+	--button-color: #1496bb;
+
+	--color-sun-moon: linear-gradient(45deg, yellow, red);
+	--glow1: white;
+	--glow2: yellow;
+}
+.theme-dark {
+	--color-primary: black;
+	--color-back: rgba(0, 0, 0, 0.8);
+	--font-color: white;
+	--button-color-hover: #272727;
+	--button-color: #9548bb;
+
+	--color-sun-moon: linear-gradient(45deg, gray, white);
+	--glow1: #fff;
+	--glow2: gray;
+}
+/* .dark-light {
+	/* display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 10px;
+	width: 120px;
+	position: relative; 
+	left: 70%;
+	top: 30px;
+	--font-color: white;
+} */
+.theme-light #dataField{
+	color:black;
+}
+.theme-dark #dataField{
+	color:white;
+}
+.dark-light button {
+	color: var(--font-color);
+	background: var(--color-primary);
+	border: solid 1px var(--font-color);
+	border-radius: 10px;
+	padding: 0 15px;
+	transition-duration: 0.4s;
+}
+.dark-light button:hover {
+	transform: scale(1.1);
+	color: var(--color-back);
+	background: var(--font-color);
+}
+.animation1 {
+	height: 2.5rem;
+	width: 2.5rem;
+	background: var(--color-sun-moon);
+	border-radius: 50%;
+	box-shadow: 0 0 12px 3px #fff;
+	animation-name: glow;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+@keyframes glow {
+	0% {
+		box-shadow: 0 0 10px 2px var(--glow1);
+	}
+	50% {
+		box-shadow: 0 0 16px 4px var(--glow2);
+	}
+	100% {
+		box-shadow: 0 0 10px 2px (--glow1);
+	}
+}
+/* End of CSS for changing theme light and dark */
