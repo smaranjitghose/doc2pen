@@ -38,10 +38,10 @@ function setup() {
   // rectMode(CORNER);
 }
 
-defInk = "#264180";//Default ink
+defInk = "#16264C";//Default ink colour
 
 function chooseBlue(){
-  defInk = "#264180"
+  defInk = "#16264C"
 }
 
 function chooseRed(){
@@ -52,6 +52,12 @@ function chooseGreen(){
 }
 function chooseBlack(){
   defInk = "black";
+}
+function choosePink(){
+  defInk = "#e11d74";//pink colour
+}
+function chooseGolden(){
+  defInk = "#ffd571";//golden colour
 }
 
 function draw()
