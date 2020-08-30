@@ -1,7 +1,4 @@
 
-
-
-
 window.onload = function () {
   var fileupload = document.getElementById("pageUploader");
   var button = document.getElementById("btnPageUpload");
@@ -72,3 +69,4 @@ function toggleTheme() {
         setTheme('theme-light');
     }
 })();
+

@@ -18,7 +18,13 @@ function preload()
 }
 
 function setup() {
-  canvas = createCanvas(750, 1000);
+  let canvasHeight;
+  if(screen.width <= 995){
+    canvasHeight = screen.width * 0.9
+  } else {
+    canvasHeight = screen.width * 0.73;
+  }
+  canvas = createCanvas(0.86*canvasHeight, canvasHeight);
   canvas.parent("contributing");
   rectMode(CORNER);
   // let canvasHeight;
@@ -32,18 +38,35 @@ function setup() {
   // rectMode(CORNER);
 }
 
+defInk = "#264180";//Default ink
+
+function chooseBlue(){
+  defInk = "#264180"
+}
+
+function chooseRed(){
+  defInk = "red";
+}
+function chooseGreen(){
+  defInk = "green";
+}
+function chooseBlack(){
+  defInk = "black";
+}
+
 function draw()
 {
   image(img[pageNum], 0, 0, width, height);
   textFont(myFont[fontNum]);
   textSize(fontsize);
-  fill("#264180");
+  fill(defInk);
   if (linespacing) {
     textLeading(linespacing);
   }
   data = "\n" + myData;
   text(data, xaxis, yaxis, w, 900);
 }
+
 
 function fontLoad()
 {
@@ -82,3 +105,4 @@ function choosePage(x){
   pageNum = x;
   pageNum %= imgNum;
 }
+

@@ -5,10 +5,12 @@
       <meta charset="utf-8">
 
       <!-- Google -->
-      <title>Doc2Pen</title>
+      <title>Doc2Pen | Convert your Assignments into Handwritten Docs</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="author" content="Smaranjit Ghose">
       <meta name="description" content="Convert your assignments into handwritten ones">
+      <meta name="keyword" content="Doc2Pen, assignment generator, assignment editor, assignment writing, text to handwriting,
+                  my text in handwriting, handwriting text generator, write assignment online, convert text to image, realistic handwriting generator">
 
       <!-- Open Graph / Facebook -->
       <meta property="og:type" content="website">
@@ -48,49 +50,10 @@
     </head>
 
     <body>
-      <div class="spinner-wrapper">
-        <div class="preloader-wrapper big active">
-          <div class="spinner-layer spinner-blue">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-
-          <div class="spinner-layer spinner-red">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-
-          <div class="spinner-layer spinner-yellow">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-
-          <div class="spinner-layer spinner-green">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-              <div class="circle"></div>
-            </div><div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-        </div>
+      <div class="loader">
+        <img src="assets/images/splash.gif" />
       </div>
+      
 
       <nav class="white">
           <div class="nav-wrapper">
@@ -111,24 +74,7 @@
       </ul>
 
       <script src="assets/js/jquery.js" ></script>
-      <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-      <script>
-        $(document).ready(function(){
-          $('.sidenav').sidenav();
-        });
-      </script>
-      <script>
-        $(document).ready(function() {
-          //Preloader
-          preloaderFadeOutTime = 1500;
-          function hidePreloader() {
-            var preloader = $('.spinner-wrapper');
-            preloader.fadeOut(preloaderFadeOutTime);
-          }
-          hidePreloader();
-        });
-      </script>
-
+      <script src="assets/js/materialize.min.js"></script>
     <!-----------Main Body--------->
 
     <!-- GIF section -->
@@ -245,6 +191,35 @@
         <span>Editor</span>
       </button>
     </div>
+
+     <!-- Footer Section -->
+
+     <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="black-text">Doc2Pen</h5>
+            <p class="black-text text-lighten-5">DOC2PEN is a student's saviour to submit the assignments by just typing them out and getting it handwritten on the go! </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="blue-text">Link</h5>
+            <ul>
+              <li><a class="blue-text text-lighten-2" href="#!">Link 1</a></li>
+              <li><a class="blue-text text-lighten-2" href="#!">Link 2</a></li>
+              <li><a class="blue-text text-lighten-2" href="#!">Link 3</a></li>
+              <li><a class="blue-text text-lighten-2" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container" style="color:black">
+        © 2020 Doc2Pen
+        <a class="black-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
