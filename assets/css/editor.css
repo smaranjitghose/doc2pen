@@ -44,7 +44,7 @@ html,body {
 	}
 }
 
-@media (min-width: 1460px) {
+@media (min-width: 1461px) {
 	/* Displaying a line in the middle in desktop view */
 	.v1 {
 		border-left: 2px solid black;
