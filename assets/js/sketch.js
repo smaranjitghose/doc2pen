@@ -1,7 +1,7 @@
 myData = `The quick brown fox jumps over the lazy dog`;
 let img = [],
   myFont = [],
-myFonts = 7,
+myFonts = 14,
 imgNum = 8,
 fontNum = 0,
 pageNum = 0,
