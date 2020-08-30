@@ -24,7 +24,7 @@ html,body {
 
 /* Wrapping the text section */
 .criteria-class {
-	width: 45vw; 
+	width: 40vw; 
 	padding: 1%; 
 	margin-right: 0.5%;
 }
@@ -36,7 +36,7 @@ html,body {
 }
 
 /* To provide responsiveness of the website */
-@media (max-width: 1460px) {
+@media (max-width: 1500px) {
 	/* To keep the textbox and page at the center in tablet/mobile view */
 	.criteria-class, .contribute-wrapper {
 		margin: 0 auto;
@@ -44,7 +44,7 @@ html,body {
 	}
 }
 
-@media (min-width: 1461px) {
+@media (min-width: 1501px) {
 	/* Displaying a line in the middle in desktop view */
 	.v1 {
 		border-left: 2px solid black;

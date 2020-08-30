@@ -22,7 +22,7 @@ function setup() {
   if(screen.width <= 995){
     canvasHeight = screen.width * 0.9
   } else {
-    canvasHeight = screen.width * 0.73;
+    canvasHeight = screen.width * 0.65;
   }
   canvas = createCanvas(0.86*canvasHeight, canvasHeight);
   canvas.parent("contributing");
