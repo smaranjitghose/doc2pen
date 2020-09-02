@@ -145,12 +145,56 @@
 						  <input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" >
 					  </p>
 					</div>
-          
-					<div class="col-m-2" style="padding: 0; margin: 1rem;">
-						<label class="white-text">Font Size</label>
-						<p class="range-field">
-						  <input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)">
-					  </p>
+				</div>
+				<input class="button-primary button-large download-image hidden" type="file" id="pageUploader"
+					onclick="">
+				<input class="button-primary button-large download-image hidden" type="file" id="fontUploader"
+					onclick="">
+
+				
+				<!-- Dropdown List For fonts -->
+				<ul id = "dropdown-font" class = "dropdown-content">  
+					<li><a onclick="chooseFont(0)" class="blue-text">Tarale</a></li>  
+					<li><a onclick="chooseFont(1)" class="blue-text">Liu Jian Mao Cao</a></li>  
+					<li><a onclick="chooseFont(2)" class="blue-text">Caveat</a></li>  
+					<li><a onclick="chooseFont(3)" class="blue-text">Homemade Apple</a></li>  
+					<li><a onclick="chooseFont(4)" class="blue-text">Dewebeauty Demo</a></li>  
+					<li><a onclick="chooseFont(5)" class="blue-text">Antro Vectra</a></li>  
+					<li><a onclick="chooseFont(6)" class="blue-text">Muiden Castle Script</a></li>
+					<li><a onclick="chooseFont(7)" class="blue-text">Simple font</a></li>
+					<li><a onclick="chooseFont(8)" class="blue-text">Messed font</a></li>
+					<li><a onclick="chooseFont(9)" class="blue-text">Curved font</a></li>
+					<li><a onclick="chooseFont(10)" class="blue-text">Small font</a></li>
+					<li><a onclick="chooseFont(11)" class="blue-text">Clear font</a></li>
+					<li><a onclick="chooseFont(12)" class="blue-text">Thin messed font</a></li>  
+					<li><a onclick="chooseFont(13)" class="blue-text">Thin font</a></li>  
+			 </ul>
+
+				<!-- Dropdown List For pages -->
+				<ul id = "dropdown-page" class = "dropdown-content">  
+					<li><a onclick="choosePage(0)" class="blue-text">Default</a></li>  
+					<li><a onclick="choosePage(1)" class="blue-text">Ruled with margin(thick-lines)</a></li>  
+					<li><a onclick="choosePage(2)" class="blue-text">Ruled Designer</a></li>  
+					<li><a onclick="choosePage(3)" class="blue-text">Plain Designer</a></li>  
+					<li><a onclick="choosePage(4)" class="blue-text">Ruled with margin(thin-lines)</a></li>  
+					<li><a onclick="choosePage(5)" class="blue-text">Ruled without margin</a></li>  
+					<li><a onclick="choosePage(6)" class="blue-text">Plain white texture</a></li>  
+					<li><a onclick="choosePage(7)" class="blue-text">Plain grey texture</a></li>  
+			 </ul>
+
+				
+				<!--nav bar for editing features-->
+				<nav class="nav-extended blue edit-features">
+					<div class="nav-wrapper">
+      			<ul>
+							<li><a id="btnPageUpload">Upload Page</a></li>
+							<li><a onclick="changePage()">Switch Page</a></li>
+							<li><a onclick="changeFont()">Switch Font</a></li>
+							<li><a id="btnFontUpload" onclick="uploadFont()">Upload Font</a></li>
+							<li><a class="dropdown-trigger" data-target="dropdown-page">Choose Page<i class="material-icons right">arrow_drop_down</i></a></li>
+							<li><a class="dropdown-trigger" data-target="dropdown-font">Choose Font<i class="material-icons right">arrow_drop_down</i></a></li>
+							<li><a onclick="save(str(pageNum++))">Download</a></li>
+						</ul>
 					</div>
           
 					<div class="col-m-2" style="padding: 0; margin: 1rem;">
