@@ -85,19 +85,12 @@
 		<div class="animation1"></div>
 	</div> -->
 	<center>
-		<section class="container" id="examples">
-			<h3 class="title">Write Your Text </h3>
-			<h6>Word Limit (10000 words only)</h6>
+		<section class="" id="examples">
+			<div class="row">
+			<div class="col s12 l6 text-input-area">
 			<form onsubmit="return false">
 				<div class="row">
-					<div class="input-field col s12">
-						<i class="material-icons prefix">mode_edit</i>
-						<textarea placeholder="Enter the text you want to be written on paper..." name="dataField" id="dataField"
-						onkeyup= "myData = this.value" class="materialize-textarea"></textarea>
-						<label for="text">Text</label>
-						<span style="float: right; color:green; font-weight:bold;" id="count-words">10000</span> 
-					</div>
-				</div>
+					
 				<input class="button-primary button-large download-image hidden" type="file" id="pageUploader"
 					onclick="">
 				<input class="button-primary button-large download-image hidden" type="file" id="fontUploader"
@@ -137,7 +130,7 @@
 
 				
 				<!--nav bar for editing features-->
-				<nav class="nav-extended blue edit-features">
+				<nav class="nav-extended blue edit-features nav-1">
 					<div class="nav-wrapper">
       			<ul>
 							<li><a id="btnPageUpload">Upload Page</a></li>
@@ -150,7 +143,26 @@
 							<li><a onclick="save(str(pageNum++))">Download</a></li>
 						</ul>
 					</div>
+				</nav>
+			</form>
+		<div class="left-side">
+			<h3 class="title">Write Your Text </h3>
+			<h6>Word Limit (10000 words only)</h6>
 
+			<div class="input-field col s12">
+				<i class="material-icons prefix">mode_edit</i>
+				<textarea placeholder="Enter the text you want to be written on paper..." name="dataField" id="dataField"
+				onkeyup= "myData = this.value" class="materialize-textarea"></textarea>
+				<label for="text">Text</label>
+				<span style="float: right; color:green; font-weight:bold;" id="count-words">10000</span> 
+			</div>
+		</div>
+		
+		</div>
+			</div>
+			<div class="col s12 l6 text-preview-area">
+			<form onsubmit="return false">
+				<nav class="nav-extended blue edit-features">
 					<div class="nav-content">
 						<div class="row center">
 							<div class="col s2">
@@ -186,12 +198,14 @@
 						</div>
 					</div>
 				</nav>
-								
-
+				
 				<!--nav bar for editing features end-->
 			</form>
-			<div id="contributing"></div>
+			<div id="contributing" style="margin-top: 20px; border-left: 1px solid rgba(148, 144, 144, 0.419);"></div>
+			</div>	
+		</div>
 		</section>
+		
 	</center>
 	<script src="assets/js/jquery.js"></script>
 	<script type="text/javascript" src="assets/js/materialize.min.js"></script>

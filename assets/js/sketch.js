@@ -19,12 +19,17 @@ function preload()
 
 function setup() {
   let canvasHeight;
-  if(screen.width <= 995){
-    canvasHeight = screen.width * 0.9
+  if(screen.width <= 600){
+    canvasWidth = screen.width * 0.8;
   } else {
-    canvasHeight = screen.width * 0.73;
+    canvasWidth = screen.width * 0.40;
   }
-  canvas = createCanvas(0.86*canvasHeight, canvasHeight);
+  canvasHeight = canvasWidth * 4/3
+  document.getElementById("dataField").style.height = [canvasHeight- 160] + "px";
+  console.log(document.getElementById("dataField").style.height);
+  console.log(canvasHeight);
+
+  canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent("contributing");
   rectMode(CORNER);
 }

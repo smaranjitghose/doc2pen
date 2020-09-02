@@ -19,3 +19,44 @@ i.right{
 input[type=range]+.thumb .value{
   display: none !important;
 }
+
+.text-preview-area{
+  padding: 0!important;
+}
+.nav-wrapper ul li a{
+  line-height: 40px;
+}
+.nav-wrapper ul li a i{
+  line-height: 30px;
+  height: 20px;
+}
+nav.nav-extended {
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+.nav-content .row{
+  align-items: center;
+  flex-wrap: nowrap;
+}
+/* section#examples{
+  margin-top: 10px;
+} */
+.left-side{
+  padding: 40px;
+}
+@media (min-width: 993px) and (max-width: 1065px){
+  nav.nav-extended {
+    height: 120px;
+  }
+}
+@media only screen and (max-width: 514px){
+  nav.nav-1 {
+    height: 120px;
+  }
+}
+@media only screen and (max-width: 513px){
+  nav.nav-1 {
+    height: 140px;
+  }
+}

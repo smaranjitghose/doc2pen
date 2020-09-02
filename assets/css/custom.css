@@ -7,7 +7,7 @@ body {
 }
 
 #dataField {
-	height: 300px;
+	/* height: 300px; */
 }
 textarea {
 	border: solid 1px var(--button-color);
