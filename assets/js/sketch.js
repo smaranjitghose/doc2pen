@@ -1,7 +1,7 @@
 myData = `The quick brown fox jumps over the lazy dog`;
 let img = [],
   myFont = [],
-myFonts = 7,
+myFonts = 14,
 imgNum = 8,
 fontNum = 0,
 pageNum = 0,
@@ -19,10 +19,13 @@ function preload()
 
 function setup() {
   let canvasHeight;
-  if(screen.width <= 600){
+  if(screen.width <= 600)
+  {
     canvasWidth = screen.width * 0.8;
-  } else {
-    canvasWidth = screen.width * 0.40;
+  } 
+  else 
+  {
+    canvasHeight = screen.width * 0.65;
   }
   canvasHeight = canvasWidth * 4/3
   document.getElementById("dataField").style.height = [canvasHeight- 160] + "px";
@@ -32,12 +35,21 @@ function setup() {
   canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent("contributing");
   rectMode(CORNER);
+  // let canvasHeight;
+  // if(screen.width <= 995){
+  //   canvasHeight = screen.width * 0.9
+  // } else {
+  //   canvasHeight = screen.width * 0.73;
+  // }
+  // canvas = createCanvas(0.86*canvasHeight, canvasHeight);
+  // canvas.parent("contributing");
+  // rectMode(CORNER);
 }
 
-defInk = "#264180";//Default ink
+defInk = "#16264C";//Default ink colour
 
 function chooseBlue(){
-  defInk = "#264180"
+  defInk = "#16264C"
 }
 
 function chooseRed(){
@@ -49,9 +61,15 @@ function chooseGreen(){
 function chooseBlack(){
   defInk = "black";
 }
+function choosePink(){
+  defInk = "#e11d74";//pink colour
+}
+function chooseGolden(){
+  defInk = "#ffd571";//golden colour
+}
 
 function draw()
- {
+{
   image(img[pageNum], 0, 0, width, height);
   textFont(myFont[fontNum]);
   textSize(fontsize);
@@ -67,10 +85,11 @@ function draw()
 function fontLoad()
 {
   for (var i = 0; i < myFonts; i++)
-   {
+  {
     myFont.push(loadFont("assets/fonts/font (" + str(i) + ").ttf"));
   }
 }
+
 
 function changeFont()
 {

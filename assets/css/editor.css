@@ -1,62 +1,60 @@
-body, html{
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-.nav-wrapper{
-  width: 100%;
+html,body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+	height: 100%;
 }
 
-i.right{
-  margin-left: 0 !important;
-}
-.edit-features .nav-wrapper , .edit-features .nav-content .row{
-  display: flex;
-
-}
-input[type=range]+.thumb .value{
-  display: none !important;
+/* For the textarea where data to be converted is entered  */
+#dataField {
+	height: 300px;
 }
 
-.text-preview-area{
-  padding: 0!important;
+/* For titles */
+.title {
+	text-align: center;
 }
-.nav-wrapper ul li a{
-  line-height: 40px;
+
+/* Used in categories of navbar */
+.white-text {
+	font-size: medium;
+	font-weight: bolder;
 }
-.nav-wrapper ul li a i{
-  line-height: 30px;
-  height: 20px;
+
+/* Wrapping the text section */
+.criteria-class {
+	width: 40vw; 
+	padding: 1%; 
+	margin-right: 0.5%;
 }
-nav.nav-extended {
-  height: 90px;
-  display: flex;
-  align-items: center;
+
+/* Wrapping the canvas */
+.contribute-wrapper {
+	padding: 1%;
+	padding-right: 0%;
 }
-.nav-content .row{
-  align-items: center;
-  flex-wrap: nowrap;
+
+/* To provide responsiveness of the website */
+@media (max-width: 1500px) {
+	/* To keep the textbox and page at the center in tablet/mobile view */
+	.criteria-class, .contribute-wrapper {
+		margin: 0 auto;
+		width: 100%;
+	}
 }
-/* section#examples{
-  margin-top: 10px;
-} */
-.left-side{
-  padding: 40px;
+
+@media (min-width: 1501px) {
+	/* Displaying a line in the middle in desktop view */
+	.v1 {
+		border-left: 2px solid black;
+		height: 140vh;
+		margin-left: 0%;
+	}
 }
-@media (min-width: 993px) and (max-width: 1065px){
-  nav.nav-extended {
-    height: 120px;
-  }
-}
-@media only screen and (max-width: 514px){
-  nav.nav-1 {
-    height: 120px;
-  }
-}
-@media only screen and (max-width: 513px){
-  nav.nav-1 {
-    height: 140px;
-  }
+
+@media (max-width: 740px) {
+	.contribute-wrapper {
+		margin-left: 15%;
+	}
 }

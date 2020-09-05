@@ -49,16 +49,21 @@
 
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       
-      <!-- Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
-    
+    <!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+
+		  function gtag() {
+		    dataLayer.push(arguments);
+		  }
+		  gtag('js', new Date());
+
+		  gtag('config', '{{ site.google_analytics }}');
+		</script>
     </head>
 
     <body>
-	      <div class="loader">
-        <img src="assets/images/splash.gif" />
-      </div>
-      
         <nav class="white">
             <div class="nav-wrapper">
               <a href="#!" class="brand-logo black-text">Doc2Pen</a>
@@ -66,7 +71,7 @@
               <ul class="right hide-on-med-and-down">
                 <li ><a class="black-text" href="index.html">Home</a></li>
                 <li><a class="black-text" href="editor.html">Editor</a></li>
-                <li class="active"><a class="black-text" href="contact.html">Contact</a></li>
+                <li class="active"><a class="black-text" href="team.html">Team</a></li>
               </ul>
             </div>
           </nav>
@@ -74,7 +79,7 @@
           <ul class="sidenav" id="mobile-demo">
             <li><a href="index.html">Home</a></li>
             <li><a href="editor.html">Editor</a></li>
-            <li  class="active" ><a href="contact.html">Contact</a></li>
+            <li  class="active" ><a href="team.html">Team</a></li>
           </ul>
         
     <!--   header with illustrations and contents   -->
@@ -218,17 +223,5 @@
     $('.sidenav').sidenav();
   });
       </script>
-      <script>
-        $(document).ready(function() {
-        //Preloader
-        preloaderFadeOutTime = 1500;
-        function hidePreloader() {
-        var preloader = $('.spinner-wrapper');
-        preloader.fadeOut(preloaderFadeOutTime);
-        }
-        hidePreloader();
-        });
-        </script>
     </body>
-      
   </html>
