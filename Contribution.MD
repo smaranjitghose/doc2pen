@@ -1,9 +1,16 @@
-# Contributing
+<h1 align="center"><b> Contributing Guidelines </b></h3> 
 
-When contributing to this repository, please first discuss the change you wish to make via issue,
-email, or any other method with the owners of this repository before making a change. 
 
-Please note we have a code of conduct, please follow it in all your interactions with the project.
+We value all the people who are interested in contributing to Girlscript website boilerplate. This is required to create a unified development environment.These are mostly guidelines, not rules. Use your best judgement, and feel free to propose changes to this document in a pull request.
+
+We want to make contributing to this project as easy and as transparent as possible, whether it's:
+* Reporting a bug
+* Submitting a fix
+* Proposing new features
+
+When contributing to this repository, please first discuss the change you wish to make via issue,email, or any other method with the owners of this repository before making a change. 
+
+Please note we have a <a href="https://github.com/smaranjitghose/doc2pen/blob/master/CODE_OF_CONDUCT.md">code of conduct</a> , please follow it in all your interactions with the project.
 
 ## Pull Request Process
 
@@ -14,77 +21,92 @@ Please note we have a code of conduct, please follow it in all your interactions
 3. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
    do not have permission to do that, you may request the second reviewer to merge it for you.
 
-## Code of Conduct
 
-### Our Pledge
+<h2 align="center"><b> Steps </b></h2> 
 
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to making participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, gender identity and expression, level of experience,
-nationality, personal appearance, race, religion, or sexual identity and
-orientation.
+**1.**  Fork [this](https://github.com/smaranjitghose/doc2pen) repository.
 
-### Our Standards
+**2.**  Clone the forked repository.
 
-Examples of behavior that contributes to creating a positive environment
-include:
+```
+git clone https://github.com/smaranjitghose/doc2pen.git
+```
 
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT5N0HJ9db7jSvcL4dsDscZQBzqQqqKVs0BnO1OVz26glLWKJRY&usqp=CAU" width="300">
 
-Examples of unacceptable behavior by participants include:
+**3.** Navigate to the project directory.
 
-* The use of sexualized language or imagery and unwelcome sexual attention or
-advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic
-  address, without explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+```
+cd doc2pen
+```
 
-### Our Responsibilities
+**4.** Add a reference to the original repository.
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+```
+git remote add upstream https://github.com/smaranjitghose/doc2pen.git
+```
 
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.
+**5.** See changes using
 
-### Scope
+```
+git remote -v
+```
 
-This Code of Conduct applies both within project spaces and in public spaces
-when an individual is representing the project or its community. Examples of
-representing a project or community include using an official project e-mail
-address, posting via an official social media account, or acting as an appointed
-representative at an online or offline event. Representation of a project may be
-further defined and clarified by project maintainers.
+**6.** Create a new branch.
 
-### Enforcement
+```
+git checkout -b <your_branch_name>
+```
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at [INSERT EMAIL ADDRESS]. All
-complaints will be reviewed and investigated and will result in a response that
-is deemed necessary and appropriate to the circumstances. The project team is
-obligated to maintain confidentiality with regard to the reporter of an incident.
-Further details of specific enforcement policies may be posted separately.
+**7.** Always take a pull from the upstream repository to your master branch to keep it at par with the main project.
 
-Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project's leadership.
+```
+git pull upstream master
+```
 
-### Attribution
+**8.** Make changes in the source code after getting yourself assigned by the mentors.
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at [http://contributor-covenant.org/version/1/4][version]
 
-[homepage]: http://contributor-covenant.org
-[version]: http://contributor-covenant.org/version/1/4/
+**9.** Add and then commit your changes.
+
+ ```
+git add .
+git commit -m "<your_commit_message>"
+```
+
+**10.** Push your local branch to the remote repository.
+
+```
+git push -u origin <your_branch_name>
+```
+
+**11.** Create a Pull Request!
+
+**12.** Finally, go to your repository in browser and click on `compare and pull requests`.
+
+**13.** Then add a title and description to your pull request that explains your precious effort.
+
+  <img src="https://user-images.githubusercontent.com/41269164/70219707-47194780-176b-11ea-96c2-d0c401ddb1e0.png" width=600> 
+
+**14.** Click on `Create Pull Request`.
+
+   <img src="https://user-images.githubusercontent.com/41269164/70219836-8d6ea680-176b-11ea-81d5-549093bf0954.png" width=600>
+
+
+**Congratulations!** Sit and relax, you've made your contribution to project.
+
+
+<h2 align="center"><b>Grading for Contributions </b></h2>
+
+You will get the following points on the basis of difficulty of the project. 
+
+| Labels   | Points |        
+| -------- |:------:|
+| Readme   | 3  |
+| Beginner | 5  |
+| Easy     | 10 |
+| Medium   | 15 |
+| Hard     | 10 |
+
+See are you a In Top 50 contributers or not [here](https://hakincodes.tech/Leaderboard.html).
+
