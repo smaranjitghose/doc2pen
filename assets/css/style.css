@@ -19,20 +19,37 @@ html,body
 	margin: 10px;
 	text-align: center;
 }
-.spinner-wrapper {
+.loader{
 	position: fixed;
+	z-index: 999;
 	top: 0;
 	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #fff;
-	z-index: 999999;
+	width: 100%;
+	height: 100%;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-.preloader-wrapper {
-	position: absolute;
-	top: 48%;
-	left: 48%;
+
+.loader > img {
+	width: 100px;
+
 }
+
+.loader.hidden{
+	animation: fadeOut 1s;
+	animation-fill-mode: forwards;
+
+}
+
+@keyframes fadeOut{
+	100% {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
 
 /* h1.main,
 p.demos {
@@ -290,7 +307,7 @@ p.demos {
 		opacity: 1;
 		transform: scale(1) rotate(0deg);
 	}
-} */
+} 
 
 .loading {
 	margin-top: 27%;
@@ -342,7 +359,7 @@ p.demos {
 	to {
 		transform: rotate(-360deg);
 	}
-}
+}*/
 
 body {
 	font-family: 'Montserrat', sans-serif;
@@ -564,6 +581,7 @@ html {
     text-align: center;
     font-family: Poppins;
 }
+
 /* Cards CSS */
 .feature-block {
 	background-color: #ebecf1;
@@ -810,6 +828,7 @@ grid-gap: auto;
 	box-sizing:border-box;
 	overflow:hidden;
 	margin-left: 33%;
+	margin-bottom: 30px;
 }
 
 .editor-button button span {
@@ -840,4 +859,8 @@ align-self: center;
 
 .editor-button button:hover span{
 	color:#fff;
+}
+
+#p5_loading{
+	visibility: hidden;
 }
