@@ -46,6 +46,9 @@
        <!-- Icons -->
        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+       <!--FontAwesome Icons-->
+       <script defer src="https://use.fontawesome.com/releases/v5.13.1/js/all.js"></script>
+
         <!-- Animate On Scroll library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous"/>
 
@@ -82,29 +85,37 @@
         <li><a href="team.html">Team</a></li>
       </ul>
 
+      <script src="assets/js/video.js"></script>
       <script src="assets/js/jquery.js" ></script>
       <script src="assets/js/materialize.min.js"></script>
+
+
 
   <!-----------Main Body--------->
 
 
     <!-- Head with GIF section -->
-    <section>
+    <section class="head-section">
         <div class="row">
-          <div class="col-md-6 head1">
+          <div class="col-lg-5 head1">
             <h1 class="head-heading">Doc2Pen</h1>
             <p class="head-text">Convert your Assignments into Handwritten Documents</p>
-            <a href="editor.html" class="editor-btn" style="border-color:#f6f6ff; margin-top: 2rem;"> Go to Editor</a>
+            <a href="editor.html" class="editor-btn">Go to Editor</a>
           </div>
-          <div class="col-md-6 head2">
-            <div>
-              <img src="assets/video/homepage/doc2pen.gif" class="gif" alt="gif of doc2pen">
+          <div class="col-lg-7 head2">
+            <div class="video-div" style="padding:0;">
+              <video loop class="doc2pen-video" id="video" >
+                <source src="assets\video\homepage\doc2pen.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <button id="play_button" onclick="videoControls()"><i id="fontawesome" class="far fa-play-circle fa-4x"></i></button>
             </div>
           </div>
         </div>
     </section>
 
-    <br><br>
+
+    <br><br><br>
     <!--Scroll Animated Button-->
     <div style="text-align:center;">
       <button class="heartbeat" onclick="location.href='#intro-wrap'">
@@ -152,7 +163,7 @@
           <div class="card hover-card text-center h-100 mx-auto">
             <div class="card-body">
               <img class="img-card" src="assets/images/contact_open_source_license.svg" alt="">
-              <h5 class="card-title">Open Source</h5>
+              <p class="card-head">Open Source</p>
               <div class="overlay">
                 <p class="card-text">Free to use for all</p>
               </div>
@@ -165,9 +176,9 @@
           <div class="card hover-card text-center h-100 mx-auto">
             <div class="card-body">
               <img class="img-card" src="assets/images/custom_fonts_availabe.svg" alt="">
-              <h5 class="card-title">Choose between Fonts</h5>
+              <p class="card-head">Choose between Fonts</p>
               <div class="overlay">
-                <p class="card-text">Use from a variety of custom fonts available or upload your own font</p>
+                <p class="card-text">Use from a variety of custom fonts or upload your own font</p>
               </div>
             </div>
           </div>
@@ -178,7 +189,7 @@
           <div class="card hover-card text-center h-100 mx-auto">
             <div class="card-body">
               <img class="img-card" src="assets/images/accessible_from_mobile.svg" alt="">
-              <h5 class="card-title">Mobile Phone Accessibility</h5>
+              <p class="card-head">Accessible on Mobile Phones</p>
               <div class="overlay">
                 <p class="card-text">Use our website from mobile phones</p>
               </div>
@@ -191,41 +202,16 @@
           <div class="card hover-card text-center h-100 mx-auto">
             <div class="card-body">
               <img class="img-card" src="assets/images/upload_any_doc_easily.svg" alt="">
-              <h5 class="card-title">Download Options</h5>
+              <p class="card-head">Download Options</p>
               <div class="overlay">
-                <p class="card-text">Download your page in various formats like PDF/PNG/DOC/JPEG</p>
+                <p class="card-text">Download your page in various formats like PDF, PNG, DOC, or JPEG</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- FifthCard -->
-        <!-- <div class="col-lg-4 col-md-6 card-col">
-          <div class="card hover-card text-center h-100 mx-auto">
-            <div class="card-body">
-              <img class="img-card" src="assets/images/upload_any_doc_easily.svg" alt="">
-              <h5 class="card-title">Customize your Content</h5>
-              <div class="overlay">
-                <p class="card-text">Stylize your work using various alignment, colour and size options</p>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- SixthCard -->
-        <!-- <div class="col-lg-4 col-md-6 card-col">
-          <div class="card hover-card text-center h-100 mx-auto">
-            <div class="card-body">
-              <img class="img-card" src="assets/images/upload_any_doc_easily.svg" alt="">
-              <h5 class="card-title">Variety of Page Templates Available</h5>
-              <div class="overlay">
-                <p class="card-text">Choose from a variety of page templates</p>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
-    </section> 
+    </section>
 
 
     <!-- Button redirecting to the editor -->
@@ -233,7 +219,7 @@
       <h1 id="key-titles" style="margin-bottom: 2rem;">Why wait more?</h1>
       <h5 class="text-center">Check out the editor already!</h5>
       <div class="" style="text-align:center;" >
-        <a href="editor.html" class="editor-btn" >EDITOR</a>
+        <a href="editor.html" class="editor-btn">EDITOR</a>
       </div>
     </section>
 

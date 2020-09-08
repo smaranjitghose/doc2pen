@@ -1,8 +1,8 @@
 /* CSS file for splash screen */
 html,body {
   width: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
@@ -422,7 +422,7 @@ body {
 
 
 #intro-text {
-	font-weight: 300px;
+	font-weight: 300;
 	font-size: 60px;
 	padding-top: 100px;
 	padding-left: 100px;
@@ -436,8 +436,7 @@ body {
 }
 
 #intro-description {
-    justify-self: center;
-    justify-self: center;
+  justify-content: center;
 	text-align: center;
 	width: 500px;
 	height: 400px;
@@ -482,7 +481,7 @@ body, html {
   margin: 0 20px;
   cursor: pointer;
   pointer-events: all;
-  box-shadow: 5px 5px 0px 0 #3a1372;
+  box-shadow: 5px 5px 0 0 #3a1372;
   overflow: hidden;
   border-radius: 10px;
   object-fit:cover;
@@ -526,7 +525,6 @@ body, html {
 
 /*For three main h1 headings*/
 #key-titles{
-  /* padding-top: 100px;*/
   text-align: center;
   font-weight: bolder;
   font-size:3rem;
@@ -535,18 +533,22 @@ body, html {
 }
 
 /*Head with GIF Section*/
-.head1{
+.head-section{
   background-color:#414499;
-  padding:1rem 3rem;
-  max-height:25.2rem;
   box-shadow:0 10px 8px #888888;
 }
 
+.head-section .row{
+  margin-bottom:0;
+}
+
+.head1{
+  padding-left: 3rem;
+  padding-top: 1rem;
+}
+
 .head2{
-  background-color:#d1d6fa;
-  padding:0;
-  position:relative;
-  box-shadow:0 10px 8px #888888;
+  padding: 0;
 }
 
 .head-heading{
@@ -556,37 +558,57 @@ body, html {
 }
 
 .head-text{
-  margin-top:1rem;
   font-size:1.3rem;
   color:#f6f6ff;
 }
 
-.gif{
-  margin-top:5%;
-  width:100%;
-  right:0;
-  box-shadow:0 10px 8px #888888;
+.head1 .editor-btn{
+  border-color:#f6f6ff;
+  margin-top:3rem;
+  margin-bottom:2rem;
 }
 
-@media screen and (max-width:767.98px) {
+.doc2pen-video{
+  margin: 0;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#play_button{
+  position: absolute;
+  left: 45%;
+  bottom: 45%;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: rgba(0, 0, 0, 0);
+}
+
+/*to make play/pause button visible upon hover*/
+.video-div:hover #play_button{
+  color: #f6f6ffc4;
+}
+
+@media screen and (max-width:1080px) and (min-width:992px) {
   .head1{
-    padding: 1.5rem;
+    padding-left:2rem;
+    padding-top: 0;
+  }
+  .head1 .editor-btn{
+    margin-top:2.5rem;
+  }
+}
+
+@media screen and (max-width:992px){
+  .head1{
+    padding: 0;
     text-align: center;
   }
-}
 
-@media screen and (max-width:1024px) and (min-width: 768px) {
-  .head1{
-    /* box-sizing: border-box; */
-    padding: 0 2rem 1.5rem;
-  }
-  .gif{
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    box-shadow:0 0 0;
+  .head-section .row{
+    padding:0;
   }
 }
 
@@ -655,7 +677,7 @@ body, html {
   box-sizing: border-box;
   border: #494ca2 2px solid;
   background-color:#fbfbfe;
-  border-radius:0%;
+  border-radius:0;
   font-size: 20px;
 }
 
@@ -675,6 +697,10 @@ body, html {
   width: 100%;
   height: 5px;
   transition: .5s ease;
+}
+
+.card-head{
+  font-size: 24px;
 }
 
 .card-text {
@@ -703,6 +729,22 @@ body, html {
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
+@media screen and (max-width:413px) {
+  .features-box{
+    margin:8rem 2rem 1rem;
+  }
+  .card-row{
+    padding: 1rem;
+  }
+
+  .card-head{
+    font-size: 20px;
+  }
+
+  .card-text{
+    font-size: 18px;
+  }
+}
 
 /*Buttons and their Animations*/
 .editor-btn {
