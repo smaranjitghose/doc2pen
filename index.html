@@ -39,22 +39,30 @@
       <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600&display=swap" rel="stylesheet">
 
-      <!-- Icons -->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <!-- Icons -->
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-      <!-- Bootstrap -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+       <!-- Bootstrap -->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-      <!-- Animate On Scroll library -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" />
+        <!-- Animate On Scroll library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous"/>
+        
+        <!-- Google Analytics -->
+		    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
+		    <script>
+		    window.dataLayer = window.dataLayer || [];
+		    function gtag()
+        {
+		    dataLayer.push(arguments);
+		    }
+		    gtag('js', new Date());
+		    gtag('config', '{{ site.google_analytics }}');
+		   </script>
+    
     </head>
 
     <body>
-      <div class="loader">
-        <img src="assets/images/splash.gif" />
-      </div>
-      
-
       <nav class="white">
           <div class="nav-wrapper">
             <a href="index.html" class="brand-logo black-text">Doc2Pen</a>
@@ -62,7 +70,7 @@
             <ul class="right hide-on-med-and-down">
               <li class="active"><a class="black-text" href="index.html">Home</a></li>
               <li><a class="black-text" href="editor.html">Editor</a></li>
-              <li><a class="black-text" href="contact.html">Contact</a></li>
+              <li><a class="black-text" href="team.html">Team</a></li>
             </ul>
           </div>
       </nav>
@@ -70,7 +78,7 @@
       <ul class="sidenav" id="mobile-demo" style="width: 100%;">
         <li class="active" ><a href="index.html">Home</a></li>
         <li><a href="editor.html">Editor</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="team.html">Team</a></li>
       </ul>
 
       <script src="assets/js/jquery.js" ></script>
@@ -118,7 +126,7 @@
      <p class="text-center" id="key-titles"><b>Key Features</b></p>
    </div>
 
-   <!-- FirstCard -->
+   <!-- First Card -->
    <div class="cards">
      <div class="card">
        <div class="face face1">
@@ -134,7 +142,7 @@
        </div>
      </div>
 
-     <!-- SecondCard -->
+     <!-- Second Card -->
      <div class="card">
        <div class="face face1">
          <div class="content">
@@ -192,10 +200,10 @@
       </button>
     </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+     <script>
       AOS.init();
-    </script>
-
+     </script>
+      
   </body>
 </html>

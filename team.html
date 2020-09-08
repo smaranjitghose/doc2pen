@@ -49,16 +49,21 @@
 
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       
-      <!-- Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
-    
+    <!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+
+		  function gtag() {
+		    dataLayer.push(arguments);
+		  }
+		  gtag('js', new Date());
+
+		  gtag('config', '{{ site.google_analytics }}');
+		</script>
     </head>
 
     <body>
-	      <div class="loader">
-        <img src="assets/images/splash.gif" />
-      </div>
-      
         <nav class="white">
             <div class="nav-wrapper">
               <a href="#!" class="brand-logo black-text">Doc2Pen</a>
@@ -66,7 +71,7 @@
               <ul class="right hide-on-med-and-down">
                 <li ><a class="black-text" href="index.html">Home</a></li>
                 <li><a class="black-text" href="editor.html">Editor</a></li>
-                <li class="active"><a class="black-text" href="contact.html">Contact</a></li>
+                <li class="active"><a class="black-text" href="team.html">Team</a></li>
               </ul>
             </div>
           </nav>
@@ -74,7 +79,7 @@
           <ul class="sidenav" id="mobile-demo">
             <li><a href="index.html">Home</a></li>
             <li><a href="editor.html">Editor</a></li>
-            <li  class="active" ><a href="contact.html">Contact</a></li>
+            <li  class="active" ><a href="team.html">Team</a></li>
           </ul>
         
     <!--   header with illustrations and contents   -->
@@ -204,8 +209,208 @@
               </div>
             </div>
 
+        </div>            
+
+         <div class="profile-container">
+          <div class="card__collection clear-fix">
+             <div class="cards cards--two">
+                 <img src="assets/images/resized_images/1.jpg" class="img-responsive" alt="Cards Image">
+                    <span class="cards--two__rect"></span>
+                    <span class="cards--two__tri"></span>
+                    <p style="margin-top: -35px;">Prashant <br> Kumar Gupta</p>
+                    <ul class="cards__list text-center ml-1">
+                      <li><a href="https://github.com/imPGupta" target="_blank"><img class="git-linkedin" src="assets/images/github.svg" style="margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                      <li><a href="#" target="_blank"><img class="git-linkedin"  src="assets/images/linkedin.svg" style="margin: -10px 0px 0px 10px;"></a></li>
+                    </ul>
+            </div>
+          </div>
+            
+        <div class="card__collection clear-fix" style ="object-fit: cover;">
+            <div class="cards cards--two">
+                <img src="assets/images/resized_images/2.png" class="img-responsive" alt="Cards Image" style = "background-size:100% 100%; object-fit: cover;">
+                <span class="cards--two__rect"></span>
+                    <span class="cards--two__tri"></span>
+                  <p style="margin-top: -10px; margin-left: -10px;">Aniruddh Muley</p>
+                
+                <ul class="cards__list text-center ml-1">
+                  <li><a href="https://github.com/Aniruddhmuley2001" target="_blank"><img class="git-linkedin" src="assets/images/github.svg" style= " margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/in/aniruddh-muley-647884193" target="_blank"><img class="git-linkedin"  src="assets/images/linkedin.svg" style="margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                  
+                </ul>
+              </div>
+            </div>
+            
+            
+            <div class="card__collection clear-fix">
+             <div class="cards cards--two">
+
+                 <img src="assets/images/resized_images/3.jpg" class="img-responsive" alt="Cards Image">
+                    <span class="cards--two__rect"></span>
+                    <span class="cards--two__tri"></span>
+                    <p style="margin-top: -10px">Ekjot Kaur</p>
+                    <ul class="cards__list text-center">
+                      <li><a href="https://github.com/EkjotKaur" target="_blank"><img class="git-linkedin" src="assets/images/github.svg" style="margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                      <li><a href="https://www.linkedin.com/in/ekjot-kaur-3211181a1/" target="_blank"><img class="git-linkedin"  src="assets/images/linkedin.svg" style="margin: -10px 0px 0px 10px;"></a></li>
+                    </ul>
+                </div>
+            </div>
+     
+            
+            <div class="card__collection clear-fix">
+            <div class="cards cards--two">
+                <img src="assets/images/resized_images/10.png" class="img-responsive" alt="Cards Image">
+                <span class="cards--two__rect"></span>
+                    <span class="cards--two__tri"></span>
+                    <p style="margin-top: -10px; margin-left: -10px">Debanshu Mutt</p>
+                    <ul class="cards__list text-center">
+                      <li><a href="https://github.com/debanshu08" target="_blank"><img class="git-linkedin" src="assets/images/github.svg" style="margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                      <li><a href="#" target="_blank"><img class="git-linkedin"  src="assets/images/linkedin.svg" style="margin: -10px 0px 0px 10px;"></a></li>
+                    </ul>
+                 
+              </div>
+            </div>
 
         </div>            
+
+         <div class="profile-container">
+          <div class="card__collection clear-fix">
+             <div class="cards cards--two">
+                 <img src="assets/images/resized_images/5.jpg" class="img-responsive" alt="Cards Image">
+                    <span class="cards--two__rect"></span>
+                    <span class="cards--two__tri"></span>
+                    <p style="margin-top: -39px; margin-left: -5px;">Adyasha <br>  Mohanty
+                    </p>
+                    <ul class="cards__list text-center ml-1">
+                      <li><a href="https://github.com/Adyasha8105" target="_blank"><img class="git-linkedin" src="assets/images/github.svg" style="margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                      <li><a href="https://www.linkedin.com/in/adyasha-mohanty-7a6254191/" target="_blank"><img class="git-linkedin"  src="assets/images/linkedin.svg" style="margin: -10px 0px 0px 10px;"></a></li>
+                    </ul>
+            </div>
+          </div>
+            
+        <div class="card__collection clear-fix" style ="object-fit: cover;">
+            <div class="cards cards--two">
+                <img src="assets/images/resized_images/6.png" class="img-responsive" alt="Cards Image" style = "background-size:100% 100%; object-fit: cover;">
+                <span class="cards--two__rect"></span>
+                    <span class="cards--two__tri"></span>
+                  <p style="margin-top: -10px; margin-left: -10px;">shawavisek35</p>
+                
+                <ul class="cards__list text-center ml-1">
+                  <li><a href="https://github.com/shawavisek35" target="_blank"><img class="git-linkedin" src="assets/images/github.svg" style= " margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                    <li><a href="#" target="_blank"><img class="git-linkedin"  src="assets/images/linkedin.svg" style="margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                  
+                </ul>
+              </div>
+            </div>
+            
+            
+            <div class="card__collection clear-fix">
+             <div class="cards cards--two">
+
+                 <img src="assets/images/resized_images/7.jpg" class="img-responsive" alt="Cards Image">
+                    <span class="cards--two__rect"></span>
+                    <span class="cards--two__tri"></span>
+                    <p style="margin-top: -10px">Raksha Jain</p>
+                    <ul class="cards__list text-center">
+                      <li><a href="https://github.com/raksha009" target="_blank"><img class="git-linkedin" src="assets/images/github.svg" style="margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                      <li><a href="https://www.linkedin.com/in/raksha--jain/" target="_blank"><img class="git-linkedin"  src="assets/images/linkedin.svg" style="margin: -10px 0px 0px 10px;"></a></li>
+                    </ul>
+                </div>
+            </div>
+     
+            
+            <div class="card__collection clear-fix">
+            <div class="cards cards--two">
+                <img src="assets/images/resized_images/8.jpg" class="img-responsive" alt="Cards Image">
+                <span class="cards--two__rect"></span>
+                    <span class="cards--two__tri"></span>
+                    <p style="margin-top: -40px; margin-left: -5px">Rutuja <br> Dhanawade</p>
+                    <ul class="cards__list text-center">
+                      <li><a href="https://github.com/rutujadhanawade" target="_blank"><img class="git-linkedin" src="assets/images/github.svg" style="margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                      <li><a href="#" target="_blank"><img class="git-linkedin"  src="assets/images/linkedin.svg" style="margin: -10px 0px 0px 10px;"></a></li>
+                    </ul>
+                 
+              </div>
+            </div>
+
+        </div>            
+
+         <div class="profile-container">
+          <div class="card__collection clear-fix">
+             <div class="cards cards--two">
+                 <img src="assets/images/resized_images/9.jpg" class="img-responsive" alt="Cards Image">
+                    <span class="cards--two__rect"></span>
+                    <span class="cards--two__tri"></span>
+                    <p style="margin-top: -10px; margin-left: 5px;">Himanshu</p>
+                    <ul class="cards__list text-center ml-1">
+                      <li><a href="https://github.com/himanshujaidka" target="_blank"><img class="git-linkedin" src="assets/images/github.svg" style="margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                      <li><a href="#" target="_blank"><img class="git-linkedin"  src="assets/images/linkedin.svg" style="margin: -10px 0px 0px 10px;"></a></li>
+                    </ul>
+            </div>
+          </div>
+            
+        <div class="card__collection clear-fix" style ="object-fit: cover;">
+            <div class="cards cards--two">
+                <img src="assets/images/resized_images/4.png" class="img-responsive" alt="Cards Image" style = "background-size:100% 100%; object-fit: cover;">
+                <span class="cards--two__rect"></span>
+                    <span class="cards--two__tri"></span>
+                  <p style="margin-top: -10px; margin-left: 5px;">Varun Jain</p>
+                
+                <ul class="cards__list text-center ml-1">
+                  <li><a href="https://github.com/varunvj1" target="_blank"><img class="git-linkedin" src="assets/images/github.svg" style= " margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                    <li><a href="#" target="_blank"><img class="git-linkedin"  src="assets/images/linkedin.svg" style="margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                  
+                </ul>
+              </div>
+            </div>
+            
+            
+            <div class="card__collection clear-fix">
+             <div class="cards cards--two">
+
+                 <img src="assets/images/resized_images/11.jpg" class="img-responsive" alt="Cards Image">
+                    <span class="cards--two__rect"></span>
+                    <span class="cards--two__tri"></span>
+                    <p style="margin-top: -40px; margin-left: -14px; font-size: 18px;">Shudhanshu <br> Ranjan</p>
+                    <ul class="cards__list text-center">
+                      <li><a href="https://github.com/shudhanshu03" target="_blank"><img class="git-linkedin" src="assets/images/github.svg" style="margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                      <li><a href="https://www.linkedin.com/in/shudhanshu-ranjan-4725481a2/" target="_blank"><img class="git-linkedin"  src="assets/images/linkedin.svg" style="margin: -10px 0px 0px 10px;"></a></li>
+                    </ul>
+                </div>
+            </div>
+     
+            
+            <div class="card__collection clear-fix">
+            <div class="cards cards--two">
+                <img src="assets/images/resized_images/12.jpg" class="img-responsive" alt="Cards Image">
+                <span class="cards--two__rect"></span>
+                    <span class="cards--two__tri"></span>
+                    <p style="margin-top: -10px; margin-left: -10px;">Bhavya-Sehgal</p>
+                    <ul class="cards__list text-center">
+                      <li><a href="https://github.com/Bhavya-Sehgal" target="_blank"><img class="git-linkedin" src="assets/images/github.svg" style="margin: -10px 0px 0px 10px;"></a>
+                    </li>
+                      <li><a href="https://www.linkedin.com/in/bhavya-sehgal-8914661a2?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BDD2Q5yfJSHef%2FjEcbW23bg%3D%3D" target="_blank"><img class="git-linkedin"  src="assets/images/linkedin.svg" style="margin: -10px 0px 0px 10px;"></a></li>
+                    </ul>
+                 
+              </div>
+            </div>
+
+        </div>            
+
+
     </section>                     
 <!--  Mentee's Cards div starts -->
 <!--  Card Css ends  -->
@@ -218,17 +423,5 @@
     $('.sidenav').sidenav();
   });
       </script>
-      <script>
-        $(document).ready(function() {
-        //Preloader
-        preloaderFadeOutTime = 1500;
-        function hidePreloader() {
-        var preloader = $('.spinner-wrapper');
-        preloader.fadeOut(preloaderFadeOutTime);
-        }
-        hidePreloader();
-        });
-        </script>
     </body>
-      
   </html>
