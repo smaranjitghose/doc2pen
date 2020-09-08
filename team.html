@@ -33,6 +33,8 @@
       <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="assets/css/style.css">
       <link rel="stylesheet" href="assets/css/team.css">
+      <link rel="stylesheet" href="assets/css/footer.css">
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">  
       
       <!--Bootstrap-->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -414,7 +416,40 @@
     </section>                     
 <!--  Mentee's Cards div starts -->
 <!--  Card Css ends  -->
-        
+     
+  <!-- Footer -->
+  <footer class="footer mt-auto">
+    <div class="shadow bg-white rounded">
+      <p class="text-center text-dark pt-5">Thank You for Supporitng Us!</p>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="social">
+              <p class="text-center text-dark">Doc2Pen is an open-source tool built with HTML, CSS, and JavaScript!</p>
+              <p class="text-center text-dark">Check out our <a href="https://github.com/smaranjitghose/doc2pen" target="_blank"> <i class="bm" data-file="github"> </i></a> Github repo!</p>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+          <p class="copyright"> &copy; <script> document.write(new Date().getFullYear()) </script> made with 💖 for open source by Doc2Pen Team</p>
+      </div>
+  </div>
+  </footer>  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js" integrity="sha512-35O/v2b9y+gtxy3HK+G3Ah60g1hGfrxv67nL6CJ/T56easDKE2TAukzxW+/WOLqyGE7cBg0FR2KhiTJYs+FKrw==" crossorigin="anonymous"></script>
+  <script>
+    var bm = document.getElementsByClassName('bm');
+    Array.prototype.forEach.call(bm, icon => {
+      var anim = bodymovin.loadAnimation({
+        container: icon,
+        path: `assets/images/github.json`,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true
+      })
+    })
+  </script>
          
       <script src="assets/js/jquery.js" ></script>
       <script type="text/javascript" src="assets/js/materialize.min.js"></script>
