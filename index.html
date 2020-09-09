@@ -29,10 +29,14 @@
       <!-- Logo in Page Title -->
       <link rel="shortcut icon" href="https://user-images.githubusercontent.com/40017559/90778869-cc08b900-e31a-11ea-954c-b5ae760f5242.png">
 
+      <!-- Bootstrap -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
       <!-- CSS -->
       <link rel="stylesheet" href="assets/css/style.css">
       <link rel="stylesheet" href="assets/css/footer.css">
       <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection" />
+
 
       <!-- Font -->
       <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -42,12 +46,12 @@
        <!-- Icons -->
        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-       <!-- Bootstrap -->
-       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+       <!--FontAwesome Icons-->
+       <script defer src="https://use.fontawesome.com/releases/v5.13.1/js/all.js"></script>
 
         <!-- Animate On Scroll library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous"/>
-        
+
         <!-- Google Analytics -->
 		    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142979168-1"></script>
 		    <script>
@@ -59,7 +63,7 @@
 		    gtag('js', new Date());
 		    gtag('config', '{{ site.google_analytics }}');
 		   </script>
-    
+
     </head>
 
     <body>
@@ -81,14 +85,39 @@
         <li><a href="team.html">Team</a></li>
       </ul>
 
+      <script src="assets/js/video.js"></script>
       <script src="assets/js/jquery.js" ></script>
       <script src="assets/js/materialize.min.js"></script>
-    <!-----------Main Body--------->
 
-    <!-- GIF section -->
-    <div class="gif-wrapper">
-      <img src="assets/video/homepage/doc2pen.gif" alt="gif of doc2pen" class="kenburns-top gif-layout">
-      <br><br>
+
+
+  <!-----------Main Body--------->
+
+
+    <!-- Head with GIF section -->
+    <section class="head-section">
+        <div class="row">
+          <div class="col-lg-5 head1">
+            <h1 class="head-heading">Doc2Pen</h1>
+            <p class="head-text">Convert your Assignments into Handwritten Documents</p>
+            <a href="editor.html" class="editor-btn">Go to Editor</a>
+          </div>
+          <div class="col-lg-7 head2">
+            <div class="video-div" style="padding:0;">
+              <video loop class="doc2pen-video" id="video" >
+                <source src="assets\video\homepage\doc2pen.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <button id="play_button" onclick="videoControls()"><i id="fontawesome" class="far fa-play-circle fa-4x"></i></button>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+    <br><br><br>
+    <!--Scroll Animated Button-->
+    <div style="text-align:center;">
       <button class="heartbeat" onclick="location.href='#intro-wrap'">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
           width="48" height="48"
@@ -97,8 +126,8 @@
         >
           <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
             <path d="M0,172v-172h172v172z" fill="none"></path>
-            <path d="M86,172c-47.49649,0 -86,-38.50351 -86,-86v0c0,-47.49649 38.50351,-86 86,-86v0c47.49649,0 86,38.50351 86,86v0c0,47.49649 -38.50351,86 -86,86z" fill="#d2dedd"></path>
-            <g fill="#2196f3">
+            <path d="M86,172c-47.49649,0 -86,-38.50351 -86,-86v0c0,-47.49649 38.50351,-86 86,-86v0c47.49649,0 86,38.50351 86,86v0c0,47.49649 -38.50351,86 -86,86z" fill="#d1d6fa"></path>
+            <g fill="#494ca2">
               <path d="M131.37765,50.70627l-7.56294,-7.56294l-37.81471,37.44412l-37.81471,-37.44412l-7.56294,7.56294l45.37765,45.37765z"></path>
               <path d="M131.37765,83.47902l-7.56294,-7.56294l-37.81471,37.63067l-37.81471,-37.63067l-7.56294,7.56294l45.37765,45.37765z"></path>
             </g>
@@ -107,103 +136,96 @@
       </button>
     </div>
 
+
     <!-- Intro Section -->
-    <div class="our-team" id="intro-wrap">
-        <h5 id="key-titles">What is Doc2Pen?</h5>
-        <div class="illustration-text">
-            <div class="illustration" data-aos="fade-right" data-aos-duration="1250">
-              <img src="assets/images/To_do_list.svg">
+    <section>
+      <div class="about" id="intro-wrap">
+          <h1 id="key-titles">What is Doc2Pen?</h1>
+          <div class="illustration-text">
+              <div class="illustration" data-aos="fade-right" data-aos-duration="1250">
+                <img src="assets/images/To_do_list.svg">
+              </div>
+              <div class="text" data-aos="fade-left" data-aos-duration="1250">
+                <p>DOC2PEN is a student's saviour to submit the assignments by just typing them out and getting it handwritten on the go! It simply converts any text to handwritten document and and also allow us to download documents easily.</p>
+              </div>
+          </div>
+      </div>
+    </section>
+
+
+    <!-- Features and Hover Card Section -->
+    <section class="features-box">
+      <h1 id="key-titles" style="margin:4rem 1rem 1.5rem;">Key Features</h1>
+      <div class="row card-row">
+
+        <!-- First Card -->
+        <div class="col-lg-3 col-md-6 card-col">
+          <div class="card hover-card text-center h-100 mx-auto">
+            <div class="card-body">
+              <img class="img-card" src="assets/images/contact_open_source_license.svg" alt="">
+              <p class="card-head">Open Source</p>
+              <div class="overlay">
+                <p class="card-text">Free to use for all</p>
+              </div>
             </div>
-            <div class="text" data-aos="fade-left" data-aos-duration="1250">
-              <p style="font-family: 'Lato', sans-serif;">DOC2PEN is a student's saviour to submit the assignments by just typing them out and getting it handwritten on the go! It simply converts any text to handwritten document and and also allow us to download documents easily.</p>
-            </div>
+          </div>
         </div>
-    </div>
 
-    <!-- Hover Card Section -->
+        <!-- Second Card -->
+        <div class="col-lg-3 col-md-6 card-col">
+          <div class="card hover-card text-center h-100 mx-auto">
+            <div class="card-body">
+              <img class="img-card" src="assets/images/custom_fonts_availabe.svg" alt="">
+              <p class="card-head">Choose between Fonts</p>
+              <div class="overlay">
+                <p class="card-text">Use from a variety of custom fonts or upload your own font</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-   <div>
-     <p class="text-center" id="key-titles"><b>Key Features</b></p>
-   </div>
+         <!-- ThirdCard -->
+        <div class="col-lg-3 col-md-6 card-col">
+          <div class="card hover-card text-center h-100 mx-auto">
+            <div class="card-body">
+              <img class="img-card" src="assets/images/accessible_from_mobile.svg" alt="">
+              <p class="card-head">Accessible on Mobile Phones</p>
+              <div class="overlay">
+                <p class="card-text">Use our website from mobile phones</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-   <!-- First Card -->
-   <div class="cards">
-     <div class="card">
-       <div class="face face1">
-         <div class="content">
-           <img class="card-image img-responsive" src="assets/images/contact_open_source_license.svg">
-           <p class="text-center">Open Source</p>
-         </div>
-       </div>
-       <div class="face face2">
-         <div class="content">
-           <p class="text-center">Free to use</p>
-         </div>
-       </div>
-     </div>
+        <!-- FourthCard -->
+        <div class="col-lg-3 col-md-6 card-col">
+          <div class="card hover-card text-center h-100 mx-auto">
+            <div class="card-body">
+              <img class="img-card" src="assets/images/upload_any_doc_easily.svg" alt="">
+              <p class="card-head">Download Options</p>
+              <div class="overlay">
+                <p class="card-text">Download your page in various formats like PDF, PNG, DOC, or JPEG</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-     <!-- Second Card -->
-     <div class="card">
-       <div class="face face1">
-         <div class="content">
-           <img class="card-image img-responsive" src="assets/images/custom_fonts_availabe.svg">
-           <p class="text-center">Custom Fonts</p>
-         </div>
-       </div>
-       <div class="face face2">
-         <div class="content">
-           <p class="text-center">Use from a variety of custom fonts available</p>
-         </div>
-       </div>
-     </div>
+      </div>
+    </section>
 
-     <!-- ThirdCard -->
-     <div class="card">
-       <div class="face face1">
-         <div class="content">
-           <img class="card-image img-responsive" style="margin-left: 70px;"
-             src="assets/images/accessible_from_mobile.svg">
-           <p class="text-center">Mobile Phone Accessibility</p>
-         </div>
-       </div>
-       <div class="face face2">
-         <div class="content">
-           <p class="text-center">Use our Website from Mobile Phones</p>
-         </div>
-       </div>
-     </div>
-
-     <!-- FourthCard -->
-     <div class="card">
-       <div class="face face1">
-         <div class="content">
-           <img class="card-image img-responsive" style="margin-left: 50px; margin-top: 50px;"
-             src="assets/images/upload_any_doc_easily.svg">
-           <p class="text-center">Download Options</p>
-         </div>
-       </div>
-       <div class="face face2">
-         <div class="content">
-           <p class="text-center">Download your page in Various formats like PDF/PNG/DOC/JPEG</p>
-         </div>
-       </div>
-     </div>
-   </div>
 
     <!-- Button redirecting to the editor -->
-    <div class="editor-button">
-      <h5 id="key-titles" style="margin-bottom: 2rem;">Why wait more?</h5>
-      <p class="text-center" style="font-family: 'Lato', sans-serif; font-size: 1.5rem;">Check out the editor already!</p><br>
-      <button onclick="location.href='editor.html'">
-        <div class="button-effect"></div>
-        <span>Editor</span>
-      </button>
-    </div>
-
+    <section>
+      <h1 id="key-titles" style="margin-bottom: 2rem;">Why wait more?</h1>
+      <h5 class="text-center">Check out the editor already!</h5>
+      <div class="" style="text-align:center;" >
+        <a href="editor.html" class="editor-btn">EDITOR</a>
+      </div>
+    </section>
      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
      <script>
       AOS.init();
      </script>
-      
+
   </body>
 </html>
