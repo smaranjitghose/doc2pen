@@ -1,0 +1,30 @@
+body {
+  height: 100vh;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR*/
+
+nav {
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
+  background: linear-gradient(to right, #0f2027, #2c5364, #203a43); 
+}
+
+.nav-wrapper a:hover,
+.sidenav a:hover {
+  text-decoration: none;
+}
+
+.nav-wrapper a {
+  font-weight: bold;
+}
+
+.sidenav-trigger {
+  margin-left: 0px !important;
+}
+
+.brand-logo img {
+  width: 200px;
+}
