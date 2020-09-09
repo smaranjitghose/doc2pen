@@ -336,7 +336,7 @@ p.demos {
 }
 
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	overflow-x: hidden !important;
 }
 
@@ -383,7 +383,7 @@ video {
     margin-top: 30px;  
 }
 .our-team h5{
-    font-family: Montserat;
+    font-family: Poppins;
     text-align: center;
     font-size: 40px;
 }
@@ -406,7 +406,7 @@ video {
 .illustration-text .text{
 /*    changed  */
     margin: 5%; 
-    font-family: Montserat;
+    font-family: Poppins;
     font-size: 30px;
 }
 .illustration-text img{
@@ -665,6 +665,32 @@ html {
     }
 }
 
+/* Nav bar */
+.black-text{
+	background-color: #fff;
+    border-radius: 1px;
+    padding: 2px;
+    margin-bottom: -4px;
+    margin-right: 38px;
+    margin-top: -7px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+nav ul li.active {
+    background-color: rgb(242 240 209 / 10%);
+    }
+.nav-wrapper li:hover{
+	background-color: transparent;
+}
+.brand-logo{
+	text-transform: uppercase;
+	font-weight: bolder;
+	border: 3px solid #000;
+	border-radius: 2px;
+	text-decoration: none;
+}
+img {
+	border: 3px solid #000;
+}
 
-/*--------------------------------------* 
-
+	

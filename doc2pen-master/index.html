@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+      
+      <!-- style sheet -->
+      <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="stylesheet" href="assets/css/footer.css">
+      <!--  -->
+
+      <!-- Font -->
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+      <!--  -->
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+      <div class="spinner-wrapper">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+    
+          <div class="spinner-layer spinner-red">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+    
+          <div class="spinner-layer spinner-yellow">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+    
+          <div class="spinner-layer spinner-green">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+              <div class="circle"></div>
+            </div><div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+      
+        <nav class="white">
+            <div class="nav-wrapper">
+              <a href="index.html" class="brand-logo black-text">Doc2Pen</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="black-text material-icons">menu</i></a>
+              <ul class="right hide-on-med-and-down">
+                <li class="active"><a class="black-text" href="index.html">Home</a></li>
+                <li><a class="black-text" href="editor.html">Editor</a></li>
+                <li><a class="black-text" href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+        
+          <ul class="sidenav" id="mobile-demo">
+            <li class="active" ><a href="index.html">Home</a></li>
+            <li><a href="editor.html">Editor</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <script src="assets/js/jquery.js" ></script>
+      <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+      <script>
+          $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+      </script>
+      <script>
+        $(document).ready(function() {
+        //Preloader
+        preloaderFadeOutTime = 1500;
+        function hidePreloader() {
+        var preloader = $('.spinner-wrapper');
+        preloader.fadeOut(preloaderFadeOutTime);
+        }
+        hidePreloader();
+        });
+        </script>
+
+    <!-----------Main Body--------->
+
+    <!-- Video -->
+    <div id="video">
+      <video autoplay loop>
+        <source src="assets/video/homepage/doc2pen.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Intro Section -->
+    <div class="our-team">
+        <h5 class="title"><u>What is DOC2PEN</u></h5>
+        <div class="illustration-text">
+            <div class="illustration">
+        <img src="assets/images/To_do_list.svg">
+            </div>
+            <div class="text">
+        <p>DOC2PEN is a student's saviour to submit the assignments by just typing them out and getting it handwritten on the go! It simply converts any text to handwritten document and and also allow us to download documents easily.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hover Card Section -->
+
+      <div>
+        <p class="text-center" id="key-titles">Key Features</p>
+      </div>
+
+      <!-- FirstCard -->
+      <div class="cards">
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <img class="card-image img-responsive" src="assets/images/contact_open_source_license.svg">
+              <p class="text-center">Open Source</p>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p class="text-center">Free to use</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SecondCard -->
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <img class="card-image img-responsive" src="assets/images/custom_fonts_availabe.svg">
+              <p class="text-center">Custom Fonts</p>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p class="text-center">Use from a variety of custom fonts available</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ThirdCard -->
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <img class="card-image img-responsive" style="margin-left: 70px;" src="assets/images/accessible_from_mobile.svg">
+              <p class="text-center">Mobile Phone Accessibility</p>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p class="text-center">Use our Website from Mobile Phones</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FourthCard -->
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <img class="card-image img-responsive" style="margin-left: 50px; margin-top: 50px;" src="assets/images/upload_any_doc_easily.svg">
+              <p class="text-center">Download Options</p>
+            </div>
+          </div>
+          <div class="face face2">
+            <div class="content">
+              <p class="text-center">Download your page in Various formats like PDF/PNG/DOC/JPEG</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!-- Footer Section -->
+
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="black-text">Doc2Pen</h5>
+                <p class="black-text text-lighten-5">DOC2PEN is a student's saviour to submit the assignments by just typing them out and getting it handwritten on the go! </p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="blue-text">Link</h5>
+                <ul>
+                  <li><a class="blue-text text-lighten-2" href="#!">Link 1</a></li>
+                  <li><a class="blue-text text-lighten-2" href="#!">Link 2</a></li>
+                  <li><a class="blue-text text-lighten-2" href="#!">Link 3</a></li>
+                  <li><a class="blue-text text-lighten-2" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container" style="color:black">
+            © 2020 Doc2Pen
+            <a class="black-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+    </body>
+  </html>
