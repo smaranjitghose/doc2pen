@@ -23,6 +23,7 @@ Worry not! We are here to save you from your misery 🦸‍♂️. Doc2pen is yo
 
 <p align="center"><img width=50% src="https://media.giphy.com/media/Lo6LNpySgc0qlzoOKR/giphy.gif"></p>
 
+https://doc2pen-beta-1.netlify.app
 
 # Tasks:
 
