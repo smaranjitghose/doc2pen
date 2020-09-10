@@ -12,6 +12,11 @@ nav {
   background: linear-gradient(to right, #0f2027, #2c5364, #203a43); 
 }
 
+.nav-wrapper{
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
 .nav-wrapper a:hover,
 .sidenav a:hover {
   text-decoration: none;
