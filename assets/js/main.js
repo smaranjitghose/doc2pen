@@ -2,8 +2,8 @@
   
   let header = $(`
   <nav>
-  <div class="nav-wrapper container">
-      <a href="#!" class="brand-logo"><img src=""></a>
+  <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><img src="./assets/images/logo.png"></a>
       <a href="#" data-target="mobile-demo" class="white-text sidenav-trigger"><i
               class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
