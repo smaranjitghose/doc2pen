@@ -73,7 +73,7 @@
 </footer>`);
   let bodyElement = $(`body`);
   bodyElement.prepend(header);
-  bodyElement.prepend(footer);
+  bodyElement.append(footer);
 
 
 //common side navbar call

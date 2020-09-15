@@ -46,8 +46,7 @@ nav {
 
 .contact-parent{
   display:flex;
-  margin-top:80px;
-  padding-bottom:25rem;
+  margin-top: 80px;
 }
 
 .contact-child{
@@ -164,9 +163,12 @@ element.style {
 
 footer {
   width:100vw;
-  position: fixed;
-  bottom:0px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 150;
 }
+
 footer div {
   background-color: var(--col-deepblue);
   margin: -5px 0px 0px 0px;
