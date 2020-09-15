@@ -80,7 +80,7 @@ let footer = $(`<!--Footer-->
  </g>  
 </svg>
 
-  <div>Made with <a class="btn-floating pulse red"><i class="material-icons">favorite</i></a> in India for the students of the world.</div>
+  <div>Made with ❤️ in India for the students of the world.</div>
 </footer>`);
 
 bodyElement.prepend(footer);
