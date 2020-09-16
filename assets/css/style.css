@@ -1,9 +1,16 @@
-body {
-  height: 100vh;
-  margin: 0;
-  scroll-behavior: smooth;
-}
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 
+body {
+  margin: 0;
+  overflow-x:hidden;
+  font-family: Montserrat;
+  scroll-behavior: smooth;
+  --col-deepblue: #4478e3;
+}
+a {
+  color:#fff;
+  text-decoration:none;
+}
 /* NAVBAR*/
 
 nav {
@@ -35,6 +42,113 @@ nav {
   margin-bottom: 15px;
 }
 
+/* Contact page */
+
+.contact-parent{
+  display:flex;
+  margin-top: 80px;
+}
+
+.contact-child{
+  display:flex;
+  flex:1;
+  box-shadow:0px 0px 10px -2px rgba(0,0,0,0.75);
+}
+
+.child1{
+  background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../images/contact.jpg");
+  background-size:cover;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  color:#fff;
+  padding:100px 0;
+}
+
+.child1 p{
+  padding-left:20%;
+  font-size:20px;
+  text-shadow:0px 0px 2px #000;
+}
+
+.child1 p span{
+  font-size:16px;
+  color:#9df2fd;
+}
+
+.child2{
+  flex-direction:column;
+  justify-content:space-around;
+  align-items:center;
+}
+
+.inside-contact{
+  width:90%;
+  margin:0 auto;
+}
+
+.inside-contact h2{
+  text-align:center;
+}
+
+.inside-contact span{
+  color: #2c5364;
+}
+
+.inside-contact h3{
+  text-align:center;
+  font-size:16px;
+  color:#0085e2;
+}
+
+.inside-contact p{
+  font-weight:500;
+}
+
+.inside-contact input, .inside-contact textarea{
+  width:100%;
+  border:1px solid rgba(0,0,0,0.48);
+  padding:5px 10px;
+  margin-bottom:20px;
+}
+
+.inside-contact input[type=submit]{
+  background-color:#000;
+  color:#fff;
+  transition:0.2s;
+  border:2px solid #000;
+  margin:20px 0;
+}
+
+.inside-contact input[type=submit]:hover{
+  background-color:#fff;
+  color:#000;
+  transition:0.2s;
+}
+
+@media screen and (max-width:991px){
+  .contact-parent{
+      display:block;
+      width:100%;
+  }
+
+  .child1{
+      display:none;
+  }
+
+  .child2{
+      background-image:linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url("../images/contact.jpg");
+      background-size:cover;
+  }
+
+  .inside-contact input, .inside-contact textarea{
+      background-color:#eee;
+  }
+}
+
+
+/* footer*/
+
 element.style {
     color: red;
 }
@@ -46,21 +160,15 @@ element.style {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-    @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 
-body {
-  font-family: Montserrat;
-  --col-deepblue: #4478e3;
-}
-a {
-  color:#fff;
-  text-decoration:none;
-}
 footer {
   width:100vw;
-  position:fixed;
-  bottom:0px
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 150;
 }
+
 footer div {
   background-color: var(--col-deepblue);
   margin: -5px 0px 0px 0px;
@@ -80,7 +188,6 @@ svg {
 }
 .drop {
   fill: var(--col-deepblue);
-  xfill: #99000055;
   animation: drop 3.2s linear infinite normal;
   stroke: var(--col-deepblue);
   stroke-width:0.5;
@@ -88,9 +195,7 @@ svg {
   transform-box: fill-box;
   transform-origin: 50% 100%;
 }
-.drop1 {
-  
-}
+
 .drop2 {
   animation-delay: 3s;
   animation-duration:3s;

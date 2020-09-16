@@ -8,10 +8,10 @@
               class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
           <li><a class="white-text" href="index.html">Home</a></li>
-          <li><a class="white-text" href="#">About</a></li>
-          <li><a class="white-text" href="#">Team</a></li>
-          <li><a class="white-text" href="#">Contact</a></li>
-          <li><a class="white-text" href="#">Editor</a></li>
+          <li><a class="white-text" href="index.html">About</a></li>
+          <li><a class="white-text" href="index.html">Team</a></li>
+          <li><a class="white-text" href="index.html">Contact</a></li>
+          <li><a class="white-text" href="index.html">Editor</a></li>
       </ul>
   </div>
   </nav>
@@ -19,24 +19,13 @@
   <!--Side Nav Bar -->
   <ul class="sidenav" id="mobile-demo">
   <li><a href="index.html">Home</a></li>
-  <li><a href="#">About</a></li>
-  <li><a href="#">Team</a></li>
-  <li><a href="#">Contact</a></li>
-  <li><a href="#">Editor</a></li>
+  <li><a href="index.html">About</a></li>
+  <li><a href="index.html">Team</a></li>
+  <li><a href="index.html">Contact</a></li>
+  <li><a href="index.html">Editor</a></li>
   </ul>`);
-  let bodyElement = $(`body`);
-  bodyElement.prepend(header);
 
-
-//common side navbar call
-
-  $(document).ready(function () {
-    $(".sidenav").sidenav();
-  });
-  
-//water wave Footer
-
-let footer = $(`<!--Footer-->
+  let footer = $(`
 <footer>
 <svg viewBox="0 0 120 28">
  <defs> 
@@ -82,5 +71,14 @@ let footer = $(`<!--Footer-->
 
   <div>Made with ❤️ in India for the students of the world.</div>
 </footer>`);
+  let bodyElement = $(`body`);
+  bodyElement.prepend(header);
+  bodyElement.append(footer);
 
-bodyElement.prepend(footer);
+
+//common side navbar call
+
+  $(document).ready(function () {
+    $(".sidenav").sidenav();
+  });
+  
