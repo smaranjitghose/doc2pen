@@ -24,42 +24,44 @@
 
     <!--Contact form-->
     <div>
-      <div class="container">
+      <div class="container" style="max-width: 980px;">
         <div class="contact-parent">
           <div class="contact-child child1">
-            <p>
-              <i class="fas fa-map-marker-alt"></i> Address <br />
-                <span>Ashok Nagar<br />Bhubaneaswar, Odisha </span>
-            </p>
-            <p>
-              <i class="fas fa-phone-alt"></i> Let's Talk <br />
-                <span> 9123456789</span>
-            </p>
-            <p>
-              <i class=" far fa-envelope"></i> General Support <br />
-                <span>adyashamohanty8105@gmail.com</span>
-            </p>
+            <div id="map"></div>
            </div>
            <div class="contact-child child2">
               <div class="inside-contact">
                  <h2>Get In <span>Touch</span></h2>
                     <h3><span id="confirm"></h3>
-                        <p>Name *</p>
-                        <input id="txt_name" type="text" Required="required">
+                      <p>Name *</p>
+                      <input id="txt_name" type="text" Required="required">
 
-                        <p>Email *</p>
-                        <input id="txt_email" type="text" Required="required">
+                      <p>Subject *</p>
+                      <input id="txt_subject" type="text" Required="required">
 
-                        <p>Phone *</p>
-                        <input id="txt_phone" type="text" Required="required">
+                      <p>Email *</p>
+                      <input id="txt_email" type="text" Required="required">
 
-                        <p>Subject *</p>
-                        <input id="txt_subject" type="text" Required="required">
+                      <p>Message *</p>
+                      <textarea id="txt_message" rows="4" cols="20" Required="required" ></textarea>
+                  
+                        <!-- START CAPTCHA -->
+                        <div class="capbox">
 
-                        <p>Message *</p>
-                        <textarea id="txt_message" rows="4" cols="20" Required="required" ></textarea>
-                        
-                        <input type="submit" id="btn_send" value="SEND">
+                            <div id="CaptchaDiv"></div>
+
+                            <div class="capbox-inner">
+                                Type the number *<br>
+
+                                <input type="hidden" id="txtCaptcha">
+                                <input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
+
+                            </div>
+                        </div>
+                        <br><br>
+                        <!-- END CAPTCHA -->
+
+                      <input type="submit" id="btn_send" value="SEND">
               </div>
            </div>
          </div>
@@ -69,5 +71,7 @@
    <!--Dynamic Footer-->
    
     <script src="assets/js/Main.js"></script>
+    <script async defer src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyB2bXKNDezDf6YNVc-SauobynNHPo4RJb8&callback=initMap"> 
+    </script> 
 </body>
 </html>
