@@ -1,0 +1,76 @@
+*............card css.............*/ 
+
+/* mentor's card css start*/
+
+    #cards-mentor{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 85vh;
+    }
+
+    .mentor-container {
+      position: relative;
+      width: 1100px;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .mentor-container .card {
+      background: #fff;
+      position: relative;
+      max-width: 300px;
+      height: 245px;
+      margin: 30px 10px;
+      padding: 20px 15px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: 0 5px 20px rgba(0, 0, 0, 0.5);
+      transition: 0.3s ease-in-out;
+    }
+
+    .mentor-container .card:hover {
+      height: 400px;
+    }
+
+    .mentor-container .card .imgBx {
+      position: relative;
+      width: 96%;
+      height: 260px;
+      top: -60px;
+      left: 5px;
+      box-sizing: 0 5px 20px rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .mentor-container .card .imgBx img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+
+    .mentor-container .card .content {
+      position: relative;
+      margin-top: -140px;
+      padding: 10px 15px;
+      text-align: center;
+      color: #111;
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+      visibility: hidden;
+    }
+
+    .mentor-container .card .content h5{
+        font-weight: bold;
+    }
+
+    .mentor-container .card:hover .content {
+      visibility: visible;
+      opacity: 1;
+      margin-top: -40px;
+      transition-delay: 0.2s;
+    }
+    
+/* mentor's card css ends*/
