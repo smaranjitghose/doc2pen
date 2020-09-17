@@ -57,7 +57,7 @@ nav {
 
 #map{
   width:100%;
-  height:600px;
+  height:665px;
 }
 
 .child2{
@@ -116,6 +116,46 @@ nav {
 
 input[type="text"]{
   height: 2rem !important;
+}
+
+/*Captcha box */ 
+
+.capbox {
+	border: 1px solid rgba(0,0,0,0.48);
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	display: inline-block;
+	padding: 5px 8px 5px 8px;
+}
+
+.capbox-inner {
+	color: #000000;
+	background-color: #FFFFFF;
+	margin: 0px auto 0px auto;
+	padding: 3px 10px 5px 10px;
+	border-radius: 4px;
+	display: inline-block;
+	vertical-align: middle;
+	}
+
+#CaptchaDiv {
+	color: #000000;
+	font: normal 25px Impact, Charcoal, arial, sans-serif;
+	font-style: italic;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+	user-select: none;
+	display: inline-block;
+	padding: 3px 14px 3px 8px;
+	margin-right: 4px;
+	border-radius: 4px;
+	}
+
+#CaptchaInput {
+	border: 1px solid rgba(0,0,0,0.48);
+	margin: 3px 0px 1px 0px;
 }
 
 /* footer*/
@@ -217,46 +257,6 @@ svg {
 }
 @keyframes wave {
   to {transform: translateX(-100%);}
-}
-
-/*Captcha box */ 
-
-.capbox {
-	border: 1px solid rgba(0,0,0,0.48);
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	display: inline-block;
-	padding: 5px 8px 5px 8px;
-}
-
-.capbox-inner {
-	color: #000000;
-	background-color: #FFFFFF;
-	margin: 0px auto 0px auto;
-	padding: 3px 10px 5px 10px;
-	border-radius: 4px;
-	display: inline-block;
-	vertical-align: middle;
-	}
-
-#CaptchaDiv {
-	color: #000000;
-	font: normal 25px Impact, Charcoal, arial, sans-serif;
-	font-style: italic;
-	text-align: center;
-	vertical-align: middle;
-	background-color: #FFFFFF;
-	user-select: none;
-	display: inline-block;
-	padding: 3px 14px 3px 8px;
-	margin-right: 4px;
-	border-radius: 4px;
-	}
-
-#CaptchaInput {
-	border: 1px solid rgba(0,0,0,0.48);
-	margin: 3px 0px 1px 0px;
 }
 
 /*Resonsive*/
