@@ -1,7 +1,10 @@
-*............card css.............*/ 
+/*............card css.............*/ 
 
 /* mentor's card css start*/
-
+h3{
+    text-align: center;
+    
+}
     #cards-mentor{
       display: flex;
       justify-content: center;
@@ -74,3 +77,50 @@
     }
     
 /* mentor's card css ends*/
+
+/*maintee*/
+.team-container {
+    overflow: hidden;
+}
+.grid-wd-100 {
+    width: 100%;
+}
+.margin-center {
+    margin: auto;
+}
+.text-left {
+    text-align: left;
+}
+@media screen and (max-width: 768px)
+.team-container figure {
+    width: 25%;
+}
+@media only screen and (max-width: 1024px)
+.team-container figure {
+    width: 20%;
+}
+@media only screen and (max-width: 1280px)
+.team-container figure {
+    width: 16.66667%;
+}
+.team-container figure {
+    margin: 0;
+    width: 14.28571%;
+    min-height: 75px;
+    overflow: hidden;
+}
+.position-relative {
+    position: relative;
+}
+.text-center {
+    text-align: center;
+}
+.va-top {
+    vertical-align: top;
+}
+.display-inline-block {
+    display: inline-block;
+}
+.text-center {
+    text-align: center;
+}
