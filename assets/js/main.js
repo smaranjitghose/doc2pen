@@ -1,6 +1,6 @@
 //Navbar
-  
-  let header = $(`
+
+let header = $(`
   <nav>
   <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img src="./assets/images/logo.png"></a>
@@ -25,7 +25,7 @@
   <li><a href="index.html">Editor</a></li>
   </ul>`);
 
-  let footer = $(`
+let footer = $(`
 <footer>
 <svg viewBox="0 0 120 28">
  <defs> 
@@ -71,14 +71,67 @@
 
   <div>Made with ❤️ in India for the students of the world.</div>
 </footer>`);
-  let bodyElement = $(`body`);
-  bodyElement.prepend(header);
-  bodyElement.append(footer);
-
+let bodyElement = $(`body`);
+bodyElement.prepend(header);
+bodyElement.append(footer);
 
 //common side navbar call
 
-  $(document).ready(function () {
-    $(".sidenav").sidenav();
+$(document).ready(function () {
+  $(".sidenav").sidenav();
+});
+
+// Map added
+
+function initMap() {
+  var uluru = { lat: 28.501859, lng: 77.41032 };
+  var map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru,
   });
-  
+}
+
+// Captcha Script
+
+function checkform(theform) {
+  var why = "";
+
+  if (theform.CaptchaInput.value == "") {
+    why += "- Please Enter CAPTCHA Code.\n";
+  }
+  if (theform.CaptchaInput.value != "") {
+    if (ValidCaptcha(theform.CaptchaInput.value) == false) {
+      why += "- The CAPTCHA Code Does Not Match.\n";
+    }
+  }
+  if (why != "") {
+    alert(why);
+    return false;
+  }
+}
+
+var a = Math.ceil(Math.random() * 9) + "";
+var b = Math.ceil(Math.random() * 9) + "";
+var c = Math.ceil(Math.random() * 9) + "";
+var d = Math.ceil(Math.random() * 9) + "";
+var e = Math.ceil(Math.random() * 9) + "";
+
+var code = a + b + c + d + e;
+document.getElementById("txtCaptcha").value = code;
+document.getElementById("CaptchaDiv").innerHTML = code;
+
+// Validate input against the generated number
+function ValidCaptcha() {
+  var str1 = removeSpaces(document.getElementById("txtCaptcha").value);
+  var str2 = removeSpaces(document.getElementById("CaptchaInput").value);
+  if (str1 == str2) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Remove the spaces from the entered and generated code
+function removeSpaces(string) {
+  return string.split(" ").join("");
+}
