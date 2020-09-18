@@ -55,25 +55,9 @@ nav {
   box-shadow:0px 0px 10px -2px rgba(0,0,0,0.75);
 }
 
-.child1{
-  background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../images/contact.jpg");
-  background-size:cover;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-around;
-  color:#fff;
-  padding:100px 0;
-}
-
-.child1 p{
-  padding-left:20%;
-  font-size:20px;
-  text-shadow:0px 0px 2px #000;
-}
-
-.child1 p span{
-  font-size:16px;
-  color:#9df2fd;
+#map{
+  width:100%;
+  height:665px;
 }
 
 .child2{
@@ -89,6 +73,7 @@ nav {
 
 .inside-contact h2{
   text-align:center;
+  margin: 20px;
 }
 
 .inside-contact span{
@@ -109,7 +94,7 @@ nav {
   width:100%;
   border:1px solid rgba(0,0,0,0.48);
   padding:5px 10px;
-  margin-bottom:20px;
+  margin-bottom:30px;
 }
 
 .inside-contact input[type=submit]{
@@ -117,7 +102,6 @@ nav {
   color:#fff;
   transition:0.2s;
   border:2px solid #000;
-  margin:20px 0;
 }
 
 .inside-contact input[type=submit]:hover{
@@ -126,26 +110,53 @@ nav {
   transition:0.2s;
 }
 
-@media screen and (max-width:991px){
-  .contact-parent{
-      display:block;
-      width:100%;
-  }
-
-  .child1{
-      display:none;
-  }
-
-  .child2{
-      background-image:linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url("../images/contact.jpg");
-      background-size:cover;
-  }
-
-  .inside-contact input, .inside-contact textarea{
-      background-color:#eee;
-  }
+#txt_message{
+  height: 6rem !important;
 }
 
+input[type="text"]{
+  height: 2rem !important;
+}
+
+/*Captcha box */ 
+
+.capbox {
+	border: 1px solid rgba(0,0,0,0.48);
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	display: inline-block;
+	padding: 5px 8px 5px 8px;
+}
+
+.capbox-inner {
+	color: #000000;
+	background-color: #FFFFFF;
+	margin: 0px auto 0px auto;
+	padding: 3px 10px 5px 10px;
+	border-radius: 4px;
+	display: inline-block;
+	vertical-align: middle;
+	}
+
+#CaptchaDiv {
+	color: #000000;
+	font: normal 25px Impact, Charcoal, arial, sans-serif;
+	font-style: italic;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+	user-select: none;
+	display: inline-block;
+	padding: 3px 14px 3px 8px;
+	margin-right: 4px;
+	border-radius: 4px;
+	}
+
+#CaptchaInput {
+	border: 1px solid rgba(0,0,0,0.48);
+	margin: 3px 0px 1px 0px;
+}
 
 /* footer*/
 
@@ -246,4 +257,31 @@ svg {
 }
 @keyframes wave {
   to {transform: translateX(-100%);}
+}
+
+/*Resonsive*/
+
+@media screen and (max-width:991px){
+  .contact-parent{
+      display:block;
+      width:100%;
+  }
+
+  .child1{
+      display:none;
+  }
+
+  .child2{
+      background-image:linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url("../images/contact.jpg");
+      background-size:cover;
+  }
+
+  .inside-contact input, .inside-contact textarea{
+      background-color:transparent;
+  }
+   
+  #CaptchaDiv, .capbox-inner{
+    background-color: transparent;
+  }
+  
 }
