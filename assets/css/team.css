@@ -81,50 +81,43 @@ h4{
     
 /* mentor's card css ends*/
 
-/*maintee*/
-.team-container {
-    overflow: hidden;
+/*maintee section starts*/ /*background-color:#1c1c28*/
+
+.display-inline-block{
+  display:inline-block
 }
-.grid-wd-100 {
-    width: 100%;
-    border-radius: 50px;
+.grid-wd-100{
+  width:75%;
+border-radius:50%;
 }
-.margin-center {
-    margin: auto;
+ .team-container figure{
+   margin:0;
+   width:15.28571%;
+   min-height:95px;
+   overflow:hidden
+  }
+
+.team-container figure figcaption{
+  bottom:-100%;
+  height:50px;
+  opacity:10;
+  background:rgba(245,160,30,.7);
+  text-shadow:0 0 1px #000;
+  -ms-transition:all .2s fade-in-out;
+  -o-transition:all .2s fade-in-out;
+  -moz-transition:all .2s fade-in-out;
+  -webkit-transition:all .2s fade-in-out;
+  transition:all .2s fade-in-out
 }
-.text-left {
-    text-align: left;
+
+
+.team-container figure:hover figcaption{
+  bottom:0;
+  opacity:1
 }
-@media screen and (max-width: 768px)
-.team-container figure {
-    width: 25%;
+@media only screen and (max-width:520px){
+  .team-container figure{
+    width:50%
+  }
 }
-@media only screen and (max-width: 1024px)
-.team-container figure {
-    width: 20%;
-}
-@media only screen and (max-width: 1280px)
-.team-container figure {
-    width: 16.66667%;
-}
-.team-container figure {
-    margin: 0;
-    width: 14.28571%;
-    min-height: 75px;
-    overflow: hidden;
-}
-.position-relative {
-    position: relative;
-}
-.text-center {
-    text-align: center;
-}
-.va-top {
-    vertical-align: top;
-}
-.display-inline-block {
-    display: inline-block;
-}
-.text-center {
-    text-align: center;
-}
+/*mainteens section end*/
