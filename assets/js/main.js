@@ -20,7 +20,7 @@ let header = $(`
   <ul class="sidenav" id="mobile-demo">
   <li><a href="index.html">Home</a></li>
   <li><a href="index.html">About</a></li>
-  <li><a href="index.html">Team</a></li>
+  <li><a href="#mentor-container">Team</a></li>
   <li><a href="index.html">Contact</a></li>
   <li><a href="index.html">Editor</a></li>
   </ul>`);
