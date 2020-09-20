@@ -1,8 +1,0 @@
-@font-face {
-    font-family: KaushanScript;
-    src: url("../fonts/KaushanScript-Regular.otf") format("opentype");
-}
-
-.nav-wrapper .brand-logo {
-    font-family: "KaushanScript", sans-serif;
-}
