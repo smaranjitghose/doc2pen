@@ -262,6 +262,11 @@ svg {
 /*Team section*/
 
 /* .profile-container:hover */
+
+.container{
+  padding: 20px;
+}
+
 .profile-container {
   width: 300px;
   height: 400px;
@@ -270,7 +275,6 @@ svg {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
   transition: 1s all ease;
-  
 }
 
 .profile-container::before {
@@ -285,6 +289,11 @@ svg {
   transition: all .5s ease-in;
 }
 
+.image-1 , .image-2{
+  display: flex;
+  justify-content: center;
+  padding-bottom:20px;
+}
 .image-1 .profile-container::before {
   background: url('/assets/images/smaranjit_ghose.png') no-repeat center center/cover;
 }
