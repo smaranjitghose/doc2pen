@@ -407,9 +407,9 @@ svg {
 .profile-card .icons {
   display: flex;
   color: #333;
-  width: 90%;
+  width: 80%;
   justify-content: space-evenly;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin: 15px 0;
 }
 
