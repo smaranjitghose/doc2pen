@@ -324,7 +324,7 @@ svg {
   background: linear-gradient(to right,#2c5364 0%, #a563b4 100%);
   transform: skew(30deg) translateX(125%);
   opacity: 0.9;
-  transition: all 0.6s ease;
+  transition: all 0.8s ease;
 }
 
 .profile-wrapper::after{
@@ -337,7 +337,7 @@ svg {
   background: linear-gradient(to right, #2c5364 0%, #a563b4 100%);
   transform: skew(30deg) translateX(-125%);
   opacity: 0.9;
-  transition: all 0.6s ease;
+  transition: all 0.8s ease;
 }
 
 .profile-container:hover .profile-wrapper::after{
@@ -385,16 +385,17 @@ svg {
                     linear-gradient(to right, green, gold);
   background-origin: border-box;
   background-clip: content-box, border-box;
-  /* border: 2px solid #1999; */
   position: relative;
 }
 
-.profile-card  h2 {
+.profile-card  h4 {
   line-height: 1.2;
+  font-size: 2rem;
   color: #222;
 }
-.profile-card  h4 {
+.profile-card  h5 {
   color: #444;
+  font-size: 1.5rem;
 }
 
 .profile-card  p {
@@ -407,9 +408,9 @@ svg {
 .profile-card .icons {
   display: flex;
   color: #333;
-  width: 80%;
+  width: 40%;
   justify-content: space-evenly;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin: 15px 0;
 }
 
