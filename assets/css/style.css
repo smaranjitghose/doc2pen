@@ -422,6 +422,108 @@ svg {
   cursor: pointer;
 }
 
+/* Contributors*/
+
+.row{
+  display: flex;
+  justify-content: center;
+}
+.snip1247 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: 220px;
+  height: 220px;
+  color:#fff;
+  text-align: left;
+  font-size: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.snip1247 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+}
+.snip1247 img {
+  opacity: 1;
+  max-width: 100%;
+  vertical-align: top;
+}
+.snip1247 figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 0 20px;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+}
+.snip1247 figcaption:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  background-color: #ffffff;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  z-index: -1;
+}
+.snip1247 h3 {
+  line-height: 40px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.snip1247 .icons {
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+}
+.snip1247 .icons a {
+  display: inline-block;
+}
+.snip1247 .icons i {
+  color: #fff;
+  line-height: 40px;
+  width: 32px;
+  font-size: 1.4em;
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+  margin: 0;
+}
+.snip1247 .icons i:hover {
+  background-color: #34495e;
+  color: #ffffff;
+}
+.snip1247:hover img,
+.snip1247.hover img {
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
+}
+.snip1247:hover figcaption,
+.snip1247.hover figcaption {
+  color: #34495e;
+}
+.snip1247:hover figcaption:before,
+.snip1247.hover figcaption:before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.snip1247:hover figcaption i,
+.snip1247.hover figcaption i {
+  color: #34495e;
+}
+
+
 
 /*Resonsive*/
 
