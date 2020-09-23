@@ -412,14 +412,17 @@ svg {
 /* Profile Icons */
 .profile-card .icons {
   display: flex;
-  color: #333;
   width: 40%;
   justify-content: space-evenly;
   font-size: 1.8rem;
   margin: 15px 0;
 }
 
-.profile-card .icons i:hover {
+.icons a{
+  color: #333;
+}
+
+.profile-card .icons a:hover {
   background-image: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -461,7 +464,7 @@ svg {
 
 /* contributor section*/
 
-.flex{
+.flex {
   display: flex;
   justify-content: center;
 }
@@ -501,6 +504,8 @@ svg {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 25%;
   overflow: hidden;
+  width:250px;
+  height:220px;
 }
 
 .team-container figure img {
@@ -549,36 +554,25 @@ svg {
   bottom: 0;
   opacity: 1;
 }
-.social-media-icon {
-  height: 1em;
-}
-.scroll-down-btn {
+
+.social-icon {
+  text-shadow: 0 0 1px #000;
+  font-size: 1.4rem;
+  float: right;
+  color:black;
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1280px) {
-  .team-container figure {
-    width: 16.66667%;
-  }
+.social-icon:hover{
+  text-decoration: none;
+  color:black;
+  opacity: 0.8;
 }
 
-@media only screen and (max-width: 1024px) {
-  .team-container figure {
-    width: 20%;
-  }
+.text{
+  font-size: 1.2rem !important;
 }
 
-@media screen and (max-width: 768px) {
-  .team-container figure {
-    width: 25%;
-  }
-}
-
-@media only screen and (max-width: 520px) {
-  .team-container figure {
-    width: 70%;
-  }
-}
 
 /*About Section*/
 
