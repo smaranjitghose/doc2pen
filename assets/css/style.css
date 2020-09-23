@@ -449,3 +449,60 @@ svg {
   }
   
 }
+/*............card css.............*/ 
+/*maintee section starts*/ /*background-color:#1c1c28*/
+
+h3{
+  text-align: center;
+  
+}
+h4{
+  text-align: center;
+  line-height: 4;
+}
+  #cards-mentor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+  }
+
+  
+.display-inline-block{
+display:inline-block
+}
+.grid-wd-100{
+width:75%;
+border-radius:50%;
+}
+.team-container figure{
+ margin:0;
+ width:15.28571%;
+ min-height:95px;
+ overflow:hidden
+}
+
+.team-container figure figcaption{
+bottom:-100%;
+height:50px;
+opacity:10;
+background:rgba(245,160,30,.7);
+text-shadow:0 0 1px #000;
+-ms-transition:all .2s fade-in-out;
+-o-transition:all .2s fade-in-out;
+-moz-transition:all .2s fade-in-out;
+-webkit-transition:all .2s fade-in-out;
+transition:all .2s fade-in-out
+}
+
+
+.team-container figure:hover figcaption{
+bottom:0;
+opacity:1
+}
+@media only screen and (max-width:520px){
+.team-container figure{
+  width:50%
+}
+}
+/*mainteens section end*/
