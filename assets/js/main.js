@@ -135,3 +135,40 @@ function ValidCaptcha() {
 function removeSpaces(string) {
   return string.split(" ").join("");
 }
+
+/* Contributor section */
+
+const contributor = document.querySelector(".contributor");
+const contributorsection = [
+  {
+    title: "Anush Bhatia",
+    image: "assets/images/smaranjit_ghose.png",
+    githublink: "https://github.com/anushbhatia",
+  },
+  {
+    title: "Anush Bhatia",
+    image: "assets/images/anush_bhatia.png",
+    githublink: "https://github.com/anushbhatia",
+  },
+  {
+    title: "Anush Bhatia",
+    image: "assets/images/anush_bhatia.png",
+    githublink: "https://github.com/anushbhatia",
+  },
+];
+
+const showCards = () => {
+  let output = "";
+  contributorsection.forEach(
+    ({ title, image, githublink}) =>
+      (output += `       
+     <figure class="position-relative display-inline-block va-top text-center">
+      <img src="${image}" class="grid-wd-100 va-top">
+       <figcaption class="position-absolute grid-wd-100 va-top pad font-small futura">
+        <div class="text">${title} <a href="${githublink}" class="social-icon fa fa-github"></a></div>
+       </figcaption>
+     </figure>`)
+  );
+  contributor.innerHTML = output;
+};
+document.addEventListener("DOMContentLoaded", showCards);
