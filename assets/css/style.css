@@ -449,3 +449,76 @@ svg {
   }
   
 }
+
+/*About Section*/
+
+#about-intro{
+  text-align: center;
+  margin:auto 10%;
+}
+
+#features{
+  margin:auto 10%;
+}
+
+.feature-div{
+  width: 80%;
+  margin: 60px auto;
+}
+
+#page-image{
+  width: 30%;
+  float: left;
+  margin-right: 10px;
+}
+
+#font-image{
+  width: 40%;
+  float: right;
+  margin-right: 10px;
+}
+
+#typing-image{
+  width: 30%;
+  float: left;
+  margin-right: 10px;
+}
+
+#download-image{
+  width: 47%;
+  float: right;
+  margin-right: 10px;
+}
+
+#open-source-image{
+width:50%;
+margin: auto;
+}
+
+#open-source {
+  text-align: center;
+  margin:auto 10%;
+}
+
+#open-source p{
+   color:#4e89ae;
+   font-weight: bold;
+}
+
+.enhanced{
+  font-style: italic ;
+  font-weight: bold;
+}
+
+#about-intro h2 {
+  color: #4e89ae;
+}
+
+#features h3{
+  color: #4e89ae;
+}
+
+p{
+  font-size: 1.2rem;
+  color: #333333;
+}
