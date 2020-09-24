@@ -312,12 +312,12 @@ svg {
   padding-bottom: 20px;
 }
 .image-1 .profile-container::before {
-  background: url("assets/images/smaranjit_ghose.png") no-repeat center
+  background: url("/assets/images/smaranjit_ghose.png") no-repeat center
     center/cover;
 }
 
 .image-2 .profile-container::before {
-  background: url("assets/images/anush_bhatia.png") no-repeat center
+  background: url("/assets/images/anush_bhatia.png") no-repeat center
     center/cover;
 }
 
@@ -593,52 +593,29 @@ svg {
   padding-top: 5em;
 }
 
-#about-intro {
-  text-align: center;
-  margin: auto 10%;
-}
-
 #features {
-  margin: auto 10%;
+  margin: auto 5%;
 }
 
 .feature-div {
   width: 80%;
-  margin: 60px auto;
 }
 
 #page-image {
   width: 40%;
-  display: block;
-  margin: auto;
 }
 
-#font-image {
+#font-image, #download-image {
   width: 55%;
-  display: block;
-  margin: auto;
 }
 
 #typing-image {
   width: 50%;
-  display: block;
-  margin: auto;
-}
-
-#download-image {
-  width: 55%;
-  display: block;
-  margin: auto;
 }
 
 #open-source-image {
   width: 50%;
   margin: auto;
-}
-
-#open-source {
-  text-align: center;
-  margin: auto 10%;
 }
 
 #open-source p {
@@ -651,7 +628,7 @@ svg {
   font-weight: bold;
 }
 
-#about-intro h2 {
+#about-intro h2, #features h3 {
   color: #4e89ae;
 }
 
@@ -666,65 +643,80 @@ p {
   text-align: center;
 }
 
-@media(min-width: 280px) and (max-width: 320px){
-  #about-intro h2 {
-    font-size: 1.6rem;
-  }
-
-  #features h3 {
-    font-size: 1.2rem;
-  }
-
-  p{
-    font-size: 1rem;
+@media(min-width: 1000px)
+{
+  .feature-div {
+    margin:60px auto;
   }
 }
 
-@media(min-width: 321px) and (max-width: 354px){
+/*Responsive*/
+
+@media(max-width: 320px)
+{
+  #page-image, #font-image, #open-source-image, #download-image , #typing-image {
+    width: 100%;
+  }
+}
+
+@media(min-width: 60rem)
+{ 
+
+  #page-image, #font-image, #open-source-image, #download-image , #typing-image {
+    margin-right: 10px;
+  }
+
+  #page-image {
+    width: 30%;
+    float: left;
+  }
+
+  #font-image {
+    width: 40%;
+    float: right;
+  }
+
+  #typing-image {
+    width: 30%;
+    float: left;
+  }
+
+  #download-image {
+    width: 47%;
+    float: right;
+  }
+
+  #open-source-image {
+    width: 50%;
+    margin: auto;
+  }
+
+  #open-source p {
+    color: #4e89ae;
+    font-weight: bold;
+  }
+
+  .enhanced {
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  #about-intro h2, #features h3 {
+    color: #4e89ae;
+  }
+}
+
+@media(min-width: 320px) and (max-width: 410px){
   #about-intro h2 {
+    font-size: 3rem;
+  }
+
+  #features h3 {
     font-size: 1.8rem;
   }
-
-  #features h3 {
-    font-size: 1.4rem;
-  }
-
-  p{
-    font-size: 1rem;
-  }
 }
 
-@media(min-width: 355px) and (max-width: 395px){
-  #about-intro h2 {
-    font-size: 2rem;
-  }
-
-  #features h3 {
-    font-size: 1.6rem;
-  }
-}
-
-@media(min-width: 396px) and (max-width: 410px){
-  #about-intro h2 {
-    font-size: 2.2rem;
-  }
-
-  #features h3 {
-    font-size: 1.8rem;
-  }
-}
-
-@media(min-width: 410px) and (max-width: 437px){
-  #about-intro h2 {
-    font-size: 2.3rem;
-  }
-
-  #features h3 {
-    font-size: 1.8rem;
-  }
-}
-
-@media(min-width: 438px) and (max-width: 462px){
+@media(min-width: 410px) and (max-width: 462px){
   #about-intro h2 {
     font-size: 2.3rem;
   }
@@ -741,96 +733,5 @@ p {
 
   #features h3 {
     font-size: 2.1rem;
-  }
-}
-
-@media(min-width: 507px) and (max-width: 532px){
-  #about-intro h2 {
-    font-size: 2.6rem;
-  }
-
-  #features h3 {
-    font-size: 2.3rem;
-  }
-}
-
-@media(min-width: 532px) and (max-width: 551px){
-  #about-intro h2 {
-    font-size: 3rem;
-  }
-
-  #features h3 {
-    font-size: 2.3rem;
-  }
-}
-
-@media(min-width: 552px) and (max-width: 637px)
-{
-  #about-intro h2 {
-    font-size: 3rem;
-  }
-
-  #features h3 {
-    font-size: 2.5rem;
-  }
-}
-
-@media(min-width: 60rem)
-{ 
-  #page-image {
-    width: 30%;
-    float: left;
-    margin-right: 10px;
-  }
-
-  #font-image {
-    width: 40%;
-    float: right;
-    margin-right: 10px;
-  }
-
-  #typing-image {
-    width: 30%;
-    float: left;
-    margin-right: 10px;
-  }
-
-  #download-image {
-    width: 47%;
-    float: right;
-    margin-right: 10px;
-  }
-
-  #open-source-image {
-    width: 50%;
-    margin: auto;
-  }
-
-  #open-source {
-    text-align: center;
-    margin: auto 10%;
-  }
-
-  #open-source p {
-    color: #4e89ae;
-    font-weight: bold;
-  }
-
-  .enhanced {
-    font-style: italic;
-    font-weight: bold;
-  }
-
-  #about-intro h2 {
-    color: #4e89ae;
-  }
-
-  #features h3 {
-    color: #4e89ae;
-  }
-
-  p {
-    font-size: 1.2rem;
-    color: #333333;
   }
 }
