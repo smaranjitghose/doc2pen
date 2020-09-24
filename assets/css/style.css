@@ -504,8 +504,8 @@ svg {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 25%;
   overflow: hidden;
-  width:250px;
-  height:220px;
+  width: 170px;
+  height: 170px;
 }
 
 .team-container figure img {
@@ -557,7 +557,7 @@ svg {
 
 .social-icon {
   text-shadow: 0 0 1px #000;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   float: right;
   color:black;
   cursor: pointer;
@@ -570,7 +570,7 @@ svg {
 }
 
 .text{
-  font-size: 1.2rem !important;
+  font-size: 1rem !important;
 }
 
 
