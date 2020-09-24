@@ -141,19 +141,79 @@ function removeSpaces(string) {
 const contributor = document.querySelector(".contributor");
 const contributorsection = [
   {
-    title: "Anush Bhatia",
-    image: "assets/images/smaranjit_ghose.png",
-    githublink: "https://github.com/anushbhatia",
+    title: "Adyasha",
+    image: "assets/images/contributors/1.jpg",
+    githublink: "https://github.com/Adyasha8105",
   },
   {
-    title: "Anush Bhatia",
-    image: "assets/images/anush_bhatia.png",
-    githublink: "https://github.com/anushbhatia",
+    title: "Ayushi",
+    image: "assets/images/contributors/2.jpg",
+    githublink: "https://github.com/AyuSoni25",
   },
   {
-    title: "Anush Bhatia",
-    image: "assets/images/anush_bhatia.png",
-    githublink: "https://github.com/anushbhatia",
+    title: "Himanshu",
+    image: "assets/images/contributors/3.jpg",
+    githublink: "https://github.com/himanshujaidka",
+  },
+  {
+    title: "Sameer",
+    image: "assets/images/contributors/4.jpg",
+    githublink: "https://github.com/sameersrivastava13",
+  },
+  {
+    title: "Anurag",
+    image: "assets/images/contributors/5.jpg",
+    githublink: "https://github.com/eagleanurag",
+  },
+  {
+    title: "Srishti",
+    image: "assets/images/contributors/6.png",
+    githublink: "https://github.com/srishtimaggo15",
+  },
+  {
+    title: "Prashant",
+    image: "assets/images/contributors/7.jpg",
+    githublink: "https://github.com/imPGupta",
+  },
+  {
+    title: "Nikita",
+    image: "assets/images/contributors/8.png",
+    githublink: "https://github.com/nikita-1801",
+  },
+  {
+    title: "Rutuja",
+    image: "assets/images/contributors/9.jpg",
+    githublink: "https://github.com/rutujadhanawade",
+  },
+  {
+    title: "Ritik",
+    image: "assets/images/contributors/11.png",
+    githublink: "https://github.com/ritiksoni00",
+  },
+  {
+    title: "Ejkot",
+    image: "assets/images/contributors/12.jpg",
+    githublink: "https://github.com/EkjotKaur",
+  },
+  {
+    title: "Bhavya",
+    image: "assets/images/contributors/13.jpg",
+    githublink: "https://github.com/Bhavya-Sehgal",
+  },
+  {
+    title: "Raksha",
+    image: "assets/images/contributors/10.png",
+    githublink: "https://github.com/raksha009",
+  },
+  {
+    title: "Aniruddh",
+    image: "assets/images/contributors/14.png",
+    githublink: "https://github.com/Aniruddhmuley2001",
+  },
+  {
+    title: "Shudhanshu",
+    image: "assets/images/contributors/15.jpg",
+    githublink: "https://github.com/shudhanshu03",
   },
 ];
 
