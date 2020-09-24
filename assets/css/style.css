@@ -593,6 +593,12 @@ svg {
   padding-top: 5em;
 }
 
+p {
+  font-size: 1.4rem;
+  color: #333333;
+  text-align: center;
+}
+
 #features {
   margin: auto 5%;
 }
@@ -634,12 +640,6 @@ svg {
 
 #features h3 {
   color: #4e89ae;
-  text-align: center;
-}
-
-p {
-  font-size: 1.2rem;
-  color: #333333;
   text-align: center;
 }
 
