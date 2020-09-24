@@ -6,6 +6,7 @@ body {
   font-family: Montserrat;
   scroll-behavior: smooth;
   --col-deepblue: #4478e3;
+  position: relative;
 }
 a {
   color: #fff;
@@ -17,6 +18,8 @@ nav {
   background: #0f2027;
   background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
   background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
+  overflow: hidden;
+  z-index: 2;
 }
 
 .nav-wrapper {
@@ -40,6 +43,16 @@ nav {
 .brand-logo img {
   width: 180px;
   margin-bottom: 15px;
+}
+
+.sticky{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .about{
+  padding-top: 60px;
 }
 
 /* Contact page */
@@ -299,12 +312,12 @@ svg {
   padding-bottom: 20px;
 }
 .image-1 .profile-container::before {
-  background: url("/assets/images/smaranjit_ghose.png") no-repeat center
+  background: url("assets/images/smaranjit_ghose.png") no-repeat center
     center/cover;
 }
 
 .image-2 .profile-container::before {
-  background: url("/assets/images/anush_bhatia.png") no-repeat center
+  background: url("assets/images/anush_bhatia.png") no-repeat center
     center/cover;
 }
 
@@ -576,6 +589,10 @@ svg {
 
 /*About Section*/
 
+.about{
+  padding-top: 5em;
+}
+
 #about-intro {
   text-align: center;
   margin: auto 10%;
@@ -591,27 +608,27 @@ svg {
 }
 
 #page-image {
-  width: 30%;
-  float: left;
-  margin-right: 10px;
+  width: 40%;
+  display: block;
+  margin: auto;
 }
 
 #font-image {
-  width: 40%;
-  float: right;
-  margin-right: 10px;
+  width: 55%;
+  display: block;
+  margin: auto;
 }
 
 #typing-image {
-  width: 30%;
-  float: left;
-  margin-right: 10px;
+  width: 50%;
+  display: block;
+  margin: auto;
 }
 
 #download-image {
-  width: 47%;
-  float: right;
-  margin-right: 10px;
+  width: 55%;
+  display: block;
+  margin: auto;
 }
 
 #open-source-image {
@@ -640,9 +657,180 @@ svg {
 
 #features h3 {
   color: #4e89ae;
+  text-align: center;
 }
 
 p {
   font-size: 1.2rem;
   color: #333333;
+  text-align: center;
+}
+
+@media(min-width: 280px) and (max-width: 320px){
+  #about-intro h2 {
+    font-size: 1.6rem;
+  }
+
+  #features h3 {
+    font-size: 1.2rem;
+  }
+
+  p{
+    font-size: 1rem;
+  }
+}
+
+@media(min-width: 321px) and (max-width: 354px){
+  #about-intro h2 {
+    font-size: 1.8rem;
+  }
+
+  #features h3 {
+    font-size: 1.4rem;
+  }
+
+  p{
+    font-size: 1rem;
+  }
+}
+
+@media(min-width: 355px) and (max-width: 395px){
+  #about-intro h2 {
+    font-size: 2rem;
+  }
+
+  #features h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media(min-width: 396px) and (max-width: 410px){
+  #about-intro h2 {
+    font-size: 2.2rem;
+  }
+
+  #features h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media(min-width: 410px) and (max-width: 437px){
+  #about-intro h2 {
+    font-size: 2.3rem;
+  }
+
+  #features h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media(min-width: 438px) and (max-width: 462px){
+  #about-intro h2 {
+    font-size: 2.3rem;
+  }
+
+  #features h3 {
+    font-size: 2rem;
+  }
+}
+
+@media(min-width: 459px) and (max-width: 506px){
+  #about-intro h2 {
+    font-size: 2.6rem;
+  }
+
+  #features h3 {
+    font-size: 2.1rem;
+  }
+}
+
+@media(min-width: 507px) and (max-width: 532px){
+  #about-intro h2 {
+    font-size: 2.6rem;
+  }
+
+  #features h3 {
+    font-size: 2.3rem;
+  }
+}
+
+@media(min-width: 532px) and (max-width: 551px){
+  #about-intro h2 {
+    font-size: 3rem;
+  }
+
+  #features h3 {
+    font-size: 2.3rem;
+  }
+}
+
+@media(min-width: 552px) and (max-width: 637px)
+{
+  #about-intro h2 {
+    font-size: 3rem;
+  }
+
+  #features h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media(min-width: 60rem)
+{ 
+  #page-image {
+    width: 30%;
+    float: left;
+    margin-right: 10px;
+  }
+
+  #font-image {
+    width: 40%;
+    float: right;
+    margin-right: 10px;
+  }
+
+  #typing-image {
+    width: 30%;
+    float: left;
+    margin-right: 10px;
+  }
+
+  #download-image {
+    width: 47%;
+    float: right;
+    margin-right: 10px;
+  }
+
+  #open-source-image {
+    width: 50%;
+    margin: auto;
+  }
+
+  #open-source {
+    text-align: center;
+    margin: auto 10%;
+  }
+
+  #open-source p {
+    color: #4e89ae;
+    font-weight: bold;
+  }
+
+  .enhanced {
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  #about-intro h2 {
+    color: #4e89ae;
+  }
+
+  #features h3 {
+    color: #4e89ae;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #333333;
+  }
 }

@@ -1,16 +1,16 @@
 //Navbar
 
 let header = $(`
-  <nav>
+  <nav id="navbar">
   <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img src="./assets/images/logo.png"></a>
       <a href="#" data-target="mobile-demo" class="white-text sidenav-trigger"><i
               class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
           <li><a class="white-text" href="index.html">Home</a></li>
-          <li><a class="white-text" href="index.html">About</a></li>
-          <li><a class="white-text" href="index.html">Team</a></li>
-          <li><a class="white-text" href="index.html">Contact</a></li>
+          <li><a class="white-text" href="#about-intro">About</a></li>
+          <li><a class="white-text" href="#team">Team</a></li>
+          <li><a class="white-text" href="#contact">Contact</a></li>
           <li><a class="white-text" href="index.html">Editor</a></li>
       </ul>
   </div>
@@ -80,6 +80,19 @@ bodyElement.append(footer);
 $(document).ready(function () {
   $(".sidenav").sidenav();
 });
+
+//sticky navbar
+
+window.onscroll = function() {myFunction()};
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
 
 // Map added
 
