@@ -41,12 +41,14 @@ $(document).ready(function () {
 
 //sticky navbar
 
-window.onscroll = function() {myFunction()};
+window.onscroll = function () {
+  myFunction();
+};
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
 function myFunction() {
   if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
+    navbar.classList.add("sticky");
   } else {
     navbar.classList.remove("sticky");
   }
@@ -115,6 +117,11 @@ const contributorsection = [
     title: "Adyasha",
     image: "assets/images/contributors/1.jpeg",
     githublink: "https://github.com/Adyasha8105",
+  },
+  {
+    title: "Harshita",
+    image: "assets/images/contributors/23.jpg",
+    githublink: "https://github.com/mharshita",
   },
   {
     title: "Ayushi",
@@ -195,23 +202,28 @@ const contributorsection = [
     title: "Debanshu",
     image: "assets/images/contributors/17.jpg",
     githublink: "https://github.com/debanshu08",
-  },  {
+  },
+  {
     title: "Varun",
     image: "assets/images/contributors/18.jpg",
     githublink: "https://github.com/Varun-28",
-  },  {
+  },
+  {
     title: "Aman",
     image: "assets/images/contributors/19.jpg",
     githublink: "https://github.com/thealphacod3r",
-  },  {
+  },
+  {
     title: "Avisek",
     image: "assets/images/contributors/20.jpg",
     githublink: "https://github.com/shawavisek35",
-  },  {
+  },
+  {
     title: "Sonali",
     image: "assets/images/contributors/21.jpg",
     githublink: "https://github.com/Sonali12920",
-  },  {
+  },
+  {
     title: "Varun",
     image: "assets/images/contributors/22.jpg",
     githublink: "https://github.com/varunvj1",
@@ -221,7 +233,7 @@ const contributorsection = [
 const showCards = () => {
   let output = "";
   contributorsection.forEach(
-    ({ title, image, githublink}) =>
+    ({ title, image, githublink }) =>
       (output += `       
      <figure class="position-relative display-inline-block va-top text-center">
       <img src="${image}" class="grid-wd-100 va-top">
