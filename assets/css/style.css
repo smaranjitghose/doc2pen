@@ -321,8 +321,9 @@ footer {
   background: linear-gradient(to right, #0f2027, #2c5364, #203a43); 
   color:white;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 10px;
+  margin-top: 50px
 }
 
 /*Team section*/
@@ -642,7 +643,7 @@ footer {
   padding-top: 5em;
 }
 
-p {
+#about-intro p , #features p , #open-source p{
   font-size: 1.4rem;
   color: #333333;
   text-align: center;
