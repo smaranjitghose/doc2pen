@@ -2,6 +2,8 @@
 .nav2{
     background: rgb(34, 183, 194);
     height: 2.3em;
+    position: sticky;
+    top: 4em;
 }
 
 .nav2-text{
@@ -16,17 +18,18 @@
     color: white;
 }
 
+.dropdown-content{
+    position: fixed;
+}
+
 .dropdown-text:hover{
     background-color: rgb(207, 234, 241);
     color: rgb(11, 11, 124);
 }
 
-.editor-content{
-    width: 100%;
-}
-
-.row{
+.row-editor{
     display: flex;
+    padding-top: 8em;
 }
 
 .column{
@@ -48,7 +51,8 @@
     border-style: solid;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     height: 100vh;
-    width: 90vh;
+    width: 100%;
     padding: 2em;
     font-size: 2em;
+    background-color: ivory;
 }
