@@ -45,106 +45,151 @@ nav {
   margin-bottom: 15px;
 }
 
-.sticky{
+.sticky {
   position: fixed;
   top: 0;
   width: 100%;
 }
 
-.sticky + .about{
+.sticky + .about {
   padding-top: 60px;
 }
 
-
 /*Home Section*/
-.home-div{
-  text-align: center;
-}
 
-#title-heading{
+#title-heading {
   color: white;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 5.5rem;
   text-align: center;
+  padding-top: 6rem;
 }
 
-.title-image{
+.title-image {
   width: 70%;
-  margin:5% 20% 5% 20%;
+  margin: 5% 20% 5% 20%;
+  padding:15px;
 }
 
-section{
+section {
   position: relative;
   width: 100%;
   height: 100%;
   background: #0f2027;
   background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
-  background: linear-gradient(to right, #0f2027, #2c5364, #203a43); 
-  overflow:hidden;
+  background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
+  overflow: hidden;
 }
 
-section .wave{
+section .wave {
   position: absolute;
   bottom: 0;
-  left:0;
+  left: 0;
   width: 100%;
   height: 100px;
-  background: url('wave-image/wave.png');
+  background: url("wave-image/wave.png");
   background-size: 1000px 100px;
 }
 
-section .wave.wave1
-{
+section .wave.wave1 {
   animation: animate 30s linear infinite;
-  z-index:1000;
+  z-index: 1000;
   opacity: 1;
   animation-delay: 0s;
-  bottom :0;
+  bottom: 0;
 }
 
-section .wave.wave2
-{
+section .wave.wave2 {
   animation: animate2 15s linear infinite;
-  z-index:999;
+  z-index: 999;
   opacity: 0.5;
   animation-delay: -5s;
-  bottom :10px;
+  bottom: 10px;
 }
 
-section .wave.wave3
-{
+section .wave.wave3 {
   animation: animate 30s linear infinite;
-  z-index:998;
+  z-index: 998;
   opacity: 0.2;
   animation-delay: -2s;
-  bottom :15;
+  bottom: 15;
 }
 
-section .wave.wave4
-{
+section .wave.wave4 {
   animation: animate2 5s linear infinite;
-  z-index:997;
+  z-index: 997;
   opacity: 0.7;
   animation-delay: -5s;
-  bottom :20px;
+  bottom: 20px;
 }
-@keyframes animate
-{
-  0%{
-    background-position-x :0;
+@keyframes animate {
+  0% {
+    background-position-x: 0;
   }
-  100%{
-    background-position-x:1000px;
+  100% {
+    background-position-x: 1000px;
   }
 }
 
-@keyframes animate2
-{
-  0%{
-    background-position-x :0;
+@keyframes animate2 {
+  0% {
+    background-position-x: 0;
   }
-  100%{
-    background-position-x:-1000px;
+  100% {
+    background-position-x: -1000px;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 2rem;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: semibold;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border:none;
+  cursor:pointer;
+}
+.button:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #05252c;
+  z-index: -2;
+}
+.button:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #0d739eab;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.button:hover {
+  color: #fff;
+}
+.button:hover:before {
+  width: 100%;
+}
+
+/*Responsive about section*/
+
+@media (min-width: 320px) and (max-width: 1210px) {
+  #title-heading {
+    font-size: 4rem;
+    padding-top: 4rem;
   }
 }
 /* Contact page */
@@ -523,7 +568,7 @@ svg {
   margin: 15px 0;
 }
 
-.icons a{
+.icons a {
   color: #333;
 }
 
@@ -664,24 +709,23 @@ svg {
   text-shadow: 0 0 1px #000;
   font-size: 1.2rem;
   float: right;
-  color:black;
+  color: black;
   cursor: pointer;
 }
 
-.social-icon:hover{
+.social-icon:hover {
   text-decoration: none;
-  color:black;
+  color: black;
   opacity: 0.8;
 }
 
-.text{
+.text {
   font-size: 1rem !important;
 }
 
-
 /*About Section*/
 
-.about{
+.about {
   padding-top: 5em;
 }
 
@@ -703,7 +747,8 @@ p {
   width: 40%;
 }
 
-#font-image, #download-image {
+#font-image,
+#download-image {
   width: 55%;
 }
 
@@ -726,7 +771,8 @@ p {
   font-weight: bold;
 }
 
-#about-intro h2, #features h3 {
+#about-intro h2,
+#features h3 {
   color: #4e89ae;
 }
 
@@ -735,26 +781,30 @@ p {
   text-align: center;
 }
 
-@media(min-width: 1000px)
-{
+@media (min-width: 1000px) {
   .feature-div {
-    margin:60px auto;
+    margin: 60px auto;
   }
 }
 
 /*Responsive*/
 
-@media(max-width: 320px)
-{
-  #page-image, #font-image, #open-source-image, #download-image , #typing-image {
+@media (max-width: 320px) {
+  #page-image,
+  #font-image,
+  #open-source-image,
+  #download-image,
+  #typing-image {
     width: 100%;
   }
 }
 
-@media(min-width: 60rem)
-{ 
-
-  #page-image, #font-image, #open-source-image, #download-image , #typing-image {
+@media (min-width: 60rem) {
+  #page-image,
+  #font-image,
+  #open-source-image,
+  #download-image,
+  #typing-image {
     margin-right: 10px;
   }
 
@@ -793,12 +843,13 @@ p {
     font-weight: bold;
   }
 
-  #about-intro h2, #features h3 {
+  #about-intro h2,
+  #features h3 {
     color: #4e89ae;
   }
 }
 
-@media(min-width: 320px) and (max-width: 410px){
+@media (min-width: 320px) and (max-width: 410px) {
   #about-intro h2 {
     font-size: 3rem;
   }
@@ -808,7 +859,7 @@ p {
   }
 }
 
-@media(min-width: 410px) and (max-width: 462px){
+@media (min-width: 410px) and (max-width: 462px) {
   #about-intro h2 {
     font-size: 2.3rem;
   }
@@ -818,7 +869,7 @@ p {
   }
 }
 
-@media(min-width: 459px) and (max-width: 506px){
+@media (min-width: 459px) and (max-width: 506px) {
   #about-intro h2 {
     font-size: 2.6rem;
   }
