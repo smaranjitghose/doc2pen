@@ -6,6 +6,7 @@ body {
   font-family: Montserrat;
   scroll-behavior: smooth;
   --col-deepblue: #4478e3;
+  position: relative;
 }
 a {
   color: #fff;
@@ -17,6 +18,8 @@ nav {
   background: #0f2027;
   background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
   background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
+  overflow: hidden;
+  z-index: 2;
 }
 
 .nav-wrapper {
@@ -42,6 +45,108 @@ nav {
   margin-bottom: 15px;
 }
 
+.sticky{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .about{
+  padding-top: 60px;
+}
+
+
+/*Home Section*/
+.home-div{
+  text-align: center;
+}
+
+#title-heading{
+  color: white;
+  font-family: 'Dancing Script', cursive;
+  font-size: 5.5rem;
+  text-align: center;
+}
+
+.title-image{
+  width: 70%;
+  margin:5% 20% 5% 20%;
+}
+
+section{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
+  background: linear-gradient(to right, #0f2027, #2c5364, #203a43); 
+  overflow:hidden;
+}
+
+section .wave{
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  height: 100px;
+  background: url('wave-image/wave.png');
+  background-size: 1000px 100px;
+}
+
+section .wave.wave1
+{
+  animation: animate 30s linear infinite;
+  z-index:1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom :0;
+}
+
+section .wave.wave2
+{
+  animation: animate2 15s linear infinite;
+  z-index:999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom :10px;
+}
+
+section .wave.wave3
+{
+  animation: animate 30s linear infinite;
+  z-index:998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom :15;
+}
+
+section .wave.wave4
+{
+  animation: animate2 5s linear infinite;
+  z-index:997;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom :20px;
+}
+@keyframes animate
+{
+  0%{
+    background-position-x :0;
+  }
+  100%{
+    background-position-x:1000px;
+  }
+}
+
+@keyframes animate2
+{
+  0%{
+    background-position-x :0;
+  }
+  100%{
+    background-position-x:-1000px;
+  }
+}
 /* Contact page */
 
 .contact-parent {
@@ -504,8 +609,8 @@ svg {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 25%;
   overflow: hidden;
-  width:250px;
-  height:220px;
+  width: 170px;
+  height: 170px;
 }
 
 .team-container figure img {
@@ -557,7 +662,7 @@ svg {
 
 .social-icon {
   text-shadow: 0 0 1px #000;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   float: right;
   color:black;
   cursor: pointer;
@@ -570,58 +675,45 @@ svg {
 }
 
 .text{
-  font-size: 1.2rem !important;
+  font-size: 1rem !important;
 }
 
 
 /*About Section*/
 
-#about-intro {
+.about{
+  padding-top: 5em;
+}
+
+p {
+  font-size: 1.4rem;
+  color: #333333;
   text-align: center;
-  margin: auto 10%;
 }
 
 #features {
-  margin: auto 10%;
+  margin: auto 5%;
 }
 
 .feature-div {
   width: 80%;
-  margin: 60px auto;
 }
 
 #page-image {
-  width: 30%;
-  float: left;
-  margin-right: 10px;
+  width: 40%;
 }
 
-#font-image {
-  width: 40%;
-  float: right;
-  margin-right: 10px;
+#font-image, #download-image {
+  width: 55%;
 }
 
 #typing-image {
-  width: 30%;
-  float: left;
-  margin-right: 10px;
-}
-
-#download-image {
-  width: 47%;
-  float: right;
-  margin-right: 10px;
+  width: 50%;
 }
 
 #open-source-image {
   width: 50%;
   margin: auto;
-}
-
-#open-source {
-  text-align: center;
-  margin: auto 10%;
 }
 
 #open-source p {
@@ -634,15 +726,104 @@ svg {
   font-weight: bold;
 }
 
-#about-intro h2 {
+#about-intro h2, #features h3 {
   color: #4e89ae;
 }
 
 #features h3 {
   color: #4e89ae;
+  text-align: center;
 }
 
-p {
-  font-size: 1.2rem;
-  color: #333333;
+@media(min-width: 1000px)
+{
+  .feature-div {
+    margin:60px auto;
+  }
+}
+
+/*Responsive*/
+
+@media(max-width: 320px)
+{
+  #page-image, #font-image, #open-source-image, #download-image , #typing-image {
+    width: 100%;
+  }
+}
+
+@media(min-width: 60rem)
+{ 
+
+  #page-image, #font-image, #open-source-image, #download-image , #typing-image {
+    margin-right: 10px;
+  }
+
+  #page-image {
+    width: 30%;
+    float: left;
+  }
+
+  #font-image {
+    width: 40%;
+    float: right;
+  }
+
+  #typing-image {
+    width: 30%;
+    float: left;
+  }
+
+  #download-image {
+    width: 47%;
+    float: right;
+  }
+
+  #open-source-image {
+    width: 50%;
+    margin: auto;
+  }
+
+  #open-source p {
+    color: #4e89ae;
+    font-weight: bold;
+  }
+
+  .enhanced {
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  #about-intro h2, #features h3 {
+    color: #4e89ae;
+  }
+}
+
+@media(min-width: 320px) and (max-width: 410px){
+  #about-intro h2 {
+    font-size: 3rem;
+  }
+
+  #features h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media(min-width: 410px) and (max-width: 462px){
+  #about-intro h2 {
+    font-size: 2.3rem;
+  }
+
+  #features h3 {
+    font-size: 2rem;
+  }
+}
+
+@media(min-width: 459px) and (max-width: 506px){
+  #about-intro h2 {
+    font-size: 2.6rem;
+  }
+
+  #features h3 {
+    font-size: 2.1rem;
+  }
 }
