@@ -155,7 +155,7 @@ const contributor = document.querySelector(".contributor");
 const contributorsection = [
   {
     title: "Adyasha",
-    image: "assets/images/contributors/1.jpg",
+    image: "assets/images/contributors/1.jpeg",
     githublink: "https://github.com/Adyasha8105",
   },
   {
@@ -227,6 +227,36 @@ const contributorsection = [
     title: "Shudhanshu",
     image: "assets/images/contributors/15.jpg",
     githublink: "https://github.com/shudhanshu03",
+  },
+  {
+    title: "Shilpe",
+    image: "assets/images/contributors/16.jpg",
+    githublink: "https://github.com/shilpe26",
+  },
+  {
+    title: "Debanshu",
+    image: "assets/images/contributors/17.jpg",
+    githublink: "https://github.com/debanshu08",
+  },  {
+    title: "Varun",
+    image: "assets/images/contributors/18.jpg",
+    githublink: "https://github.com/Varun-28",
+  },  {
+    title: "Aman",
+    image: "assets/images/contributors/19.jpg",
+    githublink: "https://github.com/thealphacod3r",
+  },  {
+    title: "Avisek",
+    image: "assets/images/contributors/20.jpg",
+    githublink: "https://github.com/shawavisek35",
+  },  {
+    title: "Sonali",
+    image: "assets/images/contributors/21.jpg",
+    githublink: "https://github.com/Sonali12920",
+  },  {
+    title: "Varun",
+    image: "assets/images/contributors/22.jpg",
+    githublink: "https://github.com/varunvj1",
   },
 ];
 
