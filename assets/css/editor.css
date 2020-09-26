@@ -50,7 +50,13 @@
 
 .text-blue{
     color: teal;
-    font-size: 1.5em;
+    font-size: 1em;
+}
+
+@media(min-width: 60rem){
+    .text-blue{
+        font-size: 1.5em;
+    }
 }
 
 .row-editor{
@@ -94,12 +100,24 @@
 /*Download Button*/
 
 .downloadBtn{
-    align-content: center;
-    margin-left: 33rem;
+    margin: auto;
+    width: 50%;
+}
+
+@media(min-width: 60rem){
+    .downloadBtn{
+        margin-left: 33rem;
+    }
 }
 
 .bold{
+    font-weight: normal;
+}
+
+@media(min-width: 60rem){ 
+.bold{
     font-weight: bold;
+}
 }
 
 .button-editor{
