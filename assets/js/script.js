@@ -46,12 +46,6 @@ $("#dataField").on("keydown", function (e) {// function event
 
 $(".dropdown-trigger").dropdown();
 
-// function to set a given theme/color-scheme
-function setTheme(themeName) {
-    localStorage.setItem('theme', themeName);
-    document.documentElement.className = themeName;
-}
-
 // Immediately invoked function to set the theme on initial load
 (function () {
     if (localStorage.getItem('theme') === 'theme-dark') {

@@ -60,18 +60,60 @@
      <nav class="nav2" id="navbar2">
         <div class="nav-wrapper2">
             <ul class="right hide-on-med-and-down">
+                <li><a class="nav2-text" onclick="changePage()">Switch Page</a></li>
+				<li><a class="nav2-text" onclick="changeFont()">Switch Font</a></li>
+                <li><a class="nav2-text" id="btnPageUpload">Upload Page</a></li>
+                <li><a class="nav2-text" id="btnFontUpload" onclick="uploadFont()">Upload Font</a></li>
                 <li><a class="nav2-text" href="editor.html">Font Size</a></li>
                 <li><a class="nav2-text" href="editor.html">Change Ink</a></li>
                 <li><a class="nav2-text dropdown-trigger" data-target="dropdown-font">Choose Font<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a class="nav2-text dropdown-trigger" data-target="dropdown-page">Choose Page<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a class="nav2-text" href="editor.html">Word Count</a></li>
-                <li><a class="nav2-text" onclick="save(str(pageNum++))">Download</a></li>
             </ul>
         </div>
     </nav>
+
     <!--Nav 2 ends here-->
 
+    <input class="button-primary button-large download-image hidden" type="file" id="pageUploader"
+    onclick="">
+    <input class="button-primary button-large download-image hidden" type="file" id="fontUploader"
+    onclick="">
+
     <!--Input and Output Windows-->
+    <div class="row-editor-top">
+        <div class="column-top">
+        <div class="editor-range">  <!--col-m-2-->
+            <label class="text-blue">Width</label>
+            <p class="range-field">
+        <input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" >
+        </p>
+        </div>
+
+        <div class="editor-range">
+            <label class="text-blue">Line Spacing</label>
+            <p class="range-field">
+        <input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)" >
+        </p>
+        </div>
+        </div>
+
+        <div class="column-top">
+            <div class="editor-range"> 
+            <label class="text-blue">Adjust X axis</label>
+						<p class="range-field">
+						<input  type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" >
+                        </p>
+                        </div>
+                        <div class="editor-range"> 
+                        <label class="text-blue">Adjust Y axis</label>
+						<p class="range-field">
+						  <input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" >
+                      </p>
+                      </div>
+        </div>
+    </div>
+
     <div class="row-editor">
     <!--Input text window-->
         <div class="column input">
@@ -99,6 +141,10 @@
 <!--Input/Output windows end here-->
 
 </div>
+<div class="downloadBtn">
+    <a class="button-editor button-accent-editor button-small-editor" onclick="save(str(pageNum++))">Download as PNG<i class="material-icons right bold">vertical_align_bottom</i></a>
+</div>
+
     <!--Dynamic Footer-->
     <script src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/materialize.min.js"></script>

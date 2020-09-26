@@ -20,11 +20,37 @@
 
 .dropdown-content{
     position: fixed;
+    margin-top: 1rem;
+    z-index: 200;
 }
 
 .dropdown-text:hover{
-    background-color: rgb(207, 234, 241);
+    background-color: rgb(186, 225, 235);
     color: rgb(11, 11, 124);
+}
+
+.row-editor-top{
+    display: flex;
+    margin-top: 5em;
+    margin-bottom: -5em;
+}
+
+.column-top{
+    float: left;
+    width: 100%;
+}
+
+.editor-range{
+    margin-left: 5em;
+    margin-right: 5em;
+    background-color: rgb(222, 238, 241);
+    padding: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.text-blue{
+    color: teal;
+    font-size: 1.5em;
 }
 
 .row-editor{
@@ -34,6 +60,7 @@
 
 .column{
     float: left;
+    padding: 1em;
 }
 
 .input{
@@ -62,4 +89,54 @@
 .contribute-wrapper{
     height: 100vh;
     width: 100%;
+}
+
+/*Download Button*/
+
+.downloadBtn{
+    align-content: center;
+    margin-left: 33rem;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.button-editor{
+    text-decoration: none;
+    text-transform: uppercase;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0.5em 1.5em;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 1em;
+    border-radius: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button-small-editor{
+    font-size: 0.5rem;
+    font-weight: 700;
+}
+
+.button-accent-editor{
+    color: white !important;
+    border-color: rgb(19, 243, 19);
+    background-color: rgb(19, 243, 19);
+}
+
+.button-accent-editor:hover,
+.button-accent-editor:focus{
+    background: rgb(35, 168, 35) !important;
+    color: #fff;
+    text-decoration: none;
+    border-color: transparent;
+}
+
+@media(min-width: 60rem){
+   .button-editor{
+       font-size: 1.2rem;
+       margin-top: 0em;
+   }
 }
