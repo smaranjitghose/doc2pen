@@ -11,7 +11,8 @@ let header = $(`
           <li><a class="white-text" href="#about-intro">About</a></li>
           <li><a class="white-text" href="#team">Team</a></li>
           <li><a class="white-text" href="#contact">Contact</a></li>
-          <li><a class="white-text" href="index.html">Editor</a></li>
+          <li><a class="white-text" href="editor.html">Editor</a></li>
+
       </ul>
   </div>
   </nav>
