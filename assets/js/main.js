@@ -56,7 +56,6 @@ function myFunction() {
 }
 
 // Map added
-
 function initMap() {
   var uluru = { lat: 28.501859, lng: 77.41032 };
   var map = new google.maps.Map(document.getElementById("map"), {
@@ -66,7 +65,6 @@ function initMap() {
 }
 
 // Captcha Script
-
 function checkform(theform) {
   var why = "";
 
@@ -110,8 +108,9 @@ function removeSpaces(string) {
   return string.split(" ").join("");
 }
 
-/* Contributor section */
+
 const contributor = document.querySelector(".contributor");
+// Data for Contributors: name, profile picture, github url
 const contributorsection = [
   {
     title: "Adyasha",

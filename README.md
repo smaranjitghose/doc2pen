@@ -23,36 +23,6 @@ Worry not! We are here to save you from your misery 🦸‍♂️. Doc2pen is yo
 
 <p align="center"><img width=50% src="https://media.giphy.com/media/Lo6LNpySgc0qlzoOKR/giphy.gif"></p>
 
-https://doc2pen-beta-1.netlify.app
-
-# Tasks:
-
-Features:
-
-- [ ] Font Size
-- [ ] Font Type
-- [ ] Font Color
-- [ ] Letter Spacing
-- [ ] Page Margins
-- [ ] Page Lines
-- [ ] Page Background
-- [ ] Adjust X Pos
-- [ ] Adjust Y Pos
-- [ ] Download Options: PNG,JPEG,JPEG,DOCX,PDF
-- [ ] New Page
-- [ ] Google Docs Integration
-
-Addons:
-
-- Using GANS or Transformers to generate your homeworks!
-
-- [ ] Front End Development
-  - [ ] Revamp the UI
-  - [ ] Donation Page
-  - [ ] Menu Bar
-  - [ ] Footer
-  
-- [ ] Collection of Custom Fonts
 
 <h2 align="center"><b>Open Source Programs we have been a part of:</b></h2>
 <p align="center">
