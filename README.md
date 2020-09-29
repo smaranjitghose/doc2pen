@@ -23,36 +23,6 @@ Worry not! We are here to save you from your misery 🦸‍♂️. Doc2pen is yo
 
 <p align="center"><img width=50% src="https://media.giphy.com/media/Lo6LNpySgc0qlzoOKR/giphy.gif"></p>
 
-https://doc2pen-beta-1.netlify.app
-
-# Tasks:
-
-Features:
-
-- [ ] Font Size
-- [ ] Font Type
-- [ ] Font Color
-- [ ] Letter Spacing
-- [ ] Page Margins
-- [ ] Page Lines
-- [ ] Page Background
-- [ ] Adjust X Pos
-- [ ] Adjust Y Pos
-- [ ] Download Options: PNG,JPEG,JPEG,DOCX,PDF
-- [ ] New Page
-- [ ] Google Docs Integration
-
-Addons:
-
-- Using GANS or Transformers to generate your homeworks!
-
-- [ ] Front End Development
-  - [ ] Revamp the UI
-  - [ ] Donation Page
-  - [ ] Menu Bar
-  - [ ] Footer
-  
-- [ ] Collection of Custom Fonts
 
 <h2 align="center"><b>Open Source Programs we have been a part of:</b></h2>
 <p align="center">
@@ -71,18 +41,11 @@ Addons:
 <h4 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 <a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h4></a>
 
-<h2 align = "center">Current Contributors</h2>
-
-<p align = "center"><a href="https://github.com/smaranjitghose/doc2pen/graphs/contributors"><img src="https://contributors-img.web.app/image?repo=smaranjitghose/doc2pen" />
-</a></p>
-
 <a href="./Code_of_conduct.md"><h2 align= "center"><b> Code of Conduct</b></h2></a> 
 <p align="center"><img width=35% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif"></p>
 
 <a href="./LICENSE"><h2 align= "center"><b> License</b></h2></a> 
 <p align="center"><img width=35% src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif"></p>
-
-### __Made with 💖 for open source__
 
 
 

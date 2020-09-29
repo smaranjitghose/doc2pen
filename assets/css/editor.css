@@ -1,60 +1,160 @@
-html,body {
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	overflow: auto;
-	height: 100%;
+/*navbar 2 */
+.nav2{
+    background: rgb(34, 183, 194);
+    height: 2.3em;
+    position: sticky;
+    top: 4em;
 }
 
-/* For the textarea where data to be converted is entered  */
-#dataField {
-	height: 300px;
+.nav2-text{
+    color: white;
+    font-size: 1em;
+    margin-top: -0.8em;
 }
 
-/* For titles */
-.title {
-	text-align: center;
+.nav2-text:hover{
+    background: transparent;
+    text-decoration: none;
+    color: white;
 }
 
-/* Used in categories of navbar */
-.white-text {
-	font-size: medium;
-	font-weight: bolder;
+.dropdown-content{
+    position: fixed;
+    margin-top: 1rem;
+    z-index: 200;
 }
 
-/* Wrapping the text section */
-.criteria-class {
-	width: 40vw; 
-	padding: 1%; 
-	margin-right: 0.5%;
+.dropdown-text:hover{
+    background-color: rgb(186, 225, 235);
+    color: rgb(11, 11, 124);
 }
 
-/* Wrapping the canvas */
-.contribute-wrapper {
-	padding: 1%;
-	padding-right: 0%;
+.row-editor-top{
+    display: flex;
+    margin-top: 5em;
+    margin-bottom: -5em;
 }
 
-/* To provide responsiveness of the website */
-@media (max-width: 1500px) {
-	/* To keep the textbox and page at the center in tablet/mobile view */
-	.criteria-class, .contribute-wrapper {
-		margin: 0 auto;
-		width: 100%;
-	}
+.column-top{
+    float: left;
+    width: 100%;
 }
 
-@media (min-width: 1501px) {
-	/* Displaying a line in the middle in desktop view */
-	.v1 {
-		border-left: 2px solid black;
-		height: 140vh;
-		margin-left: 0%;
-	}
+.editor-range{
+    margin-left: 5em;
+    margin-right: 5em;
+    background-color: rgb(222, 238, 241);
+    padding: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-@media (max-width: 740px) {
-	.contribute-wrapper {
-		margin-left: 15%;
-	}
+.text-blue{
+    color: teal;
+    font-size: 1em;
+}
+
+@media(min-width: 60rem){
+    .text-blue{
+        font-size: 1.5em;
+    }
+}
+
+.row-editor{
+    display: flex;
+    padding-top: 8em;
+}
+
+.column{
+    float: left;
+    padding: 1em;
+}
+
+.input{
+    width: 50%;
+}
+
+.output{
+    width: 50%;
+    margin-right: 0;
+}
+
+/*Input field*/
+
+.input-box{
+    border-style: solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 100vh;
+    width: 100%;
+    padding: 2em;
+    font-size: 2em;
+    background-color: ivory;
+}
+
+/*Output*/
+
+.contribute-wrapper{
+    height: 100vh;
+    width: 100%;
+}
+
+/*Download Button*/
+
+.downloadBtn{
+    margin: auto;
+    width: 50%;
+}
+
+@media(min-width: 60rem){
+    .downloadBtn{
+        margin-left: 33rem;
+    }
+}
+
+.bold{
+    font-weight: normal;
+}
+
+@media(min-width: 60rem){ 
+.bold{
+    font-weight: bold;
+}
+}
+
+.button-editor{
+    text-decoration: none;
+    text-transform: uppercase;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0.5em 1.5em;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 1em;
+    border-radius: 2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button-small-editor{
+    font-size: 0.5rem;
+    font-weight: 700;
+}
+
+.button-accent-editor{
+    color: white !important;
+    border-color: rgb(19, 243, 19);
+    background-color: rgb(19, 243, 19);
+}
+
+.button-accent-editor:hover,
+.button-accent-editor:focus{
+    background: rgb(35, 168, 35) !important;
+    color: #fff;
+    text-decoration: none;
+    border-color: transparent;
+}
+
+@media(min-width: 60rem){
+   .button-editor{
+       font-size: 1.2rem;
+       margin-top: 0em;
+   }
 }
