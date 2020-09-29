@@ -1,5 +1,4 @@
-//Navbar
-
+// Navigation Bar Declaration
 let header = $(`
   <nav id="navbar">
   <div class="nav-wrapper">
@@ -25,11 +24,12 @@ let header = $(`
   <li><a href="index.html">Contact</a></li>
   <li><a href="index.html">Editor</a></li>
   </ul>`);
-
+// Footer Declaration
 let footer = $(`
 <footer>
   <div>Made with ❤️ in India for the students of the world.</div>
 </footer>`);
+// Dynamically loading navigation bar and footer
 let bodyElement = $(`body`);
 bodyElement.prepend(header);
 bodyElement.append(footer);
