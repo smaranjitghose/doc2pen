@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <title>Doc2pen</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!--jquery link-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Import materialize.css-->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/editor.css" />
+</head>
+
+<body>
+
+    <!--Dynamic Nav Bar-->
+        <!-- Dropdown List For fonts -->
+        <ul id = "dropdown-font" class = "dropdown-content">  
+            <li><a onclick="chooseFont(0)" class="dropdown-text">Tarale</a></li>  
+            <li><a onclick="chooseFont(1)" class="dropdown-text">Liu Jian Mao Cao</a></li>  
+            <li><a onclick="chooseFont(2)" class="dropdown-text">Caveat</a></li>  
+            <li><a onclick="chooseFont(3)" class="dropdown-text">Homemade Apple</a></li>  
+            <li><a onclick="chooseFont(4)" class="dropdown-text">Dewebeauty Demo</a></li>  
+            <li><a onclick="chooseFont(5)" class="dropdown-text">Antro Vectra</a></li>  
+            <li><a onclick="chooseFont(6)" class="dropdown-text">Muiden Castle Script</a></li>
+            <li><a onclick="chooseFont(7)" class="dropdown-text">Simple font</a></li>
+            <li><a onclick="chooseFont(8)" class="dropdown-text">Messed font</a></li>
+            <li><a onclick="chooseFont(9)" class="dropdown-text">Curved font</a></li>
+            <li><a onclick="chooseFont(10)" class="dropdown-text">Small font</a></li>
+            <li><a onclick="chooseFont(11)" class="dropdown-text">Clear font</a></li>
+            <li><a onclick="chooseFont(12)" class="dropdown-text">Thin messed font</a></li>  
+            <li><a onclick="chooseFont(13)" class="dropdown-text">Thin font</a></li>  
+        </ul>
+
+		<!-- Dropdown List For pages -->
+		<ul id = "dropdown-page" class = "dropdown-content">  
+			<li><a onclick="choosePage(0)" class="dropdown-text">Default</a></li>  
+			<li><a onclick="choosePage(1)" class="dropdown-text">Ruled with margin(thick-lines)</a></li>  
+			<li><a onclick="choosePage(2)" class="dropdown-text">Ruled Designer</a></li>  
+			<li><a onclick="choosePage(3)" class="dropdown-text">Plain Designer</a></li>  
+			<li><a onclick="choosePage(4)" class="dropdown-text">Ruled with margin(thin-lines)</a></li>  
+			<li><a onclick="choosePage(5)" class="dropdown-text">Ruled without margin</a></li>  
+			<li><a onclick="choosePage(6)" class="dropdown-text">Plain white texture</a></li>  
+			<li><a onclick="choosePage(7)" class="dropdown-text">Plain grey texture</a></li>  
+	 	</ul>
+
+     <!--Nav 2-->
+     <nav class="nav2" id="navbar2">
+        <div class="nav-wrapper2">
+            <a href="#" data-target="mobile-demo" class="white-text sidenav-trigger"><i
+                class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a class="nav2-text" onclick="changePage()">Switch Page</a></li>
+				<li><a class="nav2-text" onclick="changeFont()">Switch Font</a></li>
+                <li><a class="nav2-text" id="btnPageUpload">Upload Page</a></li>
+                <li><a class="nav2-text" id="btnFontUpload" onclick="uploadFont()">Upload Font</a></li>
+                <li><a class="nav2-text" href="editor.html">Font Size</a></li>
+                <li><a class="nav2-text" href="editor.html">Change Ink</a></li>
+                <li><a class="nav2-text dropdown-trigger" data-target="dropdown-font">Choose Font<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="nav2-text dropdown-trigger" data-target="dropdown-page">Choose Page<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="nav2-text" href="editor.html">Word Count</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Nav 2 ends here-->
+
+    <input class="button-primary button-large download-image hidden" type="file" id="pageUploader"
+    onclick="">
+    <input class="button-primary button-large download-image hidden" type="file" id="fontUploader"
+    onclick="">
+
+    <!--Input and Output Windows-->
+    <div class="row-editor-top">
+        <div class="column-top">
+        <div class="editor-range">  <!--col-m-2-->
+            <label class="text-blue">Width</label>
+            <p class="range-field">
+        <input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" >
+        </p>
+        </div>
+
+        <div class="editor-range">
+            <label class="text-blue">Line Spacing</label>
+            <p class="range-field">
+        <input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)" >
+        </p>
+        </div>
+        </div>
+
+        <div class="column-top">
+            <div class="editor-range"> 
+            <label class="text-blue">Adjust X axis</label>
+						<p class="range-field">
+						<input  type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" >
+                        </p>
+                        </div>
+                        <div class="editor-range"> 
+                        <label class="text-blue">Adjust Y axis</label>
+						<p class="range-field">
+						  <input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" >
+                      </p>
+                      </div>
+        </div>
+    </div>
+
+    <div class="row-editor">
+    <!--Input text window-->
+        <div class="column input">
+            <section class="container-input">
+                <form onsubmit="return false">
+                    <textarea  placeholder="Write your text here..." id="dataField" onkeyup="myData = this.value" class = "input-box"></textarea>
+                    <label for = "text"></label>
+                </form>
+            </section>
+        </div>
+
+
+    <!--Output text window-->
+        <div class="column output">
+            
+            <div class="contribute-wrapper">
+                <div id="contributing">
+                    
+                </div>
+            </div>
+
+        </div>
+
+
+<!--Input/Output windows end here-->
+
+</div>
+<div class="downloadBtn">
+    <a class="button-editor button-accent-editor button-small-editor" onclick="save(str(pageNum++))">Download as PNG<i class="material-icons right bold">vertical_align_bottom</i></a>
+</div>
+
+    <!--Dynamic Footer-->
+    <script src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <script src="assets/js/editor.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script async defer src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyB2bXKNDezDf6YNVc-SauobynNHPo4RJb8&callback=initMap"> 
+    </script> 
+ </body>
+ </html>
