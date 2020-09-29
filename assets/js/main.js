@@ -111,7 +111,6 @@ function removeSpaces(string) {
 }
 
 /* Contributor section */
-
 const contributor = document.querySelector(".contributor");
 const contributorsection = [
   {
