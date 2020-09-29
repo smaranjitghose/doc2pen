@@ -13,7 +13,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!--jquery link-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--Import materialize.css-->
+	<!--Import materialize.css-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -55,22 +56,24 @@
 			<li><a onclick="choosePage(6)" class="dropdown-text">Plain white texture</a></li>  
 			<li><a onclick="choosePage(7)" class="dropdown-text">Plain grey texture</a></li>  
 	 	</ul>
-
+		 <ul id = "dropdown-ink" class = "dropdown-content">  
+			<li><a onclick="chooseBlue()" class="blue-text">Blue</a></li>  
+			<li><a onclick="chooseBlack()" class="black-text">Black</a></li>  
+			<li><a onclick="chooseRed()" class="red-text">Red</a></li>  
+			<li><a onclick="chooseGreen()" class="green-text">Green</a></li>  
+			<li><a onclick="choosePink()" class="pink-text">Pink</a></li>  
+	 	</ul>
      <!--Nav 2-->
      <nav class="nav2" id="navbar2">
         <div class="nav-wrapper2">
             <a href="#" data-target="mobile-demo" class="white-text sidenav-trigger"><i
                 class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a class="nav2-text" onclick="changePage()">Switch Page</a></li>
-				<li><a class="nav2-text" onclick="changeFont()">Switch Font</a></li>
-                <li><a class="nav2-text" id="btnPageUpload">Upload Page</a></li>
-                <li><a class="nav2-text" id="btnFontUpload" onclick="uploadFont()">Upload Font</a></li>
-                <li><a class="nav2-text" href="editor.html">Font Size</a></li>
-                <li><a class="nav2-text" href="editor.html">Change Ink</a></li>
+                <li><a class="nav2-text dropdown-trigger" data-target="dropdown-ink" href="editor.html">Change Ink<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a class="nav2-text dropdown-trigger" data-target="dropdown-font">Choose Font<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a class="nav2-text dropdown-trigger" data-target="dropdown-page">Choose Page<i class="material-icons right">arrow_drop_down</i></a></li>
-                <li><a class="nav2-text" href="editor.html">Word Count</a></li>
+				<li><a class="nav2-text" href="editor.html">Word Count</a></li>
+				<li><a class="nav2-text" onclick="save(str(pageNum))">Download</a></li>
             </ul>
         </div>
     </nav>
@@ -81,10 +84,11 @@
     onclick="">
     <input class="button-primary button-large download-image hidden" type="file" id="fontUploader"
     onclick="">
-
+	
     <!--Input and Output Windows-->
     <div class="row-editor-top">
         <div class="column-top">
+			
         <div class="editor-range">  <!--col-m-2-->
             <label class="text-blue">Width</label>
             <p class="range-field">
@@ -96,6 +100,12 @@
             <label class="text-blue">Line Spacing</label>
             <p class="range-field">
         <input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)" >
+        </p>
+		</div>
+		<div class="editor-range">  <!--col-m-2-->
+            <label class="text-blue">Font Size</label>
+            <p class="range-field">
+        <input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)" >
         </p>
         </div>
         </div>
@@ -113,9 +123,10 @@
 						  <input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" >
                       </p>
                       </div>
-        </div>
+		</div>
+		
     </div>
-
+	
     <div class="row-editor">
     <!--Input text window-->
         <div class="column input">
@@ -144,14 +155,14 @@
 
 </div>
 <div class="downloadBtn">
-    <a class="button-editor button-accent-editor button-small-editor" onclick="save(str(pageNum++))">Download as PNG<i class="material-icons right bold">vertical_align_bottom</i></a>
+	<a class="button-editor button-accent-editor button-small-editor" onclick="save(str(pageNum++))">Download as PNG<i class="material-icons right bold">vertical_align_bottom</i></a>
 </div>
 
     <!--Dynamic Footer-->
     <script src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/materialize.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+
     <script src="assets/js/editor.js"></script>
     <script src="assets/js/script.js"></script>
     <script async defer src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyB2bXKNDezDf6YNVc-SauobynNHPo4RJb8&callback=initMap"> 
