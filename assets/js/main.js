@@ -214,17 +214,17 @@ const contributorsection = [
   },
   {
     title: "Avisek",
-    image: "assets/images/contributors/20.jpg",
+    image: "assets/images/contributors/21.jpg",
     githublink: "https://github.com/shawavisek35",
   },
   {
     title: "Sonali",
-    image: "assets/images/contributors/21.jpg",
+    image: "assets/images/contributors/22.jpg",
     githublink: "https://github.com/Sonali12920",
   },
   {
     title: "Varun",
-    image: "assets/images/contributors/22.jpg",
+    image: "assets/images/contributors/20.jpg",
     githublink: "https://github.com/varunvj1",
   },
 ];
