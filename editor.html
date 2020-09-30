@@ -72,7 +72,6 @@
                 <li><a class="nav2-text dropdown-trigger" data-target="dropdown-ink" href="editor.html">Change Ink<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a class="nav2-text dropdown-trigger" data-target="dropdown-font">Choose Font<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a class="nav2-text dropdown-trigger" data-target="dropdown-page">Choose Page<i class="material-icons right">arrow_drop_down</i></a></li>
-				<li><a class="nav2-text" href="editor.html">Word Count</a></li>
 				<li><a class="nav2-text" onclick="save(str(pageNum))">Download</a></li>
             </ul>
         </div>
@@ -146,20 +145,16 @@
                 <div id="contributing">
                     
                 </div>
+                <!--word count-->
+                    <div class='word-box bx-clr'>Word Count: 10000<br>
+                        Words Left: <span style=" color:aqua; font-weight:bold;" id="count-words">10000</span>
+                    </div>
             </div>
-
-        </div>
+        </div><br>
 
 <!--Input/Output windows end here-->
+</div>
 
-</div>
-<!--g-drive save button-->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<div class="g-savetodrive"
-   data-src="need url"
-   data-filename="My-Assignment.pdf"
-   data-sitename="Doc2pen Assignment">
-</div>
 
 
     <!--Dynamic Footer-->

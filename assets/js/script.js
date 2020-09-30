@@ -33,8 +33,8 @@ window.onload = function () {
   };
 };
 
-//word count and limit function
 
+//word count and limit function
 $("#dataField").on("keydown", function (e) {// function event
   var words = $.trim(this.value).length ? this.value.match(/\S+/g).length : 0; //count length of word when space occur
   if (words <= 10000) {
