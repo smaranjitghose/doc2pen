@@ -34,6 +34,9 @@ defInk = "#16264C";
 function chooseRed(){
     defInk = "red";
   }
+function chooseBlue(){
+    defInk = "blue";
+  }
   function chooseGreen(){
     defInk = "green";
   }
