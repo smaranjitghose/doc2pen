@@ -135,8 +135,8 @@ const maintainerInfo = () => {
   maintainerSection.forEach(
     ({ title, image, github, linkedin, name, imgclass}) =>
       (output += `    
-      <div class="${imgclass}">
-      <div class="profile-container ml-5 d-flex d-self-center">
+      <div class="${imgclass} d-flex d-self-center ml-md-5">
+      <div class="profile-container">
        <div class="profile-wrapper">
          <div class="profile-card">
           <img src="${image}" alt="profile pics"> 

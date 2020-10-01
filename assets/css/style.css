@@ -389,22 +389,6 @@ footer {
   transition: 1s all ease;
 }
 
-@media(max-width: 760px){
-  .projM{
-    display: block !important;
-  }
-
-  .profile-wrapper{
-    width: 100%;
-  }
-}
-
-@media(min-width: 60rem){
-  .projM{
-    display: none;
-  }
-}
-
 .profile-container::before {
   content: "";
   position: absolute;
