@@ -18,8 +18,13 @@ nav {
   background: #0f2027;
   background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
   background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
-  overflow: hidden;
   z-index: 2;
+}
+
+@media(min-width: 60rem){ 
+.nav1{
+  height: 4em;
+}
 }
 
 .nav-sign{
@@ -32,8 +37,16 @@ nav {
 
 .nav-top{
   margin-top: 1em;
-  /* float: right; */
   font-size: 0.8em;
+}
+
+.res-toggle{
+  background-color: white !important;
+  outline: none;
+}
+
+.menu-one{
+  margin-left: 45em;
 }
 
 .nav-wrapper {
@@ -66,23 +79,10 @@ nav {
   }
 }
 
-/* @media(min-width: 60rem){
-  .sidebar{
-    display: none;
-  }
-} */
-
 .brand-logo img {
   width: 180px;
   margin-bottom: 15px;
   float: right;
-}
-
-@media(min-width: 60rem){
-  .brand-logo img{
-    float: left;
-    margin-right: 39em;
-  }
 }
 
 .sticky {
