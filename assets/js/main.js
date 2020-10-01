@@ -3,21 +3,21 @@ let header = $(`
   <nav id="navbar">
   <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img src="./assets/images/logo.png"></a>
-      <a href="#" data-target="mobile-demo" class="white-text sidenav-trigger"><i
-              class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-          <li><a class="white-text" href="index.html">Home</a></li>
-          <li><a class="white-text" href="#about-intro">About</a></li>
-          <li><a class="white-text" href="#team">Team</a></li>
-          <li><a class="white-text" href="#contact">Contact</a></li>
-          <li><a class="white-text" href="editor.html">Editor</a></li>
-
+      <button data-target="mobile-demo" class="text-white navbar-toggler">
+      <div class="nav-contents">
+      <ul class="nav justify-content-end nav-top">
+          <li class="nav-item"><a class="text-white nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="text-white nav-link active" href="#about-intro">About</a></li>
+          <li class="nav-item"><a class="text-white nav-link active" href="#team">Team</a></li>
+          <li class="nav-item"><a class="text-white nav-link active" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="text-white nav-link active" href="editor.html">Editor</a></li>
       </ul>
+      </div>
   </div>
   </nav>
   
   <!--Side Nav Bar -->
-  <ul class="sidenav" id="mobile-demo">
+  <ul class="sidenav collapse navbar-collapse" id="mobile-demo">
   <li><a href="index.html">Home</a></li>
   <li><a href="index.html">About</a></li>
   <li><a href="#mentor-container">Team</a></li>
@@ -234,8 +234,8 @@ const showCards = () => {
   contributorsection.forEach(
     ({ title, image, githublink }) =>
       (output += `       
-     <figure class="position-relative display-inline-block va-top text-center">
-      <img src="${image}" class="grid-wd-100 va-top">
+     <figure class="position-relative d-inline-block text-center ml-5 mb-4">
+      <img src="${image}" class="grid-wd-100">
        <figcaption class="position-absolute grid-wd-100 va-top pad font-small futura">
         <div class="text">${title} <a href="${githublink}" class="social-icon fa fa-github"></a></div>
        </figcaption>

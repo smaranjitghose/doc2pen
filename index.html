@@ -12,12 +12,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!--Import Font-->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <!--Import Materialize-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"/> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
     <!--Getting our CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <!--Importing JQUERY-->
@@ -39,7 +42,9 @@
   <div class="row">
     <div class="col-lg-6 home-div center">
         <h1 id="title-heading">Type Documents in your Handwriting.</h1>
+    <div class="d-flex justify-content-center">
         <a href="editor.html" class="button"> Check It Out</a>
+    </div>
     </div>
     <div class="col-lg-6">
       <img class="title-image" src="assets/images/title-image.svg">
@@ -57,7 +62,7 @@
 
 <!-- About Section -->
 
-<div id="about-intro" class="about container center">
+<div id="about-intro" class="about container center-block">
   <h2>What are we about?</h2>
   <p>One day, <span class="enhanced">Smitha</span> was very tensed about the assignments she has to submit in her college, because <span class="enhanced"> She Can Type Fast, But Can't Write Fast.</span></p>
   <p>On talking about this issue to her friend <span class="enhanced">Harry</span>, he suggested <span class="enhanced">Doc2Pen</span> as a solution to her problem.</p>
@@ -98,18 +103,18 @@
         <br>
 </div>
 
-<div id="open-source" class="container center">
-    <img id="open-source-image" src="assets/images/open-source.svg">
+<img id="open-source-image" src="assets/images/open-source.svg">
+<div id="open-source" class="container">
     <p>Now, as Doc2Pen saves a lot of your time, you can now spent your valuable time in learning some practical stuffs. </p>
     <p>And So, here comes the Good News, Doc2pen is an Open Source Project, we welcome your contributions &#128578;.</p>
 </div>
 
 <!-- About Section End -->
 <div id="team">
-<br><br> <h3 class="title center">Project Maintainers</h3><br><br>
- <div class="container">
+<br><br> <h3 class="title text-center">Project Maintainers</h3><br><br>
+ <div class="container project-maintainers">
   <div class="row">
-    <div class="col-md-6 image-1">
+    <div class="col-md-4 image-1">
      <div class="profile-container">
        <div class="profile-wrapper">
          <div class="profile-card">
@@ -125,7 +130,7 @@
       </div>
     </div>
       
-    <div class="col-md-6 image-2">
+    <div class="col-md-4 image-2">
       <div class="profile-container">
         <div class="profile-wrapper">
           <div class="profile-card">
@@ -144,10 +149,10 @@
 </div>
 
 <!-- contributor section -->
-<h3 class="title center">Clan of Contributors</h3><br><br>
+<h3 class="title text-center">Clan of Contributors</h3><br><br>
 
-<div class="container flex">
-  <div class="grid-wd-100 text-left margin-center team-container contributor">
+<div class="container flex-row">
+  <div class="col-sm-9 text-left margin-center team-container contributor">
      <!-- dynamically contributor section -->
   </div>
 </div>
@@ -157,24 +162,24 @@
 <div id="contact">
     <div class="container" style="max-width: 980px;">
       <div class="contact-parent">
-        <div class="contact-child child1">
+        <div class="contact-child nth-child(1)">
           <div id="map"></div>
          </div>
-         <div class="contact-child child2">
+         <div class="contact-child nth-child(2)">
             <div class="inside-contact">
                <h2>Get In <span>Touch</span></h2>
                   <h3><span id="confirm"></h3>
                     <p>Name *</p>
-                    <input id="txt_name" type="text" Required="required">
+                    <input id="txt_name" type="text" Required="required" class="contact-input">
 
                     <p>Subject *</p>
-                    <input id="txt_subject" type="text" Required="required">
+                    <input id="txt_subject" type="text" Required="required" class="contact-input">
 
                     <p>Email *</p>
-                    <input id="txt_email" type="text" Required="required">
+                    <input id="txt_email" type="text" Required="required" class="contact-input">
 
                     <p>Message *</p>
-                    <textarea id="txt_message" rows="4" cols="20" Required="required" ></textarea>
+                    <textarea id="txt_message" rows="4" cols="20" Required="required" class="contact-input"></textarea>
                 
                       <!-- START CAPTCHA -->
                       <div class="capbox">

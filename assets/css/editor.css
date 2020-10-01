@@ -1,12 +1,21 @@
 /*navbar 2 */
 .nav2{
     background: rgb(34, 183, 194);
-    height: 2.3em;
+    /* height: 2.3em; */
     position: sticky;
     top: 4em;
 }
 
-.nav2-text{
+.nav-main{
+    list-style-type: none;
+    margin-left: 6em;
+}
+
+.main-text{
+    margin-top: -2em;
+}
+
+/* .nav2-text{
     color: white;
     font-size: 1em;
     margin-top: -0.8em;
@@ -16,13 +25,13 @@
     background: transparent;
     text-decoration: none;
     color: white;
-}
+} */
 
-.dropdown-content{
+/* .dropdown-content{
     position: fixed;
     margin-top: 1rem;
     z-index: 200;
-}
+} */
 
 .dropdown-text:hover{
     background-color: rgb(186, 225, 235);
