@@ -6,7 +6,7 @@ let header = $(`
       <a href="#" data-target="mobile-demo" class="white-text sidenav-trigger"><i
               class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-          <li><a class="white-text" href="index.html">Home</a></li>
+          <li><a class="white-text" href="#home">Home</a></li>
           <li><a class="white-text" href="#about-intro">About</a></li>
           <li><a class="white-text" href="#team">Team</a></li>
           <li><a class="white-text" href="#contact">Contact</a></li>
