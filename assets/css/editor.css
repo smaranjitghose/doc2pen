@@ -31,8 +31,15 @@
 
 .row-editor-top{
     display: flex;
+    flex-direction: row;
     margin-top: 2em;
     margin-bottom: -5em;
+}
+
+@media(max-width: 995px) {
+    .row-editor-top {
+        flex-direction: column;
+    }
 }
 
 .column-top{
