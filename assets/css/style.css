@@ -18,14 +18,46 @@ nav {
   background: #085078;
   background: -webkit-linear-gradient(to right, #71b6ae, #085078);
   background: linear-gradient(to right, #71b6ae, #085078);
-
-  overflow: hidden;
   z-index: 2;
+}
+
+@media(min-width: 60rem){ 
+.nav1{
+  height: 4em;
+}
+}
+
+.nav-sign{
+  color: white;
+}
+
+.nav-top{
+  padding-right: -2em;
+}
+
+.nav-top{
+  margin-top: 1em;
+  font-size: 0.8em;
+}
+
+.res-toggle{
+  background-color: white !important;
+  outline: none;
+}
+
+.menu-one{
+  margin-left: 45em;
 }
 
 .nav-wrapper {
   margin-left: 20px;
   margin-right: 10px;
+}
+
+@media(max-width: 760px){
+  .nav-top{
+    display: none;
+  }
 }
 
 .nav-wrapper a:hover,
@@ -41,9 +73,16 @@ nav {
   margin-left: 0px !important;
 }
 
+@media(min-width: 60rem){
+  .sidenav-trigger{
+    display: none;
+  }
+}
+
 .brand-logo img {
   width: 180px;
   margin-bottom: 15px;
+  float: right;
 }
 
 .sticky {
@@ -178,6 +217,7 @@ section .wave.wave4 {
 }
 .button:hover {
   color: #fff;
+  text-decoration: none;
 }
 .button:hover:before {
   width: 100%;
@@ -202,6 +242,7 @@ section .wave.wave4 {
   display: flex;
   flex: 1;
   box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
+  height: 100vh;
 }
 
 #map {
@@ -218,11 +259,13 @@ section .wave.wave4 {
 .inside-contact {
   width: 90%;
   margin: 0 auto;
+  line-height: 1em;
 }
 
 .inside-contact h2 {
   text-align: center;
   margin: 20px;
+  font-size: 3em;
 }
 
 .inside-contact span {
@@ -330,6 +373,12 @@ footer {
 
 .container {
   padding: 20px;
+}
+
+@media(min-width: 60rem){
+  .project-maintainers{
+    margin-left: 15em;
+  }
 }
 
 .profile-container {
@@ -673,7 +722,7 @@ footer {
 
 #open-source-image {
   width: 50%;
-  margin: auto;
+  margin-left: auto !important;
 }
 
 #open-source p {
@@ -689,6 +738,7 @@ footer {
 #about-intro h2,
 #features h3 {
   color: #4e89ae;
+  text-align: center;
 }
 
 #features h3 {
@@ -700,6 +750,10 @@ footer {
   .feature-div {
     margin: 60px auto;
   }
+}
+
+#about-intro h5{
+  text-align: center;
 }
 
 /*Responsive*/
@@ -745,7 +799,7 @@ footer {
 
   #open-source-image {
     width: 50%;
-    margin: auto;
+    margin-left: 20em !important;
   }
 
   #open-source p {
@@ -772,6 +826,10 @@ footer {
   #features h3 {
     font-size: 1.8rem;
   }
+
+  #open-source-image{
+    margin-left: 5em !important;
+  }
 }
 
 @media (min-width: 410px) and (max-width: 462px) {
@@ -782,6 +840,10 @@ footer {
   #features h3 {
     font-size: 2rem;
   }
+
+  #open-source-image{
+    margin-left: 7em !important;
+  }
 }
 
 @media (min-width: 459px) and (max-width: 506px) {
@@ -791,5 +853,27 @@ footer {
 
   #features h3 {
     font-size: 2.1rem;
+  }
+
+  #open-source-image{
+    margin-left: 8em !important;
+  }
+}
+
+@media(min-width: 506px) and (max-width: 600px){
+  #open-source-image{
+    margin-left: 8em !important;
+  }
+}
+
+@media(min-width: 600px) and (max-width: 650px){
+  #open-source-image{
+    margin-left: 9em !important;
+  }
+}
+
+@media(min-width: 650px) and (max-width: 760px){
+  #open-source-image{
+    margin-left: 12em !important;
   }
 }
