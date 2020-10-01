@@ -1,32 +1,81 @@
 /*navbar 2 */
 .nav2{
     background: rgb(34, 183, 194);
-    height: 2.3em;
+    /* height: 2.3em; */
     position: sticky;
     top: 4em;
+    width: 100%;
+    /* height: 20em; */
 }
 
-.nav2-text{
-    color: white;
-    font-size: 1em;
-    margin-top: -0.8em;
+.nav-main{
+    list-style-type: none;
+    margin-left: 6em;
 }
 
-.nav2-text:hover{
-    background: transparent;
-    text-decoration: none;
-    color: white;
-}
-
-.dropdown-content{
-    position: fixed;
-    margin-top: 1rem;
-    z-index: 200;
+.dropdown-item{
+    padding: 0.3em;
 }
 
 .dropdown-text:hover{
     background-color: rgb(186, 225, 235);
     color: rgb(11, 11, 124);
+}
+
+@media(min-width: 60rem){
+    .dropdown1{
+        margin-left: 48em;
+    }
+
+    .dropdown4{
+        margin-left: -2em;
+    }
+}
+
+.blue-text{
+    color: blue;
+}
+
+.blue-text:hover{
+    background-color: rgb(178, 178, 240);
+}
+
+.black-text{
+    color: black;
+}
+
+.black-text:hover{
+    background-color: rgb(197, 192, 192);
+}
+
+.red-text{
+    color: red;
+}
+
+.red-text:hover{
+    background-color: rgb(248, 172, 172);
+}
+
+.green-text{
+    color: green;
+}
+
+.green-text:hover{
+    background-color: rgb(141, 238, 141);
+}
+
+.pink-text{
+    color: rgb(236, 70, 98);
+}
+
+.pink-text:hover{
+    background-color: rgb(245, 155, 200);
+}
+
+@media(min-width: 60rem){
+    .menu-first{
+        margin-left: 48em;
+    }
 }
 
 .row-editor-top{
@@ -100,6 +149,26 @@
     font-size: 2em;
     background-color: ivory;
 }
+
+/*Input Range*/
+
+.custom-range::-webkit-slider-thumb {
+    background: rgb(16, 170, 231);
+  }
+
+  .custom-range::-webkit-slider-thumb:hover {
+    background: rgb(16, 137, 173);
+  }
+  
+  .custom-range::-moz-range-thumb {
+    background: gray;
+    height: -0.5em;
+  }
+  
+  .custom-range::-ms-thumb {
+    background: gray;
+    height: -0.5em;
+  }
 
 /*Output*/
 
@@ -179,3 +248,23 @@
        margin-top: 0em;
    }
 }
+
+.word-box {
+    margin-left: 400px;
+    height: 60px;
+    width: 220px;
+    margin-bottom: 15px;
+    border: 4px solid rgb(11, 227, 255);
+    border-radius: 50px;
+    text-align: center;
+    font-weight: bolder;
+    color: aliceblue;
+  }
+  
+  .bx-clr {
+    background: #0f2027;
+    background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
+    background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
+    overflow: hidden;
+    z-index: 2;
+  }

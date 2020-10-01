@@ -32,6 +32,9 @@ defInk = "#16264C";
 function chooseRed(){
     defInk = "red";
   }
+function chooseBlue(){
+    defInk = "blue";
+  }
   function chooseGreen(){
     defInk = "green";
   }
@@ -55,7 +58,7 @@ function draw()
     textLeading(linespacing);
   }
   data = "\n" + myData;
-  text(data, xaxis, yaxis, w, 900);
+  text(data, xaxis, yaxis, w,900);
 }
 
 
@@ -74,7 +77,7 @@ function changeFont()
   fontNum %= myFonts;
 }
 
-function loadPage() 
+function loadPage()
 {
   for (var i = 0; i < imgNum; i++)
   {
