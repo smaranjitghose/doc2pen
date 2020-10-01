@@ -15,9 +15,10 @@ a {
 /* NAVBAR*/
 
 nav {
-  background: #0f2027;
-  background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
-  background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
+  background: #085078;
+  background: -webkit-linear-gradient(to right, #71b6ae, #085078);
+  background: linear-gradient(to right, #71b6ae, #085078);
+
   overflow: hidden;
   z-index: 2;
 }
@@ -64,16 +65,18 @@ nav {
 .title-image {
   width: 70%;
   margin: 5% 20% 5% 20%;
-  padding:15px;
+  padding: 15px;
 }
 
-.home-section{
+.home-section {
   position: relative;
   width: 100%;
   height: 100%;
   background: #0f2027;
-  background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
-  background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
+
+  background: -webkit-linear-gradient(to right, #71b6ae, #085078);
+  background: linear-gradient(to right, #71b6ae, #085078);
+
   overflow: hidden;
 }
 
@@ -149,11 +152,11 @@ section .wave.wave4 {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  border:none;
-  cursor:pointer;
+  border: none;
+  cursor: pointer;
 }
 .button:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -163,7 +166,7 @@ section .wave.wave4 {
   z-index: -2;
 }
 .button:before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -314,12 +317,12 @@ footer {
   z-index: 150;
   background: #0f2027;
   background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
-  background: linear-gradient(to right, #0f2027, #2c5364, #203a43); 
-  color:white;
+  background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
+  color: white;
   text-align: center;
   font-size: 1.2rem;
   padding: 10px;
-  margin-top: 50px
+  margin-top: 50px;
 }
 
 /*Team section*/
@@ -639,7 +642,9 @@ footer {
   padding-top: 5em;
 }
 
-#about-intro p , #features p , #open-source p{
+#about-intro p,
+#features p,
+#open-source p {
   font-size: 1.4rem;
   color: #333333;
   text-align: center;

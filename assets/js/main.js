@@ -7,10 +7,10 @@ let header = $(`
               class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
           <li><a class="white-text" href="#home">Home</a></li>
+          <li><a class="white-text" href="editor.html">Editor</a></li>
           <li><a class="white-text" href="#about-intro">About</a></li>
           <li><a class="white-text" href="#team">Team</a></li>
           <li><a class="white-text" href="#contact">Contact</a></li>
-          <li><a class="white-text" href="editor.html">Editor</a></li>
 
       </ul>
   </div>
@@ -19,10 +19,10 @@ let header = $(`
   <!--Side Nav Bar -->
   <ul class="sidenav" id="mobile-demo">
   <li><a href="index.html">Home</a></li>
+  <li><a href="index.html">Editor</a></li>
   <li><a href="index.html">About</a></li>
   <li><a href="#mentor-container">Team</a></li>
   <li><a href="index.html">Contact</a></li>
-  <li><a href="index.html">Editor</a></li>
   </ul>`);
 // Footer Declaration
 let footer = $(`
@@ -107,7 +107,6 @@ function ValidCaptcha() {
 function removeSpaces(string) {
   return string.split(" ").join("");
 }
-
 
 const contributor = document.querySelector(".contributor");
 // Data for Contributors: name, profile picture, github url
