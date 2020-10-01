@@ -73,7 +73,6 @@
                 <li><a class="nav2-text dropdown-trigger" data-target="dropdown-ink" href="editor.html">Change Ink<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a class="nav2-text dropdown-trigger" data-target="dropdown-font">Choose Font<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li><a class="nav2-text dropdown-trigger" data-target="dropdown-page">Choose Page<i class="material-icons right">arrow_drop_down</i></a></li>
-				<li><a class="nav2-text" href="editor.html">Word Count</a></li>
 				<li><a class="nav2-text" onclick="save(str(pageNum))">Download</a></li>
             </ul>
         </div>
@@ -147,14 +146,17 @@
                 <div id="contributing">
                     
                 </div>
+                <!--word count-->
+                    <div class='word-box bx-clr'>Word Count: <span style=" color:aqua; font-weight:bold;" id="words-strt">0</span><br>
+                        Words Left: <span style=" color:aqua; font-weight:bold;" id="count-words">10000</span>
+                    </div>
             </div>
-
-        </div>
-
+        </div><br>
 
 <!--Input/Output windows end here-->
-
 </div>
+
+
 
     <!--Dynamic Footer-->
     <script src="assets/js/jquery.js"></script>
