@@ -167,3 +167,23 @@
        margin-top: 0em;
    }
 }
+
+.word-box {
+    margin-left: 400px;
+    height: 60px;
+    width: 220px;
+    margin-bottom: 15px;
+    border: 4px solid rgb(11, 227, 255);
+    border-radius: 50px;
+    text-align: center;
+    font-weight: bolder;
+    color: aliceblue;
+  }
+  
+  .bx-clr {
+    background: #0f2027;
+    background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
+    background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
+    overflow: hidden;
+    z-index: 2;
+  }

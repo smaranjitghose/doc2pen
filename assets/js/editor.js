@@ -24,7 +24,7 @@ function setup() {
   } else {
     canvasHeight = screen.width * 0.65;
   }
-  canvas = createCanvas(0.86*canvasHeight, canvasHeight);
+  canvas = createCanvas(0.75*canvasHeight, canvasHeight/1.4);
   canvas.parent("contributing");
   rectMode(CORNER);
 }
@@ -33,6 +33,9 @@ defInk = "#16264C";
 
 function chooseRed(){
     defInk = "red";
+  }
+function chooseBlue(){
+    defInk = "blue";
   }
   function chooseGreen(){
     defInk = "green";
@@ -57,7 +60,7 @@ function draw()
     textLeading(linespacing);
   }
   data = "\n" + myData;
-  text(data, xaxis, yaxis, w, 900);
+  text(data, xaxis, yaxis, w,900);
 }
 
 
@@ -76,7 +79,7 @@ function changeFont()
   fontNum %= myFonts;
 }
 
-function loadPage() 
+function loadPage()
 {
   for (var i = 0; i < imgNum; i++)
   {
