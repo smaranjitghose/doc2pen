@@ -41,7 +41,7 @@ Worry not! We are here to save you from your misery 🦸‍♂️. Doc2pen is yo
 <h4 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 <a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h4></a>
 
-<a href="./Code_of_conduct.md"><h2 align= "center"><b> Code of Conduct</b></h2></a> 
+<a href="./CODE_OF_CONDUCT.md"><h2 align= "center"><b> Code of Conduct</b></h2></a> 
 <p align="center"><img width=35% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif"></p>
 
 <a href="./LICENSE"><h2 align= "center"><b> License</b></h2></a> 
