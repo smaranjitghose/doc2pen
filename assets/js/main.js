@@ -117,22 +117,25 @@ const maintainerSection = [
     name: "Smaranjit Ghose",
     title: "Lead Developer",
     github: "./https://github.com/smaranjitghose",
-    linkedin: "https://www.linkedin.com/in/smaranjitghose/"
+    linkedin: "https://www.linkedin.com/in/smaranjitghose/",
+    imgclass: "image-1"
   },
   {
     image: "assets/images/anush_bhatia.png",
     name: "Anush Bhatia",
     title: "Lead Developer",
     github: "https://github.com/anushbhatia",
-    linkedin: "https://www.linkedin.com/in/anushbhatia/"
+    linkedin: "https://www.linkedin.com/in/anushbhatia/",
+    imgclass: "image-2"
   }
 ];
 
 const maintainerInfo = () => {
   let output = "";
   maintainerSection.forEach(
-    ({ title, image, github, linkedin, name }) =>
+    ({ title, image, github, linkedin, name, imgclass}) =>
       (output += `    
+      <div class="col-md-8 ${imgclass} projectMaintainers">
       <div class="profile-container ml-5 d-flex d-self-center">
        <div class="profile-wrapper">
          <div class="profile-card">
@@ -145,6 +148,7 @@ const maintainerInfo = () => {
           </div> 
          </div>
         </div>
+      </div>
       </div>
     `)
   );
