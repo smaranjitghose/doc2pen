@@ -1,6 +1,6 @@
 // Navigation Bar Declaration
 let header = $(`
-  <nav id="navbar">
+  <nav id="navbar" style="z-index: 9999">
   <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img src="./assets/images/logo.png"></a>
       <a href="#" data-target="mobile-demo" class="white-text sidenav-trigger"><i
