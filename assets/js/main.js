@@ -109,6 +109,66 @@ function removeSpaces(string) {
   return string.split(" ").join("");
 }
 
+const projMaintainers1 = document.querySelector(".profile-card1");
+//Data for Project Maintainers
+const maintainerSection1 = [
+  {
+    image: "assets/images/smaranjit_ghose.png",
+    name: "Smaranjit Ghose",
+    title: "Lead Developer",
+    github: "./https://github.com/smaranjitghose",
+    linkedin: "https://www.linkedin.com/in/smaranjitghose/"
+  }];
+
+  const maintainerInfo1 = () => {
+    let output = "";
+    maintainerSection1.forEach(
+      ({ title, image, github, linkedin, name }) =>
+        (output += `       
+        <img src="${image}" alt="profile pics"> 
+            <h4>${name}</h4>
+            <h5>${title}</h5>
+            <div class="icons">
+              <a href="${github}" class="fa fa-github"></a>
+              <a href="${linkedin}" class="fa fa-linkedin"></a>
+            </div> 
+      `)
+    );
+    projMaintainers1.innerHTML = output;
+  };
+  document.addEventListener("DOMContentLoaded", maintainerInfo1);
+  
+
+  const projMaintainers2 = document.querySelector(".profile-card2");
+//Data for Project Maintainers
+const maintainerSection2 = [
+  {
+    image: "assets/images/anush_bhatia.png",
+    name: "Anush Bhatia",
+    title: "Lead Developer",
+    github: "https://github.com/anushbhatia",
+    linkedin: "https://www.linkedin.com/in/anushbhatia/"
+  }
+];
+
+const maintainerInfo2 = () => {
+  let output = "";
+  maintainerSection2.forEach(
+    ({ title, image, github, linkedin, name }) =>
+      (output += `       
+      <img src="${image}" alt="profile pics"> 
+          <h4>${name}</h4>
+          <h5>${title}</h5>
+          <div class="icons">
+            <a href="${github}" class="fa fa-github"></a>
+            <a href="${linkedin}" class="fa fa-linkedin"></a>
+          </div> 
+    `)
+  );
+  projMaintainers2.innerHTML = output;
+};
+document.addEventListener("DOMContentLoaded", maintainerInfo2);
+
 
 const contributor = document.querySelector(".contributor");
 // Data for Contributors: name, profile picture, github url
