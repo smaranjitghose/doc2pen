@@ -17,14 +17,12 @@ function preload()
   loadPage();
 }
 
+document.getElementsByTagName("BODY")[0].onresize = function () { setup() };
+
 function setup() {
-  let canvasHeight;
-  if(screen.width <= 995){
-    canvasHeight = screen.width * 0.9
-  } else {
-    canvasHeight = screen.width * 0.65;
-  }
-  canvas = createCanvas(0.86*canvasHeight, canvasHeight);
+  let canvasHeight = document.getElementById("contribute-wrapper").offsetHeight;
+  let canvasWidth = document.getElementById("contribute-wrapper").offsetWidth;
+  canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent("contributing");
   rectMode(CORNER);
 }

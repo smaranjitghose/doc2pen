@@ -131,7 +131,7 @@
     <!--Input text window-->
         <div class="column input">
             <section class="container-input">
-                <form onsubmit="return false">
+                <form onsubmit="return false" style="width: 100%; height: 100%;">
                     <textarea  placeholder="Write your text here..." id="dataField" onkeyup="myData = this.value" class = "input-box"></textarea>
                     <label for = "text"></label>
                 </form>
@@ -141,10 +141,10 @@
 
     <!--Output text window-->
         <div class="column output">
-            
-            <div class="contribute-wrapper">
+
+            <div id="contribute-wrapper">
                 <div id="contributing">
-                    
+                    <!--dynamic canvas-->
                 </div>
             </div>
 
