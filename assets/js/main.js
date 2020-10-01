@@ -108,7 +108,6 @@ function removeSpaces(string) {
   return string.split(" ").join("");
 }
 
-
 const contributor = document.querySelector(".contributor");
 // Data for Contributors: name, profile picture, github url
 const contributorsection = [
