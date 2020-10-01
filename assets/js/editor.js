@@ -1,7 +1,7 @@
 myData = `The text you will type will appear here...`;
 let img = [],
   myFont = [],
-myFonts = 14,
+myFonts = 15,
 imgNum = 8,
 fontNum = 0,
 pageNum = 0,
