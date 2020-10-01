@@ -11,13 +11,13 @@ let header = $(`
         <b><a class="nav-link text-white menu-one" href="index.html">Home</a></b>
       </li>
       <li class="nav-item active">
-        <b><a class="nav-link text-white" href="#about-intro">About</a></b>
+        <b><a class="nav-link text-white" href="index.html#about-intro">About</a></b>
       </li>
       <li class="nav-item active">
-        <b><a class="nav-link text-white" href="#team">Team</a></b>
+        <b><a class="nav-link text-white" href="index.html#team">Team</a></b>
       </li>
       <li class="nav-item active">
-        <b><a class="nav-link text-white" href="#contact">Contact</a></b>
+        <b><a class="nav-link text-white" href="index.html#contact">Contact</a></b>
       </li>
       <li class="nav-item active">
         <b><a class="nav-link text-white" href="editor.html">Editor</a></b>
