@@ -230,7 +230,6 @@ section .wave.wave4 {
   }
 }
 
-
 /* Contact Section */
 
 .contact-parent {
@@ -240,7 +239,6 @@ section .wave.wave4 {
 
 .contact-child {
   box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
-  width: 50%;
   margin: auto;
 }
 
@@ -674,49 +672,47 @@ footer {
 }
 
 /*Open Source Section*/
-#opensource-section{
-  width: 80%;
-  margin:5% 10% 5% 10%;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 30px;
+  align-items: stretch;
+}
+
+.grid > article {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.grid > article img {
+  width: 100%;
+  height: 45vh;
+  object-fit: cover;
+}
+
+.grid .text {
+  padding: 20px;
+}
+
+#opensource-section .btn{
+  background-color: #4e89ae;
+  border:none;
+}
+
+#opensource-section {
+  margin-top:5rem;
   text-align: center;
 }
 
-#opensource-section h3{
+#opensource-section h3 {
   color: #4e89ae;
   font-weight: 600;
+  font-size: 1.8rem;
 }
 
-#opensource-section p{
+#opensource-section .heading {
   font-size: 1.4rem;
-}
-
-#event-container{
-  display: flex;
-  justify-content: space-between;
-}
-
-.events{
-   width: 30%;
-   padding:2%;
-}
-
-.event-content p{
-  font-size:1rem !important; 
-}
-
-.event-content h4{
-  margin-top: 1%;
-  color: #4e89ae;
-  font-weight: 550;
-}
-
-.events:hover{
-  box-shadow:  0 10px 10px 10px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(369deg,  #14557b 0%,  #7fcec5 74%);
-}
-
-.events:hover .event-content h4,
-.events:hover .event-content p{
-  color:white;
 }
 
 /*About Section*/
@@ -774,6 +770,7 @@ footer {
 #features h3 {
   color: #4e89ae;
   text-align: center;
+  font-size: 2.5rem;;
 }
 
 #features h3 {
@@ -813,7 +810,7 @@ footer {
   }
 
   #page-image {
-    width: 30%;
+    width: 25%;
     float: left;
   }
 
