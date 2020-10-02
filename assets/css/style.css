@@ -19,9 +19,9 @@ a {
 /* NAVBAR*/
 
 nav {
-background-color: #7fcec5;
-background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
-z-index: 2;
+  background-color: #7fcec5;
+  background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+  z-index: 2;
 }
 
 @media (min-width: 60rem) {
@@ -109,9 +109,9 @@ z-index: 2;
   position: relative;
   width: 100%;
   height: 100%;
-  background: #0f2027;
-  background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
-  background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
+  background-color: #7fcec5;
+  background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+  z-index: 2;
   overflow: hidden;
 }
 
@@ -197,7 +197,7 @@ section .wave.wave4 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #05252c;
+  background-color: #104a6b;;
   z-index: -2;
 }
 .button:before {
@@ -207,7 +207,7 @@ section .wave.wave4 {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #0d739eab;
+  background-color: #50c5b7;
   transition: all 0.3s;
   z-index: -1;
 }
@@ -355,7 +355,7 @@ footer {
   z-index: 150;
   background-color: #7fcec5;
   background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
-  color:white;
+  color: white;
   text-align: center;
   font-size: 1.2rem;
   padding: 10px;
@@ -429,7 +429,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #2c5364 0%, #a563b4 100%);
+  background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
   transform: skew(30deg) translateX(125%);
   opacity: 0.9;
   transition: all 0.8s ease;
@@ -442,7 +442,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #2c5364 0%, #a563b4 100%);
+  background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
   transform: skew(30deg) translateX(-125%);
   opacity: 0.9;
   transition: all 0.8s ease;
@@ -450,12 +450,12 @@ footer {
 
 .profile-container:hover .profile-wrapper::after {
   transform: skew(30deg) translateX(125%);
-  background: linear-gradient(to right, #a563b4 0%, #2c5364 100%);
+  background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
 }
 
 .profile-container:hover .profile-wrapper::before {
   transform: skew(30deg) translateX(-125%);
-  background: linear-gradient(to right, #a563b4 0%, #2c5364 100%);
+  background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
 }
 
 /* Profile Card */
@@ -526,7 +526,7 @@ footer {
 }
 
 .profile-card .icons a:hover {
-  background-image: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
+  background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -842,4 +842,3 @@ footer {
     font-size: 2.1rem;
   }
 }
-
