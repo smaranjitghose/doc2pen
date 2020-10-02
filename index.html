@@ -165,53 +165,48 @@
   
 </div>
 
-<!--Contact form-->
-<div id="contact">
-    <div class="container" style="max-width: 980px;">
-      <div class="contact-parent">
-        <div class="contact-child nth-child(1)">
-          <div id="map"></div>
-         </div>
-         <div class="contact-child nth-child(2)">
-            <div class="inside-contact">
-               <h2>Get In <span>Touch</span></h2>
-                  <h3><span id="confirm"></h3>
-                    <p>Name *</p>
-                    <input id="txt_name" type="text" Required="required" class="contact-input">
+<!-- Contact and Support -->
+<div class="row contact-container">
 
-                    <p>Subject *</p>
-                    <input id="txt_subject" type="text" Required="required" class="contact-input">
-
-                    <p>Email *</p>
-                    <input id="txt_email" type="text" Required="required" class="contact-input">
-
-                    <p>Message *</p>
-                    <textarea id="txt_message" rows="4" cols="20" Required="required" class="contact-input"></textarea>
-                
-                      <!-- START CAPTCHA -->
-                      <div class="capbox">
-
-                          <div id="CaptchaDiv"></div>
-
-                          <div class="capbox-inner">
-                              Type the number *<br>
-
-                              <input type="hidden" id="txtCaptcha">
-                              <input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
-
-                          </div>
-                      </div>
-                      <br><br>
-                      <!-- END CAPTCHA -->
-
-                    <input type="submit" id="btn_send" value="SEND">
-            </div>
-         </div>
-       </div>
+  <div class="col-lg-8 contact">
+    <div class="form-box">
+       <h3>Get In Touch</h3>
+      <div class="input-box">
+           <input type="text" name="" required>
+           <span>First Name</span>
+      </div>
+      <div class="input-box">
+           <input type="text" name="" required>
+           <span>Last Name</span>
+      </div>
+      <div class="input-box">
+           <input type="text" name="" required>
+           <span>Email</span>
+      </div>
+      <!-- slider -->
+      <div class="input-box ">
+           <textarea name="" required=""></textarea>
+           <span>Write your message here...</span>
+      </div>
+      <div class="input-box">
+           <input type="submit" value="Send">
+      </div>
     </div>
  </div>
+
+ <div class="col-lg-4 support">
+    <h3>Support Us</h3>
+    <a href="https://www.buymeacoffee.com/"><img class="support-images" src="assets/images/bmc-button.png"></a>
+    <br>
+    <br>
+    <a href="https://www.patreon.com/"><img class="support-images" src="assets/images/patreon-medium-button.png"></a>
+  </div>
+</div>
+
+  
+<!--Dynamic Footer-->
 <!--  Mentor's Cards div end-->
-   <!--Dynamic Footer-->
+   
    
     <script src="assets/js/main.js"></script>
     <script async defer src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyB2bXKNDezDf6YNVc-SauobynNHPo4RJb8&callback=initMap"> 
