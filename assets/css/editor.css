@@ -12,6 +12,11 @@
     margin-left: 6em;
 }
 
+.text-dropdown {
+    overflow-y: scroll;
+    max-height: 40vh;
+}
+
 .dropdown-item{
     padding: 0.3em;
 }
