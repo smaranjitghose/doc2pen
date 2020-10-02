@@ -19,38 +19,33 @@ a {
 /* NAVBAR*/
 
 nav {
-  background: #0f2027;
-  background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
-  background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
+  background-color: #7fcec5;
+  background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
   z-index: 2;
 }
 
-@media(min-width: 60rem){ 
-.nav1{
-  height: 4em;
-}
+@media (min-width: 60rem) {
+  .nav1 {
+    height: 4em;
+  }
 }
 
-.nav-sign{
+.nav-sign {
   color: white;
 }
 
-.nav-top{
+.nav-top {
   padding-right: -2em;
 }
 
-.nav-top{
+.nav-top {
   margin-top: 1em;
   font-size: 0.8em;
 }
 
-.res-toggle{
+.res-toggle {
   background-color: white !important;
   outline: none;
-}
-
-.menu-one{
-  margin-left: 45em;
 }
 
 .nav-wrapper {
@@ -58,8 +53,8 @@ nav {
   margin-right: 10px;
 }
 
-@media(max-width: 760px){
-  .nav-top{
+@media (max-width: 760px) {
+  .nav-top {
     display: none;
   }
 }
@@ -77,15 +72,14 @@ nav {
   margin-left: 0px !important;
 }
 
-@media(min-width: 60rem){
-  .sidenav-trigger{
+@media (min-width: 60rem) {
+  .sidenav-trigger {
     display: none;
   }
 }
 
 .brand-logo img {
   width: 180px;
-  margin-bottom: 15px;
   float: right;
 }
 
@@ -108,10 +102,10 @@ nav {
 .title-image {
   width: 70%;
   margin: 5% 20% 5% 20%;
-  padding:15px;
+  padding: 15px;
 }
 
-.home-section{
+.home-section {
   position: relative;
   width: 100%;
   height: 100%;
@@ -193,11 +187,11 @@ section .wave.wave4 {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  border:none;
-  cursor:pointer;
+  border: none;
+  cursor: pointer;
 }
 .button:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -207,7 +201,7 @@ section .wave.wave4 {
   z-index: -2;
 }
 .button:before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -244,12 +238,11 @@ section .wave.wave4 {
   display: flex;
   flex: 1;
   box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
-  height: 100vh;
 }
 
 #map {
   width: 100%;
-  height: 665px;
+  height: 688px;
 }
 
 .child2 {
@@ -360,14 +353,13 @@ footer {
   left: 0;
   right: 0;
   z-index: 150;
-  background: #0f2027;
-  background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
-  background: linear-gradient(to right, #0f2027, #2c5364, #203a43); 
-  color:white;
+  background-color: #7fcec5;
+  background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+  color: white;
   text-align: center;
   font-size: 1.2rem;
   padding: 10px;
-  margin-top: 50px
+  margin-top: 50px;
 }
 
 /*Team section*/
@@ -375,12 +367,6 @@ footer {
 
 .container {
   padding: 20px;
-}
-
-@media(min-width: 60rem){
-  .project-maintainers{
-    margin-left: 15em;
-  }
 }
 
 .profile-container {
@@ -405,10 +391,13 @@ footer {
   transition: all 0.5s ease-in;
 }
 
-.image-1,
-.image-2 {
+.centeralign {
   display: flex;
   justify-content: center;
+}
+
+.image-1,
+.image-2 {
   padding-bottom: 20px;
 }
 .image-1 .profile-container::before {
@@ -440,7 +429,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #2c5364 0%, #a563b4 100%);
+  background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
   transform: skew(30deg) translateX(125%);
   opacity: 0.9;
   transition: all 0.8s ease;
@@ -453,7 +442,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #2c5364 0%, #a563b4 100%);
+  background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
   transform: skew(30deg) translateX(-125%);
   opacity: 0.9;
   transition: all 0.8s ease;
@@ -461,12 +450,12 @@ footer {
 
 .profile-container:hover .profile-wrapper::after {
   transform: skew(30deg) translateX(125%);
-  background: linear-gradient(to right, #a563b4 0%, #2c5364 100%);
+  background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
 }
 
 .profile-container:hover .profile-wrapper::before {
   transform: skew(30deg) translateX(-125%);
-  background: linear-gradient(to right, #a563b4 0%, #2c5364 100%);
+  background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
 }
 
 /* Profile Card */
@@ -537,7 +526,7 @@ footer {
 }
 
 .profile-card .icons a:hover {
-  background-image: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
+  background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -612,6 +601,9 @@ footer {
 
 .team-container {
   overflow: hidden;
+  text-align: -webkit-center;
+  margin: auto;
+  justify-content: center;
 }
 
 .team-container figure {
@@ -693,7 +685,9 @@ footer {
   padding-top: 5em;
 }
 
-#about-intro p , #features p , #open-source p{
+#about-intro p,
+#features p,
+#open-source p {
   font-size: 1.4rem;
   color: #333333;
   text-align: center;
@@ -722,7 +716,8 @@ footer {
 
 #open-source-image {
   width: 50%;
-  margin-left: auto !important;
+  margin: auto !important;
+  display: block;
 }
 
 #open-source p {
@@ -752,7 +747,7 @@ footer {
   }
 }
 
-#about-intro h5{
+#about-intro h5 {
   text-align: center;
 }
 
@@ -799,7 +794,7 @@ footer {
 
   #open-source-image {
     width: 50%;
-    margin-left: 20em !important;
+    padding: 10px;
   }
 
   #open-source p {
@@ -826,10 +821,6 @@ footer {
   #features h3 {
     font-size: 1.8rem;
   }
-
-  #open-source-image{
-    margin-left: 5em !important;
-  }
 }
 
 @media (min-width: 410px) and (max-width: 462px) {
@@ -840,10 +831,6 @@ footer {
   #features h3 {
     font-size: 2rem;
   }
-
-  #open-source-image{
-    margin-left: 7em !important;
-  }
 }
 
 @media (min-width: 459px) and (max-width: 506px) {
@@ -853,27 +840,5 @@ footer {
 
   #features h3 {
     font-size: 2.1rem;
-  }
-
-  #open-source-image{
-    margin-left: 8em !important;
-  }
-}
-
-@media(min-width: 506px) and (max-width: 600px){
-  #open-source-image{
-    margin-left: 8em !important;
-  }
-}
-
-@media(min-width: 600px) and (max-width: 650px){
-  #open-source-image{
-    margin-left: 9em !important;
-  }
-}
-
-@media(min-width: 650px) and (max-width: 760px){
-  #open-source-image{
-    margin-left: 12em !important;
   }
 }

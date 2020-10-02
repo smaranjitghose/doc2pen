@@ -6,9 +6,9 @@ let header = $(`
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <b><a class="nav-link text-white menu-one" href="index.html">Home</a></b>
+        <b><a class="nav-link text-white" href="index.html">Home</a></b>
       </li>
       <li class="nav-item active">
         <b><a class="nav-link text-white" href="index.html#about-intro">About</a></b>
@@ -135,7 +135,7 @@ const maintainerInfo = () => {
   maintainerSection.forEach(
     ({ title, image, github, linkedin, name, imgclass}) =>
       (output += `    
-      <div class="${imgclass} d-flex d-self-center ml-md-5">
+      <div class="${imgclass} col-md-6 centeralign">
       <div class="profile-container">
        <div class="profile-wrapper">
          <div class="profile-card">
