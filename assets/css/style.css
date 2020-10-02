@@ -115,6 +115,8 @@ nav {
   overflow: hidden;
 }
 
+/* Wave Section */
+
 section .wave {
   position: absolute;
   bottom: 0;
@@ -227,7 +229,9 @@ section .wave.wave4 {
     padding-top: 4rem;
   }
 }
-/* Contact page */
+
+
+/* Contact Section */
 
 .contact-parent {
   display: flex;
@@ -239,6 +243,8 @@ section .wave.wave4 {
   flex: 1;
   box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
 }
+
+/* Map Section */
 
 #map {
   width: 100%;
@@ -346,7 +352,8 @@ input[type="text"] {
   margin: 3px 0px 1px 0px;
 }
 
-/* footer*/
+/*Footer*/
+
 footer {
   width: 100vw;
   position: absolute;
@@ -565,7 +572,7 @@ footer {
   }
 }
 
-/* contributor section*/
+/* Contributor section*/
 
 .flex {
   display: flex;
@@ -677,6 +684,52 @@ footer {
 
 .text {
   font-size: 1rem !important;
+}
+
+/*Open Source Section*/
+#opensource-section{
+  width: 80%;
+  margin:5% 10% 5% 10%;
+  text-align: center;
+}
+
+#opensource-section h3{
+  color: #4e89ae;
+  font-weight: 600;
+}
+
+#opensource-section p{
+  font-size: 1.4rem;
+}
+
+#event-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.events{
+   width: 30%;
+   padding:2%;
+}
+
+.event-content p{
+  font-size:1rem !important; 
+}
+
+.event-content h4{
+  margin-top: 1%;
+  color: #4e89ae;
+  font-weight: 550;
+}
+
+.events:hover{
+  box-shadow:  0 10px 10px 10px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(369deg,  #14557b 0%,  #7fcec5 74%);
+}
+
+.events:hover .event-content h4,
+.events:hover .event-content p{
+  color:white;
 }
 
 /*About Section*/
