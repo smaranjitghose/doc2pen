@@ -109,65 +109,52 @@ function removeSpaces(string) {
   return string.split(" ").join("");
 }
 
-const projMaintainers1 = document.querySelector(".profile-card1");
+const projMaintainers = document.querySelector(".projectMaintainers");
 //Data for Project Maintainers
-const maintainerSection1 = [
+const maintainerSection = [
   {
     image: "assets/images/smaranjit_ghose.png",
     name: "Smaranjit Ghose",
     title: "Lead Developer",
     github: "./https://github.com/smaranjitghose",
-    linkedin: "https://www.linkedin.com/in/smaranjitghose/"
-  }];
-
-  const maintainerInfo1 = () => {
-    let output = "";
-    maintainerSection1.forEach(
-      ({ title, image, github, linkedin, name }) =>
-        (output += `       
-        <img src="${image}" alt="profile pics"> 
-            <h4>${name}</h4>
-            <h5>${title}</h5>
-            <div class="icons">
-              <a href="${github}" class="fa fa-github"></a>
-              <a href="${linkedin}" class="fa fa-linkedin"></a>
-            </div> 
-      `)
-    );
-    projMaintainers1.innerHTML = output;
-  };
-  document.addEventListener("DOMContentLoaded", maintainerInfo1);
-  
-
-  const projMaintainers2 = document.querySelector(".profile-card2");
-//Data for Project Maintainers
-const maintainerSection2 = [
+    linkedin: "https://www.linkedin.com/in/smaranjitghose/",
+    imgclass: "image-1"
+  },
   {
     image: "assets/images/anush_bhatia.png",
     name: "Anush Bhatia",
     title: "Lead Developer",
     github: "https://github.com/anushbhatia",
-    linkedin: "https://www.linkedin.com/in/anushbhatia/"
+    linkedin: "https://www.linkedin.com/in/anushbhatia/",
+    imgclass: "image-2"
   }
 ];
 
-const maintainerInfo2 = () => {
+const maintainerInfo = () => {
   let output = "";
-  maintainerSection2.forEach(
-    ({ title, image, github, linkedin, name }) =>
-      (output += `       
-      <img src="${image}" alt="profile pics"> 
+  maintainerSection.forEach(
+    ({ title, image, github, linkedin, name, imgclass}) =>
+      (output += `    
+      <div class="${imgclass} d-flex d-self-center ml-md-5">
+      <div class="profile-container">
+       <div class="profile-wrapper">
+         <div class="profile-card">
+          <img src="${image}" alt="profile pics"> 
           <h4>${name}</h4>
           <h5>${title}</h5>
           <div class="icons">
             <a href="${github}" class="fa fa-github"></a>
             <a href="${linkedin}" class="fa fa-linkedin"></a>
           </div> 
+         </div>
+        </div>
+      </div>
+      </div>
     `)
   );
-  projMaintainers2.innerHTML = output;
+  projMaintainers.innerHTML = output;
 };
-document.addEventListener("DOMContentLoaded", maintainerInfo2);
+document.addEventListener("DOMContentLoaded", maintainerInfo);
 
 
 const contributor = document.querySelector(".contributor");
