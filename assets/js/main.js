@@ -11,13 +11,13 @@ let header = $(`
         <b><a class="nav-link text-white menu-one" href="index.html">Home</a></b>
       </li>
       <li class="nav-item active">
-        <b><a class="nav-link text-white" href="#about-intro">About</a></b>
+        <b><a class="nav-link text-white" href="index.html#about-intro">About</a></b>
       </li>
       <li class="nav-item active">
-        <b><a class="nav-link text-white" href="#team">Team</a></b>
+        <b><a class="nav-link text-white" href="index.html#team">Team</a></b>
       </li>
       <li class="nav-item active">
-        <b><a class="nav-link text-white" href="#contact">Contact</a></b>
+        <b><a class="nav-link text-white" href="index.html#contact">Contact</a></b>
       </li>
       <li class="nav-item active">
         <b><a class="nav-link text-white" href="editor.html">Editor</a></b>
@@ -108,6 +108,53 @@ function ValidCaptcha() {
 function removeSpaces(string) {
   return string.split(" ").join("");
 }
+
+const projMaintainers = document.querySelector(".projectMaintainers");
+//Data for Project Maintainers
+const maintainerSection = [
+  {
+    image: "assets/images/smaranjit_ghose.png",
+    name: "Smaranjit Ghose",
+    title: "Lead Developer",
+    github: "./https://github.com/smaranjitghose",
+    linkedin: "https://www.linkedin.com/in/smaranjitghose/",
+    imgclass: "image-1"
+  },
+  {
+    image: "assets/images/anush_bhatia.png",
+    name: "Anush Bhatia",
+    title: "Lead Developer",
+    github: "https://github.com/anushbhatia",
+    linkedin: "https://www.linkedin.com/in/anushbhatia/",
+    imgclass: "image-2"
+  }
+];
+
+const maintainerInfo = () => {
+  let output = "";
+  maintainerSection.forEach(
+    ({ title, image, github, linkedin, name, imgclass}) =>
+      (output += `    
+      <div class="${imgclass} d-flex d-self-center ml-md-5">
+      <div class="profile-container">
+       <div class="profile-wrapper">
+         <div class="profile-card">
+          <img src="${image}" alt="profile pics"> 
+          <h4>${name}</h4>
+          <h5>${title}</h5>
+          <div class="icons">
+            <a href="${github}" class="fa fa-github"></a>
+            <a href="${linkedin}" class="fa fa-linkedin"></a>
+          </div> 
+         </div>
+        </div>
+      </div>
+      </div>
+    `)
+  );
+  projMaintainers.innerHTML = output;
+};
+document.addEventListener("DOMContentLoaded", maintainerInfo);
 
 const contributor = document.querySelector(".contributor");
 // Data for Contributors: name, profile picture, github url
