@@ -604,6 +604,9 @@ footer {
 
 .team-container {
   overflow: hidden;
+  text-align: -webkit-center;
+  margin: auto;
+  justify-content: center;
 }
 
 .team-container figure {
