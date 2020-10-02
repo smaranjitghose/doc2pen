@@ -16,18 +16,12 @@ a {
   color: #fff;
   text-decoration: none;
 }
-/* NAVBAR*/
 
+/* NAVBAR*/
 nav {
-<<<<<<< HEAD
-background-color: #7fcec5;
-background-image: linear-gradient(90deg, #7fcec5 0%, #14557b 74%);
-z-index: 2;
-=======
   background-color: #7fcec5;
   background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
   z-index: 2;
->>>>>>> 57d9e2cbd86bdd1d274b7fed7c0f44ce560a475e
 }
 
 @media (min-width: 60rem) {
