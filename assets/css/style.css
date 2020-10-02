@@ -26,9 +26,18 @@ nav {
 }
 
 @media(min-width: 60rem){ 
-.nav1{
-  height: 4em;
+  .nav1{
+    height: 4em;
+  }
 }
+
+.nav1 {
+  border-bottom: 1px solid white;
+}
+
+.nav-link:hover {
+  background-color: #05252c;
+  border-radius: 20px;
 }
 
 .nav-sign{
@@ -37,9 +46,6 @@ nav {
 
 .nav-top{
   padding-right: -2em;
-}
-
-.nav-top{
   margin-top: 1em;
   font-size: 0.8em;
 }
@@ -47,10 +53,6 @@ nav {
 .res-toggle{
   background-color: white !important;
   outline: none;
-}
-
-.menu-one{
-  margin-left: 45em;
 }
 
 .nav-wrapper {
@@ -85,14 +87,7 @@ nav {
 
 .brand-logo img {
   width: 180px;
-  margin-bottom: 15px;
   float: right;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
 }
 
 /*Home Section*/
@@ -367,7 +362,6 @@ footer {
   text-align: center;
   font-size: 1.2rem;
   padding: 10px;
-  margin-top: 50px
 }
 
 /*Team section*/

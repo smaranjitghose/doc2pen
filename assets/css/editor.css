@@ -8,6 +8,12 @@
     /* height: 20em; */
 }
 
+@media(max-width: 995px) {
+    .nav2 {
+        top: 6em;
+    }
+}
+
 .nav-main{
     list-style-type: none;
     margin-left: 6em;
@@ -85,15 +91,26 @@
     margin-bottom: -5em;
 }
 
+.column-top{
+    float: left;
+    width: 100%;
+    margin-top: 2em;
+}
+
+
 @media(max-width: 995px) {
     .row-editor-top {
         flex-direction: column;
     }
-}
-
-.column-top{
-    float: left;
-    width: 100%;
+    .column-top{
+        margin-top: 0px;
+    }
+    .column-top-1 {
+        margin-top: 4em;
+    }
+    .column-top > .column-top-2 {
+        margin-top: 1em;
+    }
 }
 
 .editor-range{
