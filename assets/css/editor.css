@@ -26,6 +26,11 @@
     color: rgb(11, 11, 124);
 }
 
+.word{
+    font-weight: bold;
+    color: rgba(62, 247, 247, 0.911);
+}
+
 .blue-text{
     color: blue;
 }
@@ -151,14 +156,14 @@
 
 .rValue{
     border-radius: 1em;
-    width: 25%;
+    width: 27%;
     padding: 0.5em;
-    background-color: rgb(236, 243, 245);;
     text-align: center;
     color: teal;
-    margin-top: 1.5em;
     font-weight: bold;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+    margin-bottom: 1em;
+    margin-top: -0.5em;
 }
 
 /*Input Range*/
