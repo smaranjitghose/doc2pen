@@ -12,6 +12,11 @@
     margin-left: 6em;
 }
 
+.text-dropdown {
+    overflow-y: scroll;
+    max-height: 40vh;
+}
+
 .dropdown-item{
     padding: 0.3em;
 }
@@ -147,6 +152,18 @@
     padding: 2em;
     font-size: 2em;
     background-color: ivory;
+}
+
+.rValue{
+    border-radius: 1em;
+    width: 15%;
+    padding: 0.7em;
+    background-color: rgb(236, 243, 245);;
+    text-align: center;
+    color: teal;
+    margin-top: 1.5em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /*Input Range*/

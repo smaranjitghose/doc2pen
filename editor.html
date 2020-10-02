@@ -50,7 +50,7 @@
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Choose Font
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index: 4">
+                <div class="dropdown-menu text-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
                     <a onclick="chooseFont(0)" class="dropdown-text dropdown-item" href="#">Tarale</a>
                     <a onclick="chooseFont(1)" class="dropdown-text dropdown-item" href="#">Liu Jian Mao Cao</a>
                     <a onclick="chooseFont(2)" class="dropdown-text dropdown-item" href="#">Caveat</a>
@@ -65,6 +65,7 @@
                     <a onclick="chooseFont(11)" class="dropdown-text dropdown-item" href="#">Clear font</a>
                     <a onclick="chooseFont(12)" class="dropdown-text dropdown-item" href="#">Thin messed font</a>
                     <a onclick="chooseFont(13)" class="dropdown-text dropdown-item" href="#">Thin font</a>
+                    <a onclick="chooseFont(14)" class="dropdown-text dropdown-item" href="#">Poppins</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
@@ -99,45 +100,47 @@
     <div class="row-editor-top">
         <div class="column-top">
             
-            <form>
+        <form>
         <div class="editor-range form-group"> 
-            <label class="text-blue" for="formControlRange">Width</label>
-        <input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" class="form-control-range custom-range" id="formControlRange">
+        <label class="text-blue" for="rangeWidth">Width</label>
+        <input type="range" min="100" max="800" value1="700" oninput="w=float(this.value)" class="form-control-range custom-range" id="rangeWidth">
         </form>
-        <div class="" id="demo"></div>
+        <div class="rValue" id="width"></div>
         </div>
 
         <form>
         <div class="editor-range form-group">
-            <label class="text-blue" for="formControlRange">Line Spacing</label>
-        <input type="range" min="10" max="50" value="30" oninput="linespacing=float(this.value)" class="form-control-range custom-range" id="formControlRange">
+        <label class="text-blue" for="rangeSpace">Line Spacing</label>
+        <input type="range" min="10" max="50" value2="30" oninput="linespacing=float(this.value)" class="form-control-range custom-range" id="rangeSpace">
         </form>
+        <div class="rValue" id="space"></div>
         </div>
         
         <form>
-		<div class="editor-range form-group"> 
-            <label class="text-blue" for="formControlRange">Font Size</label>
-        <input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)" class="form-control-range custom-range" id="formControlRange">
+		    <div class="editor-range form-group"> 
+        <label class="text-blue" for="rangeSize">Font Size</label>
+        <input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)" class="form-control-range custom-range" id="rangeSize">
         </form>
-        <div class="" id="demo"></div>
+        <div class="rValue" id="size"></div>
         </div>
         </div>
 
         <div class="column-top">
-            <form>
-            <div class="editor-range form-group"> 
-            <label class="text-blue" for="formControlRange">Adjust X axis</label>
-						<input  type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="form-control-range custom-range" id="formControlRange">
-                    </form>
-                    <div class="" id="demo"></div>
-                        </div>
-                        <form>
-                        <div class="editor-range form-group"> 
-                        <label class="text-blue" for="formControlRange">Adjust Y axis</label>
-						  <input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="form-control-range custom-range" id="formControlRange">
-                    </form>
-                    <div class="" id="demo"></div>
-                      </div>
+          <form>
+          <div class="editor-range form-group"> 
+          <label class="text-blue" for="rangeXaxis">Adjust X axis</label>
+					<input  type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="form-control-range custom-range" id="rangeXaxis">
+          </form>
+          <div class="rValue" id="xAxis"></div>
+          </div>
+
+          <form>
+          <div class="editor-range form-group"> 
+          <label class="text-blue" for="rangeYaxis">Adjust Y axis</label>
+					<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="form-control-range custom-range" id="rangeYaxis">
+          </form>
+          <div class="rValue" id="yAxis"></div>
+          </div>
 		</div>
 		
     </div>
