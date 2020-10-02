@@ -26,16 +26,6 @@
     color: rgb(11, 11, 124);
 }
 
-@media(min-width: 60rem){
-    .dropdown1{
-        margin-left: 48em;
-    }
-
-    .dropdown4{
-        margin-left: -2em;
-    }
-}
-
 .blue-text{
     color: blue;
 }
@@ -76,12 +66,6 @@
     background-color: rgb(245, 155, 200);
 }
 
-@media(min-width: 60rem){
-    .menu-first{
-        margin-left: 48em;
-    }
-}
-
 .row-editor-top{
     display: flex;
     flex-direction: row;
@@ -98,7 +82,7 @@
 
 @media(min-width: 60rem){
 .form-control-range{
-    width: 15em;
+    width: 12em;
 }
 }
 
@@ -109,11 +93,13 @@
 }
 
 .editor-range{
-    margin: 2em 1em;
+    margin-top: 2em;
+    margin-left: 0.6em;
+    margin-right: 0.6em;
     background-color: rgb(222, 238, 241);
     padding: 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 90%;
+    width: 95%;
 }
 
 .text-blue{
@@ -165,7 +151,7 @@
 
 .rValue{
     border-radius: 1em;
-    width: 20%;
+    width: 25%;
     padding: 0.5em;
     background-color: rgb(236, 243, 245);;
     text-align: center;
