@@ -283,3 +283,61 @@ const showCards = () => {
   contributor.innerHTML = output;
 };
 document.addEventListener("DOMContentLoaded", showCards);
+
+/* Open source cards */
+
+const recentEventsDetails = [
+	{
+		coverImage: 'assets/images/SLOP.png',
+		eventName: 'SLOP',
+		altName: 'SLOP Logo',
+		eventDescription: `An inititative by the Developer Student Club (DA-IICT), exclusively for students who are new to open source software development.`,
+		referencePage: 'https://slop.dscdaiict.in/projects'
+	},
+	{
+		coverImage: 'assets/images/hakin_codes.png',
+		eventName: 'Hakincodes',
+		altName: 'Hakincodes Logo',
+		eventDescription: `Established in 2020 with a mission to empower youth i.e. students, developers & many more by giving opportunities to grow and learn.`,
+		referencePage: 'https://hakincodes.tech/'
+	},
+	{
+		coverImage: 'assets/images/psoc_logo.png',
+		eventName: 'PSOC',
+		altName: 'PSOC Logo',
+		eventDescription: `It's a 2 month long event conducted by Programming Club, UIET, aiming to help beginners get started with Open Source development.`,
+		referencePage: 'https://www.pclubsummerofcode.in/'
+	}
+];
+
+const generateEventsCard = (eventDetail, fixClassIndex) => {
+	const { coverImage, eventName, altName, eventDescription, referencePage } = eventDetail;
+	const eventCard = `<div class="card r-events-card">
+						<div class="card-image">
+							<img
+								src="${coverImage}"
+								alt="${altName}"
+								aria-label="${altName}"
+							/>
+						</div>
+						<div class="card-text">
+							<h2>${eventName}</h2>
+							<p class="pt-1 event-body">
+								${eventDescription}
+							</p>
+						</div>
+						<div class="card-stats">
+							<a href="${referencePage}" class="btn card-btn card1-text card-btn2"> Read More</a>
+						</div>
+					</div>`;
+
+	const recentEventsSection = document.getElementById('eventCards');
+	recentEventsSection.innerHTML += eventCard;
+};
+
+const insertEventCards = () => {
+	recentEventsDetails.forEach((detail, index) => {
+		generateEventsCard(detail, index + 1);
+	});
+};
+insertEventCards();
