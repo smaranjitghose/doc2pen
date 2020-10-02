@@ -80,7 +80,6 @@ z-index: 2;
 
 .brand-logo img {
   width: 180px;
-  margin-bottom: 15px;
   float: right;
 }
 
@@ -602,6 +601,9 @@ footer {
 
 .team-container {
   overflow: hidden;
+  text-align: -webkit-center;
+  margin: auto;
+  justify-content: center;
 }
 
 .team-container figure {
