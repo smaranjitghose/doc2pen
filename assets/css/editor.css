@@ -81,8 +81,21 @@
 .row-editor-top{
     display: flex;
     flex-direction: row;
-    margin-top: 2em;
+    margin-top: 4em;
     margin-bottom: -5em;
+    width: 100%;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.form-control-range{
+    width: 100%;
+}
+
+@media(min-width: 60rem){
+.form-control-range{
+    width: 15em;
+}
 }
 
 @media(max-width: 995px) {
@@ -91,16 +104,12 @@
     }
 }
 
-.column-top{
-    float: left;
-    width: 100%;
-}
-
 .editor-range{
-    margin: 2em 5em;
+    margin: 2em 1em;
     background-color: rgb(222, 238, 241);
-    padding: 2em;
+    padding: 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 90%;
 }
 
 .text-blue{
@@ -110,7 +119,7 @@
 
 @media(min-width: 60rem){
     .text-blue{
-        font-size: 1.5em;
+        font-size: 1em;
     }
 }
 
@@ -145,15 +154,15 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     height: 100%;
     width: 100%;
-    padding: 2em;
-    font-size: 2em;
+    padding: 1.5em;
+    font-size: 1.5em;
     background-color: ivory;
 }
 
 .rValue{
     border-radius: 1em;
-    width: 15%;
-    padding: 0.7em;
+    width: 20%;
+    padding: 0.5em;
     background-color: rgb(236, 243, 245);;
     text-align: center;
     color: teal;
