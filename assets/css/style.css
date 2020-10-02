@@ -19,10 +19,9 @@ a {
 /* NAVBAR*/
 
 nav {
-  background: #0f2027;
-  background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
-  background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
-  z-index: 2;
+background-color: #7fcec5;
+background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+z-index: 2;
 }
 
 @media(min-width: 60rem){ 
@@ -360,9 +359,8 @@ footer {
   left: 0;
   right: 0;
   z-index: 150;
-  background: #0f2027;
-  background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
-  background: linear-gradient(to right, #0f2027, #2c5364, #203a43); 
+  background-color: #7fcec5;
+  background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
   color:white;
   text-align: center;
   font-size: 1.2rem;
