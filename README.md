@@ -3,49 +3,65 @@
 ![Issues](https://img.shields.io/github/issues/smaranjitghose/doc2pen)
 ![Pull Requests](https://img.shields.io/github/issues-pr/smaranjitghose/doc2pen?)
 ![Forks](https://img.shields.io/github/forks/smaranjitghose/doc2pen)
-![Stars](	https://img.shields.io/github/stars/smaranjitghose/doc2pen)
+![Stars](https://img.shields.io/github/stars/smaranjitghose/doc2pen)
 ![License](https://img.shields.io/github/license/smaranjitghose/doc2pen)
 
 
-Are you a student burdened with writing assignments?
+<p align="center">Do you always find it a burden to complete the College Assignments?</p>
+<p align="center"><img width=30% src="https://media.giphy.com/media/l4EoOFliX6Vw4PD20/giphy.gif"></p>
 
-<p align="center"><img width=50% src="https://media.giphy.com/media/l4EoOFliX6Vw4PD20/giphy.gif"></p>
+<p align="center">Ya, we know the reason behind that.</p> 
+<p align="center"><b>Being a technical enthusiast, your assignments could be completed much faster by Typing rather than Writing.</b></p>
+<br/>
+<br/>
+<p align="center">Imagine</p>
+<p align="center"><b>Your keyboard starts typing the assignments in your Handwriting?</b></p>
+<p align="center">Awesome, Isn't it?</p>
+<p align="center"> And we made it posiible.</p>
+<p align="center"><img width=30% src="https://media.giphy.com/media/Lo6LNpySgc0qlzoOKR/giphy.gif"></p>
 
-And on the top of that your faculty won't accept printed ones? 
+<h2>Doc2pen is an Open Source Software which converts your Typed Docs into Handwritten Docs</h2>
+<br/>
+<h3> Features :</h3>
+<ul>
+<li>Wide variety of Pages to choose from</li>
+<li>Wide variety of options to customize font as your handwriting.</li>
+<li>Download/Export in .pdf, .jpeg, .jpg, .png format</li>
+</ul>
 
-<p align="center"><img width=50% src="https://media.giphy.com/media/6k5aYgBKTxe3C/giphy.gif"></p>
+<br/>
 
-Don't have the time and energy to cope up with this?
+<h3> What goes under the hood :</h3>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
+<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
 
-<p align="center"><img width=50% src="https://media.giphy.com/media/biQcYyVoNJoA0/giphy.gif"></p>
+<br/>
 
-Worry not! We are here to save you from your misery 🦸‍♂️. Doc2pen is your one stop solution to upload any document or write it yourself and get an handwritten assignment out instantly!
+<h3> Love for Open Source :</h3>
+<ul>
+<li><b>Our Product Enhances : </b>As we know, <b>"Team Work leads to the Efficiency of any Task"</b> <br/>So, we kept it Open Source to build our Team, leading to an Efficient Solution to the Problem.</li>
+<li><b>Your Skills Enhance : </b> Increase your skillset through <b>Learning By Doing</b> method. We are a part of various Open Source Events, namely, <b>Hacktoberfest, Hakincodes</b> and <b>PClub Summer Of Code</b></li>
+</ul>
 
-<p align="center"><img width=50% src="https://media.giphy.com/media/Lo6LNpySgc0qlzoOKR/giphy.gif"></p>
+<br/>
 
+<h3>Contribution Guidelines : </h3>
+<ul>
+<li>Fork the Repo.</li>
+<li>Clone it.</li>
+<li>Checkout a Branch.</li>
+<li>Add Features/ Make Changes.</li>
+<li>Commit Changes</li>
+<li>Push them to the remote Repo.</li>
+<li>Make a Pull Request.</li>
+<li>Enjoy</li>
+</ul>
 
-<h2 align="center"><b>Open Source Programs we have been a part of:</b></h2>
-<p align="center">
-<img width=20% src="assets/images/hakin_codes.png">&ensp;&ensp;&ensp;
-<img width=20% src="assets/images/psoc_logo.png">
-</p>
+<br/>
 
-<h2 align= "center"><b> Project Maintainers</b></h2>
+<h3>Code of Conduct & Licence :</h3>
 
-<p align="center">
-<img width=20% src="https://avatars2.githubusercontent.com/u/46641503?v=4">&ensp;&ensp;&ensp;
-<img width=20% src="https://avatars2.githubusercontent.com/u/40017559?v=4">
-</p>
-
-<a href="https://github.com/smaranjitghose">
-<h4 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-<a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h4></a>
-
-<a href="./Code_of_conduct.md"><h2 align= "center"><b> Code of Conduct</b></h2></a> 
-<p align="center"><img width=35% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif"></p>
-
-<a href="./LICENSE"><h2 align= "center"><b> License</b></h2></a> 
-<p align="center"><img width=35% src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif"></p>
-
-
-
+<p align="center"><img width=30% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif">
+<img width=20% src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif"></p>
