@@ -104,7 +104,7 @@ const projMaintainers = document.querySelector(".projectMaintainers");
 //Data for Project Maintainers
 const maintainerSection = [
   {
-    image: "assets/images/smaranjit_ghose.png",
+    image: "assets/images/team/smaranjit_ghose.png",
     name: "Smaranjit Ghose",
     title: "Lead Developer",
     github: "./https://github.com/smaranjitghose",
@@ -112,7 +112,7 @@ const maintainerSection = [
     imgclass: "image-1"
   },
   {
-    image: "assets/images/anush_bhatia.png",
+    image: "assets/images/team/anush_bhatia.png",
     name: "Anush Bhatia",
     title: "Lead Developer",
     github: "https://github.com/anushbhatia",
@@ -288,21 +288,21 @@ document.addEventListener("DOMContentLoaded", showCards);
 
 const recentEventsDetails = [
 	{
-		coverImage: 'assets/images/SLOP.png',
+		coverImage: 'assets/images/events/SLOP.png',
 		eventName: 'SLOP',
 		altName: 'SLOP Logo',
 		eventDescription: `An inititative by the Developer Student Club (DA-IICT), exclusively for students who are new to open source software development.`,
 		referencePage: 'https://slop.dscdaiict.in/projects'
 	},
 	{
-		coverImage: 'assets/images/hakin_codes.png',
+		coverImage: 'assets/images/events/hakin_codes.png',
 		eventName: 'Hakincodes',
 		altName: 'Hakincodes Logo',
 		eventDescription: `Established in 2020 with a mission to empower youth i.e. students, developers & many more by giving opportunities to grow and learn.`,
 		referencePage: 'https://hakincodes.tech/'
 	},
 	{
-		coverImage: 'assets/images/psoc_logo.png',
+		coverImage: 'assets/images/events/psoc_logo.png',
 		eventName: 'PSOC',
 		altName: 'PSOC Logo',
 		eventDescription: `It's a 2 month long event conducted by Programming Club, UIET, aiming to help beginners get started with Open Source development.`,
