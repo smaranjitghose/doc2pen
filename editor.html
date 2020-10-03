@@ -20,6 +20,8 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/editor.css" />
+    <script src="assets/js/gdrive.js"></script>
+    
 </head>
 
 <body>
@@ -169,6 +171,12 @@
             </div>
         </div><br>
 
+          <!--gdrive-->
+
+    <button id="authorize_button" style="display:none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
+
+    <pre id="content" style="white-space:pre-wrap;"></pre>
 <!--Input/Output windows end here-->
 </div>
 
@@ -180,7 +188,11 @@
 
     <script src="assets/js/editor.js"></script>
     <script src="assets/js/script.js"></script>
-    <script async defer src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyB2bXKNDezDf6YNVc-SauobynNHPo4RJb8&callback=initMap"> 
     </script> 
+
+    <script async defer src="https://apis.google.com/js/api.js"
+    onload="this.onload=function(){};handleClientLoad()"
+    onreadystatechange="if (this.readyState === 'complete') this.onload()">
+  </script>
  </body>
  </html>
