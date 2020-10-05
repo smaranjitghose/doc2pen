@@ -120,15 +120,6 @@ slider2.oninput = function() {
   output2.innerHTML = this.value;
 }
 
-/*Font Size*/
-var slider3 = document.getElementById("rangeSize");
-var output3 = document.getElementById("size");
-output3.innerHTML = rangeSize.value; 
-
-slider3.oninput = function() {
-  output3.innerHTML = this.value;
-}
-
 /*X-axis*/
 var slider4 = document.getElementById("rangeXaxis");
 var output4 = document.getElementById("xAxis");

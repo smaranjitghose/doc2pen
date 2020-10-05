@@ -1,178 +1,422 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-
-<head>
+  <head>
     <title>Doc2pen</title>
-    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="assets/images/favicon.png"
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!--jquery link-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
-  	<!--Goggle Font-->
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <!--Goggle Font-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/editor.css" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!--Dynamic Nav Bar-->
-		
-     <!--Nav 2-->
-     <nav class="navbar navbar-expand-lg navbar-light nav2">
-        <button class="navbar-toggler res-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white menu-first" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Change Ink
-              </a>
-              <div class="dropdown-menu dropdown1" aria-labelledby="navbarDropdown" style="z-index: 4">
-                <a onclick="chooseBlue()" class="blue-text dropdown-item" href="#">Blue</a>
-                <a onclick="chooseBlack()" class="black-text dropdown-item" href="#">Black</a>  
-                <a onclick="chooseRed()" class="red-text dropdown-item" href="#">Red</a>  
-                <a onclick="chooseGreen()" class="green-text dropdown-item" href="#">Green</a>  
-                <a onclick="choosePink()" class="pink-text dropdown-item" href="#">Pink</a>  
-              </div>
-                </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Choose Font
-                </a>
-                <div class="dropdown-menu text-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
-                    <a onclick="chooseFont(0)" class="dropdown-text dropdown-item" href="#">Tarale</a>
-                    <a onclick="chooseFont(1)" class="dropdown-text dropdown-item" href="#">Liu Jian Mao Cao</a>
-                    <a onclick="chooseFont(2)" class="dropdown-text dropdown-item" href="#">Caveat</a>
-                    <a onclick="chooseFont(3)" class="dropdown-text dropdown-item" href="#">Homemade Apple</a> 
-                    <a onclick="chooseFont(4)" class="dropdown-text dropdown-item" href="#">Dewebeauty Demo</a> 
-                    <a onclick="chooseFont(5)" class="dropdown-text dropdown-item" href="#">Antro Vectra</a>
-                    <a onclick="chooseFont(6)" class="dropdown-text dropdown-item" href="#">Muiden Castle Script</a>
-                    <a onclick="chooseFont(7)" class="dropdown-text dropdown-item" href="#">Simple font</a>
-                    <a onclick="chooseFont(8)" class="dropdown-text dropdown-item" href="#">Messed font</a>
-                    <a onclick="chooseFont(9)" class="dropdown-text dropdown-item" href="#">Curved font</a>
-                    <a onclick="chooseFont(10)" class="dropdown-text dropdown-item" href="#">Small font</a>
-                    <a onclick="chooseFont(11)" class="dropdown-text dropdown-item" href="#">Clear font</a>
-                    <a onclick="chooseFont(12)" class="dropdown-text dropdown-item" href="#">Thin messed font</a>
-                    <a onclick="chooseFont(13)" class="dropdown-text dropdown-item" href="#">Thin font</a>
-                    <a onclick="chooseFont(14)" class="dropdown-text dropdown-item" href="#">Poppins</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Choose Page
-                </a>
-                <div class="dropdown-menu dropdown4" aria-labelledby="navbarDropdown" style="z-index: 4">
-                    <a onclick="choosePage(0)" class="dropdown-text dropdown-item" href="#">Default</a>
-                    <a onclick="choosePage(1)" class="dropdown-text dropdown-item" href="#">Ruled with margin(thick-lines)</a>
-                    <a onclick="choosePage(2)" class="dropdown-text dropdown-item" href="#">Ruled Designer</a>
-                    <a onclick="choosePage(3)" class="dropdown-text dropdown-item" href="#">Plain Designer</a>  
-                    <a onclick="choosePage(4)" class="dropdown-text dropdown-item" href="#">Ruled with margin(thin-lines)</a>
-                    <a onclick="choosePage(5)" class="dropdown-text dropdown-item" href="#">Ruled without margin</a>
-                    <a onclick="choosePage(6)" class="dropdown-text dropdown-item" href="#">Plain white texture</a>  
-                    <a onclick="choosePage(7)" class="dropdown-text dropdown-item" href="#">Plain grey texture</a>  
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#" onclick="save(str(pageNum++))">Download</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white disabled">Word Count : <span class="word" id="words-strt">0</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white disabled">Word Left : <span class="word" id="count-words">10000</span></a>
-              </li>
-          </ul>
-        </div>
-      </nav> 
-      <!--Nav 2 ends here-->
 
-    <input class="button-primary button-large download-image d-none" type="file" id="pageUploader"
-    onclick="">
-    <input class="button-primary button-large download-image d-none" type="file" id="fontUploader"
-    onclick="">
-	
+    <!--Nav 2-->
+    <nav class="navbar navbar-expand-lg navbar-light nav2">
+      <button
+        class="navbar-toggler res-toggle"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-white menu-first"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Change Ink
+            </a>
+            <div
+              class="dropdown-menu dropdown1"
+              aria-labelledby="navbarDropdown"
+              style="z-index: 4"
+            >
+              <a onclick="chooseBlue()" class="blue-text dropdown-item" href="#"
+                >Blue</a
+              >
+              <a
+                onclick="chooseBlack()"
+                class="black-text dropdown-item"
+                href="#"
+                >Black</a
+              >
+              <a onclick="chooseRed()" class="red-text dropdown-item" href="#"
+                >Red</a
+              >
+              <a
+                onclick="chooseGreen()"
+                class="green-text dropdown-item"
+                href="#"
+                >Green</a
+              >
+              <a onclick="choosePink()" class="pink-text dropdown-item" href="#"
+                >Pink</a
+              >
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-white"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Choose Font
+            </a>
+            <div
+              class="dropdown-menu text-dropdown"
+              aria-labelledby="navbarDropdown"
+              style="z-index: 4"
+            >
+              <a
+                onclick="chooseFont(0)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Tarale</a
+              >
+              <a
+                onclick="chooseFont(1)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Liu Jian Mao Cao</a
+              >
+              <a
+                onclick="chooseFont(2)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Caveat</a
+              >
+              <a
+                onclick="chooseFont(3)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Homemade Apple</a
+              >
+              <a
+                onclick="chooseFont(4)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Dewebeauty Demo</a
+              >
+              <a
+                onclick="chooseFont(5)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Antro Vectra</a
+              >
+              <a
+                onclick="chooseFont(6)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Muiden Castle Script</a
+              >
+              <a
+                onclick="chooseFont(7)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Simple font</a
+              >
+              <a
+                onclick="chooseFont(8)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Messed font</a
+              >
+              <a
+                onclick="chooseFont(9)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Curved font</a
+              >
+              <a
+                onclick="chooseFont(10)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Small font</a
+              >
+              <a
+                onclick="chooseFont(11)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Clear font</a
+              >
+              <a
+                onclick="chooseFont(12)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Thin messed font</a
+              >
+              <a
+                onclick="chooseFont(13)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Thin font</a
+              >
+              <a
+                onclick="chooseFont(14)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Poppins</a
+              >
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-white"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Choose Page
+            </a>
+            <div
+              class="dropdown-menu dropdown4"
+              aria-labelledby="navbarDropdown"
+              style="z-index: 4"
+            >
+              <a
+                onclick="choosePage(0)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Default</a
+              >
+              <a
+                onclick="choosePage(1)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Ruled with margin(thick-lines)</a
+              >
+              <a
+                onclick="choosePage(2)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Ruled Designer</a
+              >
+              <a
+                onclick="choosePage(3)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Plain Designer</a
+              >
+              <a
+                onclick="choosePage(4)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Ruled with margin(thin-lines)</a
+              >
+              <a
+                onclick="choosePage(5)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Ruled without margin</a
+              >
+              <a
+                onclick="choosePage(6)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Plain white texture</a
+              >
+              <a
+                onclick="choosePage(7)"
+                class="dropdown-text dropdown-item"
+                href="#"
+                >Plain grey texture</a
+              >
+            </div>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-white"
+              href="#"
+              onclick="save(str(pageNum++))"
+              >Download</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white disabled"
+              >Word Count : <span class="word" id="words-strt">0</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white disabled"
+              >Word Left : <span class="word" id="count-words">10000</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--Nav 2 ends here-->
+
+    <input
+      class="button-primary button-large download-image d-none"
+      type="file"
+      id="pageUploader"
+      onclick=""
+    />
+    <input
+      class="button-primary button-large download-image d-none"
+      type="file"
+      id="fontUploader"
+      onclick=""
+    />
+
     <!--Input and Output Windows-->
     <div class="row-editor-top">
-            
-        <form>
-        <div class="editor-range form-group"> 
-        <label class="text-blue" for="rangeWidth">Width</label>
-        <div class="rValue" id="width"></div>
-        <input type="range" min="100" max="800" value1="700" oninput="w=float(this.value)" class="form-control-range custom-range" id="rangeWidth">
-        </form>
-        </div>
-
-        <form>
+      <form>
         <div class="editor-range form-group">
-        <label class="text-blue" for="rangeSpace">Line Spacing</label>
-        <div class="rValue" id="space"></div>
-        <input type="range" min="10" max="50" value2="30" oninput="linespacing=float(this.value)" class="form-control-range custom-range" id="rangeSpace">
-        </form>
+          <label class="text-blue" for="rangeWidth">Width</label>
+          <div class="rValue" id="width"></div>
+          <input
+            type="range"
+            min="100"
+            max="800"
+            value1="700"
+            oninput="w=float(this.value)"
+            class="form-control-range custom-range"
+            id="rangeWidth"
+          />
         </div>
-        
-        <form>
-		    <div class="editor-range form-group"> 
-        <label class="text-blue" for="rangeSize">Font Size</label>
-        <div class="rValue" id="size"></div>
-        <input type="range" min="1" max="100" value="30" oninput="fontsize=float(this.value)" class="form-control-range custom-range" id="rangeSize">
-        </form>
-        </div>
+      </form>
 
-          <form>
-          <div class="editor-range form-group"> 
+      <form>
+        <div class="editor-range form-group">
+          <label class="text-blue" for="rangeSpace">Line Spacing</label>
+          <div class="rValue" id="space"></div>
+          <input
+            type="range"
+            min="10"
+            max="50"
+            value2="30"
+            oninput="linespacing=float(this.value)"
+            class="form-control-range custom-range"
+            id="rangeSpace"
+          />
+        </div>
+      </form>
+
+      <form>
+        <div class="editor-range form-group">
           <label class="text-blue" for="rangeXaxis">Adjust X axis</label>
           <div class="rValue" id="xAxis"></div>
-					<input  type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="form-control-range custom-range" id="rangeXaxis">
-          </form>
-          </div>
-       
-          <form>
-          <div class="editor-range form-group"> 
+          <input
+            type="range"
+            min="1"
+            max="200"
+            value="20"
+            oninput="xaxis=float(this.value)"
+            class="form-control-range custom-range"
+            id="rangeXaxis"
+          />
+        </div>
+      </form>
+
+      <form>
+        <div class="editor-range form-group">
           <label class="text-blue" for="rangeYaxis">Adjust Y axis</label>
           <div class="rValue" id="yAxis"></div>
-					<input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="form-control-range custom-range" id="rangeYaxis">
-          </form>
-          </div>
-		
-    </div>
-	
-    <div class="row-editor">
-    <!--Input text window-->
-        <div class="column input">
-            <section class="container-input">
-                <form onsubmit="return false" style="width: 100%; height: 100%;">
-                    <textarea  placeholder="Write your text here..." id="dataField" onkeyup="myData = this.value" class = "input-box"></textarea>
-                    <label for = "text"></label>
-                </form>
-            </section>
+          <input
+            type="range"
+            min="1"
+            max="200"
+            value="20"
+            oninput="yaxis=float(this.value)"
+            class="form-control-range custom-range"
+            id="rangeYaxis"
+          />
         </div>
+      </form>
+    </div>
 
+    <div class="row-editor">
+      <!--Input text window-->
+      <div class="column input">
+        <section class="container-input">
+          <form onsubmit="return false" style="width: 100%; height: 100%">
+            <textarea
+              placeholder="Write your text here..."
+              id="dataField"
+              onkeyup="myData = this.value"
+              class="input-box"
+            ></textarea>
+            <label for="text"></label>
+          </form>
+        </section>
+      </div>
 
-    <!--Output text window-->
-        <div class="column output">
+      <!--Output text window-->
+      <div class="column output">
+        <div id="contribute-wrapper">
+          <div id="contributing">
+            <!--dynamic canvas-->
+          </div>
+        </div>
+      </div>
+      <br />
 
-            <div id="contribute-wrapper">
-                <div id="contributing">
-                    <!--dynamic canvas-->
-                </div>
-            </div>
-        </div><br>
-
-<!--Input/Output windows end here-->
-</div>
-
-
+      <!--Input/Output windows end here-->
+    </div>
 
     <!--Dynamic Footer-->
     <script src="assets/js/jquery.js"></script>
@@ -180,7 +424,10 @@
 
     <script src="assets/js/editor.js"></script>
     <script src="assets/js/script.js"></script>
-    <script async defer src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyB2bXKNDezDf6YNVc-SauobynNHPo4RJb8&callback=initMap"> 
-    </script> 
- </body>
- </html>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2bXKNDezDf6YNVc-SauobynNHPo4RJb8&callback=initMap"
+    ></script>
+  </body>
+</html>
