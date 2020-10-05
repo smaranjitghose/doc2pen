@@ -393,13 +393,13 @@ footer {
   padding-bottom: 20px;
 }
 .image-1 .profile-container::before {
-  background: url("/assets/images/smaranjit_ghose.png") no-repeat center
-    center/cover;
+  background: url("../images/team/smaranjit_ghose.png") no-repeat center;
+  background-size: cover;
 }
 
 .image-2 .profile-container::before {
-  background: url("/assets/images/anush_bhatia.png") no-repeat center
-    center/cover;
+  background: url("../images/team/anush_bhatia.png") no-repeat center;
+  background-size: cover;
 }
 
 .profile-container:hover:before {
