@@ -155,6 +155,7 @@ var fileUploader = document.getElementById("fileUploader");
       fileUploader.addEventListener("change", function readfiles(files) {
       if (this.files && this.files[0]) {
         var myFile = this.files[0];
+        document.querySelector("#uploadedFname").innerText = "Doc File : " + myFile.name;
         var reader = new FileReader();
         
         reader.addEventListener('load', function (e) {
