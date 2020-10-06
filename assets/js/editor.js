@@ -125,31 +125,35 @@ let fontSizeFromInput;
 document.querySelector('#font-size-select').addEventListener('input', () => {
   fontSizeFromInput = document.querySelector('#font-size-select').value;
 })
-
+var temp = "30";
+        var mySelect = document.getElementById('font-size-select');
+        
+        for(var i, j = 0; i = mySelect.options[j]; j++) {
+            if(i.value == temp) {
+                mySelect.selectedIndex = j;
+                break;
+            }
+        }
 /*range field*/
 
 /*Width*/
 var slider1 = document.getElementById("rangeWidth");
-var output1 = document.getElementById("width");
 output1.innerHTML = rangeWidth.value;
 
 
 
 /*Line Spacing*/
 var slider2 = document.getElementById("rangeSpace");
-var output2 = document.getElementById("space");
 output2.innerHTML = rangeSpace.value;
 
 
 /*X-axis*/
 var slider4 = document.getElementById("rangeXaxis");
-var output4 = document.getElementById("xAxis");
 output4.innerHTML = rangeXaxis.value;
 
 
 /*Y-axis*/
 var slider5 = document.getElementById("rangeYaxis");
-var output5 = document.getElementById("yAxis");
 output5.innerHTML = rangeYaxis.value;
 
 
