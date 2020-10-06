@@ -1,40 +1,41 @@
-
-window.onload = function () {
-  var fileupload = document.getElementById("pageUploader");
-  var button = document.getElementById("btnPageUpload");
-  button.onclick = function () {
-    fileupload.click();
-  };
-  fileupload.onchange = function () {
-    console.log("page Uploader Triggered.");
-    var reader = new FileReader();
-    reader.readAsDataURL(fileupload.files[0]);
-    reader.onload = function (e) {
-      img.push(loadImage(e.target.result));
-      imgNum += 1;
-      pageNum = imgNum - 1;
+// Function to load page and font
+window.onload = function () { 
+    // Loading Page
+    var pageupload = document.getElementById("pageUploader");
+    var button = document.getElementById("btnPageUpload");
+    button.onclick = function () {
+        pageupload.click();
+        };
+    pageupload.onchange = function () {
+        console.log("Loading Pages....");
+        var reader = new FileReader(); // Initiate File Reader
+        reader.readAsDataURL(pageupload.files[0]);
+        reader.onload = function (e) {
+            img.push(loadImage(e.target.result));
+            imgNum += 1;
+            pageNum = imgNum - 1;
+            };
+        };
+    // Loding Fonts
+    var fontupload = document.getElementById("fontUploader");
+    button = document.getElementById("btnFontUpload");
+    button.onclick = function () {
+          fontupload.click();
+           };
+    fontupload.onchange = function () {
+        console.log("Loading Fonts...");
+        var reader = new FileReader(); // Initiate File Reader
+        reader.readAsDataURL(fontupload.files[0]);
+        reader.onload = function (e) {
+            myFont.push(loadFont(e.target.result));
+            myFonts += 1;
+            fontNum = myFonts - 1;
+             };
+        };
     };
-  };
-
-  var fontupload = document.getElementById("fontUploader");
-  button = document.getElementById("btnFontUpload");
-  button.onclick = function () {
-    fontupload.click();
-  };
-  fontupload.onchange = function () {
-    console.log("font Uploader Triggered.");
-    var reader = new FileReader();
-    reader.readAsDataURL(fontupload.files[0]);
-    reader.onload = function (e) {
-      myFont.push(loadFont(e.target.result));
-      myFonts += 1;
-      fontNum = myFonts - 1;
-    };
-  };
-};
 
 
-//word count and limit function
+// Function to count the number of words and limit the total number of words
 $("#dataField").on("keydown", function (e) {// function event
   var words = $.trim(this.value).length ? this.value.match(/\S+/g).length : 0; //count length of word when space occur
   if (words <= 10000) {
@@ -44,15 +45,4 @@ $("#dataField").on("keydown", function (e) {// function event
     if (e.which !== 8) e.preventDefault();//prevent user to enter more text
   }
 });
-
-$(".dropdown-trigger").dropdown();
-
-// Immediately invoked function to set the theme on initial load
-(function () {
-    if (localStorage.getItem('theme') === 'theme-dark') {
-        setTheme('theme-dark');
-    } else {
-        setTheme('theme-light');
-    }
-})();
 
