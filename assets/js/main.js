@@ -266,6 +266,11 @@ const contributorsection = [
     image: "assets/images/contributors/20.jpg",
     githublink: "https://github.com/varunvj1",
   },
+  {
+    title: "Dipansh",
+    image: "assets/images/contributors/24.jpg",
+    githublink: "https://github.com/dipanshparmar"
+  },
 ];
 
 const showCards = () => {
