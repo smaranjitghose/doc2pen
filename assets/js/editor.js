@@ -1,5 +1,5 @@
-// The quick brown fox jumps over the lazy dog
-myData = `The ...`;
+// Default Text
+myData = `The quick brown fox jumps over the lazy dog`;
 // Declaring and Intializing variables for various options in the editor
 let img = [],
   myFont = [],
