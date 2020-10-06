@@ -346,3 +346,4 @@ const insertEventCards = () => {
 	});
 };
 insertEventCards();
+
