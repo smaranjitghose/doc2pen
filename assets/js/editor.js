@@ -14,8 +14,8 @@ let img = [],
   linespacing = false;
 
 function preload() {
-  fontLoad();
   loadPage();
+  fontLoad();
 }
 
 document.getElementsByTagName("BODY")[0].onresize = function () {
@@ -34,16 +34,16 @@ function setup() {
 defInk = "#16264C";
 // Functions for Choosing Ink Color
 function chooseRed() {
-  defInk = "red";
+  defInk = "red"; //red colour
 }
 function chooseBlue() {
-  defInk = "blue";
+  defInk = "blue"; //blue colour
 }
 function chooseGreen() {
-  defInk = "green";
+  defInk = "green";  //green colour
 }
 function chooseBlack() {
-  defInk = "black";
+  defInk = "black"; //black colour
 }
 function choosePink() {
   defInk = "#e11d74"; //pink colour
@@ -121,64 +121,24 @@ var temp = "30";
                 break;
             }
         }
+
 /*range field*/
 
 /*Width*/
 var slider1 = document.getElementById("rangeWidth");
 output1.innerHTML = rangeWidth.value;
 
-
-
 /*Line Spacing*/
 var slider2 = document.getElementById("rangeSpace");
 output2.innerHTML = rangeSpace.value;
-
 
 /*X-axis*/
 var slider4 = document.getElementById("rangeXaxis");
 output4.innerHTML = rangeXaxis.value;
 
-
 /*Y-axis*/
 var slider5 = document.getElementById("rangeYaxis");
 output5.innerHTML = rangeYaxis.value;
-
-// Function to load page and font
-window.onload = function () { 
-    // Loading Page
-    var pageupload = document.getElementById("pageUploader");
-    var button = document.getElementById("btnPageUpload");
-    button.onclick = function () {
-        pageupload.click();
-        };
-    pageupload.onchange = function () {
-        console.log("Loading Pages....");
-        var reader = new FileReader(); // Initiate File Reader
-        reader.readAsDataURL(pageupload.files[0]);
-        reader.onload = function (e) {
-            img.push(loadImage(e.target.result));
-            imgNum += 1;
-            pageNum = imgNum - 1;
-            };
-        };
-    // Loding Fonts
-    var fontupload = document.getElementById("fontUploader");
-    button = document.getElementById("btnFontUpload");
-    button.onclick = function () {
-          fontupload.click();
-           };
-    fontupload.onchange = function () {
-        console.log("Loading Fonts...");
-        var reader = new FileReader(); // Initiate File Reader
-        reader.readAsDataURL(fontupload.files[0]);
-        reader.onload = function (e) {
-            myFont.push(loadFont(e.target.result));
-            myFonts += 1;
-            fontNum = myFonts - 1;
-             };
-        };
-    };
-
 
 // Function to count the number of words and limit the total number of words
 $("#dataField").on("keydown", function (e) {// function event
