@@ -147,3 +147,21 @@ output5.innerHTML = rangeYaxis.value;
 slider5.oninput = function () {
   output5.innerHTML = this.value;
 };
+
+
+/*  file uploading code */
+var fileUploader = document.getElementById("fileUploader");
+      function uploaderFunction(){fileUploader.click();};
+      fileUploader.addEventListener("change", function readfiles(files) {
+      if (this.files && this.files[0]) {
+        var myFile = this.files[0];
+        var reader = new FileReader();
+        
+        reader.addEventListener('load', function (e) {
+          document.querySelector("#dataField").value = e.target.result;
+$("#dataField").keyup();
+        });
+        
+        reader.readAsBinaryString(myFile);
+      }
+    });
