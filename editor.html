@@ -290,6 +290,14 @@
             <a
               class="nav-link text-white"
               href="#"
+              id="btnPageUpload"
+              >Page Upload</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-white"
+              href="#"
               onclick="save(str(pageNum++))"
               >Download</a
             >
@@ -309,7 +317,7 @@
             <a class="nav-link text-white">
               Font Size: 
             </a>
-            <select id="font-size-select">
+            <select id="font-size-select" oninput="fontsize=float(this.value)" >
               <!-- size values will go here -->
             </select>
           </li>
@@ -352,9 +360,9 @@
             type="range"
             min="100"
             max="800"
-            value1="700"
+            value="700"
             oninput="w=float(this.value)"
-            class="form-control-range custom-range"
+            class="form-control-range custom-range "
             id="rangeWidth"
           />
         </div>
