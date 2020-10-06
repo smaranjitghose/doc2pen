@@ -15,6 +15,7 @@ let img = [],
 
 function preload() {
   loadPage();
+  fontLoad();
 }
 
 document.getElementsByTagName("BODY")[0].onresize = function () {
@@ -63,7 +64,11 @@ function draw() {
   text(data, xaxis, yaxis, w, 900);
 }
 
-
+function fontLoad() {
+  for (var i = 0; i < myFonts; i++) {
+    myFont.push(loadFont("assets/fonts/font (" + str(i) + ").ttf"));
+  }
+}
 
 function changeFont() {
   fontNum += 1;
@@ -116,6 +121,7 @@ var temp = "30";
                 break;
             }
         }
+
 /*range field*/
 
 /*Width*/
