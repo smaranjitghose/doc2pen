@@ -14,7 +14,6 @@ let img = [],
   linespacing = false;
 
 function preload() {
-  fontLoad();
   loadPage();
 }
 
