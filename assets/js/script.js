@@ -33,12 +33,13 @@ window.onload = function () {
   };
 };
 
-//word count and limit function
 
+//word count and limit function
 $("#dataField").on("keydown", function (e) {// function event
   var words = $.trim(this.value).length ? this.value.match(/\S+/g).length : 0; //count length of word when space occur
   if (words <= 10000) {
     $("#count-words").text(10000 - words);// subtracts word from 10K and targets span-id"count-words" 
+    $("#words-strt").text(0 + words);
   } else {
     if (e.which !== 8) e.preventDefault();//prevent user to enter more text
   }

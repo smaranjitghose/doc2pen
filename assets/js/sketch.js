@@ -89,7 +89,7 @@ function changeFont()
   fontNum %= myFonts;
 }
 
-function loadPage() 
+function loadPage()
 {
   for (var i = 0; i < imgNum; i++)
   {
@@ -111,4 +111,3 @@ function choosePage(x){
   pageNum = x;
   pageNum %= imgNum;
 }
-
