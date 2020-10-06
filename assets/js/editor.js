@@ -1,4 +1,6 @@
-myData = `The text you will type will appear here...`;
+// Default Text
+myData = `The quick brown fox jumps over the lazy dog`;
+// Declaring and Intializing variables for various options in the editor
 let img = [],
   myFont = [],
   myFonts = 15,
@@ -12,28 +14,12 @@ let img = [],
   linespacing = false;
 
 function preload() {
-  fontLoad();
   loadPage();
+  fontLoad();
 }
 
 document.getElementsByTagName("BODY")[0].onresize = function () {
   setup();
-};
-//Page Upload
-window.onload = function () {
-  var fileupload = document.getElementById("pageUploader");
-  var button = document.getElementById("btnPageUpload");
-  button.onclick = function () {
-    fileupload.click();
-  };
-  fileupload.onchange = function () {
-    console.log("page Uploader Triggered.");
-    var reader = new FileReader();
-    reader.readAsDataURL(fileupload.files[0]);
-    reader.onload = function (e) {
-      img = loadImage(e.target.result);
-    };
-  };
 };
 
 function setup() {
@@ -44,19 +30,20 @@ function setup() {
   rectMode(CORNER);
 }
 
+// Default Ink Color
 defInk = "#16264C";
-
+// Functions for Choosing Ink Color
 function chooseRed() {
-  defInk = "red";
+  defInk = "red"; //red colour
 }
 function chooseBlue() {
-  defInk = "blue";
+  defInk = "blue"; //blue colour
 }
 function chooseGreen() {
-  defInk = "green";
+  defInk = "green";  //green colour
 }
 function chooseBlack() {
-  defInk = "black";
+  defInk = "black"; //black colour
 }
 function choosePink() {
   defInk = "#e11d74"; //pink colour
@@ -134,27 +121,35 @@ var temp = "30";
                 break;
             }
         }
+
 /*range field*/
 
 /*Width*/
 var slider1 = document.getElementById("rangeWidth");
 output1.innerHTML = rangeWidth.value;
 
-
-
 /*Line Spacing*/
 var slider2 = document.getElementById("rangeSpace");
 output2.innerHTML = rangeSpace.value;
-
 
 /*X-axis*/
 var slider4 = document.getElementById("rangeXaxis");
 output4.innerHTML = rangeXaxis.value;
 
-
 /*Y-axis*/
 var slider5 = document.getElementById("rangeYaxis");
 output5.innerHTML = rangeYaxis.value;
+
+// Function to count the number of words and limit the total number of words
+$("#dataField").on("keydown", function (e) {// function event
+  var words = $.trim(this.value).length ? this.value.match(/\S+/g).length : 0; //count length of word when space occur
+  if (words <= 10000) {
+    $("#count-words").text(10000 - words);// subtracts word from 10K and targets span-id"count-words" 
+    $("#words-strt").text(0 + words);
+  } else {
+    if (e.which !== 8) e.preventDefault();//prevent user to enter more text
+  }
+});
 
 /*  file uploading code */
 var fileUploader = document.getElementById("fileUploader");
@@ -173,8 +168,3 @@ $("#dataField").keyup();
         reader.readAsBinaryString(myFile);
       }
     });
-
-
-
-
-
