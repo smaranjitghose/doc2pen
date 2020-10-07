@@ -230,7 +230,159 @@ section .wave.wave4 {
   }
 }
 
+/* contact form styles section */
 
+/* contact container */
+div#contact {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* contact form heading */
+div#heading h2 {
+  font-size: 2.5rem;
+}
+
+/* contact-and-info-container styles */
+div#contact-and-info-container {
+  margin-top: 8vh;
+  padding: 30px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  display: flex;
+  width: 75%;
+  justify-content: space-between;
+  background: rgb(224, 228, 235);
+}
+
+/* contact form container */
+div#contact-form {
+  width: 40%;
+}
+
+/* actual contact form */
+form {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  background: #14557B;
+  height: 70vh;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* on click on input */
+form input:focus {
+  border: 1px solid white;
+  border-radius: 6px;
+}
+
+/* style on input tags */
+form input {
+  font-size: 14px;
+  padding: 5px;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+/* style of input placeholders */
+form input::placeholder {
+  font-size: 13px;
+}
+
+/* experience input styles */
+div.experience {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+div.experience span {
+  color: white;
+  font-weight: bold;
+}
+
+div.experience span.emoji {
+  cursor: pointer;
+}
+
+/* style on message input */
+form textarea {
+  resize: none;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 0px solid transparent;
+  outline: none;
+  height: 15vh;
+}
+
+/* styles on emojis */
+div#contact-form div.emojis {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* styles on submit button */
+form input[type="submit"] {
+  border: 1px solid transparent;
+  padding: 3px 0;
+  width: 15%;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* on submit button hover */
+form input[type="submit"]:hover {
+  background: rgb(236, 236, 236);
+}
+
+/* media queries for contact form*/
+
+@media screen and (max-width: 768px) {
+  div#contact-form {
+    width: 80%;
+  }
+
+  div#info {
+    display: none;
+  }
+
+  div#contact-form input[type="submit"] {
+    width: 20%;
+    padding: 4px 0;
+  }
+
+  div#contact-and-info-container {
+    justify-content: center;
+    background: white;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  div#contact-form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  div#contact-form input[type="submit"] {
+    font-size: 10px;
+    width: 20%;
+  }
+}
+
+/* contact form selection closed */
 
 /*Footer*/
 
@@ -418,13 +570,6 @@ footer {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
-}
-
-/*Resonsive*/
-
-@media screen and (max-width: 991px) {
-
-  /* TODO: add contact responsiveness */
 }
 
 /* Contributor section*/
