@@ -130,25 +130,66 @@
                         <div class="inside-contact">
                             <h2>Get In <span>Touch</span></h2>
                             <h3><span id="confirm"></h3>
-                            <p>Name</p>
+                            <p>First Name *</p>
                             <input id="txt_name" type="text" class="contact-input" required>
-                            <p>Subject</p>
+                            <p>LAst Name *</p>
                             <input id="txt_subject" type="text" class="contact-input" required>
-                            <p>Email</p>
+                            <p>Email-id *</p>
                             <input id="txt_email" type="email" Required="required" class="contact-input">
                             <p>Message</p>
                             <textarea id="txt_message" rows="4" cols="20" Required="required" class="contact-input"></textarea>
-                            <!-- START CAPTCHA -->
+                            <p>Phone Number (optional)</p>
+                            <input type="number" class="contact-input">
+                            
+                        <!-- START CAPTCHA -->
                             <div class="capbox">
                                 <div id="CaptchaDiv"></div>
                                     <div class="capbox-inner">
-                                        Type the number <br>
+                                        Captcha (Type the number)  <br>
                                         <input type="hidden" id="txtCaptcha">
                                         <input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
                                     </div>
                             </div>
                             <br><br>
                             <!-- END CAPTCHA -->
+
+                            <label>
+                                
+                                <p>Rate Us</p>
+                                <br>
+                                <div class="container-emoji">
+                                  <div class="item">
+                                    <label for="0">
+                                      <input class="radio" type="radio" name="feedback" id="0" value="0">
+                                      <span>🤬</span>
+                                    </label>
+                                  </div>
+                                  <div class="item">
+                                    <label for="1">
+                                      <input class="radio" type="radio" name="feedback" id="1" value="1">
+                                      <span>🙁</span>
+                                    </label>
+                                  </div>
+                                  <div class="item">
+                                    <label for="2">
+                                      <input class="radio" type="radio" name="feedback" id="2" value="2">
+                                      <span>😶</span>
+                                    </label>
+                                  </div>
+                                  <div class="item">
+                                    <label for="3">
+                                      <input class="radio" type="radio" name="feedback" id="3" value="3">
+                                      <span>😁</span>
+                                    </label>
+                                  </div>
+                                  <div class="item">
+                                    <label for="4">
+                                      <input class="radio" type="radio" name="feedback" id="4" value="4">
+                                      <span>😍</span>
+                                    </label>
+                                  <div>
+                              </div>
+                            </label><br><br>
                             <input type="submit" id="btn_send" value="SEND">
                         </div>
                     </div>

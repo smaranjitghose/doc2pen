@@ -976,3 +976,28 @@ footer {
     margin-right: 2.5rem;
   }
 }
+
+/*emoji feedback*/
+.app {
+  width: 90%;
+  width: 450px;
+  
+}
+  .container-emoji {
+  display: flex;
+  }
+  .radio {
+  display: none;
+  }
+  .radio ~ span {
+  font-size: 3rem;
+  filter: grayscale(100);
+  cursor: pointer;
+  transition: 0.3s;
+  }
+  
+  .radio:checked ~ span {
+  filter: grayscale(0);
+  font-size: 4rem;
+  }
+  
