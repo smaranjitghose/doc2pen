@@ -230,112 +230,7 @@ section .wave.wave4 {
   }
 }
 
-/* Contact Section */
 
-.contact-parent {
-  display: flex;
-  margin-top: 80px;
-}
-
-.contact-child {
-  box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
-  margin: auto;
-}
-
-.inside-contact {
-  width: 90%;
-  margin: 0 auto;
-  line-height: 1em;
-}
-
-.inside-contact h2 {
-  text-align: center;
-  margin: 20px;
-  font-size: 3em;
-}
-
-.inside-contact span {
-  color: #2c5364;
-}
-
-.inside-contact h3 {
-  text-align: center;
-  font-size: 16px;
-  color: #0085e2;
-}
-
-.inside-contact p {
-  font-weight: 500;
-}
-
-.inside-contact input,
-.inside-contact textarea {
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.48);
-  padding: 5px 10px;
-  margin-bottom: 30px;
-}
-
-.inside-contact input[type="submit"] {
-  background-color: #000;
-  color: #fff;
-  transition: 0.2s;
-  border: 2px solid #000;
-}
-
-.inside-contact input[type="submit"]:hover {
-  background-color: #fff;
-  color: #000;
-  transition: 0.2s;
-}
-
-#txt_message {
-  height: 6rem !important;
-}
-
-input[type="text"] {
-  height: 2rem !important;
-}
-
-/*Captcha box */
-
-.capbox {
-  border: 1px solid rgba(0, 0, 0, 0.48);
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  display: inline-block;
-  padding: 5px 8px 5px 8px;
-}
-
-.capbox-inner {
-  color: #000000;
-  background-color: #ffffff;
-  margin: 0px auto 0px auto;
-  padding: 3px 10px 5px 10px;
-  border-radius: 4px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-#CaptchaDiv {
-  color: #000000;
-  font: normal 25px Impact, Charcoal, arial, sans-serif;
-  font-style: italic;
-  text-align: center;
-  vertical-align: middle;
-  background-color: #ffffff;
-  user-select: none;
-  display: inline-block;
-  padding: 3px 14px 3px 8px;
-  margin-right: 4px;
-  border-radius: 4px;
-}
-
-#CaptchaInput {
-  border: 1px solid rgba(0, 0, 0, 0.48);
-  margin: 3px 0px 1px 0px;
-}
 
 /*Footer*/
 
@@ -528,33 +423,8 @@ footer {
 /*Resonsive*/
 
 @media screen and (max-width: 991px) {
-  .contact-parent {
-    display: block;
-    width: 100%;
-  }
 
-  .child1 {
-    display: none;
-  }
-
-  .child2 {
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.7),
-        rgba(255, 255, 255, 0.7)
-      ),
-      url("../images/contact.jpg");
-    background-size: cover;
-  }
-
-  .inside-contact input,
-  .inside-contact textarea {
-    background-color: transparent;
-  }
-
-  #CaptchaDiv,
-  .capbox-inner {
-    background-color: transparent;
-  }
+  /* TODO: add contact responsiveness */
 }
 
 /* Contributor section*/
