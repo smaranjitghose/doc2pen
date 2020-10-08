@@ -348,7 +348,31 @@ form input[type="submit"]:hover {
 
 /* media queries for contact form*/
 
+@media screen and (max-width: 1024px) {
+  div.experience {
+    justify-content: flex-start;
+  }
+
+  span.emoji {
+    margin-left: 5px;
+  }
+
+  span.emoji:nth-child(4) {
+    margin-left: 0px;
+  }
+}
+
 @media screen and (max-width: 768px) {
+  /* overwriting the styles of media query 1024px */
+  div.experience {
+    justify-content: space-between
+  }
+
+  span.emoji {
+    margin-left: 0;
+  }
+  /* overwriting ends */
+
   div#contact-form {
     width: 80%;
   }
@@ -375,10 +399,36 @@ form input[type="submit"]:hover {
   }
 }
 
+@media screen and (max-width: 375px) {
+  div.experience {
+    /* added this so that emojis start aligning from the starting of the secton */
+    justify-content: flex-start;
+  }
+
+  div.experience span.emoji {
+    /* added this for spacing between emojis */
+    margin-left: 5px;
+  }
+
+  div.experience span.emoji:nth-child(4) {
+    /* added this so that the third emoji aligns perfectly with text */
+    margin-left: 0px; 
+  }
+}
+
 @media screen and (max-width: 320px) {
   div#contact-form input[type="submit"] {
     font-size: 10px;
     width: 20%;
+  }
+
+  div.experience span.emoji:nth-child(2) {
+    /* added this so that the first emoji aligns perfectly with text */
+    margin-left: 0px; 
+  }
+
+  div.experience span.emoji:nth-child(4) {
+    margin-left: 5px; 
   }
 }
 
