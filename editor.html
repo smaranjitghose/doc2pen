@@ -92,7 +92,8 @@
                 <li class="nav-item">
             
                 <!--- Uploading Document --->
-                <a class="nav-link text-white" href="#" onclick="alert('Open For development!');" id="btnPageUpload">Page Upload</a>
+                <input type="file" id="fileUploader"  name="file1" style="display:none" />
+                <a class="nav-link text-white" onclick="uploaderFunction()" id="btnPageUpload">Page Upload</a>
                 </li>
             
                 <!--- Download Document --->
@@ -164,6 +165,7 @@
         <div class="row-editor">
           <!--- Input Window --->
           <div class="column input">
+            <span id="uploadedFname"></span>
             <section class="container-input">
               <form onsubmit="return false" style="width: 100%; height: 100%">
                 <textarea placeholder="Write your text here..." id="dataField"  onkeyup="myData = this.value" class="input-box"></textarea>
@@ -186,5 +188,23 @@
         <script src="assets/js/jquery.js"></script>
         <script src="assets/js/main.js"></script>
         <script src="assets/js/editor.js"></script>
+        <script>
+          //function to upload txt file
+          var fileUploader = document.getElementById("fileUploader");
+          function uploaderFunction(){fileUploader.click();};
+          fileUploader.addEventListener("change", function readfiles(files) {
+          if (this.files && this.files[0]) {
+            var myFile = this.files[0];
+            document.querySelector("#uploadedFname").innerText = myFile.name;
+            var reader = new FileReader();
+            
+            reader.addEventListener('load', function (e) {
+              document.querySelector("#dataField").value = e.target.result;
+              $("#dataField").keyup();
+            });
+            
+            reader.readAsBinaryString(myFile);
+          }
+        });</script>
   </body>
 </html>
