@@ -322,12 +322,10 @@ form textarea {
   height: 15vh;
 }
 
-/* styles on emojis */
-div#contact-form div.emojis {
+div#emojis {
   display: flex;
+  width: 40%;
   justify-content: space-between;
-  width: 95%;
-  margin: 0 auto;
 }
 
 /* styles on submit button */
@@ -397,22 +395,33 @@ form input[type="submit"]:hover {
   div#contact-form {
     width: 100%;
   }
+
+  span.emoji {
+    margin-left: 5px;
+  }
+
+  span.emoji:nth-child(4) {
+    margin-left: 5px;
+  }
+  
+  span.emoji:first-child {
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 375px) {
   div.experience {
     /* added this so that emojis start aligning from the starting of the secton */
     justify-content: flex-start;
-  }
+  } 
 
-  div.experience span.emoji {
+  span.emoji {
     /* added this for spacing between emojis */
     margin-left: 5px;
   }
-
-  div.experience span.emoji:nth-child(4) {
-    /* added this so that the third emoji aligns perfectly with text */
-    margin-left: 0px; 
+  
+  span.emoji:first-child {
+    margin-left: 0;
   }
 }
 
@@ -420,15 +429,6 @@ form input[type="submit"]:hover {
   div#contact-form input[type="submit"] {
     font-size: 10px;
     width: 20%;
-  }
-
-  div.experience span.emoji:nth-child(2) {
-    /* added this so that the first emoji aligns perfectly with text */
-    margin-left: 0px; 
-  }
-
-  div.experience span.emoji:nth-child(4) {
-    margin-left: 5px; 
   }
 }
 
