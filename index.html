@@ -1,250 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!--- Meta Tags for SEO --->
-    <title>Doc2pen</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="assets/images/favicon.png"
-    />
-    <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <!--Importing JQUERY-->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
-    <!--Import Font-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat"
-      rel="stylesheet"
-    />
-    <!--Getting our CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-  </head>
-
-  <body>
-    <!--Navigation Bar is loaded dynamically from the main.js-->
-
-    <!-- Home Section -->
-    <section id="home" class="home-section">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-6 home-div center">
-            <h1 id="title-heading">Type Documents in your Handwriting.</h1>
-            <div class="d-flex justify-content-center">
-              <a href="editor.html" class="button"> Check It Out</a>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <img class="title-image" src="assets/images/title-image.svg" />
-          </div>
-        </div>
-      </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div class="wave wave1"></div>
-      <div class="wave wave2"></div>
-      <div class="wave wave3"></div>
-      <div class="wave wave4"></div>
-    </section>
-    <!-- About Section -->
-    <div id="about-intro" class="about container center-block">
-      <h2>What are we about?</h2>
-      <p>
-        One day, <span class="enhanced">Smitha</span> was very tensed about the
-        assignments she has to submit in her college, because
-        <span class="enhanced"> She Can Type Fast, But Can't Write Fast.</span>
-      </p>
-      <p>
-        On talking about this issue to her friend
-        <span class="enhanced">Harry</span>, he suggested
-        <span class="enhanced">Doc2Pen</span> as a solution to her problem.
-      </p>
-      <p class="enhanced">Are you facing the same problem as Smitha did?</p>
-      <p>
-        So, let's hear what Harry says about
-        <span class="enhanced">Doc2Pen.</span>
-      </p>
-      <br />
-      <h5>
-        <span class="enhanced">Doc2Pen</span> converts your
-        <span class="enhanced">typed assignments</span> into
-        <span class="enhanced">handwritten</span> ones.
-      </h5>
-    </div>
-    <div id="features">
-      <div class="feature-div container">
-        <img id="page-image" src="assets/images/about/page.svg" />
-        <h3>Step 1 : Pick a Page</h3>
-        <br />
-        <p>
-          Here, either you can choose one from the wide variety of pages
-          available or you can upload your own institution's letterpad.
-        </p>
-      </div>
-      <br />
-      <div class="feature-div container">
-        <img id="font-image" src="assets/images/about/fonts.svg" />
-        <h3>Step 2 : Pick a Font</h3>
-        <br />
-        <p>
-          You can adjust the combination of font-style, font-color and font-size
-          as the one which resembles your handwriting.
-        </p>
-      </div>
-      <br />
-      <div class="feature-div container">
-        <img id="typing-image" src="assets/images/about/typing.svg" />
-        <h3>Step 3 : Type it</h3>
-        <br />
-        <p>
-          Use your fast typing skill to type the assignment in the editor and
-          get it in the handwritten form.
-        </p>
-      </div>
-      <br />
-      <div class="feature-div container">
-        <img id="download-image" src="assets/images/about/download.svg" />
-        <h3>Step 4 : Download it</h3>
-        <br />
-        <p>
-          You can now download/export it in the
-          <span class="enhanced">.png</span>,
-          <span class="enhanced">.jpg</span>,
-          <span class="enhanced">.jpeg</span> or
-          <span class="enhanced">.pdf</span> format and get it printed in order
-          to submit in the college.
-        </p>
-      </div>
-      <br />
-    </div>
-    <img id="open-source-image" src="assets/images/about/open-source.svg" />
-    <div id="open-source" class="container">
-      <p>
-        Now, as Doc2Pen saves a lot of your time, you can now spent your
-        valuable time in learning some practical stuffs.
-      </p>
-      <p>
-        And So, here comes the Good News, Doc2pen is an Open Source Project, we
-        welcome your contributions &#128578;.
-      </p>
-    </div>
-    <!-- About Section End -->
-    <div id="team">
-      <br /><br />
-      <h3 class="title text-center">Project Maintainers</h3>
-      <br /><br />
-      <div class="container">
-        <div class="row projectMaintainers">
-          <!--Project Maintainer details loaded dynamically-->
-        </div>
-      </div>
-      <!-- contributor section -->
-      <br /><br />
-      <h3 class="title text-center">Clan of Contributors</h3>
-      <br /><br />
-      <div class="container flex-row">
-        <div class="col-sm-13 team-container contributor">
-          <!-- Contributor Section is loaded dynamically from main.js -->
-        </div>
-      </div>
-    </div>
-    <!--Open Source Section-->
-    <div id="opensource-section" class="container">
-      <h3>Open Source Programs we are a part of</h3>
-      <p class="heading">
-        "To do something really well, you have to get a lot of people involved."
-      </p>
-      <div class="row justify-content-center" id="eventCards">
-        <!-- Loaded Dynamically from main.js -->
-      </div>
-    </div>
-
-    <!--Contact Form Section-->
-
-    <!-- contact from container -->
-    <div id="contact">
-      <!-- contact heading -->
-      <div id="heading">
-        <h2 class="contact-heading">Get In Touch</h2>
-      </div>
-      <!-- contact from and details container -->
-      <div id="contact-and-info-container">
-        <!-- info goes here -->
-        <div id="info">
-          <div id="general-info">
-            <h4>Have a doubt?</h4>
-            <p>Contact us your query or just send a hello.</p>
-          </div>
-        </div>
-        <!-- contact form goes here -->
-        <div id="contact-form">
-          <form action="#" method="POST">
-            <input type="text" placeholder="First Name (required)" />
-            <input type="text" placeholder="Last Name (required)" />
-            <input type="email" placeholder="Email (required)" />
-            <input type="tel" placeholder="Phone (optional)" />
-            <div class="experience">
-              <span>Rate your experience:</span>
-              <div id="emojis">
-                <span class="emoji">&#128553;</span>
-                <span class="emoji">&#128542;</span>
-                <span class="emoji">&#128528;</span>
-                <span class="emoji">&#128522;</span>
-                <span class="emoji">&#128516;</span>
+    <html lang="en">
+        <head>
+            <!--- Meta Tags for SEO --->
+            <title>Doc2pen</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+            <!--Import Google Icon Font-->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+            <!--Importing JQUERY-->
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+            <!--Import Font-->
+            <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+            <!--Getting our CSS-->
+            <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+        </head>
+        
+        <body>
+        <!--Navigation Bar is loaded dynamically from the main.js-->
+        <!-- Home Section -->
+          <section id="home" class="home-section">
+            <div class="container-fluid">
+              <div class="row"> 
+                <div class="col-lg-6 home-div center">
+                  <h1 id="title-heading">Type Documents in your Handwriting.</h1>
+                    <div class="d-flex justify-content-center">
+                      <a href="editor.html" class="button"> Check It Out</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                  <img class="title-image" src="assets/images/title-image.svg">
+                </div>
               </div>
             </div>
-            <textarea placeholder="Message..."></textarea>
-            <input type="submit" value="Send" />
-          </form>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!--Wave part-->
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+            <div class="wave wave4"></div>
+          </section>
+          
+          <!-- About Section -->
+          <div id="about-intro" class="about container center-block">
+            <h2>What are we about?</h2>
+                <p>One day, <span class="enhanced">Smitha</span> was very tensed about the assignments she has to submit in her college, because <span class="enhanced"> She Can Type Fast, But Can't Write Fast.</span></p>
+                <p>On talking about this issue to her friend <span class="enhanced">Harry</span>, he suggested <span class="enhanced">Doc2Pen</span> as a solution to her problem.</p>
+                <p class="enhanced">Are you facing the same problem as Smitha did?</p>
+                <p> So, let's hear what Harry says about <span class="enhanced">Doc2Pen.</span></p>
+                <br>
+                <h5><span class="enhanced">Doc2Pen</span> converts your <span class="enhanced">typed assignments</span> into <span class="enhanced">handwritten</span> ones.</h5>
+          </div>
+          
+          <!-- Feature Section -->
+          <div id="features">
+            <div class="feature-div container">
+                <img  id="page-image" src="assets/images/about/page.svg">
+                <h3>Step 1 : Pick a Page</h3>
+                <br>
+                <p>Here, either you can choose one from the wide variety of pages available or you can upload your own institution's letterpad.</p>
+            </div>
+            <br>
+            
+            <div class="feature-div container">
+                <img  id="font-image" src="assets/images/about/fonts.svg">
+                <h3>Step 2 : Pick a Font</h3>
+                <br>
+                <p>You can adjust the combination of font-style, font-color and font-size as the one which resembles your handwriting.</p>
+            </div>
+            <br>
+            
+            <div class="feature-div container">
+                <img id="typing-image" src="assets/images/about/typing.svg">
+                <h3>Step 3 : Type it</h3>
+                <br>
+                <p>Use your fast typing skill to type the assignment in the editor and get it in the handwritten form.</p>
+            </div>
+            <br>
+            
+            <div class="feature-div container">
+                <img id="download-image" src="assets/images/about/download.svg">
+                <h3>Step 4 : Download it</h3>
+                <br>
+                <p>You can now download/export it in the <span class="enhanced">.png</span>, <span class="enhanced">.jpg</span>, <span class="enhanced">.jpeg</span> or <span class="enhanced">.pdf</span> format and get it printed in order to submit in the college.</p>
+            </div> 
+            <br>
         </div>
-      </div>
-    </div>
-    <!--JS File for dynamically loading navigation bar, footer, Team Section-->
-    <script src="assets/js/main.js"></script>
-    <!-- Footer is loaded dynamically from main.js-->
-  </body>
+        <img id="open-source-image" src="assets/images/about/open-source.svg">
+        <div id="open-source" class="container">
+          <p>Now, as Doc2Pen saves a lot of your time, you can now spent your valuable time in learning some practical stuffs. </p>
+          <p>And So, here comes the Good News, Doc2pen is an Open Source Project, we welcome your contributions &#128578;.</p>
+        </div>
+          
+        <!-- Team Section -->
+        <div id="team">
+            <!-- Project Maintainer Sub Section -->
+            <br><br> <h3 class="title text-center">Project Maintainers</h3><br><br>
+            <div class="container">
+              <div class="row projectMaintainers">
+                    <!-- Details are loaded dynamically from main.js file -->
+              </div>
+            </div>
+            
+            <!-- Contributora Sub Section -->
+            <br><br>
+            <h3 class="title text-center">Clan of Contributors</h3><br><br>
+            <div class="container flex-row">
+                <div class="col-sm-13 team-container contributor">
+                    <!-- Details are loaded dynamically from main.js file -->
+                </div>
+            </div>
+        </div>
+        
+        <!--Open Source Section-->    
+        <div id="opensource-section" class="container">
+          <h3>Open Source Programs we are a part of </h3>
+            <p class="heading">"To do something really well, you have to get a lot of people involved."</p>
+            <div class="row justify-content-center" id="eventCards">
+                <!-- Loaded Dynamically from main.js -->
+            </div> 
+        </div>
+        
+          <!--Contact Form Section-->
+          <div id="contact">
+            <div id="heading">
+              <h2 class="contact-heading">Get In Touch</h2>
+            </div>
+            
+            <div id="contact-and-info-container">
+              
+              <div id="info">
+                <div id="general-info">
+                  <h4>Have a doubt?</h4>
+                  <p>Contact us your query or just send a hello.</p>
+                </div>
+              </div>
+              
+              <div id="contact-form">
+                <form action="#" method="POST">
+                  <input type="text" placeholder="First Name (required)" />
+                  <input type="text" placeholder="Last Name (required)" />
+                  <input type="email" placeholder="Email (required)" />
+                  <input type="tel" placeholder="Phone (optional)" />
+                  <div class="experience">
+                    <span>Rate your experience:</span>
+                      <div id="emojis">
+                        <span class="emoji">&#128553;</span>
+                        <span class="emoji">&#128542;</span>
+                        <span class="emoji">&#128528;</span>
+                        <span class="emoji">&#128522;</span>
+                        <span class="emoji">&#128516;</span>
+                      </div>
+                  </div>
+                  <textarea placeholder="Message..."></textarea>
+                  <input type="submit" value="Send" />
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <!--JS File for dynamically loading navigation bar, footer, Team Section-->
+          <script src="assets/js/main.js"></script>
+          <!-- Footer is loaded dynamically from main.js-->
+      </body>
 </html>
