@@ -230,112 +230,209 @@ section .wave.wave4 {
   }
 }
 
-/* Contact Section */
+/* contact form styles section */
 
-.contact-parent {
+/* contact container */
+div#contact {
+  margin-top: 10vh;
   display: flex;
-  margin-top: 80px;
+  flex-direction: column;
+  align-items: center;
 }
 
-.contact-child {
-  box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.75);
-  margin: auto;
+/* contact form heading */
+div#heading h2 {
+  font-size: 2.5rem;
 }
 
-.inside-contact {
-  width: 90%;
-  margin: 0 auto;
-  line-height: 1em;
+/* contact-and-info-container styles */
+div#contact-and-info-container {
+  margin-top: 8vh;
+  padding: 30px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  display: flex;
+  width: 75%;
+  justify-content: space-between;
+  background: rgb(224, 228, 235);
 }
 
-.inside-contact h2 {
-  text-align: center;
-  margin: 20px;
-  font-size: 3em;
+/* contact form container */
+div#contact-form {
+  width: 40%;
 }
 
-.inside-contact span {
-  color: #2c5364;
+/* actual contact form */
+form {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  background: #14557B;
+  height: 70vh;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-.inside-contact h3 {
-  text-align: center;
-  font-size: 16px;
-  color: #0085e2;
+/* on click on input */
+form input:focus {
+  border: 1px solid white;
+  border-radius: 6px;
 }
 
-.inside-contact p {
-  font-weight: 500;
+/* style on input tags */
+form input {
+  font-size: 14px;
+  padding: 5px;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid transparent;
 }
 
-.inside-contact input,
-.inside-contact textarea {
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.48);
-  padding: 5px 10px;
-  margin-bottom: 30px;
+/* style of input placeholders */
+form input::placeholder {
+  font-size: 13px;
 }
 
-.inside-contact input[type="submit"] {
-  background-color: #000;
-  color: #fff;
-  transition: 0.2s;
-  border: 2px solid #000;
+/* experience input styles */
+div.experience {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.inside-contact input[type="submit"]:hover {
-  background-color: #fff;
-  color: #000;
-  transition: 0.2s;
+div.experience span {
+  color: white;
+  font-weight: bold;
 }
 
-#txt_message {
-  height: 6rem !important;
+div.experience span.emoji {
+  cursor: pointer;
 }
 
-input[type="text"] {
-  height: 2rem !important;
+/* style on message input */
+form textarea {
+  resize: none;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 0px solid transparent;
+  outline: none;
+  height: 15vh;
 }
 
-/*Captcha box */
-
-.capbox {
-  border: 1px solid rgba(0, 0, 0, 0.48);
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  display: inline-block;
-  padding: 5px 8px 5px 8px;
+div#emojis {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
 }
 
-.capbox-inner {
-  color: #000000;
-  background-color: #ffffff;
-  margin: 0px auto 0px auto;
-  padding: 3px 10px 5px 10px;
-  border-radius: 4px;
-  display: inline-block;
-  vertical-align: middle;
+/* styles on submit button */
+form input[type="submit"] {
+  border: 1px solid transparent;
+  padding: 3px 0;
+  width: 15%;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
 }
 
-#CaptchaDiv {
-  color: #000000;
-  font: normal 25px Impact, Charcoal, arial, sans-serif;
-  font-style: italic;
-  text-align: center;
-  vertical-align: middle;
-  background-color: #ffffff;
-  user-select: none;
-  display: inline-block;
-  padding: 3px 14px 3px 8px;
-  margin-right: 4px;
-  border-radius: 4px;
+/* on submit button hover */
+form input[type="submit"]:hover {
+  background: rgb(236, 236, 236);
 }
 
-#CaptchaInput {
-  border: 1px solid rgba(0, 0, 0, 0.48);
-  margin: 3px 0px 1px 0px;
+/* media queries for contact form*/
+
+@media screen and (max-width: 1024px) {
+  div.experience {
+    justify-content: flex-start;
+  }
+
+  span.emoji {
+    margin-left: 5px;
+  }
+
+  span.emoji:nth-child(4) {
+    margin-left: 0px;
+  }
 }
+
+@media screen and (max-width: 768px) {
+  /* overwriting the styles of media query 1024px */
+  div.experience {
+    justify-content: space-between
+  }
+
+  span.emoji {
+    margin-left: 0;
+  }
+  /* overwriting ends */
+
+  div#contact-form {
+    width: 80%;
+  }
+
+  div#info {
+    display: none;
+  }
+
+  div#contact-form input[type="submit"] {
+    width: 20%;
+    padding: 4px 0;
+  }
+
+  div#contact-and-info-container {
+    justify-content: center;
+    background: white;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  div#contact-form {
+    width: 100%;
+  }
+
+  span.emoji {
+    margin-left: 5px;
+  }
+
+  span.emoji:nth-child(4) {
+    margin-left: 5px;
+  }
+  
+  span.emoji:first-child {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  div.experience {
+    /* added this so that emojis start aligning from the starting of the secton */
+    justify-content: flex-start;
+  } 
+
+  span.emoji {
+    /* added this for spacing between emojis */
+    margin-left: 5px;
+  }
+  
+  span.emoji:first-child {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  div#contact-form input[type="submit"] {
+    font-size: 10px;
+    width: 20%;
+  }
+}
+
+/* contact form selection closed */
 
 /*Footer*/
 
@@ -523,38 +620,6 @@ footer {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
-}
-
-/*Resonsive*/
-
-@media screen and (max-width: 991px) {
-  .contact-parent {
-    display: block;
-    width: 100%;
-  }
-
-  .child1 {
-    display: none;
-  }
-
-  .child2 {
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.7),
-        rgba(255, 255, 255, 0.7)
-      ),
-      url("../images/contact.jpg");
-    background-size: cover;
-  }
-
-  .inside-contact input,
-  .inside-contact textarea {
-    background-color: transparent;
-  }
-
-  #CaptchaDiv,
-  .capbox-inner {
-    background-color: transparent;
-  }
 }
 
 /* Contributor section*/
