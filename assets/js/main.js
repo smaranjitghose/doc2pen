@@ -20,6 +20,9 @@ let header = $(`
         <b><a class="nav-link text-white" href="index.html#contact">Contact</a></b>
       </li>
       <li class="nav-item active">
+        <b><a class="nav-link text-white" href="index.html#Support">Support Us</a></b>
+      </li>
+      <li class="nav-item active">
         <b><a class="nav-link text-white" href="editor.html">Editor</a></b>
       </li>
     </ul>
@@ -145,6 +148,11 @@ const contributorsection = [
     title: "Harshita",
     image: "assets/images/contributors/23.jpg",
     githublink: "https://github.com/mharshita",
+  },
+  {
+    title: "Paras",
+    image: "assets/images/contributors/0.jpg",
+    githublink: "https://github.com/paraschhugani",
   },
   {
     title: "Ayushi",
