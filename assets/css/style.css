@@ -1079,12 +1079,14 @@ footer {
 }
 #Support{
   margin-top: 60px;
+  text-align: center;
 }
 #SupportusQuote{
   color:rgb(0, 153, 255);
 }
-small{
+#quateAuthor{
   color: gray;
+  font-size: 20px;
 }
 #patreonImg{
   width: 40px;
