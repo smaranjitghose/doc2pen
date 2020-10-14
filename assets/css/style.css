@@ -1041,3 +1041,53 @@ footer {
     margin-right: 2.5rem;
   }
 }
+
+/*  support us css */
+#patreon{
+  animation: mymove 2s 1;
+  position: relative;
+}
+#patreon:hover{
+  transform: scale(2.0);
+}
+@keyframes mymove {
+  0% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+}
+75%{
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+}
+100% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+}
+
+}
+#BuymeCoffe{
+  animation: mymove 2s 1;
+  position: relative;
+  margin-left: 40px;
+}
+#BuymeCoffe:hover{
+  transform: scale(2.0);
+}
+.patreonAndCoffe{
+  margin-top: 30px;
+  margin-left: auto;
+}
+#Support{
+  margin-top: 60px;
+  text-align: center;
+}
+#SupportusQuote{
+  color:rgb(0, 153, 255);
+}
+#quateAuthor{
+  color: gray;
+  font-size: 20px;
+}
+#patreonImg{
+  width: 40px;
+}
