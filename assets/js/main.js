@@ -95,7 +95,7 @@ const maintainerSection = [
     image: "assets/images/team/smaranjit_ghose.png",
     name: "Smaranjit Ghose",
     title: "Lead Developer",
-    github: "./https://github.com/smaranjitghose",
+    github: "https://github.com/smaranjitghose",
     linkedin: "https://www.linkedin.com/in/smaranjitghose/",
     imgclass: "image-1"
   },
