@@ -124,22 +124,6 @@ var temp = "30";
 
 /*range field*/
 
-/*Width*/
-var slider1 = document.getElementById("rangeWidth");
-output1.innerHTML = rangeWidth.value;
-
-/*Line Spacing*/
-var slider2 = document.getElementById("rangeSpace");
-output2.innerHTML = rangeSpace.value;
-
-/*X-axis*/
-var slider4 = document.getElementById("rangeXaxis");
-output4.innerHTML = rangeXaxis.value;
-
-/*Y-axis*/
-var slider5 = document.getElementById("rangeYaxis");
-output5.innerHTML = rangeYaxis.value;
-
 // Function to count the number of words and limit the total number of words
 $("#dataField").on("keydown", function (e) {// function event
   var words = $.trim(this.value).length ? this.value.match(/\S+/g).length : 0; //count length of word when space occur
