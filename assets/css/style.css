@@ -263,7 +263,7 @@ div#contact-form {
 }
 
 /* actual contact form */
-form {
+form#contact-form-container {
   border: 1px solid transparent;
   border-radius: 6px;
   display: flex;
