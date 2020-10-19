@@ -124,7 +124,6 @@
 
 .row-editor-top {
   display: flex;
-  flex-direction: row;
   margin-top: 4em;
   margin-bottom: -5em;
   width: 100%;
