@@ -7,7 +7,7 @@
 ![License](https://img.shields.io/github/license/smaranjitghose/doc2pen)
 
 
-<p align="center">Do you always find it a burden to complete the College Assignments?</p>
+<p align="center">Do you always find it a burden to complete the College Assignments ?</p>
 <p align="center"><img width=30% src="https://media.giphy.com/media/l4EoOFliX6Vw4PD20/giphy.gif"></p>
 
 <p align="center">Ya, we know the reason behind that.</p> 
@@ -15,7 +15,7 @@
 <br/>
 <br/>
 <p align="center">Imagine</p>
-<p align="center"><b>Your keyboard starts typing the assignments in your Handwriting?</b></p>
+<p align="center"><b>Your keyboard starts typing the assignments in your Handwriting ?</b></p>
 <p align="center">Awesome, Isn't it?</p>
 <p align="center"> And we made it posiible.</p>
 <p align="center"><img width=30% src="https://media.giphy.com/media/Lo6LNpySgc0qlzoOKR/giphy.gif"></p>
@@ -25,7 +25,7 @@
 <h3> Features :</h3>
 <ul>
 <li>Wide variety of Pages to choose from</li>
-<li>Wide variety of options to customize font as your handwriting.</li>
+<li>Wide variety of options to customize the font as your handwriting.</li>
 <li>Download/Export in .pdf, .jpeg, .jpg, .png format</li>
 </ul>
 
@@ -56,7 +56,7 @@
 <li>Commit Changes</li>
 <li>Push them to the remote Repo.</li>
 <li>Make a Pull Request.</li>
-<li>Enjoy</li>
+<li>Enjoy :-)</li>
 </ul>
 
 <br/>
