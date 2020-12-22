@@ -89,6 +89,10 @@ nav {
   width: 100%;
 }
 
+ .navbar-nav li a:hover {
+  color: 	#191970 !important;
+  border-bottom: 1px solid #191970;
+}
 /*Home Section*/
 
 #title-heading {
