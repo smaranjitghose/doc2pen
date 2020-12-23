@@ -17,7 +17,7 @@
 <p align="center">Imagine</p>
 <p align="center"><b>Your keyboard starts typing the assignments in your Handwriting ?</b></p>
 <p align="center">Awesome, Isn't it?</p>
-<p align="center"> And we made it posiible.</p>
+<p align="center"> And we made it possible.</p>
 <p align="center"><img width=30% src="https://media.giphy.com/media/Lo6LNpySgc0qlzoOKR/giphy.gif"></p>
 
 <h2>Doc2pen is an Open Source Software which converts your Typed Docs into Handwritten Docs</h2>
