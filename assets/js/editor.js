@@ -96,6 +96,11 @@ function choosePage(x) {
   pageNum %= imgNum;
 }
 
+function updateFontSize(size){
+  fontsize=float(size);
+  document.getElementById('size-font').innerHTML = size;
+}
+
 // setting font size options
 const noOfFontSizes = 20;
 let fontSize = 2;
@@ -104,23 +109,9 @@ let fontSize = 2;
 for (let i = 1; i <= noOfFontSizes; i++) {
   document.querySelector(
     "#font-size-select"
-  ).innerHTML += `<option value="${fontSize * i}">${fontSize * i}</option>`;
+  ).innerHTML += `<a onclick="updateFontSize(${fontSize * i})" class="dropdown-text dropdown-item text-right pr-4" href="#" value="${fontSize * i}">${fontSize * i}</a>`;
 }
 
-// changing the font size of data field on font size input
-let fontSizeFromInput;
-document.querySelector('#font-size-select').addEventListener('input', () => {
-  fontSizeFromInput = document.querySelector('#font-size-select').value;
-})
-var temp = "30";
-        var mySelect = document.getElementById('font-size-select');
-        
-        for(var i, j = 0; i = mySelect.options[j]; j++) {
-            if(i.value == temp) {
-                mySelect.selectedIndex = j;
-                break;
-            }
-        }
 
 /*range field*/
 
