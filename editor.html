@@ -112,11 +112,11 @@
                 </li>
             
                 <!-- Font size --->
-                <li class="nav-item font-size-container">
-                <a class="nav-link text-white">Font Size: </a>
-                <select id="font-size-select" oninput="fontsize=float(this.value)" >
-                  <!-- size values will go here -->
-                </select>
+                <li class="nav-item font-size-container dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Font Size: <span class="word" id="size-font">30</span></a>
+                <div id="font-size-select"   class="dropdown-menu text-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
+                <!-- size values will go here -->
+                </div>
                 </li>
                 </ul>
             </div>
