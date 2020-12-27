@@ -305,7 +305,21 @@ const recentEventsDetails = [
 		altName: 'PSOC Logo',
 		eventDescription: `It's a 2 month long event conducted by Programming Club, UIET, aiming to help beginners get started with Open Source development.`,
 		referencePage: 'https://www.pclubsummerofcode.in/'
-	}
+  },
+  {
+    coverImage: 'assets/images/events/woc-logo.png',
+    eventName:'WOC',
+    altName:'WOC Logo',
+    eventDescription: 'Winter of Code is an open-source program envisioned by DevScript that helps understand the paradigm of Open Source contribution.',
+    referencePage:'https://devscript.tech/woc/'
+  },
+  {
+    coverImage: 'assets/images/events/swoc-logo.png',
+    eventName:'SWOC',
+    altName:'SWOC Logo',
+    eventDescription: 'Script Winter of Code is an open-source program envisioned by the Script Foundation. It aims to bring students into the world of open source development.',
+    referencePage:'https://swoc.tech/index.html'
+  }
 ];
 
 const generateEventsCard = (eventDetail, fixClassIndex) => {
