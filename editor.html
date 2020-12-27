@@ -137,51 +137,53 @@
         
         <div class="row-editor-top">
             <div class="menu-bar">
-              <button class="slider-btn">
+              <button data-name="width" class="slider-btn">
                 Text Width
               </button>
-              <button class="slider-btn">
+              <button data-name="space" class="slider-btn">
                 Line Spacing
               </button>
-              <button class="slider-btn">
+              <button data-name="x-axis" class="slider-btn">
                 Adjust X-Axis 
               </button>
-              <button class="slider-btn">
+              <button data-name="y-axis" class="slider-btn">
                 Adjust Y-Axis
               </button>
             </div>
-            <!--- Slider for Text Width --->
-            <form class="slider-form">
-              <div class="editor-range form-group">
-                <label class="text-blue" for="rangeWidth">Width</label>
-                <div class="rValue" id="width"></div>
-                  <input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" class="form-control-range custom-range" id="rangeWidth"/>
-              </div>
-            </form>
-            <!--- Slider for Line Spacing --->
-            <form class="slider-form">
-              <div class="editor-range form-group">
+            <div class="form-wrapper">
+              <!--- Slider for Text Width --->
+              <form id="width" class="slider-form">
+                <div class="editor-range form-group">
+                  <label class="text-blue" for="rangeWidth">Width</label>
+                  <div class="rValue" id="width"></div>
+                  <input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" class="form-control-range custom-range" id="rangeWidth" />
+                </div>
+              </form>
+              <!--- Slider for Line Spacing --->
+              <form id="space" class="slider-form">
+                <div class="editor-range form-group">
                   <label class="text-blue" for="rangeSpace">Line Spacing</label>
                   <div class="rValue" id="space"></div>
-                  <input type="range"  min="10" max="50" value2="30" oninput="linespacing=float(this.value)" class="form-control-range custom-range" id="rangeSpace"/>
-              </div>
-            </form>
-            <!--- X Axis Slider --->
-            <form class="slider-form">
-              <div class="editor-range form-group">
-                <label class="text-blue" for="rangeXaxis">Adjust X axis</label>
-                <div class="rValue" id="xAxis"></div>
-                  <input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="form-control-range custom-range" id="rangeXaxis"/>
-              </div>
-            </form>
-            <!--- Y Axis Slider --->      
-            <form class="slider-form">
-              <div class="editor-range form-group">
-                <label class="text-blue" for="rangeYaxis">Adjust Y axis</label>
+                  <input type="range" min="10" max="50" value2="30" oninput="linespacing=float(this.value)" class="form-control-range custom-range" id="rangeSpace" />
+                </div>
+              </form>
+              <!--- X Axis Slider --->
+              <form id="x-axis" class="slider-form">
+                <div class="editor-range form-group">
+                  <label class="text-blue" for="rangeXaxis">Adjust X axis</label>
+                  <div class="rValue" id="xAxis"></div>
+                  <input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="form-control-range custom-range" id="rangeXaxis" />
+                </div>
+              </form>
+              <!--- Y Axis Slider --->
+              <form id="y-axis" class="slider-form">
+                <div class="editor-range form-group">
+                  <label class="text-blue" for="rangeYaxis">Adjust Y axis</label>
                   <div class="rValue" id="yAxis"></div>
-                    <input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="form-control-range custom-range" id="rangeYaxis"/>
-              </div>
-            </form>
+                  <input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="form-control-range custom-range" id="rangeYaxis" />
+                </div>
+              </form>
+            </div>
         </div>
         <!--- Input and Output Windows --->
         <div class="row-editor">
