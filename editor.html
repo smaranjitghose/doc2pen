@@ -127,15 +127,31 @@
                 </ul>
             </div>
         </nav>
+        <div class="nav-back"></div>
         <!--Menu Bar ends ends here-->
 
         <input class="button-primary button-large download-image d-none" type="file" id="pageUploader" onclick=""/>
         <input class="button-primary button-large download-image d-none" type="file" id="fontUploader" onclick=""/>
 
         <!--- Sliders --->
+        
         <div class="row-editor-top">
+            <div class="menu-bar">
+              <button class="slider-btn">
+                Text Width
+              </button>
+              <button class="slider-btn">
+                Line Spacing
+              </button>
+              <button class="slider-btn">
+                Adjust X-Axis 
+              </button>
+              <button class="slider-btn">
+                Adjust Y-Axis
+              </button>
+            </div>
             <!--- Slider for Text Width --->
-            <form>
+            <form class="slider-form">
               <div class="editor-range form-group">
                 <label class="text-blue" for="rangeWidth">Width</label>
                 <div class="rValue" id="width"></div>
@@ -143,7 +159,7 @@
               </div>
             </form>
             <!--- Slider for Line Spacing --->
-            <form>
+            <form class="slider-form">
               <div class="editor-range form-group">
                   <label class="text-blue" for="rangeSpace">Line Spacing</label>
                   <div class="rValue" id="space"></div>
@@ -151,7 +167,7 @@
               </div>
             </form>
             <!--- X Axis Slider --->
-            <form>
+            <form class="slider-form">
               <div class="editor-range form-group">
                 <label class="text-blue" for="rangeXaxis">Adjust X axis</label>
                 <div class="rValue" id="xAxis"></div>
@@ -159,7 +175,7 @@
               </div>
             </form>
             <!--- Y Axis Slider --->      
-            <form>
+            <form class="slider-form">
               <div class="editor-range form-group">
                 <label class="text-blue" for="rangeYaxis">Adjust Y axis</label>
                   <div class="rValue" id="yAxis"></div>

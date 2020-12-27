@@ -6,7 +6,7 @@
 
 body {
 	margin: 0;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 	font-family: Montserrat;
 	scroll-behavior: smooth;
 	--col-deepblue: #4478e3;
@@ -36,6 +36,10 @@ nav {
 	.nav1 {
 		height: 4em;
 	}
+}
+.nav-back{
+	height:87.5px;
+	width: 100%;
 }
 
 .nav-sign {
@@ -449,7 +453,7 @@ form input[type='submit']:hover {
 /*Footer*/
 
 footer {
-	width: 100vw;
+	width: 100%;
 	position: absolute;
 	left: 0;
 	right: 0;

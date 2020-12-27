@@ -3,9 +3,9 @@
   background-color: #05293a;
   background-image: linear-gradient(315deg, #052d3f 0%, #0b3244 74%);
   position: sticky;
-  top: 4em;
+  top: 6rem;
   width: 100%;
-  box-shadow:         3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc;
   border: #ffffff 3px solid;
   border-radius: 40px;
 }
@@ -51,16 +51,16 @@
 }
 
 .font-size-container select:hover {
-    border-color: rgb(16, 212, 247);
+  border-color: rgb(16, 212, 247);
 }
 
 .font-size-container select:focus {
-    border-color: rgb(16, 212, 247);
-    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
-    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-    box-shadow: 0 0 0 3px -moz-mac-focusring;
-    color: #222; 
-    outline: none;
+  border-color: rgb(16, 212, 247);
+  /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #222;
+  outline: none;
 }
 
 .text-dropdown {
@@ -142,8 +142,21 @@
 }
 
 @media (max-width: 995px) {
+  .menu-bar{
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+  }
+  .slider-form {
+    width: 95%;
+  }
   .row-editor-top {
     flex-direction: column;
+    margin: 4em auto -5em;
+    justify-content: space-around;
+    align-items: center;
   }
 }
 
@@ -266,8 +279,8 @@
   }
 }
 
-@media(min-width: 994px){
-  .download-dropdown{
+@media (min-width: 994px) {
+  .download-dropdown {
     margin-left: 33em;
   }
 }
