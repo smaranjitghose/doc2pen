@@ -23,6 +23,13 @@ nav {
   background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
   z-index: 2;
 }
+.navbar-nav a:hover{
+  text-decoration: underline;
+  font-size: 20px;
+  opacity: 0.4;
+}
+
+
 
 @media (min-width: 60rem) {
   .nav1 {
@@ -31,7 +38,7 @@ nav {
 }
 
 .nav-sign {
-  color: white;
+  color:white;
 }
 
 .nav-top {
@@ -67,6 +74,8 @@ nav {
 .nav-wrapper a {
   font-weight: bold;
 }
+
+
 
 .sidenav-trigger {
   margin-left: 0px !important;
