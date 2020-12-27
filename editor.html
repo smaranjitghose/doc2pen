@@ -93,12 +93,18 @@
             
                 <!--- Uploading Document --->
                 <input type="file" id="fileUploader"  name="file1" style="display:none" />
-                <a class="nav-link text-white" onclick="uploaderFunction()" id="btnPageUpload">Page Upload</a>
+                <a class="nav-link text-white" href="#" onclick="uploaderFunction()" id="btnPageUpload">Page Upload</a>
                 </li>
             
                 <!--- Download Document --->
                 <li class="nav-item">
-                <a class="nav-link text-white" href="#" onclick="save(str(pageNum))">Download</a>
+                <a class="nav-link dropdown-toggle text-white" href="#" id="downloadBtn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Download</a>
+                <div class="dropdown-menu dropdown4 download-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
+                  <a onclick="save(str(pageNum)+'.png')" class="dropdown-text dropdown-item" href="#">PNG</a>
+                  <a onclick="save(str(pageNum)+'.jpg')" class="dropdown-text dropdown-item" href="#">JPG</a>
+                  <a onclick="save(str(pageNum)+'.jpeg')" class="dropdown-text dropdown-item" href="#">JPEG</a>
+                  <a onclick="save(str(pageNum)+'.pdf')" class="dropdown-text dropdown-item" href="#">PDF</a>
+                </div>
                 </li>
             
                 <!--- Word Count --->              
