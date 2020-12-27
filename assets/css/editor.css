@@ -125,7 +125,7 @@
 
 .row-editor-top {
   display: flex;
-  margin-top: 4em;
+  margin-top: 0;
   margin-bottom: -5em;
   width: 100%;
   margin-left: 2em;
@@ -153,6 +153,9 @@
 }
 .menu-bar{
   display: none;
+}
+.form-wrapper{
+  display:flex;
 }
 
 @media (max-width: 995px) {
