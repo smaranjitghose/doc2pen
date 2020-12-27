@@ -26,7 +26,7 @@ nav {
 
 .text-big:hover {
 	font-size: 1.2rem;
-	padding-right: 0.6rem;
+	padding-right: 0.6rem !important;
 	transition: 0.2s all ease;
 	opacity: 0.8;
 	font-weight: 700;
