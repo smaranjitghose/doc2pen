@@ -266,6 +266,12 @@
   }
 }
 
+@media(min-width: 994px){
+  .download-dropdown{
+    margin-left: 33em;
+  }
+}
+
 .bold {
   font-weight: normal;
 }
