@@ -33,10 +33,13 @@ nav {
 	opacity: 0.8;
 	font-weight: 700;
 }
+.nav-link {
+  color: #FFFFFF !important;
+}
 .navbar-nav a:hover{
-  text-decoration: underline;
+  color: lightpink !important;
   font-size: 20px;
-  opacity: 0.4;
+  
 }
 
 
