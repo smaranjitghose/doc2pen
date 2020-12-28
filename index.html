@@ -143,8 +143,10 @@
               <div id="info">
                 <div id="general-info">
                   <h4>Have a doubt?</h4>
-                  <p>Contact us your query or just send a hello.</p>
+                  <p>Contact us your query or just send a hello.</p><br>
+                  <h4>Find Us Below:</h4>
                 </div>
+                <div id="googleMap"></div> 
               </div>
               
               <div id="contact-form">
@@ -210,5 +212,26 @@
           <!--JS File for dynamically loading navigation bar, footer, Team Section-->
           <script src="assets/js/main.js"></script>
           <!-- Footer is loaded dynamically from main.js-->
+
+          <!--This script is for implementation of maps-->
+          <script>
+            function myMap() {
+            var mapProp= {
+              center:new google.maps.LatLng(20.5937,78.9629),
+              zoom:4,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+            const mumbai = { lat: 19.0760, lng: 72.8777 };//you can enter values of lat and lon of any place where you want to set the marker
+            // The marker, positioned at mumbai
+            const marker = new google.maps.Marker({
+              position: mumbai,
+              map: map,
+            });
+            }
+            </script>
+            <!--Please enter your own API_Key to make maps functioning-->
+            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=myMap"></script>
+            <!--This script is of Google maps API -->
       </body>
 </html>
