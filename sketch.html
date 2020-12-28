@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <!--- Meta Tags for SEO-->
+            <title>Doc2pen</title>
+            <meta charset="UTF-8">
+            <link rel="shortcut icon" type="image/png"  href="assets/images/favicon.png"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+            <!--Import Google Icon Font-->
+            <link rel="stylesheet"  href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+            <!--Getting JQUERY-->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+            <!--Goggle Font-->
+            <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Montserrat"/>
+            <!-- Loading our CSS-->
+            <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+            <link rel="stylesheet" type="text/css" href="assets/css/sketch.css" />
+            <!--Font Awesome Icons-->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+      <body>
+          <div class="container">
+              <div class="row">
+                  <div class="sketch" class="col-sm-8">
+                    <canvas id="myCanvas" width="500" height="400"></canvas>
+                        <div class="controls">
+                          <div class="color">
+                            <input type="color" id="pen-color" value="#000">
+                          </div>
+                        </div>
+                  </div>
+                  <div class="details" class="col-sm-4">
+                      <p>
+                      <h1>Sketch your own design.</h1>
+                      </p>
+                      <div class="actions">
+                        <input class="buttons" type="button" value="Redraw" id="reset-canvas">
+                        <input class="buttons" type="button" value="Save" id="save-canvas">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </body>
+      <footer>
+      <script src="assets/js/jquery.js"></script>
+      <script src="assets/js/main.js"></script>
+      <script src="assets/js/sketch.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js"></script>
+      </footer></html>
