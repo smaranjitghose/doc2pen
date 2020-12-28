@@ -308,16 +308,16 @@ const recentEventsDetails = [
   },
   {
     coverImage: 'assets/images/events/woc-logo.png',
-    eventName:'WOC',
+    eventName:'DevScript Winter of Code 2020',
     altName:'WOC Logo',
-    eventDescription: 'Winter of Code is an open-source program envisioned by DevScript that helps understand the paradigm of Open Source contribution.',
+    eventDescription: 'Winter of Code envisioned by DevScript that helps understand the paradigm of Open Source contribution.',
     referencePage:'https://devscript.tech/woc/'
   },
   {
-    coverImage: 'assets/images/events/SWOC-logo.png',
-    eventName:'SWOC',
+    coverImage: 'assets/images/events/logo-2.png',
+    eventName:'Script Winter of Code 2021',
     altName:'SWOC Logo',
-    eventDescription: 'Script Winter of Code is an open-source program envisioned by the Script Foundation. It aims to bring students into the world of open source development.',
+    eventDescription: 'Script Winter of Code envisioned by the Script Foundation aims to bring students into the world of open source development.',
     referencePage:'https://swoc.tech/index.html'
   }
 ];
