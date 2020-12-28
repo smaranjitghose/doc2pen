@@ -89,9 +89,23 @@
                   <a onclick="choosePage(6)" class="dropdown-text dropdown-item" href="#">Plain grey texture</a>              
                 </div>
                 </li>
-                <li class="nav-item">
+
+                <!--- Margin Menu --->
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Margin
+                </a>
+                <div class="dropdown-menu dropdown4" aria-labelledby="navbarDropdown" style="z-index: 4">
+                  <a onclick="changeMargin(0)" class="dropdown-text dropdown-item" href="#">Normal</a>
+                  <a onclick="changeMargin(1)" class="dropdown-text dropdown-item" href="#">Narrow</a>
+                  <a onclick="changeMargin(2)" class="dropdown-text dropdown-item" href="#">Moderate</a>
+                  <a onclick="changeMargin(3)" class="dropdown-text dropdown-item" href="#">Wide</a>
+                </div>
+                </li>
+                
             
                 <!--- Uploading Document --->
+                <li class="nav-item">
                 <input type="file" id="fileUploader"  name="file1" style="display:none" />
                 <a class="nav-link text-white" href="#" onclick="uploaderFunction()" id="btnPageUpload">Page Upload</a>
                 </li>
