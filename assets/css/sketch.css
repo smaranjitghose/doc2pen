@@ -1,0 +1,47 @@
+body
+.sketch
+{
+    float: left;
+    width: 50%;
+    position: relative;
+}
+.details
+{
+    float:right;
+    width:auto;
+    position: relative;
+}
+#myCanvas
+{
+    border: 3px solid black;
+}
+.actions input{ 
+    margin-right:20px;
+    }
+    .actions input:last-child{
+    margin-right:0px;
+    
+    }
+.buttons
+{
+    padding: 20px 60px;
+    border: 1px solid black;
+    display:inline-block;
+    border-radius: 50%;
+    transition-duration: 0.4s;
+    max-width: fit-content;
+}
+.buttons:hover 
+{
+background-color: black; 
+color: white;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+buttons:active 
+{
+    outline: none;
+    border: none;
+}
+buttons:focus {outline:0;}
+    
+    
