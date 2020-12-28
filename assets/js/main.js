@@ -314,7 +314,7 @@ const recentEventsDetails = [
     referencePage:'https://devscript.tech/woc/'
   },
   {
-    coverImage: 'assets/images/events/swoc-logo.png',
+    coverImage: 'assets/images/events/SWOC-logo.png',
     eventName:'SWOC',
     altName:'SWOC Logo',
     eventDescription: 'Script Winter of Code is an open-source program envisioned by the Script Foundation. It aims to bring students into the world of open source development.',
