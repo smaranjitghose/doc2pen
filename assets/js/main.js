@@ -314,7 +314,7 @@ const recentEventsDetails = [
     referencePage:'https://devscript.tech/woc/'
   },
   {
-    coverImage: 'assets/images/events/logo-2.png',
+    coverImage: 'assets/images/events/SWOC-logo.png',
     eventName:'Script Winter of Code 2021',
     altName:'SWOC Logo',
     eventDescription: 'Script Winter of Code envisioned by the Script Foundation aims to bring students into the world of open source development.',
