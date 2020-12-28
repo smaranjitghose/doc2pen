@@ -87,7 +87,7 @@ nav {
 }
 
 .brand-logo img {
-	width: 180px;
+	width: 170px;
 	float: right;
 }
 
@@ -95,6 +95,7 @@ nav {
 	position: fixed;
 	top: 0;
 	width: 100%;
+	height: 11%;
 }
 
  .navbar-nav li a:hover {
