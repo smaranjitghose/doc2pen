@@ -61,7 +61,13 @@
 
 <br/>
 
-<h3>Code of Conduct & Licence :</h3>
+#### Our valuable Contributors👩‍💻👨‍💻 :
+<a href="https://github.com/smaranjitghose/doc2pen/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=smaranjitghose/doc2pen" />
+</a>
 
-<p align="center"><img width=30% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif">
-<img width=20% src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif"></p>
+## Code of Conduct
+<p align="center"><img width=35% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif"></p>
+
+## License 
+<p align="center"><img width=35% src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif"></p>
