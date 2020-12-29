@@ -112,11 +112,11 @@
                 </li>
             
                 <!-- Font size --->
-                <li class="nav-item font-size-container">
-                <a class="nav-link text-white">Font Size: </a>
-                <select id="font-size-select" oninput="fontsize=float(this.value)" >
-                  <!-- size values will go here -->
-                </select>
+                <li class="nav-item font-size-container dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Font Size: <span class="word" id="size-font">30</span></a>
+                <div id="font-size-select"   class="dropdown-menu text-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
+                <!-- size values will go here -->
+                </div>
                 </li>
                 </ul>
             </div>
@@ -126,62 +126,77 @@
         <input class="button-primary button-large download-image d-none" type="file" id="pageUploader" onclick=""/>
         <input class="button-primary button-large download-image d-none" type="file" id="fontUploader" onclick=""/>
 
-        <!--- Sliders --->
-        <div class="row-editor-top">
-            <!--- Slider for Text Width --->
-            <form>
-              <div class="editor-range form-group">
-                <label class="text-blue" for="rangeWidth">Width</label>
-                <div class="rValue" id="width"></div>
-                  <input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" class="form-control-range custom-range" id="rangeWidth"/>
-              </div>
-            </form>
-            <!--- Slider for Line Spacing --->
-            <form>
-              <div class="editor-range form-group">
-                  <label class="text-blue" for="rangeSpace">Line Spacing</label>
-                  <div class="rValue" id="space"></div>
-                  <input type="range"  min="10" max="50" value2="30" oninput="linespacing=float(this.value)" class="form-control-range custom-range" id="rangeSpace"/>
-              </div>
-            </form>
-            <!--- X Axis Slider --->
-            <form>
-              <div class="editor-range form-group">
-                <label class="text-blue" for="rangeXaxis">Adjust X axis</label>
-                <div class="rValue" id="xAxis"></div>
-                  <input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="form-control-range custom-range" id="rangeXaxis"/>
-              </div>
-            </form>
-            <!--- Y Axis Slider --->      
-            <form>
-              <div class="editor-range form-group">
-                <label class="text-blue" for="rangeYaxis">Adjust Y axis</label>
-                  <div class="rValue" id="yAxis"></div>
-                    <input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="form-control-range custom-range" id="rangeYaxis"/>
-              </div>
-            </form>
-        </div>
+        
+       
         <!--- Input and Output Windows --->
         <div class="row-editor">
-          <!--- Input Window --->
-          <div class="column input">
-            <span id="uploadedFname"></span>
-            <section class="container-input">
-              <form onsubmit="return false" style="width: 100%; height: 100%">
-                <textarea placeholder="Write your text here..." id="dataField"  onkeyup="myData = this.value" class="input-box"></textarea>
-                <label for="text"></label>
-              </form>
-            </section>
-          </div>
-          <!--- Output Window --->
-          <div class="column output">
-            <div id="contribute-wrapper">
-              <div id="contributing">
-                  <!--dynamic canvas-->
-              </div>
+            <!-- divided the row into two sections "left-section" & "right-section" -->
+            <div class="left-section">
+                <div class="sliders">
+                    <!--- Sliders --->
+                    <!--- Slider for Text Width --->
+                    <form>
+                        <div class="editor-range form-group">
+                        <label class="text-blue" for="rangeWidth">Width</label>
+                        <div class="rValue" id="width"></div>
+                            <input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" class="form-control-range custom-range" id="rangeWidth"/>
+                        </div>
+                    </form>
+                    <!--- Slider for Line Spacing --->
+                    <form>
+                        <div class="editor-range form-group">
+                            <label class="text-blue" for="rangeSpace">Line Spacing</label>
+                            <div class="rValue" id="space"></div>
+                            <input type="range"  min="10" max="50" value2="30" oninput="linespacing=float(this.value)" class="form-control-range custom-range" id="rangeSpace"/>
+                        </div>
+                    </form>
+                </div>
+                
+                <!--- Input Window --->
+                <div class="column input">
+                    <span id="uploadedFname"></span>
+                    <section class="container-input">
+                    <form onsubmit="return false" style="width: 100%; height: 100%">
+                        <textarea placeholder="Write your text here..." id="dataField"  onkeyup="myData = this.value" class="input-box"></textarea>
+                        <label for="text"></label>
+                    </form>
+                    </section>
+                </div>
             </div>
-          </div>
+            <div class="right-section">
+                <!--- X Axis Slider --->
+                <div class="x-slider">
+                    <form>
+                        <div class="editor-range form-group">
+                        <label class="text-blue" for="rangeXaxis">Adjust X axis</label>
+                        <div class="rValue" id="xAxis"></div>
+                            <input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="form-control-range custom-range" id="rangeXaxis"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="output-window">
+                    <!--- Y Axis Slider --->      
+                    <form>
+                        <div class="editor-range form-group">
+                        
+                            <div class="rValue" id="yAxis"></div>
+                            <input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="form-control-range custom-range" id="rangeYaxis"/>
+                            <label class="text-blue" for="rangeYaxis">Adjust Y axis</label>
+                        </div>
+                    </form>
+                    <!--- Output Window --->
+                    <div class="column output">
+                        <div id="contribute-wrapper">
+                        <div id="contributing">
+                            <!--dynamic canvas-->
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                              
+            </div>
         </div>
+          
         <!--Footer is loaded dynamically from main.js-->
         
         <!--- Scripts for navigation bar, footer, rendering canvas and other options --->
