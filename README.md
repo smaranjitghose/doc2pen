@@ -47,16 +47,9 @@
 
 <br/>
 
-<h3>Contribution Guidelines : </h3>
+<h3>First time contributing? or got stuck?  : </h3>
 <ul>
-<li>Fork the Repo.</li>
-<li>Clone it.</li>
-<li>Checkout a Branch.</li>
-<li>Add Features/ Make Changes.</li>
-<li>Commit Changes</li>
-<li>Push them to the remote Repo.</li>
-<li>Make a Pull Request.</li>
-<li>Enjoy :-)</li>
+<li>Read [here.]()</li>
 </ul>
 
 <br/>
