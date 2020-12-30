@@ -24,12 +24,47 @@ nav {
   z-index: 2;
 }
 
+.navbar-nav a{
+  box-sizing: inherit;
+  transition-property: all;
+  transition-duration: .6s;
+  transition-timing-function: ease;
+}
+
 .nav-link{
   color: #ffffff !important;
+  letter-spacing: 0;
 }
 .navbar-nav a:hover{
-   
-   text-shadow: 2px 2px 4px #000000;
+  
+  background-color: tomato;
+}
+.navbar-nav a:after,
+.navbar-nav a::before{
+
+  backface-visibility: hidden;
+  border: 1px solid rgba(#fff, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.navbar-nav:hover:after,
+.navbar-nav:hover:before {
+  backface-visibility: hidden;
+  border-color: #fff;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+
+.navbar-nav:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
 }
 
 
