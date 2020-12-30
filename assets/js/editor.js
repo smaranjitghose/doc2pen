@@ -4,7 +4,7 @@ myData = `The quick brown fox jumps over the lazy dog`;
 let img = [],
   myFont = [],
   myFonts = 15,
-  imgNum = 8,
+  imgNum = 14,
   fontNum = 0,
   pageNum = 0,
   xaxis = 20,
@@ -119,6 +119,27 @@ function changeMargin(x) {
   }
 }
 
+function changeBorder(z) {
+  if (z == 0) {
+    choosePage(8);
+  }
+  else if (z == 1) {
+    choosePage(9);
+  }
+  else if (z == 2) {
+    choosePage(10);
+  }
+  else if (z == 3) {
+    choosePage(11);
+  }
+  else if (z == 4) {
+    choosePage(12);
+  }
+  else if (z == 5) {
+    choosePage(13);
+  }
+}
+
 function updateFontSize(size){
   fontsize=float(size);
   document.getElementById('size-font').innerHTML = size;
@@ -142,7 +163,7 @@ for (let i = 1; i <= noOfFontSizes; i++) {
 $("#dataField").on("keydown", function (e) {// function event
   var words = $.trim(this.value).length ? this.value.match(/\S+/g).length : 0; //count length of word when space occur
   if (words <= 10000) {
-    $("#count-words").text(10000 - words);// subtracts word from 10K and targets span-id"count-words" 
+    $("#count-words").text(10000 - words);// subtracts word from 10K and targets span-id"count-words"
     $("#words-strt").text(0 + words);
   } else {
     if (e.which !== 8) e.preventDefault();//prevent user to enter more text

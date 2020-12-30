@@ -24,18 +24,18 @@
       </head>
       <body>
         <!--- Navigation Bar is loaded dynamically from the main.js --->
-      
+
         <!--- Menu Bar Starts here --->
         <nav class="navbar navbar-expand-lg navbar-light nav2">
             <button class="navbar-toggler res-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-        
+
             <!--- Options we have --->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-            
-                <!--- Drop Down Menu for Ink  Color--->    
+
+                <!--- Drop Down Menu for Ink  Color--->
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white menu-first"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Change Ink
@@ -48,8 +48,8 @@
                   <a onclick="choosePink()"  class="pink-text dropdown-item"  href="#">Pink</a>
                 </div>
                 </li>
-            
-                <!--- Drop Down Menu for fonts--->  
+
+                <!--- Drop Down Menu for fonts--->
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Choose Font
@@ -59,20 +59,20 @@
                   <a onclick="chooseFont(1)"  class="dropdown-text dropdown-item" href="#">Liu Jian Mao Cao</a>
                   <a onclick="chooseFont(2)"  class="dropdown-text dropdown-item" href="#">Caveat</a>
                   <a onclick="chooseFont(3)"  class="dropdown-text dropdown-item" href="#">Homemade Apple</a>
-                  <a onclick="chooseFont(4)"  class="dropdown-text dropdown-item" href="#">Dewebeauty Demo</a> 
-                  <a onclick="chooseFont(5)"  class="dropdown-text dropdown-item" href="#">Antro Vectra</a> 
-                  <a onclick="chooseFont(6)"  class="dropdown-text dropdown-item" href="#">Muiden Castle Script</a> 
-                  <a onclick="chooseFont(7)"  class="dropdown-text dropdown-item" href="#">Simple font</a> 
-                  <a onclick="chooseFont(8)"  class="dropdown-text dropdown-item" href="#">Messed font</a> 
-                  <a onclick="chooseFont(9)"  class="dropdown-text dropdown-item" href="#">Curved font</a> 
-                  <a onclick="chooseFont(10)" class="dropdown-text dropdown-item" href="#">Small font</a> 
-                  <a onclick="chooseFont(11)" class="dropdown-text dropdown-item" href="#">Clear font</a> 
-                  <a onclick="chooseFont(12)" class="dropdown-text dropdown-item" href="#">Thin messed font</a> 
-                  <a onclick="chooseFont(13)" class="dropdown-text dropdown-item" href="#">Thin font</a> 
-                  <a onclick="chooseFont(14)" class="dropdown-text dropdown-item" href="#">Poppins</a>              
+                  <a onclick="chooseFont(4)"  class="dropdown-text dropdown-item" href="#">Dewebeauty Demo</a>
+                  <a onclick="chooseFont(5)"  class="dropdown-text dropdown-item" href="#">Antro Vectra</a>
+                  <a onclick="chooseFont(6)"  class="dropdown-text dropdown-item" href="#">Muiden Castle Script</a>
+                  <a onclick="chooseFont(7)"  class="dropdown-text dropdown-item" href="#">Simple font</a>
+                  <a onclick="chooseFont(8)"  class="dropdown-text dropdown-item" href="#">Messed font</a>
+                  <a onclick="chooseFont(9)"  class="dropdown-text dropdown-item" href="#">Curved font</a>
+                  <a onclick="chooseFont(10)" class="dropdown-text dropdown-item" href="#">Small font</a>
+                  <a onclick="chooseFont(11)" class="dropdown-text dropdown-item" href="#">Clear font</a>
+                  <a onclick="chooseFont(12)" class="dropdown-text dropdown-item" href="#">Thin messed font</a>
+                  <a onclick="chooseFont(13)" class="dropdown-text dropdown-item" href="#">Thin font</a>
+                  <a onclick="chooseFont(14)" class="dropdown-text dropdown-item" href="#">Poppins</a>
                 </div>
                 </li>
-            
+
                 <!--- Drop Down Menu for Page types --->
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -86,7 +86,7 @@
                   <a onclick="choosePage(4)" class="dropdown-text dropdown-item" href="#">Ruled with margin(thin-lines)</a>
                   <a onclick="choosePage(5)" class="dropdown-text dropdown-item" href="#">Ruled without margin</a>
                   <a onclick="choosePage(6)" class="dropdown-text dropdown-item" href="#">Plain white texture</a>
-                  <a onclick="choosePage(6)" class="dropdown-text dropdown-item" href="#">Plain grey texture</a>              
+                  <a onclick="choosePage(7)" class="dropdown-text dropdown-item" href="#">Plain grey texture</a>
                 </div>
                 </li>
 
@@ -102,14 +102,28 @@
                   <a onclick="changeMargin(3)" class="dropdown-text dropdown-item" href="#">Wide</a>
                 </div>
                 </li>
-                
-            
+
+                <!--- Border Menu --->
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Border
+                </a>
+                <div class="dropdown-menu dropdown4" aria-labelledby="navbarDropdown" style="z-index: 4">
+                  <a onclick="changeBorder(0)" class="dropdown-text dropdown-item" href="#">Thin</a>
+                  <a onclick="changeBorder(1)" class="dropdown-text dropdown-item" href="#">Bold</a>
+                  <a onclick="changeBorder(2)" class="dropdown-text dropdown-item" href="#">Double</a>
+                  <a onclick="changeBorder(3)" class="dropdown-text dropdown-item" href="#">Red</a>
+                  <a onclick="changeBorder(4)" class="dropdown-text dropdown-item" href="#">Blue</a>
+                  <a onclick="changeBorder(5)" class="dropdown-text dropdown-item" href="#">Green</a>
+                </div>
+                </li>
+
                 <!--- Uploading Document --->
                 <li class="nav-item">
                 <input type="file" id="fileUploader"  name="file1" style="display:none" />
                 <a class="nav-link text-white" href="#" onclick="uploaderFunction()" id="btnPageUpload">Page Upload</a>
                 </li>
-            
+
                 <!--- Download Document --->
                 <li class="nav-item">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="downloadBtn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Download</a>
@@ -120,17 +134,17 @@
                   <a onclick="save(str(pageNum)+'.pdf')" class="dropdown-text dropdown-item" href="#">PDF</a>
                 </div>
                 </li>
-            
-                <!--- Word Count --->              
+
+                <!--- Word Count --->
                 <li class="nav-item">
                 <a class="nav-link text-white disabled">Word Count: <span class="word" id="words-strt">0</span></a>
                 </li>
-            
+
                 <!--- No of words left--->
                 <li class="nav-item">
                 <a class="nav-link text-white disabled">Word Left : <span class="word" id="count-words">10000</span></a>
                 </li>
-            
+
                 <!-- Font size --->
                 <li class="nav-item font-size-container dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Font Size: <span class="word" id="size-font">30</span></a>
@@ -172,7 +186,7 @@
                   <input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="form-control-range custom-range" id="rangeXaxis"/>
               </div>
             </form>
-            <!--- Y Axis Slider --->      
+            <!--- Y Axis Slider --->
             <form>
               <div class="editor-range form-group">
                 <label class="text-blue" for="rangeYaxis">Adjust Y axis</label>
@@ -203,7 +217,7 @@
           </div>
         </div>
         <!--Footer is loaded dynamically from main.js-->
-        
+
         <!--- Scripts for navigation bar, footer, rendering canvas and other options --->
         <script src="assets/js/jquery.js"></script>
         <script src="assets/js/main.js"></script>
@@ -217,12 +231,12 @@
             var myFile = this.files[0];
             document.querySelector("#uploadedFname").innerText = myFile.name;
             var reader = new FileReader();
-            
+
             reader.addEventListener('load', function (e) {
               document.querySelector("#dataField").value = e.target.result;
               $("#dataField").keyup();
             });
-            
+
             reader.readAsBinaryString(myFile);
           }
         });</script>
