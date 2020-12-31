@@ -396,7 +396,7 @@
   padding: .5rem 1rem !important;
 }
 
-.type1, .type2{
+.flex-n-wrap{
   display: flex;
   flex-wrap:wrap;
   justify-content: space-evenly;
