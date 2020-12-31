@@ -24,13 +24,14 @@ nav {
   z-index: 2;
 }
 
-.text-big:hover {
-  font-size: 1.2rem;
-  padding-right: 0.6rem !important;
-  transition: 0.2s all ease;
-  opacity: 0.8;
-  font-weight: 700;
+.nav-link{
+  color: #ffffff !important;
 }
+.navbar-nav a:hover{
+   
+   text-shadow: 2px 2px 4px #000000;
+}
+
 
 @media (min-width: 60rem) {
   .nav1 {
@@ -101,10 +102,7 @@ nav {
   width: 100%;
 }
 
-.navbar-nav li a:hover {
-  color: #191970 !important;
-  border-bottom: 1px solid #191970;
-}
+
 /*Home Section*/
 
 #title-heading {
