@@ -148,3 +148,15 @@ $("#dataField").on("keydown", function (e) {// function event
     if (e.which !== 8) e.preventDefault();//prevent user to enter more text
   }
 });
+
+let switches = document.querySelectorAll(".slider-btn");
+switches.forEach(button => {
+  button.addEventListener("click", () => {
+    let name = button.dataset.name;
+
+    if (document.querySelector(`.slider-open`) != null && !document.querySelector(`#${name}`).classList.contains(`slider-open`)    )
+      document.querySelector(`.slider-open`).classList.remove(`slider-open`);
+
+    document.querySelector(`#${name}`).classList.toggle(`slider-open`);
+  });
+});
