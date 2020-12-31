@@ -392,6 +392,10 @@
   width: 100%;
 }
 
+.nav-link{
+  padding: .5rem 1rem !important;
+}
+
 .type1, .type2{
   display: flex;
   flex-wrap:wrap;
