@@ -1,19 +1,10 @@
-/*navbar 2 */
-.nav2 {
-  background-color: #05293a;
-  background-image: linear-gradient(315deg, #052d3f 0%, #0b3244 74%);
-  position: sticky;
-  top: 6rem;
-  width: 100%;
-  box-shadow: 3px 3px 5px 6px #ccc;
-  border: #ffffff 3px solid;
-  border-radius: 40px;
-  z-index:3;
-}
-
 .nav-main {
   list-style-type: none;
   margin-left: 6em;
+}
+
+.dropdown-menu {
+  z-index: 1;
 }
 
 /* to make font size and select box into one line */
@@ -151,63 +142,65 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 95%;
 }
-.menu-bar{
+.menu-bar {
   display: none;
 }
-.form-wrapper{
-  display:flex;
+.form-wrapper {
+  display: flex;
 }
 
 @media (max-width: 995px) {
-  .menu-bar{
+  .menu-bar {
     width: 95%;
-    height:86.4px;
+    height: 30px;
     display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content: center;
+    color: black;
     align-items: center;
-    background-color: rgb(177, 174, 174);
     overflow: hidden;
     border-radius: 25px;
-    z-index:2;
+    z-index: 1;
   }
-  .slider-btn{
+  .slider-btn {
     color: #0000008f;
     height: inherit;
     width: inherit;
     outline: none;
     border: 1px solid aquamarine;
-    outline: none!important;
+    outline: none !important;
   }
-  .form-wrapper{
+  .form-wrapper {
     width: 100%;
-    position:relative; 
+    position: relative;
     display: grid;
     place-items: center;
     grid-template-areas: "inners";
-    height:0;
+    height: 0;
   }
   .slider-form {
     width: 89%;
     margin: 0 auto;
     grid-area: inners;
-    transform:translateY(-108%);
+    transform: rotateX(-90deg) translateY(-108%);
+    transform-origin: top;
     transition: all 0.5s cubic-bezier(0.9, 0, 0.33, 1);
   }
-  .slider-open{
-    transform: translateY(0);
+  .slider-open {
+    transform: rotateZ(0deg) translateY(0);
     transition: all 0.5s cubic-bezier(0.9, 0, 0.33, 1);
   }
   .row-editor-top {
     flex-direction: column;
-    margin: 4em auto -5em;
+    margin: 0.5em auto -5em;
     justify-content: space-around;
     align-items: center;
   }
-  .editor-range, .form-group{
+  .editor-range,
+  .form-group {
     margin: 0 auto;
-    box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.1);
-    height:75px
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    height: 75px;
   }
 }
 
@@ -394,3 +387,24 @@
   overflow: hidden;
   z-index: 2;
 }
+
+.navbar-nav {
+  width: 100%;
+}
+
+.type1, .type2{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-item{
+  position:relative;
+}
+
+.navbar-nav .dropdown-menu {
+  position: absolute;
+  z-index: 99;
+}
+
