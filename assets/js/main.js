@@ -8,22 +8,22 @@ let header = $(`
   <div class="collapse navbar-collapse" id="navbarSupportedContent1">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <b><a class="nav-link text-white text-big" href="index.html">Home</a></b>
+        <b><a class="nav-link" href="index.html">Home</a></b>
       </li>
       <li class="nav-item active">
-        <b><a class="nav-link text-white text-big" href="index.html#about-intro">About</a></b>
+        <b><a class="nav-link" href="index.html#about-intro">About</a></b>
       </li>
       <li class="nav-item active">
-        <b><a class="nav-link text-white text-big" href="index.html#team">Team</a></b>
+        <b><a class="nav-link" href="index.html#team">Team</a></b>
       </li>
       <li class="nav-item active">
-        <b><a class="nav-link text-white text-big" href="index.html#contact">Contact</a></b>
+        <b><a class="nav-link" href="index.html#contact">Contact</a></b>
       </li>
       <li class="nav-item active">
-        <b><a class="nav-link text-white text-big" href="index.html#Support">Support Us</a></b>
+        <b><a class="nav-link" href="index.html#Support">Support Us</a></b>
       </li>
       <li class="nav-item active">
-        <b><a class="nav-link text-white text-big" href="editor.html">Editor</a></b>
+        <b><a class="nav-link" href="editor.html">Editor</a></b>
       </li>
     </ul>
   </div>
@@ -305,7 +305,21 @@ const recentEventsDetails = [
 		altName: 'PSOC Logo',
 		eventDescription: `It's a 2 month long event conducted by Programming Club, UIET, aiming to help beginners get started with Open Source development.`,
 		referencePage: 'https://www.pclubsummerofcode.in/'
-	}
+  },
+  {
+    coverImage: 'assets/images/events/woc-logo.png',
+    eventName:'DevScript Winter of Code 2020',
+    altName:'WOC Logo',
+    eventDescription: 'Winter of Code envisioned by DevScript that helps understand the paradigm of Open Source contribution.',
+    referencePage:'https://devscript.tech/woc/'
+  },
+  {
+    coverImage: 'assets/images/events/SWOC-logo.png',
+    eventName:'Script Winter of Code 2021',
+    altName:'SWOC Logo',
+    eventDescription: 'Script Winter of Code envisioned by the Script Foundation aims to bring students into the world of open source development.',
+    referencePage:'https://swoc.tech/index.html'
+  }
 ];
 
 const generateEventsCard = (eventDetail, fixClassIndex) => {
