@@ -1,230 +1,233 @@
 <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <!--- Meta Tags for SEO-->
-            <title>Doc2pen</title>
-            <meta charset="UTF-8">
-            <link rel="shortcut icon" type="image/png"  href="assets/images/favicon.png"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-            <!-- Bootstrap CSS -->
-            <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-            <!--Import Google Icon Font-->
-            <link rel="stylesheet"  href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-            <!--Getting JQUERY-->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
-            <!--Goggle Font-->
-            <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Montserrat"/>
-            <!-- Loading our CSS-->
-            <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-            <link rel="stylesheet" type="text/css" href="assets/css/editor.css" />
-      </head>
-      <body>
-        <!--- Navigation Bar is loaded dynamically from the main.js --->
-      
-        <!--- Menu Bar Starts here --->
-        <nav class="navbar navbar-expand-lg navbar-light nav2">
-            <button class="navbar-toggler res-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-        
-            <!--- Options we have --->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-            
-                <!--- Drop Down Menu for Ink  Color--->    
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white menu-first"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Change Ink
-                </a>
-                <div class="dropdown-menu dropdown1" aria-labelledby="navbarDropdown" style="z-index: 4">
-                  <a onclick="chooseBlue()"  class="blue-text  dropdown-item" href="#">Blue</a>
-                  <a onclick="chooseBlack()" class="black-text dropdown-item" href="#">Black</a>
-                  <a onclick="chooseRed()"   class="red-text   dropdown-item" href="#">Red</a>
-                  <a onclick="chooseGreen()" class="green-text dropdown-item" href="#">Green</a>
-                  <a onclick="choosePink()"  class="pink-text dropdown-item"  href="#">Pink</a>
-                </div>
-                </li>
-            
-                <!--- Drop Down Menu for fonts--->  
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Choose Font
-                </a>
-                <div class="dropdown-menu text-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
-                  <a onclick="chooseFont(0)"  class="dropdown-text dropdown-item" href="#">Tarale</a>
-                  <a onclick="chooseFont(1)"  class="dropdown-text dropdown-item" href="#">Liu Jian Mao Cao</a>
-                  <a onclick="chooseFont(2)"  class="dropdown-text dropdown-item" href="#">Caveat</a>
-                  <a onclick="chooseFont(3)"  class="dropdown-text dropdown-item" href="#">Homemade Apple</a>
-                  <a onclick="chooseFont(4)"  class="dropdown-text dropdown-item" href="#">Dewebeauty Demo</a> 
-                  <a onclick="chooseFont(5)"  class="dropdown-text dropdown-item" href="#">Antro Vectra</a> 
-                  <a onclick="chooseFont(6)"  class="dropdown-text dropdown-item" href="#">Muiden Castle Script</a> 
-                  <a onclick="chooseFont(7)"  class="dropdown-text dropdown-item" href="#">Simple font</a> 
-                  <a onclick="chooseFont(8)"  class="dropdown-text dropdown-item" href="#">Messed font</a> 
-                  <a onclick="chooseFont(9)"  class="dropdown-text dropdown-item" href="#">Curved font</a> 
-                  <a onclick="chooseFont(10)" class="dropdown-text dropdown-item" href="#">Small font</a> 
-                  <a onclick="chooseFont(11)" class="dropdown-text dropdown-item" href="#">Clear font</a> 
-                  <a onclick="chooseFont(12)" class="dropdown-text dropdown-item" href="#">Thin messed font</a> 
-                  <a onclick="chooseFont(13)" class="dropdown-text dropdown-item" href="#">Thin font</a> 
-                  <a onclick="chooseFont(14)" class="dropdown-text dropdown-item" href="#">Poppins</a>              
-                </div>
-                </li>
-            
-                <!--- Drop Down Menu for Page types --->
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Choose Page
-                </a>
-                <div class="dropdown-menu dropdown4" aria-labelledby="navbarDropdown" style="z-index: 4">
-                  <a onclick="choosePage(0)" class="dropdown-text dropdown-item" href="#">Default</a>
-                  <a onclick="choosePage(1)" class="dropdown-text dropdown-item" href="#">Ruled with margin(thick-lines)</a>
-                  <a onclick="choosePage(2)" class="dropdown-text dropdown-item" href="#">Ruled Designer</a>
-                  <a onclick="choosePage(3)" class="dropdown-text dropdown-item" href="#">Plain Designer</a>
-                  <a onclick="choosePage(4)" class="dropdown-text dropdown-item" href="#">Ruled with margin(thin-lines)</a>
-                  <a onclick="choosePage(5)" class="dropdown-text dropdown-item" href="#">Ruled without margin</a>
-                  <a onclick="choosePage(6)" class="dropdown-text dropdown-item" href="#">Plain white texture</a>
-                  <a onclick="choosePage(6)" class="dropdown-text dropdown-item" href="#">Plain grey texture</a>              
-                </div>
-                </li>
+<html lang="en">
 
-                <!--- Margin Menu --->
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Margin
-                </a>
-                <div class="dropdown-menu dropdown4" aria-labelledby="navbarDropdown" style="z-index: 4">
-                  <a onclick="changeMargin(0)" class="dropdown-text dropdown-item" href="#">Normal</a>
-                  <a onclick="changeMargin(1)" class="dropdown-text dropdown-item" href="#">Narrow</a>
-                  <a onclick="changeMargin(2)" class="dropdown-text dropdown-item" href="#">Moderate</a>
-                  <a onclick="changeMargin(3)" class="dropdown-text dropdown-item" href="#">Wide</a>
-                </div>
-                </li>
-                
-            
-                <!--- Uploading Document --->
-                <li class="nav-item">
-                <input type="file" id="fileUploader"  name="file1" style="display:none" />
-                <a class="nav-link text-white" href="#" onclick="uploaderFunction()" id="btnPageUpload">Page Upload</a>
-                </li>
-            
-                <!--- Download Document --->
-                <li class="nav-item">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="downloadBtn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Download</a>
-                <div class="dropdown-menu dropdown4 download-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
-                  <a onclick="save(str(pageNum)+'.png')" class="dropdown-text dropdown-item" href="#">PNG</a>
-                  <a onclick="save(str(pageNum)+'.jpg')" class="dropdown-text dropdown-item" href="#">JPG</a>
-                  <a onclick="save(str(pageNum)+'.jpeg')" class="dropdown-text dropdown-item" href="#">JPEG</a>
-                  <a onclick="save(str(pageNum)+'.pdf')" class="dropdown-text dropdown-item" href="#">PDF</a>
-                </div>
-                </li>
-            
-                <!--- Word Count --->              
-                <li class="nav-item">
-                <a class="nav-link text-white disabled">Word Count: <span class="word" id="words-strt">0</span></a>
-                </li>
-            
-                <!--- No of words left--->
-                <li class="nav-item">
-                <a class="nav-link text-white disabled">Word Left : <span class="word" id="count-words">10000</span></a>
-                </li>
-            
-                <!-- Font size --->
-                <li class="nav-item font-size-container dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Font Size: <span class="word" id="size-font">30</span></a>
-                <div id="font-size-select"   class="dropdown-menu text-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
-                <!-- size values will go here -->
-                </div>
-                </li>
-                </ul>
+<head>
+  <!--- Meta Tags for SEO-->
+  <title>Doc2pen</title>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <!--Import Google Icon Font-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <!--Getting JQUERY-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+  <!--Goggle Font-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+  <!-- Loading our CSS-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/editor.css" />
+</head>
+
+<body>
+  <!--- Navigation Bar is loaded dynamically from the main.js --->
+  <div class="nav-back"></div>
+  
+  <!--- Menu Bar Starts here --->
+  <nav class="navbar navbar-expand-lg navbar-light nav2">
+    <!--- Options we have --->
+      <ul class="navbar-nav">
+
+        <div class="flex-n-wrap nav-bar">
+          <!--- Drop Down Menu for Ink  Color--->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white menu-first" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Change Ink
+            </a>
+            <div class="dropdown-menu dropdown1" aria-labelledby="navbarDropdown" style="z-index: 4">
+              <a onclick="chooseBlue()" class="blue-text  dropdown-item" href="#">Blue</a>
+              <a onclick="chooseBlack()" class="black-text dropdown-item" href="#">Black</a>
+              <a onclick="chooseRed()" class="red-text   dropdown-item" href="#">Red</a>
+              <a onclick="chooseGreen()" class="green-text dropdown-item" href="#">Green</a>
+              <a onclick="choosePink()" class="pink-text dropdown-item" href="#">Pink</a>
             </div>
-        </nav>
-        <!--Menu Bar ends ends here-->
-
-        <input class="button-primary button-large download-image d-none" type="file" id="pageUploader" onclick=""/>
-        <input class="button-primary button-large download-image d-none" type="file" id="fontUploader" onclick=""/>
-
-        <!--- Sliders --->
-        <div class="row-editor-top">
-            <!--- Slider for Text Width --->
-            <form>
-              <div class="editor-range form-group">
-                <label class="text-blue" for="rangeWidth">Width</label>
-                <div class="rValue" id="width"></div>
-                  <input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" class="form-control-range custom-range" id="rangeWidth"/>
-              </div>
-            </form>
-            <!--- Slider for Line Spacing --->
-            <form>
-              <div class="editor-range form-group">
-                  <label class="text-blue" for="rangeSpace">Line Spacing</label>
-                  <div class="rValue" id="space"></div>
-                  <input type="range"  min="10" max="50" value2="30" oninput="linespacing=float(this.value)" class="form-control-range custom-range" id="rangeSpace"/>
-              </div>
-            </form>
-            <!--- X Axis Slider --->
-            <form>
-              <div class="editor-range form-group">
-                <label class="text-blue" for="rangeXaxis">Adjust X axis</label>
-                <div class="rValue" id="xAxis"></div>
-                  <input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="form-control-range custom-range" id="rangeXaxis"/>
-              </div>
-            </form>
-            <!--- Y Axis Slider --->      
-            <form>
-              <div class="editor-range form-group">
-                <label class="text-blue" for="rangeYaxis">Adjust Y axis</label>
-                  <div class="rValue" id="yAxis"></div>
-                    <input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="form-control-range custom-range" id="rangeYaxis"/>
-              </div>
-            </form>
-        </div>
-        <!--- Input and Output Windows --->
-        <div class="row-editor">
-          <!--- Input Window --->
-          <div class="column input">
-            <span id="uploadedFname"></span>
-            <section class="container-input">
-              <form onsubmit="return false" style="width: 100%; height: 100%">
-                <textarea placeholder="Write your text here..." id="dataField"  onkeyup="myData = this.value" class="input-box"></textarea>
-                <label for="text"></label>
-              </form>
-            </section>
-          </div>
-          <!--- Output Window --->
-          <div class="column output">
-            <div id="contribute-wrapper">
-              <div id="contributing">
-                  <!--dynamic canvas-->
-              </div>
+          </li>
+          
+          <!--- Drop Down Menu for fonts--->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Choose Font
+            </a>
+            <div class="dropdown-menu text-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
+              <a onclick="chooseFont(0)" class="dropdown-text dropdown-item" href="#">Tarale</a>
+              <a onclick="chooseFont(1)" class="dropdown-text dropdown-item" href="#">Liu Jian Mao Cao</a>
+              <a onclick="chooseFont(2)" class="dropdown-text dropdown-item" href="#">Caveat</a>
+              <a onclick="chooseFont(3)" class="dropdown-text dropdown-item" href="#">Homemade Apple</a>
+              <a onclick="chooseFont(4)" class="dropdown-text dropdown-item" href="#">Dewebeauty Demo</a>
+              <a onclick="chooseFont(5)" class="dropdown-text dropdown-item" href="#">Antro Vectra</a>
+              <a onclick="chooseFont(6)" class="dropdown-text dropdown-item" href="#">Muiden Castle Script</a>
+              <a onclick="chooseFont(7)" class="dropdown-text dropdown-item" href="#">Simple font</a>
+              <a onclick="chooseFont(8)" class="dropdown-text dropdown-item" href="#">Messed font</a>
+              <a onclick="chooseFont(9)" class="dropdown-text dropdown-item" href="#">Curved font</a>
+              <a onclick="chooseFont(10)" class="dropdown-text dropdown-item" href="#">Small font</a>
+              <a onclick="chooseFont(11)" class="dropdown-text dropdown-item" href="#">Clear font</a>
+              <a onclick="chooseFont(12)" class="dropdown-text dropdown-item" href="#">Thin messed font</a>
+              <a onclick="chooseFont(13)" class="dropdown-text dropdown-item" href="#">Thin font</a>
+              <a onclick="chooseFont(14)" class="dropdown-text dropdown-item" href="#">Poppins</a>
             </div>
-          </div>
+          </li>
+          
+          <!--- Drop Down Menu for Page types --->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Choose Page
+            </a>
+            <div class="dropdown-menu dropdown4" aria-labelledby="navbarDropdown" style="z-index: 4">
+              <a onclick="choosePage(0)" class="dropdown-text dropdown-item" href="#">Default</a>
+              <a onclick="choosePage(1)" class="dropdown-text dropdown-item" href="#">Ruled with margin(thick-lines)</a>
+              <a onclick="choosePage(2)" class="dropdown-text dropdown-item" href="#">Ruled Designer</a>
+              <a onclick="choosePage(3)" class="dropdown-text dropdown-item" href="#">Plain Designer</a>
+              <a onclick="choosePage(4)" class="dropdown-text dropdown-item" href="#">Ruled with margin(thin-lines)</a>
+              <a onclick="choosePage(5)" class="dropdown-text dropdown-item" href="#">Ruled without margin</a>
+              <a onclick="choosePage(6)" class="dropdown-text dropdown-item" href="#">Plain white texture</a>
+              <a onclick="choosePage(6)" class="dropdown-text dropdown-item" href="#">Plain grey texture</a>
+            </div>
+          </li>
+          <li class="nav-item">
+          
+            <!-- Font size --->
+          <li class="nav-item font-size-container dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Font Size: <span class="word" id="size-font">30</span></a>
+            <div id="font-size-select" class="dropdown-menu text-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
+              <!-- size values will go here -->
+            </div>
+          </li>
+
+          <!--- Uploading Document --->
+          <input type="file" id="fileUploader" name="file1" style="display:none" />
+          <a class="nav-link text-white" href="#" onclick="uploaderFunction()" id="btnPageUpload">Page Upload</a>
+          </li>
+          
+          <!--- Download Document --->
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="downloadBtn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Download</a>
+            <div class="dropdown-menu dropdown4 download-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
+              <a onclick="save(str(pageNum)+'.png')" class="dropdown-text dropdown-item" href="#">PNG</a>
+              <a onclick="save(str(pageNum)+'.jpg')" class="dropdown-text dropdown-item" href="#">JPG</a>
+              <a onclick="save(str(pageNum)+'.jpeg')" class="dropdown-text dropdown-item" href="#">JPEG</a>
+              <a onclick="save(str(pageNum)+'.pdf')" class="dropdown-text dropdown-item" href="#">PDF</a>
+            </div>
+          </li>
+          
+          <!--- Word Count --->
+          <li class="nav-item">
+            <a class="nav-link text-white disabled">Word Count: <span class="word" id="words-strt">0</span></a>
+          </li>
+          
+          <!--- No of words left--->
+          <li class="nav-item">
+            <a class="nav-link text-white disabled">Word Left : <span class="word" id="count-words">10000</span></a>
+          </li>
         </div>
-        <!--Footer is loaded dynamically from main.js-->
-        
-        <!--- Scripts for navigation bar, footer, rendering canvas and other options --->
-        <script src="assets/js/jquery.js"></script>
-        <script src="assets/js/main.js"></script>
-        <script src="assets/js/editor.js"></script>
-        <script>
-          //function to upload txt file
-          var fileUploader = document.getElementById("fileUploader");
-          function uploaderFunction(){fileUploader.click();};
-          fileUploader.addEventListener("change", function readfiles(files) {
-          if (this.files && this.files[0]) {
-            var myFile = this.files[0];
-            document.querySelector("#uploadedFname").innerText = myFile.name;
-            var reader = new FileReader();
-            
-            reader.addEventListener('load', function (e) {
-              document.querySelector("#dataField").value = e.target.result;
-              $("#dataField").keyup();
-            });
-            
-            reader.readAsBinaryString(myFile);
-          }
-        });</script>
-  </body>
+      </ul>
+  </nav>
+  <!--Menu Bar ends ends here-->
+
+  <input class="button-primary button-large download-image d-none" type="file" id="pageUploader" onclick="" />
+  <input class="button-primary button-large download-image d-none" type="file" id="fontUploader" onclick="" />
+
+  <!--- Sliders --->
+
+  <div class="row-editor-top">
+    <div class="menu-bar">
+      <button data-name="width" class="slider-btn">
+        Text Width
+      </button>
+      <button data-name="space" class="slider-btn">
+        Line Spacing
+      </button>
+      <button data-name="x-axis" class="slider-btn">
+        Adjust X-Axis
+      </button>
+      <button data-name="y-axis" class="slider-btn">
+        Adjust Y-Axis
+      </button>
+    </div>
+    <div class="form-wrapper">
+      <!--- Slider for Text Width --->
+      <form id="width" class="slider-form">
+        <div class="editor-range form-group">
+          <label class="text-blue" for="rangeWidth">Width</label>
+          <div class="rValue" id="width"></div>
+          <input type="range" min="100" max="800" value="700" oninput="w=float(this.value)" class="form-control-range custom-range" id="rangeWidth" />
+        </div>
+      </form>
+      <!--- Slider for Line Spacing --->
+      <form id="space" class="slider-form">
+        <div class="editor-range form-group">
+          <label class="text-blue" for="rangeSpace">Line Spacing</label>
+          <div class="rValue" id="space"></div>
+          <input type="range" min="10" max="50" value2="30" oninput="linespacing=float(this.value)" class="form-control-range custom-range" id="rangeSpace" />
+        </div>
+      </form>
+      <!--- X Axis Slider --->
+      <form id="x-axis" class="slider-form">
+        <div class="editor-range form-group">
+          <label class="text-blue" for="rangeXaxis">Adjust X axis</label>
+          <div class="rValue" id="xAxis"></div>
+          <input type="range" min="1" max="200" value="20" oninput="xaxis=float(this.value)" class="form-control-range custom-range" id="rangeXaxis" />
+        </div>
+      </form>
+      <!--- Y Axis Slider --->
+      <form id="y-axis" class="slider-form">
+        <div class="editor-range form-group">
+          <label class="text-blue" for="rangeYaxis">Adjust Y axis</label>
+          <div class="rValue" id="yAxis"></div>
+          <input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="form-control-range custom-range" id="rangeYaxis" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--- Input and Output Windows --->
+  <div class="row-editor">
+    <!--- Input Window --->
+    <div class="column input">
+      <span id="uploadedFname"></span>
+      <section class="container-input">
+        <form onsubmit="return false" style="width: 100%; height: 100%">
+          <textarea placeholder="Write your text here..." id="dataField" onkeyup="myData = this.value" class="input-box"></textarea>
+          <label for="text"></label>
+        </form>
+      </section>
+    </div>
+    <!--- Output Window --->
+    <div class="column output">
+      <div id="contribute-wrapper">
+        <div id="contributing">
+          <!--dynamic canvas-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Footer is loaded dynamically from main.js-->
+
+  <!--- Scripts for navigation bar, footer, rendering canvas and other options --->
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/editor.js"></script>
+  <script>
+    //function to upload txt file
+    var fileUploader = document.getElementById("fileUploader");
+    function uploaderFunction() { fileUploader.click(); };
+    fileUploader.addEventListener("change", function readfiles(files) {
+      if (this.files && this.files[0]) {
+        var myFile = this.files[0];
+        document.querySelector("#uploadedFname").innerText = myFile.name;
+        var reader = new FileReader();
+
+        reader.addEventListener('load', function (e) {
+          document.querySelector("#dataField").value = e.target.result;
+          $("#dataField").keyup();
+        });
+
+        reader.readAsBinaryString(myFile);
+      }
+    });</script>
+</body>
+
 </html>
