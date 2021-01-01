@@ -19,8 +19,8 @@ a {
 /* NAVBAR*/
 
 nav {
-  background-color: #7fcec5;
-  background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+  background-color: rgb(19, 65, 85);
+ 
   z-index: 2;
 }
 
@@ -37,7 +37,7 @@ nav {
 }
 .navbar-nav a:hover{
   
-  background-color: tomato;
+  background-color: rgb(154, 197, 197) ;
 }
 .navbar-nav a:after,
 .navbar-nav a:before{
