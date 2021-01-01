@@ -4,7 +4,7 @@ myData = `The quick brown fox jumps over the lazy dog`;
 let img = [],
   myFont = [],
   myFonts = 15,
-  imgNum = 8,
+  imgNum = 14,
   fontNum = 0,
   pageNum = 0,
   xaxis = 20,
@@ -116,6 +116,27 @@ function changeMargin(x) {
     xaxis = 40;
     yaxis = 40;
     w = 600;
+  }
+}
+
+function changeBorder(z) {
+  if (z == 0) {
+    choosePage(8);
+  }
+  else if (z == 1) {
+    choosePage(9);
+  }
+  else if (z == 2) {
+    choosePage(10);
+  }
+  else if (z == 3) {
+    choosePage(11);
+  }
+  else if (z == 4) {
+    choosePage(12);
+  }
+  else if (z == 5) {
+    choosePage(13);
   }
 }
 
