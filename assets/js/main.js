@@ -35,8 +35,10 @@ let footer = $(`
 </footer>`);
 // Dynamically loading navigation bar and footer
 let bodyElement = $(`body`);
-bodyElement.prepend(header);
 bodyElement.append(footer);
+let navElement = $(`.nav-back`);
+navElement.append(header);
+
 
 //common side navbar call
 
