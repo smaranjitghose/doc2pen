@@ -93,7 +93,7 @@ Doc2pen is an Open Source Software that converts your Typed Docs into Handwritte
 
 -----
 
-## Open Source Programs we have been a associated with🔗🖥: 
+## Open Source Programs we have been a associate with🔗🖥: 
 
 <p align="center">
   
@@ -116,3 +116,6 @@ Doc2pen is an Open Source Software that converts your Typed Docs into Handwritte
 It'd be great if you read [this](https://github.com/smaranjitghose/doc2pen/blob/master/CODE_OF_CONDUCT.md) once.
 
 <p align="center"><img width=30% src="https://media.giphy.com/media/WoWm8YzFQJg5i/giphy.gif"></p>
+
+-----
+
