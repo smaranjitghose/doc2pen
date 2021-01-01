@@ -37,35 +37,64 @@ git clone https://github.com/<your-github-username>/doc2pen
 cd doc2pen
 ```
 
-**4.** Make changes in source code.
+**4.** Add a reference(remote) to the original repository.
 
-**5.** Stage your changes and commit
-
-```bash
-#Add changes to Index
-git add .
-
-#Commit to the local repo
-git commit -m "<your_commit_message>"
+```
+git remote add upstream https://github.com/smaranjitghose/doc2pen.git 
 ```
 
-**7.** Push your local commits to the remote repo.
+**5.** Check the remotes for this repository.
 
-```bash
-git push
+```
+git remote -v
 ```
 
-**8.** Create a [PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) !
+**6.** Always take a pull from the upstream repository to your master branch to keep it at par with the main project(updated repository).
 
-**9.** **Congratulations!** Sit and relax, you've made your contribution to [Hacking-Scripts](https://github.com/Tejas1510/Hacking-Scripts) project.
+```
+git pull upstream master
+```
 
+**7.** Create a new branch.
+
+```
+git checkout -b <your_branch_name>
+```
+
+**8.** Make changes in the code as required.
+
+**9.** Track your changes:heavy_check_mark: .
+
+```bash
+git add . 
+```
+
+**10.** Commit your changes .
+
+```bash
+git commit -m "<your commit_message>"
+```
+
+**11.** Push the committed changes in your feature branch to your remote repo.
+
+```bash
+git push -u origin <your_branch_name>
+```
+
+**12.** Create a [PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) !
+
+**13.** **Congratulations!** Sit back and relax, you've made your contribution to [doc2pen](https://github.com/smaranjitghose/doc2pen) project. Give us some time so that we can review it and reply back to you.🤗
+<br>
+
+----
 ## ⭐ Issues:
 For major changes, you are welcomed to open an issue and discuss what you would like to contribute. Enhancements will be appreciated.
 
 <p align = "center">
 
-[![built with love](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/Tejas1510/Awesome-Javascript-and-React-Project)
+[![built with love](https://forthebadge.com/images/badges/built-with-love.svg)]()
 
 </p>
 
+----
 Check out my Github profile [smaranjitghose.](https://github.com/smaranjitghose)
