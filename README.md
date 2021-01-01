@@ -15,20 +15,21 @@
 
 
 <p align="center">Don't you find it boring and real burdensome task when it comes to finish the assignments???? and THAT TOO BY WRITING THEM IN A PIECE OF PAPER?!?!?! OH DEAR LORD.😩😵</p>
-<p align="center"><img width=30% src="https://media.giphy.com/media/11BQtvA7R4qBk4/source.gif"></p>
-<p align="center"><img width=30% src="https://media.giphy.com/media/2UIcmK4pn7rYNLRboG/source.mp4"></p>
+<p align="center"><img width=48% src="https://media.giphy.com/media/11BQtvA7R4qBk4/source.gif">
+<img width=30% src="https://media.giphy.com/media/2UIcmK4pn7rYNLRboG/giphy.gif"></p>
 
 
 <p align="center"><b>The truth is your assignments can be completed must faster by typing rather than writing,isn't it?</b></p>
-<br/>
-
-
+<p align="center"><img width=41% src="https://media.giphy.com/media/N57KpqDb0tlWE/giphy.gif">
+<img width=30% src="https://media.giphy.com/media/11BbGyhVmk4iLS/giphy.gif">
+</p>
+<br>
 
 <p align="center">Just imagine</p>
 <p align="center">How cool it would be if your typed documents could be converted in handwritten documents!!!</p>
 <p align="center">Aweeeeeeeesome, isn't it?</p>
-<p align="center"> And here we are at your service.</p>
-<p align="center"><img width=30% src="https://media.giphy.com/media/Lo6LNpySgc0qlzoOKR/giphy.gif"></p>
+<p align="center"> And here we are .....</p>
+<p align="center"><img width=30% src="https://media.giphy.com/media/UT5KSLhKwItfq6Yv6q/giphy.gif"></p>
 
 -----
 
@@ -78,6 +79,8 @@ Doc2pen is an Open Source Software which converts your Typed Docs into Handwritt
 
 ## License: 📜📜
 [MIT](https://github.com/smriti1313/doc2pen/blob/master/LICENSE)
+<p align="center"><img width=30% src=https://media.giphy.com/media/fH3LbssRHBIxSu6vf7/giphy.gif"></p>
+
 
 -----
 
@@ -85,5 +88,4 @@ Doc2pen is an Open Source Software which converts your Typed Docs into Handwritt
 
 It'd be great if you read [this](https://github.com/smaranjitghose/doc2pen/blob/master/CODE_OF_CONDUCT.md) once.
 
-<p align="center"><img width=30% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif">
-<img width=20% src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif"></p>
+<p align="center"><img width=30% src="https://media.giphy.com/media/WoWm8YzFQJg5i/giphy.gif"></p>
