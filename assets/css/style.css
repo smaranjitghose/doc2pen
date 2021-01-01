@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   font-family: Montserrat;
   scroll-behavior: smooth;
   --col-deepblue: #4478e3;
@@ -17,12 +17,15 @@ a {
   text-decoration: none;
 }
 /* NAVBAR*/
-
+.navtop {
+  position: absolute;
+}
 nav {
   background-color: rgb(19, 65, 85);
  
   z-index: 2;
 }
+
 
 .navbar-nav a{
   box-sizing: inherit;
@@ -32,9 +35,13 @@ nav {
 }
 
 .nav-link{
+
+.nav-link {
+
   color: #ffffff !important;
   letter-spacing: 0;
 }
+
 .navbar-nav a:hover{
   
   background-color: rgb(154, 197, 197) ;
@@ -65,13 +72,18 @@ nav {
   bottom: auto;
   top: 0;
   width: 70%;
+
+.navbar-nav a:hover {
+  text-shadow: 2px 2px 4px #000000;
+
 }
 
-
-@media (min-width: 60rem) {
-  .nav1 {
-    height: 4em;
-  }
+.nav1 {
+  height: 5em;
+}
+.nav-back {
+  height: 5em;
+  width: 100%;
 }
 
 .nav-sign {
@@ -132,7 +144,6 @@ nav {
   top: 0;
   width: 100%;
 }
-
 
 /*Home Section*/
 
@@ -488,7 +499,7 @@ form input[type="submit"]:hover {
 /*Footer*/
 
 footer {
-  width: 100vw;
+  width: 100%;
   position: absolute;
   left: 0;
   right: 0;
@@ -629,8 +640,7 @@ footer {
   border-radius: 50%;
   margin: 1rem 0;
   border: 2px solid transparent;
-  background-image: linear-gradient(white, white),
-    linear-gradient(to right, green, gold);
+  background-image: linear-gradient(white, white), linear-gradient(to right, green, gold);
   background-origin: border-box;
   background-clip: content-box, border-box;
   position: relative;

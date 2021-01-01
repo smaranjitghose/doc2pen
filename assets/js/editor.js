@@ -96,6 +96,29 @@ function choosePage(x) {
   pageNum %= imgNum;
 }
 
+function changeMargin(x) {
+  if (x == 1) {
+    xaxis = 20;
+    yaxis = 20;
+    w = 700;
+  }
+  else if (x == 2) {
+    xaxis = 30;
+    yaxis = 40;
+    w = 600;
+  }
+  else if (x == 3) {
+    xaxis = 80;
+    yaxis = 40;
+    w = 500;
+  }
+  else {
+    xaxis = 40;
+    yaxis = 40;
+    w = 600;
+  }
+}
+
 function updateFontSize(size){
   fontsize=float(size);
   document.getElementById('size-font').innerHTML = size;
@@ -124,4 +147,16 @@ $("#dataField").on("keydown", function (e) {// function event
   } else {
     if (e.which !== 8) e.preventDefault();//prevent user to enter more text
   }
+});
+
+let switches = document.querySelectorAll(".slider-btn");
+switches.forEach(button => {
+  button.addEventListener("click", () => {
+    let name = button.dataset.name;
+
+    if (document.querySelector(`.slider-open`) != null && !document.querySelector(`#${name}`).classList.contains(`slider-open`)    )
+      document.querySelector(`.slider-open`).classList.remove(`slider-open`);
+
+    document.querySelector(`#${name}`).classList.toggle(`slider-open`);
+  });
 });
