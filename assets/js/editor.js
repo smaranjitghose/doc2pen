@@ -28,6 +28,9 @@ function setup() {
   canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent("contributing");
   rectMode(CORNER);
+
+  document.querySelector(".x-slido").style.width = canvasWidth+'px';
+  document.querySelector('.y-slido').style.width = canvasHeight+'px';
 }
 
 // Default Ink Color
