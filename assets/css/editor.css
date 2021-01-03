@@ -116,11 +116,9 @@
 
 .row-editor-top {
   display: flex;
-  margin-top: 0;
+  margin: 0 auto;
   margin-bottom: -5em;
   width: 100%;
-  margin-left: 2em;
-  margin-right: 2em;
 }
 
 .form-control-range {
