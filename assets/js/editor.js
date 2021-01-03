@@ -1,3 +1,11 @@
+let outWinHeight = document.getElementById("contribute-wrapper").offsetHeight;
+let outWinWidth = document.getElementById("contribute-wrapper").offsetWidth;
+
+document.querySelector(".x-slido").style.width = outWinWidth + "px";
+document.querySelector(".y-slido").style.width = outWinHeight + "px";
+document.querySelector("#contributing").style.width = outWinWidth + "px";
+document.querySelector("#contributing").style.height = outWinHeight + "px";
+
 // Default Text
 myData = `The quick brown fox jumps over the lazy dog`;
 // Declaring and Intializing variables for various options in the editor
@@ -29,8 +37,10 @@ function setup() {
   canvas.parent("contributing");
   rectMode(CORNER);
 
-  document.querySelector(".x-slido").style.width = canvasWidth+'px';
-  document.querySelector('.y-slido').style.width = canvasHeight+'px';
+  document.querySelector(".x-slido").style.width = canvasWidth + "px";
+  document.querySelector(".y-slido").style.width = canvasHeight + "px";
+  document.querySelector("#contributing").style.width = canvasWidth + "px";
+  document.querySelector("#contributing").style.height = canvasHeight + "px";
 }
 
 // Default Ink Color
@@ -43,7 +53,7 @@ function chooseBlue() {
   defInk = "blue"; //blue colour
 }
 function chooseGreen() {
-  defInk = "green";  //green colour
+  defInk = "green"; //green colour
 }
 function chooseBlack() {
   defInk = "black"; //black colour
@@ -104,18 +114,15 @@ function changeMargin(x) {
     xaxis = 20;
     yaxis = 20;
     w = 700;
-  }
-  else if (x == 2) {
+  } else if (x == 2) {
     xaxis = 30;
     yaxis = 40;
     w = 600;
-  }
-  else if (x == 3) {
+  } else if (x == 3) {
     xaxis = 80;
     yaxis = 40;
     w = 500;
-  }
-  else {
+  } else {
     xaxis = 40;
     yaxis = 40;
     w = 600;
@@ -125,27 +132,22 @@ function changeMargin(x) {
 function changeBorder(z) {
   if (z == 0) {
     choosePage(8);
-  }
-  else if (z == 1) {
+  } else if (z == 1) {
     choosePage(9);
-  }
-  else if (z == 2) {
+  } else if (z == 2) {
     choosePage(10);
-  }
-  else if (z == 3) {
+  } else if (z == 3) {
     choosePage(11);
-  }
-  else if (z == 4) {
+  } else if (z == 4) {
     choosePage(12);
-  }
-  else if (z == 5) {
+  } else if (z == 5) {
     choosePage(13);
   }
 }
 
-function updateFontSize(size){
-  fontsize=float(size);
-  document.getElementById('size-font').innerHTML = size;
+function updateFontSize(size) {
+  fontsize = float(size);
+  document.getElementById("size-font").innerHTML = size;
 }
 
 // setting font size options
@@ -154,22 +156,22 @@ let fontSize = 2;
 
 // adding font sizes in option
 for (let i = 1; i <= noOfFontSizes; i++) {
-  document.querySelector(
-    "#font-size-select"
-  ).innerHTML += `<a onclick="updateFontSize(${fontSize * i})" class="dropdown-text dropdown-item text-right pr-4" href="#" value="${fontSize * i}">${fontSize * i}</a>`;
+  document.querySelector("#font-size-select").innerHTML += `<a onclick="updateFontSize(${
+    fontSize * i
+  })" class="dropdown-text dropdown-item text-right pr-4" href="#" value="${fontSize * i}">${fontSize * i}</a>`;
 }
-
 
 /*range field*/
 
 // Function to count the number of words and limit the total number of words
-$("#dataField").on("keydown", function (e) {// function event
+$("#dataField").on("keydown", function (e) {
+  // function event
   var words = $.trim(this.value).length ? this.value.match(/\S+/g).length : 0; //count length of word when space occur
   if (words <= 10000) {
-    $("#count-words").text(10000 - words);// subtracts word from 10K and targets span-id"count-words" 
+    $("#count-words").text(10000 - words); // subtracts word from 10K and targets span-id"count-words"
     $("#words-strt").text(0 + words);
   } else {
-    if (e.which !== 8) e.preventDefault();//prevent user to enter more text
+    if (e.which !== 8) e.preventDefault(); //prevent user to enter more text
   }
 });
 
@@ -178,7 +180,10 @@ switches.forEach(button => {
   button.addEventListener("click", () => {
     let name = button.dataset.name;
 
-    if (document.querySelector(`.slider-open`) != null && !document.querySelector(`#${name}`).classList.contains(`slider-open`)    )
+    if (
+      document.querySelector(`.slider-open`) != null &&
+      !document.querySelector(`#${name}`).classList.contains(`slider-open`)
+    )
       document.querySelector(`.slider-open`).classList.remove(`slider-open`);
 
     document.querySelector(`#${name}`).classList.toggle(`slider-open`);
