@@ -32,24 +32,27 @@
         <div class="row">
             <div class="col-md-8">
                 <input id="colorPicker"value="#000000" data-jscolor="">
-                <button onclick="toggleMode(modes.pan)">Toggle Pan</button>
+                <button class="neu" onclick="toggleMode(modes.pan)">Toggle Pan</button>
                 <button class="neu" onclick="toggleMode(modes.drawing)"><i class="fas fa-pen"></i></button>
+                <label for="pen-size">Size</label>
+                <input type="range" id="pen-size" min="1" max="50">
                 <button class="neu" onclick="createRectangle(canvas)"><i class="fas fa-square"></i></button>
                 <button class="neu" onclick="createCircle(canvas)"><i class="fas fa-circle"></i></button>
+                <button class="neu" onclick="createTriangle(canvas)"><i class="fas fa-caret-up"></i></button>
+                <button class="neu" onclick="setText()"><i class="fas fa-text-width"></i></i></button>
+                <!-- Canvas is created by assest/js/painter.js file -->
+                <canvas id="canvas"></canvas>
+                <input type="file" id="imageFile" accept="image/*">
                 <button class="neu" onclick="groupObjects(canvas,group,true)">Group</button>
                 <button class="neu" onclick="groupObjects(canvas,group,false)">Ungroup</button>
                 <button class="neu" onclick="clearCanvas(canvas,svgState)">Redraw</button>
-                <!-- Canvas is created by assest/js/painter.js file -->
-                <canvas id="canvas"></canvas>
-                <button class="neu" onclick="restoreCanvas(canvas,svgState,bgUrl)">Restore</button>
-                <input type="file" id="imageFile" accept="image/*">
-                <span></span><button class="neu" onclick="doCapture()">Save</button>
+                <button class="neu" onclick="doCapture()">Save</button>
             </div>
             <div class="col-md-4 right"><h1>Paint your own design.</h1></div>
         </div>
     </div>
 
-    <!-- For saving the canvas but it's not working right now -->
+    <!-- For saving the canvas -->
     <script>
         const myCanvas = document.getElementById("canvas")
         function doCapture(){
@@ -65,7 +68,7 @@
                 // document.body.removeChild(a);
                 var canvas = document.getElementById("canvas");
                 canvas.toBlob(function(blob) {
-                    saveAs(blob, "pretty image.png");
+                    saveAs(blob, "sketch.png");
                 });
             }
         }

@@ -1,18 +1,11 @@
 // Initiating the canvas
 const initCanvas = (id) => {
     return new fabric.Canvas(id, {
+        backgroundColor : "#fff",
         width: 800,
         height: 400,
-        selection: false 
+        selection: false,
     });
-}
-
-// Setting the background image to canvas
-const setBackground = (url, canvas) => {
-    fabric.Image.fromURL(url, (img) => {
-        canvas.backgroundImage = img
-        canvas.renderAll()
-    })
 }
 
 const toggleMode = (mode) => {
@@ -33,6 +26,7 @@ const toggleMode = (mode) => {
             currentMode = modes.drawing
             console.log("color ",color);
             canvas.freeDrawingBrush.color = color
+            canvas.freeDrawingBrush.s=s
             canvas.isDrawingMode = true
             canvas.renderAll()
         }
@@ -83,6 +77,14 @@ const setColorPicker = () => {
     })
 }
 
+// adding Text to the canvas
+const setText = () => {
+    var text= new fabric.Textbox('Enter your text',{
+        width: 450
+    });
+    canvas.add(text);
+}
+
 // Objects creating functions(Circle, Rectangle)
 const createCircle = () => {
     const canvasCenter = canvas.getCenter()
@@ -124,6 +126,24 @@ const createRectangle = () => {
     // rectangle.on('selected')
 }
 
+const createTriangle = () => {
+    const canvasCenter= canvas.getCenter()
+    const triangle = new fabric.Triangle({
+        width:100,
+        height:100,
+        fill: color,
+        left: canvasCenter.left,
+        top: -50,
+        originX: 'center',
+        originY:'center'
+    })
+    canvas.add(triangle);
+    canvas.renderAll();
+    triangle.animate('top', canvasCenter.top, {
+        onChange:canvas.renderAll.bind(canvas)
+    })
+}
+
 // Grouping the Objects
 const groupObjects = (canvas,group,shouldGroup) => {
     if (shouldGroup) {
@@ -152,17 +172,6 @@ const clearCanvas = (canvas, state) => {
     })
 }
 
-// To restore the canvas
-const restoreCanvas = (canvas,state,bgUrl) => {
-    if (state.val) {
-        
-        fabric.loadSVGFromString(state.val, objects => {
-            canvas.add(...objects)
-            objects = objects.filter(o=>o['xlink:href'] !== bgUrl)
-            canvas.requestRenderAll()
-        })
-    }
-}
 
 // To upload image to canvas
 const imgAdded = (e) => {
@@ -179,15 +188,11 @@ const svgState = {};
 let group = {}
 
 // Background image URL
-const bgUrl = 'https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Colorful-Geometric-Simple-Background-Image.jpg'
 let currentMode;
 const modes = {
     pan: 'pan',
     drawing:'drawing'
 }
-
-// Setting the background image
-setBackground(bgUrl, canvas)
 
 // Setting the toggle options
 setPanEvents(canvas)

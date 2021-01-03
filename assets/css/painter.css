@@ -28,7 +28,7 @@ button{
 {
     box-shadow: 10px 10px 20px #e0e2e5, -10px -10px 20px #ffffffff;
 }
-.neu:active
+.neu:hover
 {
     box-shadow: 2px 2px 2px 0 #dfe4ea inset, -2px -2px 2px 0 #fff inset;
 }
