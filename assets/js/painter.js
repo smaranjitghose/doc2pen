@@ -76,6 +76,15 @@ const setColorPicker = () => {
         canvas.renderAll()
     })
 }
+//Setting brush size
+const setBrushSize = (event) => {
+    const size = document.getElementById("pen-size");
+    size.addEventListener('change', (event) => {
+        console.log(event.target.value);
+        canvas.freeDrawingBrush.width = event.target.value
+        
+    })
+}
 
 // adding Text to the canvas
 const setText = () => {
@@ -188,7 +197,7 @@ const svgState = {};
 let group = {}
 
 // Background image URL
-let currentMode;
+let currentMode = 'drawing';
 const modes = {
     pan: 'pan',
     drawing:'drawing'
@@ -200,6 +209,8 @@ setPanEvents(canvas)
 // Seting the color picker
 setColorPicker()
 
+//Setting brush size
+setBrushSize()
 // For uploading the image
 const reader = new FileReader()
 const inputFile = document.getElementById("imageFile");
