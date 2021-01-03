@@ -1,6 +1,6 @@
 // Navigation Bar Declaration
 let header = $(`
-<nav class="navbar navbar-expand-lg navbar-light nav1" style="z-index: 9999;margin-bottom:5px; .text-grey:hover{color: #adadad; }" id="navbar">
+<nav class="navbar navbar-expand-lg navbar-light " style="z-index: 9999;margin-bottom:5px; .text-grey:hover{color: #adadad; }" id="navbar">
   <a class="navbar-brand brand-logo" href="#"><img src="./assets/images/logo.png"></a>
   <button class="navbar-toggler res-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
