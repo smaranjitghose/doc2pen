@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!--Import Font-->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <!--Getting our CSS-->
     <link rel="stylesheet" href="assets/css/painter.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
@@ -27,30 +28,27 @@
 <body>
     <!--Navigation Bar is loaded dynamically from the main.js-->
     <div class="nav-back"></div>
-    <button onclick="doCapture()">Save</button>
-    <p>Color Picker</p>
-    <input id="colorPicker"value="#000000" data-jscolor="">
-    <button onclick="toggleMode(modes.pan)">Toggle Pan</button>
-        <button onclick="toggleMode(modes.drawing)">Toggle Drawing</button>
-
-    <!-- Canvas is created by assest/js/painter.js file -->
-    <canvas id="canvas"></canvas>
-    <div id="objectButtons">
-        <p id="objectsTitle">Objects</p>
-        <button onclick="createRectangle(canvas)">Rect</button>
-        <button onclick="createCircle(canvas)">Circ</button>
-        <p>Actions</p>
-        <button onclick="groupObjects(canvas,group,true)">Group</button>
-        <button onclick="groupObjects(canvas,group,false)">Ungroup</button>
-        
-        <button onclick="clearCanvas(canvas,svgState)">Clear</button>
-        <button onclick="restoreCanvas(canvas,svgState,bgUrl)">Restore</button>
-        <div class="upload">
-            <p>Image</p>
-            <input type="file" id="imageFile" accept="image/*">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <input id="colorPicker"value="#000000" data-jscolor="">
+                <button onclick="toggleMode(modes.pan)">Toggle Pan</button>
+                <button class="neu" onclick="toggleMode(modes.drawing)"><i class="fas fa-pen"></i></button>
+                <button class="neu" onclick="createRectangle(canvas)"><i class="fas fa-square"></i></button>
+                <button class="neu" onclick="createCircle(canvas)"><i class="fas fa-circle"></i></button>
+                <button class="neu" onclick="groupObjects(canvas,group,true)">Group</button>
+                <button class="neu" onclick="groupObjects(canvas,group,false)">Ungroup</button>
+                <button class="neu" onclick="clearCanvas(canvas,svgState)">Redraw</button>
+                <!-- Canvas is created by assest/js/painter.js file -->
+                <canvas id="canvas"></canvas>
+                <button class="neu" onclick="restoreCanvas(canvas,svgState,bgUrl)">Restore</button>
+                <input type="file" id="imageFile" accept="image/*">
+                <span></span><button class="neu" onclick="doCapture()">Save</button>
+            </div>
+            <div class="col-md-4 right"><h1>Paint your own design.</h1></div>
         </div>
-        
     </div>
+
     <!-- For saving the canvas but it's not working right now -->
     <script>
         const myCanvas = document.getElementById("canvas")
