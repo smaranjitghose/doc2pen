@@ -10,26 +10,20 @@ const initCanvas = (id) => {
 
 const toggleMode = (mode) => {
     if (mode === modes.pan) {
-        if (currentMode === modes.pan) {
-            currentMode = ''
-        } else {
-            currentMode = modes.pan
-            canvas.isDrawingMode = false
-            canvas.renderAll()
-        }
-    } else if (mode === modes.drawing) {
-        if (currentMode === modes.drawing) {
+       
             currentMode = ''
             canvas.isDrawingMode = false
             canvas.renderAll()
-        } else {
+       
+    } else  {
+       
             currentMode = modes.drawing
             console.log("color ",color);
             canvas.freeDrawingBrush.color = color
             canvas.freeDrawingBrush.s=s
             canvas.isDrawingMode = true
             canvas.renderAll()
-        }
+       
     }
     console.log(mode);
     
@@ -92,6 +86,7 @@ const setText = () => {
         width: 450
     });
     canvas.add(text);
+    toggleMode(modes.pan)
 }
 
 // Objects creating functions(Circle, Rectangle)
@@ -115,6 +110,8 @@ const createCircle = () => {
             })
         }
     })
+    
+    toggleMode(modes.pan)
 }
 const createRectangle = () => {
     const canvasCenter = canvas.getCenter()
@@ -132,7 +129,7 @@ const createRectangle = () => {
     rectangle.animate('top', canvasCenter.top, {
         onChange:canvas.renderAll.bind(canvas)
     })
-    // rectangle.on('selected')
+    toggleMode(modes.pan)
 }
 
 const createTriangle = () => {
@@ -151,6 +148,7 @@ const createTriangle = () => {
     triangle.animate('top', canvasCenter.top, {
         onChange:canvas.renderAll.bind(canvas)
     })
+    toggleMode(modes.pan)
 }
 
 // Grouping the Objects
