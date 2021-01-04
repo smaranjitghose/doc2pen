@@ -10,26 +10,31 @@ const initCanvas = (id) => {
 
 const toggleMode = (mode) => {
     if (mode === modes.pan) {
-        //changing button effect
-        const pen = document.getElementById("pan");
-        pen.style.backgroundColor = "#3f5185"
-        pen.style.color = '#dfe4ea'
+        //For button styling
+        const pan = document.getElementById("pan");
+        pan.style.backgroundColor = "#3f5185"
+        pan.style.color = '#dfe4ea'
         document.getElementById("pen").removeAttribute("style"); 
+
+        //Selecting mode
         currentMode = ''
         canvas.isDrawingMode = false
         canvas.renderAll();
 
         
-    } else  {
+    } else {
+        //For button styling
         const pen = document.getElementById("pen");
         pen.style.backgroundColor = "#3f5185"
         pen.style.color = '#dfe4ea'
         document.getElementById("pan").removeAttribute("style"); 
-            currentMode = modes.drawing
-            // console.log("color ",color);
-            canvas.freeDrawingBrush.color = color
-            canvas.isDrawingMode = true
-            canvas.renderAll()
+        
+        //Selecting mode
+        currentMode = modes.drawing
+        // console.log("color ",color);
+        canvas.freeDrawingBrush.color = color
+        canvas.isDrawingMode = true
+        canvas.renderAll()
        
     }
     // console.log(mode);
