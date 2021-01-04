@@ -10,21 +10,29 @@ const initCanvas = (id) => {
 
 const toggleMode = (mode) => {
     if (mode === modes.pan) {
-       
-            currentMode = ''
-            canvas.isDrawingMode = false
-            canvas.renderAll()
-       
+        //changing button effect
+        const pen = document.getElementById("pan");
+        pen.style.backgroundColor = "#3f5185"
+        pen.style.color = '#dfe4ea'
+        document.getElementById("pen").removeAttribute("style"); 
+        currentMode = ''
+        canvas.isDrawingMode = false
+        canvas.renderAll();
+
+        
     } else  {
-       
+        const pen = document.getElementById("pen");
+        pen.style.backgroundColor = "#3f5185"
+        pen.style.color = '#dfe4ea'
+        document.getElementById("pan").removeAttribute("style"); 
             currentMode = modes.drawing
-            console.log("color ",color);
+            // console.log("color ",color);
             canvas.freeDrawingBrush.color = color
             canvas.isDrawingMode = true
             canvas.renderAll()
        
     }
-    console.log(mode);
+    // console.log(mode);
     
 }
 
@@ -63,7 +71,7 @@ const setPanEvents = (canvas) => {
 const setColorPicker = () => {
     const picker = document.getElementById("colorPicker");
     picker.addEventListener('change', (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         color = event.target.value
         canvas.freeDrawingBrush.color = color
         canvas.renderAll()
@@ -73,7 +81,7 @@ const setColorPicker = () => {
 const setBrushSize = (event) => {
     const size = document.getElementById("pen-size");
     size.addEventListener('change', (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         canvas.freeDrawingBrush.width = event.target.value
         
     })
@@ -183,6 +191,7 @@ const imgAdded = (e) => {
     const inputElem = document.getElementById("imageFile")
     const file = inputElem.files[0];
     reader.readAsDataURL(file)
+    toggleMode(modes.pan)
 }
 const canvas = initCanvas("canvas");
 

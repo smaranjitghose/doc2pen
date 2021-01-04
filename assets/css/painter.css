@@ -41,8 +41,9 @@ button:focus
 {
     outline:none;
 }
-.pan:focus,.pen:focus
+/* .pan:focus,.pen:focus
 {
     background-color: #3f5185;
     color: #dfe4ea;
-}
+} */
+

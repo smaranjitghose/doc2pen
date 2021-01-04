@@ -33,8 +33,9 @@
         <div class="row">
             <div class="col-md-8">
                 <input id="colorPicker"value="#000000" data-jscolor="">
-                <button class="neu pan" onclick="toggleMode(modes.pan)"><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
-                <button class="neu pen" onclick="toggleMode(modes.drawing)"><i class="fas fa-pen"></i></button>
+                <!-- <label for="pen-size">Move</label> -->
+                <button class="neu pan" id="pan" onclick="toggleMode(modes.pan)">Move <i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
+                <button class="neu pen" id="pen" onclick="toggleMode(modes.drawing)">Draw <i class="fas fa-pen"></i></button>
                 <label for="pen-size">Size</label>
                 <input type="range" id="pen-size" value=1 min="1" max="50">
                 <button class="neu" onclick="createRectangle(canvas)"><i class="fas fa-square"></i></button>
