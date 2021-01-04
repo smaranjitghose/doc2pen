@@ -17,10 +17,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
     <!--Import Font-->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!--Getting our CSS-->
     <link rel="stylesheet" href="assets/css/painter.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
@@ -32,14 +33,14 @@
         <div class="row">
             <div class="col-md-8">
                 <input id="colorPicker"value="#000000" data-jscolor="">
-                <button class="neu" onclick="toggleMode(modes.pan)">Toggle Pan</button>
-                <button class="neu" onclick="toggleMode(modes.drawing)"><i class="fas fa-pen"></i></button>
+                <button class="neu pan" onclick="toggleMode(modes.pan)"><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
+                <button class="neu pen" onclick="toggleMode(modes.drawing)"><i class="fas fa-pen"></i></button>
                 <label for="pen-size">Size</label>
                 <input type="range" id="pen-size" value=1 min="1" max="50">
                 <button class="neu" onclick="createRectangle(canvas)"><i class="fas fa-square"></i></button>
                 <button class="neu" onclick="createCircle(canvas)"><i class="fas fa-circle"></i></button>
                 <button class="neu" onclick="createTriangle(canvas)"><i class="fas fa-caret-up"></i></button>
-                <button class="neu" onclick="setText()"><i class="fas fa-text-width"></i></i></button>
+                <button class="neu" onclick="setText()"><i class="fas fa-text-width"></i></button>
                 <!-- Canvas is created by assest/js/painter.js file -->
                 <canvas id="canvas"></canvas>
                 <input type="file" id="imageFile" accept="image/*">

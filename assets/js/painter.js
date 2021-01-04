@@ -20,7 +20,6 @@ const toggleMode = (mode) => {
             currentMode = modes.drawing
             console.log("color ",color);
             canvas.freeDrawingBrush.color = color
-            canvas.freeDrawingBrush.s=s
             canvas.isDrawingMode = true
             canvas.renderAll()
        
@@ -79,7 +78,6 @@ const setBrushSize = (event) => {
         
     })
 }
-
 // adding Text to the canvas
 const setText = () => {
     var text= new fabric.Textbox('Enter your text',{
