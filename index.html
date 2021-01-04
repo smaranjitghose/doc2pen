@@ -23,7 +23,9 @@
             <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
         </head>
         
-        <body>
+        <body onload="loader()">
+          <!--Loading Screen Desgin-->
+        <div id="loading"></div>
         <!--Navigation Bar is loaded dynamically from the main.js-->
         <div class="nav-back"></div>
         <!-- Home Section -->
@@ -209,7 +211,7 @@
             </div>
         </div>
         <!--support section ends here-->
-          
+                
           <!--JS File for dynamically loading navigation bar, footer, Team Section-->
           <script src="assets/js/main.js"></script>
           <!-- Footer is loaded dynamically from main.js-->
@@ -234,5 +236,12 @@
             <!--Please enter your own API_Key to make maps functioning-->
             <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=myMap"></script>
             <!--This script is of Google maps API -->
+            <script>
+              var preLoader = document.getElementById('loading');
+              setTimeout(function loader(){
+                 preLoader.style.display = 'none';
+              }, 1500);
+            </script>
+            <!--This script is for preloader screen-->  
       </body>
 </html>
