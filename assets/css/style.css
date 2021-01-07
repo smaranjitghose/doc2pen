@@ -64,13 +64,13 @@ top: 0;
 width: 70%;
 }
 
-
 .nav1 {
-  height: 5em;
+  /* height: 5em; */
   box-shadow: 0px 1px 8px white;
 }
 .nav-back {
-  height: 5em;
+  /* height: 5em; */
+  height: 77px;
   width: 100%;
 }
 
