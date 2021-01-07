@@ -26,8 +26,8 @@ let header = $(`
         <b><a class="nav-link" href="editor.html">Editor</a></b>
       </li>
       <li class="nav-item active">
-        <b><a class="nav-link" href="painter.html">Paint</a></b>
-      </li>
+      <b><a class="nav-link" href="painter.html">Paint</a></b>
+    </li>
     </ul>
   </div>
 </nav>`);
