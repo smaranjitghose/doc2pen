@@ -67,6 +67,7 @@ width: 70%;
 
 .nav1 {
   height: 5em;
+  box-shadow: 0px 1px 8px white;
 }
 .nav-back {
   height: 5em;
@@ -301,10 +302,11 @@ div#contact-and-info-container {
 }
 /* styling for Google maps */
 div#googleMap {
-  height: 400px;
-  /* The height is 400 pixels */
-  width: 175%;
-  /* The width is the width of the web page */
+  height: 320px;
+  /* The height is 320 pixels */
+  width: 550px;
+  /* The width is 550px */
+  border-radius: 4px;
 }
 /* contact form container */
 div#contact-form {
