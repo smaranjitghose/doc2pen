@@ -115,9 +115,18 @@
         </li>
 
         <!--- Uploading Document --->
-        <input type="file" id="fileUploader" name="file1" style="display:none" />
+        <!-- <input type="file" id="fileUploader" name="file1" style="display:none" />
         <a class="nav-link text-white" href="#" onclick="uploaderFunction()" id="btnPageUpload">Page Upload</a>
-        </li>
+        </li> -->
+        <li class="nav-item dropdown">
+            <input type="file" id="import_file" name="file1" style="display:none" />
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown import_file" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Import From
+            </a>
+            <div class="dropdown-menu dropdown4" aria-labelledby="navbarDropdown" style="z-index: 4">
+              <a onclick="import_file_fun()" class="dropdown-text dropdown-item" href="#">For .txt</a>
+            </div>
+          </li>
 
         <!--- Download Document --->
         <li class="nav-item">
@@ -233,22 +242,54 @@
   <script src="assets/js/editor.js"></script>
   <script>
     //function to upload txt file
-    var fileUploader = document.getElementById("fileUploader");
-    function uploaderFunction() { fileUploader.click(); };
-    fileUploader.addEventListener("change", function readfiles(files) {
-      if (this.files && this.files[0]) {
-        var myFile = this.files[0];
-        document.querySelector("#uploadedFname").innerText = myFile.name;
-        var reader = new FileReader();
+    let input = document.getElementById('import_file')
+    let textarea = document.querySelector('textarea')
 
-        reader.addEventListener('load', function (e) {
-          document.querySelector("#dataField").value = e.target.result;
-          $("#dataField").keyup();
-        });
+    function import_file_fun() { input.click(); };
 
-        reader.readAsBinaryString(myFile);
-      }
-    });</script>
+    input.addEventListener('change', () => {
+        let files = input.files;
+        if (files.length == 0) return;
+        const file = files[0];
+        let reader = new FileReader();
+        reader.onload = (e) => {
+            let rtf = convertToPlain(e.target.result);
+            textarea.value = rtf;
+            $("#dataField").keyup();
+        };
+        reader.onerror = (e) => alert(e.target.error.name);
+        reader.readAsText(file);
+    });
+
+    function convertToPlain(rtf) {
+        rtf = rtf.replace(/\\par[d]?/g, "");
+        rtf = rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "");
+        // rtf = rtf.replace(/\n/ig, " ");
+        rtf = rtf.replace(/\\/ig,"");
+        rtf = rtf.replace(/\*/ig, "");
+        rtf = rtf.replace(/decimal.|tightenfactor0|eftab720|HYPERLINK|irnatural/ig, "");
+        rtf = rtf.replace(/irnaturaltightenfactor0|000000/ig, "");
+        rtf = rtf.replace(/�|ࡱ|p#|#|,|%|@|\$|~/ig, "");
+        return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
+    }
+
+    // var fileUploader = document.getElementById("fileUploader");
+    // function uploaderFunction() { fileUploader.click(); };
+    // fileUploader.addEventListener("change", function readfiles(files) {
+    //   if (this.files && this.files[0]) {
+    //     var myFile = this.files[0];
+    //     document.querySelector("#uploadedFname").innerText = myFile.name;
+    //     var reader = new FileReader();
+    //
+    //     reader.addEventListener('load', function (e) {
+    //       document.querySelector("#dataField").value = e.target.result;
+    //       $("#dataField").keyup();
+    //     });
+    //
+    //     reader.readAsBinaryString(myFile);
+    //   }
+    // });
+  </script>
 </body>
 
 </html>
