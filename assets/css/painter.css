@@ -41,9 +41,35 @@ button:focus
 {
     outline:none;
 }
-/* .pan:focus,.pen:focus
-{
-    background-color: #3f5185;
-    color: #dfe4ea;
-} */
 
+.input {
+    width: 0px;
+    padding: 0px !important;
+    height: 30px;
+    border: none;
+    outline: none;
+  }
+  
+  .input:focus {
+    outline: none;
+  }
+  
+  .picker {
+    display: flex;
+    width: 110px;
+    border: 2px solid grey;
+  }
+  
+  .picker div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+  }
+  .row-top{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }

@@ -32,22 +32,34 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <input id="colorPicker"value="#000000" data-jscolor="">
-                <!-- <label for="pen-size">Move</label> -->
-                <button class="neu pan" id="pan" onclick="toggleMode(modes.pan)">Move <i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
-                <button class="neu pen" id="pen" onclick="toggleMode(modes.drawing)">Draw <i class="fas fa-pen"></i></button>
-                <label for="pen-size">Size</label>
-                <input type="range" id="pen-size" value=1 min="1" max="50">
-                <button class="neu" onclick="createRectangle(canvas)"><i class="fas fa-square"></i></button>
-                <button class="neu" onclick="createCircle(canvas)"><i class="fas fa-circle"></i></button>
-                <button class="neu" onclick="createTriangle(canvas)"><i class="fas fa-caret-up"></i></button>
-                <button class="neu" onclick="setText()"><i class="fas fa-text-width"></i></button>
+                <div class="row-top">
+                    <div class="picker">
+                        <input class="input" id="colorPicker" value="#000000" data-jscolor="" />
+                        <div> Pen </div>
+                    </div>
+                    <!-- <label for="pen-size">Move</label> -->
+                    <button class="neu pan" id="pan" onclick="toggleMode(modes.pan)">Move <i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
+                    <button class="neu pen" id="pen" onclick="toggleMode(modes.drawing)">Draw <i class="fas fa-pen"></i></button>
+                    <label for="pen-size">Size</label>
+                    <input type="range" id="pen-size" value=1 min="1" max="50">
+                    <button class="neu" onclick="createRectangle(canvas)"><i class="fas fa-square"></i></button>
+                    <button class="neu" onclick="createCircle(canvas)"><i class="fas fa-circle"></i></button>
+                    <button class="neu" onclick="createTriangle(canvas)"><i class="fas fa-caret-up"></i></button>
+                    <button class="neu" onclick="setText()"><i class="fas fa-text-width"></i></button>
+                    <!-- <p><input class="neu" id="canvasColor"value="#ffffff" data-jscolor="" >Canvas</p> -->
+                    <div class="picker">
+                        <input class="input" id="canvasColor" data-jscolor="{preset:'myPreset'}" />
+                        <div> Canvas </div>
+                    </div>
+                </div>
+                
                 <!-- Canvas is created by assest/js/painter.js file -->
                 <canvas id="canvas"></canvas>
                 <input type="file" id="imageFile" accept="image/*">
                 <button class="neu" onclick="groupObjects(canvas,group,true)">Group</button>
                 <button class="neu" onclick="groupObjects(canvas,group,false)">Ungroup</button>
                 <button class="neu" onclick="clearCanvas(canvas,svgState)">Redraw</button>
+               
                 <button class="neu" onclick="doCapture()">Save</button>
             </div>
             <div class="col-md-4 right"><h1>Paint your own design.</h1></div>
@@ -62,12 +74,7 @@
             if(window.navigator.msSaveBlob){
                 window.navigator.msSaveBlob(myCanvas.msToBlob(),"canvas-image.png")
             } else{
-                // const a = document.createElement("a");
-                // document.body.appendChild(a);
-                // a.href = myCanvas.toDataURL("image/jpeg",0.9)
-                // a.download = "canvas-image.jpg";
-                // a.click()
-                // document.body.removeChild(a);
+               
                 var canvas = document.getElementById("canvas");
                 canvas.toBlob(function(blob) {
                     saveAs(blob, "sketch.png");
@@ -76,7 +83,15 @@
         }
     </script>
     <script src="assets/lib/jscolor.js"></script>
-
+    <script>
+        jscolor.presets.myPreset = {
+        format: 'hex',
+        width: 201,
+        height: 81,
+        backgroundColor: '#333',
+        palette: '#fff #000 #808080 #996e36 #f55525 #ffe438 #88dd20 #22e0cd #269aff #bb1cd4',
+        }
+    </script>
     <!-- Using for saving the canvas (FileSaver.js) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
     <!-- Fabric.js main library -->
