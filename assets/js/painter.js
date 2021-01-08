@@ -1,7 +1,7 @@
 // Initiating the canvas
 const initCanvas = (id) => {
     return new fabric.Canvas(id, {
-        backgroundColor : "#fff",
+        backgroundColor : "#ffffff",
         width: 800,
         height: 400,
         selection: false,
@@ -12,14 +12,15 @@ const toggleMode = (mode) => {
     if (mode === modes.pan) {
         //For button styling
         const pan = document.getElementById("pan");
+        document.getElementById("pen").removeAttribute("style");
         pan.style.backgroundColor = "#3f5185"
         pan.style.color = '#dfe4ea'
-        document.getElementById("pen").removeAttribute("style"); 
+         
 
         //Selecting mode
         currentMode = ''
         canvas.isDrawingMode = false
-        canvas.renderAll();
+        canvas.requestRenderAll();
 
         
     } else {
@@ -31,13 +32,14 @@ const toggleMode = (mode) => {
         
         //Selecting mode
         currentMode = modes.drawing
-        // console.log("color ",color);
+       
         canvas.freeDrawingBrush.color = color
         canvas.isDrawingMode = true
-        canvas.renderAll()
+        
+        canvas.requestAll()
        
     }
-    // console.log(mode);
+   
     
 }
 
@@ -47,26 +49,26 @@ const setPanEvents = (canvas) => {
         // console.log(e);
          if (mousePressed && currentMode === modes.pan) {
              canvas.setCursor('grab')
-             canvas.renderAll()
+             canvas.requestRenderAll()
              const mEvent = event.e;
              const delta = new fabric.Point(mEvent.movementX, mEvent.movementY)
              canvas.relativePan(delta)
          } else if (mousePressed && currentMode === modes.drawing) {
              canvas.isDrawingMode = true
-             canvas.renderAll()
+             canvas.requestRenderAll()
          }
      })
      canvas.on('mouse:up', (event) => {
          mousePressed = false;
      
          canvas.setCursor('grab')
-         canvas.renderAll()
+         canvas.requestRenderAll()
      })
      canvas.on('mouse:down', (event) => {
          mousePressed = true;
          if (currentMode === modes.pan) {
              canvas.setCursor('default')
-             canvas.renderAll()
+             canvas.requestRenderAll()
          }
          
      })
@@ -79,7 +81,18 @@ const setColorPicker = () => {
         // console.log(event.target.value);
         color = event.target.value
         canvas.freeDrawingBrush.color = color
-        canvas.renderAll()
+        canvas.requestRenderAll()
+    })
+}
+// Setting canvas color
+const setCanvasColor = () => {
+    const picker = document.getElementById("canvasColor");
+    picker.addEventListener('change', (event) => {
+        // console.log(event.target.value);
+        canvascolor = event.target.value
+        // initCanvas("canvas", canvascolor);
+        canvas.backgroundColor = canvascolor
+        canvas.requestRenderAll()
     })
 }
 //Setting brush size
@@ -112,7 +125,7 @@ const createCircle = () => {
         originY:'center'
     })
     canvas.add(circle)
-    canvas.renderAll()
+    canvas.requestRenderAll()
     circle.animate('top', canvas.height - 50, {
         onChange: canvas.renderAll.bind(canvas),
         onComplete : () => {
@@ -136,7 +149,7 @@ const createRectangle = () => {
         originY:'center'
     })
     canvas.add(rectangle);
-    canvas.renderAll();
+    canvas.requestRenderAll();
     rectangle.animate('top', canvasCenter.top, {
         onChange:canvas.renderAll.bind(canvas)
     })
@@ -155,7 +168,7 @@ const createTriangle = () => {
         originY:'center'
     })
     canvas.add(triangle);
-    canvas.renderAll();
+    canvas.requestRenderAll();
     triangle.animate('top', canvasCenter.top, {
         onChange:canvas.renderAll.bind(canvas)
     })
@@ -178,6 +191,7 @@ const groupObjects = (canvas,group,shouldGroup) => {
         group.val = null
         canvas.requestRenderAll()
     }
+    toggleMode(modes.pan)
 }
 
 // To clear the canvas
@@ -198,13 +212,15 @@ const imgAdded = (e) => {
     reader.readAsDataURL(file)
     toggleMode(modes.pan)
 }
-const canvas = initCanvas("canvas");
+
 
 // Defined variables and constant
 let mousePressed = false;
 let color = '#000000';
 const svgState = {};
 let group = {}
+
+const canvas = initCanvas("canvas");
 
 // Background image URL
 let currentMode = 'drawing';
@@ -221,6 +237,10 @@ setColorPicker()
 
 //Setting brush size
 setBrushSize()
+
+// Setting canvas color
+setCanvasColor()
+
 // For uploading the image
 const reader = new FileReader()
 const inputFile = document.getElementById("imageFile");
