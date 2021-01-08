@@ -1,7 +1,7 @@
 // Navigation Bar Declaration
 let header = $(`
 <nav class="navbar navbar-expand-lg navbar-light nav1" style="z-index: 9999;margin-bottom:5px; .text-grey:hover{color: #adadad; }" id="navbar">
-  <a class="navbar-brand brand-logo" href="#"><img src="./assets/images/d2p.png" style="display:flex; float:left"></a>
+  <a class="navbar-brand brand-logo" style="padding-top: 0; padding-bottom: 0" href="#"><img src="./assets/images/logo.png"></a>
   <button class="navbar-toggler res-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -25,6 +25,9 @@ let header = $(`
       <li class="nav-item active">
         <b><a class="nav-link" href="editor.html">Editor</a></b>
       </li>
+      <li class="nav-item active">
+      <b><a class="nav-link" href="painter.html">Paint</a></b>
+    </li>
     </ul>
   </div>
 </nav>`);
@@ -35,8 +38,10 @@ let footer = $(`
 </footer>`);
 // Dynamically loading navigation bar and footer
 let bodyElement = $(`body`);
-bodyElement.prepend(header);
 bodyElement.append(footer);
+let navElement = $(`.nav-back`);
+navElement.append(header);
+
 
 //common side navbar call
 

@@ -4,7 +4,7 @@ myData = `The quick brown fox jumps over the lazy dog`;
 let img = [],
   myFont = [],
   myFonts = 15,
-  imgNum = 8,
+  imgNum = 14,
   fontNum = 0,
   pageNum = 0,
   xaxis = 20,
@@ -119,6 +119,27 @@ function changeMargin(x) {
   }
 }
 
+function changeBorder(z) {
+  if (z == 0) {
+    choosePage(8);
+  }
+  else if (z == 1) {
+    choosePage(9);
+  }
+  else if (z == 2) {
+    choosePage(10);
+  }
+  else if (z == 3) {
+    choosePage(11);
+  }
+  else if (z == 4) {
+    choosePage(12);
+  }
+  else if (z == 5) {
+    choosePage(13);
+  }
+}
+
 function updateFontSize(size){
   fontsize=float(size);
   document.getElementById('size-font').innerHTML = size;
@@ -147,4 +168,16 @@ $("#dataField").on("keydown", function (e) {// function event
   } else {
     if (e.which !== 8) e.preventDefault();//prevent user to enter more text
   }
+});
+
+let switches = document.querySelectorAll(".slider-btn");
+switches.forEach(button => {
+  button.addEventListener("click", () => {
+    let name = button.dataset.name;
+
+    if (document.querySelector(`.slider-open`) != null && !document.querySelector(`#${name}`).classList.contains(`slider-open`)    )
+      document.querySelector(`.slider-open`).classList.remove(`slider-open`);
+
+    document.querySelector(`#${name}`).classList.toggle(`slider-open`);
+  });
 });
