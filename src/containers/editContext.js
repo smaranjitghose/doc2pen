@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import DomToImage from "dom-to-image";
+
 export const EditContext = React.createContext();
 
 const EditContextProvider = (props) => {
-  const aImagePrefix = "../assests/pages/";
-  const [pageSrc, setPageSrc] = useState(`../assests/pages/blank1.png`);
+  const aImagePrefix = "../../assests/pages/";
+  const [pageSrc, setPageSrc] = useState(`${aImagePrefix}onlymargin.jpg`);
   const [isBody, setIsBody] = useState(true);
 
   const [headValues, setHeadValues] = useState({
@@ -35,8 +36,7 @@ const EditContextProvider = (props) => {
   };
 
   const pageSrcHandler = (e) => {
-    setPageSrc(`../assests/pages/blank1.png`);
-    console.log(`${aImagePrefix}${ImageNameMap[e.target.value]}`);
+    setPageSrc((`${ImageNameMap[e.target.value]}`));
   };
 
   const onValueChange = (e) => {
