@@ -5,8 +5,8 @@ import { EditContext } from "../../containers/editContext";
 
 const OutputComponent = () => {
   const editContext = useContext(EditContext);
-  const page = require(`../../assests/pages/onlymargin.jpg`);
- console.log(page);
+  const page = require(`../../assests/pages/${editContext.pageSrc}`);
+ console.log(`${editContext.pageSrc}`);
   return (
     <>
       
