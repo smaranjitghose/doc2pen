@@ -1,18 +1,4 @@
-<h1 align= "center"><b>Doc2Pen</b></h1>
-
------
-
-![Issues](https://img.shields.io/github/issues/smaranjitghose/doc2pen)
-![Pull Requests](https://img.shields.io/github/issues-pr/smaranjitghose/doc2pen?)
-![Forks](https://img.shields.io/github/forks/smaranjitghose/doc2pen)
-![Stars](https://img.shields.io/github/stars/smaranjitghose/doc2pen)
-![contributors](https://img.shields.io/github/contributors/smaranjitghose/doc2pen?style=flat)
-![HTML](https://img.shields.io/badge/Tech%20stack-HTML-orange)
-![CSS](https://img.shields.io/badge/Tech%20stack-CSS-blue)
-![Javascript](https://img.shields.io/badge/Tech%20stack-Javascript-yellow)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
-![License](https://img.shields.io/github/license/smaranjitghose/doc2pen)
-
+# Doc2Pen
 
 <p align="center">Don't you find it boring and real burdensome task when it comes to finish the assignments???? and THAT TOO BY WRITING THEM IN A PIECE OF PAPER?!?!?! OH DEAR LORD.😩😵</p>
 <p align="center"><img width=32% src="https://media.giphy.com/media/11BQtvA7R4qBk4/source.gif">
@@ -30,14 +16,12 @@
 <p align="center"> And here we are .....</p>
 <p align="center"><img width=30% src="https://media.giphy.com/media/UT5KSLhKwItfq6Yv6q/giphy.gif"></p>
 
------
 
 ## About 🤔💭:
 Doc2pen is an Open Source Software that converts your Typed Docs into Handwritten Docs.
 
-----
 
-<h2> Features✨✨ :</h2>
+## Features✨✨ :
 <ul>
 <li>You can change the colour of ink.</li>
 <li>Variety of Page styles to choose from.</li>
@@ -46,36 +30,16 @@ Doc2pen is an Open Source Software that converts your Typed Docs into Handwritte
 <li>Download/Export in .pdf, .jpeg, .jpg, .png format</li>
 </ul>
 
------
 
-<h2> What goes under the hood🧱⚙:</h2>
+## What goes under the hood🧱⚙:
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
 
-----
+## The geeks🤓 behind this initiative:
 
-<h2> Love for Open Source ❤🙌🏽:</h2>
-<ul>
-<li><b>Our Product Enhances : </b>As we know, <b>"Team Work leads to the Efficiency of any Task"</b> <br/>So, we kept it Open Source to build our Team, leading to an Efficient Solution to the Problem.</li>
-<li><b>Your Skills Enhance : </b> Increase your skillset through <b>Learning By Doing</b> method. We are a part of various Open Source Events, namely, <b>Hacktoberfest, Hakincodes</b>,<b>DevScript Winter of Code </b>and <b>PClub Summer Of Code</b></li>
-</ul>
-
-
------
-
-## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)🤝🏽🍀:
-<ul>
-<li>First time in open source??? We got your <a href="https://github.com/smriti1313/doc2pen/blob/master/.github/contribution.md">back.</li></a>
-</ul>
-
-
-------
-
-## The brains behind this🧠👀:
-
-#### Our hard working Project Maintainers👨‍🏫👨‍:
+#### Our Project Maintainers👨‍🏫:
 
 <p align="center">
 <img width=20% src="https://avatars2.githubusercontent.com/u/46641503?v=4">&ensp;&ensp;&ensp;
@@ -85,37 +49,107 @@ Doc2pen is an Open Source Software that converts your Typed Docs into Handwritte
 <a href="https://github.com/smaranjitghose">
 <h5 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 <a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h5></a>
-<br>
+
 #### Our valuable Contributors👩‍💻👨‍💻 :
 <a href="https://github.com/smaranjitghose/doc2pen/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=smaranjitghose/doc2pen" />
 </a>
 
------
-
-## Open Source Programs we have been associated with🔗🖥: 
+## Open Source Programs we have been associated with: 
 
 <p align="center">
-  
-<a href="https://hacktoberfest.digitalocean.com/"><img src="./assets/Readme_assets/hacktoberfest.png" width= "25%"/></a>
+<a href="https://hakincodes.tech/"><img src="./assets/Readme_assets/hakin_codes.png" width= "20%"/></a>
+<a href="https://scodein.tech/"><img src="./assets/Readme_assets/hacktoberfest.png" width= "20%" /></a>
 <a href="https://devscript.tech/woc/"><img src="./assets/Readme_assets/dwoc.png" width="20%"></a>
 </p>
 
------
 
-## License📜📜:
-[MIT](https://github.com/smriti1313/doc2pen/blob/master/LICENSE)
-<p align="center"><img width=30% src="https://media.giphy.com/media/fH3LbssRHBIxSu6vf7/giphy.gif">
-<img width=24% src="https://media.giphy.com/media/ejm8tkFonl8o8/giphy.gif"></p>
+## Contribution Guidelines[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)🤝🏽🍀:
+
+Are we missing any of your favorite features which you think you can add to it❓ Perhaps something you can enhance or fix a malicious bug❓ We invite you to contribute to this project and make it better!
+
+To start contributing, follow the below guidelines: 
+
+**1.**  Fork [this](https://github.com/smaranjitghose/doc2pen) repository.
+
+**2.**  Clone your forked copy of the project.
+
+```
+git clone --depth 1 https://github.com/<your_user_name>/awesome-portfolio-websites.git
+```
+<img src="./assets/Readme_assets/CloneRepo.png" width="500">
+
+**3.** Navigate to the project directory :file_folder: .
+
+```
+cd awesome-portfolio-websites
+```
+
+**4.** Add a reference(remote) to the original repository.
+
+```
+git remote add upstream https://github.com/smaranjitghose/awesome-portfolio-websites.git 
+```
+
+**5.** Check the remotes for this repository.
+
+```
+git remote -v
+```
+
+**6.** Always take a pull from the upstream repository to your master branch to keep it at par with the main project(updated repository).
+
+```
+git pull upstream master
+```
+
+**7.** Create a new branch.
+
+```
+git checkout -b <your_branch_name>
+```
+
+**8.** Perfom your desired changes to the code base.
+
+<p align="center"><img width=35% src="https://media2.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif?cid=ecf05e47pzi2rpig0vc8pjusra8hiai1b91zgiywvbubu9vu&rid=giphy.gif"></p>
+
+**9.** Track your changes:heavy_check_mark: .
+
+```
+git add . 
+```
+
+**10.** Commit your changes .
+
+```
+git commit -m "Relevant message"
+```
+
+**11.** Push the committed changes in your feature branch to your remote repo.
+
+```
+git push -u origin <your_branch_name>
+```
+
+**12.** To create a pull request, click on `compare and pull requests`. Please ensure you compare your feature branch to the desired branch of the repo you are suppose to make a PR to.
+
+<img src="./assets/Readme_assets/ComparePR.png" width=600>
+
+**13.** Add appropriate title and description to your pull request explaining your changes and efforts done.
 
 
------
+**14.** Click on `Create Pull Request`.
 
-## Code of conduct📝📝:
+<img src="./assets/Readme_assets/CreatePR.png" width=600>
 
-It'd be great if you read [this](https://github.com/smaranjitghose/doc2pen/blob/master/CODE_OF_CONDUCT.md) once.
 
-<p align="center"><img width=30% src="https://media.giphy.com/media/WoWm8YzFQJg5i/giphy.gif"></p>
+**15** Voila :exclamation: You have made a PR to the awesome-developer-portfolio project :boom: . Sit back patiently and relax while the project maintainers review your PR. Please understand at times the time can vary from a few hours to a few days
 
------
+<p align="center"><img src="https://media.giphy.com/media/5mCQOcUfywmyI/giphy.gif" width=35%></p>
 
+
+## Code of Conduct
+<p align="center"><img width=35% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif"></p>
+
+## License 
+<p align="center"><img width=35% src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif"></p>

@@ -2,17 +2,19 @@ import { useContext } from "react";
 
 import classes from "./Output.module.css";
 import { EditContext } from "../../containers/editContext";
-import page from "../../assests/pages/blank1.png";
+
 const OutputComponent = () => {
   const editContext = useContext(EditContext);
-
+  const page = require('./ruled1.png');
+ console.log(`${editContext.pageSrc}`);
   return (
     <>
+      
       <div className={`${classes.wrapper} col-11 col-lg-8 mx-auto mt-4 p-2`}>
         <div id="outputPage" className={`col-12 mx-auto px-0`}>
           <div className={`${classes.imgContainer} col-12 mx-auto px-0`}>
             <img
-              src={page}
+              src={page.default}
               alt="editor"
               className="mx-auto px-0"
               Width="100%"
