@@ -71,11 +71,9 @@ Doc2pen is an Open Source Software that converts your Typed Docs into Handwritte
 </ul>
 
 
-------
+## The geeks🤓 behind this initiative:
 
-## The brains behind this🧠👀:
-
-#### Our hard working Project Maintainers👨‍🏫👨‍:
+#### Our hard working Project Maintainers👨‍🏫:
 
 <p align="center">
 <img width=20% src="https://avatars2.githubusercontent.com/u/46641503?v=4">&ensp;&ensp;&ensp;
@@ -85,37 +83,22 @@ Doc2pen is an Open Source Software that converts your Typed Docs into Handwritte
 <a href="https://github.com/smaranjitghose">
 <h5 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 <a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h5></a>
-<br>
+
 #### Our valuable Contributors👩‍💻👨‍💻 :
 <a href="https://github.com/smaranjitghose/doc2pen/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=smaranjitghose/doc2pen" />
 </a>
 
------
-
-## Open Source Programs we have been associated with🔗🖥: 
+## Open Source Programs we have been a associated with: 
 
 <p align="center">
-  
-<a href="https://hacktoberfest.digitalocean.com/"><img src="./assets/Readme_assets/hacktoberfest.png" width= "25%"/></a>
-<a href="https://devscript.tech/woc/"><img src="./assets/Readme_assets/dwoc.png" width="20%"></a>
+<a href="https://hakincodes.tech/"><img src="./assets/Readme_Assets/hakin_codes.png" width= "20%"/></a>
+<a href="https://scodein.tech/"><img src="./assets/Readme_Assets/hacktoberfest.png" width= "20%" /></a>
+<a href="https://devscript.tech/woc/"><img src="./assets/Readme_Assets/dwoc.png" width="20%"></a>
 </p>
 
------
+## Code of Conduct
+<p align="center"><img width=35% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif"></p>
 
-## License📜📜:
-[MIT](https://github.com/smriti1313/doc2pen/blob/master/LICENSE)
-<p align="center"><img width=30% src="https://media.giphy.com/media/fH3LbssRHBIxSu6vf7/giphy.gif">
-<img width=24% src="https://media.giphy.com/media/ejm8tkFonl8o8/giphy.gif"></p>
-
-
------
-
-## Code of conduct📝📝:
-
-It'd be great if you read [this](https://github.com/smaranjitghose/doc2pen/blob/master/CODE_OF_CONDUCT.md) once.
-
-<p align="center"><img width=30% src="https://media.giphy.com/media/WoWm8YzFQJg5i/giphy.gif"></p>
-
------
-
+## License 
+<p align="center"><img width=35% src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif"></p>
