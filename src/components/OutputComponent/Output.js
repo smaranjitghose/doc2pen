@@ -5,7 +5,7 @@ import { EditContext } from "../../containers/editContext";
 
 const OutputComponent = () => {
   const editContext = useContext(EditContext);
-  const page = require(`../../assests/pages/${editContext.pageSrc}`);
+  const page = require('./ruled1.png');
  console.log(`${editContext.pageSrc}`);
   return (
     <>
