@@ -1,6 +1,5 @@
-<h1 align= "center"><b>Doc2Pen</b></h1>
+# Doc2Pen
 
------
 
 ![Issues](https://img.shields.io/github/issues/smaranjitghose/doc2pen)
 ![Pull Requests](https://img.shields.io/github/issues-pr/smaranjitghose/doc2pen?)
@@ -30,14 +29,12 @@
 <p align="center"> And here we are .....</p>
 <p align="center"><img width=30% src="https://media.giphy.com/media/UT5KSLhKwItfq6Yv6q/giphy.gif"></p>
 
------
 
 ## About 🤔💭:
 Doc2pen is an Open Source Software that converts your Typed Docs into Handwritten Docs.
 
-----
 
-<h2> Features✨✨ :</h2>
+## Features✨✨ :
 <ul>
 <li>You can change the colour of ink.</li>
 <li>Variety of Page styles to choose from.</li>
@@ -46,22 +43,12 @@ Doc2pen is an Open Source Software that converts your Typed Docs into Handwritte
 <li>Download/Export in .pdf, .jpeg, .jpg, .png format</li>
 </ul>
 
------
 
-<h2> What goes under the hood🧱⚙:</h2>
+## What goes under the hood🧱⚙:
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
-
-----
-
-<h2> Love for Open Source ❤🙌🏽:</h2>
-<ul>
-<li><b>Our Product Enhances : </b>As we know, <b>"Team Work leads to the Efficiency of any Task"</b> <br/>So, we kept it Open Source to build our Team, leading to an Efficient Solution to the Problem.</li>
-<li><b>Your Skills Enhance : </b> Increase your skillset through <b>Learning By Doing</b> method. We are a part of various Open Source Events, namely, <b>Hacktoberfest, Hakincodes</b>,<b>DevScript Winter of Code </b>and <b>PClub Summer Of Code</b></li>
-</ul>
-
 
 ## The geeks🤓 behind this initiative:
 
