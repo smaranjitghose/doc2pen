@@ -141,6 +141,125 @@
           </li>
         </div>
       </ul>
+
+    <ul class="navbar-nav">
+
+      <div class="flex-n-wrap nav-bar">
+        <!--- Drop Down Menu for Ink  Color--->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white menu-first" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Change Ink
+          </a>
+          <div class="dropdown-menu dropdown1" aria-labelledby="navbarDropdown" style="z-index: 4">
+            <a onclick="chooseBlue()" class="blue-text  dropdown-item" href="#">Blue</a>
+            <a onclick="chooseBlack()" class="black-text dropdown-item" href="#">Black</a>
+            <a onclick="chooseRed()" class="red-text   dropdown-item" href="#">Red</a>
+            <a onclick="chooseGreen()" class="green-text dropdown-item" href="#">Green</a>
+            <a onclick="choosePink()" class="pink-text dropdown-item" href="#">Pink</a>
+          </div>
+        </li>
+
+        <!--- Drop Down Menu for fonts--->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose Font
+          </a>
+          <div class="dropdown-menu text-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
+            <a onclick="chooseFont(0)" class="dropdown-text dropdown-item" href="#">Tarale</a>
+            <a onclick="chooseFont(1)" class="dropdown-text dropdown-item" href="#">Liu Jian Mao Cao</a>
+            <a onclick="chooseFont(2)" class="dropdown-text dropdown-item" href="#">Caveat</a>
+            <a onclick="chooseFont(3)" class="dropdown-text dropdown-item" href="#">Homemade Apple</a>
+            <a onclick="chooseFont(4)" class="dropdown-text dropdown-item" href="#">Dewebeauty Demo</a>
+            <a onclick="chooseFont(5)" class="dropdown-text dropdown-item" href="#">Antro Vectra</a>
+            <a onclick="chooseFont(6)" class="dropdown-text dropdown-item" href="#">Muiden Castle Script</a>
+            <a onclick="chooseFont(7)" class="dropdown-text dropdown-item" href="#">Simple font</a>
+            <a onclick="chooseFont(8)" class="dropdown-text dropdown-item" href="#">Messed font</a>
+            <a onclick="chooseFont(9)" class="dropdown-text dropdown-item" href="#">Curved font</a>
+            <a onclick="chooseFont(10)" class="dropdown-text dropdown-item" href="#">Small font</a>
+            <a onclick="chooseFont(11)" class="dropdown-text dropdown-item" href="#">Clear font</a>
+            <a onclick="chooseFont(12)" class="dropdown-text dropdown-item" href="#">Thin messed font</a>
+            <a onclick="chooseFont(13)" class="dropdown-text dropdown-item" href="#">Thin font</a>
+            <a onclick="chooseFont(14)" class="dropdown-text dropdown-item" href="#">Poppins</a>
+          </div>
+        </li>
+
+        <!--- Drop Down Menu for Page types --->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose Page
+          </a>
+          <div class="dropdown-menu dropdown4" aria-labelledby="navbarDropdown" style="z-index: 4">
+            <a onclick="choosePage(0)" class="dropdown-text dropdown-item" href="#">Default</a>
+            <a onclick="choosePage(1)" class="dropdown-text dropdown-item" href="#">Ruled with margin(thick-lines)</a>
+            <a onclick="choosePage(2)" class="dropdown-text dropdown-item" href="#">Ruled Designer</a>
+            <a onclick="choosePage(3)" class="dropdown-text dropdown-item" href="#">Plain Designer</a>
+            <a onclick="choosePage(4)" class="dropdown-text dropdown-item" href="#">Ruled with margin(thin-lines)</a>
+            <a onclick="choosePage(5)" class="dropdown-text dropdown-item" href="#">Ruled without margin</a>
+            <a onclick="choosePage(6)" class="dropdown-text dropdown-item" href="#">Plain white texture</a>
+            <a onclick="choosePage(7)" class="dropdown-text dropdown-item" href="#">Plain grey texture</a>
+          </div>
+        </li>
+
+        <!--- Border Menu --->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Border
+          </a>
+          <div class="dropdown-menu dropdown4" aria-labelledby="navbarDropdown" style="z-index: 4">
+            <a onclick="changeBorder(0)" class="dropdown-text dropdown-item" href="#">Thin</a>
+            <a onclick="changeBorder(1)" class="dropdown-text dropdown-item" href="#">Bold</a>
+            <a onclick="changeBorder(2)" class="dropdown-text dropdown-item" href="#">Double</a>
+            <a onclick="changeBorder(3)" class="dropdown-text dropdown-item" href="#">Red</a>
+            <a onclick="changeBorder(4)" class="dropdown-text dropdown-item" href="#">Blue</a>
+            <a onclick="changeBorder(5)" class="dropdown-text dropdown-item" href="#">Green</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+
+          <!-- Font size --->
+        <li class="nav-item font-size-container dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Font Size: <span class="word" id="size-font">30</span></a>
+          <div id="font-size-select" class="dropdown-menu text-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
+            <!-- size values will go here -->
+          </div>
+        </li>
+
+        <!--- Importing from a text file --->
+        <li class="nav-item dropdown">
+            <input type="file" id="import_file" name="file1" style="display:none" />
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown import_file" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Import From .txt
+            </a>
+            <div class="dropdown-menu dropdown4" aria-labelledby="navbarDropdown" style="z-index: 4">
+              <a onclick="import_file_fun()" class="dropdown-text dropdown-item" href="#">For .txt</a>
+              <a onclick="import_file_fun()" class="dropdown-text dropdown-item" href="#">For .doc</a>
+            </div>
+          </li>
+
+        <!--- Download Document --->
+        <li class="nav-item">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="downloadBtn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Download</a>
+          <div class="dropdown-menu dropdown4 download-dropdown" aria-labelledby="navbarDropdown" style="z-index: 4">
+            <a onclick="save(str(pageNum)+'.png')" class="dropdown-text dropdown-item" href="#">PNG</a>
+            <a onclick="save(str(pageNum)+'.jpg')" class="dropdown-text dropdown-item" href="#">JPG</a>
+            <a onclick="save(str(pageNum)+'.jpeg')" class="dropdown-text dropdown-item" href="#">JPEG</a>
+            <a onclick="save(str(pageNum)+'.pdf')" class="dropdown-text dropdown-item" href="#">PDF</a>
+          </div>
+        </li>
+
+        <!--- Word Count --->
+        <li class="nav-item">
+          <a class="nav-link text-white disabled">Word Count: <span class="word" id="words-strt">0</span></a>
+        </li>
+
+        <!--- No of words left--->
+        <li class="nav-item">
+          <a class="nav-link text-white disabled">Word Left : <span class="word" id="count-words">10000</span></a>
+        </li>
+      </div>
+    </ul>
+
   </nav>
   <!--Menu Bar ends ends here-->
 
@@ -227,23 +346,55 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/editor.js"></script>
   <script>
-    //function to upload txt file
-    var fileUploader = document.getElementById("fileUploader");
-    function uploaderFunction() { fileUploader.click(); };
-    fileUploader.addEventListener("change", function readfiles(files) {
-      if (this.files && this.files[0]) {
-        var myFile = this.files[0];
-        document.querySelector("#uploadedFname").innerText = myFile.name;
-        var reader = new FileReader();
+    //function to upload txt file  
+    let input = document.getElementById('import_file')
+    let textarea = document.querySelector('textarea')
 
-        reader.addEventListener('load', function (e) {
-          document.querySelector("#dataField").value = e.target.result;
-          $("#dataField").keyup();
-        });
+    function import_file_fun() { input.click(); };
 
-        reader.readAsBinaryString(myFile);
-      }
-    });</script>
+    input.addEventListener('change', () => {
+        let files = input.files;
+        if (files.length == 0) return;
+        const file = files[0];
+        let reader = new FileReader();
+        reader.onload = (e) => {
+            let rtf = convertToPlain(e.target.result);
+            textarea.value = rtf;
+            $("#dataField").keyup();
+        };
+        reader.onerror = (e) => alert(e.target.error.name);
+        reader.readAsText(file);
+    });
+
+    function convertToPlain(rtf) {
+        rtf = rtf.replace(/\\par[d]?/g, "");
+        rtf = rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "");
+        // rtf = rtf.replace(/\n/ig, " ");
+        rtf = rtf.replace(/\\/ig,"");
+        rtf = rtf.replace(/\*/ig, "");
+        rtf = rtf.replace(/decimal.|tightenfactor0|eftab720|HYPERLINK|irnatural/ig, "");
+        rtf = rtf.replace(/irnaturaltightenfactor0|000000/ig, "");
+        rtf = rtf.replace(/�|ࡱ|p#|#|,|%|@|\$|~/ig, "");
+        return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
+    }
+
+    // var fileUploader = document.getElementById("fileUploader");
+    // function uploaderFunction() { fileUploader.click(); };
+    // fileUploader.addEventListener("change", function readfiles(files) {
+    //   if (this.files && this.files[0]) {
+    //     var myFile = this.files[0];
+    //     document.querySelector("#uploadedFname").innerText = myFile.name;
+    //     var reader = new FileReader();
+    //
+    //     reader.addEventListener('load', function (e) {
+    //       document.querySelector("#dataField").value = e.target.result;
+    //       $("#dataField").keyup();
+    //     });
+    //
+    //     reader.readAsBinaryString(myFile);
+    //   }
+    // });
+  </script>
 </body>
 
 </html>
