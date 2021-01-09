@@ -1,18 +1,5 @@
 # Doc2Pen
 
-
-![Issues](https://img.shields.io/github/issues/smaranjitghose/doc2pen)
-![Pull Requests](https://img.shields.io/github/issues-pr/smaranjitghose/doc2pen?)
-![Forks](https://img.shields.io/github/forks/smaranjitghose/doc2pen)
-![Stars](https://img.shields.io/github/stars/smaranjitghose/doc2pen)
-![contributors](https://img.shields.io/github/contributors/smaranjitghose/doc2pen?style=flat)
-![HTML](https://img.shields.io/badge/Tech%20stack-HTML-orange)
-![CSS](https://img.shields.io/badge/Tech%20stack-CSS-blue)
-![Javascript](https://img.shields.io/badge/Tech%20stack-Javascript-yellow)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
-![License](https://img.shields.io/github/license/smaranjitghose/doc2pen)
-
-
 <p align="center">Don't you find it boring and real burdensome task when it comes to finish the assignments???? and THAT TOO BY WRITING THEM IN A PIECE OF PAPER?!?!?! OH DEAR LORD.😩😵</p>
 <p align="center"><img width=32% src="https://media.giphy.com/media/11BQtvA7R4qBk4/source.gif">
 <img width=20% src="https://media.giphy.com/media/2UIcmK4pn7rYNLRboG/giphy.gif"></p>
