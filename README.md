@@ -92,9 +92,9 @@ Doc2pen is an Open Source Software that converts your Typed Docs into Handwritte
 ## Open Source Programs we have been a associated with: 
 
 <p align="center">
-<a href="https://hakincodes.tech/"><img src="./assets/Readme_Assets/hakin_codes.png" width= "20%"/></a>
-<a href="https://scodein.tech/"><img src="./assets/Readme_Assets/hacktoberfest.png" width= "20%" /></a>
-<a href="https://devscript.tech/woc/"><img src="./assets/Readme_Assets/dwoc.png" width="20%"></a>
+<a href="https://hakincodes.tech/"><img src="./assets/Readme_assets/hakin_codes.png" width= "20%"/></a>
+<a href="https://scodein.tech/"><img src="./assets/Readme_assets/hacktoberfest.png" width= "20%" /></a>
+<a href="https://devscript.tech/woc/"><img src="./assets/Readme_assets/dwoc.png" width="20%"></a>
 </p>
 
 ## Code of Conduct
