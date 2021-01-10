@@ -8,7 +8,8 @@
   .footer-div {
     z-index: 150;
     margin-top: 2rem;
-    background-image: linear-gradient(to left, rgb(127, 206, 197) , rgb(20, 85, 123) 74%);
+    background-color: black;
+    /* background-image: linear-gradient(to left, rgb(127, 206, 197) , rgb(20, 85, 123) 74%); */
     height: 3.1rem;
   }
   
