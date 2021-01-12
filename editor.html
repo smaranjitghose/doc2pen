@@ -78,14 +78,14 @@
             Choose Page
           </a>
           <div class="dropdown-menu dropdown4" aria-labelledby="navbarDropdown" style="z-index: 4">
-            <a onclick="choosePage(0)" class="dropdown-text dropdown-item" href="#">Default</a>
-            <a onclick="choosePage(1)" class="dropdown-text dropdown-item" href="#">Ruled with margin(thick-lines)</a>
-            <a onclick="choosePage(2)" class="dropdown-text dropdown-item" href="#">Ruled Designer</a>
-            <a onclick="choosePage(3)" class="dropdown-text dropdown-item" href="#">Plain Designer</a>
-            <a onclick="choosePage(4)" class="dropdown-text dropdown-item" href="#">Ruled with margin(thin-lines)</a>
-            <a onclick="choosePage(5)" class="dropdown-text dropdown-item" href="#">Ruled without margin</a>
-            <a onclick="choosePage(6)" class="dropdown-text dropdown-item" href="#">Plain white texture</a>
-            <a onclick="choosePage(7)" class="dropdown-text dropdown-item" href="#">Plain grey texture</a>
+            <a onclick="defaultPage()" class="dropdown-text dropdown-item" href="#">Default</a>
+            <a onclick="ruledWithMarginThick()" class="dropdown-text dropdown-item" href="#">Ruled with margin(thick-lines)</a>
+            <a onclick="ruledDesigner()" class="dropdown-text dropdown-item" href="#">Ruled Designer</a>
+            <a onclick="plainDesigner()" class="dropdown-text dropdown-item" href="#">Plain Designer</a>
+            <a onclick="ruledWithMarginThin()" class="dropdown-text dropdown-item" href="#">Ruled with margin(thin-lines)</a>
+            <a onclick="ruledWithoutMargin()" class="dropdown-text dropdown-item" href="#">Ruled without margin</a>
+            <a onclick="plainWhiteTexture()" class="dropdown-text dropdown-item" href="#">Plain white texture</a>
+            <a onclick="plainGreyTexture()" class="dropdown-text dropdown-item" href="#">Plain grey texture</a>
           </div>
         </li>
 
@@ -227,10 +227,71 @@
         <input type="range" min="1" max="200" value="20" oninput="yaxis=float(this.value)" class="slidos" id="rangeYaxis" />
       </div>
         <div id="contributing">
-          <h2 class="loading-tag">Loading...</h2>
+          <h2 id="loading-tag">Loading...</h2>
+          <div id="inner">
+            <div id="inside-inner"></div>
+          </div>
           <!--dynamic canvas-->
         </div>
     </div>
+
+    <script>
+      function reset(){
+        document.getElementById("contribute-wrapper").style = 'background-color: #FFFFFF00';
+        document.getElementById("inner").style = 'background-color: #FFFFFF00; padding: 0px';
+        document.getElementById("contributing").style = 'border: none; background-color: #FFFFFF00; padding: 0px; margin-top: 0px';
+        document.getElementById("inside-inner").style = 'background-image: #FFFFFF00; padding: 0px';
+      }
+
+      function defaultPage(){
+        reset();
+        document.getElementById("inner").style = 'display: none';
+      }
+
+      function ruledWithMarginThick(){
+        reset();
+        document.getElementById("contribute-wrapper").style = 'background-image: repeating-linear-gradient(white, white 25px, #9198e5 29px, #9198e5 27px)';
+        document.getElementById("contributing").style = 'margin-top: 16px; width: 3px; height: 506px; background: red; margin-left: 70px';
+      }
+
+      function ruledDesigner(){
+        reset();
+        document.getElementById("contributing").style = 'border: 2px #34495E; background-color: #808000; padding: 10px; margin-top: 17px';
+        document.getElementById("inner").style = 'background-color: #1A5276; padding: 10px';
+        document.getElementById("inside-inner").style = 'background-image: repeating-linear-gradient(#D1F2EB, #D1F2EB 25px, #F5CBA7 29px, #F5CBA7 27px); padding: 237px';
+      }
+
+      function plainDesigner(){
+        reset();
+        document.getElementById("contributing").style = 'border: 2px #34495E; background-color: #808000; padding: 10px; margin-top: 17px';
+        document.getElementById("inner").style = 'background-color: #1A5276; padding: 10px';
+        document.getElementById("inside-inner").style = 'background-color: #D1F2EB; padding: 237px';
+      }
+
+      function ruledWithMarginThin(){
+        reset();
+        document.getElementById("contribute-wrapper").style = 'background-image: repeating-linear-gradient(white, white 25px, #9198e5 26px, #9198e5 26px)';
+        document.getElementById("contributing").style = 'margin-top: 16px; width: 3px; height: 504px; background: red; margin-left: 70px';
+      }
+
+      function ruledWithoutMargin(){
+        reset();
+        document.getElementById("contribute-wrapper").style = 'background-image: repeating-linear-gradient(white, white 25px, #9198e5 26px, #9198e5 27px)';
+      }
+
+      function plainWhiteTexture(){
+        reset();
+        document.getElementById("contribute-wrapper").style = 'background-color: white';
+      }
+
+      function plainGreyTexture(){
+        reset();
+        document.getElementById("contribute-wrapper").style = 'background-color: #E5E7E9';
+      }
+
+    </script>
+    
+
   </div>
   <!--Footer is loaded dynamically from main.js-->
 
