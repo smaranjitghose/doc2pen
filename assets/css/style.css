@@ -277,6 +277,10 @@ div#heading h2 {
   font-size: 2.5rem;
 }
 
+.wave-hand{
+  width: 22px;
+  margin-bottom: 10px;
+}
 /* contact-and-info-container styles */
 div#contact-and-info-container {
   margin-top: 8vh;
@@ -365,7 +369,25 @@ div#emojis {
   display: flex;
   width: 40%;
   justify-content: space-between;
+  margin-top: 10px;
+  user-select: none;
 }
+
+.radio {
+  display: none;
+}
+.radio ~ span {
+  font-size: 1.2rem;
+  filter: grayscale(10);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.radio:checked ~ span {
+  filter: grayscale(0);
+  font-size: 1.25rem;
+}
+
 
 /* styles on submit button */
 form input[type="submit"] {

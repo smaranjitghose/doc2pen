@@ -146,7 +146,7 @@
               <div id="info">
                 <div id="general-info">
                   <h4>Have a doubt?</h4>
-                  <p>Contact us your query or just send a hello.</p><br>
+                  <p>Contact us your query or just send a hello. <img class ="wave-hand" src="assets\images\hand.gif"></p><br>
                   <h4>Find Us Below:</h4>
                 </div>
                 <div id="googleMap"></div> 
@@ -160,14 +160,43 @@
                   <input type="tel" placeholder="Phone (optional)" />
                   <div class="experience">
                     <span>Rate your experience:</span>
+
+                    <!-- interactive emoji section -->
                       <div id="emojis">
-                        <span class="emoji">&#128553;</span>
-                        <span class="emoji">&#128542;</span>
-                        <span class="emoji">&#128528;</span>
-                        <span class="emoji">&#128522;</span>
-                        <span class="emoji">&#128516;</span>
+                        <div >
+                          <label for="1">
+                            <input class="radio" type="radio" name="feedback" id="1" value="1">
+                            <span>😞</span>
+                          </label>
+                        </div>
+                        <div >
+                          <label for="2">
+                            <input class="radio" type="radio" name="feedback" id="2" value="2">
+                            <span>😐</span>
+                          </label>
+                        </div>
+                        <div>
+                          <label for="3">
+                            <input class="radio" type="radio" name="feedback" id="3" value="3">
+                            <span>😁</span>
+                          </label>
+                        </div>
+                        <div>
+                          <label for="4">
+                            <input class="radio" type="radio" name="feedback" id="4" value="4">
+                            <span>😊</span>
+                          </label>
+                        </div>
+                        <div>
+                          <label for="5">
+                            <input class="radio" type="radio" name="feedback" id="5" value="5">
+                            <span>😍</span>
+                          </label>
+                        </div>
                       </div>
                   </div>
+
+
                   <textarea placeholder="Message..."></textarea>
                   <input type="submit" value="Send" />
                 </form>
