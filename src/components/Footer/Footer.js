@@ -6,10 +6,11 @@ import emoji from "react-easy-emoji";
 
 export default function Footer(props) {
   return (
-    <div className="footer-div">
+    //py-2 for padding
+    <div className="footer-div py-2">
       <Fade>
         <p className="footer-text">
-        {emoji("Made with ❤️ by Open Source")} 
+        {emoji("Made with ❤️ in India for the students of the world.")} 
         </p>
         {/* <ToggleSwitch theme={props.theme} onToggle={props.onToggle}/> */}
       </Fade>
