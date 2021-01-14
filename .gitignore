@@ -3,7 +3,7 @@
 /.pnp
 /build
 .pnp.js
-
+.eslintcache
 # testing
 /coverage
 
