@@ -1,0 +1,15 @@
+.footer-text {
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+  
+  .footer-div {
+    z-index: 150;
+    margin-top: 2rem;
+    background-color: black;
+    /* background-image: linear-gradient(to left, rgb(127, 206, 197) , rgb(20, 85, 123) 74%); */
+    height: 3.1rem;
+  }
+  
