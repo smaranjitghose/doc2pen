@@ -6,7 +6,7 @@ function Team() {
 
     const maintainerSection = [
         {
-          image: "/images/team/smaranjit_ghose.png",
+          image: require('../../../assests/images/team/smaranjit_ghose.png'),
           name: "Smaranjit Ghose",
           title: "Lead Developer",
           github: "https://github.com/smaranjitghose",
@@ -14,7 +14,7 @@ function Team() {
           imgclass: "image_1"
         },
         {
-          image: "/images/team/anush_bhatia.png",
+          image: require('../../../assests/images/team/anush_bhatia.png'),
           name: "Anush Bhatia",
           title: "Lead Developer",
           github: "https://github.com/anushbhatia",
