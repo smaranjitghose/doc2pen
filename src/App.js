@@ -7,12 +7,14 @@ import Footer from "./components/Footer/Footer";
 import EditContextProvider from "./containers/editContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header/Header";
+import {BrowserRouter as Router } from "react-router-dom";
 export default class App extends Component {
 
 
   render() {
     return (
       <>
+        <Router>
         <Header />
         <div>
           <a
@@ -34,7 +36,8 @@ export default class App extends Component {
             </div>
           </EditContextProvider>
         </div>
-        <Footer />
+          <Footer />
+          </Router>
       </>
     );
   }
