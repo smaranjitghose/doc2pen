@@ -1,0 +1,294 @@
+.Team {
+    padding: 0 20px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.projectMaintainers {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profile_container {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    transition: 1s all ease;
+}
+  
+.profile_container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 1;
+    transition: all 0.5s ease-in;
+}
+
+.centeralign {
+    display: flex;
+    justify-content: center;
+}
+  
+.image_1,
+.image_2 {
+    padding-bottom: 20px;
+}
+
+.image_1 .profile_container::before {
+    background: url("../../../assests/images/team/smaranjit_ghose.png") no-repeat center;
+    background-size: cover;
+}
+  
+.image_2 .profile_container::before {
+    background: url("../../../assests/images/team/anush_bhatia.png") no-repeat center;
+    background-size: cover;
+}
+  
+.profile_container:hover:before {
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.profile_wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .profile_wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+    transform: skew(30deg) translateX(125%);
+    opacity: 0.9;
+    transition: all 0.8s ease;
+  }
+  
+  .profile_wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+    transform: skew(30deg) translateX(-125%);
+    opacity: 0.9;
+    transition: all 0.8s ease;
+  }
+  
+  .profile_container:hover .profile_wrapper::after {
+    transform: skew(30deg) translateX(125%);
+    background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+  }
+  
+  .profile_container:hover .profile_wrapper::before {
+    transform: skew(30deg) translateX(-125%);
+    background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+  }
+  
+  /* Profile Card */
+  .profile_card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 10px;
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .profile_container:hover .profile_card {
+    opacity: 1;
+    transition: all 0.6s ease;
+    transition-delay: 0.2s;
+  }
+  
+  /* Profile Picture */
+  .profile_card img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 1rem 0;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(to right, green, gold);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    position: relative;
+  }
+  
+  .profile_card h4 {
+    line-height: 1.2;
+    font-size: 2rem;
+    color: #222;
+  }
+  .profile_card h5 {
+    color: #444;
+    font-size: 1.5rem;
+  }
+  
+  .profile_card p {
+    line-height: 1.2;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  /* Profile Icons */
+  .profile_card .icons {
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+    font-size: 1.8rem;
+    margin: 15px 0;
+  }
+  
+  .icons a {
+    color: #333;
+  }
+  
+  .profile_card .icons a:hover {
+    background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+  }
+  
+
+/* *************************************** */
+/* Contributors */
+
+.position_relative {
+    position: relative;
+}
+
+.position_absolute {
+    position: absolute;
+}
+
+.display_inline_block {
+    display: inline-block;
+}
+
+.grid_wd_100 {
+    width: 100%;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.va_top {
+    vertical-align: top;
+}
+
+.pad {
+    padding: 1em !important;
+}
+
+.team_container {
+    overflow: hidden;
+    text-align: -webkit-center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 15rem;
+}
+
+.figure {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 25%;
+    overflow: hidden;
+    width: 170px;
+    height: 170px;
+    margin: 1rem;
+}
+  
+.figure img {
+    -webkit-filter: contrast(125%) brightness(100%) grayscale(100%);
+    -moz-filter: contrast(125%) brightness(100%) grayscale(100%);
+    -o-filter: contrast(125%) brightness(100%) grayscale(100%);
+    -ms-filter: contrast(125%) brightness(100%) grayscale(100%);
+    filter: contrast(125%) brightness(100%) grayscale(100%);
+    -ms-transition: filter 0.3s ease-in-out;
+    -o-transition: filter 0.3s ease-in-out;
+    -moz-transition: filter 0.3s ease-in-out;
+    -webkit-transition: filter 0.3s ease-in-out;
+    transition: filter 0.3s ease-in-out;
+}
+  
+.figure figcaption {
+    bottom: -100%;
+    opacity: 0;
+    background: rgba(245, 160, 30, 0.7);
+    text-shadow: 0 0 1px #000;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.figure figcaption div:first-child {
+    font-size: 120%;
+    text-transform: uppercase;
+}
+  
+.figure figcaption div:last-child {
+    font-size: 90%;
+    line-height: 110%;
+}
+  
+.figure:hover img {
+    -webkit-filter: contrast(125%) brightness(100%) grayscale(0);
+    -moz-filter: contrast(125%) brightness(100%) grayscale(0);
+    -o-filter: contrast(125%) brightness(100%) grayscale(0);
+    -ms-filter: contrast(125%) brightness(100%) grayscale(0);
+    filter: contrast(125%) brightness(100%) grayscale(0);
+}
+  
+.figure:hover figcaption {
+    bottom: 0;
+    opacity: 1;
+}
+  
+.social_icon {
+    text-shadow: 0 0 1px #000;
+    font-size: 1.2rem;
+    margin-left: 5px;
+    color: black;
+    cursor: pointer;
+}
+  
+.social_icon:hover {
+    text-decoration: none;
+    color: black;
+    opacity: 0.8;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 0.7rem !important;
+  }
