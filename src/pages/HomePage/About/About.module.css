@@ -1,0 +1,61 @@
+.About {
+    margin-top: 3rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.title {
+    color: #4e89ae;
+    font-size: 3rem;
+}
+
+.line {
+    font-size: 1.3rem;
+    width: 70%;
+    margin: 1rem;
+}
+
+.steps {
+    margin-top: 3rem;
+    width: 70%;
+}
+
+.step {
+    display: flex;
+    justify-content: center;
+    margin: 4rem 0;
+}
+
+.step_reverse {
+    flex-direction: row-reverse;
+}
+
+.step img {
+    width: 270px;
+}
+
+.step_text {
+    padding: 0 3rem;
+}
+
+.step_title {
+    font-size: 2.5rem;
+    color: #4e89ae;
+    margin-bottom: 3rem;
+}
+
+.step_content {
+    font-size: 1.5rem;
+}
+
+.open_source {
+    font-weight: bold;
+    color: #4e89ae;
+    font-size: 1.5rem;
+    padding: 1rem 15rem;
+    margin: 3rem 0;
+}

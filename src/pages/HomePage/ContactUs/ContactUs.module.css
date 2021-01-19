@@ -1,0 +1,117 @@
+.ContactUs {
+    text-align: center;
+}
+
+.heading {
+    font-size: 2.5rem;
+}
+
+.contact_and_info_container {
+    padding: 30px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+    background: rgb(224, 228, 235);
+    margin: auto;
+    margin-top: 8vh;
+}
+
+.general_info {
+    text-align: left;
+}
+
+.general_info p {
+    margin-top: 5px;
+}
+
+.googleMap {
+    height: 320px;
+    /* The height is 320 pixels */
+    width: 550px;
+    /* The width is 550px */
+    border-radius: 4px;
+    background-color: antiquewhite;
+    margin: 1rem;
+    border-radius: 11px;
+}
+
+.contact_form {
+    width: 40%;
+}
+
+.contact_form input:focus {
+    border: 1px solid white;
+    border-radius: 6px;
+}
+
+.contact_form input {
+    font-size: 14px;
+    padding: 5px;
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+.contact_form input::placeholder {
+    font-size: 13px;
+}
+
+.contact_form textarea {
+    resize: none;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 0px solid transparent;
+    outline: none;
+    height: 15vh;
+}
+
+.contact_form input[type="submit"] {
+    border: 1px solid transparent;
+    width: fit-content;
+    padding: 3px 1rem;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact_form input[type="submit"]:hover {
+    background: rgb(236, 236, 236);
+}
+
+.contact_form_container {
+    border: 1px solid transparent;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    background: #14557b;
+    height: 70vh;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.experience {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.experience span {
+    color: white;
+    font-weight: bold;
+}
+
+.emojis {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.emoji {
+    cursor: pointer;
+}
