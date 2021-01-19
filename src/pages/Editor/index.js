@@ -25,7 +25,9 @@ function Editor() {
             top: "1rem",
           }}
           className="col-2 col-md-1 d-none d-lg-block"
-        ></a>
+        >
+          dscommunity
+        </a>
         <EditContextProvider>
           <div id="app" style={{ height: "100%" }}>
             <div className="row col-12 px-0 mx-0 mt-auto" style={{ height: "100%" }}>
