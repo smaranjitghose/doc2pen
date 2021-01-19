@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./Header.css";
 import { Fade } from "react-reveal";
+import { Link } from "react-router-dom";
 class Header extends Component {
   render() {
     return (
-
       <Fade top duration={100} distance="20px">
         <div>
           <header className="header">
@@ -21,7 +21,34 @@ class Header extends Component {
             </label>
             <ul className="menu">
               <li>
+                <Link to="/home">
                 Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about">
+                About
+                </Link>              
+              </li>
+              <li>
+                <Link to="/team">
+                Team
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact">
+                Contact
+                </Link>
+              </li>
+              <li>
+                <Link to="/support">
+                  Support Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/editor">
+                Editor
+                </Link>   
               </li>
             </ul>
           </header>
