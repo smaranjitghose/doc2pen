@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { EditContext } from "../../containers/editContext";
 import style from "./Settings.module.css";
-import Dropdown from "../Dropdown/Dropdown";
+import Dropdown from "../../../../components/Dropdown/Dropdown";
 
 const Settings = () => {
   const editContext = useContext(EditContext);
