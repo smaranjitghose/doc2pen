@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Home.module.css';
 import pen from './pen.svg';
 
-function Home() {
+function Banner() {
     return (
         <section className={styles.Home}>
             <div className={styles.content}>
@@ -22,4 +22,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Banner

@@ -7,7 +7,7 @@ import {
 } from "reactstrap";
 
 import style from "./Dropdown.css";
-import { EditContext } from "../../containers/editContext";
+import { EditContext } from "../../pages/Editor/containers/editContext";
 
 const DropdownComponent = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
