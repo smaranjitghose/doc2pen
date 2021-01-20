@@ -24,7 +24,6 @@ export default function Footer(props) {
                 <input type="email"  placeholder="Enter your email" required/> 
               </div>
                 <Button className="bsClass" size="sm">SUBSCRIBE</Button>{' '}
-                {/* <button>SUBSCRIBE</button> */}
             </div>
             <Form.Text className="text-muted">
               We'll never share your email with anyone else.
@@ -42,4 +41,3 @@ export default function Footer(props) {
   );
 }
 
-export default Footer

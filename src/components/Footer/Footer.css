@@ -16,10 +16,10 @@
   .newsletter{
     color: white;
     text-align: center;
-    font-family: 'Courier New';
+    font-family: 'Poppins';
   }
   .newsletter .heading h5{
-    font-family: 'Courier New';
+    font-family: 'Poppins';
     font-weight: bold;
   }
   .email-field{
