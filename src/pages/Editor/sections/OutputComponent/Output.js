@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 
 import classes from "./Output.module.css";
 import { EditContext } from "../../containers/editContext";
@@ -7,6 +7,14 @@ const OutputComponent = () => {
   const editContext = useContext(EditContext);
   const page = require('./ruled1.png');
  console.log(`${editContext.pageSrc}`);
+
+  const [pageText, setPageText] = useState("");
+  const [wordCount, setWordCount] = useState(0);
+
+  useEffect(() => {
+    setWordCount(pageText.split(' ').filter(c => c !== '').length);
+  }, [pageText])
+
   return (
     <>
       
@@ -35,6 +43,8 @@ const OutputComponent = () => {
           />
           <textarea
             type="text"
+            value={pageText}
+            onChange={(e) => setPageText(e.target.value)}
             className={classes.contentInput}
             placeholder="Paste your content here! You can type it too, but we know people."
             style={{
@@ -45,6 +55,11 @@ const OutputComponent = () => {
               fontFamily: `${editContext.bodyValues.bodyFont}`,
             }}
           />
+        </div>
+        <div style={{fontSize: "0.75rem", marginTop: "11px", fontWeight: "bold"}}>Word Count:&nbsp;
+          <span style={{color: "#28b8c6", fontSize: "0.85rem"}}>
+            {wordCount}
+          </span>
         </div>
       </div>
     </>
