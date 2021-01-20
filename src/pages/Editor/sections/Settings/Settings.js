@@ -25,13 +25,6 @@ const Settings = () => {
                 "Liu",
                 "LeagueScript",
               ]}
-              item1="HomemadeApple"
-              item2="Caveat"
-              item3="Dawning"
-              item4="IndieFlower"
-              item5="NothingYouCouldDo"
-              item6="Liu"
-              item7="LeagueScript"
             />
           </div>
           <div className={`col-8 col-lg-6 text-center mx-auto mb-3`}>
@@ -39,6 +32,13 @@ const Settings = () => {
               name="Change Sheet"
               type="page"
               items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]}
+            />
+          </div>
+          <div className={`col-8 col-lg-6 text-center mx-auto mb-3`}>
+            <Dropdown
+              name="Change Ink"
+              type="ink"
+              items={["Blue", "Black", "Red", "Green", "Pink"]}
             />
           </div>
         </div>
@@ -53,14 +53,14 @@ const Settings = () => {
               onClick={editContext.isBodyHandler}
               className="d-none"
             />
-            <label for="heading">
+            <label htmlFor="heading">
               Edit <span>{editContext.isBody ? "Body" : "Title"}</span>.
             </label>
           </div>
 
           <div className={`col-12 col-sm-10 col-md-8 col-lg-12 mx-auto`}>
             <div className={`${style.inputBorder} col-12 pb-4`}>
-              <label for="size">Font size</label>
+              <label htmlFor="size">Font size</label>
               <input
                 type="range"
                 min="5"
@@ -78,7 +78,7 @@ const Settings = () => {
             </div>
 
             <div className={`${style.inputBorder} col-12 mt-3 pb-4`}>
-              <label for="left">Adjust x-axis</label>
+              <label htmlFor="left">Adjust x-axis</label>
               <input
                 type="range"
                 min="5"
@@ -96,7 +96,7 @@ const Settings = () => {
             </div>
 
             <div className={`${style.inputBorder} col-12 mt-3 pb-4`}>
-              <label for="top">Adjust y-axis </label>
+              <label htmlFor="top">Adjust y-axis </label>
               <input
                 type="range"
                 min="0"
@@ -114,7 +114,7 @@ const Settings = () => {
             </div>
 
             <div className={`${style.inputBorder} col-12 mt-3 pb-4`}>
-              <label for="spacing">Line-spacing</label>
+              <label htmlFor="spacing">Line-spacing</label>
               <input
                 type="range"
                 min="1"
@@ -134,7 +134,7 @@ const Settings = () => {
           </div>
         </div>
 
-        <div class={`col-12 mx-auto text-center mt-4`}>
+        <div className={`col-12 mx-auto text-center mt-4`}>
           <button
             className="mx-auto col-6 dbtn"
             onClick={editContext.downloadImg}

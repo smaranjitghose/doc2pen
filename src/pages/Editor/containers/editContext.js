@@ -13,6 +13,7 @@ const EditContextProvider = (props) => {
     headTop: null,
     headLeft: null,
     headLine: null,
+    headInk: "blue",
     headFont: "HomemadeApple",
   });
   const [bodyValues, setBodyValues] = useState({
@@ -20,6 +21,7 @@ const EditContextProvider = (props) => {
     bodyTop: null,
     bodyLeft: null,
     bodyLine: null,
+    bodyInk: "blue",
     bodyFont: "HomemadeApple",
   });
 
@@ -36,7 +38,7 @@ const EditContextProvider = (props) => {
   };
 
   const pageSrcHandler = (e) => {
-    setPageSrc((`${ImageNameMap[e.target.value]}`));
+    setPageSrc(`${ImageNameMap[e.target.value]}`);
   };
 
   const onValueChange = (e) => {

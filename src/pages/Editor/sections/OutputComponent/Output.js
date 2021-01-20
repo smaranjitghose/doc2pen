@@ -5,11 +5,10 @@ import { EditContext } from "../../containers/editContext";
 
 const OutputComponent = () => {
   const editContext = useContext(EditContext);
-  const page = require('./ruled1.png');
- console.log(`${editContext.pageSrc}`);
+  const page = require("./ruled1.png");
+  console.log(`${editContext.pageSrc}`);
   return (
     <>
-      
       <div className={`${classes.wrapper} col-11 col-lg-8 mx-auto mt-4 p-2`}>
         <div id="outputPage" className={`col-12 mx-auto px-0`}>
           <div className={`${classes.imgContainer} col-12 mx-auto px-0`}>
@@ -17,8 +16,8 @@ const OutputComponent = () => {
               src={page.default}
               alt="editor"
               className="mx-auto px-0"
-              Width="100%"
-              Height="100%"
+              width="100%"
+              height="100%"
             />
           </div>
           <textarea
@@ -29,6 +28,7 @@ const OutputComponent = () => {
               fontSize: `${editContext.headValues.headSize}px`,
               paddingTop: `${editContext.headValues.headTop}px`,
               paddingLeft: `${editContext.headValues.headLeft}px`,
+              color: `${editContext.headValues.headInk}`,
               lineHeight: `${editContext.headValues.headLine}`,
               fontFamily: `${editContext.headValues.headFont}`,
             }}
@@ -41,6 +41,7 @@ const OutputComponent = () => {
               fontSize: `${editContext.bodyValues.bodySize}px`,
               paddingTop: `${editContext.bodyValues.bodyTop}px`,
               paddingLeft: `${editContext.bodyValues.bodyLeft}px`,
+              color: `${editContext.bodyValues.bodyInk}`,
               lineHeight: `${editContext.bodyValues.bodyLine}`,
               fontFamily: `${editContext.bodyValues.bodyFont}`,
             }}

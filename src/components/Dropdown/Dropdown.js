@@ -16,31 +16,50 @@ const DropdownComponent = (props) => {
   const editContext = useContext(EditContext);
 
   const DropDownOptions = () => {
-    return (
-      <div>
-        {props.items.map((aItem, index) => (
-          <DropdownItem
-            onClick={getTargetFunc()}
-            name={editContext.isBody ? "bodyFont" : "headFont"}
-            value={aItem}
-            style={{ "font-family": `${aItem}` }}
-            key={index}
-          >
-            {aItem}
-          </DropdownItem>
-        ))}
-      </div>
-    );
+    if (props.type === "ink") {
+      return (
+        <div>
+          {props.items.map((aItem, index) => (
+            <DropdownItem
+              onClick={getTargetFunc()}
+              name={editContext.isBody ? "bodyInk" : "headInk"}
+              value={aItem}
+              style={{ color: `${aItem}` }}
+              key={index}
+            >
+              {aItem}
+            </DropdownItem>
+          ))}
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          {props.items.map((aItem, index) => (
+            <DropdownItem
+              onClick={getTargetFunc()}
+              name={editContext.isBody ? "bodyFont" : "headFont"}
+              value={aItem}
+              style={{ fontFamily: `${aItem}` }}
+              key={index}
+            >
+              {aItem}
+            </DropdownItem>
+          ))}
+        </div>
+      );
+    }
   };
 
   const getTargetFunc = () => {
-    if (props.type === "font") return editContext.onValueChange;
+    if (props.type === "font" || props.type === "ink")
+      return editContext.onValueChange;
     return editContext.pageSrcHandler;
   };
 
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle caret class={style.drbtn}>
+      <DropdownToggle caret className={style.drbtn}>
         {props.name}
       </DropdownToggle>
       <DropdownMenu>
