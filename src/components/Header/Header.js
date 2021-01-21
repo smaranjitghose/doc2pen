@@ -1,46 +1,57 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
+import {NavLink, useHistory} from 'react-router-dom';
+import {Link} from 'react-scroll';
 import styles from './Header.module.css';
 import logo from './logo.png';
 
 const headerLinks = [
     {
-        name: 'Home',
-        to: '/'
-    },
-    {
         name: 'About',
-        to: '/'
+        to: 'home_about'
     },
     {
         name: 'Team',
-        to: '/'
+        to: 'home_team'
     },
     {
         name: 'Contact',
-        to: '/'
+        to: 'home_contact'
     },
     {
         name: 'Support Us',
-        to: '/'
-    },
-    {
-        name: 'Editor',
-        to: '/'
+        to: 'home_support'
     }
-];
+]
 
 function Header() {
+    
+    const history = useHistory();
+
+    const [location, setLocation] = useState(window.location.pathname);
+
+    useEffect(() => {
+        return history.listen(location => {
+            setLocation(location.pathname);
+        })
+    }, [history])
+
     return (
         <header className={styles.Header}>
             <img className={styles.left} src={logo} alt="Logo"/>
             <div className={styles.right}>
+                <NavLink className={styles.header_links} to='/' exact activeClassName={styles.header_active_links}>
+                    Home
+                </NavLink>
                 {
-                    headerLinks.map(link => (
-                        <div className={styles.header_links} key={link.name}>
+                    location === '/' && headerLinks.map(link => (
+                        <Link className={styles.header_links} key={link.name} to={link.to} offset={-100}>
                             {link.name}
-                        </div>
+                        </Link>
                     ))
                 }
+                <NavLink className={styles.header_links} to='/editor' exact activeClassName={styles.header_active_links}>
+                    Editor
+                </NavLink>
             </div>
         </header>
     )

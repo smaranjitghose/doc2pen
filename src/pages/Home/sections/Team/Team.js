@@ -35,7 +35,7 @@ function Team() {
       }, []);
 
     return (
-        <div className={styles.Team}>
+        <div className={styles.Team} id="home_team">
             {/* <!-- Project Maintainer Sub Section --> */}
             <br/><br/> <h3>Project Maintainers</h3><br/><br/>
             <div className={styles.projectMaintainers}>

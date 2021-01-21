@@ -3,7 +3,7 @@ import styles from './ContactUs.module.css';
 
 function ContactUs() {
     return (
-        <div className={styles.ContactUs}>
+        <div className={styles.ContactUs} id="home_contact">
             <div className={styles.heading}>
               Get In Touch
             </div>

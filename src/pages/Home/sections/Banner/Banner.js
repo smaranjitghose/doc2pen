@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Home.module.css';
+import styles from './Banner.module.css';
 import pen from './pen.svg';
 
 function Banner() {
