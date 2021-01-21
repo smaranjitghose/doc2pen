@@ -39,9 +39,11 @@ function Header() {
         <header className={styles.Header}>
             <img className={styles.left} src={logo} alt="Logo"/>
             <div className={styles.right}>
-                <NavLink className={styles.header_links} to='/' exact activeClassName={styles.header_active_links}>
-                    Home
-                </NavLink>
+                <Link to='home_banner' offset={-15}>
+                    <NavLink className={styles.header_links} to='/' exact activeClassName={styles.header_active_links}>
+                        Home
+                    </NavLink>
+                </Link>
                 {
                     location === '/' && headerLinks.map(link => (
                         <Link className={styles.header_links} key={link.name} to={link.to} offset={-100}>
