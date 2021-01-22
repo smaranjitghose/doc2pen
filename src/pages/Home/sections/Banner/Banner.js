@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './Home.module.css';
+import styles from './Banner.module.css';
 import pen from './pen.svg';
 
 function Banner() {
     return (
-        <section className={styles.Home}>
+        <section className={styles.Home} id="home_banner">
             <div className={styles.content}>
                 <div className={styles.text}>
                     <div>Type Documents in your own Handwriting.</div>

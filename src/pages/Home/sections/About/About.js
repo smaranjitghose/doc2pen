@@ -8,7 +8,7 @@ import openSource from './open-source.svg';
 
 function About() {
     return (
-        <div className={styles.About}>
+        <div className={styles.About} id="home_about">
             <div className={styles.title}>
                 What are we about?
             </div>
