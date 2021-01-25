@@ -2,10 +2,16 @@ import "./Slider.css";
 import React, { useState } from "react";
 
 const NumberSliders = props => {
-
   const [Value, setValue] = useState(props.initialValue);
 
-  const handleValueChange = event => {
+  function setValuePromise(newValue) {
+    return new Promise((resolve, reject) => {
+      setValue(newValue);
+      resolve(true);
+    });
+  }
+
+  const handleClickValueChange = async event => {
     const isDecrement = event.target.classList.contains("decrement");
     const inputElement = isDecrement ? event.target.nextSibling : event.target.previousSibling;
 
@@ -20,15 +26,17 @@ const NumberSliders = props => {
     // console.log(min, max, name, value)
 
     if (isDecrement && Number(value) > Number(min)) {
-      setValue(Number(value) - 1);
-      props.editContext.onValueChange(inputElement);
+      await setValuePromise(Number(value) - 1).then(() => {
+        props.editContext.onValueChange(inputElement);
+      });
     } else if (!isDecrement && Number(value) <= Number(max)) {
-      setValue(Number(value) + 1);
-      props.editContext.onValueChange(inputElement);
+      await setValuePromise(Number(value) + 1).then(() => {
+        props.editContext.onValueChange(inputElement);
+      });
     }
   };
 
-  const handleManualChange = event => {
+  const handleManualValueChange = event => {
     const inputElement = event.target;
     const min = inputElement.min;
     const max = inputElement.max;
@@ -45,8 +53,7 @@ const NumberSliders = props => {
     <div className={"control-container"}>
       <label for="left">{props.label}</label>
       <div className="control-wrap">
-
-        <button onClick={handleValueChange} className="decrement">
+        <button onClick={handleClickValueChange} className="decrement">
           -
         </button>
         <input
@@ -56,9 +63,9 @@ const NumberSliders = props => {
           max={props.max}
           value={Value}
           className="form-control"
-          onChange={handleManualChange}
+          onChange={handleManualValueChange}
         />
-        <button onClick={handleValueChange} className="increment">
+        <button onClick={handleClickValueChange} className="increment">
           +
         </button>
       </div>

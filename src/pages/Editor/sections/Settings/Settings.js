@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import { EditContext } from "../../containers/editContext";
 import "./Settings.css";
@@ -40,7 +40,7 @@ const Settings = () => {
         </div>
       </div>
       <div className="controls">
-        <div className='group1'>
+        <div className="group1">
           <Dropdown
             name="Change Style"
             type="font"
@@ -61,9 +61,9 @@ const Settings = () => {
           <button className="download-btn" onClick={editContext.downloadImg}>
             Download
           </button>
-        </div>
 
-        <div className="v-separator"></div>
+          <div className="v-separator"></div>
+        </div>
 
         <NumberSlider
           label={"Adjust x-axis"}
