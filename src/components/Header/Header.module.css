@@ -29,9 +29,19 @@
     margin: 0 0.1rem;
     border-radius: 15px;
     cursor: pointer;
+    color: white;
+    text-decoration: none;
 }
 
 .header_links:hover {
     background-color: white;
-    color:#103F5F
+    color:#103F5F;
+    text-decoration: none;
+}
+
+.header_active_links {
+    box-shadow: inset 1px 1px 3px grey;
+    background-color: lightblue;
+    color:#103F5F;
+    text-decoration: none;
 }

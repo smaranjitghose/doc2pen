@@ -1,17 +1,14 @@
 import React from "react";
-
 import "./style.css";
 import Footer from "../../components/Footer/Footer";
 import EditContextProvider from "./containers/editContext";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "../../components/Header/Header";
 import Settings from "./sections/Settings/Settings";
 import Output from "./sections/OutputComponent/Output";
 
 function Editor() {
   return (
     <>
-      <Header />
       <div>
         <a
           href="https://dscommunity.in"

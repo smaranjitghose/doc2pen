@@ -11,15 +11,15 @@ export default function Footer(props) {
     //py-2 for padding
     <div className="footer-div py-2">
       <div className="newsletter">
-        <div class="heading">
+        <div className="heading">
           <h5>Subscribe to our Newsletter!</h5>
-          <h7>Enter Your Email to get our news and updates.</h7>
+          <h6>Enter Your Email to get our news and updates.</h6>
         </div>
         <br></br>
         <Form className="email-field">
           <Form.Group controlId="formBasicEmail">
             <div className="form">
-              <div class="box">
+              <div className="box">
                 <FaEnvelope className="icon" size={48}/>
                 <input type="email"  placeholder="Enter your email" required/> 
               </div>
