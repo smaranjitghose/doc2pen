@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 const NumberSliders = props => {
   const [Value, setValue] = useState(props.initialValue);
+  const [isMsgDisplayed, setIsMsgDisplayed] = useState(false);
 
   function setValuePromise(newValue) {
     return new Promise((resolve, reject) => {
@@ -23,8 +24,6 @@ const NumberSliders = props => {
       inputElement.value = min;
     }
 
-    // console.log(min, max, name, value)
-
     if (isDecrement && Number(value) > Number(min)) {
       await setValuePromise(Number(value) - 1).then(() => {
         props.editContext.onValueChange(inputElement);
@@ -33,6 +32,9 @@ const NumberSliders = props => {
       await setValuePromise(Number(value) + 1).then(() => {
         props.editContext.onValueChange(inputElement);
       });
+    } else{
+      setIsMsgDisplayed(true);
+      setTimeout(()=>setIsMsgDisplayed(false),2000)
     }
   };
 
@@ -45,7 +47,8 @@ const NumberSliders = props => {
       setValue(Number(value));
       props.editContext.onValueChange(event.target);
     } else {
-      console.log("not allowed bro");
+      setIsMsgDisplayed(true);
+      setTimeout(()=>setIsMsgDisplayed(false),2000)
     }
   };
 
@@ -56,6 +59,7 @@ const NumberSliders = props => {
         <button onClick={handleClickValueChange} className="decrement">
           -
         </button>
+
         <input
           type="number"
           name={props.name}
@@ -65,6 +69,11 @@ const NumberSliders = props => {
           className="form-control"
           onChange={handleManualValueChange}
         />
+
+        <div className="message" style={{ display: isMsgDisplayed ? "block" : 'none' }}>
+          {`Min value: ${props.min}, max value: ${props.max}`}
+        </div>
+
         <button onClick={handleClickValueChange} className="increment">
           +
         </button>

@@ -8,7 +8,6 @@ import NumberSlider from "../../components/Slider/NumberSlider";
 const Settings = () => {
   const editContext = useContext(EditContext);
   
-  
   return (
     <div className="control-panel">
       <div className="selector">
