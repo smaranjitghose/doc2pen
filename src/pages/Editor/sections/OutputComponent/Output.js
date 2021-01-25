@@ -39,6 +39,7 @@ const OutputComponent = () => {
               paddingLeft: `${editContext.headValues.headLeft}px`,
               lineHeight: `${editContext.headValues.headLine}`,
               fontFamily: `${editContext.headValues.headFont}`,
+              color: `${editContext.headValues.headColor}`
             }}
           />
           <textarea
@@ -53,6 +54,7 @@ const OutputComponent = () => {
               paddingLeft: `${editContext.bodyValues.bodyLeft}px`,
               lineHeight: `${editContext.bodyValues.bodyLine}`,
               fontFamily: `${editContext.bodyValues.bodyFont}`,
+              color: `${editContext.bodyValues.bodyColor}`
             }}
           />
         </div>
