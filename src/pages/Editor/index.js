@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import "./style.css";
 import Footer from "../../components/Footer/Footer";
 import EditContextProvider from "./containers/editContext";
@@ -29,16 +28,8 @@ function Editor() {
           dscommunity
         </a>
         <EditContextProvider>
-          <div id="app" style={{ height: "100%" }}>
-            <div className="row col-12 px-0 mx-0 mt-auto" style={{ height: "100%" }}>
-              <div className="col-12 col-lg-6 px-0">
-                <Settings />
-              </div>
-              <div className="col-12 col-lg-6 px-0">
-                <Output />
-              </div>
-            </div>
-          </div>
+          <Settings />
+          <Output />
         </EditContextProvider>
       </div>
       <Footer />

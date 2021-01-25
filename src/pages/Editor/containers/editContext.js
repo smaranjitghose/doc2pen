@@ -41,11 +41,11 @@ const EditContextProvider = (props) => {
 
   const onValueChange = (e) => {
     if (isBody) {
-      setBodyValues({ ...bodyValues, [e.target.name]: e.target.value });
+      setBodyValues({ ...bodyValues, [e.name]: e.value });
     } else {
       setHeadValues({
         ...headValues,
-        [e.target.name]: e.target.value,
+        [e.name]: e.value,
       });
     }
   };

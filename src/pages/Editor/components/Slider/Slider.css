@@ -1,13 +1,46 @@
-.slidderBtn {
-  display: flex;
-  flex-direction: column;
-  width: 9rem;
-  height: 2rem;
-  background-color: rgb(100, 100, 100);
-  border: 1px solid var(--mainTheme);
-  justify-content: center;
-  cursor: pointer;
+.form-control::-webkit-outer-spin-button,
+.form-control::-webkit-inner-spin-button {
+  display: none;
 }
-.sliderBarcontainer {
+.control-container{
+  margin: 5px 15px;
+}
+
+.control-wrap {
   width: 100%;
+  display: flex;
+  justify-content: stretch;
+}
+.control-wrap > * {
+  flex: 1;
+}
+
+.increment, .decrement, .form-control {
+  border: 1px solid;
+  height: 26px;
+  min-width: 23px;
+  width: 23px;
+  border-color: rgb(218, 220, 224);
+  color: rgba(0, 0, 0, 0.7);
+  background-color: rgb(255, 255, 255);
+  outline: none !important;
+  line-height: 0;
+  box-sizing: border-box !important;
+}
+.increment, .decrement{
+  padding: 0;
+  font-weight: bolder;
+  font-size: 21px;
+}
+.increment{
+  border-radius: 0 2px 2px 0;
+}
+.decrement{
+  border-radius: 2px 0 0 2px;
+}
+.form-control {
+  border-radius: 0;
+  font-size: 16px;
+  width: 70px;
+  text-align: center;
 }
