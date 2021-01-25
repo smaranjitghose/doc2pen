@@ -1,0 +1,35 @@
+.canvas {
+    border: 3px solid blue;
+    border-radius: 11px;
+    margin: 11px;
+    background-color: white;
+    cursor: crosshair;
+}
+
+.options {
+    margin: 0 11px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons {
+    margin-right: 11px;
+    padding: 5px 7px;
+    color: white;
+    font-size: 0.9rem;
+    outline: none;
+    border-radius: 7px;
+}
+
+.btn_clear {
+    background-color: red;
+}
+
+.btn_download {
+    background-color: #219653;
+}
+
+.mousePosition {
+    margin: 0 11px;
+    font-size: 0.7rem;
+}

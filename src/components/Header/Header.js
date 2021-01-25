@@ -54,6 +54,9 @@ function Header() {
                 <NavLink className={styles.header_links} to='/editor' exact activeClassName={styles.header_active_links}>
                     Editor
                 </NavLink>
+                <NavLink className={styles.header_links} to='/sketch' exact activeClassName={styles.header_active_links}>
+                    Sketch <sup><span style={{color: "red", fontSize: "0.7rem"}}>New</span></sup>
+                </NavLink>
             </div>
         </header>
     )
