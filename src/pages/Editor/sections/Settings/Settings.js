@@ -40,6 +40,12 @@ const Settings = () => {
       </div>
       <div className="controls">
         <div className="group1">
+          <Dropdown 
+            name="Change Color" 
+            type="color" 
+            items={["black", "red", "blue", "green", "pink"]}
+          />
+          <div className="v-separator"></div>
           <Dropdown
             name="Change Style"
             type="font"

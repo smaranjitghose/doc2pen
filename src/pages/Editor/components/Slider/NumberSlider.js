@@ -70,13 +70,13 @@ const NumberSliders = props => {
           onChange={handleManualValueChange}
         />
 
-        <div className="message" style={{ display: isMsgDisplayed ? "block" : 'none' }}>
-          {`Min value: ${props.min}, max value: ${props.max}`}
-        </div>
-
         <button onClick={handleClickValueChange} className="increment">
           +
         </button>
+
+        <div className="message" style={{ display: isMsgDisplayed ? "block" : "none" }}>
+          {`Min value: ${props.min}, max value: ${props.max}`}
+        </div>
       </div>
     </div>
   );
