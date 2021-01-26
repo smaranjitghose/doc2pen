@@ -41,6 +41,13 @@ const Settings = () => {
               items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]}
             />
           </div>
+          <div className={`col-8 col-lg-6 text-center mx-auto mb-3`}>
+            <Dropdown
+              name="Change Color"
+              type="color"
+              items={["black", "red", "blue", "green", "pink"]}
+            />
+          </div>
         </div>
 
         <div className={`col-12`}>
