@@ -27,7 +27,9 @@
           <!--Loading Screen Desgin-->
         <div id="loading"></div>
          <!-- for back to top button -->
-         <a href="#" id="scroll" style="display: none;"><span></span></a>
+        <button onclick="topFunction()" id="backtotop" class="scroll" title="Go to top">
+          <div class="backtotop-morph"></div>
+        </button>
         <!--Navigation Bar is loaded dynamically from the main.js-->
         <div class="nav-back"></div>
         <!-- Home Section -->
@@ -277,7 +279,7 @@
 
              <!-- for to top button -->
           <script>
-            mybutton = document.getElementById("scroll");
+            mybutton = document.getElementById("backtotop");
 
             window.onscroll = function () { scrollFunction() };
 

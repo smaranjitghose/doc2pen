@@ -1151,35 +1151,113 @@ footer {
   width: 40px;
 }
 
-/* To top button */
-#scroll {
-  position:fixed;
-  right:10px;
-  bottom:10px;
-  cursor:pointer;
-  width:50px;
-  height:50px;
+
+/* scroll to top */
+
+.scroll {
+  width: 4rem;
   background-color:#60a0ca;
-  text-indent:-9999px;
-  display:none;
-  -webkit-border-radius:60px;
-  -moz-border-radius:60px;
-  border-radius:60px;
+  border-radius:40px;
   z-index:1;
 }
-#scroll span {
-  position:absolute;
-  top:50%;
-  left:50%;
-  margin-left:-8px;
-  margin-top:-12px;
-  height:0;
-  width:0;
-  border:8px solid transparent;
-  border-bottom-color:#ffffff;
+.scroll:focus{
+  outline: none;
 }
-#scroll:hover {
-  background-color:#3498db;
-  opacity:1;filter:"alpha(opacity=100)";
-  -ms-filter:"alpha(opacity=100)";
+
+.scroll:hover{
+  background-color:#316c94;
+}
+
+#backtotop, 
+#backtotop::after, 
+#backtotop::before,
+.backtotop .backtotop-morph
+{
+    transition: all 250ms ease-in-out 0s;
+}
+
+#backtotop {
+    border: 0px dotted white;
+    width: 50px;
+    height: 50px;
+    right: 25px;
+    bottom: 20px;
+    position: fixed;
+
+    cursor: pointer;
+    transform: rotate(0deg);
+    transform-origin: center center 0;
+    z-index: 1000;
+}
+#backtotop::before {
+    width: 18px;
+    height: 4px;
+    left: 6px;
+    top: 56%;
+    position: absolute;
+
+    background-color: white;
+    content: "";
+    transform: rotate(-45deg) translateY(-50%);
+    transform-origin: center top 0;
+}
+#backtotop::after {
+    width: 25px;
+    height: 4px;
+    right: 5px;
+    top: 50%;
+    position: absolute;
+
+    background-color: white;
+    content: "";
+    transform: rotate(45deg) translateY(-50%);
+    transform-origin: center top 0;
+}
+
+/*Hover*/
+#backtotop .backtotop-morph {
+    background-color: white;
+    width: 15px;
+    height: 4px;
+    left: 100%;
+    top: 25%;
+    position: absolute;
+    opacity: 0;
+    margin: 10px;
+    transform: translate(-50%);
+}
+#backtotop .backtotop-morph::before {
+    width: 0;
+    height: 0;
+    left: -7px;
+    top: -4px;
+    position: absolute;
+
+    border-color: transparent white transparent transparent;
+    border-style: solid;
+    border-width: 6px 10px 6px 0;
+    content: "";
+}
+#backtotop:hover {
+    transform: rotate(90deg);
+}
+#backtotop:hover .backtotop-morph {
+    left: 40%;
+    opacity: 1;
+}
+#backtotop:hover::before {
+    width: 0px;
+    left: 10px;
+    top: 30%;
+
+    background-color: white;
+    transform: rotate(0deg) translateY(-8px);
+}
+#backtotop:hover::after {
+    width: 0px;
+    right: 10px;
+    top: 60%;
+
+    background-color: white;
+    transform: rotate(0deg) translateY(8px);
 }
