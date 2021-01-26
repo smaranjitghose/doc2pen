@@ -26,11 +26,11 @@ const NumberSliders = props => {
 
     if (isDecrement && Number(value) > Number(min)) {
       await setValuePromise(Number(value) - 1).then(() => {
-        props.editContext.onValueChange(inputElement);
+        props.editContext.onElementValueChange(inputElement);
       });
-    } else if (!isDecrement && Number(value) <= Number(max)) {
+    } else if (!isDecrement && Number(value) < Number(max)) {
       await setValuePromise(Number(value) + 1).then(() => {
-        props.editContext.onValueChange(inputElement);
+        props.editContext.onElementValueChange(inputElement);
       });
     } else{
       setIsMsgDisplayed(true);
@@ -45,7 +45,7 @@ const NumberSliders = props => {
     let value = inputElement.value;
     if (Number(value) >= Number(min) && Number(value) <= Number(max)) {
       setValue(Number(value));
-      props.editContext.onValueChange(event.target);
+      props.editContext.onValueChange(event);
     } else {
       setIsMsgDisplayed(true);
       setTimeout(()=>setIsMsgDisplayed(false),2000)

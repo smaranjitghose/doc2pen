@@ -43,6 +43,17 @@ const EditContextProvider = (props) => {
 
   const onValueChange = (e) => {
     if (isBody) {
+      setBodyValues({ ...bodyValues, [e.target.name]: e.target.value });
+    } else {
+      setHeadValues({
+        ...headValues,
+        [e.target.name]: e.target.value,
+      });
+    }
+  };
+
+  const onElementValueChange = e => {
+    if (isBody) {
       setBodyValues({ ...bodyValues, [e.name]: e.value });
     } else {
       setHeadValues({
@@ -95,6 +106,7 @@ const EditContextProvider = (props) => {
         bodyValues,
         pageSrc,
         onValueChange,
+        onManualValueChange: onElementValueChange,
         isBodyHandler,
         downloadImg,
         pageSrcHandler,
