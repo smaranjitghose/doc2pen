@@ -106,7 +106,7 @@ const EditContextProvider = (props) => {
         bodyValues,
         pageSrc,
         onValueChange,
-        onManualValueChange: onElementValueChange,
+        onElementValueChange,
         isBodyHandler,
         downloadImg,
         pageSrcHandler,
