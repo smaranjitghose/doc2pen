@@ -1154,110 +1154,21 @@ footer {
 
 /* scroll to top */
 
-.scroll {
-  width: 4rem;
-  background-color:#60a0ca;
-  border-radius:40px;
-  z-index:1;
+#scroll {
+  width: 50px;
+  height: 50px;
+  background: #2992d8;
+  color: #fff;
+  text-align: center;
+  border-radius: 50px;
+  position: fixed;
+  bottom: 10px;
+  right: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 50px;
+  z-index: 1;
 }
-.scroll:focus{
-  outline: none;
-}
-
-.scroll:hover{
-  background-color:#316c94;
-}
-
-#backtotop, 
-#backtotop::after, 
-#backtotop::before,
-.backtotop .backtotop-morph
-{
-    transition: all 250ms ease-in-out 0s;
-}
-
-#backtotop {
-    border: 0px dotted white;
-    width: 50px;
-    height: 50px;
-    right: 25px;
-    bottom: 20px;
-    position: fixed;
-
-    cursor: pointer;
-    transform: rotate(0deg);
-    transform-origin: center center 0;
-    z-index: 1000;
-}
-#backtotop::before {
-    width: 18px;
-    height: 4px;
-    left: 6px;
-    top: 56%;
-    position: absolute;
-
-    background-color: white;
-    content: "";
-    transform: rotate(-45deg) translateY(-50%);
-    transform-origin: center top 0;
-}
-#backtotop::after {
-    width: 25px;
-    height: 4px;
-    right: 5px;
-    top: 50%;
-    position: absolute;
-
-    background-color: white;
-    content: "";
-    transform: rotate(45deg) translateY(-50%);
-    transform-origin: center top 0;
-}
-
-/*Hover*/
-#backtotop .backtotop-morph {
-    background-color: white;
-    width: 15px;
-    height: 4px;
-    left: 100%;
-    top: 25%;
-    position: absolute;
-    opacity: 0;
-    margin: 10px;
-    transform: translate(-50%);
-}
-#backtotop .backtotop-morph::before {
-    width: 0;
-    height: 0;
-    left: -7px;
-    top: -4px;
-    position: absolute;
-
-    border-color: transparent white transparent transparent;
-    border-style: solid;
-    border-width: 6px 10px 6px 0;
-    content: "";
-}
-#backtotop:hover {
-    transform: rotate(90deg);
-}
-#backtotop:hover .backtotop-morph {
-    left: 40%;
-    opacity: 1;
-}
-#backtotop:hover::before {
-    width: 0px;
-    left: 10px;
-    top: 30%;
-
-    background-color: white;
-    transform: rotate(0deg) translateY(-8px);
-}
-#backtotop:hover::after {
-    width: 0px;
-    right: 10px;
-    top: 60%;
-
-    background-color: white;
-    transform: rotate(0deg) translateY(8px);
+#scroll:hover{
+  background: #166396;
 }
