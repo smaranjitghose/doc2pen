@@ -5,9 +5,9 @@
   width: 100%;
   height: 100%;
   z-index: 9999999;
-  background: #44ce6f;
-  -webkit-animation: backgroundcolorchange 20s infinite alternate;
-  animation: backgroundcolorchange 20s infinite alternate;
+  background:#0000ff;/*#44ce6f;*/
+  /* -webkit-animation: backgroundcolorchange 20s infinite alternate;
+  animation: backgroundcolorchange 20s infinite alternate; */
 }
 
 @keyframes backgroundcolorchange {
@@ -70,23 +70,6 @@
   box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.4);
   top: 50%;
   margin-top: -75px;
-}
-
-@keyframes sk-rotateplane {
-  0% {
-    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-  }
-
-  50% {
-    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-  }
-
-  100% {
-    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-  }
 }
 
 @keyframes sk-rotateplane {
