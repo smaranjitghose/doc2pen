@@ -6,7 +6,7 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-import style from "./Dropdown.css";
+import "./Dropdown.css";
 import { EditContext } from "../../pages/Editor/containers/editContext";
 
 const DropdownComponent = (props) => {
@@ -40,7 +40,7 @@ const DropdownComponent = (props) => {
 
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle caret class={style.drbtn}>
+      <DropdownToggle caret className='drbtn'>
         {props.name}
       </DropdownToggle>
       <DropdownMenu>
