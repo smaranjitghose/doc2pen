@@ -21,11 +21,16 @@
             <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
             <!--Getting our CSS-->
             <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"/>
         </head>
         
         <body onload="loader()">
           <!--Loading Screen Desgin-->
         <div id="loading"></div>
+         <!-- for back to top button -->
+        <div id="scroll" onclick="topFunction()">
+          <i class="fas fa-arrow-up"></i>
+        </div>
         <!--Navigation Bar is loaded dynamically from the main.js-->
         <div class="nav-back"></div>
         <!-- Home Section -->
@@ -272,5 +277,25 @@
               }, 1500);
             </script>
             <!--This script is for preloader screen-->  
+
+             <!-- for to top button -->
+          <script>
+            mybutton = document.getElementById("scroll");
+
+            window.onscroll = function () { scrollFunction() };
+
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+              } else {
+                mybutton.style.display = "none";
+              }
+            }
+
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+          </script>
       </body>
 </html>

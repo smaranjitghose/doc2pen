@@ -7,6 +7,12 @@
   z-index: 1;
 }
 
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; 
+}
+
 /* to make font size and select box into one line */
 .font-size-container {
   display: flex;
