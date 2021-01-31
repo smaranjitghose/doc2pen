@@ -52,6 +52,17 @@ const EditContextProvider = (props) => {
     }
   };
 
+  const onElementValueChange = e => {
+    if (isBody) {
+      setBodyValues({ ...bodyValues, [e.name]: e.value });
+    } else {
+      setHeadValues({
+        ...headValues,
+        [e.name]: e.value,
+      });
+    }
+  };
+
   const downloadImg = (e) => {
     e.preventDefault();
 
@@ -95,6 +106,7 @@ const EditContextProvider = (props) => {
         bodyValues,
         pageSrc,
         onValueChange,
+        onElementValueChange,
         isBodyHandler,
         downloadImg,
         pageSrcHandler,
