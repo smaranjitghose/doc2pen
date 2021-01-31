@@ -37,7 +37,7 @@ submitEmail(e){
   })
 }
 onSubscribeChange(){
-    this.setState({subscribe:'Sucessfully Subscribed!'});
+    this.setState({subscribe:'Successfully Subscribed!'});
 }
 resetForm(){
   this.setState({email: ''})
