@@ -12,7 +12,8 @@ export default class Footer extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      email: '' 
+      email: '' ,
+      subscribe:''
     }
 }
 onEmailChange(event) {
@@ -26,12 +27,17 @@ submitEmail(e){
 
   axios.post('http://localhost:3001/send', data).then((response)=>{
     if (response.data.status === 'success'){
-        alert("Message Sent."); 
-        this.resetForm()
+        // alert("Message Sent."); 
+        this.resetForm();
+        this.onSubscribeChange();
+
     }else if(response.data.status === 'fail'){
         alert("Message failed to send.")
     }
   })
+}
+onSubscribeChange(){
+    this.setState({subscribe:'Sucessfully Subscribed!'});
 }
 resetForm(){
   this.setState({email: ''})
@@ -44,7 +50,8 @@ resetForm(){
       <div className="newsletter">
         <div className="heading">
           <h5>Subscribe to our Newsletter!</h5>
-          <h6>Enter Your Email to get our news and updates.</h6>
+          <h6>{this.state.subscribe || "Enter Your Email to get our news and updates."}</h6>
+
         </div>
         <br></br>
         <Form className="email-field" onSubmit={this.submitEmail.bind(this)} method="POST">
