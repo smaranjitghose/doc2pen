@@ -5,7 +5,7 @@ export const EditContext = React.createContext();
 
 const EditContextProvider = (props) => {
   const aImagePrefix = "";
-  const [pageSrc, setPageSrc] = useState(`${aImagePrefix}onlymargin.jpg`);
+  const [pageSrc, setPageSrc] = useState(`${aImagePrefix}ruled1.png`);
   const [isBody, setIsBody] = useState(true);
 
   const [headValues, setHeadValues] = useState({
