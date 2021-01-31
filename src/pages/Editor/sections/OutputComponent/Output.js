@@ -5,7 +5,8 @@ import { EditContext } from "../../containers/editContext";
 
 const OutputComponent = () => {
   const editContext = useContext(EditContext);
-  const page = require('./ruled1.png');
+  // const page = require('./ruled1.png');
+  const page = require(`./${editContext.pageSrc}`);
  console.log(`${editContext.pageSrc}`);
 
   const [pageText, setPageText] = useState("");

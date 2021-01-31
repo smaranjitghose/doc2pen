@@ -4,7 +4,7 @@ import DomToImage from "dom-to-image";
 export const EditContext = React.createContext();
 
 const EditContextProvider = (props) => {
-  const aImagePrefix = "../../assests/pages/";
+  const aImagePrefix = "";
   const [pageSrc, setPageSrc] = useState(`${aImagePrefix}onlymargin.jpg`);
   const [isBody, setIsBody] = useState(true);
 
