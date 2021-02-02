@@ -23,7 +23,7 @@
 .card {
     display: grid;
     grid-template-columns: 300px;
-    grid-template-rows: 210px 210px 80px;
+    grid-template-rows: auto auto auto;
     grid-template-areas: "image" "text" "stats";
     border-radius: 18px;
     box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
@@ -52,8 +52,9 @@
   
 .card_stats {
     grid-area: stats;
-    padding-top: 20px;
-    margin-top: 8px;
+    padding: 17px 0 23px 0;
+    margin-bottom: 5px;
+    text-align: center;
     grid-row: 3;
     grid-column: 1;
 }
@@ -79,10 +80,10 @@
 .card_text p {
     color: grey;
     font-size: 14.9px;
+    margin: 0;
 }
   
 .card_text h2 {
-    margin-top: 40px;
     font-size: 28px;
     color: #000;
     font-weight: 500;
@@ -125,9 +126,4 @@
 .card_btn:hover {
     color: #103F5F;
     text-decoration: none;
-}
-  
-.card_stats {
-    text-align: center;
-    margin-bottom: 5px;
 }
