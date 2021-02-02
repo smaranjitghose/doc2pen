@@ -16,53 +16,22 @@
 <p align="center"> And here we are .....</p>
 <p align="center"><img width=30% src="https://media.giphy.com/media/UT5KSLhKwItfq6Yv6q/giphy.gif"></p>
 
-
 ## About 🤔💭:
 Doc2pen is an Open Source Software that converts your Typed Docs into Handwritten Docs.
 
-
 ## Features✨✨ :
-<ul>
-<li>You can change the colour of ink.</li>
-<li>Variety of Page styles to choose from.</li>
-<li>Wide variety of options to customize the fonts as your handwriting.</li>
-<li>You can even adjust the margins and line spacings.</li>
-<li>Download/Export in .pdf, .jpeg, .jpg, .png format</li>
-</ul>
 
+- You can change the colour of ink.
+- Variety of Page styles to choose from.
+- Wide variety of options to customize the fonts as your handwriting.
+- You can even adjust the margins and line spacings.
+- Download/Export in .pdf, .jpeg, .jpg, .png format
 
 ## What goes under the hood🧱⚙:
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
 <code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
-
-## The geeks🤓 behind this initiative:
-
-#### Our Project Maintainers👨‍🏫:
-
-<p align="center">
-<img width=20% src="https://avatars2.githubusercontent.com/u/46641503?v=4">&ensp;&ensp;&ensp;
-<img width=20% src="https://avatars2.githubusercontent.com/u/40017559?v=4">
-</p>
-
-<a href="https://github.com/smaranjitghose">
-<h5 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-<a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h5></a>
-
-#### Our valuable Contributors👩‍💻👨‍💻 :
-<a href="https://github.com/smaranjitghose/doc2pen/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=smaranjitghose/doc2pen" />
-</a>
-
-## Open Source Programs we have been associated with: 
-
-<p align="center">
-<a href="https://swoc.tech/"><img src="./assets/Readme_assets/swoc.PNG" width= "25%"/></a>
-<a href="https://devscript.tech/woc/"><img src="./assets/Readme_assets/dwoc.png" width="20%"></a>
-<a href="https://www.pclubsummerofcode.in/"><img src="./assets/Readme_assets/psoc.PNG" width="20%"></a>
-<a href="https://hakincodes.tech/"><img src="./assets/Readme_assets/hakin_codes.png" width="20%"></a>
-</p>
 
 
 ## Contribution Guidelines[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)🤝🏽🍀:
@@ -78,7 +47,7 @@ To start contributing, follow the below guidelines:
 ```
 git clone --depth 1 https://github.com/<your_user_name>/doc2pen.git
 ```
-<img src="./assets/Readme_assets/CloneRepo.png" width="500">
+<img src="./readme_assets/CloneRepo.png" width="500">
 
 **3.** Navigate to the project directory :file_folder: .
 
@@ -110,7 +79,7 @@ git pull upstream master
 git checkout -b <your_branch_name>
 ```
 
-**8.** Perfom your desired changes to the code base.
+**8.** Perform your desired changes to the code base.
 
 <p align="center"><img width=35% src="https://media2.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif?cid=ecf05e47pzi2rpig0vc8pjusra8hiai1b91zgiywvbubu9vu&rid=giphy.gif"></p>
 
@@ -132,22 +101,51 @@ git commit -m "Relevant message"
 git push -u origin <your_branch_name>
 ```
 
-**12.** To create a pull request, click on `compare and pull requests`. Please ensure you compare your feature branch to the desired branch of the repo you are suppose to make a PR to.
+**12.** To create a pull request, click on `compare and pull requests`. Please ensure you compare your feature branch to the desired branch of the repo you are supposed to make a PR to.
 
-<img src="./assets/Readme_assets/ComparePR.png" width=600>
+<img src="./readme_assets/ComparePR.png" width=600>
 
 **13.** Add appropriate title and description to your pull request explaining your changes and efforts done.
 
 
 **14.** Click on `Create Pull Request`.
 
-<img src="./assets/Readme_assets/CreatePR.png" width=600>
+<img src="./readme_assets/CreatePR.png" width=600>
 
 
 **15** Voila :exclamation: You have made a PR to the doc2pen project :boom: . Sit back patiently and relax while the project maintainers review your PR. Please understand at times the time can vary from a few hours to a few days
 
 <p align="center"><img src="https://media.giphy.com/media/5mCQOcUfywmyI/giphy.gif" width=35%></p>
 
+## The geeks🤓 behind this initiative:
+
+#### Our Project Maintainers👨‍🏫:
+
+<p align="center">
+<img width=20% src="https://avatars2.githubusercontent.com/u/46641503?v=4">&ensp;&ensp;&ensp;
+<img width=20% src="https://avatars2.githubusercontent.com/u/40017559?v=4">
+</p>
+
+<a href="https://github.com/smaranjitghose">
+<h5 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+<a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h5></a>
+
+#### Our valuable Contributors👩‍💻👨‍💻 :
+<a href="https://github.com/smaranjitghose/doc2pen/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=smaranjitghose/doc2pen" />
+</a>
+
+## Open Source Programs we have been associated with: 
+
+<p align="center">
+<a href="https://www.pclubsummerofcode.in/"><img src="./readme_assets/psoc.png" width="25%"></a>
+<a href="https://hakincodes.tech/"><img src="./readme_assets/ch.png" width="25%"></a>
+<a href="https://devscript.tech/woc/"><img src="./readme_assets/dwoc.png" width="25%"></a>
+<a href="https://swoc.tech/"><img src="./readme_assets/swoc..png" width= "25%"/></a>
+<a href="http://jwoc2k20.tech/"><img src="./readme_assets/jwoc.png" width= "25%"/></a>
+<a href="https://mexili.github.io/winter_of_code/"><img src="./readme_assets/mwoc.png" width= "25%"/></a>
+<a href="https://gssoc.girlscript.tech/"><img src="./readme_assets/gssoc.png" width= "25%"/></a>
+</p>
 
 ## Code of Conduct
 <p align="center"><img width=35% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif"></p>
