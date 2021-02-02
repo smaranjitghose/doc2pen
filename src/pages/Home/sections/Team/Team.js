@@ -30,7 +30,9 @@ function Team() {
         .then(res => res.json())
         .then(data => {
           // console.log(data);
-          setContributors(data);
+          setContributors(data.filter((element) => 
+            !(element.login === "smaranjitghose" || element.login === "anushbhatia")
+          ));
         })
       }, []);
 
