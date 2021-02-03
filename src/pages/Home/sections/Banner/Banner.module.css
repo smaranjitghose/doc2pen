@@ -16,7 +16,7 @@
 }
 
 .text {
-  width: 50%;
+  width: 60%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@
 
 .text div {
   font-family: "Dancing Script", cursive;
-  font-size: 4rem;
+  font-size: 3.7rem;
   width: 80%;
   margin: 0 auto;
 }
