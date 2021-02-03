@@ -1,146 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
 
 .Home {
-    background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
-    background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
-    color: white;
-    height: 89vh;
-    padding: 0 1rem;
-    padding-top: 3rem;
+  background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
+  background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
+  color: white;
+  height: 89vh;
+  padding: 0 1rem;
+  padding-top: 3rem;
 }
 
 .content {
-    display: flex;
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .text {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .text div {
-    font-family: 'Dancing Script', cursive;
-    font-size: 6rem;
+  font-family: "Dancing Script", cursive;
+  font-size: 4rem;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .button {
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    border-radius: 2rem;
-    color: #fff !important;
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: semibold;
-    letter-spacing: 0.15rem;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    border: none;
-    cursor: pointer;
-    margin-top: 15px;
-  }
-  .button:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #05252c;
-    z-index: -2;
-  }
-  .button:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: #0d739eab;
-    transition: all 0.3s;
-    z-index: -1;
-  }
-  .button:hover {
-    color: #fff;
-    text-decoration: none;
-  }
-  .button:hover:before {
-    width: 100%;
-  }
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 2rem;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: semibold;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #05252c;
+  z-index: -2;
+}
+.button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #0d739eab;
+  transition: all 0.3s;
+  z-index: -1;
+}
+.button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.button:hover:before {
+  width: 100%;
+}
 
 .image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
 }
 
 .image img {
-    margin: 5% 20% 5% 20%;
-    width: 60%;
+  width: 60%;
 }
 
 .wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
-    background: url("./wave.png");
-    background-size: 1000px 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: url("./wave.png");
+  background-size: 1000px 100px;
 }
-  
+
 .wave1 {
-    animation: animate 30s linear infinite;
-    z-index: 1000;
-    opacity: 1;
-    animation-delay: 0s;
-    bottom: 0;
+  animation: animate 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
 }
-  
+
 .wave2 {
-    animation: animate2 15s linear infinite;
-    z-index: 999;
-    opacity: 0.5;
-    animation-delay: -5s;
-    bottom: 10px;
-  }
-  
-.wave3 {
-    animation: animate 30s linear infinite;
-    z-index: 998;
-    opacity: 0.2;
-    animation-delay: -2s;
-    bottom: 15;
+  animation: animate2 15s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10px;
 }
-  
+
+.wave3 {
+  animation: animate 30s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15;
+}
+
 .wave4 {
-    animation: animate2 5s linear infinite;
-    z-index: 997;
-    opacity: 0.7;
-    animation-delay: -5s;
-    bottom: 20px;
+  animation: animate2 5s linear infinite;
+  z-index: 997;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom: 20px;
 }
 
 @keyframes animate {
-    0% {
-        background-position-x: 0;
-    }
-    100% {
-        background-position-x: 1000px;
-    }
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
 }
 
 @keyframes animate2 {
-    0% {
-        background-position-x: 0;
-    }
-    100% {
-        background-position-x: -1000px;
-    }
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -1000px;
+  }
 }
