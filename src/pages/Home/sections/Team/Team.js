@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import styles from './Team.module.css';
 import {FaGithub, FaLinkedinIn} from 'react-icons/fa';
+import smaranjit from '../../../../assests/images/team/smaranjit_ghose.png';
+import anush from '../../../../assests/images/team/anush_bhatia.png';
 
 function Team() {
 
     const maintainerSection = [
         {
-          image: require('../../../../assests/images/team/smaranjit_ghose.png'),
+          image: smaranjit,
           name: "Smaranjit Ghose",
           title: "Lead Developer",
           github: "https://github.com/smaranjitghose",
@@ -14,7 +16,7 @@ function Team() {
           imgclass: "image_1"
         },
         {
-          image: require('../../../../assests/images/team/anush_bhatia.png'),
+          image: anush,
           name: "Anush Bhatia",
           title: "Lead Developer",
           github: "https://github.com/anushbhatia",
