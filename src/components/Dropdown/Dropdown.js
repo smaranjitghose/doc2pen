@@ -6,8 +6,8 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-import style from "./Dropdown.css";
-import { EditContext } from "../../containers/editContext";
+import "./Dropdown.css";
+import { EditContext } from "../../pages/Editor/containers/editContext";
 
 const DropdownComponent = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -21,9 +21,9 @@ const DropdownComponent = (props) => {
         {props.items.map((aItem, index) => (
           <DropdownItem
             onClick={getTargetFunc()}
-            name={editContext.isBody ? "bodyFont" : "headFont"}
+            name={`${editContext.isBody ? "body" : "head"}${props.type === "font" ? "Font" : "Color"}`}
             value={aItem}
-            style={{ "font-family": `${aItem}` }}
+            style={{ "font-family": `${aItem}`, "color": `${aItem}` }}
             key={index}
           >
             {aItem}
@@ -34,13 +34,13 @@ const DropdownComponent = (props) => {
   };
 
   const getTargetFunc = () => {
-    if (props.type === "font") return editContext.onValueChange;
+    if (props.type === "font" || props.type === "color") return editContext.onValueChange;
     return editContext.pageSrcHandler;
   };
 
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle caret class={style.drbtn}>
+      <DropdownToggle caret className='drbtn'>
         {props.name}
       </DropdownToggle>
       <DropdownMenu>

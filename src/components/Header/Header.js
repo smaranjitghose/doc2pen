@@ -1,33 +1,78 @@
-import React, { Component } from "react";
-import "./Header.css";
-import { Fade } from "react-reveal";
-class Header extends Component {
-  render() {
-    return (
+import React,{useState, useEffect} from 'react';
+import {NavLink, useHistory} from 'react-router-dom';
+import {Link} from 'react-scroll';
+import styles from './Header.module.css';
+import logo from './logo.png';
+import {ImInfo} from "react-icons/im";
+import {RiTeamLine, RiContactsBook2Line} from "react-icons/ri";
+import {BiDonateHeart} from "react-icons/bi";
 
-      <Fade top duration={100} distance="20px">
-        <div>
-          <header className="header">
-            <div className="logo">
-            <span> &lt;</span>
-              <span className="logo-name" >
-                 Doc2pen
-              </span>
-              <span>/&gt;</span>
-              </div>
-            <input className="menu-btn" type="checkbox" id="menu-btn" />
-            <label className="menu-icon" htmlFor="menu-btn">
-              <span className="navicon"></span>
-            </label>
-            <ul className="menu">
-              <li>
-                Home
-              </li>
-            </ul>
-          </header>
-        </div>
-      </Fade>
-    );
-  }
+const headerLinks = [
+    {
+        name: 'About',
+        to: 'home_about',
+        icon: <ImInfo />
+    },
+    {
+        name: 'Team',
+        to: 'home_team',
+        icon: <RiTeamLine />
+    },
+    {
+        name: 'Contact',
+        to: 'home_contact',
+        icon: <RiContactsBook2Line />
+    },
+    {
+        name: 'Support Us',
+        to: 'home_support',
+        icon: <BiDonateHeart />
+    }
+]
+
+function Header() {
+    
+    const history = useHistory();
+
+    const [location, setLocation] = useState(window.location.pathname);
+
+    useEffect(() => {
+        return history.listen(location => {
+            setLocation(location.pathname);
+        })
+    }, [history])
+
+    return (
+        <>
+            <header className={styles.Header}>
+                <img className={styles.left} src={logo} alt="Logo"/>
+                <div className={styles.right}>
+                    <Link to='home_banner' offset={-15}>
+                        <NavLink className={styles.header_links} to='/' exact activeClassName={styles.header_active_links}>
+                            Home
+                        </NavLink>
+                    </Link>
+                    <NavLink className={styles.header_links} to='/editor' exact activeClassName={styles.header_active_links}>
+                        Editor
+                    </NavLink>
+                    <NavLink className={styles.header_links} to='/sketch' exact activeClassName={styles.header_active_links}>
+                        Sketch <sup><span style={{color: "red", fontSize: "0.7rem"}}>New</span></sup>
+                    </NavLink>
+                </div>
+            </header>
+            <div className={styles.quick_box}>
+                {
+                    location === '/' && headerLinks.map(link => (
+                        <Link className={styles.quick_links} key={link.name} to={link.to} offset={-100}>
+                            {link.icon}
+                            &nbsp;&nbsp;&nbsp;
+                            {link.name}
+                        </Link>
+                    ))
+                }
+            </div>
+        </>
+    )
 }
-export default Header;
+
+export default Header
