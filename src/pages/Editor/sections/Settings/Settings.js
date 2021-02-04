@@ -62,6 +62,10 @@ const Settings = () => {
           <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]} />
 
           <div className="v-separator"></div>
+          
+          <label className="download-btn" htmlFor="import">Import File</label>
+          <input id="import" style={{display:"none"}} type="file" onChange={editContext.importTxt}></input>
+          <div className="v-separator"></div>
 
           <button className="download-btn" onClick={editContext.downloadImg}>
             Download
