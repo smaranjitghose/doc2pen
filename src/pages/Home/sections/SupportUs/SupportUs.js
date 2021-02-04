@@ -5,7 +5,7 @@ function SupportUs() {
     return (
         <div className={styles.SupportUs} id="home_support">
             <h3 className={styles.SupportusQuote}>The power of Open Source is the power of the people. The people rule.</h3>
-            <span className={styles.quoteAuthor}>Philippe Kahn</span>
+            <span className={styles.quoteAuthor}>- Philippe Kahn</span>
             <div style={{marginTop: "10px"}}>
                 <br/>
                 <h2>Support us and help us assist you better</h2>

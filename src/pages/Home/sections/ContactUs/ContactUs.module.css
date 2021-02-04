@@ -4,41 +4,53 @@
 
 .heading {
     font-size: 2.5rem;
+    padding-top:5rem;
 }
 
 .contact_and_info_container {
-    padding: 30px;
     border: 1px solid transparent;
-    border-radius: 6px;
-    display: flex;
-    width: 75%;
-    justify-content: space-between;
     background: rgb(224, 228, 235);
     margin: auto;
-    margin-top: 8vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: stretch;
+    justify-content: center;
+    padding: 30px 0;
+    width: 100%;
 }
 
-.general_info {
-    text-align: left;
+.info{
+    width: 300px;
 }
 
 .general_info p {
     margin-top: 5px;
 }
 
+.map{
+    width: 500px;
+    padding: 5rem 0;
+    background: #afafafa3;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
 .googleMap {
     height: 320px;
     /* The height is 320 pixels */
-    width: 550px;
+    min-width: 340px;
     /* The width is 550px */
     border-radius: 4px;
     background-color: antiquewhite;
-    margin: 1rem;
     border-radius: 11px;
+    margin:auto;
 }
 
 .contact_form {
-    width: 40%;
+    width: 80%;
+    min-width: 300px;
+    margin: auto;
 }
 
 .contact_form input:focus {

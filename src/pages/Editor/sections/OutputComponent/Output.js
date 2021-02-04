@@ -18,17 +18,10 @@ const OutputComponent = () => {
 
   return (
     <>
-      
       <div className={`${classes.wrapper} col-11 col-lg-8 mx-auto mt-4 p-2`}>
         <div id="outputPage" className={`col-12 mx-auto px-0`}>
           <div className={`${classes.imgContainer} col-12 mx-auto px-0`}>
-            <img
-              src={page.default}
-              alt="editor"
-              className="mx-auto px-0"
-              Width="100%"
-              Height="100%"
-            />
+            <img src={page.default} alt="editor" className="mx-auto px-0" Width="100%" Height="100%" />
           </div>
           <textarea
             type="text"
@@ -40,14 +33,17 @@ const OutputComponent = () => {
               paddingLeft: `${editContext.headValues.headLeft}px`,
               lineHeight: `${editContext.headValues.headLine}`,
               fontFamily: `${editContext.headValues.headFont}`,
-              color: `${editContext.headValues.headColor}`
+              color: `${editContext.headValues.headColor}`,
+              width: `${editContext.headValues.headWidth}pc`,
+              letterSpacing: `${editContext.headValues.headLetterSpace}px`,
             }}
           />
           <textarea
             type="text"
             value={pageText}
-            onChange={(e) => setPageText(e.target.value)}
+            onChange={e => setPageText(e.target.value)}
             className={classes.contentInput}
+            id="show-text"
             placeholder="Paste your content here! You can type it too, but we know people."
             style={{
               fontSize: `${editContext.bodyValues.bodySize}px`,
@@ -55,14 +51,15 @@ const OutputComponent = () => {
               paddingLeft: `${editContext.bodyValues.bodyLeft}px`,
               lineHeight: `${editContext.bodyValues.bodyLine}`,
               fontFamily: `${editContext.bodyValues.bodyFont}`,
-              color: `${editContext.bodyValues.bodyColor}`
+              color: `${editContext.bodyValues.bodyColor}`,
+              width: `${editContext.bodyValues.bodyWidth}pc`,
+              letterSpacing: `${editContext.bodyValues.bodyLetterSpace}px`,
             }}
           />
         </div>
-        <div style={{fontSize: "0.75rem", marginTop: "11px", fontWeight: "bold"}}>Word Count:&nbsp;
-          <span style={{color: "#28b8c6", fontSize: "0.85rem"}}>
-            {wordCount}
-          </span>
+        <div style={{ fontSize: "0.75rem", marginTop: "11px", fontWeight: "bold" }}>
+          Word Count:&nbsp;
+          <span style={{ color: "#28b8c6", fontSize: "0.85rem" }}>{wordCount}</span>
         </div>
       </div>
     </>

@@ -1,17 +1,17 @@
 .OpenSource {
     text-align: center;
-    padding: 5rem;
 }
 
 .title {
     color: #4e89ae;
     font-size: 2rem;
     font-weight: bold;
+    margin: 5rem 15px 0;
 }
 
 .content {
     font-size: 1.5rem;
-    margin: 15px 0;
+    margin: 15px;
 }
 
 .card_holder {

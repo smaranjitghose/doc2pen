@@ -6,6 +6,21 @@ import step3 from './step3.svg';
 import step4 from './step4.svg';
 import openSource from './open-source.svg';
 
+
+function Step(props) {
+    return (
+      <div className={`${styles.step} ${props.reverse && styles.step_reverse}`}>
+        <div className={styles.illustration}>
+          <img src={props.img} alt="Page" />
+        </div>
+        <div className={styles.step_text}>
+          <div className={styles.step_title}>{props.title}</div>
+          <div className={styles.step_content}>{props.content}</div>
+        </div>
+      </div>
+    );
+}
+
 function About() {
     return (
         <div className={styles.About} id="home_about">
@@ -15,6 +30,7 @@ function About() {
             <div className={styles.line}>One day, <b><i>Smitha</i></b> was very tensed about the assignments she has to submit in her college, because <b><i>She could Type Fast, But couldn't Write Fast enough.</i></b></div>
             <div className={styles.line}>On talking about this issue with her friend <b><i>Harry</i></b>, he suggested <b><i>Doc2Pen</i></b> as a solution to her problem.</div>
             <div className={styles.line}><b><i>Are you facing the same problem as Smitha did?</i></b></div>
+            
             <div className={styles.line}>So, let's hear what Harry has to say about <b><i>Doc2Pen.</i></b></div>
             <div className={styles.line}><b><i>Doc2Pen</i></b> converts your <b><i>typed assignments</i></b> into <b><i>handwritten</i></b> ones.</div>
 
@@ -56,22 +72,6 @@ function About() {
             </div>
         </div>
     )
-}
-
-function Step(props) {
-    return (
-        <div className={`${styles.step} ${props.reverse && styles.step_reverse}`}>
-            <img src={props.img} alt="Page"/>
-            <div className={styles.step_text}>
-                <div className={styles.step_title}>
-                    {props.title}
-                </div>
-                <div className={styles.step_content}>
-                    {props.content}
-                </div>
-            </div>
-        </div>
-    );
 }
 
 export default About

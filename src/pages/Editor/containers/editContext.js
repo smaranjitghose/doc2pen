@@ -11,18 +11,22 @@ const EditContextProvider = (props) => {
   const [headValues, setHeadValues] = useState({
     headSize: null,
     headTop: null,
-    headLeft: null,
+    headLeft: 10,
     headLine: null,
     headFont: "HomemadeApple",
-    headColor: "black"
+    headColor: "black",
+    headWidth: null,
+    headLetterSpace: null,
   });
   const [bodyValues, setBodyValues] = useState({
     bodySize: null,
     bodyTop: null,
-    bodyLeft: null,
+    bodyLeft: 10,
     bodyLine: null,
     bodyFont: "HomemadeApple",
-    bodyColor: "black"
+    bodyColor: "black",
+    bodyWidth: null,
+    bodyLetterSpace: null,
   });
 
   const ImageNameMap = {
@@ -98,6 +102,43 @@ const EditContextProvider = (props) => {
     document.body.removeChild(link);
   };
 
+  const importTxt = (e) => {
+    e.preventDefault();
+
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+         let textarea = document.querySelector('#show-text')
+         var file = document.querySelector('input[type=file]').files[0];
+         var reader = new FileReader()
+
+         var textFile = /text.*/;
+
+         if (file.type.match(textFile)) {
+           reader.onload = function (event) {
+             let rtf = convertToPlain(event.target.result);
+            textarea.value += rtf;
+          }
+         } else {
+            textarea.value += "<span class='error'>It doesn't seem to be a text file!</span>";
+         }
+         reader.readAsText(file);
+
+   } else {
+      alert("Your browser is too old to support HTML5 File API");
+   }
+  }
+
+  function convertToPlain(rtf) {
+        rtf = rtf.replace(/\\par[d]?/g, "");
+        rtf = rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "");
+        // rtf = rtf.replace(/\n/ig, " ");
+        rtf = rtf.replace(/\\/ig,"");
+        rtf = rtf.replace(/\*/ig, "");
+        rtf = rtf.replace(/decimal.|tightenfactor0|eftab720|HYPERLINK|irnatural/ig, "");
+        rtf = rtf.replace(/irnaturaltightenfactor0|000000/ig, "");
+        rtf = rtf.replace(/�|ࡱ|p#|#|,|%|@|\$|~/ig, "");
+        return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
+    }
+
   return (
     <EditContext.Provider
       value={{
@@ -110,6 +151,7 @@ const EditContextProvider = (props) => {
         isBodyHandler,
         downloadImg,
         pageSrcHandler,
+        importTxt,
       }}
     >
       {props.children}
