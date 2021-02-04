@@ -1,4 +1,27 @@
-.Header {
+
+.left {
+    object-fit: contain;
+    width: 100px;
+}
+.right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.header_links {
+    padding: 0.3rem 0.5rem;
+    margin: 0 0.1rem;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.header_links:hover {
+    background-color: white;
+    color:#103F5F
+}
+/* .Header {
     background-color: #103F5F;
     display: flex;
     justify-content: space-between;
@@ -70,4 +93,4 @@
     text-decoration: none;
     background-color: #346d92;
     transform: translateX(0);
-}
+} */
