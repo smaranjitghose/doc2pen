@@ -48,6 +48,7 @@ const OutputComponent = () => {
             value={pageText}
             onChange={(e) => setPageText(e.target.value)}
             className={classes.contentInput}
+            id="show-text"
             placeholder="Paste your content here! You can type it too, but we know people."
             style={{
               fontSize: `${editContext.bodyValues.bodySize}px`,
