@@ -23,16 +23,17 @@
     font-weight: bold;
   }
   .email-field{
-    width: 400px;
+    min-width: 360px;
     text-align: center;
     margin: 0 auto;
   }
   .form{
     display: inline-block;
     display: flex;
+    align-items: center;
+        justify-content: center;
   }
   .box{
-    width: 400px;
     height: 40px;
     background-color: white;
     border-radius: 30px;
@@ -46,7 +47,6 @@
     border: none;
     outline: none;
     font-size: 20px;
-    padding-left: 10px;
   }
   .bsClass{
     outline:white;
@@ -66,20 +66,15 @@
       margin-left:0px;
     }
     .form{
-      width:200px;
       margin-left:0px;
     }
     .box{
       width:300px;
-      margin-left:30px;
     }
     .bsClass{
-      margin-left:100px;
       margin-top:2px;
-      
     }
     .text-muted{
-      width:300px;
       text-align:center;
     }
   }

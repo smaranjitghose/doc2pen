@@ -10,17 +10,17 @@ import ScrollToTop from "./../../components/ScrollToTopButton/ScrollToTopButton"
 
 function Home() {
     return (
-        <div className="HomePage">
-            <Banner />
-            <About />
-            <Team />
-            <OpenSource />
-            <ContactUs />
-            <SupportUs />
-            <Footer />
-            <ScrollToTop />
-        </div>
-    )
+      <div className="HomePage">
+        <Banner />
+        <About />
+        <Team />
+        <OpenSource />
+        <ContactUs />
+        <SupportUs />
+        <Footer />
+        <ScrollToTop />
+      </div>
+    );
 }
 
 export default Home
