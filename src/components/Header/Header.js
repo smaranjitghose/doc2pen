@@ -6,16 +6,7 @@ import logo from "./logo.png";
 import { ImInfo } from "react-icons/im";
 import { RiTeamLine, RiContactsBook2Line } from "react-icons/ri";
 import { BiDonateHeart } from "react-icons/bi";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink as RRNavlink,
-  NavbarText,
-} from "reactstrap";
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav } from "reactstrap";
 import EditIcon from "@material-ui/icons/Edit";
 import NewReleasesIcon from "@material-ui/icons/NewReleases";
 const headerLinks = [
@@ -68,15 +59,15 @@ function Header() {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-              <NavLink
+            <NavLink
               to="/"
               exact
               activeStyle={{
                 color: "red",
               }}
-              style={{ fontSize: "20px", color: "white",padding:"12px" }}
+              style={{ fontSize: "20px", color: "white", padding: "12px" }}
             >
-              Home 
+              Home
             </NavLink>
             <NavLink
               to="/editor"
@@ -84,7 +75,7 @@ function Header() {
               activeStyle={{
                 color: "red",
               }}
-              style={{ fontSize: "20px", color: "white",padding:"12px" }}
+              style={{ fontSize: "20px", color: "white", padding: "12px" }}
             >
               Editor
               <EditIcon
@@ -97,7 +88,7 @@ function Header() {
               activeStyle={{
                 color: "red",
               }}
-              style={{ fontSize: "20px", color: "white",padding:"12px"  }}
+              style={{ fontSize: "20px", color: "white", padding: "12px" }}
             >
               Sketch
               <NewReleasesIcon
