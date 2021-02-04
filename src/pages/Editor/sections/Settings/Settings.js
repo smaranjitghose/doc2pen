@@ -80,7 +80,7 @@ const Settings = () => {
           name={editContext.isBody ? "bodyLeft" : "headLeft"}
           min="5"
           max="200"
-          initialValue={5}
+          initialValue={10}
         />
 
         <div className="v-separator"></div>
