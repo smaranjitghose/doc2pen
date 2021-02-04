@@ -6,7 +6,9 @@
 
 .projectMaintainers {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 45px;
+    flex-wrap: wrap;
 }
 
 .profile_container {
@@ -205,13 +207,14 @@
 }
 
 .team_container {
-    overflow: hidden;
     text-align: -webkit-center;
+    text-align: center;
     margin: auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0 15rem;
+    padding: 0 4vw;
+    gap:2rem;
 }
 
 .figure {
@@ -220,7 +223,6 @@
     overflow: hidden;
     width: 170px;
     height: 170px;
-    margin: 1rem;
 }
   
 .figure img {
