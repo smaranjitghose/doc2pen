@@ -14,7 +14,9 @@ const EditContextProvider = (props) => {
     headLeft: 10,
     headLine: null,
     headFont: "HomemadeApple",
-    headColor: "black"
+    headColor: "black",
+    headWidth: null,
+    headLetterSpace: null,
   });
   const [bodyValues, setBodyValues] = useState({
     bodySize: null,
@@ -22,7 +24,9 @@ const EditContextProvider = (props) => {
     bodyLeft: 10,
     bodyLine: null,
     bodyFont: "HomemadeApple",
-    bodyColor: "black"
+    bodyColor: "black",
+    bodyWidth: null,
+    bodyLetterSpace: null,
   });
 
   const ImageNameMap = {

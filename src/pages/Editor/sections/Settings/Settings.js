@@ -40,11 +40,7 @@ const Settings = () => {
       </div>
       <div className="controls">
         <div className="group1">
-          <Dropdown 
-            name="Change Color" 
-            type="color" 
-            items={["black", "red", "blue", "green", "pink"]}
-          />
+          <Dropdown name="Change Color" type="color" items={["black", "red", "blue", "green", "pink"]} />
           <div className="v-separator"></div>
           <Dropdown
             name="Change Style"
@@ -80,6 +76,7 @@ const Settings = () => {
           name={editContext.isBody ? "bodyLeft" : "headLeft"}
           min="5"
           max="200"
+          step={1}
           initialValue={10}
         />
 
@@ -90,6 +87,7 @@ const Settings = () => {
           name={editContext.isBody ? "bodySize" : "headSize"}
           min="5"
           max="50"
+          step={1}
           initialValue={16}
         />
 
@@ -101,6 +99,7 @@ const Settings = () => {
           name={editContext.isBody ? "bodyTop" : "headTop"}
           min="0"
           max="100"
+          step={1}
           initialValue={5}
         />
         <div className="v-separator"></div>
@@ -111,7 +110,31 @@ const Settings = () => {
           name={editContext.isBody ? "bodyLine" : "headLine"}
           min="1"
           max="5"
+          step={1}
           initialValue={1}
+        />
+        <div className="v-separator"></div>
+
+        <NumberSlider
+          label={"Width"}
+          editContext={editContext}
+          name={editContext.isBody ? "bodyWidth" : "headWidth"}
+          min="20"
+          max="70"
+          step={1}
+          initialValue={65}
+        />
+
+        <div className="v-separator"></div>
+
+        <NumberSlider
+          label={"Letter Spacing"}
+          editContext={editContext}
+          name={editContext.isBody ? "bodyLetterSpace" : "headLetterSpace"}
+          min="0"
+          max="10"
+          step={0.5}
+          initialValue={0}
         />
       </div>
     </div>

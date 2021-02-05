@@ -25,11 +25,11 @@ const NumberSliders = props => {
     }
 
     if (isDecrement && Number(value) > Number(min)) {
-      await setValuePromise(Number(value) - 1).then(() => {
+      await setValuePromise(Number(value) - props.step).then(() => {
         props.editContext.onElementValueChange(inputElement);
       });
     } else if (!isDecrement && Number(value) < Number(max)) {
-      await setValuePromise(Number(value) + 1).then(() => {
+      await setValuePromise(Number(value) + props.step).then(() => {
         props.editContext.onElementValueChange(inputElement);
       });
     } else{
