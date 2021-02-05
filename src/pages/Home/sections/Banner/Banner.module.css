@@ -47,6 +47,7 @@
   border: none;
   cursor: pointer;
   margin-top: 15px;
+  z-index: 1001;
 }
 .button:after {
   content: "";

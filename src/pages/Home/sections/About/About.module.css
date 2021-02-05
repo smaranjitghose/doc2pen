@@ -15,19 +15,30 @@
 
 .line {
     font-size: 1.3rem;
-    width: 70%;
+    width: 90%;
     margin: 1rem;
 }
 
 .steps {
     margin-top: 3rem;
-    width: 70%;
+    width: 90%;
 }
 
 .step {
     display: flex;
     justify-content: center;
     margin: 4rem 0;
+}
+
+@media(max-width:730px){
+    .step{
+        flex-wrap: wrap;
+    }
+}
+
+.illustration{
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .step_reverse {
@@ -39,7 +50,7 @@
 }
 
 .step_text {
-    padding: 0 3rem;
+    padding: 0 0.1rem;
 }
 
 .step_title {
@@ -56,6 +67,6 @@
     font-weight: bold;
     color: #4e89ae;
     font-size: 1.5rem;
-    padding: 1rem 15rem;
+    padding: 1rem;
     margin: 3rem 0;
 }

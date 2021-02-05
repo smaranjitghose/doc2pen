@@ -3,7 +3,6 @@ import { useHistory} from 'react-router-dom';
 import styles from './Banner.module.css';
 import pen from './pen.svg';
 
-
 function Banner() {
     const history = useHistory();
     function redirectToEditor() {
@@ -29,4 +28,4 @@ function Banner() {
     )
 }
 
-export default Banner
+export default Banner;
