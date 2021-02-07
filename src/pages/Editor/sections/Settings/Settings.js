@@ -74,10 +74,10 @@ const Settings = () => {
           label={"Adjust x-axis"}
           editContext={editContext}
           name={editContext.isBody ? "bodyLeft" : "headLeft"}
-          min="5"
+          min="0"
           max="200"
           step={1}
-          initialValue={10}
+          initialValue={0}
         />
 
         <div className="v-separator"></div>
