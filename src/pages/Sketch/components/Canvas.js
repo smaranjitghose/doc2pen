@@ -82,6 +82,16 @@ function Canvas() {
     }
 
     function download() {
+        // Download the doc in pdf format
+        const img = document.createElement("img");
+        const imgUrl = canvasRef.current.toDataURL("image/png");
+        img.src = imgUrl;
+
+        const pdfOptions = {
+          filename: "drawing.pdf",
+        };
+        DomToPdf(img, pdfOptions);
+
         let link = document.createElement('a');
         link.download = 'drawing.png';
         link.href = canvasRef.current.toDataURL("image/png");
