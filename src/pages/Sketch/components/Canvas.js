@@ -1,10 +1,14 @@
 import React, {useState, useEffect, useRef} from 'react';
 import styles from './Canvas.module.css';
+import Toolbox from './Toolbox/Toolbox';
 
 function Canvas() {
 
     const canvasRef = useRef(null);
     const [context, setContext] = useState();
+
+    const [color, setColor] = useState("#ff0000");
+    const [width, setWidth] = useState("1");
 
     function drawLine(info, style = {}) {
         const { x, y, x1, y1 } = info;
@@ -64,6 +68,10 @@ function Canvas() {
                 y: currentPoint.y,
                 x1: point.x,
                 y1: point.y 
+            },
+            {
+                color: color,
+                width: width
             }
         )
         setCurrentPoint(point);
@@ -90,6 +98,12 @@ function Canvas() {
 
     return (
         <>
+            <Toolbox
+                color={color}
+                setColor={setColor}
+                width={width}
+                setWidth={setWidth}
+            />
             <div className={styles.options}>
                 <button className={`${styles.buttons} ${styles.btn_download}`}
                     onClick={download}

@@ -19,6 +19,7 @@
     font-size: 0.9rem;
     outline: none;
     border-radius: 7px;
+    cursor: pointer;
 }
 
 .btn_clear {
