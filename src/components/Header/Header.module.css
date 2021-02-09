@@ -1,7 +1,6 @@
 .Header {
     background-color: #103F5F;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     color: white;
@@ -23,6 +22,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
 }
 
 .header_links {
@@ -49,9 +53,9 @@
 
 .quick_box {
     position: fixed;
-    top: 0;
+    top: 50%;
     right: 0;
-    height: 100vh;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,4 +75,14 @@
     text-decoration: none;
     background-color: #346d92;
     transform: translateX(0);
+}
+
+@media only screen and (max-width: 460px) {
+    .right {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
 }
