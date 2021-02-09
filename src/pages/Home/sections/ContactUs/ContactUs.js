@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from './ContactUs.module.css';
 
+function response() {
+  alert('your feedback has been successfully submitted 😊');
+}
 function ContactUs() {
     return (
       <div className={styles.ContactUs} id="home_contact">
         <div className={styles.heading}>Get In Touch</div>
-
         <div className={styles.contact_and_info_container}>
           <div id="info" className={styles.info}>
             <div className={styles.general_info}>
@@ -13,7 +15,7 @@ function ContactUs() {
               <p>Contact us your query or just send a hello.</p>
               <br />
               <div className={styles.contact_form}>
-                <form action="#" method="POST" className={styles.contact_form_container}>
+                <form  onsubmit="setTimeout(function(){window.location.reload();},10);"  className={styles.contact_form_container}>
                   <input type="text" placeholder="First Name (required)" />
                   <input type="text" placeholder="Last Name (required)" />
                   <input type="email" placeholder="Email (required)" />
@@ -48,7 +50,7 @@ function ContactUs() {
                     </div>
                   </div>
                   <textarea placeholder="Message..."></textarea>
-                  <input type="submit" value="Send" />
+                  <input onClick={response} type="submit" value="Send" />
                 </form>
               </div>
             </div>
