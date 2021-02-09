@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DomToImage from "dom-to-image";
+import DomToPdf from "dom-to-pdf";
 
 export const EditContext = React.createContext();
 
@@ -11,7 +12,7 @@ const EditContextProvider = (props) => {
   const [headValues, setHeadValues] = useState({
     headSize: null,
     headTop: null,
-    headLeft: 0,
+    headLeft: 10,
     headLine: null,
     headFont: "HomemadeApple",
     headColor: "black",
@@ -21,7 +22,7 @@ const EditContextProvider = (props) => {
   const [bodyValues, setBodyValues] = useState({
     bodySize: null,
     bodyTop: null,
-    bodyLeft: 0,
+    bodyLeft: 10,
     bodyLine: null,
     bodyFont: "HomemadeApple",
     bodyColor: "black",
@@ -42,7 +43,7 @@ const EditContextProvider = (props) => {
   };
 
   const pageSrcHandler = (e) => {
-    setPageSrc((`${ImageNameMap[e.target.value]}`));
+    setPageSrc(`${ImageNameMap[e.target.value]}`);
   };
 
   const onValueChange = (e) => {
@@ -56,7 +57,7 @@ const EditContextProvider = (props) => {
     }
   };
 
-  const onElementValueChange = e => {
+  const onElementValueChange = (e) => {
     if (isBody) {
       setBodyValues({ ...bodyValues, [e.name]: e.value });
     } else {
@@ -72,7 +73,7 @@ const EditContextProvider = (props) => {
 
     const node = document.getElementById("outputPage");
     const scale = 750 / node.offsetWidth;
-    const options = {
+    const imgOptions = {
       height: node.offsetHeight * scale,
       width: node.offsetWidth * scale,
       style: {
@@ -83,11 +84,18 @@ const EditContextProvider = (props) => {
       },
     };
 
-    DomToImage.toPng(node, options)
+    // Download the doc in pdf format
+    const pdfOptions = {
+      filename: "editor.pdf",
+    };
+    DomToPdf(node, pdfOptions);
+
+    // Download the doc in image format
+    DomToImage.toPng(node, imgOptions)
       .then((dataUrl) => {
         const img = new Image();
         img.src = dataUrl;
-        downloadURI(dataUrl, "generatedDoc.png");
+        downloadURI(dataUrl, "editor.png");
       })
       .catch((error) => {
         console.error("oops,something went wrong", error);
@@ -106,38 +114,44 @@ const EditContextProvider = (props) => {
     e.preventDefault();
 
     if (window.File && window.FileReader && window.FileList && window.Blob) {
-         let textarea = document.querySelector('#show-text')
-         var file = document.querySelector('input[type=file]').files[0];
-         var reader = new FileReader()
+      let textarea = document.querySelector("#show-text");
+      var file = document.querySelector("input[type=file]").files[0];
+      var reader = new FileReader();
 
-         var textFile = /text.*/;
+      var textFile = /text.*/;
 
-         if (file.type.match(textFile)) {
-           reader.onload = function (event) {
-             let rtf = convertToPlain(event.target.result);
-            textarea.value += rtf;
-          }
-         } else {
-            textarea.value += "<span class='error'>It doesn't seem to be a text file!</span>";
-         }
-         reader.readAsText(file);
-
-   } else {
+      if (file.type.match(textFile)) {
+        reader.onload = function (event) {
+          let rtf = convertToPlain(event.target.result);
+          textarea.value += rtf;
+        };
+      } else {
+        textarea.value +=
+          "<span class='error'>It doesn't seem to be a text file!</span>";
+      }
+      reader.readAsText(file);
+    } else {
       alert("Your browser is too old to support HTML5 File API");
-   }
-  }
+    }
+  };
 
   function convertToPlain(rtf) {
-        rtf = rtf.replace(/\\par[d]?/g, "");
-        rtf = rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "");
-        // rtf = rtf.replace(/\n/ig, " ");
-        rtf = rtf.replace(/\\/ig,"");
-        rtf = rtf.replace(/\*/ig, "");
-        rtf = rtf.replace(/decimal.|tightenfactor0|eftab720|HYPERLINK|irnatural/ig, "");
-        rtf = rtf.replace(/irnaturaltightenfactor0|000000/ig, "");
-        rtf = rtf.replace(/�|ࡱ|p#|#|,|%|@|\$|~/ig, "");
-        return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
-    }
+    rtf = rtf.replace(/\\par[d]?/g, "");
+    rtf = rtf.replace(
+      /\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g,
+      ""
+    );
+    // rtf = rtf.replace(/\n/ig, " ");
+    rtf = rtf.replace(/\\/gi, "");
+    rtf = rtf.replace(/\*/gi, "");
+    rtf = rtf.replace(
+      /decimal.|tightenfactor0|eftab720|HYPERLINK|irnatural/gi,
+      ""
+    );
+    rtf = rtf.replace(/irnaturaltightenfactor0|000000/gi, "");
+    rtf = rtf.replace(/�|ࡱ|p#|#|,|%|@|\$|~/gi, "");
+    return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
+  }
 
   return (
     <EditContext.Provider
