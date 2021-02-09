@@ -6,7 +6,7 @@
     align-items: center;
     color: white;
     padding: 0.5rem 1rem;
-    z-index: 9999;
+    z-index: 10000;
     font-weight: bold;
     width: 100%;
     position: sticky;
