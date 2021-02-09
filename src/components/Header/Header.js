@@ -5,9 +5,9 @@ import styles from './Header.module.css';
 import logo from './logo.png';
 import {ImInfo} from "react-icons/im";
 import {RiTeamLine, RiContactsBook2Line} from "react-icons/ri";
-import {BiDonateHeart} from "react-icons/bi";
+import {BiDonateHeart, BiMenu} from "react-icons/bi";
 
-const headerLinks = [
+const quickLinks = [
     {
         name: 'About',
         to: 'home_about',
@@ -59,10 +59,13 @@ function Header() {
                         Sketch <sup><span style={{color: "red", fontSize: "0.7rem"}}>New</span></sup>
                     </NavLink>
                 </div>
+                <div className={styles.hamburger}>
+                    <BiMenu size={30}/>
+                </div>
             </header>
             <div className={styles.quick_box}>
                 {
-                    location === '/' && headerLinks.map(link => (
+                    location === '/' && quickLinks.map(link => (
                         <Link className={styles.quick_links} key={link.name} to={link.to} offset={-100}>
                             {link.icon}
                             &nbsp;&nbsp;&nbsp;
