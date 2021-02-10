@@ -1,4 +1,6 @@
 import React from "react";
+import MetaComponent from '../../seo/MetaComponent';
+import metaData from '../../seo/metaData';
 import "./style.css";
 import Footer from "../../components/Footer/Footer";
 import EditContextProvider from "./containers/editContext";
@@ -9,6 +11,11 @@ import Output from "./sections/OutputComponent/Output";
 function Editor() {
   return (
     <>
+      <MetaComponent
+        title={metaData.editor.title}
+        description={metaData.editor.description}
+        keywords={metaData.editor.keywords}
+      />
       <div>
         <a
           href="https://dscommunity.in"
