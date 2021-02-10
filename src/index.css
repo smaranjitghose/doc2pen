@@ -61,20 +61,8 @@ body {
   color: #1e1e1e !important;
 
   font-family: Montserrat;
-
-  /* overflow-y: hidden; */
 }
 
-.dbtn {
-  color: #ffffff !important;
-  padding: 10px 25px;
-  border-radius: 10px !important;
-  background: #007bff;
-}
-.dbtn:hover {
-  color: #007bff !important;
-  background: #232323;
-}
 @font-face {
   font-family: Ruled1;
   src: url(./fonts/Lato-Light.ttf);

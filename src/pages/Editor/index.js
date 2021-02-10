@@ -1,7 +1,10 @@
 import React from "react";
+
+import styles from "./style.module.css";
+
 import MetaComponent from '../../seo/MetaComponent';
 import metaData from '../../seo/metaData';
-import "./style.css";
+
 import Footer from "../../components/Footer/Footer";
 import EditContextProvider from "./containers/editContext";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -16,7 +19,7 @@ function Editor() {
         description={metaData.editor.description}
         keywords={metaData.editor.keywords}
       />
-      <div>
+      <div className={styles.dscCommunity}>
         <a
           href="https://dscommunity.in"
           target="_blank"
