@@ -7,16 +7,18 @@ import Preloader from './components/Preloader/Preloader'
 const Home = lazy(() => import("./pages/Home/index"));
 const Editor = lazy(() => import("./pages/Editor/index"));
 const Sketch = lazy(() => import("./pages/Sketch/Sketch"));
+const NotFound = lazy(() => import("./pages/404/notFound"));
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Suspense fallback={<Preloader/>}>
+        <Suspense fallback={<Preloader />}>
           <Header />
           <Route path="/" exact component={Home}></Route>
           <Route path="/editor" exact component={Editor}></Route>
           <Route path="/sketch" exact component={Sketch}></Route>
+          <Route component={NotFound}></Route>
         </Suspense>
       </Switch>
     </BrowserRouter>

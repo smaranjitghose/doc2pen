@@ -1,0 +1,19 @@
+.particle-container {
+  height: 100vh;
+  position: sticky;
+  top:0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+#particle-slider {
+  position: absolute;
+  z-index: 10;
+  opacity: 0.4;
+  height: 100%;
+  min-width: 340px;
+  width: 93vw;
+}
