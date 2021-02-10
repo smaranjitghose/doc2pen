@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import "./particles.css";
 import styles from "./notFound.module.css";
-
 import Logo from "./../../assests/Logo.png";
+// import NotFoundBg from "./../../assests/Fade-In-Background.svg";
 
 function Hero() {
+  useEffect(() => {
+    if (window.ParticleSlider !== undefined) window.initParticles();
+  }, []);
+
   return (
     <div className={styles.stickyWrap}>
       <div className={styles.homeSectionWrap}>
@@ -13,10 +18,13 @@ function Hero() {
             Uh ooh! Its a 404.
             <br />
             <br />
-            Seems like you are lost
+            Seems like you are lost buddy
             <br />
-            😕😕
+            <div className={styles.emoji}>😕😕</div>
           </span>
+          <a className={styles.navlink} href="/">
+            Go Back
+          </a>
         </div>
         <div className={`particle-container ${styles.float}`}>
           <div id="particle-slider">
