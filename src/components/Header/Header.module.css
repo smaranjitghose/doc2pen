@@ -36,6 +36,7 @@
     cursor: pointer;
     color: white;
     text-decoration: none;
+    position: relative;
 }
 
 .header_links:hover {
@@ -43,7 +44,14 @@
     color:#103F5F;
     text-decoration: none;
 }
-
+.tagged::after{
+    position: absolute;
+    top: 0;
+    right: -15px;
+    content: 'New';
+    color: red;
+    font-size: 0.7rem;
+}
 .header_active_links {
     box-shadow: inset 1px 1px 3px grey;
     background-color: lightblue;
