@@ -33,6 +33,13 @@
     transition: all 0.5s ease-in;
 }
 
+@media(max-width: 500px){
+    .profile_container{
+        width: 250px; 
+        height: 350px;
+    }
+}
+
 .centeralign {
     display: flex;
     justify-content: center;
@@ -44,12 +51,12 @@
 }
 
 .image_1 .profile_container::before {
-    background: url("../../../../assests/images/team/smaranjit_ghose.png") no-repeat center;
+    background: url("../../../../assests/images/team/smaranjit_ghose_small.png") no-repeat center;
     background-size: cover;
 }
   
 .image_2 .profile_container::before {
-    background: url("../../../../assests/images/team/anush_bhatia.png") no-repeat center;
+    background: url("../../../../assests/images/team/anush_bhatia_small.png") no-repeat center;
     background-size: cover;
 }
   
