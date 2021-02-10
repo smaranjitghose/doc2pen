@@ -1,4 +1,4 @@
-.to-top-button {
+.toTopButton {
   z-index: 10000;
   position: fixed !important;
   bottom: 1rem;
@@ -12,10 +12,10 @@
   box-shadow: 2px 2px 3px #999;
   border: none !important;
 }
-.to-top-button:hover{
+.toTopButton:hover{
     background-color: #4285f4!important;
     transition:all 300ms ease-in-out;
 }
-button.to-top-button svg {
+button.toTopButton svg {
     margin: 0 0 4px 0px;
 }
