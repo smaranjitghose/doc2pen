@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ContactUs.module.css';
 
 function response() {
-  alert('your feedback has been successfully submitted 😊');
+  alert('Thank You for your valuable input 😊');
 }
 function ContactUs() {
     return (
