@@ -1,0 +1,12 @@
+[[headers]]
+  for = "*.js"  # for caching js files
+  [headers.values]
+    Cache-Control = "public, max-age=7.884e+6" # 3 months cache
+[[headers]]
+  for = "*.css" # css files too
+  [headers.values]
+    Cache-Control = "public, max-age=7.884e+6"
+[[headers]]
+  for = "*.png" # png files too
+  [headers.values]
+    Cache-Control = "public, max-age=7.884e+6"
