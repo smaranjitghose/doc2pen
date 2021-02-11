@@ -2,12 +2,11 @@ import React, { useEffect, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import "./style.css";
+import styles from "./style.module.css";
 
 const ScrollToTop = () => {
   let toTopButtonObj = useRef(null);
   useEffect(() => {
-    toTopButtonObj.current = document.querySelector(".to-top-button");
     scrollFunction();
   });
   window.onscroll = () => {
@@ -28,7 +27,13 @@ const ScrollToTop = () => {
   }
 
   return (
-    <Button className="to-top-button" variant="light" onClick={() => topFunction()} aria-label="Scroll to Top">
+    <Button
+      ref={toTopButtonObj}
+      className={styles.toTopButton}
+      variant="light"
+      onClick={() => topFunction()}
+      aria-label="Scroll to Top"
+    >
       <AiOutlineArrowUp />
     </Button>
   );

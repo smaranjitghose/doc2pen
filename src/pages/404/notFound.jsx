@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import "./particles.css";
 import styles from "./notFound.module.css";
 import Logo from "./../../assests/Logo.png";
