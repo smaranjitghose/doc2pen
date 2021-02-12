@@ -104,13 +104,13 @@ Below you will find the process and workflow used to review and merge your chang
 
 - Fork this Repository. This will create a Local Copy of this Repository on your Github Profile. Keep a reference to the original project in `upstream` remote. 
 
-![ForkDemo](readme.assets/fork_image.jpg)
+![ForkDemo](readme_assets/fork_image.jpg)
 ##### 4. Clone your forked copy of the project.
 
 ```
 git clone  https://github.com/<your_user_name>/smaranjitghose/doc2pen.git  
 ```
-![Clone](readme.assets/clone_imaage.jpg)
+![Clone](readme_assets/clone_image.jpg)
 
 ##### 5. Navigate to the project directory :file_folder: .
 
@@ -248,7 +248,7 @@ git push -u origin <your_branch_name>
  
   ![pullrequest-send](readme_assets/pullrequest-send.jpg)  
   
-![pullrequest-description](assets/pullrequest-description.png)
+![pullrequest-description](readme_assets/pullrequest-description.png)
 - Voila! You have made a PR to the doc2pen project boom . Sit back patiently and relax while the project maintainers review your PR and merged.🥳 
  
 ## Linting :grey_exclamation:
