@@ -1,14 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import styles from './Team.module.css';
 import {FaGithub, FaLinkedinIn} from 'react-icons/fa';
-import smaranjit from '../../../../assests/images/team/smaranjit_ghose.png';
-import anush from '../../../../assests/images/team/anush_bhatia.png';
+import smaranjitLarge from '../../../../assests/images/team/smaranjit_ghose_large.png';
+import anushLarge from '../../../../assests/images/team/anush_bhatia_large.png';
+import smaranjitSmall from "../../../../assests/images/team/smaranjit_ghose_small.png";
+import anushSmall from "../../../../assests/images/team/anush_bhatia_small.png";
+
 
 function Team() {
 
     const maintainerSection = [
         {
-          image: smaranjit,
+          imageLarge: smaranjitLarge,
+          imageSmall: smaranjitSmall,
           name: "Smaranjit Ghose",
           title: "Lead Developer",
           github: "https://github.com/smaranjitghose",
@@ -16,7 +20,8 @@ function Team() {
           imgclass: "image_1"
         },
         {
-          image: anush,
+          imageLarge: anushLarge,
+          imageSmall: anushSmall,
           name: "Anush Bhatia",
           title: "Lead Developer",
           github: "https://github.com/anushbhatia",
@@ -50,7 +55,7 @@ function Team() {
                       <div className={styles.profile_container}>
                         <div className={styles.profile_wrapper}>
                           <div className={styles.profile_card}>
-                          <img src={item.image} alt="profile pics"/> 
+                          <img srcSet={`${item.imageSmall} 1x, ${item.imageLarge} 2x`} src={item.imageSmall} alt="profile pics"/> 
                           <h4>{item.name}</h4>
                           <h5>{item.title}</h5>
                           <div className={styles.icons}>
