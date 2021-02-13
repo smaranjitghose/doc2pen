@@ -44,10 +44,13 @@
     color:#103F5F;
     text-decoration: none;
 }
+.tagged{
+    width: 96px;
+}
 .tagged::after{
     position: absolute;
-    top: 0;
-    right: -15px;
+    top: 1px;
+    right: 13px;
     content: 'New';
     color: red;
     font-size: 0.7rem;
