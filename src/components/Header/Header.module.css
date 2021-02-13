@@ -18,7 +18,7 @@
     width: 170px;
 }
 
-.right {
+/*.right {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,7 @@
     display: none;
     cursor: pointer;
 }
-
+*/
 .header_links {
     padding: 0.3rem 0.5rem;
     margin: 0 0.1rem;
