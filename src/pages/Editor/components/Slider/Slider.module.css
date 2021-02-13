@@ -1,28 +1,28 @@
-.form-control::-webkit-outer-spin-button,
-.form-control::-webkit-inner-spin-button {
+.formControl::-webkit-outer-spin-button,
+.formControl::-webkit-inner-spin-button {
   display: none;
 }
-.form-control:focus {
+.formControl:focus {
   border-color: transparent;
   box-shadow: inset 0 0 0 1px rgb(0 123 255 / 25%);
 }
-.control-container {
+.controlContainer {
   margin: 5px 15px;
 }
 
-.control-wrap {
+.controlWrap {
   width: 100%;
   display: flex;
   justify-content: stretch;
   position: relative;
 }
-.control-wrap > * {
+.controlWrap > * {
   flex: 1;
 }
 
 .increment,
 .decrement,
-.form-control {
+.formControl {
   border: 1px solid;
   height: 26px;
   min-width: 23px;
@@ -46,7 +46,7 @@
 .decrement {
   border-radius: 2px 0 0 2px;
 }
-.form-control {
+.formControl {
   border-radius: 0;
   font-size: 16px;
   width: 70px;

@@ -1,4 +1,4 @@
-.control-panel {
+.controlPanel {
   display: block;
 }
 .selector {
@@ -7,10 +7,10 @@
   width: fit-content;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
-.select-option {
+.selectOption {
   width: 150px;
 }
-.select-option label {
+.selectOption label {
   width: 100%;
   text-align: center;
 }
@@ -24,13 +24,13 @@
   padding-bottom: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
-.v-separator {
+.vSeparator {
   display: inline-block;
   border-left: 1px solid rgb(218, 220, 224);
   margin: 9px 4px;
   height: 45px;
 }
-.download-btn {
+.downloadBtn {
   color: rgb(29, 28, 28) !important;
   padding: 5px 15px !important;
   border: none !important;
@@ -40,10 +40,10 @@
   font-size: 16px;
   outline: none !important;
 }
-.download-btn:hover {
+.downloadBtn:hover {
   background:rgb(218, 220, 224) !important ;
 }
-.download-btn:focus {
+.downloadBtn:focus {
     color: rgb(29, 28, 28) !important;
   background: rgb(191, 193, 196) !important ;
 }

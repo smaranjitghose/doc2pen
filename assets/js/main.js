@@ -117,13 +117,13 @@ const maintainerSection = [
 const maintainerInfo = () => {
   let output = "";
   maintainerSection.forEach(
-    ({ title, image, github, linkedin, name, imgclass}) =>
+    ({ title, image, github, linkedin, name, imgclass }) =>
       (output += `    
       <div class="${imgclass} col-md-6 centeralign">
       <div class="profile-container">
        <div class="profile-wrapper">
          <div class="profile-card">
-          <img src="${image}" alt="profile pics"> 
+          <img srcset="${image} 1x, ${image} 2x" src="${image}" alt="profile pics"> 
           <h4>${name}</h4>
           <h5>${title}</h5>
           <div class="icons">
@@ -277,7 +277,7 @@ const showCards = () => {
     ({ title, image, githublink }) =>
       (output += `       
      <figure class="position-relative d-inline-block text-center ml-2 mb-4 grid-wd-100">
-      <img src="${image}" class="grid-wd-100">
+      <img srcset="${image} 1x, ${image} 2x" src="${image}" class="grid-wd-100">
        <figcaption class="position-absolute grid-wd-100 va-top pad font-small futura">
         <div class="text">${title} <a href="${githublink}" class="social-icon fa fa-github"></a></div>
        </figcaption>

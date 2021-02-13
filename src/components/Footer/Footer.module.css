@@ -11,3 +11,84 @@
     font-size: 1.2rem;
     padding: 10px;
 }
+
+.footerText {
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+  
+  .footerDiv {
+    z-index: 150;
+    margin-top: 2rem;
+    background-color: black;
+    /* background-image: linear-gradient(to left, rgb(127, 206, 197) , rgb(20, 85, 123) 74%); */
+    height: 13.1rem;
+  }
+  
+  .newsletter{
+    color: white;
+    text-align: center;
+    font-family: 'Poppins';
+  }
+  .newsletter .heading h5{
+    font-family: 'Poppins';
+    font-weight: bold;
+  }
+  .emailField{
+    min-width: 360px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .form{
+    display: inline-block;
+    display: flex;
+    align-items: center;
+        justify-content: center;
+  }
+  .box{
+    height: 40px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+  }
+  .box input{
+    flex: 1;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+  }
+  .bsClass{
+    outline:white;
+    background-color:black;
+    margin-left: 0.5%;
+  }
+  .icon {
+    padding: 10px;
+    color: dodgerblue;
+  }
+  @media screen and (max-width: 474px){
+    .footerDiv{
+      height:20.1rem;
+    }
+    .form{
+      flex-direction:column;
+      margin-left:0px;
+    }
+    .form{
+      margin-left:0px;
+    }
+    .box{
+      width:300px;
+    }
+    .bsClass{
+      margin-top:2px;
+    }
+    .textMuted{
+      text-align:center;
+    }
+  }

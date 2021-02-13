@@ -60,10 +60,15 @@ function Header() {
                     <NavLink className={styles.header_links} to='/editor' exact activeClassName={styles.header_active_links}>
                         Editor
                     </NavLink>
+
                     </li>
                     <li className="sm:inline-block">
                     <NavLink className={styles.header_links} to='/sketch' exact activeClassName={styles.header_active_links}>
                         Sketch <sup><span style={{color: "red", fontSize: "0.7rem"}}>New</span></sup>
+
+                    <NavLink className={`${styles.header_links} ${styles.tagged}`} to='/sketch' exact activeClassName={styles.header_active_links}>
+                        Sketch
+
                     </NavLink>
                     </li>
                     </ul>
