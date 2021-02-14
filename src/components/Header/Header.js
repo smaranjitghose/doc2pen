@@ -55,7 +55,7 @@ function Header() {
                     <NavLink className={styles.header_links} to='/editor' exact activeClassName={styles.header_active_links}>
                         Editor
                     </NavLink>
-                    <NavLink className={`${styles.header_links} ${styles.tagged}`} to='/sketch' exact activeClassName={styles.header_active_links}>
+                    <NavLink className={`${styles.header_links} /*${styles.tagged}*/`} to='/sketch' exact activeClassName={styles.header_active_links}>
                         Sketch
                     </NavLink>
                 </div>
