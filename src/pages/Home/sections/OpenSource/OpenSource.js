@@ -5,35 +5,35 @@ function OpenSource() {
 
     const recentEventsDetails = [
         {
-            coverImage: '/images/events/SLOP.png',
+            coverImage: '/images/events/SLOP.webp',
             eventName: 'SLOP',
             altName: 'SLOP Logo',
             eventDescription: `An inititative by the Developer Student Club (DA-IICT), exclusively for students who are new to open source software development.`,
             referencePage: 'https://slop.dscdaiict.in/projects'
         },
         {
-            coverImage: '/images/events/hakin_codes.png',
+            coverImage: '/images/events/hakin_codes.webp',
             eventName: 'Hakincodes',
             altName: 'Hakincodes Logo',
             eventDescription: `Established in 2020 with a mission to empower youth i.e. students, developers & many more by giving opportunities to grow and learn.`,
             referencePage: 'https://hakincodes.tech/'
         },
         {
-            coverImage: '/images/events/psoc_logo.png',
+            coverImage: '/images/events/psoc_logo.webp',
             eventName: 'PSOC',
             altName: 'PSOC Logo',
             eventDescription: `It's a 2 month long event conducted by Programming Club, UIET, aiming to help beginners get started with Open Source development.`,
             referencePage: 'https://www.pclubsummerofcode.in/'
         },
         {
-            coverImage: '/images/events/woc-logo.png',
+            coverImage: '/images/events/woc-logo.webp',
             eventName:'DevScript Winter of Code 2020',
             altName:'WOC Logo',
             eventDescription: 'Winter of Code envisioned by DevScript that helps understand the paradigm of Open Source contribution.',
             referencePage:'https://devscript.tech/woc/'
         },
         {
-            coverImage: '/images/events/SWOC-logo.png',
+            coverImage: '/images/events/SWOC-logo.webp',
             eventName:'Script Winter of Code 2021',
             altName:'SWOC Logo',
             eventDescription: 'Script Winter of Code envisioned by the Script Foundation aims to bring students into the world of open source development.',
