@@ -31,8 +31,7 @@ const quickLinks = [
 ]
 
 function Header() {
-    let navLinkRef = useRef(null);
-    let headerRef = useRef(null);
+    
     const history = useHistory();
 
     const [location, setLocation] = useState(window.location.pathname);
@@ -43,10 +42,7 @@ function Header() {
         })
     }, [history])
     
-    function drop() {
-        navLinkRef.current.classList.toggle(styles.rightDrop);
-        headerRef.current.classList.toggle(styles.HeaderOpen);
-    }
+    
 
     return (
         <>

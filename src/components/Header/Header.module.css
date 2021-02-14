@@ -97,27 +97,8 @@ li{
 }
 
 @media only screen and (max-width: 460px) {
-    
-    .HeaderDrop{
-        flex-wrap: wrap;
-        gap: 2px;
-    }
-
-    .HeaderOpen{
-        gap: 20px;
-    }
-
     .right {
-        height: 35px;
-        padding-right: 20px;
-        overflow: hidden;
-        transform: translateY(0);
-        transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
-    }
-    .rightDrop{
-        height: 0px;
-        transform: translateY(-5px);
-        transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1);
+        display: block;
     }
     .hamburger {
         display: block;
