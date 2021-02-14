@@ -5,7 +5,7 @@ import styles from './Header.module.css';
 import logo from './logo.png';
 import {ImInfo} from "react-icons/im";
 import {RiTeamLine, RiContactsBook2Line} from "react-icons/ri";
-import {BiDonateHeart, BiMenu} from "react-icons/bi";
+import {BiDonateHeart} from "react-icons/bi";
 
 const quickLinks = [
     {
@@ -50,24 +50,35 @@ function Header() {
 
     return (
         <>
-            <header ref={headerRef} className={`${styles.Header} ${styles.HeaderDrop}`}>
+            <header className={styles.Header}>
+              <div className="container mx-auto">
+                <div className="sm:flex justify-center">
                 <img className={styles.left} src={logo} alt="Logo"/>
-                <div ref={navLinkRef} className={`${styles.right} ${styles.rightDrop}`}>
-                    <Link to='home_banner' offset={-15}>
+                
+                <div className={styles.right}>
+                  <ul className="text-gray-700 sm:self-center text-xl border-t sm:border-none">
+                   <li>
+                    <Link to='home_banner' offset={-15}>                     
                         <NavLink className={styles.header_links} to='/' exact activeClassName={styles.header_active_links}>
                             Home
-                        </NavLink>
+                        </NavLink>                      
                     </Link>
+                  </li>
+                  <li>
                     <NavLink className={styles.header_links} to='/editor' exact activeClassName={styles.header_active_links}>
                         Editor
                     </NavLink>
+                  </li>
+                  <li>
                     <NavLink className={`${styles.header_links} /*${styles.tagged}*/`} to='/sketch' exact activeClassName={styles.header_active_links}>
                         Sketch
                     </NavLink>
+                  </li>  
+                  </ul>
                 </div>
-                <div className={styles.hamburger} onClick={()=>drop()}>
-                    <BiMenu size={30}/>
-                </div>
+               
+               </div>
+              </div>
             </header>
             <div className={styles.quick_box}>
                 {
