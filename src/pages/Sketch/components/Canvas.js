@@ -1,27 +1,10 @@
-<<<<<<< HEAD
-import React, { useState, useEffect, useRef } from "react";
-import styles from "./Canvas.module.css";
-import DomToPdf from "dom-to-pdf";
-=======
 import React, {useState, useEffect, useRef} from 'react';
 import styles from './Canvas.module.css';
-import Toolbox from './Toolbox/Toolbox';
->>>>>>> 402347e16d53addefd134185b8b58fa7eae9b49b
 
 function Canvas() {
-  const canvasRef = useRef(null);
-  const [context, setContext] = useState();
 
-<<<<<<< HEAD
-  function drawLine(info, style = {}) {
-    const { x, y, x1, y1 } = info;
-    const { color = "tomato", width = 1 } = style;
-=======
     const canvasRef = useRef(null);
     const [context, setContext] = useState();
-
-    const [color, setColor] = useState("#ff0000");
-    const [width, setWidth] = useState("1");
 
     function drawLine(info, style = {}) {
         const { x, y, x1, y1 } = info;
@@ -53,29 +36,20 @@ function Canvas() {
           y: event.pageY - canvasRef.current.offsetTop,
         };
     }
->>>>>>> 402347e16d53addefd134185b8b58fa7eae9b49b
 
-    context.strokeStyle = color;
-    context.lineJoin = "round";
-    context.lineWidth = width;
+    function handleMouseDown(event) {
+        console.log(event);
 
-    context.beginPath();
-    context.moveTo(x, y);
-    context.lineTo(x1, y1);
-    context.closePath();
+        if(event.button !== 0) {
+            return;
+        }
 
-    context.stroke();
-  }
+        const point = relativeCoordinatesForEvent(event);
 
-  useEffect(() => {
-    setContext(canvasRef.current.getContext("2d"));
-  }, []);
+        setIsDrawing(true);
+        setCurrentPoint(point);
+    }
 
-<<<<<<< HEAD
-  const [isDrawing, setIsDrawing] = useState(false);
-  const [currentPoint, setCurrentPoint] = useState({ x: "", y: "" });
-  const [mousePosition, setMousePosition] = useState({ x: "0", y: "0" });
-=======
     function handleMouseMove(event) {
         const point = relativeCoordinatesForEvent(event);
         setMousePosition(point);
@@ -90,124 +64,32 @@ function Canvas() {
                 y: currentPoint.y,
                 x1: point.x,
                 y1: point.y 
-            },
-            {
-                color: color,
-                width: width
             }
         )
         setCurrentPoint(point);
     }
->>>>>>> 402347e16d53addefd134185b8b58fa7eae9b49b
 
-  function relativeCoordinatesForEvent(event) {
-    return {
-      x: event.pageX - canvasRef.current.offsetLeft,
-      y: event.pageY - canvasRef.current.offsetTop,
-    };
-  }
-
-  function handleMouseDown(event) {
-    console.log(event);
-
-    if (event.button !== 0) {
-      return;
+    function handleMouseUp() {
+        setIsDrawing(false);
     }
 
-    const point = relativeCoordinatesForEvent(event);
-
-    setIsDrawing(true);
-    setCurrentPoint(point);
-  }
-
-  function handleMouseMove(event) {
-    const point = relativeCoordinatesForEvent(event);
-    setMousePosition(point);
-
-    if (!isDrawing) {
-      return;
+    function handleMouseLeave() {
+        setIsDrawing(false);
     }
 
-<<<<<<< HEAD
-    drawLine({
-      x: currentPoint.x,
-      y: currentPoint.y,
-      x1: point.x,
-      y1: point.y,
-    });
-    setCurrentPoint(point);
-  }
+    function clear() {
+        context.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+    }
 
-  function handleMouseUp() {
-    setIsDrawing(false);
-  }
+    function download() {
+        let link = document.createElement('a');
+        link.download = 'drawing.png';
+        link.href = canvasRef.current.toDataURL("image/png");
+        link.click();
+    }
 
-  function handleMouseLeave() {
-    setIsDrawing(false);
-  }
-
-  function clear() {
-    context.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-  }
-
-  function download() {
-    // Download the doc in pdf format
-    const img = document.createElement("img");
-    const imgUrl = canvasRef.current.toDataURL("image/png");
-    img.src = imgUrl;
-
-    const pdfOptions = {
-      filename: "drawing.pdf",
-    };
-    DomToPdf(img, pdfOptions);
-
-    // Download the doc in img format
-    let link = document.createElement("a");
-    link.download = "drawing.png";
-    link.href = canvasRef.current.toDataURL("image/png");
-    link.click();
-  }
-
-  return (
-    <>
-      <div className={styles.options}>
-        <button
-          className={`${styles.buttons} ${styles.btn_download}`}
-          onClick={download}
-        >
-          Download
-        </button>
-        <button
-          className={`${styles.buttons} ${styles.btn_clear}`}
-          onClick={clear}
-        >
-          Clear
-        </button>
-      </div>
-      <canvas
-        ref={canvasRef}
-        width="700px"
-        height="500px"
-        className={styles.canvas}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseLeave}
-      />
-      <div className={styles.mousePosition}>
-        Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y}){" "}
-      </div>
-    </>
-  );
-=======
     return (
         <>
-            <Toolbox
-                color={color}
-                setColor={setColor}
-                width={width}
-                setWidth={setWidth}
-            />
             <div className={styles.options}>
                 <button className={`${styles.buttons} ${styles.btn_download}`}
                     onClick={download}
@@ -229,7 +111,6 @@ function Canvas() {
             <div className={styles.mousePosition}>Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y}) </div>
         </>
     )
->>>>>>> 402347e16d53addefd134185b8b58fa7eae9b49b
 }
 
-export default Canvas;
+export default Canvas
