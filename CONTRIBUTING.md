@@ -16,25 +16,25 @@ If you wish to contribute to this project, please raise an issue and wait for th
 
 <p align="center"><img src="https://camo.githubusercontent.com/2c885464740a6c05b127ecb7c3ebb9e5cc67ba1c/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f4a717a616442746f6e4a56723075384c55672f67697068792e676966" width=500></p>
 
-**1.**  Fork [this](https://github.com/smaranjitghose/awesome-portfolio-websites) repository.
+**1.**  Fork [this](https://github.com/smaranjitghose/doc2pen.git) repository.
 
 **2.**  Clone your forked copy of the project.
 
 ```
-git clone --depth 1 https://github.com/<your_user_name>/awesome-portfolio-websites.git
+git clone --depth 1 https://github.com/<your_user_name>/doc2pen.git
 ```
 <img src="./readme_assets/CloneRepo.png" width="500">
 
 **3.** Navigate to the project directory :file_folder: .
 
 ```
-cd awesome-portfolio-websites
+cd doc2pen
 ```
 
 **4.** Add a reference to the original repository.
 
 ```
-git remote add upstream https://github.com/smaranjitghose/awesome-portfolio-websites.git 
+git remote add upstream https://github.com/smaranjitghose/doc2pen.git 
 ```
 
 **5.** Check the remotes for this repository.
