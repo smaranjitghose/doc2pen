@@ -2,6 +2,7 @@
     border: 3px solid blue;
     border-radius: 11px;
     margin: 11px;
+    margin-bottom: 0;
     background-color: white;
     cursor: crosshair;
 }
@@ -24,6 +25,9 @@
     outline: none;
     border-radius: 7px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn_clear {
@@ -50,6 +54,9 @@
     padding: 0.7rem 0.5rem;
     margin: 0 0.3rem;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .active_shape_box {
