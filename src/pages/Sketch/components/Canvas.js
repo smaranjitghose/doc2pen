@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import styles from './Canvas.module.css';
 import Toolbox from './Toolbox/Toolbox';
 import {FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash} from 'react-icons/fa';
-import {BsArrowUpDown, BsArrowLeftRight} from 'react-icons/bs';
+import {BsArrowUpRight} from 'react-icons/bs';
 import {RiDeleteBin6Line} from 'react-icons/ri';
 import {GiTriangleTarget} from 'react-icons/gi';
 import {BsDiamond} from 'react-icons/bs';
@@ -14,6 +14,9 @@ function Canvas() {
 
     const [color, setColor] = useState("#ff0000");
     const [width, setWidth] = useState("1");
+    const [opacity, setOpacity] = useState("1");
+    const [stroke, setStroke] = useState("none");
+    const [fill, setFill] = useState(false);
 
     useEffect(() => {
         setContext(canvasRef.current.getContext('2d'));
@@ -24,6 +27,26 @@ function Canvas() {
     const [typeState, setTypeState] = useState(null);
     const [downPoint, setDownPoint] = useState({x: "", y: ""});
     const [mousePosition, setMousePosition] = useState({x: "0", y: "0"});
+
+    function hexToRGB (hex) {
+        let r = 0, g = 0, b = 0;
+
+        if(hex.length === 4){
+           r = "0x" + hex[1] + hex[1];
+           g = "0x" + hex[2] + hex[2];
+           b = "0x" + hex[3] + hex[3];
+        }else if (hex.length === 7){
+           r = "0x" + hex[1] + hex[2];
+           g = "0x" + hex[3] + hex[4];
+           b = "0x" + hex[5] + hex[6];
+        };
+     
+        return {
+           red: +r,
+           green: +g,
+           blue: +b
+        };
+    }
 
     function relativeCoordinatesForEvent(event) {
         return {
@@ -40,9 +63,24 @@ function Canvas() {
 
         const point = relativeCoordinatesForEvent(event);
 
+        const col = hexToRGB(color);
+        context.strokeStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+
+        if(stroke === 'small') {
+            context.setLineDash([5, parseInt(width)+3]);
+        } else if(stroke === 'big') {
+            context.setLineDash([5, parseInt(width)+10]);
+        } else {
+            context.setLineDash([]);
+        }
+        
+        context.lineJoin = 'round';
+        context.lineCap = 'round';
+        context.lineWidth = width;
+
         if(type === 'pen') {
             logicDown(point);
-        } else if(type === 'line' || type === 'square' || type === 'circle' || type === 'triangle' || type === 'arrow_up' || type === 'arrow_right' || type === 'diamond') {
+        } else if(type === 'line' || type === 'square' || type === 'circle' || type === 'triangle' || type === 'arrow' || type === 'diamond') {
             setTypeState(context.getImageData(0, 0, 700, 500));
             logicDown(point);
             setDownPoint({x: point.x, y:point.y});
@@ -71,10 +109,8 @@ function Canvas() {
             circleMove(point);
         } else if(type === 'triangle') {
             triangleMove(point);
-        } else if(type === 'arrow_up') {
-            arrowUpMove(point);
-        } else if(type === 'arrow_right') {
-            arrowRightMove(point);
+        } else if(type === 'arrow') {
+            arrow(point);
         } else if(type === 'diamond') {
             diamondMove(point);
         }
@@ -98,19 +134,11 @@ function Canvas() {
         context.beginPath();
         context.moveTo(point.x, point.y);
         context.lineTo(point.x, point.y);
-        context.strokeStyle = color;
-        context.lineJoin = 'round';
-        context.lineCap = 'round';
-        context.lineWidth = width;
         context.stroke();
     }
 
     function penMove(point) {
         context.lineTo(point.x, point.y);
-        context.strokeStyle = color;
-        context.lineJoin = 'round';
-        context.lineCap = 'round';
-        context.lineWidth = width;
         context.stroke();
     }
 
@@ -118,12 +146,8 @@ function Canvas() {
         context.putImageData(typeState, 0, 0);
         context.beginPath();
         context.moveTo(downPoint.x, downPoint.y);
-        context.lineTo(downPoint.x, downPoint.y);
         context.lineTo(point.x, point.y);
-        context.strokeStyle = color;
-        context.lineJoin = 'round';
-        context.lineCap = 'round';
-        context.lineWidth = width;
+        context.moveTo(downPoint.x, downPoint.y);
         context.closePath();
         context.stroke();
     }
@@ -136,11 +160,11 @@ function Canvas() {
         context.lineTo(point.x, downPoint.y);
         context.lineTo(point.x, point.y);
         context.lineTo(downPoint.x, point.y);
-        context.strokeStyle = color;
-        context.lineJoin = 'round';
-        context.lineCap = 'round';
-        context.lineWidth = width;
         context.closePath();
+        if(fill) {
+            context.fillStyle = color;
+            context.fill();
+        }
         context.stroke();
     }
 
@@ -150,12 +174,13 @@ function Canvas() {
         const x = (point.x+downPoint.x)/2;
         const y = (point.y+downPoint.y)/2;
         const radius = Math.sqrt(Math.pow(downPoint.x - point.x, 2) + Math.pow(downPoint.y - point.y, 2))/2;
+
         context.arc(x, y, radius, 0, 2*Math.PI);
-        context.strokeStyle = color;
-        context.lineJoin = 'round';
-        context.lineCap = 'round';
-        context.lineWidth = width;
         context.closePath();
+        if(fill) {
+            context.fillStyle = color;
+            context.fill();
+        }
         context.stroke();
     }
 
@@ -166,50 +191,36 @@ function Canvas() {
         context.moveTo(center_x, downPoint.y);
         context.lineTo(point.x, point.y);
         context.lineTo(downPoint.x, point.y);
-        context.strokeStyle = color;
-        context.lineJoin = 'round';
-        context.lineCap = 'round';
-        context.lineWidth = width;
         context.closePath();
+        if(fill) {
+            context.fillStyle = color;
+            context.fill();
+        }
         context.stroke();
     }
 
-    function arrowUpMove(point) {
+    function arrow(point) {
         context.putImageData(typeState, 0, 0);
         context.beginPath();
-        const center_x = (downPoint.x + point.x)/2;
-        const center_y = (downPoint.y + point.y)/2;
+        
+        function formula(head, ratio, one, two, three, four, theta)
+        {
+            return head + ((1/ratio)*( (one-two)*Math.cos(theta) + (three-four)*Math.sin(theta)));
+        }
 
-        context.moveTo(center_x, downPoint.y);
-        context.lineTo(point.x, center_y);
-        context.moveTo(center_x, downPoint.y);
-        context.lineTo(downPoint.x, center_y);
-        context.moveTo(center_x, downPoint.y);
-        context.lineTo(center_x, point.y);
-        context.strokeStyle = color;
-        context.lineJoin = 'round';
-        context.lineCap = 'round';
-        context.lineWidth = width;
-        context.closePath();
-        context.stroke();
-    }
+        const x1 = formula(point.x, 3, downPoint.x, point.x, downPoint.y, point.y, Math.PI/4);
+        const y1 = formula(point.y, 3, downPoint.y, point.y, point.x, downPoint.x, Math.PI/4);
+        const x2 = formula(point.x, 3, downPoint.x, point.x, point.y, downPoint.y, Math.PI/4);
+        const y2 = formula(point.y, 3, downPoint.y, point.y, downPoint.x, point.x, Math.PI/4);
 
-    function arrowRightMove(point) {
-        context.putImageData(typeState, 0, 0);
-        context.beginPath();
-        const center_x = (downPoint.x + point.x)/2;
-        const center_y = (downPoint.y + point.y)/2;
-
-        context.moveTo(point.x, center_y);
-        context.lineTo(center_x, downPoint.y);
-        context.moveTo(point.x, center_y);
-        context.lineTo(center_x, point.y);
-        context.moveTo(point.x, center_y);
-        context.lineTo(downPoint.x, center_y);
-        context.strokeStyle = color;
-        context.lineJoin = 'round';
-        context.lineCap = 'round';
-        context.lineWidth = width;
+        context.moveTo(downPoint.x, downPoint.y);
+        context.lineTo(downPoint.x, downPoint.y);
+        context.lineTo(point.x, point.y);
+        context.lineTo(x1, y1);
+        context.moveTo(point.x, point.y);
+        context.lineTo(x2, y2);
+        context.moveTo(point.x, point.y);
+        context.moveTo(downPoint.x, downPoint.y);
         context.closePath();
         context.stroke();
     }
@@ -225,11 +236,11 @@ function Canvas() {
         context.lineTo(center_x, point.y);
         context.lineTo(downPoint.x, center_y);
         context.lineTo(center_x, downPoint.y);
-        context.strokeStyle = color;
-        context.lineJoin = 'round';
-        context.lineCap = 'round';
-        context.lineWidth = width;
         context.closePath();
+        if(fill) {
+            context.fillStyle = color;
+            context.fill();
+        }
         context.stroke();
     }
 
@@ -251,6 +262,12 @@ function Canvas() {
                 setColor={setColor}
                 width={width}
                 setWidth={setWidth}
+                opacity={opacity}
+                setOpacity={setOpacity}
+                stroke={stroke}
+                setStroke={setStroke}
+                fill={fill}
+                setFill={setFill}
             />
             <div className={styles.options}>
                 <div className={styles.shapes}>
@@ -274,13 +291,9 @@ function Canvas() {
                     onClick={() => setType("triangle")}>
                         <GiTriangleTarget/>
                     </div>
-                    <div className={`${styles.shape_box} ${type === 'arrow_up' && styles.active_shape_box}`}
-                    onClick={() => setType("arrow_up")}>
-                        <BsArrowUpDown/>
-                    </div>
-                    <div className={`${styles.shape_box} ${type === 'arrow_right' && styles.active_shape_box}`}
-                    onClick={() => setType("arrow_right")}>
-                        <BsArrowLeftRight/>
+                    <div className={`${styles.shape_box} ${type === 'arrow' && styles.active_shape_box}`}
+                    onClick={() => setType("arrow")}>
+                        <BsArrowUpRight/>
                     </div>
                     <div className={`${styles.shape_box} ${type === 'diamond' && styles.active_shape_box}`}
                     onClick={() => setType("diamond")}>

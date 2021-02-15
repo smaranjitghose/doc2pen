@@ -9,5 +9,29 @@
 }
 
 .canvas_toolbox_feature{
-    margin: 0 7px;
+    margin: 3px 7px;
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stroke {
+    background-color: antiquewhite;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 0.1rem;
+    display: flex;
+    cursor: pointer;
+}
+
+.active_stroke {
+    background-color: aquamarine;
+}
+
+.fill {
+    color: rgb(253, 195, 120);
 }

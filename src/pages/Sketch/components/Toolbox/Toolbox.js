@@ -1,7 +1,9 @@
 import React, {} from 'react';
 import styles from './Toolbox.module.css';
+import {AiOutlineSmallDash, AiOutlineDash} from 'react-icons/ai';
+import {FaRegSquare, FaSquare} from 'react-icons/fa';
 
-function Toolbox({color, setColor, width, setWidth}) {
+function Toolbox({color, setColor, width, setWidth, opacity, setOpacity, stroke, setStroke, fill, setFill}) {
 
     return (
         <div className={styles.canvas_toolbox}>
@@ -26,6 +28,36 @@ function Toolbox({color, setColor, width, setWidth}) {
                     <option value="10">10px</option>
                     <option value="11">11px</option>
                 </select>
+            </div>
+            <div className={styles.canvas_toolbox_feature}>
+                <input type="range" min="0" max="10" value={opacity*10} onChange={(e) => setOpacity(e.target.value/10)}/>
+            </div>
+            <div className={styles.canvas_toolbox_feature}>
+                <div className={`${styles.stroke} ${stroke === 'small' && styles.active_stroke}`} onClick={() => {
+                    if(stroke === 'small') {
+                        setStroke('none');
+                    } else {
+                        setStroke('small');
+                    }
+                }}>
+                    <AiOutlineSmallDash size={25}/>
+                </div>
+                <div className={`${styles.stroke} ${stroke === 'big' && styles.active_stroke}`} onClick={() => {
+                    if(stroke === 'big') {
+                        setStroke('none');
+                    } else {
+                        setStroke('big');
+                    }
+                }}>
+                    <AiOutlineDash size={25}/>
+                </div>
+            </div>
+            <div className={styles.canvas_toolbox_feature}>
+                <div className={styles.fill} onClick={() => setFill(current => !current)}>
+                    {
+                        fill? <FaSquare size={25}/> : <FaRegSquare size={25}/>
+                    }
+                </div>
             </div>
         </div>
     )
