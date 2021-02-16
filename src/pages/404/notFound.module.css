@@ -22,7 +22,7 @@
   align-items: center;
   /* background-color: #09112b; */
   overflow: hidden;
-  background-image: url("./../../assests/Shadow-Fall-Background.svg");
+  background-image: url("./../../assets/images/404/Shadow-Fall-Background.svg");
   gap: 2rem;
 }
 .heading {

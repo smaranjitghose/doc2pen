@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import "./particles.css";
 import styles from "./notFound.module.css";
-import Logo from "./../../assests/Logo.png";
-// import NotFoundBg from "./../../assests/Fade-In-Background.svg";
+import Logo from "./../../assets/images/404/Logo.png";
 
 function Hero() {
   useEffect(() => {

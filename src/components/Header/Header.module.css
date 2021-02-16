@@ -19,14 +19,18 @@
 }
 
 .right {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
 .hamburger {
     display: none;
     cursor: pointer;
+    position: absolute;
+    top: 23px;
+    right: 10px;
 }
 
 .header_links {
@@ -44,10 +48,13 @@
     color:#103F5F;
     text-decoration: none;
 }
+.tagged{
+    width: 96px;
+}
 .tagged::after{
     position: absolute;
-    top: 0;
-    right: -15px;
+    top: 1px;
+    right: 13px;
     content: 'New';
     color: red;
     font-size: 0.7rem;
@@ -86,10 +93,28 @@
 }
 
 @media only screen and (max-width: 460px) {
-    .right {
-        display: none;
+    
+    .HeaderDrop{
+        flex-wrap: wrap;
+        gap: 2px;
     }
 
+    .HeaderOpen{
+        gap: 20px;
+    }
+
+    .right {
+        height: 35px;
+        padding-right: 20px;
+        overflow: hidden;
+        transform: translateY(0);
+        transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
+    }
+    .rightDrop{
+        height: 0px;
+        transform: translateY(-5px);
+        transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1);
+    }
     .hamburger {
         display: block;
     }

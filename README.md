@@ -141,8 +141,10 @@ git push -u origin <your_branch_name>
 <a href="https://www.pclubsummerofcode.in/"><img src="./readme_assets/psoc.png" width="25%"></a>
 <a href="https://hakincodes.tech/"><img src="./readme_assets/ch.png" width="25%"></a>
 <a href="https://devscript.tech/woc/"><img src="./readme_assets/dwoc.png" width="25%"></a>
-<a href="https://swoc.tech/"><img src="./readme_assets/swoc..png" width= "25%"/></a>
-<a href="http://jwoc2k20.tech/"><img src="./readme_assets/jwoc.png" width= "25%"/></a>
+</a>
+<a href="https://slop.dscdaiict.in/projects"><img src="./readme_assets/SLOP.webp" width= "25%"/></a>
+<a href="https://swoc.tech/"><img src="./readme_assets/SWOC-logo.webp" width= "25%" height= ""/></a>
+<a href="https://crosswoc.ieeedtu.in/"><img src="./readme_assets/crosswoc.png" width= "25%"/></a>
 <a href="https://mexili.github.io/winter_of_code/"><img src="./readme_assets/mwoc.png" width= "25%"/></a>
 <a href="https://gssoc.girlscript.tech/"><img src="./readme_assets/gssoc.png" width= "25%"/></a>
 </p>
