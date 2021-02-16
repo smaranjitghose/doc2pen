@@ -1,7 +1,7 @@
 // Navigation Bar Declaration
 let header = $(`
 <nav class="navbar navbar-expand-lg navbar-light nav1" style="z-index: 9999;margin-bottom:5px; .text-grey:hover{color: #adadad; }" id="navbar">
-  <a class="navbar-brand brand-logo" style="padding-top: 0; padding-bottom: 0" href="#"><img src="./assets/images/logo.png"></a>
+  <a class="navbar-brand brand-logo" style="padding-top: 0; padding-bottom: 0" href="#"><img src="./assets/images/logo.webp"></a>
   <button class="navbar-toggler res-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -117,13 +117,13 @@ const maintainerSection = [
 const maintainerInfo = () => {
   let output = "";
   maintainerSection.forEach(
-    ({ title, image, github, linkedin, name, imgclass}) =>
+    ({ title, image, github, linkedin, name, imgclass }) =>
       (output += `    
       <div class="${imgclass} col-md-6 centeralign">
       <div class="profile-container">
        <div class="profile-wrapper">
          <div class="profile-card">
-          <img src="${image}" alt="profile pics"> 
+          <img srcset="${image} 1x, ${image} 2x" src="${image}" alt="profile pics"> 
           <h4>${name}</h4>
           <h5>${title}</h5>
           <div class="icons">
@@ -277,7 +277,7 @@ const showCards = () => {
     ({ title, image, githublink }) =>
       (output += `       
      <figure class="position-relative d-inline-block text-center ml-2 mb-4 grid-wd-100">
-      <img src="${image}" class="grid-wd-100">
+      <img srcset="${image} 1x, ${image} 2x" src="${image}" class="grid-wd-100">
        <figcaption class="position-absolute grid-wd-100 va-top pad font-small futura">
         <div class="text">${title} <a href="${githublink}" class="social-icon fa fa-github"></a></div>
        </figcaption>
@@ -291,35 +291,35 @@ document.addEventListener("DOMContentLoaded", showCards);
 
 const recentEventsDetails = [
 	{
-		coverImage: 'assets/images/events/SLOP.png',
+		coverImage: 'assets/images/events/SLOP.webp',
 		eventName: 'SLOP',
 		altName: 'SLOP Logo',
 		eventDescription: `An inititative by the Developer Student Club (DA-IICT), exclusively for students who are new to open source software development.`,
 		referencePage: 'https://slop.dscdaiict.in/projects'
 	},
 	{
-		coverImage: 'assets/images/events/hakin_codes.png',
+		coverImage: 'assets/images/events/hakin_codes.webp',
 		eventName: 'Hakincodes',
 		altName: 'Hakincodes Logo',
 		eventDescription: `Established in 2020 with a mission to empower youth i.e. students, developers & many more by giving opportunities to grow and learn.`,
 		referencePage: 'https://hakincodes.tech/'
 	},
 	{
-		coverImage: 'assets/images/events/psoc_logo.png',
+		coverImage: 'assets/images/events/psoc_logo.webp',
 		eventName: 'PSOC',
 		altName: 'PSOC Logo',
 		eventDescription: `It's a 2 month long event conducted by Programming Club, UIET, aiming to help beginners get started with Open Source development.`,
 		referencePage: 'https://www.pclubsummerofcode.in/'
   },
   {
-    coverImage: 'assets/images/events/woc-logo.png',
+    coverImage: 'assets/images/events/woc-logo.webp',
     eventName:'DevScript Winter of Code 2020',
     altName:'WOC Logo',
     eventDescription: 'Winter of Code envisioned by DevScript that helps understand the paradigm of Open Source contribution.',
     referencePage:'https://devscript.tech/woc/'
   },
   {
-    coverImage: 'assets/images/events/SWOC-logo.png',
+    coverImage: 'assets/images/events/SWOC-logo.webp',
     eventName:'Script Winter of Code 2021',
     altName:'SWOC Logo',
     eventDescription: 'Script Winter of Code envisioned by the Script Foundation aims to bring students into the world of open source development.',

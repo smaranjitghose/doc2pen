@@ -1,0 +1,49 @@
+.controlPanel {
+  display: block;
+}
+.selector {
+  display: flex;
+  margin-left: 11px;
+  width: fit-content;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.selectOption {
+  width: 150px;
+}
+.selectOption label {
+  width: 100%;
+  text-align: center;
+}
+.controls, .group1 {
+  background-color: #f0f7ff;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.controls{
+  padding-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.vSeparator {
+  display: inline-block;
+  border-left: 1px solid rgb(218, 220, 224);
+  margin: 9px 4px;
+  height: 45px;
+}
+.downloadBtn {
+  color: rgb(29, 28, 28) !important;
+  padding: 5px 15px !important;
+  border: none !important;
+  border-radius: 4px !important;
+  background: transparent !important;
+  margin: 0;
+  font-size: 16px;
+  outline: none !important;
+}
+.downloadBtn:hover {
+  background:rgb(218, 220, 224) !important ;
+}
+.downloadBtn:focus {
+    color: rgb(29, 28, 28) !important;
+  background: rgb(191, 193, 196) !important ;
+}
