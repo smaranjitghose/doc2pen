@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import { EditContext } from "../../containers/editContext";
-import "./Settings.css";
+import styles from "./Settings.module.css";
 import Dropdown from "../../../../components/Dropdown/Dropdown";
 import NumberSlider from "../../components/Slider/NumberSlider";
 
@@ -9,43 +9,39 @@ const Settings = () => {
   const editContext = useContext(EditContext);
   
   return (
-    <div className="control-panel">
-      <div className="selector">
-        <div className="select-option" style={{ backgroundColor: editContext.isBody ? "#1979CA" : "#f0f7ff" }}>
+    <div className={styles.controlPanel}>
+      <div className={styles.selector}>
+        <div className={styles.selectOption} style={{ backgroundColor: editContext.isBody ? "#1979CA" : "#f0f7ff" }}>
           <input
             type="checkbox"
             name="heading"
             value={editContext.isBody}
             id="heading"
             onClick={editContext.isBodyHandler}
-            className="d-none"
+            className={`d-none`}
           />
           <label for="heading" style={{ color: editContext.isBody && "#f0f7ff" }}>
             Title
           </label>
         </div>
-        <div className="select-option" style={{ backgroundColor: editContext.isBody ? "#f0f7ff" : "#1979CA" }}>
+        <div className={styles.selectOption} style={{ backgroundColor: editContext.isBody ? "#f0f7ff" : "#1979CA" }}>
           <input
             type="checkbox"
             name="heading"
             value={editContext.isBody}
             id="heading"
             onClick={editContext.isBodyHandler}
-            className="d-none"
+            className={`d-none`}
           />
           <label for="heading" style={{ color: !editContext.isBody && "#f0f7ff" }}>
             Body
           </label>
         </div>
       </div>
-      <div className="controls">
-        <div className="group1">
-          <Dropdown 
-            name="Change Color" 
-            type="color" 
-            items={["black", "red", "blue", "green", "pink"]}
-          />
-          <div className="v-separator"></div>
+      <div className={styles.controls}>
+        <div className={styles.group1}>
+          <Dropdown name="Change Color" type="color" items={["black", "red", "blue", "green", "pink"]} />
+          <div className={styles.vSeparator}></div>
           <Dropdown
             name="Change Style"
             type="font"
@@ -58,42 +54,44 @@ const Settings = () => {
             item6="Liu"
             item7="LeagueScript"
           />
-          <div className="v-separator"></div>
+          <div className={styles.vSeparator}></div>
           <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]} />
 
-          <div className="v-separator"></div>
+          <div className={styles.vSeparator}></div>
           
-          <label className="download-btn" htmlFor="import">Import File</label>
+          <label className={styles.downloadBtn} htmlFor="import">Import File</label>
           <input id="import" style={{display:"none"}} type="file" onChange={editContext.importTxt}></input>
-          <div className="v-separator"></div>
+          <div className={styles.vSeparator}></div>
 
-          <button className="download-btn" onClick={editContext.downloadImg}>
+          <button className={styles.downloadBtn} onClick={editContext.downloadImg}>
             Download
           </button>
 
-          <div className="v-separator"></div>
+          <div className={styles.vSeparator}></div>
         </div>
 
         <NumberSlider
           label={"Adjust x-axis"}
           editContext={editContext}
           name={editContext.isBody ? "bodyLeft" : "headLeft"}
-          min="5"
+          min="0"
           max="200"
-          initialValue={10}
+          step={1}
+          initialValue={0}
         />
 
-        <div className="v-separator"></div>
+        <div className={styles.vSeparator}></div>
         <NumberSlider
           label={"Font size"}
           editContext={editContext}
           name={editContext.isBody ? "bodySize" : "headSize"}
           min="5"
           max="50"
+          step={1}
           initialValue={16}
         />
 
-        <div className="v-separator"></div>
+        <div className={styles.vSeparator}></div>
 
         <NumberSlider
           label={"Adjust y-axis"}
@@ -101,9 +99,10 @@ const Settings = () => {
           name={editContext.isBody ? "bodyTop" : "headTop"}
           min="0"
           max="100"
+          step={1}
           initialValue={5}
         />
-        <div className="v-separator"></div>
+        <div className={styles.vSeparator}></div>
 
         <NumberSlider
           label={"Line-spacing"}
@@ -111,7 +110,31 @@ const Settings = () => {
           name={editContext.isBody ? "bodyLine" : "headLine"}
           min="1"
           max="5"
+          step={1}
           initialValue={1}
+        />
+        <div className={styles.vSeparator}></div>
+
+        <NumberSlider
+          label={"Width"}
+          editContext={editContext}
+          name={editContext.isBody ? "bodyWidth" : "headWidth"}
+          min="20"
+          max="70"
+          step={1}
+          initialValue={65}
+        />
+
+        <div className={styles.vSeparator}></div>
+
+        <NumberSlider
+          label={"Letter Spacing"}
+          editContext={editContext}
+          name={editContext.isBody ? "bodyLetterSpace" : "headLetterSpace"}
+          min="0"
+          max="10"
+          step={0.5}
+          initialValue={0}
         />
       </div>
     </div>

@@ -1,4 +1,4 @@
-import "./Slider.css";
+import styles from "./Slider.module.css";
 import React, { useState } from "react";
 
 const NumberSliders = props => {
@@ -25,11 +25,11 @@ const NumberSliders = props => {
     }
 
     if (isDecrement && Number(value) > Number(min)) {
-      await setValuePromise(Number(value) - 1).then(() => {
+      await setValuePromise(Number(value) - props.step).then(() => {
         props.editContext.onElementValueChange(inputElement);
       });
     } else if (!isDecrement && Number(value) < Number(max)) {
-      await setValuePromise(Number(value) + 1).then(() => {
+      await setValuePromise(Number(value) + props.step).then(() => {
         props.editContext.onElementValueChange(inputElement);
       });
     } else{
@@ -53,10 +53,10 @@ const NumberSliders = props => {
   };
 
   return (
-    <div className={"control-container"}>
+    <div className={styles.controlContainer}>
       <label for="left">{props.label}</label>
-      <div className="control-wrap">
-        <button onClick={handleClickValueChange} className="decrement">
+      <div className={styles.controlWrap}>
+        <button onClick={handleClickValueChange} className={styles.decrement}>
           -
         </button>
 
@@ -66,15 +66,15 @@ const NumberSliders = props => {
           min={props.min}
           max={props.max}
           value={Value}
-          className="form-control"
+          className={styles.formControl}
           onChange={handleManualValueChange}
         />
 
-        <button onClick={handleClickValueChange} className="increment">
+        <button onClick={handleClickValueChange} className={styles.increment}>
           +
         </button>
 
-        <div className="message" style={{ display: isMsgDisplayed ? "block" : "none" }}>
+        <div className={styles.message} style={{ display: isMsgDisplayed ? "block" : "none" }}>
           {`Min value: ${props.min}, max value: ${props.max}`}
         </div>
       </div>
