@@ -2,7 +2,7 @@ import React,{useState, useEffect, useRef} from 'react';
 import {NavLink, useHistory} from 'react-router-dom';
 import {Link} from 'react-scroll';
 import styles from './Header.module.css';
-import logo from './logo.webp';
+import logo from './../../assets/logo/logo.webp';
 import {ImInfo} from "react-icons/im";
 import {RiTeamLine, RiContactsBook2Line} from "react-icons/ri";
 import {BiDonateHeart, BiMenu} from "react-icons/bi";
