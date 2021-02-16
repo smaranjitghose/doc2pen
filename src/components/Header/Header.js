@@ -3,7 +3,11 @@ import {NavLink, useHistory} from 'react-router-dom';
 import {Link} from 'react-scroll';
 import styles from './Header.module.css';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import logo from './logo.webp';
+=======
+import logo from './../../assets/logo/logo.webp';
+>>>>>>> b7c01ce2b57980842f9cb97a32662a7fafbacea3
 =======
 import logo from './../../assets/logo/logo.webp';
 >>>>>>> b7c01ce2b57980842f9cb97a32662a7fafbacea3
