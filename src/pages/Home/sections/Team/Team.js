@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import styles from './Team.module.css';
 import {FaGithub, FaLinkedinIn} from 'react-icons/fa';
-import smaranjitLarge from '../../../../assets/images/team/smaranjit_ghose_large.png';
-import anushLarge from '../../../../assets/images/team/anush_bhatia_large.png';
-import smaranjitSmall from "../../../../assets/images/team/smaranjit_ghose_small.png";
-import anushSmall from "../../../../assets/images/team/anush_bhatia_small.png";
+import smaranjitLarge from '../../../../assets/images/team/smaranjit_ghose_large.webp';
+import anushLarge from '../../../../assets/images/team/anush_bhatia_large.webp';
+import smaranjitSmall from "../../../../assets/images/team/smaranjit_ghose_small.webp";
+import anushSmall from "../../../../assets/images/team/anush_bhatia_small.webp";
 
 
 function Team() {
