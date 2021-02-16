@@ -1,31 +1,40 @@
 import React from "react";
 import styles from "./OpenSource.module.css";
 
+import SLoP from "./../../../../assets/images/events/SLOP.webp";
+import hackinCodes from "./../../../../assets/images/events/hakin_codes.webp";
+import PSoC from "./../../../../assets/images/events/psoc_logo.webp"
+import DWoC from "./../../../../assets/images/events/woc-logo.webp"
+import SWoC from "./../../../../assets/images/events/SWOC-logo.webp"
+import MWoC from "./../../../../assets/images/events/mwoc.webp"
+import CrossWoC from "./../../../../assets/images/events/crosswoc.webp"
+import GSSoC from "./../../../../assets/images/events/gssoc.webp"
+
 function OpenSource() {
   const recentEventsDetails = [
     {
-      coverImage: "/images/events/SLOP.webp",
+      coverImage: SLoP,
       eventName: "SLOP",
       altName: "SLOP Logo",
       eventDescription: `An inititative by the Developer Student Club (DA-IICT), exclusively for students who are new to open source software development.`,
       referencePage: "https://slop.dscdaiict.in/projects",
     },
     {
-      coverImage: "/images/events/hakin_codes.webp",
+      coverImage: hackinCodes,
       eventName: "Hakincodes",
       altName: "Hakincodes Logo",
       eventDescription: `Established in 2020 with a mission to empower youth i.e. students, developers & many more by giving opportunities to grow and learn.`,
       referencePage: "https://hakincodes.tech/",
     },
     {
-      coverImage: "/images/events/psoc_logo.webp",
+      coverImage: PSoC,
       eventName: "PSOC",
       altName: "PSOC Logo",
       eventDescription: `It's a 2 month long event conducted by Programming Club, UIET, aiming to help beginners get started with Open Source development.`,
       referencePage: "https://www.pclubsummerofcode.in/",
     },
     {
-      coverImage: "/images/events/woc-logo.webp",
+      coverImage: DWoC,
       eventName: "DevScript Winter of Code 2020",
       altName: "WOC Logo",
       eventDescription:
@@ -33,7 +42,7 @@ function OpenSource() {
       referencePage: "https://devscript.tech/woc/",
     },
     {
-      coverImage: "/images/events/SWOC-logo.webp",
+      coverImage: SWoC,
       eventName: "Script Winter of Code 2021",
       altName: "SWOC Logo",
       eventDescription:
@@ -41,7 +50,7 @@ function OpenSource() {
       referencePage: "https://swoc.tech/index.html",
     },
     {
-      coverImage: "/images/events/mwoc.webp",
+      coverImage: MWoC,
       eventName: "Mexili Winter of Code 2021",
       altName: "MWOC Logo",
       eventDescription:
@@ -49,7 +58,7 @@ function OpenSource() {
       referencePage: "https://mexili.org/winter_of_code/#/",
     },
     {
-      coverImage: "/images/events/crosswoc.webp",
+      coverImage: CrossWoC,
       eventName: "Cross Winter of Code 2021",
       altName: "CrossWOC Logo",
       eventDescription:
@@ -57,7 +66,7 @@ function OpenSource() {
       referencePage: "https://crosswoc.ieeedtu.in/",
     },
     {
-      coverImage: "/images/events/gssoc.webp",
+      coverImage: GSSoC,
       eventName: "GirlScript Summer of Code 2021",
       altName: "GSSOC Logo",
       eventDescription:
