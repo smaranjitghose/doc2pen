@@ -1,0 +1,67 @@
+.formControl::-webkit-outer-spin-button,
+.formControl::-webkit-inner-spin-button {
+  display: none;
+}
+.formControl:focus {
+  border-color: transparent;
+  box-shadow: inset 0 0 0 1px rgb(0 123 255 / 25%);
+}
+.controlContainer {
+  margin: 5px 15px;
+}
+
+.controlWrap {
+  width: 100%;
+  display: flex;
+  justify-content: stretch;
+  position: relative;
+}
+.controlWrap > * {
+  flex: 1;
+}
+
+.increment,
+.decrement,
+.formControl {
+  border: 1px solid;
+  height: 26px;
+  min-width: 23px;
+  width: 23px;
+  border-color: rgb(218, 220, 224);
+  color: rgba(0, 0, 0, 0.7);
+  background-color: rgb(255, 255, 255);
+  outline: none !important;
+  line-height: 0;
+  box-sizing: border-box !important;
+}
+.increment,
+.decrement {
+  padding: 0;
+  font-weight: bolder;
+  font-size: 21px;
+}
+.increment {
+  border-radius: 0 2px 2px 0;
+}
+.decrement {
+  border-radius: 2px 0 0 2px;
+}
+.formControl {
+  border-radius: 0;
+  font-size: 16px;
+  width: 70px;
+  text-align: center;
+}
+.message {
+  background-color: #4b3030;
+  color: white;
+  padding: 5px;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: -11px;
+  transform: translateY(29px);
+  width: 161px;
+  border: 1px solid white;
+  border-radius: 15px;
+}

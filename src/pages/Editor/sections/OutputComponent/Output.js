@@ -30,7 +30,7 @@ const OutputComponent = () => {
             style={{
               fontSize: `${editContext.headValues.headSize}px`,
               paddingTop: `${editContext.headValues.headTop}px`,
-              paddingLeft: `${editContext.headValues.headLeft}px`,
+              paddingLeft: `${Number(editContext.headValues.headLeft) + 3}px`,
               lineHeight: `${editContext.headValues.headLine}`,
               fontFamily: `${editContext.headValues.headFont}`,
               color: `${editContext.headValues.headColor}`,
@@ -48,7 +48,7 @@ const OutputComponent = () => {
             style={{
               fontSize: `${editContext.bodyValues.bodySize}px`,
               paddingTop: `${editContext.bodyValues.bodyTop}px`,
-              paddingLeft: `${editContext.bodyValues.bodyLeft}px`,
+              paddingLeft: `${Number(editContext.bodyValues.bodyLeft) + 3}px`,
               lineHeight: `${editContext.bodyValues.bodyLine}`,
               fontFamily: `${editContext.bodyValues.bodyFont}`,
               color: `${editContext.bodyValues.bodyColor}`,
