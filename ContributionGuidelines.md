@@ -9,8 +9,7 @@ This folder contains the stylesheets, images and fonts. Any files within this di
 This folder contains all the main source code for the React application.
 
 Files/Folders that are directly located inside the Src Folder: 📥
-|-
-|-src
+   
     |-assets       #This folder contains all the community brand assets.
     |-components   #This folder contains all the components used within the website.
     |-fonts        #This folder contains the fonts used in the website
@@ -19,8 +18,6 @@ Files/Folders that are directly located inside the Src Folder: 📥
           |-home
           |-sketch
     |-..
-|-
-|..
 
 ### [Asset Directory Structure](https://github.com/smaranjitghose/doc2pen/tree/master/assets) 🧮✨
 This folder contains all the community brand assets
