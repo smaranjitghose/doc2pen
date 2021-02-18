@@ -16,9 +16,9 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -27,12 +27,13 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Doc2Pen</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <title>Doc2Pen</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -42,5 +43,50 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+  <script>
+    let isNotInitiated;
+    var initParticles = function () {
+      if(isNotInitiated){
+        var ps = new ParticleSlider({
+          ptlGap: 0,
+          ptlSize: 0,
+          width: 1e9,
+          height: 1e9,
+          mouseForce: 400,
+        });
+
+        window.addEventListener
+          ? window.addEventListener(
+            "click",
+            function () {
+              ps.init(true);
+            },
+            false
+          )
+          : (window.onclick = function () {
+            ps.init(true);
+          });
+
+
+        isNotInitiated = false;
+      }
+    };
+
+    var initParticleSlider = (function () {
+      var psScript = document.createElement("script");
+      psScript.addEventListener
+        ? psScript.addEventListener("load", initParticles, false)
+        : (psScript.onload = initParticles);
+      psScript.src = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/23500/ps-0.9.js';
+      psScript.setAttribute("type", "text/javascript");
+      document.body.appendChild(psScript);
+      isNotInitiated = true;
+    })(
+      window.addEventListener
+        ? window.addEventListener("load", initParticleSlider, false)
+        : (window.onload = initParticleSlider)
+    );
+  </script>
+</body>
+
 </html>

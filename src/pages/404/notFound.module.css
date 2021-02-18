@@ -1,0 +1,93 @@
+@keyframes float {
+  0% {
+    /* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+    transform: translatey(0px);
+  }
+  50% {
+    /* box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2); */
+    transform: translatey(-20px);
+  }
+  100% {
+    /* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+    transform: translatey(0px);
+  }
+}
+
+.homeSectionWrap {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #09112b; */
+  overflow: hidden;
+  background-image: url("./../../assets/images/404/Shadow-Fall-Background.svg");
+  gap: 2rem;
+}
+.heading {
+  text-align: center;
+  font-size: 2.3rem;
+  text-shadow: 2px 2px 14px rgba(255, 255, 255, 0.62);
+  padding: 0 10px;
+}
+.emoji{
+  text-shadow: none;
+}
+.float {
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+}
+.head {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  color: white;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 5;
+}
+.navlink {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  border: solid 2px;
+  border-radius: 25px;
+  padding: 5px 20px;
+}
+.navlink:hover{
+  color: #4285f4;
+  background-color: #ffffff;
+}
+.particleContainer {
+  flex: 2;
+  max-width: 900px;
+}
+
+.about {
+  box-shadow: 7px 0 13px #ffffff;
+}
+@media (max-width: 760px) {
+  .homeSectionWrap {
+    flex-direction: column-reverse;
+    min-height: 100vh;
+  }
+  .head,
+  .particleContainer {
+    flex: none;
+  }
+  .particleContainer {
+    height: 60vh !important;
+  }
+  .head {
+    height: 40vh;
+  }
+}
+@media (max-width: 615px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+}
