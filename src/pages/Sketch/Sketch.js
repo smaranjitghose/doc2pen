@@ -13,9 +13,7 @@ function Sketch() {
                 description={metaData.sketch.description}
                 keywords={metaData.sketch.keywords}
             />
-            <div className={styles.body}>
-                <Canvas />
-            </div>
+            <Canvas />
         </section>
     )
 }
