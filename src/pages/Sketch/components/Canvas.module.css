@@ -1,64 +1,67 @@
 .canvas {
-    border: 3px solid blue;
+    border: 2.5px solid blue;
     border-radius: 11px;
-    margin: 11px;
-    margin-bottom: 0;
     background-color: white;
     cursor: crosshair;
 }
 
-.options {
-    margin: 0 11px;
+.feature_container {
+    position: absolute;
     display: flex;
-    justify-content: space-between;
+    padding: 0.3rem;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 3px 0.3px gray;
 }
 
-.buttons {
-    display: flex;
-}
-
-.button {
-    margin-left: 11px;
-    padding: 5px 7px;
-    color: white;
-    font-size: 0.9rem;
-    outline: none;
-    border-radius: 7px;
+.feature {
+    padding: 0.7rem 0.5rem;
+    margin: 0 0.2rem;
+    border-radius: 5px;
     cursor: pointer;
     display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+/* ----- Download Clear Button ----- */
+.download_clear_container {
+    top: 0.75rem;
+    right: 30px;
+}
+
+.download_clear_buttons {
+    color: white;
 }
 
 .btn_clear {
-    background-color: red;
+    background-color: #ffbaba;
+    color: red;
 }
 
 .btn_download {
-    background-color: #219653;
+    background-color: #dff2bf;
+    color: green;
 }
 
-.mousePosition {
-    margin: 0 11px;
-    font-size: 0.7rem;
-}
-
+/* ----- Shapes ----- */
 .shapes {
-    display: flex;
-    margin-right: 1rem;
+    top: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .shape_box {
-    background-color: antiquewhite;
-    cursor: pointer;
-    padding: 0.7rem 0.5rem;
-    margin: 0 0.3rem;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #e9ecef;
 }
 
 .active_shape_box {
-    background-color: aquamarine;
+    background-color: #c7ccd1;
+}
+
+/* ----- Mouse Position ----- */
+
+.mousePosition {
+    position: absolute;
+    bottom: 11px;
+    left: 30px;
+    font-size: 0.7rem;
 }

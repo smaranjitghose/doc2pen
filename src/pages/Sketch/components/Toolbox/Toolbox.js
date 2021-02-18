@@ -1,19 +1,20 @@
 import React, {} from 'react';
 import styles from './Toolbox.module.css';
-import {AiOutlineSmallDash, AiOutlineDash} from 'react-icons/ai';
+import {AiOutlineLine, AiOutlineSmallDash, AiOutlineDash} from 'react-icons/ai';
 import {FaRegSquare, FaSquare} from 'react-icons/fa';
 
 function Toolbox({color, setColor, width, setWidth, opacity, setOpacity, stroke, setStroke, fill, setFill}) {
 
     return (
         <div className={styles.canvas_toolbox}>
-            <div className={styles.canvas_toolbox_feature}>
-                <input type="color" name="canvas_pen_color" className={styles.canvas_pen_color}
+            <Feature title="Color">
+                <input type="color" name="canvas_pen_color"
                     value={color} onChange={(e) => setColor(e.target.value)}
                 />
-            </div>
-            <div className={styles.canvas_toolbox_feature}>
-                <select name="canvas_pen_width" className={styles.canvas_pen_width}
+            </Feature>
+
+            <Feature title="Stroke Width">
+                <select name="canvas_pen_width"
                     value={width} onChange={(e) => setWidth(e.target.value)}
                 >
                     <option value="1">1px</option>
@@ -28,36 +29,42 @@ function Toolbox({color, setColor, width, setWidth, opacity, setOpacity, stroke,
                     <option value="10">10px</option>
                     <option value="11">11px</option>
                 </select>
-            </div>
-            <div className={styles.canvas_toolbox_feature}>
+            </Feature>
+
+            <Feature title={`Opacity [ ${opacity} ]`}>
                 <input type="range" min="0" max="10" value={opacity*10} onChange={(e) => setOpacity(e.target.value/10)}/>
-            </div>
-            <div className={styles.canvas_toolbox_feature}>
-                <div className={`${styles.stroke} ${stroke === 'small' && styles.active_stroke}`} onClick={() => {
-                    if(stroke === 'small') {
-                        setStroke('none');
-                    } else {
-                        setStroke('small');
-                    }
-                }}>
+            </Feature>
+
+            <Feature title="Stroke Style">
+                <div className={`${styles.stroke} ${stroke === 'none' && styles.active_stroke}`} onClick={() => setStroke("none")}>
+                    <AiOutlineLine size={25}/>
+                </div>
+                <div className={`${styles.stroke} ${stroke === 'small' && styles.active_stroke}`} onClick={() => setStroke("small")}>
                     <AiOutlineSmallDash size={25}/>
                 </div>
-                <div className={`${styles.stroke} ${stroke === 'big' && styles.active_stroke}`} onClick={() => {
-                    if(stroke === 'big') {
-                        setStroke('none');
-                    } else {
-                        setStroke('big');
-                    }
-                }}>
+                <div className={`${styles.stroke} ${stroke === 'big' && styles.active_stroke}`} onClick={() => setStroke("big")}>
                     <AiOutlineDash size={25}/>
                 </div>
-            </div>
-            <div className={styles.canvas_toolbox_feature}>
-                <div className={styles.fill} onClick={() => setFill(current => !current)}>
-                    {
-                        fill? <FaSquare size={25}/> : <FaRegSquare size={25}/>
-                    }
+            </Feature>
+
+            <Feature title="Fill">
+                <div className={`${styles.fill} ${fill === false && styles.active_fill}`} onClick={() => setFill(false)}>
+                    <FaRegSquare size={20}/>
                 </div>
+                <div className={`${styles.fill} ${fill === true && styles.active_fill}`} onClick={() => setFill(true)}>
+                    <FaSquare size={20}/>
+                </div>
+            </Feature>
+        </div>
+    )
+}
+
+function Feature({title, children}) {
+    return(
+        <div className={styles.feature}>
+            <div className={styles.title}>{title}</div>
+            <div className={styles.body}>
+                {children}
             </div>
         </div>
     )

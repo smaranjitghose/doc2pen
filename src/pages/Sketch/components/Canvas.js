@@ -3,7 +3,7 @@ import styles from './Canvas.module.css';
 import Toolbox from './Toolbox/Toolbox';
 import {FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash} from 'react-icons/fa';
 import {BsArrowUpRight} from 'react-icons/bs';
-import {RiDeleteBin6Line} from 'react-icons/ri';
+import {RiDeleteBinLine} from 'react-icons/ri';
 import {GiTriangleTarget} from 'react-icons/gi';
 import {BsDiamond} from 'react-icons/bs';
 
@@ -12,6 +12,7 @@ function Canvas() {
     const canvasRef = useRef(null);
     const [context, setContext] = useState();
 
+    /* ----- Feature State ----- */
     const [color, setColor] = useState("#ff0000");
     const [width, setWidth] = useState("1");
     const [opacity, setOpacity] = useState("1");
@@ -22,11 +23,27 @@ function Canvas() {
         setContext(canvasRef.current.getContext('2d'));
     }, [])
 
+    /* ----- Canvas State ----- */
     const [isDrawing, setIsDrawing] = useState(false);
     const [type, setType] = useState("pen");
     const [typeState, setTypeState] = useState(null);
     const [downPoint, setDownPoint] = useState({x: "", y: ""});
     const [mousePosition, setMousePosition] = useState({x: "0", y: "0"});
+
+    const [canvasWidth, setCanvasWidth] = useState(window.innerWidth-50);
+    const [canvasHeight, setCanvasHeight] = useState(window.innerHeight-100);
+
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            setCanvasWidth(window.innerWidth-50);
+            setCanvasHeight(window.innerHeight-100);
+            
+        })
+
+        return () => {
+            window.removeEventListener('resize', () => {});
+        }
+    })
 
     function hexToRGB (hex) {
         let r = 0, g = 0, b = 0;
@@ -50,8 +67,8 @@ function Canvas() {
 
     function relativeCoordinatesForEvent(event) {
         return {
-          x: event.pageX - canvasRef.current.offsetLeft,
-          y: event.pageY - canvasRef.current.offsetTop,
+          x: event.pageX - 25,
+          y: event.pageY - 82,
         };
     }
 
@@ -64,7 +81,7 @@ function Canvas() {
         const point = relativeCoordinatesForEvent(event);
 
         const col = hexToRGB(color);
-        context.strokeStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+        context.strokeStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, 1)`;
 
         if(stroke === 'small') {
             context.setLineDash([5, parseInt(width)+3]);
@@ -81,7 +98,7 @@ function Canvas() {
         if(type === 'pen') {
             logicDown(point);
         } else if(type === 'line' || type === 'square' || type === 'circle' || type === 'triangle' || type === 'arrow' || type === 'diamond') {
-            setTypeState(context.getImageData(0, 0, 700, 500));
+            setTypeState(context.getImageData(0, 0, canvasWidth, canvasHeight));
             logicDown(point);
             setDownPoint({x: point.x, y:point.y});
         }
@@ -162,7 +179,8 @@ function Canvas() {
         context.lineTo(downPoint.x, point.y);
         context.closePath();
         if(fill) {
-            context.fillStyle = color;
+            const col = hexToRGB(color);
+            context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
             context.fill();
         }
         context.stroke();
@@ -178,7 +196,8 @@ function Canvas() {
         context.arc(x, y, radius, 0, 2*Math.PI);
         context.closePath();
         if(fill) {
-            context.fillStyle = color;
+            const col = hexToRGB(color);
+            context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
             context.fill();
         }
         context.stroke();
@@ -193,7 +212,8 @@ function Canvas() {
         context.lineTo(downPoint.x, point.y);
         context.closePath();
         if(fill) {
-            context.fillStyle = color;
+            const col = hexToRGB(color);
+            context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
             context.fill();
         }
         context.stroke();
@@ -238,7 +258,8 @@ function Canvas() {
         context.lineTo(center_x, downPoint.y);
         context.closePath();
         if(fill) {
-            context.fillStyle = color;
+            const col = hexToRGB(color);
+            context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
             context.fill();
         }
         context.stroke();
@@ -252,7 +273,7 @@ function Canvas() {
     }
 
     function clear() {
-        context.clearRect(0, 0, 700, 500);
+        context.clearRect(0, 0, canvasWidth, canvasHeight);
     }
 
     return (
@@ -269,50 +290,53 @@ function Canvas() {
                 fill={fill}
                 setFill={setFill}
             />
-            <div className={styles.options}>
-                <div className={styles.shapes}>
-                    <div className={`${styles.shape_box} ${type === 'pen' && styles.active_shape_box}`}
-                    onClick={() => setType("pen")}>
-                        <FaPencilAlt/>
-                    </div>
-                    <div className={`${styles.shape_box} ${type === 'line' && styles.active_shape_box}`}
-                    onClick={() => setType("line")}>
-                        <FaSlash/>
-                    </div>
-                    <div className={`${styles.shape_box} ${type === 'square' && styles.active_shape_box}`}
-                    onClick={() => setType("square")}>
-                        <FaRegSquare/>
-                    </div>
-                    <div className={`${styles.shape_box} ${type === 'circle' && styles.active_shape_box}`}
-                    onClick={() => setType("circle")}>
-                        <FaRegCircle/>
-                    </div>
-                    <div className={`${styles.shape_box} ${type === 'triangle' && styles.active_shape_box}`}
-                    onClick={() => setType("triangle")}>
-                        <GiTriangleTarget/>
-                    </div>
-                    <div className={`${styles.shape_box} ${type === 'arrow' && styles.active_shape_box}`}
-                    onClick={() => setType("arrow")}>
-                        <BsArrowUpRight/>
-                    </div>
-                    <div className={`${styles.shape_box} ${type === 'diamond' && styles.active_shape_box}`}
-                    onClick={() => setType("diamond")}>
-                        <BsDiamond/>
-                    </div>
+            
+            {/* ----- Download & Clear ----- */}
+            <div className={`${styles.feature_container} ${styles.download_clear_container}`}>
+                <div className={`${styles.feature} ${styles.download_clear_buttons} ${styles.btn_download}`}
+                    onClick={download}
+                ><FaDownload size={15}/></div>
+                <div className={`${styles.feature} ${styles.download_clear_buttons} ${styles.btn_clear}`}
+                    onClick={clear}
+                ><RiDeleteBinLine size={15}/></div>
+            </div>
+
+            {/* ----- Shapes ----- */}
+            <div className={`${styles.feature_container} ${styles.shapes}`}>
+                <div className={`${styles.feature} ${styles.shape_box} ${type === 'pen' && styles.active_shape_box}`}
+                onClick={() => setType("pen")}>
+                    <FaPencilAlt size={15}/>
                 </div>
-                <div className={styles.buttons}>
-                    <button className={`${styles.button} ${styles.btn_download}`}
-                        onClick={download}
-                    ><FaDownload/></button>
-                    <button className={`${styles.button} ${styles.btn_clear}`}
-                        onClick={clear}
-                    ><RiDeleteBin6Line/></button>
+                <div className={`${styles.feature} ${styles.shape_box} ${type === 'line' && styles.active_shape_box}`}
+                onClick={() => setType("line")}>
+                    <FaSlash size={15}/>
+                </div>
+                <div className={`${styles.feature} ${styles.shape_box} ${type === 'square' && styles.active_shape_box}`}
+                onClick={() => setType("square")}>
+                    <FaRegSquare size={15}/>
+                </div>
+                <div className={`${styles.feature} ${styles.shape_box} ${type === 'circle' && styles.active_shape_box}`}
+                onClick={() => setType("circle")}>
+                    <FaRegCircle size={15}/>
+                </div>
+                <div className={`${styles.feature} ${styles.shape_box} ${type === 'triangle' && styles.active_shape_box}`}
+                onClick={() => setType("triangle")}>
+                    <GiTriangleTarget size={15}/>
+                </div>
+                <div className={`${styles.feature} ${styles.shape_box} ${type === 'arrow' && styles.active_shape_box}`}
+                onClick={() => setType("arrow")}>
+                    <BsArrowUpRight size={15}/>
+                </div>
+                <div className={`${styles.feature} ${styles.shape_box} ${type === 'diamond' && styles.active_shape_box}`}
+                onClick={() => setType("diamond")}>
+                    <BsDiamond size={15}/>
                 </div>
             </div>
+
             <canvas
                 ref={canvasRef}
-                width="700px"
-                height="500px"
+                width={`${canvasWidth}`}
+                height={`${canvasHeight}`}
                 className={styles.canvas}
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}

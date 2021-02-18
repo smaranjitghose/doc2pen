@@ -3,7 +3,9 @@ label {
   padding-top: 5px;
 }
 
-input[type="range"] {
+/* ----- Commenting this custom range as we are not using this any more, also it was affecting the range input in Sketch Section ----- */
+
+/* input[type="range"] {
   height: 0px;
   -webkit-appearance: none;
 }
@@ -92,4 +94,4 @@ input[type="range"]:focus::-ms-fill-lower {
 }
 input[type="range"]:focus::-ms-fill-upper {
   background: var(--mainTheme);
-}
+} */
