@@ -1,7 +1,8 @@
 .Team {
     padding: 0 20px;
     text-align: center;
-    font-size: 28px;
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
 }
 
 .projectMaintainers {
@@ -91,7 +92,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+    background: linear-gradient(315deg, #000428 0%, #004e92 74%);
     transform: skew(30deg) translateX(-125%);
     opacity: 0.9;
     transition: all 0.8s ease;
@@ -99,7 +100,7 @@
   
   .profile_container:hover .profile_wrapper::after {
     transform: skew(30deg) translateX(125%);
-    background: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+    background: linear-gradient(315deg, #000428 0%, #004e92 74%);
   }
   
   .profile_container:hover .profile_wrapper::before {
@@ -220,7 +221,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0 4vw;
+    padding: 0 8vw;
     gap:2rem;
 }
 

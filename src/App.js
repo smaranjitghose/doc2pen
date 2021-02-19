@@ -9,10 +9,11 @@ const Editor = lazy(() => import("./pages/Editor/index"));
 const Sketch = lazy(() => import("./pages/Sketch/Sketch"));
 
 function App() {
+
   return (
     <BrowserRouter>
       <Switch>
-        <Suspense fallback={<Preloader/>}>
+        <Suspense fallback={<Preloader />}>
           <Header />
           <Route path="/" exact component={Home}></Route>
           <Route path="/editor" exact component={Editor}></Route>

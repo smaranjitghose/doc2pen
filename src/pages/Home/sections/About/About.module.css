@@ -9,36 +9,50 @@
 }
 
 .title {
-    color: #4e89ae;
+    color: #21209c;
     font-size: 3rem;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
 }
 
 .line {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     width: 90%;
     margin: 1rem;
+
+    letter-spacing: 1px;
+    font-family: 'Lato', sans-serif;
+}
+.line span{
+    color: #21209c;
+    /* font-weight: bold; */
+    font-family: 'Lato', sans-serif;
+   
 }
 
 .steps {
     margin-top: 3rem;
     width: 90%;
+    margin-bottom: 50px;
+    
+    
 }
 
 .step {
     display: flex;
     justify-content: center;
-    margin: 4rem 0;
+    margin: 7rem 0;
+
+    justify-content: space-between;
 }
 
-@media(max-width:730px){
-    .step{
-        flex-wrap: wrap;
-    }
-}
+
 
 .illustration{
   padding: 0 1rem;
   box-sizing: border-box;
+  width: 50%;
+  
 }
 
 .step_reverse {
@@ -46,27 +60,76 @@
 }
 
 .step img {
-    width: 270px;
+    
+    margin: auto 0;
+    width: 60%;
+   
 }
 
 .step_text {
+    font-family: 'Lato', sans-serif;
     padding: 0 0.1rem;
+    width: 50%;
 }
 
 .step_title {
+    font-family: 'Lato', sans-serif;
     font-size: 2.5rem;
-    color: #4e89ae;
+    color:#21209c;
+    font-weight: 100;
+    
     margin-bottom: 3rem;
 }
 
 .step_content {
-    font-size: 1.5rem;
+    letter-spacing: 1.2px;
+    font-weight: 100;
+    font-size: 1.6rem;
+    
 }
 
 .open_source {
-    font-weight: bold;
-    color: #4e89ae;
+
+    color: black;
+    
     font-size: 1.5rem;
-    padding: 1rem;
+    padding: 10px 100px;
+    font-family: 'Lato', sans-serif;
     margin: 3rem 0;
+}
+@media only screen and (max-width:700px){
+    .step{
+        display: inline;
+       
+       
+    }
+    .illustration{
+        width: 100%;
+        margin: 100px auto;
+    }
+    .step_text{
+        width: 100%;
+    }
+    .open_source {
+        padding: 10px !important;
+    }
+    .open_source p{
+        font-size: 25px;
+    }
+   
+}
+@media only screen and (max-width:573px){
+    .step_title{
+        font-size: 30px;
+    }
+    .step_content{
+        font-size: 20px;
+    }
+    .open_source {
+        padding: 10px !important;
+    }
+    .open_source p{
+        font-size: 20px;
+    }
+    
 }

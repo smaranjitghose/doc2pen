@@ -1,11 +1,11 @@
-import React,{useState, useEffect, useRef} from 'react';
-import {NavLink, useHistory} from 'react-router-dom';
-import {Link} from 'react-scroll';
+import React, { useState, useEffect, useRef } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import styles from './Header.module.css';
 import logo from './logo.png';
-import {ImInfo} from "react-icons/im";
-import {RiTeamLine, RiContactsBook2Line} from "react-icons/ri";
-import {BiDonateHeart, BiMenu} from "react-icons/bi";
+import { ImInfo } from "react-icons/im";
+import { RiTeamLine, RiContactsBook2Line } from "react-icons/ri";
+import { BiDonateHeart, BiMenu } from "react-icons/bi";
 
 const quickLinks = [
     {
@@ -42,7 +42,7 @@ function Header() {
             setLocation(location.pathname);
         })
     }, [history])
-    
+
     function drop() {
         navLinkRef.current.classList.toggle(styles.rightDrop);
         headerRef.current.classList.toggle(styles.HeaderOpen);
@@ -51,7 +51,7 @@ function Header() {
     return (
         <>
             <header ref={headerRef} className={`${styles.Header} ${styles.HeaderDrop}`}>
-                <img className={styles.left} src={logo} alt="Logo"/>
+                <img className={styles.left} src={logo} alt="Logo" />
                 <div ref={navLinkRef} className={`${styles.right} ${styles.rightDrop}`}>
                     <Link to='home_banner' offset={-15}>
                         <NavLink className={styles.header_links} to='/' exact activeClassName={styles.header_active_links}>
@@ -65,8 +65,8 @@ function Header() {
                         Sketch
                     </NavLink>
                 </div>
-                <div className={styles.hamburger} onClick={()=>drop()}>
-                    <BiMenu size={30}/>
+                <div className={styles.hamburger} onClick={() => drop()}>
+                    <BiMenu size={30} />
                 </div>
             </header>
             <div className={styles.quick_box}>

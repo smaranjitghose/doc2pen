@@ -4,19 +4,22 @@
 }
 
 .SupportusQuote {
-    color: rgb(0, 153, 255);
+    color: #21209c;
+    font-family: 'Lato', sans-serif;
     font-size: 1.7rem;
     margin-bottom: 11px;
 }
 
 .quoteAuthor {
     color: gray;
-    font-size: 20px;
+    font-size: 20px;   font-family: 'Lato', sans-serif;
+    
 }
 
 .patreonAndCoffe {
     margin-top: 30px;
     margin-left: auto; 
+ 
     display: flex;
     justify-content: center;
 }

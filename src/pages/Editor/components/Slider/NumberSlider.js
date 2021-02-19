@@ -32,9 +32,9 @@ const NumberSliders = props => {
       await setValuePromise(Number(value) + props.step).then(() => {
         props.editContext.onElementValueChange(inputElement);
       });
-    } else{
+    } else {
       setIsMsgDisplayed(true);
-      setTimeout(()=>setIsMsgDisplayed(false),2000)
+      setTimeout(() => setIsMsgDisplayed(false), 2000)
     }
   };
 
@@ -48,7 +48,7 @@ const NumberSliders = props => {
       props.editContext.onValueChange(event);
     } else {
       setIsMsgDisplayed(true);
-      setTimeout(()=>setIsMsgDisplayed(false),2000)
+      setTimeout(() => setIsMsgDisplayed(false), 2000)
     }
   };
 

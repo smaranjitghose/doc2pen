@@ -11,23 +11,23 @@ import Team from './sections/Team/Team'
 import ScrollToTop from "./../../components/ScrollToTopButton/ScrollToTopButton";
 
 function Home() {
-    return (
-      <div className="HomePage">
-        <MetaComponent
-          title={metaData.home.title}
-          description={metaData.home.description}
-          keywords={metaData.home.keywords}
-        />
-        <Banner />
-        <About />
-        <Team />
-        <OpenSource />
-        <ContactUs />
-        <SupportUs />
-        <Footer />
-        <ScrollToTop />
-      </div>
-    );
+  return (
+    <div className="HomePage">
+      <MetaComponent
+        title={metaData.home.title}
+        description={metaData.home.description}
+        keywords={metaData.home.keywords}
+      />
+      <Banner />
+      <About />
+      <Team />
+      <OpenSource />
+      <ContactUs />
+      <SupportUs />
+      <Footer />
+      <ScrollToTop />
+    </div>
+  );
 }
 
 export default Home

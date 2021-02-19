@@ -7,7 +7,7 @@ import NumberSlider from "../../components/Slider/NumberSlider";
 
 const Settings = () => {
   const editContext = useContext(EditContext);
-  
+
   return (
     <div className={styles.controlPanel}>
       <div className={styles.selector}>
@@ -58,9 +58,9 @@ const Settings = () => {
           <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]} />
 
           <div className={styles.vSeparator}></div>
-          
+
           <label className={styles.downloadBtn} htmlFor="import">Import File</label>
-          <input id="import" style={{display:"none"}} type="file" onChange={editContext.importTxt}></input>
+          <input id="import" style={{ display: "none" }} type="file" onChange={editContext.importTxt}></input>
           <div className={styles.vSeparator}></div>
 
           <button className={styles.downloadBtn} onClick={editContext.downloadImg}>
