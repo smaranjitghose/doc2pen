@@ -3,9 +3,16 @@ import "./particles.css";
 import styles from "./notFound.module.css";
 import Logo from "./../../assets/images/404/Logo.png";
 
+
+function getFaviconEl() {
+  return document.getElementById("favicon");
+}
+
 function Hero() {
   useEffect(() => {
     if (window.ParticleSlider !== undefined) window.initParticles();
+    const favicon = getFaviconEl();
+    favicon.href = "https://cdn.icon-icons.com/icons2/1483/PNG/512/404browser_102160.png";
   }, []);
 
   return (
