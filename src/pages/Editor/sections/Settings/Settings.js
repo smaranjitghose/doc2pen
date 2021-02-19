@@ -46,30 +46,25 @@ const Settings = () => {
             name="Change Style"
             type="font"
             items={["HomemadeApple", "Caveat", "Dawning", "IndieFlower", "NothingYouCouldDo", "Liu", "LeagueScript"]}
-            item1="HomemadeApple"
-            item2="Caveat"
-            item3="Dawning"
-            item4="IndieFlower"
-            item5="NothingYouCouldDo"
-            item6="Liu"
-            item7="LeagueScript"
           />
           <div className={styles.vSeparator}></div>
           <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]} />
 
           <div className={styles.vSeparator}></div>
-          
-          <label className={styles.downloadBtn} htmlFor="import">Import File</label>
-          <input id="import" style={{display:"none"}} type="file" onChange={editContext.importTxt}></input>
+
+          <label className={styles.downloadBtn} htmlFor="import">
+            Import File
+          </label>
+          <input id="import" style={{ display: "none" }} type="file" onChange={editContext.importTxt}></input>
           <div className={styles.vSeparator}></div>
 
-          <button className={styles.downloadBtn} onClick={editContext.downloadImg}>
-            Download
-          </button>
-
+          <Dropdown
+            name="Download"
+            type="download"
+            items={["as PDF", "as PNG"]}
+          />
           <div className={styles.vSeparator}></div>
         </div>
-
         <NumberSlider
           label={"Adjust x-axis"}
           editContext={editContext}
