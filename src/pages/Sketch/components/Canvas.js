@@ -18,6 +18,8 @@ function Canvas() {
     const [opacity, setOpacity] = useState("1");
     const [stroke, setStroke] = useState("none");
     const [fill, setFill] = useState(false);
+    const [canvasStates, setCanvasStates] = useState([]);
+    const [canvasStateAt, setcanvasStateAt] = useState(-1);
 
     useEffect(() => {
         setContext(canvasRef.current.getContext('2d'));
@@ -136,12 +138,21 @@ function Canvas() {
     }
 
     function handleMouseUp(event) {
+        setCanvasStates(current => [...current, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
+        setcanvasStateAt(current => current+1);
+
         setIsDrawing(false);
         event.preventDefault();
         setTypeState(null);
+        // console.log(context.getImageData(0, 0, canvasWidth, canvasHeight));
     }
 
     function handleMouseLeave(event) {
+        if(isDrawing) {
+            setCanvasStates(current => [...current, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
+            setcanvasStateAt(current => current+1);
+        }
+
         setIsDrawing(false);
         event.preventDefault();
         setTypeState(null);
@@ -274,6 +285,25 @@ function Canvas() {
 
     function clear() {
         context.clearRect(0, 0, canvasWidth, canvasHeight);
+        setCanvasStates([]);
+        setcanvasStateAt(-1);
+    }
+
+    function undo() {
+        if(canvasStateAt > 0) {
+            context.putImageData(canvasStates[canvasStateAt-1], 0, 0);
+            setcanvasStateAt(current => current-1);
+        } else if(canvasStateAt === 0) {
+            context.clearRect(0, 0, canvasWidth, canvasHeight);
+            setcanvasStateAt(current => current-1);
+        }
+    }
+
+    function redo() {
+        if(canvasStateAt+1 < canvasStates.length) {
+            context.putImageData(canvasStates[canvasStateAt+1], 0, 0);
+            setcanvasStateAt(current => current+1);
+        }
     }
 
     return (
@@ -289,6 +319,10 @@ function Canvas() {
                 setStroke={setStroke}
                 fill={fill}
                 setFill={setFill}
+                undo={undo}
+                redo={redo}
+                canvasStateAt={canvasStateAt}
+                canvasStates={canvasStates}
             />
             
             {/* ----- Download & Clear ----- */}
