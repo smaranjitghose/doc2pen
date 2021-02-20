@@ -56,7 +56,7 @@ const NumberSliders = props => {
     <div className={styles.controlContainer}>
       <label for="left">{props.label}</label>
       <div className={styles.controlWrap}>
-        <button onClick={handleClickValueChange} className={styles.decrement}>
+        <button onClick={handleClickValueChange} className={`${styles.decrement} decrement`}>
           -
         </button>
 
@@ -70,7 +70,7 @@ const NumberSliders = props => {
           onChange={handleManualValueChange}
         />
 
-        <button onClick={handleClickValueChange} className={styles.increment}>
+        <button onClick={handleClickValueChange} className={`${styles.increment} increment`}>
           +
         </button>
 
