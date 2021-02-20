@@ -1,3 +1,18 @@
+@-webkit-keyframes float {
+  0% {
+    /* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+    transform: translatey(0px);
+  }
+  50% {
+    /* box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2); */
+    transform: translatey(-20px);
+  }
+  100% {
+    /* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+    transform: translatey(0px);
+  }
+}
+
 @keyframes float {
   0% {
     /* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
@@ -13,29 +28,38 @@
   }
 }
 
+.stickyWrap {
+  background-image: linear-gradient(to left, #ffb900 0%, #ffb900 50%, red 50%, red 100%);
+}
+
 .homeSectionWrap {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #09112b; */
+  background-color: transparent;
   overflow: hidden;
-  background-image: url("./../../assets/images/404/Shadow-Fall-Background.svg");
+  background-image: url("./../../assets/images/404/skate.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
   gap: 2rem;
 }
 .heading {
   text-align: center;
   font-size: 2.3rem;
-  text-shadow: 2px 2px 14px rgba(255, 255, 255, 0.62);
+  text-shadow: 2px 1px 0px rgb(255 255 255 / 45%);
   padding: 0 10px;
 }
-.emoji{
+.emoji {
   text-shadow: none;
 }
 .float {
   transform: translatey(0px);
+  -webkit-animation: float 6s ease-in-out infinite;
   animation: float 6s ease-in-out infinite;
 }
 .head {
@@ -48,7 +72,7 @@
   color: white;
   flex-direction: column;
   gap: 20px;
-  z-index: 5;
+  z-index: 11;
 }
 .navlink {
   color: white;
@@ -58,19 +82,34 @@
   border-radius: 25px;
   padding: 5px 20px;
 }
-.navlink:hover{
+.navlink:hover {
   color: #4285f4;
   background-color: #ffffff;
+  border: red solid 2px;
 }
 .particleContainer {
   flex: 2;
   max-width: 900px;
 }
 
+.particleWrap {
+  position: relative;
+}
+
+.particleSlider canvas {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
 .about {
   box-shadow: 7px 0 13px #ffffff;
 }
+
 @media (max-width: 760px) {
+  .stickyWrap {
+    background-image: linear-gradient(to bottom, #162bee 0%, #162bee 50%, #ffb900 50%, #ffb900 100%);
+  }
+
   .homeSectionWrap {
     flex-direction: column-reverse;
     min-height: 100vh;
@@ -84,6 +123,19 @@
   }
   .head {
     height: 40vh;
+  }
+
+  .particleSlider canvas {
+    -webkit-filter: invert(0);
+    filter: invert(0);
+  }
+
+  .navlink {
+    background-color: #ffb900;
+  }
+  .navlink:hover {
+    color: #ffb900;
+    border-color: transparent;
   }
 }
 @media (max-width: 615px) {
