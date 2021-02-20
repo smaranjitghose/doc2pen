@@ -37,8 +37,14 @@ const EditContextProvider = (props) => {
     Blank2: "blank2.jpg",
   };
 
-  const isBodyHandler = () => {
-    setIsBody(!isBody);
+  const isBodyHandler = (e) => {
+    
+    if(e.target.classList.contains('id-body')){
+      setIsBody(true);
+    }else{
+      setIsBody(false);
+    }
+
   };
 
   const pageSrcHandler = (e) => {
