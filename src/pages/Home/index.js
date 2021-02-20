@@ -1,13 +1,14 @@
 import React from 'react'
 import MetaComponent from '../../seo/MetaComponent'
 import metaData from '../../seo/metaData'
-import Footer from '../../components/Footer/Footer'
+
 import About from './sections/About/About'
 import ContactUs from './sections/ContactUs/ContactUs'
 import Banner from './sections/Banner/Banner'
 import OpenSource from './sections/OpenSource/OpenSource'
 import SupportUs from './sections/SupportUs/SupportUs'
 import Team from './sections/Team/Team'
+import Footer from "../../components/Footer/Footer";
 import ScrollToTop from "./../../components/ScrollToTopButton/ScrollToTopButton";
 
 function Home() {
