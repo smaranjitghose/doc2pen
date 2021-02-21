@@ -64,3 +64,11 @@
 .feature select {
     outline: none;
 }
+
+.undo {
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 0.3rem;
+    display: flex;
+}
