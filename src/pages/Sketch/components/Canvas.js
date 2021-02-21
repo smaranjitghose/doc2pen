@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import styles from './Canvas.module.css';
 import Toolbox from './Toolbox/Toolbox';
-import {FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash} from 'react-icons/fa';
+import {FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash, FaEraser} from 'react-icons/fa';
 import {BsArrowUpRight} from 'react-icons/bs';
 import {RiDeleteBinLine} from 'react-icons/ri';
 import {GiTriangleTarget} from 'react-icons/gi';
@@ -97,7 +97,7 @@ function Canvas() {
 
         if(type === 'pen') {
             logicDown(point);
-        } else if(type === 'line' || type === 'square' || type === 'circle' || type === 'triangle' || type === 'arrow' || type === 'diamond') {
+        } else if(type === 'line' || type === 'square' || type === 'circle' || type === 'triangle' || type === 'arrow' || type === 'diamond' || type === 'eraser') {
             setTypeState(context.getImageData(0, 0, canvasWidth, canvasHeight));
             logicDown(point);
             setDownPoint({x: point.x, y:point.y});
@@ -130,6 +130,8 @@ function Canvas() {
             arrow(point);
         } else if(type === 'diamond') {
             diamondMove(point);
+        } else if(type === 'eraser') {
+            eraserMove(point);
         }
 
         event.preventDefault();
@@ -265,6 +267,13 @@ function Canvas() {
         context.stroke();
     }
 
+    function eraserMove(point){
+        context.lineWidth=10;
+        context.strokeStyle="#FFFFFF";
+        context.lineTo(point.x, point.y);
+        context.stroke();
+    }
+
     function download() {
         let link = document.createElement('a');
         link.download = 'drawing.png';
@@ -330,6 +339,10 @@ function Canvas() {
                 <div className={`${styles.feature} ${styles.shape_box} ${type === 'diamond' && styles.active_shape_box}`}
                 onClick={() => setType("diamond")}>
                     <BsDiamond size={15}/>
+                </div>
+                <div className={`${styles.feature} ${styles.shape_box} ${type === 'eraser' && styles.active_shape_box}`}
+                onClick={() => setType("eraser")}>
+                    <FaEraser size={15}/>
                 </div>
             </div>
 
