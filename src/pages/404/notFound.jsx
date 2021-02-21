@@ -12,7 +12,7 @@ function Hero() {
   useEffect(() => {
     if (window.ParticleSlider !== undefined) window.initParticles();
     const favicon = getFaviconEl();
-    favicon.href = "https://cdn.icon-icons.com/icons2/1483/PNG/512/404browser_102160.png";
+    favicon.href = "404browser_102160.png";
   }, []);
 
   return (
