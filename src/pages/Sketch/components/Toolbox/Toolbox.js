@@ -4,7 +4,7 @@ import {AiOutlineLine, AiOutlineSmallDash, AiOutlineDash} from 'react-icons/ai';
 import {FaRegSquare, FaSquare} from 'react-icons/fa';
 import {MdUndo, MdRedo} from 'react-icons/md';
 
-function Toolbox({color, setColor, width, setWidth, opacity, setOpacity, stroke, setStroke, fill, setFill, undo, redo, canvasStateAt, canvasStates}) {
+function Toolbox({color, setColor, width, setWidth, opacity, setOpacity, stroke, setStroke, fill, setFill, undo, redo, canvasStateAt, canvasStates, eraserSize, setEraserSize}) {
 
     return (
         <div className={styles.canvas_toolbox}>
@@ -64,6 +64,10 @@ function Toolbox({color, setColor, width, setWidth, opacity, setOpacity, stroke,
                 <div className={styles.undo} onClick={() => redo()} style={{cursor: `${canvasStateAt === canvasStates.length-1 ? 'not-allowed' : 'pointer'}`}}>
                     <MdRedo size={20}/>
                 </div>
+            </Feature>
+
+            <Feature title={`Eraser Size [ ${eraserSize} ]`}>
+                <input type="range" min="1" max="30" value={eraserSize} onChange={(e) => setEraserSize(e.target.value)}/>
             </Feature>
         </div>
     )

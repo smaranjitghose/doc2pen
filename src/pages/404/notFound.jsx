@@ -4,9 +4,16 @@ import styles from "./notFound.module.css";
 import LogoWhite from "./../../assets/images/404/Logo1.png";
 import { BiConfused } from "react-icons/bi";
 
+
+function getFaviconEl() {
+  return document.getElementById("favicon");
+}
+
 function Hero() {
   useEffect(() => {
     if (window.ParticleSlider !== undefined) window.initParticles();
+    const favicon = getFaviconEl();
+    favicon.href = "404browser_102160.png";
   }, []);
 
   return (
