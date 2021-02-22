@@ -16,6 +16,7 @@ function Canvas() {
     const [color, setColor] = useState("#ff0000");
     const [width, setWidth] = useState("1");
     const [opacity, setOpacity] = useState("1");
+    const [eraserSize, setEraserSize] = useState("1");
     const [stroke, setStroke] = useState("none");
     const [fill, setFill] = useState(false);
     const [canvasStates, setCanvasStates] = useState([]);
@@ -279,7 +280,7 @@ function Canvas() {
     }
 
     function eraserMove(point){
-        context.lineWidth=10;
+        context.lineWidth=`${eraserSize}`;
         context.strokeStyle="#FFFFFF";
         context.lineTo(point.x, point.y);
         context.stroke();
@@ -330,6 +331,8 @@ function Canvas() {
                 setFill={setFill}
                 undo={undo}
                 redo={redo}
+                eraserSize={eraserSize}
+                setEraserSize={setEraserSize}
                 canvasStateAt={canvasStateAt}
                 canvasStates={canvasStates}
             />
