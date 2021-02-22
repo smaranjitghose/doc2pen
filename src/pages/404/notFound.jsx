@@ -3,9 +3,16 @@ import "./particles.css";
 import styles from "./notFound.module.css";
 import Logo from "./../../assets/images/404/Logo.png";
 
+
+function getFaviconEl() {
+  return document.getElementById("favicon");
+}
+
 function Hero() {
   useEffect(() => {
     if (window.ParticleSlider !== undefined) window.initParticles();
+    const favicon = getFaviconEl();
+    favicon.href = "404browser_102160.png";
   }, []);
 
   return (
