@@ -39,6 +39,11 @@
   src: url(./fonts/Poppins-Regular.otf);
 }
 
+@font-face {
+  font-family: Maria;
+  src: url(./fonts/Maria-Regular.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
