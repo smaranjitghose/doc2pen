@@ -29,7 +29,7 @@
 }
 
 .stickyWrap {
-  background-image: linear-gradient(to left, #ffb900 0%, #ffb900 50%, red 50%, red 100%);
+  background-image: linear-gradient(to left, #F4B400 50%, #1DB954 50%);
 }
 
 .homeSectionWrap {
@@ -42,10 +42,10 @@
   align-items: center;
   background-color: transparent;
   overflow: hidden;
-  background-image: url("./../../assets/images/404/skate.svg");
+  background-image: url("./../../assets/images/404/skate2.svg");
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size: contain;
+  background-size:80% auto;
   gap: 2rem;
 }
 .heading {
@@ -83,9 +83,9 @@
   padding: 5px 20px;
 }
 .navlink:hover {
-  color: #4285f4;
+  color: #4285F4;
   background-color: #ffffff;
-  border: red solid 2px;
+  border: #1DB954 solid 2px;
 }
 .particleContainer {
   flex: 2;
@@ -97,8 +97,8 @@
 }
 
 .particleSlider canvas {
-  -webkit-filter: invert(1);
-  filter: invert(1);
+  -webkit-filter: invert(0.8);
+  filter: invert(0.8);
 }
 
 .about {
@@ -107,12 +107,13 @@
 
 @media (max-width: 760px) {
   .stickyWrap {
-    background-image: linear-gradient(to bottom, #162bee 0%, #162bee 50%, #ffb900 50%, #ffb900 100%);
+    background-image: linear-gradient(to bottom, #0619c0 50%, #F4B400 50%);
   }
 
   .homeSectionWrap {
     flex-direction: column-reverse;
     min-height: 100vh;
+    background-size: 105% auto;
   }
   .head,
   .particleContainer {
@@ -131,10 +132,10 @@
   }
 
   .navlink {
-    background-color: #ffb900;
+    background-color: #F4B400;
   }
   .navlink:hover {
-    color: #ffb900;
+    color: #F4B400;
     border-color: transparent;
   }
 }
