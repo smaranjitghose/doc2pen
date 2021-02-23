@@ -1,11 +1,14 @@
-.canvas {
+.canvas, .dark_canvas {
     border: 2.5px solid blue;
     border-radius: 11px;
     background-color: white;
     cursor: crosshair;
 }
+.dark_canvas {
+    background-color: #121212;
+}
 
-.feature_container {
+.feature_container, .dark_feature_container {
     position: absolute;
     display: flex;
     padding: 0.3rem;
@@ -13,33 +16,35 @@
     background-color: white;
     box-shadow: 0 0 3px 0.3px gray;
 }
+.dark_feature_container {
+    background-color: #1e1e1e;
+}
 
-.feature {
+.feature, .dark_feature {
     padding: 0.7rem 0.5rem;
     margin: 0 0.2rem;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
+    background-color: #e9ecef;
+    color: black;
+}
+.dark_feature {
+    background-color: #363636;
+    color: #ced4da;
+}
+
+.active_feature {
+    background-color: #c7ccd1;
+}
+.dark_active_feature {
+    background-color: #272727;
 }
 
 /* ----- Download Clear Button ----- */
 .download_clear_container {
     top: 0.75rem;
     right: 30px;
-}
-
-.download_clear_buttons {
-    color: white;
-}
-
-.btn_clear {
-    background-color: #ffbaba;
-    color: red;
-}
-
-.btn_download {
-    background-color: #dff2bf;
-    color: green;
 }
 
 /* ----- Shapes ----- */
@@ -49,19 +54,14 @@
     transform: translateX(-50%);
 }
 
-.shape_box {
-    background-color: #e9ecef;
-}
-
-.active_shape_box {
-    background-color: #c7ccd1;
-}
-
 /* ----- Mouse Position ----- */
 
-.mousePosition {
+.mousePosition, .dark_mousePosition {
     position: absolute;
     bottom: 11px;
     left: 30px;
     font-size: 0.7rem;
+}
+.dark_mousePosition {
+    color: #ced4da;
 }
