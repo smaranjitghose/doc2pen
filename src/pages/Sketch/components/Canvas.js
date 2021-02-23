@@ -100,10 +100,13 @@ function Canvas() {
 
         if(type === 'pen') {
             logicDown(point);
-        } else if(type === 'line' || type === 'square' || type === 'circle' || type === 'triangle' || type === 'arrow' || type === 'diamond' || type === 'eraser') {
+        } else if(type === 'line' || type === 'square' || type === 'circle' || type === 'triangle' || type === 'arrow' || type === 'diamond' ) {
             setTypeState(context.getImageData(0, 0, canvasWidth, canvasHeight));
             logicDown(point);
             setDownPoint({x: point.x, y:point.y});
+        } else if(type === 'eraser'){
+            context.strokeStyle="#FFFFFF";
+            logicDown(point);
         }
 
         setIsDrawing(true);
