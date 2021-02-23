@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./particles.css";
 import styles from "./notFound.module.css";
-import LogoWhite from "./../../assets/images/404/Logo1.png";
+import LogoWhite from "./../../assets/images/404/Logo-white.png";
 import { BiConfused } from "react-icons/bi";
 
 
