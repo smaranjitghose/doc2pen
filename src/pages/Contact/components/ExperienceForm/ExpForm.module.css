@@ -5,6 +5,7 @@
 .general_info {
   background: #14557b;
   color: white;
+  margin: 1rem;
 }
 
 .general_info h2 {
@@ -13,6 +14,7 @@
 
 .general_info p {
   margin-top: 5px;
+  
 }
 
 .contact_form {
@@ -70,6 +72,7 @@
   border: 1px #fff solid;
   position: relative;
   overflow: hidden;
+  box-shadow: inset 2px 0px 2px white
 }
 .buttonText {
   position: relative;

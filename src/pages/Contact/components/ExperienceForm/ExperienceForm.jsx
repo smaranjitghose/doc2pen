@@ -1,5 +1,5 @@
 import React from 'react'
-import EmojiRating from "../../components/EmojiRating/EmojiRating";
+import EmojiRating from "./../EmojiRating/EmojiRating";
 
 import styles from "./ExpForm.module.css";
 

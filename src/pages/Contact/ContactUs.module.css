@@ -4,7 +4,9 @@
 
 .heading {
   font-size: 2.5rem;
-  padding-top: 5rem;
+  padding: 5rem 1rem 0;
+
+  font-weight: bold;
 }
 
 .contact_and_info_container {
@@ -13,6 +15,7 @@
   justify-content: center;
   flex-wrap: wrap;
   background: #14557b;
+  margin: 5rem 0 9rem;
 }
 
 .map {

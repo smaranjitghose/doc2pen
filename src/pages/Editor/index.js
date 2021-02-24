@@ -5,7 +5,6 @@ import styles from "./style.module.css";
 import MetaComponent from '../../seo/MetaComponent';
 import metaData from '../../seo/metaData';
 
-import Footer from "../../components/Footer/Footer";
 import EditContextProvider from "./containers/editContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Settings from "./sections/Settings/Settings";
@@ -39,7 +38,6 @@ function Editor() {
           <Output />
         </EditContextProvider>
       </div>
-      <Footer />
     </>
   );
 }
