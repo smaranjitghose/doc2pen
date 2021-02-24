@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./particles.css";
 import styles from "./notFound.module.css";
 import LogoWhite from "./../../assets/images/404/Logo-white.png";
+import { BiConfused } from "react-icons/bi";
 
 
 function getFaviconEl() {
@@ -25,9 +26,13 @@ function Hero() {
             <br />
             You are lost buddy! You went too far...
             <br />
+            <div className={styles.emoji}>
+              <BiConfused color="#FFFFFF" />
+              <BiConfused fontSize="53px" color="#FFFFFF" />
+            </div>
           </span>
           <a className={styles.navlink} href="/">
-            Let's go back
+            Let's go Home
           </a>
           <br />
           <br />
