@@ -29,7 +29,7 @@
 }
 
 .stickyWrap {
-  background-image: linear-gradient(to left, #F4B400 50%, #1DB954 50%);
+  background-color: #0d1117;
 }
 
 .homeSectionWrap {
@@ -75,7 +75,7 @@
   z-index: 11;
 }
 .navlink {
-  color: white;
+  color: rgb(202, 202, 202);
   text-decoration: none;
   font-size: 2rem;
   border: solid 2px;
@@ -83,9 +83,9 @@
   padding: 5px 20px;
 }
 .navlink:hover {
-  color: #4285F4;
-  background-color: #ffffff;
-  border: #1DB954 solid 2px;
+  color: rgb(202, 202, 202);
+  background-color: #1e2836;
+  border: #1e2836 solid 2px;
 }
 .particleContainer {
   flex: 2;
@@ -96,19 +96,14 @@
   position: relative;
 }
 
-.particleSlider canvas {
-  -webkit-filter: invert(0.8);
-  filter: invert(0.8);
-}
-
 .about {
   box-shadow: 7px 0 13px #ffffff;
 }
 
 @media (max-width: 760px) {
-  .stickyWrap {
+  /* .stickyWrap {
     background-image: linear-gradient(to bottom, #0619c0 50%, #F4B400 50%);
-  }
+  } */
 
   .homeSectionWrap {
     flex-direction: column-reverse;
@@ -126,18 +121,14 @@
     height: 40vh;
   }
 
-  .particleSlider canvas {
-    -webkit-filter: invert(0);
-    filter: invert(0);
-  }
-
   .navlink {
-    background-color: #F4B400;
+    background-color: #0d1117;;
   }
+  /*
   .navlink:hover {
     color: #F4B400;
     border-color: transparent;
-  }
+  } */
 }
 @media (max-width: 615px) {
   .heading {

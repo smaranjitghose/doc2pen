@@ -28,11 +28,11 @@ function Hero() {
             <br />
             <div className={styles.emoji}>
               <BiConfused color="#FFFFFF" />
-              <BiConfused color="#FFFFFF" />
+              <BiConfused fontSize="53px" color="#FFFFFF" />
             </div>
           </span>
           <a className={styles.navlink} href="/">
-            Let's go back
+            Let's go Home
           </a>
           <br />
           <br />
