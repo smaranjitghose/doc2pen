@@ -29,7 +29,7 @@
 }
 
 .stickyWrap {
-  background-image: linear-gradient(to left, #F4B400 50%, #1DB954 50%);
+  background-color: #3f3d56;
 }
 
 .homeSectionWrap {
@@ -42,7 +42,7 @@
   align-items: center;
   background-color: transparent;
   overflow: hidden;
-  background-image: url("./../../assets/images/404/skate2.svg");
+  background-image: url("./../../assets/images/404/astro.svg");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size:80% auto;
@@ -95,20 +95,17 @@
 .particleWrap {
   position: relative;
 }
-
+/* 
 .particleSlider canvas {
   -webkit-filter: invert(0.8);
   filter: invert(0.8);
-}
+} */
 
 .about {
   box-shadow: 7px 0 13px #ffffff;
 }
 
 @media (max-width: 760px) {
-  .stickyWrap {
-    background-image: linear-gradient(to bottom, #0619c0 50%, #F4B400 50%);
-  }
 
   .homeSectionWrap {
     flex-direction: column-reverse;
@@ -124,11 +121,6 @@
   }
   .head {
     height: 40vh;
-  }
-
-  .particleSlider canvas {
-    -webkit-filter: invert(0);
-    filter: invert(0);
   }
 
   .navlink {
