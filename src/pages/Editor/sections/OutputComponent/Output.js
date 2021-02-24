@@ -7,7 +7,7 @@ const OutputComponent = () => {
   const editContext = useContext(EditContext);
   // const page = require('./ruled1.png');
   const page = require(`./${editContext.pageSrc}`);
- console.log(`${editContext.pageSrc}`);
+  console.log(`${editContext.pageSrc}`);
 
   const [pageText, setPageText] = useState("");
   const [wordCount, setWordCount] = useState(0);
@@ -40,7 +40,7 @@ const OutputComponent = () => {
           />
           <textarea
             type="text"
-            value={pageText}
+            value={editContext.bodyValues.textValue}
             onChange={e => setPageText(e.target.value)}
             className={classes.contentInput}
             id="show-text"
