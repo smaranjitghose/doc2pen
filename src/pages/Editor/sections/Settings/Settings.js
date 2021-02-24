@@ -45,7 +45,7 @@ const Settings = () => {
           <Dropdown
             name="Change Style"
             type="font"
-            items={["HomemadeApple", "Caveat", "Dawning", "IndieFlower", "NothingYouCouldDo", "Liu", "LeagueScript", "Maria"]}
+            items={["HomemadeApple", "Caveat", "Dawning", "IndieFlower", "NothingYouCouldDo", "Liu", "LeagueScript", "Enola"]}
             item1="HomemadeApple"
             item2="Caveat"
             item3="Dawning"
@@ -53,7 +53,7 @@ const Settings = () => {
             item5="NothingYouCouldDo"
             item6="Liu"
             item7="LeagueScript"
-            item8="Maria"
+            item8="Enola"
           />
           <div className={styles.vSeparator}></div>
           <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]} />
