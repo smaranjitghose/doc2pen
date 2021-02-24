@@ -1,0 +1,43 @@
+.leaflet-container {
+  width: 100%;
+  height: 98%;
+  position: relative;
+}
+
+.leaflet-control-attribution {
+  display: none;
+}
+
+.mapToolTip,
+.reCenter {
+  position: absolute;
+  bottom: 10px;
+  z-index: 400;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 0.5;
+  font-family: monospace, "sans-serif";
+  cursor: default;
+}
+
+.mapToolTip {
+  height: 125px;
+  width: 230px;
+  left: 10px;
+  background: rgba(29, 24, 24, 0.9);
+  color: #fff;
+  padding: 16px;
+}
+
+.mapToolTip a {
+  cursor: pointer;
+}
+
+.reCenter {
+  border-radius: 100%;
+  right: 10px;
+  background: rgba(245, 245, 245, 0.9);
+  padding:5px;
+  border: none;
+  box-shadow: 2px 2px 3px #999;
+}
