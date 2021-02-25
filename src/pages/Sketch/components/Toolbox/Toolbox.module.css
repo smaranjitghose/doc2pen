@@ -1,4 +1,4 @@
-.canvas_toolbox {
+.canvas_toolbox, .dark_canvas_toolbox {
     position: absolute;
     top: 0.75rem;
     left: 30px;
@@ -10,12 +10,20 @@
     padding: 0.5rem;
     box-shadow: 0 0 3px 0.3px gray;
 }
+.dark_canvas_toolbox {
+    background-color: #1e1e1e;
+}
 
-.feature {
+.feature, .dark_feature {
     padding: 0.5rem;
     margin: 0.2rem 0;
     border-radius: 5px;
     background-color: rgb(247, 247, 247);
+}
+.dark_feature {
+    background-color: #1e1e1e;
+    color: #ced4da;
+    box-shadow: 0 0 1px #ced4da;
 }
 
 .title {
@@ -28,20 +36,10 @@
     display: flex;
 }
 
-.stroke {
-    background-color: #e9ecef;
-    border-radius: 5px;
-    margin: 3px;
-    padding: 0.1rem;
+.feature_box, .dark_feature_box {
     display: flex;
-    cursor: pointer;
-}
-
-.active_stroke {
-    background-color: #c7ccd1;
-}
-
-.fill {
+    justify-content: center;
+    align-items: center;
     background-color: #e9ecef;
     border-radius: 5px;
     margin: 3px;
@@ -49,26 +47,24 @@
     display: flex;
     cursor: pointer;
 }
-
-.active_fill {
-    background-color: #c7ccd1;
+.dark_feature_box {
+    background-color: #363636;
 }
 
-.feature input[type="color"]{
+.active_feature_box {
+    background-color: #c7ccd1;
+}
+.dark_active_feature_box {
+    background-color: #272727;
+}
+
+.feature input[type="color"], .dark_feature input[type="color"]{
     border: none;
     outline: none;
     width: 30px;
     height: 30px;
 }
 
-.feature select {
+.feature select, .dark_feature select {
     outline: none;
-}
-
-.undo {
-    background-color: #e9ecef;
-    border-radius: 5px;
-    margin: 3px;
-    padding: 0.3rem;
-    display: flex;
 }
