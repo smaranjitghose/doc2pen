@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import EmojiRating from "./../EmojiRating/EmojiRating";
 
 import styles from "./ExpForm.module.css";
@@ -17,23 +17,25 @@ function ExperienceForm() {
             onsubmit="setTimeout(function(){window.location.reload();},10);"
             className={styles.contact_form_container}
           >
-            <div className={styles.inputDiv}>
-              <div className={styles.name}>
-                <input type="text" placeholder="First Name" required />
-                <input type="text" placeholder="Last Name" required />
+            <div className={styles.circle}>
+              <div className={styles.circle2}></div>
+            </div>
+            <div className={styles.fieldsWrap}>
+              <div className={styles.inputDiv}>
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Email" required />
+                <input type="tel" placeholder="Phone (optional)" />
               </div>
-              <input type="email" placeholder="Email" required />
-              <input type="tel" placeholder="Phone (optional)" />
+              <div className={styles.experience}>
+                <span>Rate your experience:</span>
+                <EmojiRating />
+              </div>
+              <textarea placeholder="Message..."></textarea>
+              <button className={styles.submit} onSubmit={response} type="submit">
+                <span className={styles.hoverEffect}></span>
+                <span className={styles.buttonText}>Send</span>
+              </button>
             </div>
-            <div className={styles.experience}>
-              <span>Rate your experience:</span>
-              <EmojiRating />
-            </div>
-            <textarea placeholder="Message..."></textarea>
-            <button className={styles.submit} onSubmit={response} type="submit">
-              <span className={styles.hoverEffect}></span>
-              <span className={styles.buttonText}>Send</span>
-            </button>
           </form>
         </div>
       </div>
@@ -41,4 +43,4 @@ function ExperienceForm() {
   );
 }
 
-export default ExperienceForm
+export default ExperienceForm;

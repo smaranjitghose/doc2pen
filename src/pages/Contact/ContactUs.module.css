@@ -4,9 +4,14 @@
 
 .heading {
   font-size: 2.5rem;
-  padding: 5rem 1rem 0;
-
+  padding: 1rem 3rem;
   font-weight: bold;
+  margin: 5rem auto 0;
+  background: blue;
+  color: white;
+  display: inline-block;
+  border-radius: 60px;
+  box-shadow: 0 0 20px #00000033;
 }
 
 .contact_and_info_container {
@@ -14,14 +19,13 @@
   align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
-  background: #14557b;
+  background: #fff;
   margin: 5rem 0 9rem;
 }
 
 .map {
   min-height: 60vh;
   min-width: 418px;
-  background: #14557b;
   display: flex;
   align-items: center;
   flex: 1;
