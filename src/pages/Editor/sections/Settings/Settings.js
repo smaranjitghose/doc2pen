@@ -16,11 +16,11 @@ const Settings = () => {
             type="checkbox"
             name="heading"
             value={editContext.isBody}
-            id="heading"
+            id="title-heading"
             onClick={editContext.isBodyHandler}
-            className={`d-none`}
+            className={`id-title d-none`}
           />
-          <label for="heading" style={{ color: editContext.isBody && "#f0f7ff" }}>
+          <label for="title-heading" style={{ color: editContext.isBody && "#f0f7ff" }}>
             Title
           </label>
         </div>
@@ -29,11 +29,11 @@ const Settings = () => {
             type="checkbox"
             name="heading"
             value={editContext.isBody}
-            id="heading"
+            id="body-heading"
             onClick={editContext.isBodyHandler}
-            className={`d-none`}
+            className={`id-body d-none `}
           />
-          <label for="heading" style={{ color: !editContext.isBody && "#f0f7ff" }}>
+          <label for="body-heading" style={{ color: !editContext.isBody && "#f0f7ff" }}>
             Body
           </label>
         </div>

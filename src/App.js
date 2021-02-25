@@ -11,6 +11,7 @@ const Sketch = lazy(() => import("./pages/Sketch/Sketch"));
 const NotFound = lazy(() => import("./pages/404/notFound"));
 
 function App({ location }) {
+  
   return (
     <Suspense fallback={<Preloader />}>
       {location.pathname !== "/404" && <Header />}

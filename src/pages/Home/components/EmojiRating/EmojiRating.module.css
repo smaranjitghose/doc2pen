@@ -1,0 +1,27 @@
+.emojis {
+  justify-content: space-between;
+  margin-top: 10px;
+  user-select: none;
+}
+
+.radio {
+  display: none;
+}
+.radio ~ span {
+  font-size: 1.2rem;
+  filter: grayscale(100);
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 8px;
+}
+
+.radio:checked ~ span {
+  filter: grayscale(0);
+  font-size: 1.3rem;
+  margin: 6px;
+}
+
+.emoji:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
