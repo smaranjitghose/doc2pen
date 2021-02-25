@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import styles from './Canvas.module.css';
 import Toolbox from './Toolbox/Toolbox';
-import {FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash} from 'react-icons/fa';
+import {FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash, FaRegMoon, FaSun} from 'react-icons/fa';
 import {BsArrowUpRight} from 'react-icons/bs';
 import {RiDeleteBinLine} from 'react-icons/ri';
 import {GiTriangleTarget} from 'react-icons/gi';
@@ -31,6 +31,9 @@ function Canvas() {
     const [typeState, setTypeState] = useState(null);
     const [downPoint, setDownPoint] = useState({x: "", y: ""});
     const [mousePosition, setMousePosition] = useState({x: "0", y: "0"});
+    const [isDarkModeOn, setIsDarkMode] = useState(
+        localStorage.getItem("theme") === "true" ? true : false
+    );
 
     const [canvasWidth, setCanvasWidth] = useState(window.innerWidth-50);
     const [canvasHeight, setCanvasHeight] = useState(window.innerHeight-100);
@@ -323,45 +326,54 @@ function Canvas() {
                 redo={redo}
                 canvasStateAt={canvasStateAt}
                 canvasStates={canvasStates}
+                isDarkModeOn={isDarkModeOn}
             />
             
-            {/* ----- Download & Clear ----- */}
-            <div className={`${styles.feature_container} ${styles.download_clear_container}`}>
-                <div className={`${styles.feature} ${styles.download_clear_buttons} ${styles.btn_download}`}
+            {/* ----- Download, Clear & Dark Mode ----- */}
+            <div className={`${isDarkModeOn ? styles.dark_feature_container : styles.feature_container} ${styles.download_clear_container}`}>
+                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature}`}
+                        onClick={() => {
+                            setIsDarkMode(current => !current);
+                            localStorage.setItem("theme", JSON.stringify(!isDarkModeOn));
+                        }}
+                >
+                    {isDarkModeOn ? <FaSun size={15}/> : <FaRegMoon size={15}/>}
+                </div>
+                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature}`}
                     onClick={download}
                 ><FaDownload size={15}/></div>
-                <div className={`${styles.feature} ${styles.download_clear_buttons} ${styles.btn_clear}`}
+                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature}`}
                     onClick={clear}
                 ><RiDeleteBinLine size={15}/></div>
             </div>
 
             {/* ----- Shapes ----- */}
-            <div className={`${styles.feature_container} ${styles.shapes}`}>
-                <div className={`${styles.feature} ${styles.shape_box} ${type === 'pen' && styles.active_shape_box}`}
+            <div className={`${isDarkModeOn ? styles.dark_feature_container : styles.feature_container} ${styles.shapes}`}>
+                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'pen' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
                 onClick={() => setType("pen")}>
                     <FaPencilAlt size={15}/>
                 </div>
-                <div className={`${styles.feature} ${styles.shape_box} ${type === 'line' && styles.active_shape_box}`}
+                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'line' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
                 onClick={() => setType("line")}>
                     <FaSlash size={15}/>
                 </div>
-                <div className={`${styles.feature} ${styles.shape_box} ${type === 'square' && styles.active_shape_box}`}
+                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'square' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
                 onClick={() => setType("square")}>
                     <FaRegSquare size={15}/>
                 </div>
-                <div className={`${styles.feature} ${styles.shape_box} ${type === 'circle' && styles.active_shape_box}`}
+                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'circle' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
                 onClick={() => setType("circle")}>
                     <FaRegCircle size={15}/>
                 </div>
-                <div className={`${styles.feature} ${styles.shape_box} ${type === 'triangle' && styles.active_shape_box}`}
+                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'triangle' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
                 onClick={() => setType("triangle")}>
                     <GiTriangleTarget size={15}/>
                 </div>
-                <div className={`${styles.feature} ${styles.shape_box} ${type === 'arrow' && styles.active_shape_box}`}
+                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'arrow' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
                 onClick={() => setType("arrow")}>
                     <BsArrowUpRight size={15}/>
                 </div>
-                <div className={`${styles.feature} ${styles.shape_box} ${type === 'diamond' && styles.active_shape_box}`}
+                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'diamond' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
                 onClick={() => setType("diamond")}>
                     <BsDiamond size={15}/>
                 </div>
@@ -371,15 +383,15 @@ function Canvas() {
                 ref={canvasRef}
                 width={`${canvasWidth}`}
                 height={`${canvasHeight}`}
-                className={styles.canvas}
+                className={isDarkModeOn ? styles.dark_canvas : styles.canvas}
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}
                 onMouseUp={handleMouseUp}
                 onMouseLeave={handleMouseLeave}    
             />
-            <div className={styles.mousePosition}>Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y}) </div>
+            <div className={isDarkModeOn ? styles.dark_mousePosition : styles.mousePosition}>Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y}) </div>
         </>
     )
 }
 
-export default Canvas
+export default Canvas;

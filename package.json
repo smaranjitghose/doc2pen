@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^12.6.0",
     "bootstrap": "^4.5.1",
     "dom-to-image": "^2.6.0",
+    "jspdf": "^2.3.0",
     "leaflet": "^1.7.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",

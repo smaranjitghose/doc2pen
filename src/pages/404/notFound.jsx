@@ -11,7 +11,7 @@ function getFaviconEl() {
 
 function Hero() {
   useEffect(() => {
-    if (window.ParticleSlider !== undefined) window.initParticles();
+    // if (window.ParticleSlider !== undefined) window.initParticles();
     const favicon = getFaviconEl();
     favicon.href = "404browser_102160.png";
   }, []);
@@ -38,14 +38,14 @@ function Hero() {
           <br />
           <br />
         </div>
-        <div className={`particle-container ${styles.particleWrap}`}>
+        {/* <div className={`particle-container ${styles.particleWrap}`}>
           <div id="particle-slider" className={`${styles.particleSlider} ${styles.float}`}>
             <div className="slides">
               <div className="slide" data-src={LogoWhite}></div>
             </div>
             <canvas className="draw"></canvas>
           </div>
-        </div>
+        </div>*/}
       </div>
     </div>
   );

@@ -1,13 +1,13 @@
-import React, {} from 'react';
+import React from 'react';
 import styles from './Toolbox.module.css';
 import {AiOutlineLine, AiOutlineSmallDash, AiOutlineDash} from 'react-icons/ai';
 import {FaRegSquare, FaSquare} from 'react-icons/fa';
 import {MdUndo, MdRedo} from 'react-icons/md';
 
-function Toolbox({color, setColor, width, setWidth, opacity, setOpacity, stroke, setStroke, fill, setFill, undo, redo, canvasStateAt, canvasStates}) {
+function Toolbox({color, setColor, width, setWidth, opacity, setOpacity, stroke, setStroke, fill, setFill, undo, redo, canvasStateAt, canvasStates, isDarkModeOn}) {
 
     return (
-        <div className={styles.canvas_toolbox}>
+        <div className={isDarkModeOn ? styles.dark_canvas_toolbox : styles.canvas_toolbox}>
             <Feature title="Color">
                 <input type="color" name="canvas_pen_color"
                     value={color} onChange={(e) => setColor(e.target.value)}
@@ -37,47 +37,50 @@ function Toolbox({color, setColor, width, setWidth, opacity, setOpacity, stroke,
             </Feature>
 
             <Feature title="Stroke Style">
-                <div className={`${styles.stroke} ${stroke === 'none' && styles.active_stroke}`} onClick={() => setStroke("none")}>
+                <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${stroke === 'none' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`} onClick={() => setStroke("none")}>
                     <AiOutlineLine size={25}/>
                 </div>
-                <div className={`${styles.stroke} ${stroke === 'small' && styles.active_stroke}`} onClick={() => setStroke("small")}>
+                <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${stroke === 'small' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`} onClick={() => setStroke("small")}>
                     <AiOutlineSmallDash size={25}/>
                 </div>
-                <div className={`${styles.stroke} ${stroke === 'big' && styles.active_stroke}`} onClick={() => setStroke("big")}>
+                <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${stroke === 'big' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`} onClick={() => setStroke("big")}>
                     <AiOutlineDash size={25}/>
                 </div>
             </Feature>
 
             <Feature title="Fill">
-                <div className={`${styles.fill} ${fill === false && styles.active_fill}`} onClick={() => setFill(false)}>
+                <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${fill === false && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`}
+                    onClick={() => setFill(false)}>
                     <FaRegSquare size={20}/>
                 </div>
-                <div className={`${styles.fill} ${fill === true && styles.active_fill}`} onClick={() => setFill(true)}>
+                <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${fill === true && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`}
+                    onClick={() => setFill(true)}>
                     <FaSquare size={20}/>
                 </div>
             </Feature>
 
             <Feature title="Undo / Redo">
-                <div className={styles.undo} onClick={() => undo()} style={{cursor: `${canvasStateAt === -1 ? 'not-allowed' : 'pointer'}`}}>
+                <div className={isDarkModeOn ? styles.dark_feature_box : styles.feature_box} onClick={() => undo()} style={{cursor: `${canvasStateAt === -1 ? 'not-allowed' : 'pointer'}`}}>
                     <MdUndo size={20}/>
                 </div>
-                <div className={styles.undo} onClick={() => redo()} style={{cursor: `${canvasStateAt === canvasStates.length-1 ? 'not-allowed' : 'pointer'}`}}>
+                <div className={isDarkModeOn ? styles.dark_feature_box : styles.feature_box} onClick={() => redo()} style={{cursor: `${canvasStateAt === canvasStates.length-1 ? 'not-allowed' : 'pointer'}`}}>
                     <MdRedo size={20}/>
                 </div>
             </Feature>
         </div>
     )
-}
 
-function Feature({title, children}) {
-    return(
-        <div className={styles.feature}>
-            <div className={styles.title}>{title}</div>
-            <div className={styles.body}>
-                {children}
+    function Feature({title, children}) {
+        return(
+            <div className={isDarkModeOn ? styles.dark_feature : styles.feature}>
+                <div className={styles.title}>{title}</div>
+                <div className={styles.body}>
+                    {children}
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
-export default Toolbox
+
+export default Toolbox;

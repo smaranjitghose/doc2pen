@@ -45,14 +45,16 @@
   background-image: url("./../../assets/images/404/skate2.svg");
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size:80% auto;
+  background-size: 80% auto;
   gap: 2rem;
 }
 .heading {
   text-align: center;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   text-shadow: 2px 1px 0px rgb(255 255 255 / 45%);
   padding: 0 10px;
+  font-family: Luckiest guy;
+  padding: 2rem;
 }
 .emoji {
   text-shadow: none;
@@ -122,16 +124,11 @@
   }
 
   .navlink {
-    background-color: #0d1117;;
+    background-color: #0d1117;
   }
   /*
   .navlink:hover {
     color: #F4B400;
     border-color: transparent;
   } */
-}
-@media (max-width: 615px) {
-  .heading {
-    font-size: 1.5rem;
-  }
 }
