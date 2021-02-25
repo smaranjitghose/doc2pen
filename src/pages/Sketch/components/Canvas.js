@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import styles from './Canvas.module.css';
 import Toolbox from './Toolbox/Toolbox';
-import {FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash, FaRegMoon, FaSun} from 'react-icons/fa';
+import {FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash, FaRegMoon, FaSun, FaFont} from 'react-icons/fa';
 import {BsArrowUpRight} from 'react-icons/bs';
 import {RiDeleteBinLine} from 'react-icons/ri';
 import {GiTriangleTarget} from 'react-icons/gi';
@@ -10,6 +10,7 @@ import {BsDiamond} from 'react-icons/bs';
 function Canvas() {
 
     const canvasRef = useRef(null);
+    const textRef = useRef(null);
     const [context, setContext] = useState();
 
     /* ----- Feature State ----- */
@@ -20,6 +21,12 @@ function Canvas() {
     const [fill, setFill] = useState(false);
     const [canvasStates, setCanvasStates] = useState([]);
     const [canvasStateAt, setcanvasStateAt] = useState(-1);
+    // For Font
+    const [text, setText] = useState("");
+    const [isWriting, setIsWriting] = useState(false);
+    const [fontSize, setFontSize] = useState("1");
+    const [fontStyle, setFontStyle] = useState("normal");
+    const [fontFamily, setFontFamily] = useState("cursive");
 
     useEffect(() => {
         setContext(canvasRef.current.getContext('2d'));
@@ -106,6 +113,24 @@ function Canvas() {
             setTypeState(context.getImageData(0, 0, canvasWidth, canvasHeight));
             logicDown(point);
             setDownPoint({x: point.x, y:point.y});
+        } else if(type === 'text') {
+            setDownPoint({x: point.x, y:point.y});
+
+            if(textRef.current) {
+                if(isWriting) {
+                    context.font = `${fontStyle} ${fontSize}rem ${fontFamily}`;
+                    context.fillStyle = color;
+                    context.fillText(text, downPoint.x, downPoint.y + parseInt(document.getElementById("canvas-text-input").offsetHeight) - 5);
+                    setIsWriting(false);
+                    setText("");
+                } else {
+                    setIsWriting(true);
+                }
+                textRef.current.style.top = `${point.y}px`;
+                textRef.current.style.left = `${point.x}px`;
+            } else {
+                setIsWriting(current => !current);
+            }
         }
 
         setIsDrawing(true);
@@ -290,6 +315,7 @@ function Canvas() {
         context.clearRect(0, 0, canvasWidth, canvasHeight);
         setCanvasStates([]);
         setcanvasStateAt(-1);
+        setTypeState("");
     }
 
     function undo() {
@@ -327,6 +353,13 @@ function Canvas() {
                 canvasStateAt={canvasStateAt}
                 canvasStates={canvasStates}
                 isDarkModeOn={isDarkModeOn}
+                type={type}
+                fontSize={fontSize}
+                setFontSize={setFontSize}
+                fontStyle={fontStyle}
+                setFontStyle={setFontStyle}
+                fontFamily={fontFamily}
+                setFontFamily={setFontFamily}
             />
             
             {/* ----- Download, Clear & Dark Mode ----- */}
@@ -377,6 +410,10 @@ function Canvas() {
                 onClick={() => setType("diamond")}>
                     <BsDiamond size={15}/>
                 </div>
+                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'text' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
+                onClick={() => setType("text")}>
+                    <FaFont size={15}/>
+                </div>
             </div>
 
             <canvas
@@ -390,6 +427,27 @@ function Canvas() {
                 onMouseLeave={handleMouseLeave}    
             />
             <div className={isDarkModeOn ? styles.dark_mousePosition : styles.mousePosition}>Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y}) </div>
+
+            {/* ----- Text ----- */}
+            <div style={{height: canvasHeight, width: canvasWidth}} className={styles.text_container}>
+                <div className={`${styles.text}`} ref={textRef}>
+                    {
+                        type === 'text' && isWriting &&
+                        <input type="text"
+                            value={text}
+                            onChange={(e) => setText(e.target.value)}
+                            autoFocus
+                            id="canvas-text-input"
+                            style={{
+                                color: color,
+                                fontSize: `${fontSize}rem`,
+                                fontStyle: `${fontStyle === 'bold' ? 'normal' : fontStyle}`,
+                                fontFamily: fontFamily,
+                                fontWeight: `${fontStyle !== 'bold' ? 'normal' : fontStyle}`
+                            }}/>
+                    }
+                </div>
+            </div>
         </>
     )
 }
