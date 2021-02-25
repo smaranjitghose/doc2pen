@@ -18,9 +18,10 @@ function Canvas() {
     const [width, setWidth] = useState("1");
     const [opacity, setOpacity] = useState("1");
     const [stroke, setStroke] = useState("none");
-    const [fill, setFill] = useState(false);
+    const [fill, setFill] = useState('false');
     const [canvasStates, setCanvasStates] = useState([]);
     const [canvasStateAt, setcanvasStateAt] = useState(-1);
+    const [fillImage, setFillImage] = useState(null);
     // For Font
     const [text, setText] = useState("");
     const [isWriting, setIsWriting] = useState(false);
@@ -217,9 +218,17 @@ function Canvas() {
         context.lineTo(point.x, point.y);
         context.lineTo(downPoint.x, point.y);
         context.closePath();
-        if(fill) {
+        if(fill === 'true') {
             const col = hexToRGB(color);
             context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+            context.fill();
+        } else if(fillImage) {
+            let img = new Image();
+            img.onload = 'start';
+            img.src = fillImage;
+
+            let pattern = context.createPattern(img, 'repeat');
+            context.fillStyle = pattern;
             context.fill();
         }
         context.stroke();
@@ -234,9 +243,17 @@ function Canvas() {
 
         context.arc(x, y, radius, 0, 2*Math.PI);
         context.closePath();
-        if(fill) {
+        if(fill === 'true') {
             const col = hexToRGB(color);
             context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+            context.fill();
+        } else if(fillImage) {
+            let img = new Image();
+            img.onload = 'start';
+            img.src = fillImage;
+
+            let pattern = context.createPattern(img, 'repeat');
+            context.fillStyle = pattern;
             context.fill();
         }
         context.stroke();
@@ -250,9 +267,17 @@ function Canvas() {
         context.lineTo(point.x, point.y);
         context.lineTo(downPoint.x, point.y);
         context.closePath();
-        if(fill) {
+        if(fill === 'true') {
             const col = hexToRGB(color);
             context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+            context.fill();
+        } else if(fillImage) {
+            let img = new Image();
+            img.onload = 'start';
+            img.src = fillImage;
+
+            let pattern = context.createPattern(img, 'repeat');
+            context.fillStyle = pattern;
             context.fill();
         }
         context.stroke();
@@ -296,9 +321,17 @@ function Canvas() {
         context.lineTo(downPoint.x, center_y);
         context.lineTo(center_x, downPoint.y);
         context.closePath();
-        if(fill) {
+        if(fill === 'true') {
             const col = hexToRGB(color);
             context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+            context.fill();
+        } else if(fillImage) {
+            let img = new Image();
+            img.onload = 'start';
+            img.src = fillImage;
+
+            let pattern = context.createPattern(img, 'repeat');
+            context.fillStyle = pattern;
             context.fill();
         }
         context.stroke();
@@ -360,6 +393,7 @@ function Canvas() {
                 setFontStyle={setFontStyle}
                 fontFamily={fontFamily}
                 setFontFamily={setFontFamily}
+                setFillImage={setFillImage}
             />
             
             {/* ----- Download, Clear & Dark Mode ----- */}

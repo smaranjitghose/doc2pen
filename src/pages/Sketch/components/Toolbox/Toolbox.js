@@ -4,8 +4,9 @@ import {AiOutlineLine, AiOutlineSmallDash, AiOutlineDash} from 'react-icons/ai';
 import {FaRegSquare, FaSquare, FaItalic, FaBold} from 'react-icons/fa';
 import {MdUndo, MdRedo} from 'react-icons/md';
 import {BsFonts} from 'react-icons/bs';
+import {WiStars} from 'react-icons/wi';
 
-function Toolbox({color, setColor, width, setWidth, opacity, setOpacity, stroke, setStroke, fill, setFill, undo, redo, canvasStateAt, canvasStates, isDarkModeOn, type, fontSize, setFontSize, fontStyle, setFontStyle, fontFamily, setFontFamily}) {
+function Toolbox({color, setColor, width, setWidth, opacity, setOpacity, stroke, setStroke, fill, setFill, undo, redo, canvasStateAt, canvasStates, isDarkModeOn, type, fontSize, setFontSize, fontStyle, setFontStyle, fontFamily, setFontFamily, setFillImage}) {
 
     return (
         <div className={isDarkModeOn ? styles.dark_canvas_toolbox : styles.canvas_toolbox}>
@@ -61,13 +62,23 @@ function Toolbox({color, setColor, width, setWidth, opacity, setOpacity, stroke,
             {
                 type !== 'text' &&
                 <Feature title="Fill">
-                    <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${fill === false && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`}
-                        onClick={() => setFill(false)}>
-                        <FaRegSquare size={20}/>
-                    </div>
-                    <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${fill === true && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`}
-                        onClick={() => setFill(true)}>
-                        <FaSquare size={20}/>
+                    <div style={{display: "flex", flexDirection: "column"}}>
+                        <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${fill === 'false' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`}
+                            onClick={() => setFill('false')}
+                            style={{width: "fit-content"}}>
+                            <FaRegSquare size={20}/>
+                        </div>
+                        <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${fill === 'true' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`}
+                            onClick={() => setFill('true')}
+                            style={{width: "fit-content"}}>
+                            <FaSquare size={20}/>
+                        </div>
+                        <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${fill === 'pattern' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`}
+                            onClick={() => setFill('pattern')}
+                            style={{width: "fit-content"}}>
+                            <WiStars size={20}/>
+                        </div>
+                        <input type="file" accept=".png" onChange={(e) => setFillImage(URL.createObjectURL(e.target.files[0]))}/>
                     </div>
                 </Feature>
             }
