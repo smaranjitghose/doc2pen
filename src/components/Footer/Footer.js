@@ -11,7 +11,7 @@ export default function Footer(props) {
     <div className={`${styles.footerDiv}`}>
       <div className={styles.topShape}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-          <path className={styles.svgPath} d="M761.9,44.1L643.1,27.2L333.8,98L0,3.8V0l1000,0v3.9"></path>
+          <path style={{fill: props.fill ? props.fill : 'white'}} className={styles.svgPath} d="M761.9,44.1L643.1,27.2L333.8,98L0,3.8V0l1000,0v3.9"></path>
         </svg>
       </div>
       <div className={styles.tint}></div>
