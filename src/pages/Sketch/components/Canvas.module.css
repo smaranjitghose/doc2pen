@@ -55,7 +55,6 @@
 }
 
 /* ----- Mouse Position ----- */
-
 .mousePosition, .dark_mousePosition {
     position: absolute;
     bottom: 11px;
@@ -64,4 +63,22 @@
 }
 .dark_mousePosition {
     color: #ced4da;
+}
+
+/* ----- Text Input ----- */
+.text_container {
+    position: absolute;
+    pointer-events: none;
+    overflow-x: hidden;
+}
+.text {
+    position: absolute;
+}
+
+.text input {
+    border: none;
+    padding: 0;
+    outline: none;
+    background-color: transparent;
+    width: fit-content;
 }
