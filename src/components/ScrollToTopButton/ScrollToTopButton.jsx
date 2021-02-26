@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { AiOutlineArrowUp } from "react-icons/ai";
@@ -6,6 +6,10 @@ import styles from "./style.module.css";
 
 const ScrollToTop = () => {
   let toTopButtonObj = useRef(null);
+  const [buttonState, changeButtonState] = useState({
+    visible: false,
+    lastHeight: 0,
+  });
   useEffect(() => {
     scrollFunction();
   });
@@ -14,10 +18,23 @@ const ScrollToTop = () => {
   };
 
   function scrollFunction() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      toTopButtonObj.current.style.display = "block";
+    if (
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
+    ) {
+      if (!buttonState.visible) {
+        changeButtonState({
+          visible: true,
+          lastHeight: document.body.scrollTop,
+        });
+      }
     } else {
-      toTopButtonObj.current.style.display = "none";
+      if (buttonState.visible) {
+        changeButtonState({
+          visible: false,
+          lastHeight: document.body.scrollTop,
+        });
+      }
     }
   }
 
@@ -26,7 +43,7 @@ const ScrollToTop = () => {
     document.documentElement.scrollTop = 0;
   }
 
-  return (
+  const button = buttonState.visible ? (
     <Button
       ref={toTopButtonObj}
       className={styles.toTopButton}
@@ -36,7 +53,9 @@ const ScrollToTop = () => {
     >
       <AiOutlineArrowUp />
     </Button>
-  );
+  ) : null;
+
+  return button;
 };
 
 export default ScrollToTop;

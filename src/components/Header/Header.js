@@ -4,7 +4,7 @@ import {Link} from 'react-scroll';
 import styles from './Header.module.css';
 import logo from './../../assets/logo/logo.webp';
 import {ImInfo} from "react-icons/im";
-import {RiTeamLine, RiContactsBook2Line} from "react-icons/ri";
+import {RiTeamLine} from "react-icons/ri";
 import {BiDonateHeart, BiMenu} from "react-icons/bi";
 
 const quickLinks = [
@@ -17,11 +17,6 @@ const quickLinks = [
         name: 'Team',
         to: 'home_team',
         icon: <RiTeamLine />
-    },
-    {
-        name: 'Contact',
-        to: 'home_contact',
-        icon: <RiContactsBook2Line />
     },
     {
         name: 'Support Us',
@@ -63,6 +58,9 @@ function Header() {
                     </NavLink>
                     <NavLink className={`${styles.header_links} /*${styles.tagged}*/`} to='/sketch' exact activeClassName={styles.header_active_links}>
                         Sketch
+                    </NavLink>
+                    <NavLink className={styles.header_links} to='/contact' exact activeClassName={styles.header_active_links}>
+                        Contact
                     </NavLink>
                 </div>
                 <div className={styles.hamburger} onClick={()=>drop()}>
