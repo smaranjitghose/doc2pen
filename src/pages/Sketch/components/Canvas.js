@@ -22,6 +22,7 @@ function Canvas() {
     const [canvasStates, setCanvasStates] = useState([]);
     const [canvasStateAt, setcanvasStateAt] = useState(-1);
     const [fillImage, setFillImage] = useState(null);
+    const [edge, setEdge] = useState("round");
     // For Font
     const [text, setText] = useState("");
     const [isWriting, setIsWriting] = useState(false);
@@ -104,7 +105,7 @@ function Canvas() {
             context.setLineDash([]);
         }
         
-        context.lineJoin = 'round';
+        context.lineJoin = edge;
         context.lineCap = 'round';
         context.lineWidth = width;
 
@@ -222,7 +223,7 @@ function Canvas() {
             const col = hexToRGB(color);
             context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
             context.fill();
-        } else if(fillImage) {
+        } else if(fill === 'pattern' && fillImage) {
             let img = new Image();
             img.onload = 'start';
             img.src = fillImage;
@@ -247,7 +248,7 @@ function Canvas() {
             const col = hexToRGB(color);
             context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
             context.fill();
-        } else if(fillImage) {
+        } else if(fill === 'pattern' && fillImage) {
             let img = new Image();
             img.onload = 'start';
             img.src = fillImage;
@@ -271,7 +272,7 @@ function Canvas() {
             const col = hexToRGB(color);
             context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
             context.fill();
-        } else if(fillImage) {
+        } else if(fill === 'pattern' && fillImage) {
             let img = new Image();
             img.onload = 'start';
             img.src = fillImage;
@@ -325,7 +326,7 @@ function Canvas() {
             const col = hexToRGB(color);
             context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
             context.fill();
-        } else if(fillImage) {
+        } else if(fill === 'pattern' && fillImage) {
             let img = new Image();
             img.onload = 'start';
             img.src = fillImage;
@@ -394,6 +395,8 @@ function Canvas() {
                 fontFamily={fontFamily}
                 setFontFamily={setFontFamily}
                 setFillImage={setFillImage}
+                edge={edge}
+                setEdge={setEdge}
             />
             
             {/* ----- Download, Clear & Dark Mode ----- */}
