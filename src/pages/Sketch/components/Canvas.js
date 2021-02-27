@@ -398,56 +398,57 @@ function Canvas() {
             
             {/* ----- Download, Clear & Dark Mode ----- */}
             <div className={`${isDarkModeOn ? styles.dark_feature_container : styles.feature_container} ${styles.download_clear_container}`}>
-                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature}`}
-                        onClick={() => {
-                            setIsDarkMode(current => !current);
-                            localStorage.setItem("theme", JSON.stringify(!isDarkModeOn));
-                        }}
-                >
-                    {isDarkModeOn ? <FaSun size={15}/> : <FaRegMoon size={15}/>}
-                </div>
-                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature}`}
-                    onClick={download}
-                ><FaDownload size={15}/></div>
-                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature}`}
-                    onClick={clear}
-                ><RiDeleteBinLine size={15}/></div>
+                <label htmlFor="sketch-dcd-dark" title={`${isDarkModeOn ? 'Dark Mode' : 'Light Mode'}`}>
+                    <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature}`}
+                            onClick={() => {
+                                setIsDarkMode(current => !current);
+                                localStorage.setItem("theme", JSON.stringify(!isDarkModeOn));
+                            }}
+                            id="sketch-dcd-dark"
+                    >
+                        {isDarkModeOn ? <FaSun size={15}/> : <FaRegMoon size={15}/>}
+                    </div>
+                </label>
+                <label htmlFor="sketch-dcd-clear" title="Download Sketch">
+                    <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature}`}
+                        onClick={download}
+                        id="sketch-dcd-clear"
+                    ><FaDownload size={15}/></div>
+                </label>
+                <label htmlFor="sketch-dcd-download" title="Clear Sketch">
+                    <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature}`}
+                        onClick={clear}
+                        id="sketch-dcd-download"
+                    ><RiDeleteBinLine size={15}/></div>
+                </label>
             </div>
 
             {/* ----- Shapes ----- */}
             <div className={`${isDarkModeOn ? styles.dark_feature_container : styles.feature_container} ${styles.shapes}`}>
-                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'pen' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
-                onClick={() => setType("pen")}>
+                <Shape type_="pen" id="sketch-shapes-pen" label="Pen">
                     <FaPencilAlt size={15}/>
-                </div>
-                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'line' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
-                onClick={() => setType("line")}>
+                </Shape>
+                <Shape type_="line" id="sketch-shapes-line" label="Line">
                     <FaSlash size={15}/>
-                </div>
-                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'square' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
-                onClick={() => setType("square")}>
+                </Shape>
+                <Shape type_="square" id="sketch-shapes-square" label="Square">
                     <FaRegSquare size={15}/>
-                </div>
-                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'circle' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
-                onClick={() => setType("circle")}>
+                </Shape>
+                <Shape type_="circle" id="sketch-shapes-circle" label="Circle">
                     <FaRegCircle size={15}/>
-                </div>
-                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'triangle' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
-                onClick={() => setType("triangle")}>
+                </Shape>
+                <Shape type_="triangle" id="sketch-shapes-triangle" label="Triangle">
                     <GiTriangleTarget size={15}/>
-                </div>
-                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'arrow' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
-                onClick={() => setType("arrow")}>
+                </Shape>
+                <Shape type_="arrow" id="sketch-shapes-arrow" label="Arrow">
                     <BsArrowUpRight size={15}/>
-                </div>
-                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'diamond' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
-                onClick={() => setType("diamond")}>
+                </Shape>
+                <Shape type_="diamond" id="sketch-shapes-diamond" label="Diamond">
                     <BsDiamond size={15}/>
-                </div>
-                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === 'text' && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
-                onClick={() => setType("text")}>
+                </Shape>
+                <Shape type_="text" id="sketch-shapes-text" label="Text">
                     <FaFont size={15}/>
-                </div>
+                </Shape>
             </div>
 
             <canvas
@@ -484,6 +485,18 @@ function Canvas() {
             </div>
         </>
     )
+
+    function Shape({type_, id, label, children}) {
+        return (
+            <label htmlFor={id} title={label}>
+                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === type_ && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
+                onClick={() => setType(type_)}
+                id={id}>
+                    {children}
+                </div>
+            </label>
+        )
+    }
 }
 
 export default Canvas;

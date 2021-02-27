@@ -48,13 +48,13 @@ function Toolbox({color, setColor, width, setWidth, opacity, setOpacity, stroke,
                 type !== 'text' &&
                 <Feature title="Stroke Style">
                     <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${stroke === 'none' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`} onClick={() => setStroke("none")}>
-                        <AiOutlineLine size={25}/>
+                        <AiOutlineLine size={20}/>
                     </div>
                     <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${stroke === 'small' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`} onClick={() => setStroke("small")}>
-                        <AiOutlineSmallDash size={25}/>
+                        <AiOutlineSmallDash size={20}/>
                     </div>
                     <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${stroke === 'big' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`} onClick={() => setStroke("big")}>
-                        <AiOutlineDash size={25}/>
+                        <AiOutlineDash size={20}/>
                     </div>
                 </Feature>
             }

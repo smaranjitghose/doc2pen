@@ -20,6 +20,12 @@
     background-color: #1e1e1e;
 }
 
+.feature_container label, .dark_feature_container label {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
 .feature, .dark_feature {
     padding: 0.7rem 0.5rem;
     margin: 0 0.2rem;
