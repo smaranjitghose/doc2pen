@@ -68,3 +68,15 @@
 .feature select, .dark_feature select {
     outline: none;
 }
+
+.fill_image_container {
+    position: relative;
+    overflow: hidden;
+}
+
+.fill_image_container input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}

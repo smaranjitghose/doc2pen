@@ -25,7 +25,7 @@ function App({ location }) {
         <Route path="/404" exact component={NotFound} />
         <Redirect to="/404" />
       </Switch>
-      {location.pathname !== "/404" && <Footer />}
+      {location.pathname !== "/404" && location.pathname !== '/sketch' && <Footer />}
     </Suspense>
   );
 }
