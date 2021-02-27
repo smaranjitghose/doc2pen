@@ -1,128 +1,127 @@
-@-webkit-keyframes float {
-  0% {
-    transform: translatey(0px);
-  }
-  50% {
-    transform: translatey(-20px);
-  }
-  100% {
-    transform: translatey(0px);
-  }
-}
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC:400,700");
 
-@keyframes float {
-  0% {
-    transform: translatey(0px);
-  }
-  50% {
-    transform: translatey(-20px);
-  }
-  100% {
-    transform: translatey(0px);
-  }
-}
-
-.stickyWrap {
-  background-color: #0d1117;
-}
-
-.homeSectionWrap {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
+.root {
+  font-family: "Amatic SC", sans-serif;
+  font-size: 100px;
+  background: #111;
+  color: #fff;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  overflow: hidden;
-  background-image: url("./../../assets/images/404/skate2.svg");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 80% auto;
-  gap: 2rem;
-}
-.heading {
-  text-align: center;
-  font-size: 2.5rem;
-  text-shadow: 2px 1px 0px rgb(255 255 255 / 45%);
-  padding: 0 10px;
-  font-family: Luckiest guy;
-  padding: 2rem;
-}
-.emoji {
-  text-shadow: none;
-}
-.float {
-  transform: translatey(0px);
-  -webkit-animation: float 6s ease-in-out infinite;
-  animation: float 6s ease-in-out infinite;
-}
-.head {
-  flex: 1;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  color: white;
   flex-direction: column;
-  gap: 20px;
-  z-index: 11;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 30px;
 }
+
+.small {
+  font-size: 2.2rem;
+  margin-top: 10px;
+}
+
+.smaller {
+  font-size: 2rem;
+}
+
+p {
+  margin: 0;
+}
+
+.sadImg {
+  position: relative;
+  height: 200px;
+  width: 342px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  background-position:center;
+  margin-top: 30px;
+}
+
+.sadImg::after {
+  content: "";
+  display: block;
+  width: 125px;
+  border-radius: 100%;
+  filter: blur(2px);
+  background-color: #000;
+  height: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fours {
+  height: 100%;
+  width: 200px;
+  position: relative;
+}
+
+.fours::before,
+.fours::after {
+  content: "4";
+  position: absolute;
+  bottom: 0;
+
+  font-size: 14rem;
+  font-family: "Luckiest Guy";
+  line-height: 0.94;
+}
+.fours::before {
+  left: -140px;
+}
+
+.fours::after {
+  right: -140px;
+}
+
 .navlink {
   color: rgb(202, 202, 202);
   text-decoration: none;
   font-size: 2rem;
-  border: solid 2px;
+  box-shadow: 0 0 0 1.5px #fff;
   border-radius: 25px;
   padding: 5px 20px;
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
 }
 .navlink:hover {
   color: rgb(202, 202, 202);
   background-color: #1e2836;
-  border: #1e2836 solid 2px;
+  box-shadow: 0 0 0 1.5px #1e2836;
 }
-.particleContainer {
-  flex: 2;
-  max-width: 900px;
-}
-
-.particleWrap {
+.buttonText {
   position: relative;
+  z-index: 1;
+  color: #08fdd8;
+}
+.navlink:hover .buttonText {
+  color: #272727;
+}
+.hoverEffect {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  border-radius: 0 100% 100% 0;
+  background-color: #fcfcfc;
+  width: 500px;
+  height: 100%;
+  transform: scale(0, 1) translate(-10px, -10px);
+  transform-origin: top left;
 }
 
-.about {
-  box-shadow: 7px 0 13px #ffffff;
+.navlink:hover .hoverEffect {
+  transform: scale(1) translate(-10px, -10px);
+  height: 200%;
 }
 
-@media (max-width: 760px) {
-  /* .stickyWrap {
-    background-image: linear-gradient(to bottom, #0619c0 50%, #F4B400 50%);
-  } */
-
-  .homeSectionWrap {
-    flex-direction: column-reverse;
-    min-height: 100vh;
-    background-size: 105% auto;
+@media (max-width:570px){
+  .sadImg{
+    transform: scale(0.6);
   }
-  .head,
-  .particleContainer {
-    flex: none;
+  .root{
+    font-size: 3.5rem;
   }
-  .particleContainer {
-    height: 60vh !important;
-  }
-  .head {
-    height: 40vh;
-  }
-
-  .navlink {
-    background-color: #0d1117;
-  }
-  /*
-  .navlink:hover {
-    color: #F4B400;
-    border-color: transparent;
-  } */
 }
