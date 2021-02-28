@@ -1,93 +1,127 @@
-@keyframes float {
-  0% {
-    /* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
-    transform: translatey(0px);
-  }
-  50% {
-    /* box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2); */
-    transform: translatey(-20px);
-  }
-  100% {
-    /* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
-    transform: translatey(0px);
-  }
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC:400,700");
+
+.root {
+  font-family: "Amatic SC", sans-serif;
+  font-size: 100px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 30px;
 }
 
-.homeSectionWrap {
-  position: sticky;
-  top: 0;
-  left: 0;
+.small {
+  font-size: 2.2rem;
+  margin-top: 10px;
+}
+
+.smaller {
+  font-size: 2rem;
+}
+
+p {
+  margin: 0;
+}
+
+.sadImg {
+  position: relative;
+  height: 200px;
+  width: 342px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  /* background-color: #09112b; */
-  overflow: hidden;
-  background-image: url("./../../assets/images/404/Shadow-Fall-Background.svg");
-  gap: 2rem;
+  background-position:center;
+  margin-top: 30px;
 }
-.heading {
-  text-align: center;
-  font-size: 2.3rem;
-  text-shadow: 2px 2px 14px rgba(255, 255, 255, 0.62);
-  padding: 0 10px;
+
+.sadImg::after {
+  content: "";
+  display: block;
+  width: 125px;
+  border-radius: 100%;
+  filter: blur(2px);
+  background-color: #000;
+  height: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
-.emoji{
-  text-shadow: none;
+
+.fours {
+  height: 100%;
+  width: 200px;
+  position: relative;
 }
-.float {
-  transform: translatey(0px);
-  animation: float 6s ease-in-out infinite;
+
+.fours::before,
+.fours::after {
+  content: "4";
+  position: absolute;
+  bottom: 0;
+
+  font-size: 14rem;
+  font-family: "Luckiest Guy";
+  line-height: 0.94;
 }
-.head {
-  flex: 1;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  color: white;
-  flex-direction: column;
-  gap: 20px;
-  z-index: 5;
+.fours::before {
+  left: -140px;
 }
+
+.fours::after {
+  right: -140px;
+}
+
 .navlink {
-  color: white;
+  color: rgb(202, 202, 202);
   text-decoration: none;
   font-size: 2rem;
-  border: solid 2px;
+  box-shadow: 0 0 0 1.5px #fff;
   border-radius: 25px;
   padding: 5px 20px;
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
 }
-.navlink:hover{
-  color: #4285f4;
-  background-color: #ffffff;
+.navlink:hover {
+  color: rgb(202, 202, 202);
+  background-color: #1e2836;
+  box-shadow: 0 0 0 1.5px #1e2836;
 }
-.particleContainer {
-  flex: 2;
-  max-width: 900px;
+.buttonText {
+  position: relative;
+  z-index: 1;
+  color: #08fdd8;
+}
+.navlink:hover .buttonText {
+  color: #272727;
+}
+.hoverEffect {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  border-radius: 0 100% 100% 0;
+  background-color: #fcfcfc;
+  width: 500px;
+  height: 100%;
+  transform: scale(0, 1) translate(-10px, -10px);
+  transform-origin: top left;
 }
 
-.about {
-  box-shadow: 7px 0 13px #ffffff;
+.navlink:hover .hoverEffect {
+  transform: scale(1) translate(-10px, -10px);
+  height: 200%;
 }
-@media (max-width: 760px) {
-  .homeSectionWrap {
-    flex-direction: column-reverse;
-    min-height: 100vh;
+
+@media (max-width:570px){
+  .sadImg{
+    transform: scale(0.6);
   }
-  .head,
-  .particleContainer {
-    flex: none;
-  }
-  .particleContainer {
-    height: 60vh !important;
-  }
-  .head {
-    height: 40vh;
-  }
-}
-@media (max-width: 615px) {
-  .heading {
-    font-size: 1.5rem;
+  .root{
+    font-size: 3.5rem;
   }
 }
