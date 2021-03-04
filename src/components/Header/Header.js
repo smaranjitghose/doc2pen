@@ -46,7 +46,9 @@ function Header() {
     return (
         <>
             <header ref={headerRef} className={`${styles.Header} ${styles.HeaderDrop}`}>
-                <img className={styles.left} src={logo} alt="Logo"/>
+                <NavLink  to='/'  >
+                    <img className={styles.left} src={logo} alt="Logo"/>
+                </NavLink>
                 <div ref={navLinkRef} className={`${styles.right} ${styles.rightDrop}`}>
                     <Link to='home_banner' offset={-15}>
                         <NavLink className={styles.header_links} to='/' exact activeClassName={styles.header_active_links}>
