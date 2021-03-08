@@ -1,12 +1,17 @@
 import React from 'react'
-import style from "./Preloader.module.css";
+import './Preloader.css';
+import logo from "./logo.webp"
+import logomain from "./logomain.png"
 
 function Preloader() {
   return (
-    <div className={style.preloader}>
-      <div className={style.spinner}></div>
-    </div>
+    <div className="pre">
+            <div className="images">
+            <img src={logomain} className="pen"></img>
+            <img src={logo} className="mlogo"></img>
+            </div>
+      </div>
   );
 }
 
-export default Preloader
+export default Preloader;
