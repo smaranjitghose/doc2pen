@@ -7,8 +7,8 @@ function Preloader() {
   return (
     <div className="pre">
             <div className="images">
-            <img src={logomain} className="pen"></img>
-            <img src={logo} className="mlogo"></img>
+            <img src={logomain} className="pen" alt="logo"></img>
+            <img src={logo} className="mlogo" alt="Doc2pen"></img>
             </div>
       </div>
   );
