@@ -16,54 +16,6 @@
     /* position: relative; */
   }
   
-  @keyframes backgroundcolorchange {
-    0% {
-      background: #ffff00;
-    }
-  
-    10% {
-      background: #8e44ad;
-    }
-  
-    20% {
-      background: #1abc9c;
-    }
-  
-    30% {
-      background: #d35400;
-    }
-  
-    40% {
-      background: #0000ff;
-    }
-  
-    50% {
-      background: #34495e;
-    }
-  
-    60% {
-      background: blue;
-    }
-  
-    70% {
-      background: #2980b9;
-    }
-  
-    80% {
-      background: #f1c40f;
-    }
-  
-    90% {
-      background: #2980b9;
-    }
-  
-    100% {
-      background: pink;
-    }
-  }
-  
-  
-  
   @keyframes sk-rotateplane {
     0% {
       -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);

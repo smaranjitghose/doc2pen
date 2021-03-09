@@ -15,21 +15,20 @@ const NotFound = lazy(() => import("./pages/404/notFound"));
 function App({ location }) {
   
   return (
-    // <Suspense fallback={<Preloader />}>
-      // {location.pathname !== "/404" && <Header />}
+    <Suspense fallback={<Preloader />}>
+      {location.pathname !== "/404" && <Header />}
       <>
-      <Preloader />
-      {/* <Switch>
+      <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/contact" exact component={ContactUs} />
         <Route path="/editor" exact component={Editor} />
         <Route path="/sketch" exact component={Sketch} />
         <Route path="/404" exact component={NotFound} />
         <Redirect to="/404" />
-      </Switch> */}
+      </Switch>
       </>
-      // {location.pathname !== "/404" && location.pathname !== '/sketch' && <Footer />}
-    // </Suspense>
+      {location.pathname !== "/404" && location.pathname !== '/sketch' && <Footer />}
+    </Suspense>
   );
 }
 
