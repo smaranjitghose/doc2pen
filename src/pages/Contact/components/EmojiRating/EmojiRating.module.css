@@ -1,5 +1,5 @@
 .emojis {
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 10px;
   user-select: none;
 }
@@ -13,6 +13,7 @@
   cursor: pointer;
   transition: 0.3s;
   margin: 8px;
+  margin-left: 0;
 }
 
 .radio:checked ~ span {

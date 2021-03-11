@@ -10,7 +10,7 @@ function ExperienceForm() {
   return (
     <div id="info" className={styles.info}>
       <div className={styles.general_info}>
-        <h2>Contact us your query or just send a hello.</h2>
+        <h3>Contact us your query or just send a hello.</h3>
         <br />
         <div className={styles.contact_form}>
           <form
@@ -32,7 +32,6 @@ function ExperienceForm() {
               </div>
               <textarea placeholder="Message..."></textarea>
               <button className={styles.submit} onSubmit={response} type="submit">
-                <span className={styles.hoverEffect}></span>
                 <span className={styles.buttonText}>Send</span>
               </button>
             </div>
