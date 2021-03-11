@@ -20,7 +20,7 @@ const Settings = () => {
             onClick={editContext.isBodyHandler}
             className={`id-title d-none`}
           />
-          <label for="title-heading" style={{ color: editContext.isBody && "#f0f7ff" }}>
+          <label for="title-heading" style={{ color: editContext.isBody && "#f0f7ff", cursor: "pointer" }}>
             Title
           </label>
         </div>
@@ -33,7 +33,7 @@ const Settings = () => {
             onClick={editContext.isBodyHandler}
             className={`id-body d-none `}
           />
-          <label for="body-heading" style={{ color: !editContext.isBody && "#f0f7ff" }}>
+          <label for="body-heading" style={{ color: !editContext.isBody && "#f0f7ff", cursor: "pointer" }}>
             Body
           </label>
         </div>

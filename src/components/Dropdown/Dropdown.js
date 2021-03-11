@@ -40,7 +40,7 @@ const DropdownComponent = (props) => {
   };
 
   return (
-    <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+    <Dropdown isOpen={dropdownOpen} toggle={toggle} className={styles.container} style={{"margin": "10px 0 13px 13px", "background": "rgba(0,0,0,.8)", "borderRadius": "5px"}}>
       <DropdownToggle caret className={styles.drbtn}>
         {props.name}
       </DropdownToggle>

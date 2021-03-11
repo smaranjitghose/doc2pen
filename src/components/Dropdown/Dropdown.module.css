@@ -1,5 +1,9 @@
+.container:hover {
+  background: rgb(0,0,0,.6) !important;
+}
+
 .drbtn {
-  color: rgb(29, 28, 28) !important;
+  color: #fff !important;
   padding: 5px 15px !important;
   border: none !important;
   border-radius: 4px !important;
@@ -8,14 +12,13 @@
   font-size: 16px;
   outline: none !important;
 }
-.drbtn:hover {
-  background: rgb(218, 220, 224) !important ;
-}
+
 .drbtn:focus {
   color: rgb(29, 28, 28) !important;
   background: rgb(178, 179, 182) !important ;
   outline: none !important;
   box-shadow: none;
+  border: none;
 }
 .dropdown-menu.show {
   transition: none !important;

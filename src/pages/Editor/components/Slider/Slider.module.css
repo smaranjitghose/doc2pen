@@ -7,7 +7,18 @@
   box-shadow: inset 0 0 0 1px rgb(0 123 255 / 25%);
 }
 .controlContainer {
-  margin: 5px 15px;
+  margin: 10px 0 13px 13px;
+  background-color: rgba(0,0,0,0.8);
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.controlContainer label {
+  color: #fff;
+}
+
+.controlContainer:hover {
+  background: rgb(0,0,0,.6);
 }
 
 .controlWrap {
