@@ -120,8 +120,7 @@ const EditContextProvider = props => {
     const height = doc.internal.pageSize.height;
     doc.text(10, 20, "");
     doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
-
-    doc.save();
+    window.open(doc.output("bloburl")); 
   };
 
   const importTxt = e => {
