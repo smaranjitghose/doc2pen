@@ -15,7 +15,6 @@ function ContactUs() {
         description={metaData.contact.description}
         keywords={metaData.contact.keywords}
       />
-      <div className={styles.heading}>Get In Touch</div>
       <div className={styles.contact_and_info_container}>
         <ExperienceForm />
 

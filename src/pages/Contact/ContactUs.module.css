@@ -2,18 +2,6 @@
   text-align: center;
 }
 
-.heading {
-  font-size: 2.5rem;
-  padding: 1rem 3rem;
-  font-weight: bold;
-  margin: 5rem auto 0;
-  background: blue;
-  color: white;
-  display: inline-block;
-  border-radius: 60px;
-  box-shadow: 0 0 20px #00000033;
-}
-
 .contact_and_info_container {
   display: flex;
   align-items: stretch;
