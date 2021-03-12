@@ -10,7 +10,16 @@ function ExperienceForm() {
   return (
     <div id="info" className={styles.info}>
       <div className={styles.general_info}>
-        <h2>Contact us your query or just send a hello.</h2>
+    
+        {/* <div className="heading">Contact us your query or just send a hello.</div> */}
+        <h4 > 
+          contact us your query
+        <span style={{color:"white"}}>&#10067;</span>
+        <br/>or just send a Hello
+        <span style={{color:"darkblue",fontFamily:"FontAwesome"}}> &#128075;</span>
+        </h4>
+       
+       
         <br />
         <div className={styles.contact_form}>
           <form
@@ -21,16 +30,26 @@ function ExperienceForm() {
               <div className={styles.circle2}></div>
             </div>
             <div className={styles.fieldsWrap}>
-              <div className={styles.inputDiv}>
-                <input type="text" placeholder="Your Name" required />
-                <input type="email" placeholder="Email" required />
-                <input type="tel" placeholder="Phone (optional)" />
+              <div className={styles.inputDiv} >
+                
+                   <input type="text" placeholder="&#xf007;    Your Name" required />                
+                <input type="email" placeholder="&#xf0e0;   Email" required />
+                <input type="tel" placeholder="&#xf095;   Phone (optional)" />
               </div>
               <div className={styles.experience}>
-                <span>Rate your experience:</span>
+                <span style={{
+                  fontSize:"15px",
+                  color:"white",
+                  alignItems:"center",
+                  width:"100%",
+                  justifyContent:"space-around",
+                  fontFamily:"'Mulish', sans-serif;",
+                  letterSpacing:"2px",
+                  texrShadow:" 0 2px 2px rgba(0, 0, 0, 0.2), 0px 0px 5px rgba(0, 0, 0, 0.2)" 
+                  }}>Rate your experience</span>
                 <EmojiRating />
               </div>
-              <textarea placeholder="Message..."></textarea>
+              <textarea placeholder="&#xf040;   Message..."></textarea>
               <button className={styles.submit} onSubmit={response} type="submit">
                 <span className={styles.hoverEffect}></span>
                 <span className={styles.buttonText}>Send</span>

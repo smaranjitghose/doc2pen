@@ -1,49 +1,63 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
 .info {
   width: 350px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: bold;
+  font-size: large;
+  text-transform: uppercase;
+  color: white;
+  text-shadow:" 0 2px 2px rgba(0, 0, 0, 0.2), 0px 0px 5px rgba(0, 0, 0, 0.2)" ;
+  
 }
 
 .general_info {
-  background: #3d1f90;
-  color: white;
   margin: 0.35rem 1rem;
-  border-radius: 15px;
+  box-shadow: 0 5px 5px #63a4ff , 0px 0px 5px #83eaf1 ;
+background-image: linear-gradient(315deg, #83eaf1  0%, #63a4ff 74%);
+border-radius: 10px;
 }
 
-.general_info h2 {
-  padding: 40px 20px 10px;
-}
-
-.general_info p {
-  margin-top: 5px;
+.general_info h4 {
+  text-transform: uppercase;
+  padding: 10px 20px 10px;
+  color: white;
+  font-family: 'Mulish', sans-serif;
+  text-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2); 
 }
 
 .contact_form {
-  width: 80%;
+  /* width: 80%; */
   width: 100%;
-  margin: auto;
 }
 
 .contact_form input:focus {
-  border: 1px solid white;
-  border-radius: 6px;
+  outline: none;
 }
 
 .contact_form input {
-  width: 100%;
-  border: 0;
-  background: #fcfcfc;
-  height: 43px;
-  padding: 0 20px;
-  font-size: 16px;
+  font-family: 'Mulish', sans-serif;
+  
+  box-shadow: 0 2px 2px #63a4ff , 0px 0px 2px #83eaf1;
   outline: none;
-  color: #7b7474;
+  border: none;
+   width: 100%;
+   height: 43px;
+   padding: 0 20px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color:  #7b7474;
 }
 
 .contact_form input::placeholder {
   font-size: 13px;
+  color: royalblue;
+  font-family: "FontAwesome";
 }
 
 .contact_form textarea {
+  font-family: "FontAwesome";
   width: 100%;
   border: 0;
   background: #fcfcfc;
@@ -53,31 +67,39 @@
   padding: 10px;
   height: 110px;
   color: #7b7474;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(0, 0, 0, 0.2); 
+  border-radius: 2px;
+}
+.contact_form textarea::placeholder{
+color: royalblue;
 }
 
 .submit {
-  background: #3d1f90;
-  font-size: 14px;
-  letter-spacing: 4px;
+  background-color:#63a4ff;
+  border-radius: 10px;
+  font-size: 16px;
+  letter-spacing: 12px;
+  font-weight: bolder;
   font-family: "Open Sans", sans-serif;
   margin-top: 20px;
   width: 100%;
-  max-width: 220px;
   height: 50px;
   line-height: 50px;
   display: block;
   text-align: center;
   cursor: pointer;
   align-self: flex-end;
-  border: 1px #fff solid;
+  border:none;
   position: relative;
   overflow: hidden;
-  box-shadow: inset 2px 0px 2px white;
 }
 .buttonText {
+  font-family: 'Mulish', sans-serif;
+  font-weight: bold;
   position: relative;
   z-index: 1;
-  color: #08fdd8;
+  color: white;
+  text-transform: uppercase;
 }
 .submit:hover .buttonText {
   color: #272727;
@@ -143,30 +165,7 @@
   flex-wrap: wrap;
 }
 
-.circle,
-.circle2 {
-  position: absolute;
-  border-radius: 100%;
-}
-
-.circle {
-  width: 500px;
-  height: 500px;
-  bottom: -250px;
-  right: -250px;
-  background-color: #caebb7eb;
-}
-
-.circle2 {
-  width: 200px;
-  height: 200px;
-  top: -150px;
-  left: -150px;
-  background-color: #7174ffeb;
-}
-
 .experience span {
-  color: white;
   font-weight: bold;
 }
 

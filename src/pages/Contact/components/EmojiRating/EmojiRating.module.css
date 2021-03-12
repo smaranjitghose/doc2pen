@@ -1,27 +1,32 @@
-.emojis {
-  justify-content: space-between;
-  margin-top: 10px;
+
+ .emojis {
+   justify-content: center;
+   margin: auto;
+  align-items: center;
+  margin-top: 20px;
+  height: 60px;
   user-select: none;
+  margin-bottom: 10px;
 }
 
 .radio {
   display: none;
 }
 .radio ~ span {
-  font-size: 1.2rem;
-  filter: grayscale(100);
+  font-size:30px;
   cursor: pointer;
   transition: 0.3s;
-  margin: 8px;
+  margin: 12px;
+  text-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2); 
 }
 
+
 .radio:checked ~ span {
-  filter: grayscale(0);
-  font-size: 1.3rem;
-  margin: 6px;
+  font-size: 2.3rem;
 }
 
 .emoji:hover {
-  filter: grayscale(0);
+  
   opacity: 1;
 }
+
