@@ -1,28 +1,29 @@
 # Doc2Pen
 
-<p align="center">Don't you find it boring and real burdensome task when it comes to finish the assignments???? and THAT TOO BY WRITING THEM IN A PIECE OF PAPER?!?!?! OH DEAR LORD.😩😵</p>
+<p align="center">Don't you find it extremley boring and really burdensome when it comes to finishing your assignments????<br>
+THAT TOO BY WRITING THEM ON A PIECE OF PAPER?!?!?!<br>OH DEAR LORD.😩😵</p>
 <p align="center"><img width=32% src="https://media.giphy.com/media/11BQtvA7R4qBk4/source.gif">
 <img width=20% src="https://media.giphy.com/media/2UIcmK4pn7rYNLRboG/giphy.gif"></p>
 
 
-<p align="center"><b>The truth is your assignments can be completed must faster by typing rather than writing,isn't it?😏🤓</b></p>
+<p align="center"><b>The truth is that your assignments can be completed much faster by simply typing it down into a text editor rather than writing it down on paper,isn't it?😏🤓</b></p>
 <p align="center"><img width=30% src="https://media.giphy.com/media/N57KpqDb0tlWE/giphy.gif">
 <img width=22% src="https://media.giphy.com/media/11BbGyhVmk4iLS/giphy.gif">
 </p>
 <br>
 
 <p align="center">Just imagine</p>
-<p align="center">How cool it would be if your typed documents could be converted in handwritten documents!!!🤯😱</p>
-<p align="center"> And here we are .....</p>
+<p align="center">How cool would it be if your typed documents could be converted to documents that resemble handwritten notes!!!🤯😱</p>
+<p align="center"> So here we are .....</p>
 <p align="center"><img width=30% src="https://media.giphy.com/media/UT5KSLhKwItfq6Yv6q/giphy.gif"></p>
 
 ## About 🤔💭:
-Doc2pen is an Open Source Software that converts your Typed Docs into Handwritten Docs.
+Doc2pen is an Open Source Software that converts your Typed Documents into Handwritten ones.
 
 ## Features✨✨ :
 
-- You can change the colour of ink.
-- Variety of Page styles to choose from.
+- You can choose from a variety of color inks.
+- Various Page styles to choose from.
 - Wide variety of options to customize the fonts as your handwriting.
 - You can even adjust the margins and line spacings.
 - Download/Export in .pdf, .jpeg, .jpg, .png format
@@ -83,7 +84,7 @@ git checkout -b <your_branch_name>
 
 <p align="center"><img width=35% src="https://media2.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif?cid=ecf05e47pzi2rpig0vc8pjusra8hiai1b91zgiywvbubu9vu&rid=giphy.gif"></p>
 
-**9.** Track your changes:heavy_check_mark: .
+**9.** Track your changes :heavy_check_mark: .
 
 ```
 git add . 
@@ -113,7 +114,7 @@ git push -u origin <your_branch_name>
 <img src="./readme_assets/CreatePR.png" width=600>
 
 
-**15** Voila :exclamation: You have made a PR to the doc2pen project :boom: . Sit back patiently and relax while the project maintainers review your PR. Please understand at times the time can vary from a few hours to a few days
+**15** Voila :exclamation: You have made a PR to the doc2pen project :boom: . Sit back patiently and relax while the project maintainers review your PR. Please understand that the time taken to review your PR may take from a few hours to a few days.
 
 <p align="center"><img src="https://media.giphy.com/media/5mCQOcUfywmyI/giphy.gif" width=35%></p>
 
