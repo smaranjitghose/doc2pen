@@ -143,3 +143,17 @@ When accepting the PR, add the following label before merging it. user=<username
 
 - Add labels to PRs
 - Maintain a Contributor.MD for CrossWoC
+
+## [GirlScript Summer of Code 2021]()
+
+| Difficulty | Intent | Score |
+|------------|--------|-------|
+| Level0  | GSSOC Minor Documentation | |
+| Level1  | GSSOC Major Documentation  | |
+| Level2  | GSSOC Bug fixing, adding small features  | |
+| Level3  | GSSOC New features, major bug fixing.  | |
+
+#### Allotment:
+
+- Add labels to PRs [ Must add `gssoc21` label]
+
