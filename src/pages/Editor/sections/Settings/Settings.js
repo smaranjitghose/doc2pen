@@ -63,11 +63,11 @@ const Settings = () => {
               "black",
               "red",
               "orange",
-              "blue",
               "green",
-              "pink",
-              "violet",
+              "blue",
               "dodgerblue",
+              "deeppink",
+              "darkviolet",
             ]}
           />
           <div className={styles.vSeparator}></div>
