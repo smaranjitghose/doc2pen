@@ -40,6 +40,10 @@ function Toolbox({
                 <input type="color" name="canvas_pen_color"
                     value={color} onChange={(e) => setColor(e.target.value)}
                 />
+                <button onClick={(e) => setColor(e.target.value)} value="#0000ff" type="color1" name="Blue"></button>
+                <button onClick={(e) => setColor(e.target.value)} value="#ff0000" type="color2" name="Red"></button>
+                <button onClick={(e) => setColor(e.target.value)} value="#008000" type="color3" name="Green"></button>
+                <button onClick={(e) => setColor(e.target.value)} value="#000000" type="color4" name="Black"></button>
             </Feature>
 
             {
