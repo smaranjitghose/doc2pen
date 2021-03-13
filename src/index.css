@@ -38,6 +38,10 @@
   font-family: Lato;
   src: url(./fonts/Poppins-Regular.otf);
 }
+@font-face {
+  font-family: Luckiest Guy;
+  src: url(./fonts/LuckiestGuy-Regular.ttf);
+}
 
 * {
   margin: 0;

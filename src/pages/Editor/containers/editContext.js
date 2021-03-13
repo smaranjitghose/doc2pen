@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import DomToImage from "dom-to-image";
+import { jsPDF } from "jspdf";
 
 export const EditContext = React.createContext();
 
-const EditContextProvider = (props) => {
+const EditContextProvider = props => {
   const aImagePrefix = "";
   const [pageSrc, setPageSrc] = useState(`${aImagePrefix}blank1.png`);
   const [isBody, setIsBody] = useState(true);
@@ -38,15 +39,21 @@ const EditContextProvider = (props) => {
     Blank2: "blank2.jpg",
   };
 
-  const isBodyHandler = () => {
-    setIsBody(!isBody);
+  const isBodyHandler = (e) => {
+    
+    if(e.target.classList.contains('id-body')){
+      setIsBody(true);
+    }else{
+      setIsBody(false);
+    }
+
   };
 
-  const pageSrcHandler = (e) => {
-    setPageSrc((`${ImageNameMap[e.target.value]}`));
+  const pageSrcHandler = e => {
+    setPageSrc(`${ImageNameMap[e.target.value]}`);
   };
 
-  const onValueChange = (e) => {
+  const onValueChange = e => {
     if (isBody) {
       setBodyValues({ ...bodyValues, [e.target.name]: e.target.value });
     } else {
@@ -68,8 +75,8 @@ const EditContextProvider = (props) => {
     }
   };
 
-  const downloadImg = (e) => {
-    e.preventDefault();
+  const downloadAction = e => {
+    e !== undefined && e.preventDefault();
 
     const node = document.getElementById("outputPage");
     const scale = 750 / node.offsetWidth;
@@ -85,12 +92,17 @@ const EditContextProvider = (props) => {
     };
 
     DomToImage.toPng(node, options)
-      .then((dataUrl) => {
+      .then(dataUrl => {
         const img = new Image();
         img.src = dataUrl;
-        downloadURI(dataUrl, "generatedDoc.png");
+        console.log(e.target.name)
+        if (e !== undefined && e.target.name === "as PNG") {
+          downloadURI(dataUrl, "generatedDoc.png");
+        } else if (e !== undefined && e.target.name === "as PDF") {
+          downloadPdf(dataUrl);
+        }
       })
-      .catch((error) => {
+      .catch(error => {
         console.error("oops,something went wrong", error);
       });
   };
@@ -103,14 +115,24 @@ const EditContextProvider = (props) => {
     document.body.removeChild(link);
   };
 
-  const importTxt = (e) => {
-    localStorage.getItem("data");
+
+  const downloadPdf = imgDataUri => {
+    const doc = new jsPDF("p", "pt", "a4");
+    const width = doc.internal.pageSize.width;
+    const height = doc.internal.pageSize.height;
+    doc.text(10, 20, "");
+    doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
+
+    doc.save();
+  };
+
+  const importTxt = e => {
     e.preventDefault();
 
     if (window.File && window.FileReader && window.FileList && window.Blob) {
-      let textarea = document.querySelector('#show-text')
-      var file = document.querySelector('input[type=file]').files[0];
-      var reader = new FileReader()
+      let textarea = document.querySelector("#show-text");
+      var file = document.querySelector("input[type=file]").files[0];
+      var reader = new FileReader();
 
       var textFile = /text.*/;
 
@@ -118,26 +140,27 @@ const EditContextProvider = (props) => {
         reader.onload = function (event) {
           let rtf = convertToPlain(event.target.result);
           textarea.value += rtf;
+
         }
       } else {
         textarea.value += "<span class='error'>It doesn't seem to be a text file!</span>";
       }
       reader.readAsText(file);
-
     } else {
       alert("Your browser is too old to support HTML5 File API");
     }
   }
 
+
   function convertToPlain(rtf) {
     rtf = rtf.replace(/\\par[d]?/g, "");
     rtf = rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "");
     // rtf = rtf.replace(/\n/ig, " ");
-    rtf = rtf.replace(/\\/ig, "");
-    rtf = rtf.replace(/\*/ig, "");
-    rtf = rtf.replace(/decimal.|tightenfactor0|eftab720|HYPERLINK|irnatural/ig, "");
-    rtf = rtf.replace(/irnaturaltightenfactor0|000000/ig, "");
-    rtf = rtf.replace(/�|ࡱ|p#|#|,|%|@|\$|~/ig, "");
+    rtf = rtf.replace(/\\/gi, "");
+    rtf = rtf.replace(/\*/gi, "");
+    rtf = rtf.replace(/decimal.|tightenfactor0|eftab720|HYPERLINK|irnatural/gi, "");
+    rtf = rtf.replace(/irnaturaltightenfactor0|000000/gi, "");
+    rtf = rtf.replace(/�|ࡱ|p#|#|,|%|@|\$|~/gi, "");
     return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
   }
 
@@ -151,7 +174,7 @@ const EditContextProvider = (props) => {
         onValueChange,
         onElementValueChange,
         isBodyHandler,
-        downloadImg,
+        downloadAction,
         pageSrcHandler,
         importTxt,
       }}

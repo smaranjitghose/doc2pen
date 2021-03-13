@@ -3,8 +3,8 @@ import style from "./Preloader.module.css";
 
 function Preloader() {
   return (
-    <div class={style.preloader}>
-      <div class={style.spinner}></div>
+    <div className={style.preloader}>
+      <div className={style.spinner}></div>
     </div>
   );
 }

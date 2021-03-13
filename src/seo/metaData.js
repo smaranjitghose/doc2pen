@@ -13,6 +13,17 @@ const data  = {
         title: 'Doc2pen - Sketch',
         description: "Sketch is a tool to help you create your own art.",
         keywords: "doc2pen, sketch"
+    },
+    notFound: {
+        title: 'Doc2pen - 404',
+        description: "Uh ohh Looks like you encountered a 404 not found error.",
+        keywords: "doc2pen, 404"
+    },
+    contact: {
+        title: 'Doc2pen - Contact us',
+        description: "Contact and get in touch with us.",
+        keywords: "doc2pen, contact, contact us"
+
     }
 };
 

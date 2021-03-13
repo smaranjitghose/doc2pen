@@ -10,7 +10,7 @@
 .footerDiv {
   position: relative;
   margin-top: 2rem;
-  background-image: url("./../../assests/images/footer/origami.webp");
+  background-image: url("./../../assets/images/footer/origami.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -74,7 +74,7 @@
 .form {
   display: inline-block;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 }
 .box {

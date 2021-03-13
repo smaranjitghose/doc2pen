@@ -21,7 +21,7 @@ const DropdownComponent = (props) => {
         {props.items.map((aItem, index) => (
           <DropdownItem
             onClick={getTargetFunc()}
-            name={`${editContext.isBody ? "body" : "head"}${props.type === "font" ? "Font" : "Color"}`}
+            name={props.type==='download' ? aItem : `${editContext.isBody ? "body" : "head"}${props.type === "font" ? "Font" : "Color"}`}
             value={aItem}
             style={{ "font-family": `${aItem}`, "color": `${aItem}` }}
             key={index}
@@ -35,6 +35,7 @@ const DropdownComponent = (props) => {
 
   const getTargetFunc = () => {
     if (props.type === "font" || props.type === "color") return editContext.onValueChange;
+    else if (props.type === "download") return editContext.downloadAction;
     return editContext.pageSrcHandler;
   };
 

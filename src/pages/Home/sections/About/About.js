@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './About.module.css';
-import step1 from './step1.svg';
-import step2 from './step2.svg';
-import step3 from './step3.svg';
-import step4 from './step4.svg';
-import openSource from './open-source.svg';
+import step1 from './../../../../assets/images/home-about/step1.svg';
+import step2 from './../../../../assets/images/home-about/step2.svg';
+import step3 from './../../../../assets/images/home-about/step3.svg';
+import step4 from './../../../../assets/images/home-about/step4.svg';
+import openSource from './../../../../assets/images/home-about/open-source.svg';
 
 
 function Step(props) {

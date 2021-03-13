@@ -25,7 +25,8 @@ const OutputComponent = () => {
           </div>
           <textarea
             type="text"
-            className={classes.titleInput}
+            className={`${classes.titleInput} id-title`}
+            onClick={editContext.isBodyHandler}
             placeholder="Welcome to your Doc2Pen"
             style={{
               fontSize: `${editContext.headValues.headSize}px`,
@@ -42,7 +43,7 @@ const OutputComponent = () => {
             type="text"
             value={editContext.bodyValues.textValue}
             onChange={e => setPageText(e.target.value)}
-            className={classes.contentInput}
+            className={`${classes.contentInput} id-body`}
             id="show-text"
             placeholder="Paste your content here! You can type it too, but we know people."
             style={{
