@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
 }
 
 .title {
@@ -27,18 +27,19 @@
 .step {
     display: flex;
     justify-content: center;
-    margin: 4rem 0;
+    margin: 5rem 3rem;
+    align-items: center;
 }
 
-@media(max-width:730px){
-    .step{
+@media(max-width:730px) {
+    .step {
         flex-wrap: wrap;
     }
 }
 
-.illustration{
-  padding: 0 1rem;
-  box-sizing: border-box;
+.illustration {
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
 
 .step_reverse {
@@ -56,11 +57,15 @@
 .step_title {
     font-size: 2.5rem;
     color: #4e89ae;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    padding-left: 3rem;
 }
 
 .step_content {
     font-size: 1.5rem;
+    overflow-wrap: anywhere;
+    padding-left: 3rem;
 }
 
 .open_source {

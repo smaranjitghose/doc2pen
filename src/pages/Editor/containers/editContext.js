@@ -28,6 +28,7 @@ const EditContextProvider = props => {
     bodyColor: "black",
     bodyWidth: null,
     bodyLetterSpace: null,
+    bodyText: "",
   });
 
   const ImageNameMap = {
@@ -114,6 +115,7 @@ const EditContextProvider = props => {
     document.body.removeChild(link);
   };
 
+
   const downloadPdf = imgDataUri => {
     const doc = new jsPDF("p", "pt", "a4");
     const width = doc.internal.pageSize.width;
@@ -138,7 +140,8 @@ const EditContextProvider = props => {
         reader.onload = function (event) {
           let rtf = convertToPlain(event.target.result);
           textarea.value += rtf;
-        };
+
+        }
       } else {
         textarea.value += "<span class='error'>It doesn't seem to be a text file!</span>";
       }
@@ -146,7 +149,8 @@ const EditContextProvider = props => {
     } else {
       alert("Your browser is too old to support HTML5 File API");
     }
-  };
+  }
+
 
   function convertToPlain(rtf) {
     rtf = rtf.replace(/\\par[d]?/g, "");
