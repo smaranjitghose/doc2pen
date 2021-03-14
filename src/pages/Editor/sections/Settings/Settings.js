@@ -7,7 +7,7 @@ import NumberSlider from "../../components/Slider/NumberSlider";
 
 const Settings = () => {
   const editContext = useContext(EditContext);
-  
+
   return (
     <div className={styles.controlPanel}>
       <div className={styles.selector}>
@@ -48,7 +48,7 @@ const Settings = () => {
             items={["HomemadeApple", "Caveat", "Dawning", "IndieFlower", "NothingYouCouldDo", "Liu", "LeagueScript"]}
           />
           <div className={styles.vSeparator}></div>
-          <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]} />
+          <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Diary1", "Diary2"]} />
 
           <div className={styles.vSeparator}></div>
 

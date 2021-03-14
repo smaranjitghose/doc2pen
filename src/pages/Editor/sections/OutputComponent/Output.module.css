@@ -1,26 +1,43 @@
 .wrapper {
   border: 3px solid var(--mainTheme);
 }
+
 .imgContainer {
   position: relative;
 }
+
 .imgContainer img {
   height: 100%;
   width: 100%;
 }
 
-.titleInput,
-.contentInput {
+.titleInput, .contentInput {
   position: absolute;
   border: none;
   background-color: transparent;
-  overflow: hidden;
+  overflow-y: scroll;
   z-index: 2;
   width: 100%;
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-corner {
+  background: #555;
 }
 
 .titleInput {
@@ -28,10 +45,20 @@
   height: 10%;
 }
 
+.contentInput::-webkit-scrollbar {
+  width: 15px;
+}
+
+.titleInput::-webkit-scrollbar {
+  width: 15px;
+}
+
 .contentInput {
   bottom: 0;
   height: 90%;
+  overflow-y: 15px;
 }
-textarea{
+
+textarea {
   color: rgba(2, 2, 66, 0.753);
 }

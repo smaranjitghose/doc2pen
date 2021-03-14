@@ -6,7 +6,7 @@ export const EditContext = React.createContext();
 
 const EditContextProvider = props => {
   const aImagePrefix = "";
-  const [pageSrc, setPageSrc] = useState(`${aImagePrefix}blank1.png`);
+  const [pageSrc, setPageSrc] = useState(`${aImagePrefix}ruled1.jpg`);
   const [isBody, setIsBody] = useState(true);
 
   const [headValues, setHeadValues] = useState({
@@ -31,18 +31,19 @@ const EditContextProvider = props => {
   });
 
   const ImageNameMap = {
-    Ruled1: "ruled1.png",
-    Ruled2: "ruled2.jpg",
-    OnlyMargin: "onlymargin.jpg",
-    Blank1: "blank1.png",
-    Blank2: "blank2.jpg",
+    Ruled1: "ruled1.jpg",
+    Ruled2: "ruled2.jpeg",
+    OnlyMargin: "margin1.png",
+    Blank1: "blank1.jpg",
+    Diary1: "diary1.jpg",
+    Diary2: "diary2.jpg"
   };
 
   const isBodyHandler = (e) => {
-    
-    if(e.target.classList.contains('id-body')){
+
+    if (e.target.classList.contains('id-body')) {
       setIsBody(true);
-    }else{
+    } else {
       setIsBody(false);
     }
 
