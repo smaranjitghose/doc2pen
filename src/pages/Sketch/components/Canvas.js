@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef, useCallback} from 'react';
 import styles from './Canvas.module.css';
 import Toolbox from './Toolbox/Toolbox';
 import {FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash, FaRegMoon, FaSun, FaFont} from 'react-icons/fa';
@@ -6,6 +6,8 @@ import {BsArrowUpRight} from 'react-icons/bs';
 import {RiDeleteBinLine} from 'react-icons/ri';
 import {GiTriangleTarget} from 'react-icons/gi';
 import {BsDiamond} from 'react-icons/bs';
+
+const Mousetrap = require("mousetrap");
 
 function Canvas() {
 
@@ -352,23 +354,27 @@ function Canvas() {
         setTypeState("");
     }
 
-    function undo() {
-        if(canvasStateAt > 0) {
-            context.putImageData(canvasStates[canvasStateAt-1], 0, 0);
-            setcanvasStateAt(current => current-1);
-        } else if(canvasStateAt === 0) {
-            context.clearRect(0, 0, canvasWidth, canvasHeight);
-            setcanvasStateAt(current => current-1);
-        }
-    }
+    const undo = useCallback(() => {
+      if (canvasStateAt > 0) {
+        context.putImageData(canvasStates[canvasStateAt - 1], 0, 0);
+        setcanvasStateAt(current => current - 1);
+      } else if (canvasStateAt === 0) {
+        context.clearRect(0, 0, canvasWidth, canvasHeight);
+        setcanvasStateAt(current => current - 1);
+      }
+    }, [canvasStateAt, canvasStates, canvasWidth, canvasHeight, context]);
 
-    function redo() {
-        if(canvasStateAt+1 < canvasStates.length) {
-            context.putImageData(canvasStates[canvasStateAt+1], 0, 0);
-            setcanvasStateAt(current => current+1);
-        }
-    }
+    const redo = useCallback(() => {
+      if (canvasStateAt + 1 < canvasStates.length) {
+        context.putImageData(canvasStates[canvasStateAt + 1], 0, 0);
+        setcanvasStateAt(current => current + 1);
+      }
+    }, [canvasStateAt, canvasStates, context]);
 
+    useEffect(() => {
+        Mousetrap.bind("ctrl+z", () => undo());
+        Mousetrap.bind("ctrl+y", () => redo());
+    }, [redo, undo]);
     return (
         <>
             <Toolbox
