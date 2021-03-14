@@ -8,9 +8,15 @@
     text-align: left;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+
 .title {
+    font-family: "Samarkan Normal";
     color: #4e89ae;
-    font-size: 3rem;
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px #000000;
 }
 
 .line {
