@@ -48,7 +48,7 @@ const Settings = () => {
             items={["HomemadeApple", "Caveat", "Dawning", "IndieFlower", "NothingYouCouldDo", "Liu", "LeagueScript"]}
           />
           <div className={styles.vSeparator}></div>
-          <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Diary1", "Diary2"]} />
+          <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "Ruled3", "Ruled4", "OnlyMargin", "OnlyMargin1", "Blank1", "Blank2", "Blank3", "Diary1", "Diary2"]} />
 
           <div className={styles.vSeparator}></div>
 

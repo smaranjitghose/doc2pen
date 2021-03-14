@@ -6,7 +6,7 @@ export const EditContext = React.createContext();
 
 const EditContextProvider = props => {
   const aImagePrefix = "";
-  const [pageSrc, setPageSrc] = useState(`${aImagePrefix}ruled1.jpg`);
+  const [pageSrc, setPageSrc] = useState(`${aImagePrefix}blank1.png`);
   const [isBody, setIsBody] = useState(true);
 
   const [headValues, setHeadValues] = useState({
@@ -31,10 +31,15 @@ const EditContextProvider = props => {
   });
 
   const ImageNameMap = {
-    Ruled1: "ruled1.jpg",
-    Ruled2: "ruled2.jpeg",
-    OnlyMargin: "margin1.png",
-    Blank1: "blank1.jpg",
+    Ruled1: "ruled1.png",
+    Ruled2: "ruled2.jpg",
+    Ruled3: "ruled3.jpg",
+    Ruled4: "ruled4.jpeg",
+    OnlyMargin: "onlymargin.jpg",
+    OnlyMargin1: "onlymargin1.png",
+    Blank1: "blank1.png",
+    Blank2: "blank2.jpg",
+    Blank3: "blank3.jpg",
     Diary1: "diary1.jpg",
     Diary2: "diary2.jpg"
   };
