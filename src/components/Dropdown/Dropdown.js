@@ -15,16 +15,7 @@ const DropdownComponent = (props) => {
 
   const editContext = useContext(EditContext);
 
-  const colors = [
-    "black",
-    "red",
-    "orange",
-    "blue",
-    "green",
-    "deeppink",
-    "darkviolet",
-    "dodgerblue",
-  ];
+  const colors = ["black","red","orange","blue","green","deeppink","darkviolet","dodgerblue",];
 
   const setValue = (aItemValue) => {
     if (colors.includes(aItemValue)) {
@@ -48,13 +39,7 @@ const DropdownComponent = (props) => {
         {props.items.map((aItem, index) => (
           <DropdownItem
             onClick={getTargetFunc()}
-            name={
-              props.type === "download"
-                ? aItem
-                : `${editContext.isBody ? "body" : "head"}${
-                    props.type === "font" ? "Font" : "Color"
-                  }`
-            }
+            name={props.type === "download" ? aItem : `${editContext.isBody ? "body" : "head"}${ props.type === "font" ? "Font" : "Color" }`}
             value={aItem}
             style={{ "font-family": `${aItem}`, color: `${aItem}` }}
             key={index}
