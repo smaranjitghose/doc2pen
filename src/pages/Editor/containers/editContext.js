@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import DomToImage from "dom-to-image";
 import { jsPDF } from "jspdf";
+import ReactSnackBar from "react-js-snackbar";
+import checkBox from "./../../../assets/images/editor/checkmark.svg";
 
 export const EditContext = React.createContext();
-
+const svgStyles = {
+  height: 50,
+  position: "absolute",
+  top: 0,
+  left: 0,
+};
 const EditContextProvider = props => {
   const aImagePrefix = "";
   const [pageSrc, setPageSrc] = useState(`${aImagePrefix}blank1.png`);
@@ -31,6 +38,9 @@ const EditContextProvider = props => {
     bodyText: "",
   });
 
+  const [show, setShow] = useState(false);
+  const [showing, setShowing] = useState(false);
+
   const ImageNameMap = {
     Ruled1: "ruled1.png",
     Ruled2: "ruled2.jpg",
@@ -39,14 +49,12 @@ const EditContextProvider = props => {
     Blank2: "blank2.jpg",
   };
 
-  const isBodyHandler = (e) => {
-    
-    if(e.target.classList.contains('id-body')){
+  const isBodyHandler = e => {
+    if (e.target.classList.contains("id-body")) {
       setIsBody(true);
-    }else{
+    } else {
       setIsBody(false);
     }
-
   };
 
   const pageSrcHandler = e => {
@@ -77,7 +85,9 @@ const EditContextProvider = props => {
 
   const downloadAction = e => {
     e !== undefined && e.preventDefault();
-
+    if (e !== undefined && e.target.name === "as PDF") {
+      showToast();
+    }
     const node = document.getElementById("outputPage");
     const scale = 750 / node.offsetWidth;
     const options = {
@@ -95,7 +105,7 @@ const EditContextProvider = props => {
       .then(dataUrl => {
         const img = new Image();
         img.src = dataUrl;
-        console.log(e.target.name)
+        console.log(e.target.name);
         if (e !== undefined && e.target.name === "as PNG") {
           downloadURI(dataUrl, "generatedDoc.png");
         } else if (e !== undefined && e.target.name === "as PDF") {
@@ -114,16 +124,31 @@ const EditContextProvider = props => {
     link.click();
     document.body.removeChild(link);
   };
+  const showToast = () => {
+    if (showing) return;
 
-
-  const downloadPdf = imgDataUri => {
+    setShow(true);
+    setShowing(true);
+    // setTimeout(() => {
+    //   setShow(false);
+    //   setShowing(false);
+    // }, 2000);
+  };
+  const downloadPdf = async imgDataUri => {
     const doc = new jsPDF("p", "pt", "a4");
     const width = doc.internal.pageSize.width;
     const height = doc.internal.pageSize.height;
     doc.text(10, 20, "");
     doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
 
-    doc.save();
+    await new Promise((resolve, reject) => { // Wait for PDF download
+      doc.save(); //save PDF
+      resolve(true);
+    });
+
+    //close notif popup
+    setShow(false);
+    setShowing(false);
   };
 
   const importTxt = e => {
@@ -180,6 +205,9 @@ const EditContextProvider = props => {
       }}
     >
       {props.children}
+      <ReactSnackBar Icon={<img style={svgStyles} src={checkBox} alt="" />} Show={show}>
+        Generating PDF! Please wait...
+      </ReactSnackBar>
     </EditContext.Provider>
   );
 };
