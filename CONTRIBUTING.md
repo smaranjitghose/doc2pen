@@ -16,25 +16,25 @@ If you wish to contribute to this project, please raise an issue and wait for th
 
 <p align="center"><img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" width=500></p>
 
-**1.**  Fork [this](https://github.com/smaranjitghose/awesome-portfolio-websites) repository.
+**1.**  Fork [this](https://github.com/smaranjitghose/doc2pen) repository.
 
 **2.**  Clone your forked copy of the project.
 
 ```
-git clone --depth 1 https://github.com/<your_user_name>/awesome-portfolio-websites.git
+git clone https://github.com/<your_user_name>/doc2pen.git
 ```
 <img src="./readme_assets/CloneRepo.png" width="500">
 
 **3.** Navigate to the project directory :file_folder: .
 
 ```
-cd awesome-portfolio-websites
+cd doc2pen
 ```
 
 **4.** Add a reference to the original repository.
 
 ```
-git remote add upstream https://github.com/smaranjitghose/awesome-portfolio-websites.git 
+git remote add upstream https://github.com/smaranjitghose/doc2pen.git 
 ```
 
 **5.** Check the remotes for this repository.
@@ -89,7 +89,7 @@ git push -u origin <your_branch_name>
 <img src="./readme_assets/CreatePR.png" width=600>
 
 
-**15** Voila :exclamation: You have made a PR to the awesome-developer-portfolio project :boom: . Sit back patiently and relax while the project maintainers review your PR. Please understand at times the time can vary from a few hours to a few days
+**15** Voila :exclamation: You have made a PR to the doc2pen project :boom: . Sit back patiently and relax while the project maintainers review your PR. Please understand at times the time can vary from a few hours to a few days
 
 <p align="center"><img src="https://media.giphy.com/media/5mCQOcUfywmyI/giphy.gif" width=35%></p>
 
@@ -148,10 +148,10 @@ When accepting the PR, add the following label before merging it. user=<username
 
 | Difficulty | Intent | Score |
 |------------|--------|-------|
-| Level0  | GSSOC Minor Documentation | |
-| Level1  | GSSOC Major Documentation  | |
-| Level2  | GSSOC Bug fixing, adding small features  | |
-| Level3  | GSSOC New features, major bug fixing.  | |
+| Level0  | GSSOC Minor Documentation | 5 |
+| Level1  | GSSOC Major Documentation  | 10 |
+| Level2  | GSSOC Bug fixing, adding small features  | 15 |
+| Level3  | GSSOC New features, major bug fixing.  | 25 |
 
 #### Allotment:
 
