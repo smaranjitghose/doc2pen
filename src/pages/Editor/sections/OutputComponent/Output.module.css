@@ -15,7 +15,7 @@
   position: absolute;
   border: none;
   background-color: transparent;
-  overflow-y: scroll;
+  overflow: hidden;
   z-index: 2;
   width: 100%;
 }
@@ -45,18 +45,9 @@
   height: 10%;
 }
 
-.contentInput::-webkit-scrollbar {
-  width: 15px;
-}
-
-.titleInput::-webkit-scrollbar {
-  width: 15px;
-}
-
 .contentInput {
   bottom: 0;
   height: 90%;
-  overflow-y: 15px;
 }
 
 textarea {
