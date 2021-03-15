@@ -15,6 +15,7 @@ const EditContextProvider = props => {
   const aImagePrefix = "";
   const [pageSrc, setPageSrc] = useState(`${aImagePrefix}blank1.png`);
   const [isBody, setIsBody] = useState(true);
+  
 
   const [headValues, setHeadValues] = useState({
     headSize: null,
@@ -168,7 +169,7 @@ const EditContextProvider = props => {
 
         }
       } else {
-        textarea.value += "<span class='error'>It doesn't seem to be a text file!</span>";
+        alert("Sorry, We cannot import the selected file. The file must be of type '.txt' ");
       }
       reader.readAsText(file);
     } else {
@@ -205,6 +206,9 @@ const EditContextProvider = props => {
       }}
     >
       {props.children}
+
+      
+      
       <ReactSnackBar Icon={<img style={svgStyles} src={checkBox} alt="" />} Show={show}>
         Generating PDF! Please wait...
       </ReactSnackBar>
