@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import DomToImage from "dom-to-image";
-import { jsPDF } from "jspdf";
+import {jsPDF} from "jspdf";
 import ReactSnackBar from "react-js-snackbar";
 import checkBox from "./../../../assets/images/editor/checkmark.svg";
 
@@ -11,13 +11,72 @@ const svgStyles = {
   top: 0,
   left: 0,
 };
-const EditContextProvider = props => {
+const EditContextProvider = (props) => {
   const aImagePrefix = "";
   const [pageSrc, setPageSrc] = useState(`${aImagePrefix}blank1.png`);
   const [isBody, setIsBody] = useState(true);
+  const [currentPage, setCurrentPage] = useState(0);
+  const initialState = [
+    {
+      head: {
+        text: "",
+        headLeft: 0,
+        headTop: 0,
+        headWidth: null,
+      },
+      body: {
+        text: "",
+        bodyLeft: 0,
+        bodyTop: 0,
+        bodyWidth: null,
+      },
+    },
+  ]
+  const [pages, setPages] = useState(initialState);
 
+  useEffect(() => {
+    if (currentPage === pages.length) {
+      setCurrentPage((currentPage) => currentPage - 1);
+    }
+  }, [currentPage, pages]);
 
-  const [headValues, setHeadValues] = useState({
+  const deletePage = (index) => {
+    var pagesCopy = [...pages];
+    pagesCopy.splice(index, 1);
+    setPages(pagesCopy);
+  };
+  const addPage = () => {
+    var pagesCopy = [...pages];
+    pagesCopy.push({
+      head: {
+        text:"",
+        headLeft: 0,
+        headTop: 0,
+        headWidth: null,
+      },
+      body: {
+        text:"",
+        bodyLeft: 0,
+        bodyTop: 0,
+        bodyWidth: null,
+      },
+    });
+    setPages(pagesCopy);
+  };
+
+  const nextPage = () => {
+    if (currentPage < pages.length - 1) {
+      setCurrentPage((currentPage) => currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage((currentPage) => currentPage - 1);
+    }
+  };
+
+  const [headValues,] = useState({
     headSize: null,
     headTop: 20,
     headLeft: 20,
@@ -28,7 +87,7 @@ const EditContextProvider = props => {
     headWidth: null,
     headLetterSpace: null,
   });
-  const [bodyValues, setBodyValues] = useState({
+  const [bodyValues, ] = useState({
     bodySize: null,
     bodyTop: 20,
     bodyLeft: 20,
@@ -38,7 +97,6 @@ const EditContextProvider = props => {
     bodyColor: "black",
     bodyWidth: null,
     bodyLetterSpace: null,
-    bodyText: "",
   });
 
   const [show, setShow] = useState(false);
@@ -52,7 +110,7 @@ const EditContextProvider = props => {
     Blank2: "blank2.jpg",
   };
 
-  const isBodyHandler = e => {
+  const isBodyHandler = (e) => {
     if (e.target.classList.contains("id-body")) {
       setIsBody(true);
     } else {
@@ -60,73 +118,91 @@ const EditContextProvider = props => {
     }
   };
 
-  const pageSrcHandler = e => {
+  const pageSrcHandler = (e) => {
     setPageSrc(`${ImageNameMap[e.target.value]}`);
   };
 
-  const onValueChange = e => {
-    if (isBody) {
-      setBodyValues({ ...bodyValues, [e.target.name]: e.target.value });
-    } else {
-      setHeadValues({
-        ...headValues,
-        [e.target.name]: e.target.value,
-      });
-    }
+  const onValueChange = (element, index, isBody) => {
+    const text = element.innerText;
+    var pagesCopy = pages.filter((page, i) => {
+      if (i !== index) {
+        return page;
+      } else {
+        if (isBody) {
+          page.body.text = text;
+        } else {
+          page.head.text = text;
+        }
+        return page;
+      }
+    });
+    setPages(pagesCopy);
   };
 
-  const onElementValueChange = e => {
-    if (isBody) {
-      setBodyValues({ ...bodyValues, [e.name]: e.value });
-    } else {
-      setHeadValues({
-        ...headValues,
-        [e.name]: e.value,
-      });
+  const downloadSinglePage = (index, type) => {
+    const nodes = document.querySelectorAll(".page");
+    if (nodes.length === 0) {
+      return;
     }
-  };
-
-  const downloadAction = e => {
-    e !== undefined && e.preventDefault();
-    if (e !== undefined && e.target.name === "as PDF") {
+    const node = nodes[index];
+    if (type === "as PNG") {
+      downloadURI([node]);
+    } else if (type === "as PDF") {
       showToast();
+      downloadPdf([node]);
     }
-    const node = document.getElementById("outputPage");
-    const scale = 750 / node.offsetWidth;
+  };
+  const downloadAction = (e) => {
+    e !== undefined && e.preventDefault();
+    const nodes = document.querySelectorAll(".page");
+    if (nodes.length === 0) {
+      return;
+    }
+    if (e !== undefined && e.target.name === "as PNG") {
+      downloadURI(nodes);
+    } else if (e !== undefined && e.target.name === "as PDF") {
+      showToast();
+      downloadPdf(nodes);
+    }
+  };
+
+  const downloadURI = async (nodes) => {
+    const scale = 750 / nodes[0].offsetWidth;
     const options = {
-      height: node.offsetHeight * scale,
-      width: node.offsetWidth * scale,
+      height: nodes[0].offsetHeight * scale,
+      width: nodes[0].offsetWidth * scale,
       style: {
         transform: `scale(${scale})`,
         transformOrigin: "top left",
-        width: `${node.offsetWidth}px`,
-        height: `${node.offsetHeight}px`,
+        width: `${nodes[0].offsetWidth}px`,
+        height: `${nodes[0].offsetHeight}px`,
       },
     };
+    for (let i = 0; i < nodes.length; i++) {
+      var added = false;
+      const node = nodes[i];
+      const deleteBtn = node.querySelector(".deleteButton");
+      deleteBtn.classList.add("hideBtn");
+      if (!node.classList.contains("showPage")) {
+        added = true;
+        node.classList.add("showPage");
+      }
+      const url = await DomToImage.toPng(node, options);
+      const img = new Image();
+      const link = document.createElement("a");
+      img.src = url;
+      link.download = "generatedDoc.png";
+      link.href = url;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      if (added) {
+        node.classList.remove("showPage");
+      }
+      deleteBtn.classList.remove("hideBtn");
+    }
+  };
 
-    DomToImage.toPng(node, options)
-      .then(dataUrl => {
-        const img = new Image();
-        img.src = dataUrl;
-        console.log(e.target.name);
-        if (e !== undefined && e.target.name === "as PNG") {
-          downloadURI(dataUrl, "generatedDoc.png");
-        } else if (e !== undefined && e.target.name === "as PDF") {
-          downloadPdf(dataUrl);
-        }
-      })
-      .catch(error => {
-        console.error("oops,something went wrong", error);
-      });
-  };
-  const downloadURI = (uri, name) => {
-    const link = document.createElement("a");
-    link.download = name;
-    link.href = uri;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
   const showToast = () => {
     if (showing) return;
 
@@ -137,14 +213,45 @@ const EditContextProvider = props => {
     //   setShowing(false);
     // }, 2000);
   };
-  const downloadPdf = async imgDataUri => {
+
+  const downloadPdf = async (nodes) => {
     const doc = new jsPDF("p", "pt", "a4");
     const width = doc.internal.pageSize.width;
     const height = doc.internal.pageSize.height;
-    doc.text(10, 20, "");
-    doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
+    const scale = 750 / nodes[0].offsetWidth;
+    const options = {
+      height: nodes[0].offsetHeight * scale,
+      width: nodes[0].offsetWidth * scale,
+      style: {
+        transform: `scale(${scale})`,
+        transformOrigin: "top left",
+        width: `${nodes[0].offsetWidth}px`,
+        height: `${nodes[0].offsetHeight}px`,
+      },
+    };
 
-    await new Promise((resolve, reject) => { // Wait for PDF download
+    for (let i = 0; i < nodes.length; i++) {
+      const node = nodes[i];
+      let added = false;
+      const deleteBtn = node.querySelector(".deleteButton");
+      deleteBtn.classList.add("hideBtn");
+      if (!node.classList.contains("showPage")) {
+        added = true;
+        node.classList.add("showPage");
+      }
+      const url = await DomToImage.toPng(node, options);
+      doc.text(10, 20, "");
+      doc.addImage(url, "PNG", 0, 0, width, height);
+      if (i !== nodes.length - 1) {
+        doc.addPage();
+      }
+      deleteBtn.classList.remove("hideBtn");
+      if (added) {
+        node.classList.remove("showPage");
+      }
+    }
+    await new Promise((resolve, reject) => {
+      // Wait for PDF download
       doc.save(); //save PDF
       resolve(true);
     });
@@ -154,38 +261,50 @@ const EditContextProvider = props => {
     setShowing(false);
   };
 
-  const importTxt = e => {
+  const importTxt = (e) => {
     e.preventDefault();
 
     if (window.File && window.FileReader && window.FileList && window.Blob) {
-
-      let textarea = document.querySelector("#show-text");
-      textarea.value = "";
       var file = document.querySelector("input[type=file]").files[0];
       var reader = new FileReader();
-
+      var text = "";
       var textFile = /text.*/;
 
       if (file.type.match(textFile)) {
         reader.onload = function (event) {
           let rtf = convertToPlain(event.target.result);
-          textarea.value += rtf;
-
-        }
+          text += rtf;
+          const node = document.querySelectorAll(".page-body")[0];
+          node.removeAttribute("contenteditable");
+          node.innerHTML = text;
+          node.setAttribute("contenteditable",true);
+        };
       } else {
-        alert("Sorry, We cannot import the selected file. The file must be of type '.txt' ");
+        const node = document.querySelectorAll(".page-body")[0];
+        node.removeAttribute("contenteditable");
+        text += "<span class='error'>It doesn't seem to be a text file!</span>";
+        node.innerText = text;
+        node.setAttribute("contenteditable",true);
       }
       reader.readAsText(file);
     } else {
       alert("Your browser is too old to support HTML5 File API");
     }
-  }
-
+  };
 
   function convertToPlain(rtf) {
     rtf = rtf.replace(/\\par[d]?/g, "");
-    rtf = rtf.replace(/\{\*?\\[^{}]+}|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "");
-    rtf = rtf.replace(/decimal.|tightenfactor0|eftab720|HYPERLINK|irnatural/gi, "");
+    rtf = rtf.replace(
+      /\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g,
+      ""
+    );
+    // rtf = rtf.replace(/\n/ig, " ");
+    rtf = rtf.replace(/\\/gi, "");
+    rtf = rtf.replace(/\*/gi, "");
+    rtf = rtf.replace(
+      /decimal.|tightenfactor0|eftab720|HYPERLINK|irnatural/gi,
+      ""
+    );
     rtf = rtf.replace(/irnaturaltightenfactor0|000000/gi, "");
     rtf = rtf.replace(/�|ࡱ|p#|/gi, "");
     return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
@@ -198,19 +317,25 @@ const EditContextProvider = props => {
         headValues,
         bodyValues,
         pageSrc,
+        pages,
+        currentPage,
         onValueChange,
-        onElementValueChange,
         isBodyHandler,
         downloadAction,
         pageSrcHandler,
         importTxt,
+        nextPage,
+        prevPage,
+        deletePage,
+        addPage,
+        downloadSinglePage,
       }}
     >
       {props.children}
-
-
-
-      <ReactSnackBar Icon={<img style={svgStyles} src={checkBox} alt="" />} Show={show}>
+      <ReactSnackBar
+        Icon={<img style={svgStyles} src={checkBox} alt="" />}
+        Show={show}
+      >
         Generating PDF! Please wait...
       </ReactSnackBar>
     </EditContext.Provider>
