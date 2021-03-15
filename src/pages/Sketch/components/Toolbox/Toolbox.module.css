@@ -1,4 +1,4 @@
-.canvas_toolbox, .dark_canvas_toolbox {
+.canvas_toolbox{
     position: absolute;
     top: 0.75rem;
     left: 30px;
@@ -10,20 +10,12 @@
     padding: 0.5rem;
     box-shadow: 0 0 3px 0.3px gray;
 }
-.dark_canvas_toolbox {
-    background-color: #1e1e1e;
-}
 
-.feature, .dark_feature {
+.feature{
     padding: 0.5rem;
     margin: 0.2rem 0;
     border-radius: 5px;
     background-color: rgb(247, 247, 247);
-}
-.dark_feature {
-    background-color: #1e1e1e;
-    color: #ced4da;
-    box-shadow: 0 0 1px #ced4da;
 }
 
 .title {
@@ -36,7 +28,7 @@
     display: flex;
 }
 
-.feature_box, .dark_feature_box {
+.feature_box{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,25 +39,19 @@
     display: flex;
     cursor: pointer;
 }
-.dark_feature_box {
-    background-color: #363636;
-}
 
 .active_feature_box {
     background-color: #c7ccd1;
 }
-.dark_active_feature_box {
-    background-color: #272727;
-}
 
-.feature input[type="color"], .dark_feature input[type="color"]{
+.feature input[type="color"]{
     border: none;
     outline: none;
     width: 30px;
     height: 30px;
 }
 
-.feature select, .dark_feature select {
+.feature select{
     outline: none;
 }
 
