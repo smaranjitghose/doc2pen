@@ -50,13 +50,17 @@ function Canvas() {
         window.addEventListener('resize', () => {
             setCanvasWidth(window.innerWidth-50);
             setCanvasHeight(window.innerHeight-100);
-            
         })
 
         return () => {
             window.removeEventListener('resize', () => {});
         }
     })
+
+    useEffect(()=>{
+        console.log("canvasStateAt: ", canvasStateAt);
+        console.log("canvasStates: ", canvasStates);
+    },[canvasStateAt, canvasStates])
 
     function hexToRGB (hex) {
         let r = 0, g = 0, b = 0;
@@ -167,7 +171,14 @@ function Canvas() {
     }
 
     function handleMouseUp(event) {
-        setCanvasStates(current => [...current, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
+        const canvasStatesCopy = [...canvasStates];
+        if(canvasStateAt+1 < canvasStatesCopy.length){
+            while (canvasStateAt + 1 !== canvasStatesCopy.length) {
+              canvasStatesCopy.pop();
+            }            
+        }
+
+        setCanvasStates(current => [...canvasStatesCopy, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
         setcanvasStateAt(current => current+1);
 
         setIsDrawing(false);
@@ -178,7 +189,14 @@ function Canvas() {
 
     function handleMouseLeave(event) {
         if(isDrawing) {
-            setCanvasStates(current => [...current, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
+            const canvasStatesCopy = [...canvasStates];
+            if (canvasStateAt + 1 < canvasStatesCopy.length) {
+              while (canvasStateAt + 1 !== canvasStatesCopy.length) {
+                canvasStatesCopy.pop();
+              }
+            }
+
+            setCanvasStates(current => [...canvasStatesCopy, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
             setcanvasStateAt(current => current+1);
         }
 
