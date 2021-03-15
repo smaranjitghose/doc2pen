@@ -1,97 +1,128 @@
-<h1 align="center"><b>Guidelines for Contribution</b></h1> 
+# Contribution Guidelines [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues) 🤝🏽🍀:
 
 <p align="center"><img src="./readme_assets/Contribute.png" width=600></p>
 
-We want to make contributing to this project as easy and as transparent as possible, whether it's:<br>
+## Section-1: File Structure of the Project 🗃️📂
 
-- Reporting a bug :bug:
+### [Public Directory Structure](https://github.com/smaranjitghose/doc2pen/tree/master/public) 🧮✨
+This folder contains the stylesheets, images and fonts. Any files within this directory will not be processed by Webpack but copied directly to the build folder.
 
-- Submitting a fix :mag_right:
+### [Src Directory Structure](https://github.com/smaranjitghose/doc2pen/tree/master/src) 🧮✨
+This folder contains all the main source code for the React application.
 
-- Proposing new features :bulb:
+Files/Folders that are directly located inside the Src Folder: 📥
+   
+    |-assets       #This folder contains all the community brand assets.
+    |-components   #This folder contains all the components used within the website.
+    |-fonts        #This folder contains the fonts used in the website
+    |-pages        #This folder contains all the sections of the page.
+          |-editor
+          |-home
+          |-sketch
+    |-..
 
-If you wish to contribute to this project, please raise an issue and wait for the project maintainers to approve it or give feedback
+### [Asset Directory Structure](https://github.com/smaranjitghose/doc2pen/tree/master/assets) 🧮✨
+This folder contains all the community brand assets
 
-<h2 align="center"><b>How to make a Pull Request? :point_down:</b></h2>
+### [Readme_Assets Directory Structure](https://github.com/smaranjitghose/doc2pen/tree/master/readme_assets)🧮✨
+This folder contains all the images used in Readme Markdown.
+
+## Section-2: To get the project on your local machine 💻🧑‍💻👩‍💻
 
 <p align="center"><img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" width=500></p>
 
-**1.**  Fork [this](https://github.com/smaranjitghose/doc2pen) repository.
+- Install [Git](https://git-scm.com/downloads) 📥
+- Setup [Github](https://github.com/) Account 📇
+- Fork [this](https://github.com/smaranjitghose/doc2pen) Project 🍴
+<p align = "center">
+  <img src="/readme_assets/Fork%20Project.png?raw=true" width="500" height="200"/>
+</p>
 
-**2.**  Clone your forked copy of the project.
+- Clone your forked copy of the project 🧩.
 
-```
-git clone https://github.com/<your_user_name>/doc2pen.git
-```
-<img src="./readme_assets/CloneRepo.png" width="500">
+   ```
+   git clone https://github.com/<your_user_name>/doc2pen.git
+   ```
 
-**3.** Navigate to the project directory :file_folder: .
+- Navigate to the project directory 📁.
 
-```
-cd doc2pen
-```
+   ```
+   cd doc2pen
+   ```
 
-**4.** Add a reference to the original repository.
+- Add a reference(remote) to the original repository.
 
-```
-git remote add upstream https://github.com/smaranjitghose/doc2pen.git 
-```
+   ```
+   git remote add upstream https://github.com/smaranjitghose/doc2pen.git
+   ```
 
-**5.** Check the remotes for this repository.
+<p align="center">
+  <img src="/readme_assets/Cloning%20Project%20(1).png?raw=true"/>
+</p>
 
-```
-git remote -v
-```
+## Section-3: To run the project on your local machine ⌨️🖥️🖱️
+- To install the dependencies and packages, run `npm install`.
+- To start the project in development mode, run `npm start`.
+- Navigate to http://localhost:3000 to view it in the browser.
 
-**6.** Always take a pull from the upstream repository to your master branch to keep it at par with the main project(updated repository).
-
-```
-git pull upstream master
-```
-
-**7.** Create a new branch.
-
-```
-git checkout -b <your_branch_name>
-```
-
-**8.** Perfom your desired changes to the code base.
+## Section-4 : To make changes in the project 🎨👩‍🎨👨‍🎨
+- To directly update the local repo with any changes made in the central repo prior to starting  next edits or additions. To do this set up the central repository as an upstream remote for repo.
+- Pull changes from Upstream. 
+   ```
+   git pull upstream master
+   ```
+- Comment on an [existing issue](https://github.com/smaranjitghose/doc2pen/issues) or Raise a [new issue](https://github.com/smaranjitghose/doc2pen/issues/new) with a proper description.
+- Get it approved and assigned by the project maintainers.
+- Create a new feature branch (DO NOT name it MAIN or MASTER or anything random).
+   ```
+   git checkout -b <your_branch_name>
+   ```
+- Do the changes.
 
 <p align="center"><img width=35% src="https://media2.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif?cid=ecf05e47pzi2rpig0vc8pjusra8hiai1b91zgiywvbubu9vu&rid=giphy.gif"></p>
 
-**9.** Track your changes:heavy_check_mark: .
+- Check the outcome.
+- Make a small clip or take screenshots.
 
-```
-git add . 
-```
+- Stage your changes.
+   ```
+   git add .
+   ```
+- Commit your changes.
+   ```
+   git commit -m "Relevant message"
+   ```
+- Push the changes.
+   ```
+   git push origin <your_branch_name>
+   ```
+- To create a pull request, click on `compare and pull requests`.
+<p align="center">
+  <img src="/readme_assets/ComparePR.png?raw=true"/>
+</p>
 
-**10.** Commit your changes .
+## Section-5: To make a pull request, follow the below guidelines ✅
+- Add an appropriate title.
+- Add an appropriate description of your work and .
+- Add images/screenshots depicting your changes.
+- Mention the issue the pull request is based upon using `Closes #IssueNumber`.
+<p align="center">
+  <img src="/readme_assets/PR.JPG?raw=true" height="350" width="450"/>
+</p>
 
-```
-git commit -m "Relevant message"
-```
-
-**11.** Push the committed changes in your feature branch to your remote repo.
-
-```
-git push -u origin <your_branch_name>
-```
-
-**12.** To create a pull request, click on `compare and pull requests`. Please ensure you compare your feature branch to the desired branch of the repo you are suppose to make a PR to.
-
-<img src="./readme_assets/ComparePR.png" width=600>
-
-**13.** Then add an appropriate title and description to your pull request that explains your changes and efforts done.
-
-
-**14.** Click on `Create Pull Request`.
-
-<img src="./readme_assets/CreatePR.png" width=600>
-
-
-**15** Voila :exclamation: You have made a PR to the doc2pen project :boom: . Sit back patiently and relax while the project maintainers review your PR. Please understand at times the time can vary from a few hours to a few days
+> NOTE
+- Before you merge a feature branch back into your main branch (often master or develop), your feature branch should be squashed down to a single buildable commit, and then rebased from the up-to-date main branch.
+   ```
+   git rebase -i HEAD~[NUMBER OF COMMITS]
+   ```
+   OR
+   ```
+   git rebase -i [SHA]
+   ```
+- Do not comment back on the issue "Please check my PR". Maintainers will have a look as per their convenience.
 
 <p align="center"><img src="https://media.giphy.com/media/5mCQOcUfywmyI/giphy.gif" width=35%></p>
+
 
 
 
