@@ -1,8 +1,8 @@
 .canvas, .dark_canvas {
-    border: 2.5px solid blue;
     border-radius: 11px;
     background-color: white;
     cursor: crosshair;
+    width:99%;
 }
 .dark_canvas {
     background-color: #121212;
