@@ -32,9 +32,9 @@ function ExperienceForm() {
             <div className={styles.fieldsWrap}>
               <div className={styles.inputDiv} >
                 
-                   <input type="text" placeholder="&#xf007;    Your Name" required />                
-                <input type="email" placeholder="&#xf0e0;   Email" required />
-                <input type="tel" placeholder="&#xf095;   Phone (optional)" />
+                  <div className={styles.outer_div}><span className={styles.input_icons}> &#xf007;</span><input type="text" placeholder="Your Name" required />    </div>            
+                  <div className={styles.outer_div}><span className={styles.input_icons}> &#xf0e0;</span> <input type="email" placeholder="Email" required /></div>
+                  <div className={styles.outer_div}><span className={styles.input_icons}> &#xf095;</span><input type="tel" placeholder="Phone (optional)" /></div>
               </div>
               <div className={styles.experience}>
                 <span style={{
