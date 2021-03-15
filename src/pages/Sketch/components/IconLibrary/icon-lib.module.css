@@ -1,0 +1,50 @@
+.root {
+  background: rgba(255, 255, 255, 0.915);
+  width: calc(100% - 20px);
+  height: calc(100% - 10px);
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  z-index: 99999999;
+  border-radius: 15px;
+  box-shadow: 0 0 12px 2px #00000087;
+  padding: 15px;
+}
+.panel {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.feature {
+  padding: 0.7rem 0.5rem;
+  margin: 0 0.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  background-color: #e9ecef;
+  color: black;
+  width: 50px;
+  box-shadow: 0 0 3px 0px #00000054;
+}
+
+.iconLib {
+  overflow-y: scroll;
+  height: calc(100% - 35px);
+  overflow-x: hidden;
+}
+
+.svgContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.svgIcon{
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
