@@ -9,8 +9,8 @@ For Optimizing Doc2pen we have always followed some key rules for better SEO and
 
 - We use [React helmet](https://www.npmjs.com/package/react-helmet) for adding `meta data` on each and every page.
 
-  - The `MetaComponent` is a component that can be imported from [MetaComponent.js](./src/seo/MetaComponent.js). As `props` we pass meta data that are imported from [metaData.js](./src/seo/metaData.js).
-  - See how we used `MetaComponent` for meta-data in our [Home](./src/pages/Home/index.js) page.
+  - The `MetaComponent` is a component that can be imported from [MetaComponent.js](static/src/seo/MetaComponent.js). As `props` we pass meta data that are imported from [metaData.js](static/src/seo/metaData.js).
+  - See how we used `MetaComponent` for meta-data in our [Home](static/src/pages/Home/index.js) page.
   
   ```javascript
   <MetaComponent
