@@ -1,4 +1,5 @@
-name: Labeling new pull request with respective FOSS Program
+name: Add Labels 
+# The events that triggers the workflow
 on:
   pull_request_target:
     branches:
@@ -8,8 +9,10 @@ on:
 
 jobs:
   add-label:
-    name: Add GSSOC21 Label
+    name: Add Labels
+    # The machine each job should run
     runs-on: ubuntu-latest
+    # The tasks each job should run
     steps:
       - uses: actions/checkout@v2
       - uses: christianvuerings/add-labels@v1
