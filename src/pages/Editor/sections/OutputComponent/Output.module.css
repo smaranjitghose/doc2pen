@@ -22,22 +22,25 @@
 
 ::-webkit-scrollbar {
   width: 20px;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #203a43;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #103F5F;
 }
 
 ::-webkit-scrollbar-corner {
-  background: #555;
+  background: rgb(75, 72, 72);
 }
 
 .titleInput {
