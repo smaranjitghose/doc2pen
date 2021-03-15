@@ -10,7 +10,14 @@
     gap: 45px;
     flex-wrap: wrap;
 }
+.tp{
+  font-size: 1.5rem;
+  margin: 15px;
+  font-family: 'Poppins', sans-serif;
+  color: #544eae;
 
+  font-weight: bold;
+}
 .profile_container {
     width: 300px;
     height: 400px;

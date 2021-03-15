@@ -4,17 +4,17 @@
 }
 
 .SupportusQuote {
-  font-family: "Samarkan Normal";
+  font-family: 'Poppins', sans-serif;
   color: #544eae;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
     margin-bottom: 11px;
 }
 
 .quoteAuthor {
-  font-family: "Samarkan Normal";
+  font-family: 'Poppins', sans-serif;
   color: #000000b8;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 

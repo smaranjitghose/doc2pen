@@ -12,7 +12,7 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Sans);
 
 .title {
-    font-family: "Samarkan Normal";
+    font-family: 'Poppins', sans-serif;
     color: #4e89ae;
     font-size: 3rem;
     font-weight: bold;
@@ -53,7 +53,8 @@
 }
 
 .step img {
-    width: 270px;
+    width: 350px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(39 37 37 / 19%);
 }
 
 .step_text {
@@ -61,12 +62,12 @@
 }
 
 .step_title {
-    font-family: "Samarkan Normal";
+    font-family: 'Poppins', sans-serif;
     color: #544eae;
     font-size: 2rem;
-  
-    font-weight: bold;
-    text-shadow: 1px 1px 3px #000000;
+    width: 100%;
+    font-weight: 700;
+   
     margin-bottom: 1rem;
     text-align: left;
     padding-left: 3rem;
@@ -76,10 +77,12 @@
     font-size: 1.5rem;
     overflow-wrap: anywhere;
     padding-left: 3rem;
+    font-weight: 500;
+    
 }
 
 .open_source {
-    font-family: "Samarkan Normal";
+    font-family: 'Poppins', sans-serif;
     color: #544eae; 
     font-weight: bold;
     font-size: 1.5rem;
