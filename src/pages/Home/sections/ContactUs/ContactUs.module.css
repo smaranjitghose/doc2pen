@@ -1,0 +1,81 @@
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnContainer > p {
+  font-weight: 500;
+}
+
+.btn {
+  position: relative;
+  padding: 20px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 10px;
+  width: 200px;
+  overflow: hidden;
+  border-top: 1px solid #4973ff36;
+}
+
+.btn:link {
+  text-decoration: none !important;
+}
+
+.btn span {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.btn:hover .liquid {
+  top: -120px;
+}
+
+.btn .liquid {
+  position: absolute;
+  left: 0;
+  top: -80px;
+  width: 200px;
+  height: 200px;
+  background: #4973ff;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+.btn .liquid:before,
+.btn .liquid:after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+.btn .liquid:before {
+  border-radius: 45%;
+  background: rgb(255, 255, 255);
+  animation: animate 5s linear infinite;
+}
+.btn .liquid:after {
+  border-radius: 40%;
+  background: rgba(255, 255, 255, 0.5);
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}

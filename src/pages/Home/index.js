@@ -7,6 +7,7 @@ import Banner from "./sections/Banner/Banner";
 import OpenSource from "./sections/OpenSource/OpenSource";
 import SupportUs from "./sections/SupportUs/SupportUs";
 import Team from "./sections/Team/Team";
+import ContactUs from "./sections/ContactUs/ContactUs";
 import ScrollToTop from "./../../components/ScrollToTopButton/ScrollToTopButton";
 
 function Home() {
@@ -22,6 +23,7 @@ function Home() {
       <Team />
       <OpenSource />
       <SupportUs />
+      <ContactUs />
       <ScrollToTop />
     </div>
   );
