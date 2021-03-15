@@ -28,6 +28,9 @@ This folder contains all the community brand assets
 This folder contains all the images used in Readme Markdown.
 
 ## Section-2: To get the project on your local machine 💻🧑‍💻👩‍💻
+
+<p align="center"><img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" width=500></p>
+
 - Install [Git](https://git-scm.com/downloads) 📥
 - Setup [Github](https://github.com/) Account 📇
 - Fork [this](https://github.com/smaranjitghose/doc2pen) Project 🍴
@@ -75,6 +78,9 @@ This folder contains all the images used in Readme Markdown.
    git checkout -b <your_branch_name>
    ```
 - Do the changes.
+
+<p align="center"><img width=35% src="https://media2.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif?cid=ecf05e47pzi2rpig0vc8pjusra8hiai1b91zgiywvbubu9vu&rid=giphy.gif"></p>
+
 - Check the outcome.
 - Make a small clip or take screenshots.
 
@@ -114,6 +120,9 @@ This folder contains all the images used in Readme Markdown.
    git rebase -i [SHA]
    ```
 - Do not comment back on the issue "Please check my PR". Maintainers will have a look as per their convenience.
+
+<p align="center"><img src="https://media.giphy.com/media/5mCQOcUfywmyI/giphy.gif" width=35%></p>
+
 
 
 
