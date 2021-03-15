@@ -14,7 +14,7 @@
 .title {
     font-family: "Samarkan Normal";
     color: #4e89ae;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     text-shadow: 1px 1px 3px #000000;
 }
@@ -61,8 +61,12 @@
 }
 
 .step_title {
-    font-size: 2.5rem;
-    color: #4e89ae;
+    font-family: "Samarkan Normal";
+    color: #544eae;
+    font-size: 2rem;
+  
+    font-weight: bold;
+    text-shadow: 1px 1px 3px #000000;
     margin-bottom: 1rem;
     text-align: left;
     padding-left: 3rem;
@@ -75,8 +79,9 @@
 }
 
 .open_source {
+    font-family: "Samarkan Normal";
+    color: #544eae; 
     font-weight: bold;
-    color: #4e89ae;
     font-size: 1.5rem;
     padding: 1rem;
     margin: 3rem 0;

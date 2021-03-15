@@ -3,15 +3,20 @@
 }
 
 .title {
+    font-family: "Samarkan Normal";
     color: #4e89ae;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
-    margin: 5rem 15px 0;
+    text-shadow: 1px 1px 3px #000000;
 }
 
 .content {
     font-size: 1.5rem;
     margin: 15px;
+    font-family: "Samarkan Normal";
+    color: #544eae;
+
+    font-weight: bold;
 }
 
 .card_holder {

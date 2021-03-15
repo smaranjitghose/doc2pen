@@ -4,14 +4,18 @@
 }
 
 .SupportusQuote {
-    color: rgb(0, 153, 255);
-    font-size: 1.7rem;
+  font-family: "Samarkan Normal";
+  color: #544eae;
+  font-size: 2rem;
+  font-weight: bold;
     margin-bottom: 11px;
 }
 
 .quoteAuthor {
-    color: gray;
-    font-size: 20px;
+  font-family: "Samarkan Normal";
+  color: #000000b8;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .patreonAndCoffe {
