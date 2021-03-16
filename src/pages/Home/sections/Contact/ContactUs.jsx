@@ -17,7 +17,7 @@ function ContactUs() {
         description={metaData.contact.description}
         keywords={metaData.contact.keywords}
       />
-      <h2>Get in Touch</h2>
+      <p className={styles.p} >Get in Touch</p>
       <div className={styles.contact_and_info_container}>
         <ExperienceForm />
         <div ref={mapRef} className={styles.map}>

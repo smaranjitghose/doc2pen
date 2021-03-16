@@ -46,8 +46,11 @@ function IconsLibrary(props) {
         <IconPreview iconPackSVGs={iconPack1SVGs} categoryTitle="Tech Stack Icons" />
         <IconPreview iconPackSVGs={iconPack2SVGs} categoryTitle="Tech Stack Icons" />
         <IconPreview iconPackSVGs={iconPack3SVGs} categoryTitle="Speech Bubble Icons" />
+        {/* https://freesvg.org/search/ */}
+        {/* https://www.flaticon.com/free-icons/hand-drawn-speech-bubble */}
+        {/* https://www.flaticon.com/packs/speech-bubbles-2 */}
         {/* https://www.svgrepo.com/svg/82688/thought-bubble */}
-        {/* https://freesvg.org/speech-bubble */}
+
         <IconPreview iconPackSVGs={iconPack4SVGs} categoryTitle="Tech Stack Icons" />
       </div>
     </div>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    id="svg3884"
+    sodipodi:docname="bulle5.svg"
+    viewBox="0 0 150 112.1"
+    version="1.1"
+    inkscape:version="0.47pre4 r22446"
+  >
+  <defs
+      id="defs3886"
+    >
+    <filter
+        id="filter3721-2"
+        width="1.2199"
+        y="-.13210"
+        x="-.10993"
+        height="1.2642"
+        color-interpolation-filters="sRGB"
+        inkscape:collect="always"
+      >
+      <feGaussianBlur
+          id="feGaussianBlur3723-6"
+          stdDeviation="1.5830058"
+          inkscape:collect="always"
+      />
+    </filter
+    >
+  </defs
+  >
+  <sodipodi:namedview
+      id="base"
+      bordercolor="#666666"
+      inkscape:pageshadow="2"
+      inkscape:window-y="24"
+      pagecolor="#ffffff"
+      inkscape:window-height="693"
+      inkscape:window-maximized="1"
+      inkscape:zoom="2.8"
+      inkscape:window-x="0"
+      showgrid="false"
+      borderopacity="1.0"
+      inkscape:current-layer="layer1"
+      inkscape:cx="127.10465"
+      inkscape:cy="46.261274"
+      inkscape:window-width="1366"
+      inkscape:pageopacity="0.0"
+      inkscape:document-units="px"
+  />
+  <g
+      id="layer1"
+      inkscape:label="Calque 1"
+      inkscape:groupmode="layer"
+      transform="translate(-255.71 -420.24)"
+    >
+    <g
+        id="g3939"
+        transform="translate(-366.79 271.36)"
+      >
+      <path
+          id="path2892-8-3-0"
+          sodipodi:nodetypes="ccccssccsc"
+          style="filter:url(#filter3721-2);fill:#7a7a7a"
+          transform="matrix(3.558 0 0 3.0831 -626.23 -1417.3)"
+          d="m360.88 531.88c-1.4496 3.5554-4.0544 5.8735-6.11 8.6826 2.9085-2.0738 6.2093-4.0858 9.0488-7.3023m-2.9459-1.3798c-3.4178-2.0992-5.6521-5.239-5.6521-8.5986 0-6.3396 7.6357-11.479 17.055-11.479 9.4191 0 17.055 5.1393 17.055 11.479 0 6.3396-7.6357 11.479-17.055 11.479-3.0779 0-5.9653-0.54876-8.4581-1.5088"
+      />
+      <path
+          id="path2892-8-6"
+          sodipodi:nodetypes="ccccssccsc"
+          style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-dasharray:4, 4;fill:#ffffff"
+          d="m657.76 216.33c-5.1576 10.961-14.425 18.108-21.739 26.769 10.348-6.3938 22.092-12.597 32.196-22.514m-10.481-4.2542c-12.161-6.472-20.11-16.152-20.11-26.51 0-19.546 27.168-35.39 60.681-35.39s60.68 15.845 60.68 35.39c0 19.546-27.168 35.39-60.68 35.39-10.951 0-21.224-1.6919-30.094-4.6519"
+      />
+    </g
+    >
+  </g
+  >
+  <metadata
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+        <dc:title
+          >Speech bubble</dc:title
+        >
+        <dc:date
+          >2010-04-06T21:02:39</dc:date
+        >
+        <dc:description
+          >Speech bubble</dc:description
+        >
+        <dc:source
+          >https://openclipart.org/detail/38629/speech-bubble-by-pascallapalme-38629</dc:source
+        >
+        <dc:creator
+          >
+          <cc:Agent
+            >
+            <dc:title
+              >pascallapalme</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:creator
+        >
+        <dc:subject
+          >
+          <rdf:Bag
+            >
+            <rdf:li
+              >cartoon</rdf:li
+            >
+            <rdf:li
+              >speech bubble</rdf:li
+            >
+          </rdf:Bag
+          >
+        </dc:subject
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>
