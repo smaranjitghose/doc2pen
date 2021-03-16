@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import MetaComponent from "../../../../seo/MetaComponent";
 import metaData from '../../../../seo/metaData'
-import Header from './components/Header/Header'
 import ExperienceForm from "./components/ExperienceForm/ExperienceForm";
 import Map from "./components/Map/Map";
 
@@ -18,7 +17,7 @@ function ContactUs() {
         description={metaData.contact.description}
         keywords={metaData.contact.keywords}
       />
-      <Header />
+      <h2>Get in Touch</h2>
       <div className={styles.contact_and_info_container}>
         <ExperienceForm />
         <div ref={mapRef} className={styles.map}>
