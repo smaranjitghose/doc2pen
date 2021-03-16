@@ -78,7 +78,7 @@ function OpenSource() {
 
   return (
     <div className={styles.OpenSource}>
-      <div className={styles.title}>Open Source Programs we are a part of</div>
+      <div className={styles.title}>Open Source Programs</div>
       <div className={styles.content}>"To do something really well, you have to get a lot of people involved."</div>
       <div className={styles.card_holder}>
         {recentEventsDetails.map(event => (
