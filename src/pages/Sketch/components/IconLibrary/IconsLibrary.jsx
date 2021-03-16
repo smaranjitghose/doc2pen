@@ -44,7 +44,9 @@ function IconsLibrary(props) {
       <div className={style.panel}>{/* search bar */}</div>
       <div className={style.iconLib}>
         <IconPreview iconPackSVGs={iconPack1SVGs} categoryTitle="Tech Stack Icons" />
-        <IconPreview iconPackSVGs={iconPack2SVGs} categoryTitle="Tech Stack Icons" />
+        {/* https://drwn.io/ */}
+        <IconPreview iconPackSVGs={iconPack2SVGs} categoryTitle="Stick Figure Icons" />
+        {/* https://svgsilh.com/tag/stickman-1.html */}
         <IconPreview iconPackSVGs={iconPack3SVGs} categoryTitle="Tech Stack Icons" />
         <IconPreview iconPackSVGs={iconPack4SVGs} categoryTitle="Tech Stack Icons" />
       </div>
