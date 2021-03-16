@@ -45,7 +45,9 @@ function IconsLibrary(props) {
       <div className={style.iconLib}>
         <IconPreview iconPackSVGs={iconPack1SVGs} categoryTitle="Tech Stack Icons" />
         <IconPreview iconPackSVGs={iconPack2SVGs} categoryTitle="Tech Stack Icons" />
-        <IconPreview iconPackSVGs={iconPack3SVGs} categoryTitle="Tech Stack Icons" />
+        <IconPreview iconPackSVGs={iconPack3SVGs} categoryTitle="Speech Bubble Icons" />
+        {/* https://www.svgrepo.com/svg/82688/thought-bubble */}
+        {/* https://freesvg.org/speech-bubble */}
         <IconPreview iconPackSVGs={iconPack4SVGs} categoryTitle="Tech Stack Icons" />
       </div>
     </div>
