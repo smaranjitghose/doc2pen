@@ -2,127 +2,177 @@
 
 <p align="center"><img src="./readme_assets/Contribute.png" width=600></p>
 
-## Section-1: Understand the basic structure of the project 🗃️📂
+## Section 0: Understand the basic structure of the project 🗃️📂
 
-### [Public Directory Structure](https://github.com/smaranjitghose/doc2pen/tree/master/public) 🧮✨
-This folder contains the stylesheets, images and fonts. Any files within this directory will not be processed by Webpack but copied directly to the build folder.
 
-### [Src Directory Structure](https://github.com/smaranjitghose/doc2pen/tree/master/src) 🧮✨
-This folder contains all the main source code for the React application.
+```terminal
+|
+|- readme_assets   # Contains all the images used for the README.MD
+|- public          # Contains the stylesheets, images and fonts. Any files within this directory will not be processed by Webpack but copied directly to the build folder.
+|- src:            # Contains all source code for the React application.
+    |
+    |- App.js
+    |- index.css
+    |- index.js
+    |-assets         # Contains all the community brand assets
+    |-components     # Contains all the components used within the app.
+    |-fonts          # Contains all the fonts 
+    |-pages          # Contains all the sections of the page.
+          |- 404
+          |- Home
+          |- Editor
+          |- Sketch
+    |-seo # Contains code for meta tags using react-helmet
 
-Files/Folders that are directly located inside the Src Folder: 📥
-   
-    |-assets       #This folder contains all the community brand assets.
-    |-components   #This folder contains all the components used within the website.
-    |-fonts        #This folder contains the fonts used in the website
-    |-pages        #This folder contains all the sections of the page.
-          |-editor
-          |-home
-          |-sketch
-    |-..
 
-### [Asset Directory Structure](https://github.com/smaranjitghose/doc2pen/tree/master/assets) 🧮✨
-This folder contains all the community brand assets
+```
 
-### [Readme_Assets Directory Structure](https://github.com/smaranjitghose/doc2pen/tree/master/readme_assets)🧮✨
-This folder contains all the images used in Readme Markdown.
 
-## Section 2: To get the project on your local machine 💻🧑‍💻👩‍💻
+## Section 1: Get the source code of the project💻🧑‍💻👩‍💻 and set it up:
 
 <p align="center"><img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" width=500></p>
 
-- Install [Git](https://git-scm.com/downloads) 📥
-- Setup [Github](https://github.com/) Account 📇
-- Fork [this](https://github.com/smaranjitghose/doc2pen) Project 🍴
-<p align = "center">
-  <img src="/readme_assets/Fork%20Project.png?raw=true" width="500" height="200"/>
-</p>
 
-- Clone your forked copy of the project 🧩.
+#### Preliminaries:
+- Download and install the latest stable version of [Git](https://git-scm.com/downloads) 📥 for version control
+- Create a [Github](https://github.com/join) Account 📇 
+- Download and install latest stable version of [NodeJS](https://nodejs.org/en/download/)
+- Download and install latest stable version of [VS Code](https://code.visualstudio.com/download)
 
-   ```
-   git clone https://github.com/<your_user_name>/doc2pen.git
-   ```
+- Fork [this](https://github.com/smaranjitghose/doc2pen) repository 
+<p align = "center"><img src="/readme_assets/Fork%20Project.png?raw=true" width="500" height="200"/></p>
 
-- Navigate to the project directory 📁.
 
-   ```
-   cd doc2pen
-   ```
+- Open Terminal/Command Prompt/Powershell/Git Bash and navigate to a location where you want the project files to be stored
+```
+cd D:\my_preferred_location
+```
+- Clone your forked repository 🧩.
+```
+git clone https://github.com/<your_user_name>/doc2pen.git
+```
+- Now move inside the project directory 📁 (using the terminal).
+```
+cd doc2pen
+```
+- Check for the current remotes of the git repository (the local copy of your forked repository)
+```
+git remote --verbose
+```
+- Add add a reference to the upstream(this repository which you clones) repository.
+```
+git remote add upstream https://github.com/smaranjitghose/doc2pen.git
+```
 
-- Add a reference(remote) to the original repository.
+- Install the dependencies and packages
+ ```
+ npm install
+ ```
+- Start the react app in the local server in development mode 
+```
+npm start
+```
+- Open your favourite browser and navigate to `http://localhost:3000` to view the current version of the app
 
-   ```
-   git remote add upstream https://github.com/smaranjitghose/doc2pen.git
-   ```
 
-<p align="center">
-  <img src="/readme_assets/Cloning%20Project%20(1).png?raw=true"/>
-</p>
 
-## Section 3: To run the project on your local machine ⌨️🖥️🖱️
-- To install the dependencies and packages, run `npm install`.
-- To start the project in development mode, run `npm start`.
-- Navigate to http://localhost:3000 to view it in the browser.
 
-## Section 4 : To make changes in the project 🎨👩‍🎨👨‍🎨
-- To directly update the local repo with any changes made in the central repo prior to starting  next edits or additions. To do this set up the central repository as an upstream remote for repo.
-- Pull changes from Upstream. 
-   ```
-   git pull upstream master
-   ```
-- Comment on an [existing issue](https://github.com/smaranjitghose/doc2pen/issues) or Raise a [new issue](https://github.com/smaranjitghose/doc2pen/issues/new) with a proper description.
-- Get it approved and assigned by the project maintainers.
+## Section 2 : Contributing to the project🎨👩‍🎨👨‍🎨 
+
+
+- Open the project files in VSCode (assuming you have already opened the terminal and navigated inside the project directory)
+
+```
+code .
+```
+
+- Fetch any recent changes from the upstream repository
+
+```
+git pull upstream master
+```
+
+- Comment on any existing [issue(s)](https://github.com/smaranjitghose/doc2pen/issues) raised by **project maintainers** [@smaranjitghose or @anushbhatia]. Otherwise raise a [new issue](https://github.com/smaranjitghose/doc2pen/issues/new).
+
+> ## Guidelines for raising a new issue:
+>
+> - Each issue should have an appropriate and short title like "Bug in Upload Page"
+> 
+> - Be specific about your intended changes/suggestions
+>
+> - Refrain from using phrases like "Hi, I am ..", "Please assign me this issue", "Thank You..", etc. We are only interested in techincal parts
+>
+> - Attach a screenshot/clip if applicable
+>
+> - Please be patient enough. The project maintainters/mentors would review it as per their schedule. Please do not start putting comments like "Please check this" etc.
+>  
+> - Do not blindly comment on issues raised by other participant(s). Unless a minimum of 48 hours has passed since their assignment, the issue would not be re-assigned(excluding certain cases). The issue raised by a participant will always to be assigned to him/her by default. Do not spam "Interested", "Please assign me" in others issues. 
+> 
+> - Always keep a note of the deadline. 
+
+- Once the project maintainer(s)/mentor(s) have reviewed the issue/assigned you the issue. Start working on the changes
+
 - Create a new feature branch (DO NOT name it MAIN or MASTER or anything random).
    ```
    git checkout -b <your_branch_name>
    ```
-- Do the changes.
+- Finish your work
+
+- Make sure that you do not change any code unrelated to the task that you have been assigned
+
+- Ensure that your changes apply to all screensizes
+
+- Comment any new code addition(s)
+
+- Do not mess up the directory structure
+
+- Preview your changes and test them properly before proceding ahead
 
 <p align="center"><img width=35% src="https://media2.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif?cid=ecf05e47pzi2rpig0vc8pjusra8hiai1b91zgiywvbubu9vu&rid=giphy.gif"></p>
 
-- Check the outcome.
 - Make a small clip or take screenshots.
 
 - Stage your changes.
-   ```
-   git add .
-   ```
-- Commit your changes.
-   ```
-   git commit -m "Relevant message"
-   ```
-- Push the changes.
-   ```
-   git push origin <your_branch_name>
-   ```
-- To create a pull request, click on `compare and pull requests`.
+```
+git add .
+```
+- Commit the changes.
+```
+git commit -m "message relevant to your changes (usually title of the pull request)"
+```
+
+- **Make sure to condense your changes into a single commit**. [Reference](https://levelup.gitconnected.com/how-to-squash-git-commits-9a095c1bc1fc)
+
+- Push the changes to your remote repository on GitHub.
+```
+git push origin <your_branch_name>
+```
+
+- Click on `compare and pull requests` to create a pull request
 <p align="center"><img src="/readme_assets/ComparePR.png?raw=true"/></p>
 
-## Section 5: To make a pull request, follow the below guidelines ✅
-- Add an appropriate title.
-- Add an appropriate description of your work and .
-- Add images/screenshots depicting your changes.
-- Mention the issue the pull request is based upon using `Closes #IssueNumber`.
+> ## Guidelines for raising a pull request:
+>
+> - Each pull request should have an appropriate and short title like "Fixed Bug in Upload Page"
+> 
+> - Describe your intended changes in the description section of the pull request (Use bullet points and phrases) 
+>
+> - Refrain from using phrases like "Hi, I am ..", "Please merge me this OPR", "Thank You..", etc. We are only interested in techincal parts
+>
+> - Attach a screenshot/clip of the change(s)
+>
+> - Make sure to refer the respective issue in the respective PR using phrases like `Resolves #issue_number` or `Closes #issue_number`.  
+>
+> - Please be patient enough. The project maintainters/mentors would review it as per their schedule. Please do not start putting comments like "Please check this" etc.
+>  
+> - Although we support feedback from everyone in all phases of development, it is highly advised not to put any negative comments in other participant's pull requests.
+> 
+> - Always keep a note of the deadline. 
+
 <p align="center"><img src="/readme_assets/PR.JPG?raw=true" height="350" width="450"/></p>
 
-> NOTE
-- Before you merge a feature branch back into your main branch (often master or develop), your feature branch should be squashed down to a single buildable commit, and then rebased from the up-to-date main branch.
-   ```
-   git rebase -i HEAD~[NUMBER OF COMMITS]
-   ```
-   OR
-   ```
-   git rebase -i [SHA]
-   ```
-- Do not comment back on the issue "Please check my PR". Maintainers will have a look as per their convenience.
 
-<p align="center"><img src="https://media.giphy.com/media/5mCQOcUfywmyI/giphy.gif" width=35%></p>
-
-
-
-
-# Open Source Program Grading (Only for Project Maintainers)
+# Open Source Program Grading (Relevant for only for Project Maintainers)
 
 
 ## [Script Winter of Code](https://swoc.tech/)
