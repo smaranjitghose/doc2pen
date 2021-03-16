@@ -46,7 +46,7 @@ function Team() {
     return (
         <div className={styles.Team} id="home_team">
             {/* <!-- Project Maintainer Sub Section --> */}
-            <br/><br/> <p className={styles.p}>Project Maintainers</p><br/><br/>
+            <br/><br/> <p className={styles.titleMain}>Project Maintainers</p><br/><br/>
             <div className={styles.projectMaintainers}>
                 {
                     maintainerSection.map(item =>
@@ -71,7 +71,7 @@ function Team() {
             
             {/* <!-- Contributora Sub Section --> */}
             <br/><br/>
-            <p className={styles.p}>Clan of Contributors</p><br/><br/>
+            <p className={styles.titleMain}>Clan of Contributors</p><br/><br/>
             <div className={styles.team_container}>
                 {
                   contributors.map(c => (
