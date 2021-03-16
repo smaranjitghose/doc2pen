@@ -28,6 +28,10 @@ const quickLinks = [
 function Header() {
     let navLinkRef = useRef(null);
     let headerRef = useRef(null);
+    let menubtnRef=useRef(null);
+    let btn1Ref=useRef(null);
+    let btn2Ref=useRef(null);
+    let btn3Ref=useRef(null);
     const history = useHistory();
 
     const [location, setLocation] = useState(window.location.pathname);
@@ -39,8 +43,14 @@ function Header() {
     }, [history])
     
     function drop() {
+
         navLinkRef.current.classList.toggle(styles.rightDrop);
         headerRef.current.classList.toggle(styles.HeaderOpen);
+        menubtnRef.current.classList.toggle(styles.close);
+        btn1Ref.current.classList.toggle(styles.btn1);
+        btn2Ref.current.classList.toggle(styles.btn2);
+         btn3Ref.current.classList.toggle(styles.btn3);
+
     }
 
     return (
@@ -66,7 +76,12 @@ function Header() {
                     </NavLink>
                 </div>
                 <div className={styles.hamburger} onClick={()=>drop()}>
-                    <BiMenu size={30}/>
+                  
+                    <div ref={menubtnRef} className={styles.menu_btn}>
+                        <div ref={btn1Ref} className={styles.btn_line} ></div>
+                        <div ref={btn2Ref} className={styles.btn_line} ></div>
+                        <div ref={btn3Ref} className={styles.btn_line} ></div>
+                    </div>
                 </div>
             </header>
             <div className={styles.quick_box}>
