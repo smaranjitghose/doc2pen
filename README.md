@@ -63,9 +63,8 @@ Please check out our [contribution guidelines](./Contributing.MD)
 
 ## The geeks🤓 behind this initiative:
 
-<p align="center"><img src="https://media.giphy.com/media/5mCQOcUfywmyI/giphy.gif" width=35%></p>
 
-#### Our Project Maintainers👨‍🏫:
+**Our Project Maintainers👨‍🏫:**
 
 <p align="center">
 <img width=20% src="https://avatars2.githubusercontent.com/u/46641503?v=4">&ensp;&ensp;&ensp;
@@ -76,7 +75,7 @@ Please check out our [contribution guidelines](./Contributing.MD)
 <h5 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 <a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h5></a>
 
-#### Our valuable Contributors👩‍💻👨‍💻 :
+**Our valuable Contributors👩‍💻👨‍💻**
 <a href="https://github.com/smaranjitghose/doc2pen/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=smaranjitghose/doc2pen" />
 </a>
