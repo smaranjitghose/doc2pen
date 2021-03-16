@@ -46,7 +46,10 @@ function IconsLibrary(props) {
         <IconPreview iconPackSVGs={iconPack1SVGs} categoryTitle="Tech Stack Icons" />
         <IconPreview iconPackSVGs={iconPack2SVGs} categoryTitle="Tech Stack Icons" />
         <IconPreview iconPackSVGs={iconPack3SVGs} categoryTitle="Tech Stack Icons" />
-        <IconPreview iconPackSVGs={iconPack4SVGs} categoryTitle="Tech Stack Icons" />
+        <IconPreview iconPackSVGs={iconPack4SVGs} categoryTitle="Devices & Hardware Icons" />
+        {/* https://www.svgrepo.com/vectors/device/ */}
+        {/* https://www.flaticon.com/packs/smart-devices?k=1615927940770 */}
+        {/* https://freeicons.io/material-icons-file-3/devices-icon-17364 */}
       </div>
     </div>
   );
