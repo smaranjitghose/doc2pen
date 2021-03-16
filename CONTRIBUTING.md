@@ -2,36 +2,6 @@
 
 <p align="center"><img src="./readme_assets/Contribute.png" width=600></p>
 
-## Section 0: Understand the basic structure of the project 🗃️📂
-
-
-```terminal
-|
-|- readme_assets   # Contains all the images used for the README.MD
-|- public          # Contains the stylesheets, images and fonts. Any files within this directory will not be processed by Webpack but copied directly to the build folder.
-|- src:            # Contains all source code for the React application.
-    |
-    |- App.js
-    |- index.css
-    |- index.js
-    |-assets         # Contains all the community brand assets
-    |-components     # Contains all the components used within the app.
-    |-fonts          # Contains all the fonts 
-    |-pages          # Contains all the sections of the page.
-          |- 404
-          |- Home
-          |- Editor
-          |- Sketch
-    |-seo # Contains code for meta tags using react-helmet
-
-
-```
-
-
-## Section 1: Get the source code of the project💻🧑‍💻👩‍💻 and set it up:
-
-<p align="center"><img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" width=500></p>
-
 
 #### Preliminaries:
 - Download and install the latest stable version of [Git](https://git-scm.com/downloads) 📥 for version control
@@ -73,11 +43,6 @@ git remote add upstream https://github.com/smaranjitghose/doc2pen.git
 npm start
 ```
 - Open your favourite browser and navigate to `http://localhost:3000` to view the current version of the app
-
-
-
-
-## Section 2 : Contributing to the project🎨👩‍🎨👨‍🎨 
 
 
 - Open the project files in VSCode (assuming you have already opened the terminal and navigated inside the project directory)
