@@ -12,11 +12,6 @@ function ContactUs() {
   
   return (
     <div className={styles.ContactUs} id="home_contact">
-      <MetaComponent
-        title={metaData.contact.title}
-        description={metaData.contact.description}
-        keywords={metaData.contact.keywords}
-      />
       <h2>Get in Touch</h2>
       <div className={styles.contact_and_info_container}>
         <ExperienceForm />

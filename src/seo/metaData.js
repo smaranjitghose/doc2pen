@@ -1,6 +1,6 @@
 const data  = {
     home: {
-        title: 'Doc2pen - Home',
+        title: 'Doc2pen',
         description: "A student's savior to submit those assignments by just typing them out and getting it handwritten on the go!",
         keywords: "doc2pen, home, student"
     },
