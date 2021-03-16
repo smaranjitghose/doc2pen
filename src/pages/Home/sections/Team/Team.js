@@ -33,7 +33,7 @@ function Team() {
       const [contributors, setContributors] = useState([]);
 
       useEffect(() => {
-        fetch('https://api.github.com/repos/smaranjitghose/doc2pen/contributors')
+        fetch('https://api.github.com/repos/smaranjitghose/doc2pen/contributors?per_page=1000')
         .then(res => res.json())
         .then(data => {
           // console.log(data);

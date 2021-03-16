@@ -187,6 +187,7 @@
 
 .position_relative {
     position: relative;
+    border-radius:50%;
 }
 
 .position_absolute {
