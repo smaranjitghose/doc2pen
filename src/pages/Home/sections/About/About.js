@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './About.module.css';
+import styles from './About.module.scss';
 import step1 from './../../../../assets/images/home-about/step1.svg';
 import step2 from './../../../../assets/images/home-about/step2.svg';
 import step3 from './../../../../assets/images/home-about/step3.svg';

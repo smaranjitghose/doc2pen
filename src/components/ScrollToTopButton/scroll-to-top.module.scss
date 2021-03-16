@@ -6,16 +6,18 @@
   border-radius: 100%;
   font-size: 23px;
   width: 49px;
-  transition:all 300ms ease-in-out;
-  background-color:#5193fc !important;
-	color:#FFF !important;
+  transition: all 300ms ease-in-out;
+  background-color: #5193fc !important;
+  color: #fff !important;
   box-shadow: 2px 2px 3px #999;
   border: none !important;
-}
-.toTopButton:hover{
-    background-color: #4285f4!important;
-    transition:all 300ms ease-in-out;
-}
-button.toTopButton svg {
+
+  &:hover {
+    background-color: #4285f4 !important;
+    transition: all 300ms ease-in-out;
+  }
+
+  svg {
     margin: 0 0 4px 0px;
+  }
 }
