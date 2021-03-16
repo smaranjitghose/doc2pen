@@ -20,6 +20,7 @@
 }
 
 .feature {
+  position: relative;
   padding: 0.7rem 0.5rem;
   margin: 0 0.2rem;
   border-radius: 5px;
@@ -73,9 +74,15 @@
 }
 
 .iconLibContainer {
-  height: 100%;
-  width: 100%;
+  width: 0;
+  height: 0;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 100%;
+  right: -1px;
+  z-index: 99999999;
+}
+
+.iconLibContainer--open{
+  width: calc(100vw - 50px);
+  height: calc(100vh - 150px);
 }

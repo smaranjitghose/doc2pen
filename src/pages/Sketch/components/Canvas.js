@@ -371,12 +371,9 @@ function Canvas() {
   }
 
   function toggleIconLib() {
+    //.iconLibContainer--open
     if (iconLibRef.current) {
-      if (iconLibRef.current.style.display === "block") {
-        iconLibRef.current.style.display = "none";
-      } else {
-        iconLibRef.current.style.display = "block";
-      }
+      iconLibRef.current.classList.toggle(`${styles["iconLibContainer--open"]}`);
     }
   }
 
@@ -432,9 +429,9 @@ function Canvas() {
 
       {/* ----- Download & Clear----- */}
       <div className={`${styles.feature_container} ${styles.download_clear_container}`}>
-        <label htmlFor="sketch-dcd-addicon" title="Add Icon">
-          <div className={`${styles.feature}`} onClick={toggleIconLib} id="sketch-dcd-clear">
-            <FaStar size={15} />
+        <label htmlFor="sketch-dcd-download" title="Clear Sketch">
+          <div className={`${styles.feature}`} onClick={clear} id="sketch-dcd-download">
+            <RiDeleteBinLine size={15} />
           </div>
         </label>
         <label htmlFor="sketch-dcd-clear" title="Download Sketch">
@@ -442,11 +439,14 @@ function Canvas() {
             <FaDownload size={15} />
           </div>
         </label>
-        <label htmlFor="sketch-dcd-download" title="Clear Sketch">
-          <div className={`${styles.feature}`} onClick={clear} id="sketch-dcd-download">
-            <RiDeleteBinLine size={15} />
+        <label htmlFor="sketch-dcd-addicon" title="Add Icon">
+          <div className={`${styles.feature}`} onClick={toggleIconLib} id="sketch-dcd-clear">
+            <FaStar size={15} />
           </div>
         </label>
+        <div ref={iconLibRef} className={styles.iconLibContainer}>
+          <IconsLibrary toggleOpen={toggleIconLib} />
+        </div>
       </div>
 
       {/* ----- Shapes ----- */}
@@ -513,9 +513,6 @@ function Canvas() {
         </div>
       </div>
       {/* icon library */}
-      <div ref={iconLibRef} className={styles.iconLibContainer} style={{ display: "none" }}>
-        <IconsLibrary toggleOpen={toggleIconLib} />
-      </div>
     </>
   );
 
