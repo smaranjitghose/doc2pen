@@ -47,11 +47,11 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  gap: 30px;
+  gap: 60px;
   align-items: flex-start;
   justify-content: space-around;
   border: 1px solid #00000026;
-  padding: 30px 0;
+  padding: 30px 15px;
 }
 
 .svgIcon {

@@ -3,10 +3,11 @@
 }
 
 .title {
+  font-family: 'Poppins', sans-serif;
   color: #4e89ae;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
-  margin: 5rem 15px 0;
+  text-shadow: 1px 1px 3px #000000;
 }
 
 .content {
