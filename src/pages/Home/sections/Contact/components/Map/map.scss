@@ -8,35 +8,11 @@
   display: none;
 }
 
-.mapToolTip,
-.reCenter {
-  position: absolute;
-  bottom: 10px;
-  z-index: 400;
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 0.5;
-  font-family: monospace, "sans-serif";
-  cursor: default;
-}
-
-.mapToolTip {
-  width: 230px;
-  padding: 1.5rem;
-  left: 10px;
-  background: rgba(29, 24, 24, 0.9);
-  color: #fff;
-  border-radius: 5px;
-}
-
-.mapToolTip a {
-  cursor: pointer;
-}
-
 .leaflet-popup-content-wrapper {
   background-color: rgba(29, 24, 24, 0.9);
   color: white;
 }
+
 .leaflet-popup-tip {
   background-color: rgba(29, 24, 24, 0.9);
 }
@@ -62,6 +38,31 @@
   padding: 0, 3rem;
 }
 
+.mapToolTip,
+.reCenter {
+  position: absolute;
+  bottom: 10px;
+  z-index: 400;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 0.5;
+  font-family: monospace, "sans-serif";
+  cursor: default;
+}
+
+.mapToolTip {
+  width: 230px;
+  padding: 1.5rem;
+  left: 10px;
+  background: rgba(29, 24, 24, 0.9);
+  color: #fff;
+  border-radius: 5px;
+
+  a {
+    cursor: pointer;
+  }
+}
+
 .reCenter {
   border-radius: 100%;
   right: 10px;
@@ -70,3 +71,4 @@
   border: none;
   box-shadow: 2px 2px 3px rgb(15, 14, 14);
 }
+

@@ -5,7 +5,7 @@ import ExperienceForm from "./components/ExperienceForm/ExperienceForm";
 import Map from "./components/Map/Map";
 
 
-import styles from "./ContactUs.module.css";
+import styles from "./contact-us.module.scss";
 
 function ContactUs() {
   const mapRef = useRef()
