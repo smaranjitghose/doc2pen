@@ -177,9 +177,15 @@ function Canvas() {
 
     event.preventDefault();
   }
-
   function handleMouseUp(event) {
-    setCanvasStates(current => [...current, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
+    const canvasStatesCopy = [...canvasStates];
+    if (canvasStateAt + 1 < canvasStatesCopy.length) {
+      while (canvasStateAt + 1 !== canvasStatesCopy.length) {
+        canvasStatesCopy.pop();
+      }
+    }
+
+    setCanvasStates(current => [...canvasStatesCopy, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
     setcanvasStateAt(current => current + 1);
 
     setIsDrawing(false);
@@ -190,15 +196,17 @@ function Canvas() {
 
   function handleMouseLeave(event) {
     if (isDrawing) {
-      setCanvasStates(current => [...current, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
+      const canvasStatesCopy = [...canvasStates];
+      if (canvasStateAt + 1 < canvasStatesCopy.length) {
+        while (canvasStateAt + 1 !== canvasStatesCopy.length) {
+          canvasStatesCopy.pop();
+        }
+      }
+
+      setCanvasStates(current => [...canvasStatesCopy, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
       setcanvasStateAt(current => current + 1);
     }
-
-    setIsDrawing(false);
-    event.preventDefault();
-    setTypeState(null);
   }
-
   function logicDown(point) {
     context.beginPath();
     context.moveTo(point.x, point.y);
@@ -505,7 +513,7 @@ function Canvas() {
         </div>
       </div>
       {/* icon library */}
-      <div ref={iconLibRef} className={styles.iconLibContainer} style={{display:'none'}}>
+      <div ref={iconLibRef} className={styles.iconLibContainer} style={{ display: "none" }}>
         <IconsLibrary toggleOpen={toggleIconLib} />
       </div>
     </>

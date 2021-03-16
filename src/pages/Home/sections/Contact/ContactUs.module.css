@@ -2,13 +2,17 @@
   text-align: center;
 }
 
+.ContactUs > h2 {
+  margin-top: 5px;
+}
+
 .contact_and_info_container {
   display: flex;
   align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
   background: #fff;
-  margin: 5rem 0 9rem;
+  margin: 1rem 0 9rem;
 }
 
 .map {
