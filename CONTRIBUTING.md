@@ -2,7 +2,7 @@
 
 <p align="center"><img src="./readme_assets/Contribute.png" width=600></p>
 
-## Section-1: File Structure of the Project 🗃️📂
+## Section-1: Understand the basic structure of the project 🗃️📂
 
 ### [Public Directory Structure](https://github.com/smaranjitghose/doc2pen/tree/master/public) 🧮✨
 This folder contains the stylesheets, images and fonts. Any files within this directory will not be processed by Webpack but copied directly to the build folder.
@@ -27,7 +27,7 @@ This folder contains all the community brand assets
 ### [Readme_Assets Directory Structure](https://github.com/smaranjitghose/doc2pen/tree/master/readme_assets)🧮✨
 This folder contains all the images used in Readme Markdown.
 
-## Section-2: To get the project on your local machine 💻🧑‍💻👩‍💻
+## Section 2: To get the project on your local machine 💻🧑‍💻👩‍💻
 
 <p align="center"><img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" width=500></p>
 
@@ -60,12 +60,12 @@ This folder contains all the images used in Readme Markdown.
   <img src="/readme_assets/Cloning%20Project%20(1).png?raw=true"/>
 </p>
 
-## Section-3: To run the project on your local machine ⌨️🖥️🖱️
+## Section 3: To run the project on your local machine ⌨️🖥️🖱️
 - To install the dependencies and packages, run `npm install`.
 - To start the project in development mode, run `npm start`.
 - Navigate to http://localhost:3000 to view it in the browser.
 
-## Section-4 : To make changes in the project 🎨👩‍🎨👨‍🎨
+## Section 4 : To make changes in the project 🎨👩‍🎨👨‍🎨
 - To directly update the local repo with any changes made in the central repo prior to starting  next edits or additions. To do this set up the central repository as an upstream remote for repo.
 - Pull changes from Upstream. 
    ```
@@ -97,18 +97,14 @@ This folder contains all the images used in Readme Markdown.
    git push origin <your_branch_name>
    ```
 - To create a pull request, click on `compare and pull requests`.
-<p align="center">
-  <img src="/readme_assets/ComparePR.png?raw=true"/>
-</p>
+<p align="center"><img src="/readme_assets/ComparePR.png?raw=true"/></p>
 
-## Section-5: To make a pull request, follow the below guidelines ✅
+## Section 5: To make a pull request, follow the below guidelines ✅
 - Add an appropriate title.
 - Add an appropriate description of your work and .
 - Add images/screenshots depicting your changes.
 - Mention the issue the pull request is based upon using `Closes #IssueNumber`.
-<p align="center">
-  <img src="/readme_assets/PR.JPG?raw=true" height="350" width="450"/>
-</p>
+<p align="center"><img src="/readme_assets/PR.JPG?raw=true" height="350" width="450"/></p>
 
 > NOTE
 - Before you merge a feature branch back into your main branch (often master or develop), your feature branch should be squashed down to a single buildable commit, and then rebased from the up-to-date main branch.
@@ -126,7 +122,7 @@ This folder contains all the images used in Readme Markdown.
 
 
 
-# Open Source Program Grading
+# Open Source Program Grading (Only for Project Maintainers)
 
 
 ## [Script Winter of Code](https://swoc.tech/)
