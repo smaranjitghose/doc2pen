@@ -65,11 +65,11 @@ git pull upstream master
 > 
 > - Be specific about your intended changes/suggestions
 >
-> - Refrain from using phrases like "Hi, I am ..", "Please assign me this issue", "Thank You..", etc. We are only interested in techincal parts
+> - Refrain from using phrases like "Hi, I am ..", "Please assign me this issue", "Thank You..", etc. We are only interested in technical parts
 >
 > - Attach a screenshot/clip if applicable
 >
-> - Please be patient enough. The project maintainters/mentors would review it as per their schedule. Please do not start putting comments like "Please check this" etc.
+> - Please be patient enough. The project maintainers/mentors would review it as per their schedule. Please do not start putting comments like "Please check this" etc.
 >  
 > - Do not blindly comment on issues raised by other participant(s). Unless a minimum of 48 hours has passed since their assignment, the issue would not be re-assigned(excluding certain cases). The issue raised by a participant will always to be assigned to him/her by default. Do not spam "Interested", "Please assign me" in others issues. 
 > 
@@ -122,13 +122,13 @@ git push origin <your_branch_name>
 > 
 > - Describe your intended changes in the description section of the pull request (Use bullet points and phrases) 
 >
-> - Refrain from using phrases like "Hi, I am ..", "Please merge me this OPR", "Thank You..", etc. We are only interested in techincal parts
+> - Refrain from using phrases like "Hi, I am ..", "Please merge me this OPR", "Thank You..", etc. We are only interested in technical parts
 >
 > - Attach a screenshot/clip of the change(s)
 >
 > - Make sure to refer the respective issue in the respective PR using phrases like `Resolves #issue_number` or `Closes #issue_number`.  
 >
-> - Please be patient enough. The project maintainters/mentors would review it as per their schedule. Please do not start putting comments like "Please check this" etc.
+> - Please be patient enough. The project maintainers/mentors would review it as per their schedule. Please do not start putting comments like "Please check this" etc.
 >  
 > - Although we support feedback from everyone in all phases of development, it is highly advised not to put any negative comments in other participant's pull requests.
 > 
