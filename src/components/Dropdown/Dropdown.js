@@ -15,7 +15,7 @@ const DropdownComponent = (props) => {
 
   const editContext = useContext(EditContext);
 
-  const colors = ["black","red","orange","blue","green","deeppink","darkviolet","dodgerblue",];
+  const colors = ["black","red","orange","blue","green","deeppink","darkviolet","dodgerblue"];
 
   const setValue = (aItemValue) => {
     if (colors.includes(aItemValue)) {
@@ -64,7 +64,7 @@ const DropdownComponent = (props) => {
         {props.name}
       </DropdownToggle>
       <DropdownMenu>
-        <DropDownOptions />
+        {/* <DropDownOptions /> */}
       </DropdownMenu>
     </Dropdown>
   );
