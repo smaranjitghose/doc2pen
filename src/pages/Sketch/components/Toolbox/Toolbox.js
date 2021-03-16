@@ -9,6 +9,8 @@ import {FaImage} from 'react-icons/fa';
 function Toolbox({
         color,
         setColor,
+        background,
+        setBackground,
         width,
         setWidth,
         opacity,
@@ -39,6 +41,15 @@ function Toolbox({
                 <input type="color" name="canvas_pen_color"
                     value={color} onChange={(e) => setColor(e.target.value)}
                 />
+            </Feature>
+
+            <Feature title="Background">
+                <div className={styles.featureBg}>
+                <small>"Set it Before Sketching"</small>
+                <input id="bg" type="color" name="canvas_bg_color"
+                    value={background} onChange={(e) => setBackground(e.target.value)}
+                />
+                </div>
             </Feature>
 
             {

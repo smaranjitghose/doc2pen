@@ -28,6 +28,12 @@
     display: flex;
 }
 
+.featureBg{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .feature_box{
     display: flex;
     justify-content: center;
