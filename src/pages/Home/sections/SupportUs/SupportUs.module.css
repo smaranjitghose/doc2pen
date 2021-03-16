@@ -2,6 +2,13 @@
     text-align: center;
     padding: 2rem;
 }
+p{
+  font-family: 'Poppins', sans-serif;
+  color: #4e89ae;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px #000000;
+}
 
 .SupportusQuote {
     color: rgb(0, 153, 255);
