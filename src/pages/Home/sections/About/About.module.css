@@ -81,3 +81,17 @@
     padding: 1rem;
     margin: 3rem 0;
 }
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(92, 85, 85, 0.4); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgb(31, 97, 238); 
+}
