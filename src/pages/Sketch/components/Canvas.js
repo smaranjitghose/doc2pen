@@ -47,21 +47,22 @@ function Canvas() {
     const [canvasWidth, setCanvasWidth] = useState(window.innerWidth - 50);
     const [canvasHeight, setCanvasHeight] = useState(window.innerHeight - 100);
 
-    useEffect(() => {
-        window.addEventListener('resize', () => {
-            setCanvasWidth(window.innerWidth - 50);
-            setCanvasHeight(window.innerHeight - 100);
-        })
+    const handleResizeListener = () => {
+        setCanvasWidth(window.innerWidth - 50);
+        setCanvasHeight(window.innerHeight - 100);
+    }
 
+    useEffect(() => {
+        window.addEventListener('resize', handleResizeListener)
         return () => {
-            window.removeEventListener('resize', () => { });
+            window.removeEventListener('resize', handleResizeListener)
         }
     })
 
-    useEffect(() => {
-        console.log("canvasStateAt: ", canvasStateAt);
-        console.log("canvasStates: ", canvasStates);
-    }, [canvasStateAt, canvasStates])
+    // useEffect(() => {
+    //     console.log("canvasStateAt: ", canvasStateAt);
+    //     console.log("canvasStates: ", canvasStates);
+    // }, [canvasStateAt, canvasStates])
 
     function hexToRGB(hex) {
         let r = 0, g = 0, b = 0;
