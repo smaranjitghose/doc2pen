@@ -13,6 +13,7 @@
   cursor: pointer;
   transition: 0.3s;
   margin: 8px;
+  display: block;
 }
 
 .radio:checked ~ span {
@@ -24,4 +25,5 @@
 .emoji:hover {
   filter: grayscale(0);
   opacity: 1;
+  transform: rotate(360deg) scale(1.5);
 }
