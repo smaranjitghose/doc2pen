@@ -32,17 +32,18 @@
     top: 23px;
     right: 10px;
 }
+
 .menu_btn{
     width: 27px;
     height: 18px;
 }
+
 .btn_line{
     width: 100%;
     height: 5px;
     background: white;
     margin-bottom: 2px;
     transition: all 0.3s ease-in-out;
-
 }
 
 .header_links {
@@ -130,15 +131,15 @@
     .hamburger {
         display: block;
     }
-        .btn1{
+    .btn1{
           
         transform: rotate(45deg) translate(9px, 3px);
-      }      
-       .btn2 {
+    }      
+    .btn2 {
         opacity: 0;
-      }
-       .btn3 {
+    }
+    .btn3 {
          
         transform: rotate(-45deg) translate(7px, -1px);
-      }
+    }
 }
