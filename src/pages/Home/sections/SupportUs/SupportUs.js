@@ -8,7 +8,7 @@ function SupportUs() {
             <span className={styles.quoteAuthor}>- Philippe Kahn</span>
             <div style={{marginTop: "10px"}}>
                 <br/>
-                <p className={styles.p}>Support us</p>
+                <p className={styles.titleMain}>Support us</p>
                 <div className={styles.patreonAndCoffe}>
                     <a href="https://www.patreon.com/smaranjitghose" target="_blanck">
                         <div className={styles.link}>
