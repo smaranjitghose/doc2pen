@@ -5,7 +5,8 @@ import style from "./icon-lib.module.css";
 const iconPack1SVGs = importAll(require.context("./icon-pack1", false, /\.svg$/));
 const iconPack2SVGs = importAll(require.context("./icon-pack2", false, /\.svg$/));
 const iconPack3SVGs = importAll(require.context("./icon-pack3", false, /\.svg$/));
-const iconPack4SVGs = importAll(require.context("./icon-pack4", false, /\.svg$/));
+const iconPack41SVGs = importAll(require.context("./icon-pack4.1", false, /\.svg$/));
+const iconPack42SVGs = importAll(require.context("./icon-pack4.2", false, /\.svg$/));
 
 function importAll(r) {
   let images = {};
@@ -46,7 +47,8 @@ function IconsLibrary(props) {
         <IconPreview iconPackSVGs={iconPack1SVGs} categoryTitle="Tech Stack Icons" />
         <IconPreview iconPackSVGs={iconPack2SVGs} categoryTitle="Tech Stack Icons" />
         <IconPreview iconPackSVGs={iconPack3SVGs} categoryTitle="Tech Stack Icons" />
-        <IconPreview iconPackSVGs={iconPack4SVGs} categoryTitle="Devices & Hardware Icons" />
+        <IconPreview iconPackSVGs={iconPack41SVGs} categoryTitle="Devices & Hardware Icons - Bold" />
+        <IconPreview iconPackSVGs={iconPack42SVGs} categoryTitle="Devices & Hardware Icons - Light" />
         {/* https://www.svgrepo.com/vectors/device/ */}
         {/* https://www.flaticon.com/packs/smart-devices?k=1615927940770 */}
         {/* https://freeicons.io/material-icons-file-3/devices-icon-17364 */}
