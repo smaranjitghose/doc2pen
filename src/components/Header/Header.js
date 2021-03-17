@@ -5,7 +5,7 @@ import styles from './Header.module.css';
 import logo from './../../assets/logo/logo.webp';
 import { ImInfo } from "react-icons/im";
 import { RiTeamLine } from "react-icons/ri";
-import { BiDonateHeart, BiMenu } from "react-icons/bi";
+import { BiDonateHeart} from "react-icons/bi";
 
 const quickLinks = [
     {
