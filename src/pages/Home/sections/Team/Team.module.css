@@ -10,7 +10,14 @@
     gap: 45px;
     flex-wrap: wrap;
 }
+.tp{
+  font-size: 1.5rem;
+  margin: 15px;
+  font-family: 'Poppins', sans-serif;
+  color: #544eae;
 
+  font-weight: bold;
+}
 .profile_container {
     width: 300px;
     height: 400px;
@@ -20,7 +27,12 @@
     border-radius: 5px;
     transition: 1s all ease;
 }
-  
+.titleMain{  font-family: 'Poppins', sans-serif;
+  color: #4e89ae;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 3px 4px 2px #0000002e;
+}
 .profile_container::before {
     content: "";
     position: absolute;

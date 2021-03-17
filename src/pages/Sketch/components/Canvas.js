@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef, useCallback} from 'react';
 import styles from './Canvas.module.css';
 import Toolbox from './Toolbox/Toolbox';
-import {FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash, FaRegMoon, FaSun, FaFont} from 'react-icons/fa';
+import {FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash, FaFont} from 'react-icons/fa';
 import {BsArrowUpRight} from 'react-icons/bs';
 import {RiDeleteBinLine} from 'react-icons/ri';
 import {GiTriangleTarget} from 'react-icons/gi';
@@ -42,9 +42,6 @@ function Canvas() {
     const [typeState, setTypeState] = useState(null);
     const [downPoint, setDownPoint] = useState({x: "", y: ""});
     const [mousePosition, setMousePosition] = useState({x: "0", y: "0"});
-    const [isDarkModeOn, setIsDarkMode] = useState(
-        localStorage.getItem("theme") === "true" ? true : false
-    );
 
     const [canvasWidth, setCanvasWidth] = useState(window.innerWidth-50);
     const [canvasHeight, setCanvasHeight] = useState(window.innerHeight-100);
@@ -53,13 +50,17 @@ function Canvas() {
         window.addEventListener('resize', () => {
             setCanvasWidth(window.innerWidth-50);
             setCanvasHeight(window.innerHeight-100);
-            
         })
 
         return () => {
             window.removeEventListener('resize', () => {});
         }
     })
+
+    useEffect(()=>{
+        console.log("canvasStateAt: ", canvasStateAt);
+        console.log("canvasStates: ", canvasStates);
+    },[canvasStateAt, canvasStates])
 
     function hexToRGB (hex) {
         let r = 0, g = 0, b = 0;
@@ -170,7 +171,14 @@ function Canvas() {
     }
 
     function handleMouseUp(event) {
-        setCanvasStates(current => [...current, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
+        const canvasStatesCopy = [...canvasStates];
+        if(canvasStateAt+1 < canvasStatesCopy.length){
+            while (canvasStateAt + 1 !== canvasStatesCopy.length) {
+              canvasStatesCopy.pop();
+            }            
+        }
+
+        setCanvasStates(current => [...canvasStatesCopy, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
         setcanvasStateAt(current => current+1);
 
         setIsDrawing(false);
@@ -181,7 +189,14 @@ function Canvas() {
 
     function handleMouseLeave(event) {
         if(isDrawing) {
-            setCanvasStates(current => [...current, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
+            const canvasStatesCopy = [...canvasStates];
+            if (canvasStateAt + 1 < canvasStatesCopy.length) {
+              while (canvasStateAt + 1 !== canvasStatesCopy.length) {
+                canvasStatesCopy.pop();
+              }
+            }
+
+            setCanvasStates(current => [...canvasStatesCopy, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
             setcanvasStateAt(current => current+1);
         }
 
@@ -392,7 +407,6 @@ function Canvas() {
                 redo={redo}
                 canvasStateAt={canvasStateAt}
                 canvasStates={canvasStates}
-                isDarkModeOn={isDarkModeOn}
                 type={type}
                 fontSize={fontSize}
                 setFontSize={setFontSize}
@@ -405,27 +419,16 @@ function Canvas() {
                 setEdge={setEdge}
             />
             
-            {/* ----- Download, Clear & Dark Mode ----- */}
-            <div className={`${isDarkModeOn ? styles.dark_feature_container : styles.feature_container} ${styles.download_clear_container}`}>
-                <label htmlFor="sketch-dcd-dark" title={`${isDarkModeOn ? 'Dark Mode' : 'Light Mode'}`}>
-                    <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature}`}
-                            onClick={() => {
-                                setIsDarkMode(current => !current);
-                                localStorage.setItem("theme", JSON.stringify(!isDarkModeOn));
-                            }}
-                            id="sketch-dcd-dark"
-                    >
-                        {isDarkModeOn ? <FaSun size={15}/> : <FaRegMoon size={15}/>}
-                    </div>
-                </label>
+            {/* ----- Downloa & Clear----- */}
+            <div className={`${styles.feature_container} ${styles.download_clear_container}`}>
                 <label htmlFor="sketch-dcd-clear" title="Download Sketch">
-                    <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature}`}
+                    <div className={`${styles.feature}`}
                         onClick={download}
                         id="sketch-dcd-clear"
                     ><FaDownload size={15}/></div>
                 </label>
                 <label htmlFor="sketch-dcd-download" title="Clear Sketch">
-                    <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature}`}
+                    <div className={`${styles.feature}`}
                         onClick={clear}
                         id="sketch-dcd-download"
                     ><RiDeleteBinLine size={15}/></div>
@@ -433,7 +436,7 @@ function Canvas() {
             </div>
 
             {/* ----- Shapes ----- */}
-            <div className={`${isDarkModeOn ? styles.dark_feature_container : styles.feature_container} ${styles.shapes}`}>
+            <div className={`${styles.feature_container} ${styles.shapes}`}>
                 <Shape type_="pen" id="sketch-shapes-pen" label="Pen">
                     <FaPencilAlt size={15}/>
                 </Shape>
@@ -464,13 +467,13 @@ function Canvas() {
                 ref={canvasRef}
                 width={`${canvasWidth}`}
                 height={`${canvasHeight}`}
-                className={isDarkModeOn ? styles.dark_canvas : styles.canvas}
+                className={styles.canvas}
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}
                 onMouseUp={handleMouseUp}
                 onMouseLeave={handleMouseLeave}    
             />
-            <div className={isDarkModeOn ? styles.dark_mousePosition : styles.mousePosition}>Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y}) </div>
+            <div className={styles.mousePosition}>Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y}) </div>
 
             {/* ----- Text ----- */}
             <div style={{height: canvasHeight, width: canvasWidth}} className={styles.text_container}>
@@ -498,7 +501,7 @@ function Canvas() {
     function Shape({type_, id, label, children}) {
         return (
             <label htmlFor={id} title={label}>
-                <div className={`${isDarkModeOn ? styles.dark_feature : styles.feature} ${type === type_ && (isDarkModeOn ? styles.dark_active_feature : styles.active_feature)}`}
+                <div className={`${styles.feature} ${type === type_ && styles.active_feature}`}
                 onClick={() => setType(type_)}
                 id={id}>
                     {children}

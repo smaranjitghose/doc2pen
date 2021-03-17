@@ -8,6 +8,7 @@ import OpenSource from "./sections/OpenSource/OpenSource";
 import SupportUs from "./sections/SupportUs/SupportUs";
 import Team from "./sections/Team/Team";
 import ScrollToTop from "./../../components/ScrollToTopButton/ScrollToTopButton";
+import Contact from './sections/Contact/ContactUs'
 
 function Home() {
   return (
@@ -22,6 +23,7 @@ function Home() {
       <Team />
       <OpenSource />
       <SupportUs />
+      <Contact />
       <ScrollToTop />
     </div>
   );
