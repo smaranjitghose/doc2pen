@@ -33,6 +33,13 @@ function Canvas() {
     const [fontFamily, setFontFamily] = useState("cursive");
 
     useEffect(() => {
+        const lastCanvasState = canvasStates[canvasStates.length - 1];
+        
+        
+        
+    }, [canvasStates]);
+
+    useEffect(() => {
         setContext(canvasRef.current.getContext('2d'));
     }, [])
 
