@@ -53,9 +53,7 @@ function Toolbox({
                     />
                     <input className={styles.hexInput} placeholder="#"  type="text" value={color} onInput={e => setColor(e.target.value)} />
                 </div>
-            </Feature>
-
-            
+            </Feature>           
             {
                 type !== 'text' &&
                 <Feature title="Stroke Width">

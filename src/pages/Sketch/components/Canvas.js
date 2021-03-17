@@ -115,7 +115,7 @@ function Canvas() {
 
         if (type === 'pen') {
             logicDown(point);
-        } else if (type === 'line' || type === 'square' || type === 'circle' || type === 'triangle' || type === 'arrow' || type === 'diamond') {
+        } else if (['line','square','circle','triangle','arrow','diamond'].includes(type)) {
             setTypeState(context.getImageData(0, 0, canvasWidth, canvasHeight));
             logicDown(point);
             setDownPoint({ x: point.x, y: point.y });
@@ -152,20 +152,30 @@ function Canvas() {
             return;
         }
 
-        if (type === 'pen') {
-            penMove(point);
-        } else if (type === 'line') {
-            lineMove(point);
-        } else if (type === 'square') {
-            squareMove(point);
-        } else if (type === 'circle') {
-            circleMove(point);
-        } else if (type === 'triangle') {
-            triangleMove(point);
-        } else if (type === 'arrow') {
-            arrow(point);
-        } else if (type === 'diamond') {
-            diamondMove(point);
+        switch(type){
+            case 'pen': 
+                penMove(point);
+                break;
+            case 'line':
+                lineMove(point);
+                break;
+            case 'square':
+                squareMove(point);
+                break;
+            case 'circle':
+                circleMove(point);
+                break;
+            case 'triangle':
+                triangleMove(point);
+                break;
+            case 'arrow':
+                arrow(point);
+                break;
+            case 'diamond':
+                diamondMove(point);
+                break;
+            default:
+                break;
         }
 
         event.preventDefault();
