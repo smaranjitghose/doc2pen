@@ -79,7 +79,6 @@ function Team() {
                       <img src={c.avatar_url} className={styles.grid_wd_100} alt="Profile"/>
                       <figcaption className={`${styles.position_absolute} ${styles.grid_wd_100} ${styles.va_top}`}>
                         <div className={styles.text}>
-                          <div>{c.login}</div>
                           <a href={c.html_url} className={styles.social_icon} target="_blank" rel="noreferrer">
                             <FaGithub />
                           </a>
