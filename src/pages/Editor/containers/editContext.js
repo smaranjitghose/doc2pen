@@ -64,17 +64,12 @@ const EditContextProvider = (props) => {
     setPages(pagesCopy);
   };
 
-  const nextPage = () => {
-    if (currentPage < pages.length - 1) {
-      setCurrentPage((currentPage) => currentPage + 1);
-    }
-  };
+  const nextPage = () =>
+    currentPage < pages.length - 1 &&
+    setCurrentPage((currentPage) => currentPage + 1);
 
-  const prevPage = () => {
-    if (currentPage > 0) {
-      setCurrentPage((currentPage) => currentPage - 1);
-    }
-  };
+  const prevPage = () =>
+    currentPage > 0 && setCurrentPage((currentPage) => currentPage - 1);
 
   const [headValues,] = useState({
     headSize: null,
