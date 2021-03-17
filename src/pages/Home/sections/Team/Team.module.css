@@ -27,12 +27,11 @@
     border-radius: 5px;
     transition: 1s all ease;
 }
-p{
-  font-family: 'Poppins', sans-serif;
+.titleMain{  font-family: 'Poppins', sans-serif;
   color: #4e89ae;
   font-size: 3rem;
   font-weight: bold;
-  text-shadow: 1px 1px 3px #000000;
+  text-shadow: 3px 4px 2px #0000002e;
 }
 .profile_container::before {
     content: "";
