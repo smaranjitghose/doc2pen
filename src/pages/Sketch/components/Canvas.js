@@ -1,15 +1,13 @@
-import React, {useState, useEffect, useRef, useCallback} from 'react';
-import styles from './Canvas.module.css';
-import Toolbox from './Toolbox/Toolbox';
-import {FaDownload} from 'react-icons/fa';
-import {RiDeleteBinLine} from 'react-icons/ri';
-import {FaStar} from 'react-icons/fa';
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import styles from "./Canvas.module.css";
+import Toolbox from "./Toolbox/Toolbox";
+import { FaDownload, FaStar } from "react-icons/fa";
+import { RiDeleteBinLine } from "react-icons/ri";
 import IconsLibrary from "./IconLibrary/IconsLibrary";
 
 const Mousetrap = require("mousetrap");
 
 function Canvas() {
-
   const canvasRef = useRef(null);
   const textRef = useRef(null);
   const iconLibRef = useRef(null);
@@ -415,7 +413,6 @@ function Canvas() {
       context.fillStyle = background;
       context.fill();
     }
-
   }, [background, context, canvasWidth, canvasHeight]);
 
   return (
