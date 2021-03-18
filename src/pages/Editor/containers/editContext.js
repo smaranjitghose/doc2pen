@@ -182,13 +182,13 @@ const EditContextProvider = props => {
 
   function convertToPlain(rtf) {
     rtf = rtf.replace(/\\par[d]?/g, "");
-    rtf = rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "");
+    rtf = rtf.replace(/\{\*?\\[^{}]+}|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "");
     // rtf = rtf.replace(/\n/ig, " ");
-    rtf = rtf.replace(/\\/gi, "");
-    rtf = rtf.replace(/\*/gi, "");
+    // rtf = rtf.replace(/\\/gi, "");
+    // rtf = rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "");
     rtf = rtf.replace(/decimal.|tightenfactor0|eftab720|HYPERLINK|irnatural/gi, "");
     rtf = rtf.replace(/irnaturaltightenfactor0|000000/gi, "");
-    rtf = rtf.replace(/�|ࡱ|p#|#|,|%|@|\$|~/gi, "");
+    rtf = rtf.replace(/�|ࡱ|p#|/gi, "");
     return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
   }
 
