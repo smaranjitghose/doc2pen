@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import styles from './Canvas.module.css';
 import Toolbox from './Toolbox/Toolbox';
-import {FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash, FaRegMoon, FaSun, FaFont} from 'react-icons/fa';
+import {FaPencilAlt,FaEraser,  FaRegSquare, FaDownload, FaRegCircle, FaSlash, FaRegMoon, FaSun, FaFont} from 'react-icons/fa';
 import {BsArrowUpRight} from 'react-icons/bs';
 import {RiDeleteBinLine} from 'react-icons/ri';
 import {GiTriangleTarget} from 'react-icons/gi';
@@ -37,6 +37,7 @@ function Canvas() {
     /* ----- Canvas State ----- */
     const [isDrawing, setIsDrawing] = useState(false);
     const [type, setType] = useState("pen");
+    //const [type, setType] = useState("eraser");
     const [typeState, setTypeState] = useState(null);
     const [downPoint, setDownPoint] = useState({x: "", y: ""});
     const [mousePosition, setMousePosition] = useState({x: "0", y: "0"});
@@ -109,11 +110,12 @@ function Canvas() {
         context.lineCap = 'round';
         context.lineWidth = width;
 
-        if(type === 'pen') {
+        if(type === 'pen'|| type==='eraser') { //if type is pen then logicDown function is called
             logicDown(point);
         } else if(type === 'line' || type === 'square' || type === 'circle' || type === 'triangle' || type === 'arrow' || type === 'diamond') {
             setTypeState(context.getImageData(0, 0, canvasWidth, canvasHeight));
             logicDown(point);
+            //console.log(point);
             setDownPoint({x: point.x, y:point.y});
         } else if(type === 'text') {
             setDownPoint({x: point.x, y:point.y});
@@ -152,6 +154,8 @@ function Canvas() {
             penMove(point);
         } else if(type === 'line') {
             lineMove(point);
+        }else if(type === 'eraser') {  // if type is eraser then eraserMove function is called
+                eraserMove(point);
         } else if(type === 'square') {
             squareMove(point);
         } else if(type === 'circle') {
@@ -174,7 +178,6 @@ function Canvas() {
         setIsDrawing(false);
         event.preventDefault();
         setTypeState(null);
-        // console.log(context.getImageData(0, 0, canvasWidth, canvasHeight));
     }
 
     function handleMouseLeave(event) {
@@ -194,13 +197,19 @@ function Canvas() {
         context.lineTo(point.x, point.y);
         context.stroke();
     }
-
     function penMove(point) {
+        context.globalCompositeOperation="source-over"; //Used source-over property for other tools that display the source image over the destination image.
+        context.lineTo(point.x, point.y);
+        context.stroke();
+    }
+    function eraserMove(point) {
+        context.globalCompositeOperation="destination-out"; //Used destination-out property for an eraser that will remove those drawings where new drawings overlap the existing one
         context.lineTo(point.x, point.y);
         context.stroke();
     }
 
     function lineMove(point) {
+        context.globalCompositeOperation="source-over"; //Used source-over property for other tools that display the source image over the destination image.
         context.putImageData(typeState, 0, 0);
         context.beginPath();
         context.moveTo(downPoint.x, downPoint.y);
@@ -211,8 +220,11 @@ function Canvas() {
     }
 
     function squareMove(point) {
+        context.globalCompositeOperation="source-over"; //Used source-over property for other tools that display the source image over the destination image.
         context.putImageData(typeState, 0, 0);
         context.beginPath();
+        console.log(downPoint);
+        console.log(point);
         context.moveTo(downPoint.x, downPoint.y);
         context.lineTo(downPoint.x, downPoint.y);
         context.lineTo(point.x, downPoint.y);
@@ -236,6 +248,7 @@ function Canvas() {
     }
 
     function circleMove(point) {
+        context.globalCompositeOperation="source-over"; //Used source-over property for other tools that display the source image over the destination image.
         context.putImageData(typeState, 0, 0);
         context.beginPath();
         const x = (point.x+downPoint.x)/2;
@@ -261,6 +274,7 @@ function Canvas() {
     }
 
     function triangleMove(point) {
+        context.globalCompositeOperation="source-over"; //Used source-over property for other tools that display the source image over the destination image.
         context.putImageData(typeState, 0, 0);
         context.beginPath();
         const center_x = (downPoint.x + point.x)/2;
@@ -285,6 +299,7 @@ function Canvas() {
     }
 
     function arrow(point) {
+        context.globalCompositeOperation="source-over"; //Used source-over property for other tools that display the source image over the destination image.
         context.putImageData(typeState, 0, 0);
         context.beginPath();
         
@@ -311,6 +326,7 @@ function Canvas() {
     }
 
     function diamondMove(point) {
+        context.globalCompositeOperation="source-over"; //Used source-over property for other tools that display the source image over the destination image.
         context.putImageData(typeState, 0, 0);
         context.beginPath();
         const center_x = (downPoint.x + point.x)/2;
@@ -430,6 +446,9 @@ function Canvas() {
             <div className={`${isDarkModeOn ? styles.dark_feature_container : styles.feature_container} ${styles.shapes}`}>
                 <Shape type_="pen" id="sketch-shapes-pen" label="Pen">
                     <FaPencilAlt size={15}/>
+                </Shape>
+                <Shape type_="eraser" id="sketch-shapes-pen" label="Eraser">
+                    <FaEraser size={15}/>
                 </Shape>
                 <Shape type_="line" id="sketch-shapes-line" label="Line">
                     <FaSlash size={15}/>
