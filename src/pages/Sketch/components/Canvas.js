@@ -109,7 +109,7 @@ function Canvas() {
         context.lineCap = 'round';
         context.lineWidth = width;
 
-        if(type === 'pen'|| type=='eraser') { //when the type is eraser then logicDown function is called
+        if(type === 'pen'|| type==='eraser') { //when the type is eraser then logicDown function is called
             logicDown(point);
         } else if(type === 'line' || type === 'square' || type === 'circle' || type === 'triangle' || type === 'arrow' || type === 'diamond') {
             setTypeState(context.getImageData(0, 0, canvasWidth, canvasHeight));
