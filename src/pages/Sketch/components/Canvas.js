@@ -1,16 +1,15 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import styles from "./Canvas.module.css";
-import Toolbox from "./Toolbox/Toolbox";
-import { FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash, FaFont, FaStar } from "react-icons/fa";
-import { BsArrowUpRight } from "react-icons/bs";
-import { RiDeleteBinLine } from "react-icons/ri";
-import { GiTriangleTarget } from "react-icons/gi";
-import { BsDiamond } from "react-icons/bs";
+import React, {useState, useEffect, useRef, useCallback} from 'react';
+import styles from './Canvas.module.css';
+import Toolbox from './Toolbox/Toolbox';
+import {FaDownload} from 'react-icons/fa';
+import {RiDeleteBinLine} from 'react-icons/ri';
+import {FaStar} from 'react-icons/fa';
 import IconsLibrary from "./IconLibrary/IconsLibrary";
 
 const Mousetrap = require("mousetrap");
 
 function Canvas() {
+
   const canvasRef = useRef(null);
   const textRef = useRef(null);
   const iconLibRef = useRef(null);
@@ -416,6 +415,7 @@ function Canvas() {
       context.fillStyle = background;
       context.fill();
     }
+
   }, [background, context, canvasWidth, canvasHeight]);
 
   return (
@@ -438,6 +438,7 @@ function Canvas() {
         canvasStateAt={canvasStateAt}
         canvasStates={canvasStates}
         type={type}
+        setType={setType}
         fontSize={fontSize}
         setFontSize={setFontSize}
         fontStyle={fontStyle}
@@ -469,34 +470,6 @@ function Canvas() {
         <div ref={iconLibRef} className={styles.iconLibContainer}>
           <IconsLibrary toggleOpen={toggleIconLib} />
         </div>
-      </div>
-
-      {/* ----- Shapes ----- */}
-      <div className={`${styles.feature_container} ${styles.shapes}`}>
-        <Shape type_="pen" id="sketch-shapes-pen" label="Pen">
-          <FaPencilAlt size={15} />
-        </Shape>
-        <Shape type_="line" id="sketch-shapes-line" label="Line">
-          <FaSlash size={15} />
-        </Shape>
-        <Shape type_="square" id="sketch-shapes-square" label="Square">
-          <FaRegSquare size={15} />
-        </Shape>
-        <Shape type_="circle" id="sketch-shapes-circle" label="Circle">
-          <FaRegCircle size={15} />
-        </Shape>
-        <Shape type_="triangle" id="sketch-shapes-triangle" label="Triangle">
-          <GiTriangleTarget size={15} />
-        </Shape>
-        <Shape type_="arrow" id="sketch-shapes-arrow" label="Arrow">
-          <BsArrowUpRight size={15} />
-        </Shape>
-        <Shape type_="diamond" id="sketch-shapes-diamond" label="Diamond">
-          <BsDiamond size={15} />
-        </Shape>
-        <Shape type_="text" id="sketch-shapes-text" label="Text">
-          <FaFont size={15} />
-        </Shape>
       </div>
 
       <canvas
@@ -538,19 +511,7 @@ function Canvas() {
     </>
   );
 
-  function Shape({ type_, id, label, children }) {
-    return (
-      <label htmlFor={id} title={label}>
-        <div
-          className={`${styles.feature} ${type === type_ && styles.active_feature}`}
-          onClick={() => setType(type_)}
-          id={id}
-        >
-          {children}
-        </div>
-      </label>
-    );
-  }
 }
+
 
 export default Canvas;
