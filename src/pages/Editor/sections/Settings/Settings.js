@@ -7,11 +7,11 @@ import NumberSlider from "../../components/Slider/NumberSlider";
 
 const Settings = () => {
   const editContext = useContext(EditContext);
-  
+
   return (
     <div className={styles.controlPanel}>
       <div className={styles.selector}>
-        <div className={styles.selectOption} style={{ backgroundColor: editContext.isBody ? "#1979CA" : "#f0f7ff" }}>
+        <div className={styles.selectOption}style={{backgroundColor: editContext.isBody ? "#1979CA" : "#f0f7ff"}}>
           <input
             type="checkbox"
             name="heading"
@@ -24,7 +24,7 @@ const Settings = () => {
             Title
           </label>
         </div>
-        <div className={styles.selectOption} style={{ backgroundColor: editContext.isBody ? "#f0f7ff" : "#1979CA" }}>
+        <div className={styles.selectOption} style={{backgroundColor: editContext.isBody ? "#f0f7ff" : "#1979CA"}}>
           <input
             type="checkbox"
             name="heading"
@@ -40,22 +40,22 @@ const Settings = () => {
       </div>
       <div className={styles.controls}>
         <div className={styles.group1}>
-          <Dropdown name="Change Color" type="color" items={["black", "red", "blue", "green", "pink"]} />
+          <Dropdown name="Change Color" type="color" items={["black","red","orange","green","blue","dodgerblue","deeppink","darkviolet"]}/>
           <div className={styles.vSeparator}></div>
           <Dropdown
             name="Change Style"
             type="font"
-            items={["HomemadeApple", "Caveat", "Dawning", "IndieFlower", "NothingYouCouldDo", "Liu", "LeagueScript"]}
+            items={["HomemadeApple","Caveat","Dawning","IndieFlower","NothingYouCouldDo","Liu","LeagueScript", "Enola"]}
           />
           <div className={styles.vSeparator}></div>
-          <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]} />
+          <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]}/>
 
           <div className={styles.vSeparator}></div>
 
           <label className={styles.downloadBtn} htmlFor="import">
             Import File
           </label>
-          <input id="import" style={{ display: "none" }} type="file" onChange={editContext.importTxt}></input>
+          <input id="import" style={{ display: "none" }} type="file" onChange={editContext.importTxt} ></input>
           <div className={styles.vSeparator}></div>
 
           <Dropdown

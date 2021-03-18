@@ -1,0 +1,15 @@
+newIssueWelcomeComment: >
+  Hey! Welcome to Doc2pen 🙏
+  We can see you have raised your first issue. Well, Congratulations!
+  The maintainers🤓 will get back to you as per their availibility and review🔍 your issue. 
+  Till then please be patient😊.
+
+newPRWelcomeComment: >
+  Hey! Welcome to Doc2pen 🙏
+  Thanks for raising this PR!
+  The maintainers🤓 will get back to you as per their availibility and review🔍 your issue. 
+  Till then please be patient😊.
+
+firstPRMergeComment: >
+  Congratulations on getting your first PR merged!.
+  ![](https://media.giphy.com/media/3oz9ZE2Oo9zRC/giphy.gif)

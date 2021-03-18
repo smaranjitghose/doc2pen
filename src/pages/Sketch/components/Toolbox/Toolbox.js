@@ -9,6 +9,8 @@ import {FaImage} from 'react-icons/fa';
 function Toolbox({
         color,
         setColor,
+        background,
+        setBackground,
         width,
         setWidth,
         opacity,
@@ -21,7 +23,6 @@ function Toolbox({
         redo,
         canvasStateAt,
         canvasStates,
-        isDarkModeOn,
         type,
         fontSize,
         setFontSize,
@@ -35,13 +36,24 @@ function Toolbox({
     }) {
 
     return (
-        <div className={isDarkModeOn ? styles.dark_canvas_toolbox : styles.canvas_toolbox}>
-            <Feature title="Color">
-                <input type="color" name="canvas_pen_color"
-                    value={color} onChange={(e) => setColor(e.target.value)}
+        <div className={styles.canvas_toolbox}>
+            <Feature title="Canvas Color">
+                <div className={styles.colorPicker}>
+                <input type="color" name="canvas_bg_color"
+                    value={background} onChange={(e) => setBackground(e.target.value)}
                 />
+                <input className={styles.hexInput} placeholder="#"  type="text" value={background} onInput={e => setBackground(e.target.value)} />
+                </div>
             </Feature>
 
+            <Feature title="Color">
+                <div className={styles.colorPicker}>
+                    <input type="color" name="canvas_pen_color"
+                        value={color} onChange={(e) => setColor(e.target.value)}
+                    />
+                    <input className={styles.hexInput} placeholder="#"  type="text" value={color} onInput={e => setColor(e.target.value)} />
+                </div>
+            </Feature>           
             {
                 type !== 'text' &&
                 <Feature title="Stroke Width">
@@ -73,13 +85,13 @@ function Toolbox({
             {
                 type !== 'text' &&
                 <Feature title="Stroke Style">
-                    <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${stroke === 'none' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`} onClick={() => setStroke("none")}>
+                    <div className={`${styles.feature_box} ${stroke === 'none' && styles.active_feature_box}`} onClick={() => setStroke("none")}>
                         <AiOutlineLine size={20}/>
                     </div>
-                    <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${stroke === 'small' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`} onClick={() => setStroke("small")}>
+                    <div className={`${styles.feature_box} ${stroke === 'small' && styles.active_feature_box}`} onClick={() => setStroke("small")}>
                         <AiOutlineSmallDash size={20}/>
                     </div>
-                    <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${stroke === 'big' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`} onClick={() => setStroke("big")}>
+                    <div className={`${styles.feature_box} ${stroke === 'big' && styles.active_feature_box}`} onClick={() => setStroke("big")}>
                         <AiOutlineDash size={20}/>
                     </div>
                 </Feature>
@@ -88,15 +100,15 @@ function Toolbox({
             {
                 type !== 'text' &&
                 <Feature title="Fill">
-                    <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${fill === 'false' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`}
+                    <div className={`${styles.feature_box} ${fill === 'false' && (styles.active_feature_box)}`}
                         onClick={() => setFill('false')}>
                         <FaRegSquare size={20}/>
                     </div>
-                    <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${fill === 'true' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`}
+                    <div className={`${styles.feature_box} ${fill === 'true' && (styles.active_feature_box)}`}
                         onClick={() => setFill('true')}>
                         <FaSquare size={20}/>
                     </div>
-                    <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${fill === 'pattern' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)} ${styles.fill_image_container}`}
+                    <div className={`${styles.feature_box} ${fill === 'pattern' && (styles.active_feature_box)} ${styles.fill_image_container}`}
                         onClick={() => {
                             setFill('pattern');
                             document.getElementById('sketch-fill-file-input').click();
@@ -130,15 +142,15 @@ function Toolbox({
             {
                 type === 'text' &&
                 <Feature title="Font Style">
-                    <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${fontStyle === 'normal' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`}
+                    <div className={`${styles.feature_box} ${fontStyle === 'normal' && (styles.active_feature_box)}`}
                         onClick={() => setFontStyle("normal")}>
                         <BsFonts size={20}/>
                     </div>
-                    <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${fontStyle === 'italic' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`}
+                    <div className={`${styles.feature_box} ${fontStyle === 'italic' && (styles.active_feature_box)}`}
                         onClick={() => setFontStyle("italic")}>
                         <FaItalic size={20}/>
                     </div>
-                    <div className={`${isDarkModeOn ? styles.dark_feature_box : styles.feature_box} ${fontStyle === 'bold' && (isDarkModeOn ? styles.dark_active_feature_box : styles.active_feature_box)}`}
+                    <div className={`${styles.feature_box} ${fontStyle === 'bold' && (styles.active_feature_box)}`}
                         onClick={() => setFontStyle("bold")}>
                         <FaBold size={20}/>
                     </div>
@@ -159,10 +171,10 @@ function Toolbox({
             }
 
             <Feature title="Undo / Redo">
-                <div className={isDarkModeOn ? styles.dark_feature_box : styles.feature_box} onClick={() => undo()} style={{cursor: `${canvasStateAt === -1 ? 'not-allowed' : 'pointer'}`}}>
+                <div className={styles.feature_box} onClick={() => undo()} style={{cursor: `${canvasStateAt === -1 ? 'not-allowed' : 'pointer'}`}}>
                     <MdUndo size={20}/>
                 </div>
-                <div className={isDarkModeOn ? styles.dark_feature_box : styles.feature_box} onClick={() => redo()} style={{cursor: `${canvasStateAt === canvasStates.length-1 ? 'not-allowed' : 'pointer'}`}}>
+                <div className={styles.feature_box} onClick={() => redo()} style={{cursor: `${canvasStateAt === canvasStates.length-1 ? 'not-allowed' : 'pointer'}`}}>
                     <MdRedo size={20}/>
                 </div>
             </Feature>
@@ -171,7 +183,7 @@ function Toolbox({
 
     function Feature({title, children}) {
         return(
-            <div className={isDarkModeOn ? styles.dark_feature : styles.feature}>
+            <div className={styles.feature}>
                 <div className={styles.title}>{title}</div>
                 <div className={styles.body}>
                     {children}

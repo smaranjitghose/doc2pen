@@ -7,7 +7,7 @@ const OutputComponent = () => {
   const editContext = useContext(EditContext);
   // const page = require('./ruled1.png');
   const page = require(`./${editContext.pageSrc}`);
- console.log(`${editContext.pageSrc}`);
+  console.log(`${editContext.pageSrc}`);
 
   const [pageText, setPageText] = useState("");
   const [wordCount, setWordCount] = useState(0);
@@ -31,6 +31,7 @@ const OutputComponent = () => {
             style={{
               fontSize: `${editContext.headValues.headSize}px`,
               paddingTop: `${editContext.headValues.headTop}px`,
+              paddingRight: `${Number(editContext.headValues.headRight) + 3}px`,
               paddingLeft: `${Number(editContext.headValues.headLeft) + 3}px`,
               lineHeight: `${editContext.headValues.headLine}`,
               fontFamily: `${editContext.headValues.headFont}`,
@@ -41,8 +42,7 @@ const OutputComponent = () => {
           />
           <textarea
             type="text"
-            value={pageText}
-            onClick={editContext.isBodyHandler}
+            value={editContext.bodyValues.textValue}
             onChange={e => setPageText(e.target.value)}
             className={`${classes.contentInput} id-body`}
             id="show-text"
@@ -50,6 +50,7 @@ const OutputComponent = () => {
             style={{
               fontSize: `${editContext.bodyValues.bodySize}px`,
               paddingTop: `${editContext.bodyValues.bodyTop}px`,
+              paddingRight: `${Number(editContext.bodyValues.bodyRight) + 3}px`,
               paddingLeft: `${Number(editContext.bodyValues.bodyLeft) + 3}px`,
               lineHeight: `${editContext.bodyValues.bodyLine}`,
               fontFamily: `${editContext.bodyValues.bodyFont}`,
