@@ -1,11 +1,8 @@
 import React, {useState, useEffect, useRef, useCallback} from 'react';
 import styles from './Canvas.module.css';
 import Toolbox from './Toolbox/Toolbox';
-import {FaPencilAlt, FaRegSquare, FaDownload, FaRegCircle, FaSlash, FaFont} from 'react-icons/fa';
-import {BsArrowUpRight} from 'react-icons/bs';
+import {FaDownload} from 'react-icons/fa';
 import {RiDeleteBinLine} from 'react-icons/ri';
-import {GiTriangleTarget} from 'react-icons/gi';
-import {BsDiamond} from 'react-icons/bs';
 
 const Mousetrap = require("mousetrap");
 
