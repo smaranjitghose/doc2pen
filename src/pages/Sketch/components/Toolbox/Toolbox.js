@@ -68,6 +68,7 @@ function Toolbox({
                 </Shape>
             </Feature>
            
+           
 
             <Feature title="Color">
                 <input type="color" name="canvas_pen_color"
@@ -220,7 +221,7 @@ function Toolbox({
     
     function Shape({type_, id, label, children}) {
         return (
-            <label htmlFor={id} title={label}>
+            <label style={{'marginTop':'3px'}} htmlFor={id} title={label}>
                 <div className={`${stylesShapes.feature} ${type === type_ && stylesShapes.active_feature}`}
                 onClick={() => setType(type_)}
                 id={id}>
