@@ -51,7 +51,7 @@
 .mousePosition {
   position: absolute;
   bottom: 11px;
-  left: 30px;
+  right: 30px;
   font-size: 0.7rem;
 }
 
