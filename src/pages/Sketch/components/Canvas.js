@@ -17,7 +17,8 @@ function Canvas() {
   const [context, setContext] = useState();
 
   /* ----- Feature State ----- */
-  const [color, setColor] = useState("#ff0000");
+  const [color, setColor] = useState("#000000");
+  const [background, setBackground] = useState("#ffffff");
   const [width, setWidth] = useState("1");
   const [opacity, setOpacity] = useState("1");
   const [stroke, setStroke] = useState("none");
@@ -47,16 +48,22 @@ function Canvas() {
   const [canvasWidth, setCanvasWidth] = useState(window.innerWidth - 50);
   const [canvasHeight, setCanvasHeight] = useState(window.innerHeight - 100);
 
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setCanvasWidth(window.innerWidth - 50);
-      setCanvasHeight(window.innerHeight - 100);
-    });
+  const handleResizeListener = () => {
+    setCanvasWidth(window.innerWidth - 50);
+    setCanvasHeight(window.innerHeight - 100);
+  };
 
+  useEffect(() => {
+    window.addEventListener("resize", handleResizeListener);
     return () => {
-      window.removeEventListener("resize", () => {});
+      window.removeEventListener("resize", handleResizeListener);
     };
   });
+
+  // useEffect(() => {
+  //     console.log("canvasStateAt: ", canvasStateAt);
+  //     console.log("canvasStates: ", canvasStates);
+  // }, [canvasStateAt, canvasStates])
 
   function hexToRGB(hex) {
     let r = 0,
@@ -111,14 +118,7 @@ function Canvas() {
 
     if (type === "pen") {
       logicDown(point);
-    } else if (
-      type === "line" ||
-      type === "square" ||
-      type === "circle" ||
-      type === "triangle" ||
-      type === "arrow" ||
-      type === "diamond"
-    ) {
+    } else if (["line", "square", "circle", "triangle", "arrow", "diamond"].includes(type)) {
       setTypeState(context.getImageData(0, 0, canvasWidth, canvasHeight));
       logicDown(point);
       setDownPoint({ x: point.x, y: point.y });
@@ -159,20 +159,30 @@ function Canvas() {
       return;
     }
 
-    if (type === "pen") {
-      penMove(point);
-    } else if (type === "line") {
-      lineMove(point);
-    } else if (type === "square") {
-      squareMove(point);
-    } else if (type === "circle") {
-      circleMove(point);
-    } else if (type === "triangle") {
-      triangleMove(point);
-    } else if (type === "arrow") {
-      arrow(point);
-    } else if (type === "diamond") {
-      diamondMove(point);
+    switch (type) {
+      case "pen":
+        penMove(point);
+        break;
+      case "line":
+        lineMove(point);
+        break;
+      case "square":
+        squareMove(point);
+        break;
+      case "circle":
+        circleMove(point);
+        break;
+      case "triangle":
+        triangleMove(point);
+        break;
+      case "arrow":
+        arrow(point);
+        break;
+      case "diamond":
+        diamondMove(point);
+        break;
+      default:
+        break;
     }
 
     event.preventDefault();
@@ -398,11 +408,23 @@ function Canvas() {
     Mousetrap.bind("ctrl+z", () => undo());
     Mousetrap.bind("ctrl+y", () => redo());
   }, [redo, undo]);
+
+  useEffect(() => {
+    if (context) {
+      context.beginPath();
+      context.rect(0, 0, canvasWidth, canvasHeight);
+      context.fillStyle = background;
+      context.fill();
+    }
+  }, [background, context, canvasWidth, canvasHeight]);
+
   return (
     <>
       <Toolbox
         color={color}
         setColor={setColor}
+        background={background}
+        setBackground={setBackground}
         width={width}
         setWidth={setWidth}
         opacity={opacity}
