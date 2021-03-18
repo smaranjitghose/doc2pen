@@ -1,16 +1,21 @@
+@use './../../../../scss/mixin';
+@use './../../../../scss/colors';
+
+$blue1:#02609b;
+
 .OpenSource {
   text-align: center;
+  margin-top: 7rem;
 
   .title {
-    color: #4e89ae;
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 5rem 15px 0;
+    @include mixin.section-title;
   }
+  
   .content {
     font-size: 1.5rem;
     margin: 15px;
   }
+
   .card_holder {
     display: flex;
     justify-content: center;
@@ -22,7 +27,7 @@
       grid-template-rows: auto auto auto;
       grid-template-areas: "image" "text" "stats";
       border-radius: 18px;
-      box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 2px 6px 0px colors.$black_0-3;
       text-align: center;
       overflow: hidden;
       position: relative;
@@ -31,11 +36,12 @@
       cursor: pointer;
       margin: 30px;
       width: fit-content;
-      
+
       &:hover {
         transform: scale(1.15);
-        box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+        box-shadow: 2px 2px 6px 0px colors.$black_0-3;
       }
+
       &:before {
         content: "";
         position: absolute;
@@ -49,9 +55,11 @@
         transform-origin: 50% 50%;
         transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
       }
+
       &:hover:before {
         transform: scale(22);
       }
+
       .card_image {
         grid-area: image;
         grid-row: 1;
@@ -80,7 +88,7 @@
 
         h2 {
           font-size: 28px;
-          color: #000;
+          color: colors.$black;
           font-weight: 500;
         }
       }
@@ -93,22 +101,22 @@
         grid-column: 1;
 
         .card_btn {
-          background-color: #4e89ae;
-          background: linear-gradient(to bottom, #a5b7c2 10%, #376f92 100%);
-          color: #fff;
+          background-color: colors.$steel-blue;
+          background: linear-gradient(to bottom, colors.$white1 10%, colors.$purple 100%);
+          color: colors.$white;
           transition: 0.6s;
           border-radius: 5px;
-          box-shadow: 0 3px 14px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 14px colors.$black_0-3;
           letter-spacing: 0.2px;
           padding: 0.7rem 1rem;
           text-decoration: none;
         }
+        
         .card_btn:hover {
-          color: #30739c;
-          background-color: white;
-          background: linear-gradient(to bottom, #bcdbee 10%, white 100%);
-          box-shadow: 0px 0px 10px #02609b;
-          /*color: #103F5F;*/
+          color: colors.$purple;
+          background-color: colors.$white;
+          background: linear-gradient(to bottom, colors.$white1 10%, colors.$white 100%);
+          box-shadow: 0px 0px 10px $blue1;
           text-decoration: none;
         }
       }

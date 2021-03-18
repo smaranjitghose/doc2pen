@@ -59,7 +59,7 @@ Add GIFs of the entire web app
 
 <p align = "center"><img src = "https://media.giphy.com/media/1xOe0qgiYLYWE6pkki/giphy.gif"></p>
 
-Please check out our [contribution guidelines](./Contributing.MD)
+Please check out our [contribution guidelines](./CONTRIBUTING.md)
 
 ## The geeks🤓 behind this initiative:
 

@@ -43,6 +43,11 @@
   src: url(./fonts/LuckiestGuy-Regular.ttf);
 }
 
+@font-face {
+  font-family: Enola;
+  src: url(./fonts/Enola-Regular.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;

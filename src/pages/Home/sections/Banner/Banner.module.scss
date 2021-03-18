@@ -1,9 +1,17 @@
+@use './../../../../scss/colors';
+
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
 
+$bg-shade1: #0f2027;
+$bg-shade2: #2c5364;
+$bg-shade3: #203a43;
+$btn-hover-bg: #0d739eab;
+
+
 .Home {
-  background: -webkit-linear-gradient(to right, #0f2027 #2c5364, #203a43);
-  background: linear-gradient(to right, #0f2027, #2c5364, #203a43);
-  color: white;
+  background: -webkit-linear-gradient(to right, $bg-shade1 $bg-shade2,$bg-shade3);
+  background: linear-gradient(to right, $bg-shade1,$bg-shade2,$bg-shade3);
+  color: colors.$white;
   height: 89vh;
   padding: 1rem;
   padding-top: 3rem;
@@ -31,7 +39,7 @@
         display: inline-block;
         padding: 0.75rem 1.25rem;
         border-radius: 2rem;
-        color: #fff !important;
+        color: colors.$white !important;
         text-transform: uppercase;
         font-size: 1rem;
         font-weight: semibold;
@@ -53,7 +61,7 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background-color: #05252c;
+          background-color: $bg-shade3;
           z-index: -2;
         }
         &:before {
@@ -63,12 +71,12 @@
           left: 0;
           width: 0%;
           height: 100%;
-          background-color: #0d739eab;
+          background-color: $btn-hover-bg;
           transition: all 0.3s;
           z-index: -1;
         }
         &:hover {
-          color: #fff;
+          color: colors.$white;
           text-decoration: none;
 
           &:before {
