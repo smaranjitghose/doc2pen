@@ -33,6 +33,19 @@
     right: 10px;
 }
 
+.menu_btn{
+    width: 27px;
+    height: 18px;
+}
+
+.btn_line{
+    width: 100%;
+    height: 5px;
+    background: white;
+    margin-bottom: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
 .header_links {
     padding: 0.3rem 0.5rem;
     margin: 0 0.1rem;
@@ -92,7 +105,7 @@
     transform: translateX(0);
 }
 
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 550px) {
     
     .HeaderDrop{
         flex-wrap: wrap;
@@ -117,5 +130,16 @@
     }
     .hamburger {
         display: block;
+    }
+    .btn1{
+          
+        transform: rotate(45deg) translate(9px, 3px);
+    }      
+    .btn2 {
+        opacity: 0;
+    }
+    .btn3 {
+         
+        transform: rotate(-45deg) translate(7px, -1px);
     }
 }
