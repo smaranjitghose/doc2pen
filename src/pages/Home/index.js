@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MetaComponent from "../../seo/MetaComponent";
 import metaData from "../../seo/metaData";
 
@@ -11,6 +11,11 @@ import ScrollToTop from "./../../components/ScrollToTopButton/ScrollToTopButton"
 import Contact from './sections/Contact/ContactUs'
 
 function Home() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="HomePage">
       <MetaComponent

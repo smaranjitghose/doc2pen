@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useEffect } from "react";
 
 import styles from "./style.module.css";
 
@@ -11,6 +11,11 @@ import Settings from "./sections/Settings/Settings";
 import Output from "./sections/OutputComponent/Output";
 
 function Editor() {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <MetaComponent
