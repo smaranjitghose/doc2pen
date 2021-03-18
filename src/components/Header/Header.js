@@ -3,9 +3,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import styles from './Header.module.css';
 import logo from './../../assets/logo/logo.webp';
-import { ImInfo } from "react-icons/im";
-import { RiTeamLine } from "react-icons/ri";
-import { BiDonateHeart} from "react-icons/bi";
+
 
 const quickLinks = [
     {
@@ -22,6 +20,11 @@ const quickLinks = [
         name: 'Support Us',
         to: 'home_support',
         icon: <BiDonateHeart />
+    },
+    {
+        name: 'Contact us',
+        to: 'home_contact',
+        icon: <RiContactsLine />
     }
 ]
 
@@ -68,9 +71,6 @@ function Header() {
                     </NavLink>
                     <NavLink className={`${styles.header_links} /*${styles.tagged}*/`} to='/sketch' exact activeClassName={styles.header_active_links}>
                         Sketch
-                    </NavLink>
-                    <NavLink className={styles.header_links} to='/contact' exact activeClassName={styles.header_active_links}>
-                        Contact
                     </NavLink>
                 </div>
                 <div className={styles.hamburger} onClick={() => drop()}>

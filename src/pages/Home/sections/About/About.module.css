@@ -8,9 +8,15 @@
     text-align: left;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+
 .title {
+    font-family: 'Poppins', sans-serif;
     color: #4e89ae;
     font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 3px 4px 2px #0000002e;
 }
 
 .line {

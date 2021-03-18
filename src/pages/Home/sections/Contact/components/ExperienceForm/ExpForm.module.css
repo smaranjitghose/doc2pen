@@ -1,3 +1,7 @@
+textarea {
+  border-radius: 8px;
+}
+
 .info {
   width: 350px;
 }
@@ -25,7 +29,7 @@
 
 .contact_form input:focus {
   border: 1px solid white;
-  border-radius: 6px;
+  border-radius: 20px;
 }
 
 .contact_form input {
@@ -37,6 +41,7 @@
   font-size: 16px;
   outline: none;
   color: #7b7474;
+  border-radius: 5px;
 }
 
 .contact_form input::placeholder {
@@ -73,10 +78,12 @@
   position: relative;
   overflow: hidden;
   box-shadow: inset 2px 0px 2px white;
+  border-radius: 20px;
 }
 .buttonText {
   position: relative;
   z-index: 1;
+  font-weight: bolder;
   color: #08fdd8;
 }
 .submit:hover .buttonText {
@@ -170,8 +177,8 @@
   font-weight: bold;
 }
 
-@media (max-width:768px){
-  .info{
-    min-width: 70%
+@media (max-width: 768px) {
+  .info {
+    min-width: 70%;
   }
 }
