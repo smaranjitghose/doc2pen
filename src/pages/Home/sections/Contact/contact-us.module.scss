@@ -1,8 +1,13 @@
 .ContactUs {
   text-align: center;
+  margin-top: 5rem;
 
-  & > h2 {
-    margin-top: 60px;
+  .titleMain {
+    font-family: "Poppins", sans-serif;
+    color: #4e89ae;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 3px 4px 2px #0000002e;
   }
 
   .contact_and_info_container {

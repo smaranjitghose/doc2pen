@@ -33,7 +33,7 @@ function Team() {
       const [contributors, setContributors] = useState([]);
 
       useEffect(() => {
-        fetch('https://api.github.com/repos/smaranjitghose/doc2pen/contributors')
+        fetch('https://api.github.com/repos/smaranjitghose/doc2pen/contributors?per_page=1000')
         .then(res => res.json())
         .then(data => {
           // console.log(data);
@@ -46,7 +46,7 @@ function Team() {
     return (
         <div className={styles.Team} id="home_team">
             {/* <!-- Project Maintainer Sub Section --> */}
-            <br/><br/> <h3>Project Maintainers</h3><br/><br/>
+            <br/><br/> <p className={styles.titleMain}>Project Maintainers</p><br/><br/>
             <div className={styles.projectMaintainers}>
                 {
                     maintainerSection.map(item =>
@@ -71,7 +71,7 @@ function Team() {
             
             {/* <!-- Contributora Sub Section --> */}
             <br/><br/>
-            <h3>Clan of Contributors</h3><br/><br/>
+            <p className={styles.titleMain}>Clan of Contributors</p><br/><br/>
             <div className={styles.team_container}>
                 {
                   contributors.map(c => (
@@ -79,7 +79,6 @@ function Team() {
                       <img src={c.avatar_url} className={styles.grid_wd_100} alt="Profile"/>
                       <figcaption className={`${styles.position_absolute} ${styles.grid_wd_100} ${styles.va_top}`}>
                         <div className={styles.text}>
-                          <div>{c.login}</div>
                           <a href={c.html_url} className={styles.social_icon} target="_blank" rel="noreferrer">
                             <FaGithub />
                           </a>
