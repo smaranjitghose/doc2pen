@@ -1,6 +1,4 @@
 import React, { useRef } from "react";
-import MetaComponent from "../../../../seo/MetaComponent";
-import metaData from '../../../../seo/metaData'
 import ExperienceForm from "./components/ExperienceForm/ExperienceForm";
 import Map from "./components/Map/Map";
 
@@ -12,12 +10,7 @@ function ContactUs() {
   
   return (
     <div className={styles.ContactUs} id="home_contact">
-      <MetaComponent
-        title={metaData.contact.title}
-        description={metaData.contact.description}
-        keywords={metaData.contact.keywords}
-      />
-      <h2>Get in Touch</h2>
+      <p className={styles.titleMain} >Get in Touch</p>
       <div className={styles.contact_and_info_container}>
         <ExperienceForm />
         <div ref={mapRef} className={styles.map}>

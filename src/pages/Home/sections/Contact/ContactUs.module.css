@@ -1,5 +1,6 @@
 .ContactUs {
   text-align: center;
+  margin-top: 5rem;
 }
 
 .ContactUs > h2 {
@@ -24,7 +25,13 @@
   overflow: hidden;
   margin: 0px 20px 0px 0px;
 }
-
+.titleMain {
+  font-family: "Poppins", sans-serif;
+  color: #4e89ae;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 3px 4px 2px #0000002e;
+}
 @media (max-width: 418px) {
   .map {
     min-width: 100vw;

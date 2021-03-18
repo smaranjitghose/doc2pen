@@ -10,7 +10,14 @@
     gap: 45px;
     flex-wrap: wrap;
 }
+.tp{
+  font-size: 1.5rem;
+  margin: 15px;
+  font-family: 'Poppins', sans-serif;
+  color: #544eae;
 
+  font-weight: bold;
+}
 .profile_container {
     width: 300px;
     height: 400px;
@@ -20,7 +27,12 @@
     border-radius: 5px;
     transition: 1s all ease;
 }
-  
+.titleMain{  font-family: 'Poppins', sans-serif;
+  color: #4e89ae;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 3px 4px 2px #0000002e;
+}
 .profile_container::before {
     content: "";
     position: absolute;
@@ -187,6 +199,7 @@
 
 .position_relative {
     position: relative;
+    border-radius:50%;
 }
 
 .position_absolute {
@@ -226,10 +239,8 @@
 
 .figure {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 25%;
+    width: 7%;
     overflow: hidden;
-    width: 170px;
-    height: 170px;
 }
   
 .figure img {
@@ -283,7 +294,6 @@
 .social_icon {
     text-shadow: 0 0 1px #000;
     font-size: 1.2rem;
-    margin-left: 5px;
     color: black;
     cursor: pointer;
 }

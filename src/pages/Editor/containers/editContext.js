@@ -19,8 +19,9 @@ const EditContextProvider = props => {
 
   const [headValues, setHeadValues] = useState({
     headSize: null,
-    headTop: null,
-    headLeft: 0,
+    headTop: 20,
+    headLeft: 20,
+    headRight: 20,
     headLine: null,
     headFont: "HomemadeApple",
     headColor: "black",
@@ -29,8 +30,9 @@ const EditContextProvider = props => {
   });
   const [bodyValues, setBodyValues] = useState({
     bodySize: null,
-    bodyTop: null,
-    bodyLeft: 0,
+    bodyTop: 20,
+    bodyLeft: 20,
+    bodyRight: 20,
     bodyLine: null,
     bodyFont: "HomemadeApple",
     bodyColor: "black",

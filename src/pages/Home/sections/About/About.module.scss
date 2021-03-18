@@ -11,11 +11,11 @@
   text-align: left;
 
   .title {
-    font-family: "Samarkan Normal";
+    font-family: "Poppins", sans-serif;
     color: #4e89ae;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
-    text-shadow: 1px 1px 3px #000000;
+    text-shadow: 3px 4px 2px #0000002e;
   }
 
   .line {
@@ -37,6 +37,7 @@
       justify-content: center;
       margin: 5rem 3rem;
       align-items: center;
+
       .illustration {
         padding: 0 1rem;
         box-sizing: border-box;
