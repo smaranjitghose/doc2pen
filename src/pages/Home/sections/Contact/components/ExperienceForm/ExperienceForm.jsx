@@ -20,11 +20,14 @@ function ExperienceForm() {
             <div className={styles.circle}>
               <div className={styles.circle2}></div>
             </div>
+            {/*modified the fields of the experience form*/}
+
             <div className={styles.fieldsWrap}>
               <div className={styles.inputDiv}>
-                <input type="text" placeholder="Your Name" required />
-                <input type="email" placeholder="Email" required />
-                <input type="tel" placeholder="Phone (optional)" />
+                <input type="text" pattern="[a-z]*" placeholder="Your Name (only text)" required />
+                <input type="email" placeholder="Email(eg : yourname@domain)" required />
+               {/* <input type="tel" placeholder="Phone (optional)" />*/}
+               <input type="text" pattern="[0-9]*" placeholder="Phone (only numeric)(optional)" />
               </div>
               <div className={styles.experience}>
                 <span>Rate your experience:</span>
