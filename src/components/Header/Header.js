@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
-import { Link } from 'react-scroll';
+import React,{useState, useEffect, useRef} from 'react';
+import {NavLink, useHistory} from 'react-router-dom';
+import {Link} from 'react-scroll';
 import styles from './Header.module.css';
 import logo from './../../assets/logo/logo.webp';
-import { ImInfo } from "react-icons/im";
-import { RiTeamLine } from "react-icons/ri";
-import { BiDonateHeart} from "react-icons/bi";
+import {ImInfo} from "react-icons/im";
+import {RiTeamLine, RiContactsLine} from "react-icons/ri";
+import {BiDonateHeart} from "react-icons/bi";
 
 const quickLinks = [
     {
@@ -22,6 +22,11 @@ const quickLinks = [
         name: 'Support Us',
         to: 'home_support',
         icon: <BiDonateHeart />
+    },
+    {
+        name: 'Contact us',
+        to: 'home_contact',
+        icon: <RiContactsLine />
     }
 ]
 
@@ -40,22 +45,20 @@ function Header() {
             setLocation(location.pathname);
         })
     }, [history])
-
+    
     function drop() {
-
         navLinkRef.current.classList.toggle(styles.rightDrop);
         headerRef.current.classList.toggle(styles.HeaderOpen);
         btn1Ref.current.classList.toggle(styles.btn1);
         btn2Ref.current.classList.toggle(styles.btn2);
         btn3Ref.current.classList.toggle(styles.btn3);
-
     }
 
     return (
         <>
             <header ref={headerRef} className={`${styles.Header} ${styles.HeaderDrop}`}>
-                <NavLink to='/'  >
-                    <img className={styles.left} src={logo} alt="Logo" />
+                <NavLink  to='/'  >
+                    <img className={styles.left} src={logo} alt="Logo"/>
                 </NavLink>
                 <div ref={navLinkRef} className={`${styles.right} ${styles.rightDrop}`}>
                     <Link to='home_banner' offset={-15}>
@@ -68,9 +71,6 @@ function Header() {
                     </NavLink>
                     <NavLink className={`${styles.header_links} /*${styles.tagged}*/`} to='/sketch' exact activeClassName={styles.header_active_links}>
                         Sketch
-                    </NavLink>
-                    <NavLink className={styles.header_links} to='/contact' exact activeClassName={styles.header_active_links}>
-                        Contact
                     </NavLink>
                 </div>
                 <div className={styles.hamburger} onClick={() => drop()}>
