@@ -15,7 +15,7 @@ const EditContextProvider = props => {
   const aImagePrefix = "";
   const [pageSrc, setPageSrc] = useState(`${aImagePrefix}blank1.png`);
   const [isBody, setIsBody] = useState(true);
-  
+
 
   const [headValues, setHeadValues] = useState({
     headSize: null,
@@ -158,7 +158,9 @@ const EditContextProvider = props => {
     e.preventDefault();
 
     if (window.File && window.FileReader && window.FileList && window.Blob) {
+
       let textarea = document.querySelector("#show-text");
+      textarea.value = "";
       var file = document.querySelector("input[type=file]").files[0];
       var reader = new FileReader();
 
@@ -209,8 +211,8 @@ const EditContextProvider = props => {
     >
       {props.children}
 
-      
-      
+
+
       <ReactSnackBar Icon={<img style={svgStyles} src={checkBox} alt="" />} Show={show}>
         Generating PDF! Please wait...
       </ReactSnackBar>
