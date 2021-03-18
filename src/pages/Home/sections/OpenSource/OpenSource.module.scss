@@ -1,8 +1,6 @@
 @use './../../../../scss/mixin';
 @use './../../../../scss/colors';
 
-$blue1:#02609b;
-
 .OpenSource {
   text-align: center;
   margin-top: 7rem;
@@ -81,7 +79,7 @@ $blue1:#02609b;
         margin: 25px;
 
         p {
-          color: grey;
+          color: colors.$grey;
           font-size: 14.9px;
           margin: 0;
         }
@@ -102,7 +100,7 @@ $blue1:#02609b;
 
         .card_btn {
           background-color: colors.$steel-blue;
-          background: linear-gradient(to bottom, colors.$white1 10%, colors.$purple 100%);
+          background: linear-gradient(to bottom, colors.$white1 10%, colors.$light-purple 100%);
           color: colors.$white;
           transition: 0.6s;
           border-radius: 5px;
@@ -113,10 +111,10 @@ $blue1:#02609b;
         }
         
         .card_btn:hover {
-          color: colors.$purple;
+          color: colors.$light-purple;
           background-color: colors.$white;
           background: linear-gradient(to bottom, colors.$white1 10%, colors.$white 100%);
-          box-shadow: 0px 0px 10px $blue1;
+          box-shadow: 0px 0px 10px colors.$blue1;
           text-decoration: none;
         }
       }
