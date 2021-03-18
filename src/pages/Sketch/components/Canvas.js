@@ -38,7 +38,7 @@ function Canvas() {
 
     /* ----- Canvas State ----- */
     const [isDrawing, setIsDrawing] = useState(false);
-    const [type, setType] = useState("pen");
+    const [type,setType] = useState("pen");
     const [typeState, setTypeState] = useState(null);
     const [downPoint, setDownPoint] = useState({x: "", y: ""});
     const [mousePosition, setMousePosition] = useState({x: "0", y: "0"});
@@ -390,6 +390,7 @@ function Canvas() {
                 canvasStateAt={canvasStateAt}
                 canvasStates={canvasStates}
                 type={type}
+                setType={setType}
                 fontSize={fontSize}
                 setFontSize={setFontSize}
                 fontStyle={fontStyle}
@@ -401,7 +402,7 @@ function Canvas() {
                 setEdge={setEdge}
             />
             
-            {/* ----- Downloa & Clear----- */}
+            {/* ----- Download & Clear----- */}
             <div className={`${styles.feature_container} ${styles.download_clear_container}`}>
                 <label htmlFor="sketch-dcd-clear" title="Download Sketch">
                     <div className={`${styles.feature}`}
@@ -415,34 +416,6 @@ function Canvas() {
                         id="sketch-dcd-download"
                     ><RiDeleteBinLine size={15}/></div>
                 </label>
-            </div>
-
-            {/* ----- Shapes ----- */}
-            <div className={`${styles.feature_container} ${styles.shapes}`}>
-                <Shape type_="pen" id="sketch-shapes-pen" label="Pen">
-                    <FaPencilAlt size={15}/>
-                </Shape>
-                <Shape type_="line" id="sketch-shapes-line" label="Line">
-                    <FaSlash size={15}/>
-                </Shape>
-                <Shape type_="square" id="sketch-shapes-square" label="Square">
-                    <FaRegSquare size={15}/>
-                </Shape>
-                <Shape type_="circle" id="sketch-shapes-circle" label="Circle">
-                    <FaRegCircle size={15}/>
-                </Shape>
-                <Shape type_="triangle" id="sketch-shapes-triangle" label="Triangle">
-                    <GiTriangleTarget size={15}/>
-                </Shape>
-                <Shape type_="arrow" id="sketch-shapes-arrow" label="Arrow">
-                    <BsArrowUpRight size={15}/>
-                </Shape>
-                <Shape type_="diamond" id="sketch-shapes-diamond" label="Diamond">
-                    <BsDiamond size={15}/>
-                </Shape>
-                <Shape type_="text" id="sketch-shapes-text" label="Text">
-                    <FaFont size={15}/>
-                </Shape>
             </div>
 
             <canvas
@@ -480,17 +453,8 @@ function Canvas() {
         </>
     )
 
-    function Shape({type_, id, label, children}) {
-        return (
-            <label htmlFor={id} title={label}>
-                <div className={`${styles.feature} ${type === type_ && styles.active_feature}`}
-                onClick={() => setType(type_)}
-                id={id}>
-                    {children}
-                </div>
-            </label>
-        )
-    }
+
 }
+
 
 export default Canvas;
