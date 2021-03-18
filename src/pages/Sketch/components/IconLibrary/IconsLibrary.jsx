@@ -45,11 +45,16 @@ function IconsLibrary(props) {
       <div className={style.panel}>{/* search bar */}</div>
       <div className={style.iconLib}>
         <IconPreview iconPackSVGs={iconPack1SVGs} categoryTitle="Tech Stack Icons" />
-        {/* https://drwn.io/ */}
         <IconPreview iconPackSVGs={iconPack21SVGs} categoryTitle="Stick Figure Icons - Light" />
         <IconPreview iconPackSVGs={iconPack22SVGs} categoryTitle="Stick Figure Icons - Bold" />
         {/* https://svgsilh.com/tag/stickman-1.html */}
-        <IconPreview iconPackSVGs={iconPack3SVGs} categoryTitle="Tech Stack Icons" />
+        <IconPreview iconPackSVGs={iconPack3SVGs} categoryTitle="Speech Bubble Icons" />
+        {/* https://drwn.io/ */}
+        {/* https://freesvg.org/search/ */}
+        {/* https://www.flaticon.com/free-icons/hand-drawn-speech-bubble */}
+        {/* https://www.flaticon.com/packs/speech-bubbles-2 */}
+        {/* https://www.svgrepo.com/svg/82688/thought-bubble */}
+
         <IconPreview iconPackSVGs={iconPack4SVGs} categoryTitle="Tech Stack Icons" />
       </div>
     </div>
