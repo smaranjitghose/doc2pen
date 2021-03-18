@@ -2,31 +2,38 @@
   text-align: center;
   padding: 2rem;
 
+  .titleMain {
+    font-family: "Poppins", sans-serif;
+    color: #4e89ae;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 3px 4px 2px #0000002e;
+  }
+
   .SupportusQuote {
     color: rgb(0, 153, 255);
     font-size: 1.7rem;
     margin-bottom: 11px;
   }
+
   .quoteAuthor {
     color: gray;
     font-size: 20px;
   }
 
-  div {
-    .patreonAndCoffe {
-      margin-top: 30px;
-      margin-left: auto;
-      display: flex;
-      justify-content: center;
+  div .patreonAndCoffe {
+    margin-top: 30px;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
 
-      a .link {
-        animation: mymove 2s 1;
-        position: relative;
-        margin-left: 40px;
+    a .link {
+      animation: mymove 2s 1;
+      position: relative;
+      margin-left: 40px;
 
-        &:hover {
-          transform: scale(2);
-        }
+      &:hover {
+        transform: scale(2);
       }
     }
   }
