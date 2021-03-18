@@ -78,7 +78,6 @@ function Toolbox({
 
                 />
                 <input className={styles.hexInput} placeholder="#"  type="text" value={background} onInput={e => setBackground(e.target.value)} />
-                </div>
             </Feature>
 
             <Feature title="Color">
