@@ -15,7 +15,6 @@
     "jspdf": "^2.3.1",
     "leaflet": "^1.7.1",
     "mousetrap": "^1.6.5",
-    "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
@@ -29,6 +28,7 @@
     "react-scripts": "4.0.1",
     "react-scroll": "^1.8.1",
     "reactstrap": "^8.5.1",
+    "sass": "^1.32.8",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
