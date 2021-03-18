@@ -12,11 +12,11 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Sans);
 
 .title {
-    font-family: "Samarkan Normal";
+    font-family: 'Poppins', sans-serif;
     color: #4e89ae;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
-    text-shadow: 1px 1px 3px #000000;
+    text-shadow: 3px 4px 2px #0000002e;
 }
 
 .line {
@@ -80,4 +80,18 @@
     font-size: 1.5rem;
     padding: 1rem;
     margin: 3rem 0;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 8px rgba(12, 11, 11, 0.7); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 13px rgba(31, 113, 180, 5); 
 }

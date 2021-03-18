@@ -14,6 +14,8 @@ import {BsDiamond} from 'react-icons/bs';
 function Toolbox({
         color,
         setColor,
+        background,
+        setBackground,
         width,
         setWidth,
         opacity,
@@ -73,9 +75,20 @@ function Toolbox({
             <Feature title="Color">
                 <input type="color" name="canvas_pen_color"
                     value={color} onChange={(e) => setColor(e.target.value)}
+
                 />
+                <input className={styles.hexInput} placeholder="#"  type="text" value={background} onInput={e => setBackground(e.target.value)} />
+                </div>
             </Feature>
 
+            <Feature title="Color">
+                <div className={styles.colorPicker}>
+                    <input type="color" name="canvas_pen_color"
+                        value={color} onChange={(e) => setColor(e.target.value)}
+                    />
+                    <input className={styles.hexInput} placeholder="#"  type="text" value={color} onInput={e => setColor(e.target.value)} />
+                </div>
+            </Feature>           
             {
                 type !== 'text' &&
                 <Feature title="Stroke Width">

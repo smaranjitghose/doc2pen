@@ -1,12 +1,14 @@
 .OpenSource {
   text-align: center;
+  margin-top: 7rem;
 }
 
 .title {
+  font-family: "Poppins", sans-serif;
   color: #4e89ae;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
-  margin: 5rem 15px 0;
+  text-shadow: 3px 4px 2px #0000002e;
 }
 
 .content {
