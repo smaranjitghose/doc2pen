@@ -1,14 +1,21 @@
 import React from 'react';
 import styles from './Toolbox.module.css';
+import stylesShapes from '../Canvas.module.css'
 import {AiOutlineLine, AiOutlineSmallDash, AiOutlineDash} from 'react-icons/ai';
 import {FaRegSquare, FaSquare, FaItalic, FaBold} from 'react-icons/fa';
 import {MdUndo, MdRedo} from 'react-icons/md';
 import {BsFonts} from 'react-icons/bs';
 import {FaImage} from 'react-icons/fa';
+import {FaPencilAlt, FaRegCircle, FaSlash, FaFont} from 'react-icons/fa';
+import {BsArrowUpRight} from 'react-icons/bs';
+import {GiTriangleTarget} from 'react-icons/gi';
+import {BsDiamond} from 'react-icons/bs';
 
 function Toolbox({
         color,
         setColor,
+        background,
+        setBackground,
         width,
         setWidth,
         opacity,
@@ -22,6 +29,7 @@ function Toolbox({
         canvasStateAt,
         canvasStates,
         type,
+        setType,
         fontSize,
         setFontSize,
         fontStyle,
@@ -35,12 +43,51 @@ function Toolbox({
 
     return (
         <div className={styles.canvas_toolbox}>
+            <Feature title="Shapes">
+                <Shape type_="pen" id="sketch-shapes-pen" label="Pen">
+                    <FaPencilAlt size={15}/>
+                </Shape>
+                <Shape type_="line" id="sketch-shapes-line" label="Line">
+                    <FaSlash size={15}/>
+                </Shape>
+                <Shape type_="square" id="sketch-shapes-square" label="Square">
+                    <FaRegSquare size={15}/>
+                </Shape>
+                <Shape type_="circle" id="sketch-shapes-circle" label="Circle">
+                    <FaRegCircle size={15}/>
+                </Shape>
+                <Shape type_="triangle" id="sketch-shapes-triangle" label="Triangle">
+                    <GiTriangleTarget size={15}/>
+                </Shape>
+                <Shape type_="arrow" id="sketch-shapes-arrow" label="Arrow">
+                    <BsArrowUpRight size={15}/>
+                </Shape>
+                <Shape type_="diamond" id="sketch-shapes-diamond" label="Diamond">
+                    <BsDiamond size={15}/>
+                </Shape>
+                <Shape type_="text" id="sketch-shapes-text" label="Text">
+                    <FaFont size={15}/>
+                </Shape>
+            </Feature>
+           
+           
+
             <Feature title="Color">
                 <input type="color" name="canvas_pen_color"
                     value={color} onChange={(e) => setColor(e.target.value)}
+
                 />
+                <input className={styles.hexInput} placeholder="#"  type="text" value={background} onInput={e => setBackground(e.target.value)} />
             </Feature>
 
+            <Feature title="Color">
+                <div className={styles.colorPicker}>
+                    <input type="color" name="canvas_pen_color"
+                        value={color} onChange={(e) => setColor(e.target.value)}
+                    />
+                    <input className={styles.hexInput} placeholder="#"  type="text" value={color} onInput={e => setColor(e.target.value)} />
+                </div>
+            </Feature>           
             {
                 type !== 'text' &&
                 <Feature title="Stroke Width">
@@ -165,6 +212,11 @@ function Toolbox({
                     <MdRedo size={20}/>
                 </div>
             </Feature>
+
+
+
+{/*  */}
+
         </div>
     )
 
@@ -176,6 +228,18 @@ function Toolbox({
                     {children}
                 </div>
             </div>
+        )
+    }
+    
+    function Shape({type_, id, label, children}) {
+        return (
+            <label style={{'marginTop':'3px'}} htmlFor={id} title={label}>
+                <div className={`${stylesShapes.feature} ${type === type_ && stylesShapes.active_feature}`}
+                onClick={() => setType(type_)}
+                id={id}>
+                    {children}
+                </div>
+            </label>
         )
     }
 }
