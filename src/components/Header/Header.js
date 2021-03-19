@@ -66,6 +66,9 @@ function Header() {
                     <NavLink className={`${styles.header_links} /*${styles.tagged}*/`} to='/sketch' exact activeClassName={styles.header_active_links}>
                         Sketch
                     </NavLink>
+                    <NavLink className={`${styles.header_links} /*${styles.tagged}*/`} to='/mediamanip' exact activeClassName={styles.header_active_links}>
+                        Media Manip
+                    </NavLink>
                 </div>
                 <div className={styles.hamburger} onClick={()=>drop()}>
                     <BiMenu size={30}/>

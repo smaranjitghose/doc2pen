@@ -1,0 +1,56 @@
+.container {
+  width: 70%;
+  min-height: 8rem;
+  height: max-content;
+  margin: 2rem auto;
+  border: 2px solid #cccccc;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 5px;
+
+  &_image {
+    max-width: 55%;
+    flex: 1 0 auto;
+    margin: 10px;
+    padding: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: scroll;
+  }
+
+  &_upload {
+    width: 100%;
+    margin: 16px;
+    border: 3px dashed #cccccc;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.image {
+  position: relative;
+
+  & > img {
+    display: "block";
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-right: 10px;
+    object-fit: fill;
+    box-shadow: 4px 4px 4px #000000;
+  }
+
+  & > span {
+    position: absolute;
+    top: 8px;
+    right: 18px;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
