@@ -22,8 +22,12 @@
   margin: 6px;
 }
 
+.emoji {
+  transition: all 0.5s ease-in;
+}
+
 .emoji:hover {
   filter: grayscale(0);
   opacity: 1;
-  transform: rotate(360deg) scale(1.5);
+  transform: scale(1.5);
 }

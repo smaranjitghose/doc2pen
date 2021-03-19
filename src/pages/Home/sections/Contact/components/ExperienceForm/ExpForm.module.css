@@ -3,7 +3,7 @@ textarea {
 }
 
 .info {
-  width: 40vw;
+  width: 500px;
 }
 
 .general_info {
@@ -182,14 +182,9 @@ textarea {
   font-weight: bold;
 }
 
-@media (min-width: 410px) and (max-width: 768px) {
+@media (max-width: 890px) {
   .info {
-    min-width: 70vw;
+    width: 450px;
   }
 }
 
-@media (max-width: 410px){
-  .info{
-    min-width: 100vw;
-  }
-}
