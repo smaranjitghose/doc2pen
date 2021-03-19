@@ -38,6 +38,7 @@ const OutputComponent = () => {
               color: `${editContext.headValues.headColor}`,
               width: `${editContext.headValues.headWidth}pc`,
               letterSpacing: `${editContext.headValues.headLetterSpace}px`,
+              overflowY : 'scroll',
             }}
           />
           <textarea
@@ -57,6 +58,7 @@ const OutputComponent = () => {
               color: `${editContext.bodyValues.bodyColor}`,
               width: `${editContext.bodyValues.bodyWidth}pc`,
               letterSpacing: `${editContext.bodyValues.bodyLetterSpace}px`,
+              overflowY : 'scroll',
             }}
           />
         </div>
