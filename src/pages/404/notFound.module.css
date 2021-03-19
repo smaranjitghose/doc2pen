@@ -3,14 +3,13 @@
 .root {
   font-family: "Amatic SC", sans-serif;
   font-size: 100px;
-  background: #111;
-  color: #fff;
+  color: #0b3c54;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding-top: 30px;
+  padding-top: 0px;
 }
 
 .small {
@@ -26,86 +25,55 @@ p {
   margin: 0;
 }
 
-.sadImg {
+.pageNotFound {
   position: relative;
-  height: 200px;
-  width: 342px;
-  margin-bottom: 30px;
+  width: 600px;
+  height: 500px;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   background-position:center;
-  margin-top: 30px;
-}
-
-.sadImg::after {
-  content: "";
-  display: block;
-  width: 125px;
-  border-radius: 100%;
-  filter: blur(2px);
-  background-color: #000;
-  height: 5px;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.fours {
-  height: 100%;
-  width: 200px;
-  position: relative;
-}
-
-.fours::before,
-.fours::after {
-  content: "4";
-  position: absolute;
-  bottom: 0;
-
-  font-size: 14rem;
-  font-family: "Luckiest Guy";
-  line-height: 0.94;
-}
-.fours::before {
-  left: -140px;
-}
-
-.fours::after {
-  right: -140px;
+  margin-top: 0px;
 }
 
 .navlink {
   color: rgb(202, 202, 202);
   text-decoration: none;
   font-size: 2rem;
-  box-shadow: 0 0 0 1.5px #fff;
+  box-shadow: 0 0 0 1.5px whitesmoke;
   border-radius: 25px;
+  border:1px solid #272727;
   padding: 5px 20px;
   margin-top: 30px;
   position: relative;
   overflow: hidden;
 }
+
 .navlink:hover {
   color: rgb(202, 202, 202);
   background-color: #1e2836;
   box-shadow: 0 0 0 1.5px #1e2836;
+  border: none;
 }
+
 .buttonText {
   position: relative;
   z-index: 1;
-  color: #08fdd8;
+  color: rebeccapurple;
 }
+
 .navlink:hover .buttonText {
   color: #272727;
 }
+
 .hoverEffect {
   position: absolute;
   display: block;
   top: 0;
   left: 0;
   border-radius: 0 100% 100% 0;
-  background-color: #fcfcfc;
+  background-color: #c7e2f6;
   width: 500px;
   height: 100%;
   transform: scale(0, 1) translate(-10px, -10px);
@@ -118,10 +86,12 @@ p {
 }
 
 @media (max-width:570px){
-  .sadImg{
-    transform: scale(0.6);
+  .pageNotFound {
+    transform: scale(0.7);
   }
-  .root{
+
+  .root {
     font-size: 3.5rem;
   }
+
 }
