@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory} from 'react-router-dom';
-import styles from './Banner.module.css';
+import styles from './Banner.module.scss';
 import pen from './../../../../assets/images/home-banner/pen.svg';
 
 function Banner() {
