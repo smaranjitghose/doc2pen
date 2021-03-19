@@ -1,7 +1,7 @@
 import React,{useState, useEffect, useRef} from 'react';
 import {NavLink, useHistory} from 'react-router-dom';
 import {Link} from 'react-scroll';
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 import logo from './../../assets/logo/logo.webp';
 import {ImInfo} from "react-icons/im";
 import {RiTeamLine, RiContactsLine} from "react-icons/ri";

@@ -1,0 +1,82 @@
+@use './../../../../scss/mixin';
+@use './../../../../scss/colors';
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+
+.About {
+  margin-top: 3rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+
+  .title {
+    @include mixin.section-title;
+  }
+
+  .line {
+    font-size: 1.3rem;
+    width: 90%;
+    margin: 1rem;
+  }
+
+  .steps {
+    margin-top: 3rem;
+    width: 90%;
+
+    .step_reverse {
+      flex-direction: row-reverse;
+    }
+
+    .step {
+      display: flex;
+      justify-content: center;
+      margin: 5rem 3rem;
+      align-items: center;
+
+      .illustration {
+        padding: 0 1rem;
+        box-sizing: border-box;
+
+        img {
+          width: 270px;
+        }
+      }
+
+      .step_text {
+        padding: 0 0.1rem;
+
+        .step_title {
+          font-size: 2.5rem;
+          color: colors.$steel-blue;
+          margin-bottom: 1rem;
+          text-align: left;
+          padding-left: 3rem;
+        }
+
+        .step_content {
+          font-size: 1.5rem;
+          overflow-wrap: anywhere;
+          padding-left: 3rem;
+        }
+      }
+    }
+
+    @media (max-width: 730px) {
+      .step {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .open_source {
+    font-weight: bold;
+    color: colors.$steel-blue;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 3rem 0;
+  }
+}
