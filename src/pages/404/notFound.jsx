@@ -25,7 +25,7 @@ function Hero() {
         keywords={metaData.notFound.keywords}
       />
       <div className={style.root}>
-        <div className={style.error} style={{ backgroundImage: `url(${pageNotFound})` }} alt=""></div>
+        <div className={style.pageNotFound} style={{ backgroundImage: `url(${pageNotFound})` }} alt=""></div>
         <div className={`test`}>
           You went too far buddy!
           <p className={style.small}>There's nothing Here :(</p>
