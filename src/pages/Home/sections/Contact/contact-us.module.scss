@@ -1,13 +1,12 @@
+@use './../../../../scss/mixin';
+@use './../../../../scss/colors';
+
 .ContactUs {
   text-align: center;
   margin-top: 5rem;
 
   .titleMain {
-    font-family: "Poppins", sans-serif;
-    color: #4e89ae;
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 3px 4px 2px #0000002e;
+    @include mixin.section-title;
   }
 
   .contact_and_info_container {
@@ -15,7 +14,7 @@
     align-items: stretch;
     justify-content: center;
     flex-wrap: wrap;
-    background: #fff;
+    background: colors.$white;
     margin: 1rem 0 9rem;
 
     .map {

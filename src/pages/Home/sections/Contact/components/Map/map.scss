@@ -1,3 +1,5 @@
+@use './../../../../../../scss/colors';
+
 .leaflet-container {
   width: 100%;
   height: 98%;
@@ -9,23 +11,23 @@
 }
 
 .leaflet-popup-content-wrapper {
-  background-color: rgba(29, 24, 24, 0.9);
-  color: white;
+  background-color: colors.$black_0-8;
+  color: colors.$white;
 }
 
 .leaflet-popup-tip {
-  background-color: rgba(29, 24, 24, 0.9);
+  background-color: colors.$black_0-8;
 }
 
 .leaflet-control-layers.leaflet-control {
-  background: #1b1b1b;
+  background: colors.$black_0-8;
 }
 
 .leaflet-control-layers-base {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  color: white;
+  color: colors.$white;
   font-family: "Montserrat";
   padding: 0.5rem;
   gap: 8px;
@@ -54,8 +56,8 @@
   width: 230px;
   padding: 1.5rem;
   left: 10px;
-  background: rgba(29, 24, 24, 0.9);
-  color: #fff;
+  background: colors.$black_0-8;
+  color: colors.$white;
   border-radius: 5px;
 
   a {
@@ -66,9 +68,9 @@
 .reCenter {
   border-radius: 100%;
   right: 10px;
-  background: rgba(245, 245, 245, 0.9);
+  background: colors.$white2;
   padding: 5px;
   border: none;
-  box-shadow: 2px 2px 3px rgb(15, 14, 14);
+  box-shadow: 2px 2px 3px colors.$black_0-8;
 }
 

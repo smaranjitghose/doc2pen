@@ -1,9 +1,12 @@
+
+@use './../../../../../../scss/colors';
+
 .info {
   width: 350px;
 
   .general_info {
-    background: #3d1f90;
-    color: white;
+    background: colors.$blue3;
+    color: colors.$white;
     margin: 0.35rem 1rem;
     border-radius: 15px;
     & h2 {
@@ -36,7 +39,7 @@
           height: 500px;
           bottom: -250px;
           right: -250px;
-          background-color: #caebb7eb;
+          background-color: colors.$light-pink;
 
           .circle2 {
             position: absolute;
@@ -45,7 +48,7 @@
             height: 200px;
             top: -150px;
             left: -150px;
-            background-color: #7174ffeb;
+            background-color: colors.$blue1;
           }
         }
 
@@ -66,15 +69,15 @@
             input {
               width: 100%;
               border: 0;
-              background: #fcfcfc;
+              background: colors.$light-grey;
               height: 43px;
               padding: 0 20px;
               font-size: 16px;
               outline: none;
-              color: #7b7474;
+              color: colors.$grey;
               border-radius: 5px;
               &:focus {
-                border: 1px solid white;
+                border: 1px solid colors.$white;
                 border-radius: 20px;
               }
               &::placeholder {
@@ -89,7 +92,7 @@
             flex-wrap: wrap;
 
             span {
-              color: white;
+              color: colors.$white;
               font-weight: bold;
             }
           }
@@ -97,16 +100,16 @@
             border-radius: 8px;
             width: 100%;
             border: 0;
-            background: #fcfcfc;
+            background: colors.$white2;
             font-size: 16px;
             outline: none;
             resize: none;
             padding: 10px;
             height: 110px;
-            color: #7b7474;
+            color: colors.$grey;
           }
           .submit {
-            background: #3d1f90;
+            background: colors.$blue3;
             font-size: 14px;
             letter-spacing: 4px;
             font-family: "Open Sans", sans-serif;
@@ -119,17 +122,17 @@
             text-align: center;
             cursor: pointer;
             align-self: flex-end;
-            border: 1px #fff solid;
+            border: 1px colors.$white solid;
             position: relative;
             overflow: hidden;
-            box-shadow: inset 2px 0px 2px white;
+            box-shadow: inset 2px 0px 2px colors.$white;
             border-radius: 20px;
 
             .buttonText {
               position: relative;
               z-index: 1;
               font-weight: bolder;
-              color: #08fdd8;
+              color: colors.$light-blue;
             }
 
             .hoverEffect {
@@ -138,7 +141,7 @@
               top: 0;
               left: 0;
               border-radius: 0 50% 100% 0;
-              background-color: #fcfcfc;
+              background-color: colors.$white2;
               width: 500px;
               height: 100%;
               transform: scale(0, 1);
@@ -152,7 +155,7 @@
                 height: 200%;
               }
               & .buttonText {
-                color: #272727;
+                color: colors.$black_0-8;
               }
             }
           }
