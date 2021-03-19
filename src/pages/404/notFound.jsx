@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./squiggly-animation.css";
 import style from "./notFound.module.css";
-import error1 from "./../../assets/images/404/404.gif";
+import pageNotFound from "./../../assets/images/404/404.gif";
 
 import MetaComponent from "../../seo/MetaComponent";
 import metaData from "../../seo/metaData";
