@@ -1,6 +1,1 @@
-<svg width="24px" height="24px" viewBox="0 0 24 24" id="video_record_device" data-name="video record device" xmlns="http://www.w3.org/2000/svg">
-  <rect id="Rectangle_4" data-name="Rectangle 4" width="24" height="24" fill="none"/>
-  <rect id="Rectangle" width="13" height="11" stroke-width="1.5" fill="none" stroke="#000" stroke-miterlimit="10" transform="translate(3 8)"/>
-  <path id="Rectangle_3" data-name="Rectangle 3" d="M0,1.732,4.684.171A1,1,0,0,1,6,1.119V6.345a1,1,0,0,1-1.316.949L0,5.732Z" transform="translate(16 10.268)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
-  <path id="Line" d="M0,.75H7" transform="translate(5.5 4)" fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" id="video_record_device" width="24" height="24" data-name="video record device" viewBox="0 0 24 24"><rect id="Rectangle_4" width="24" height="24" fill="none" data-name="Rectangle 4"/><rect id="Rectangle" width="13" height="11" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" transform="translate(3 8)"/><path id="Rectangle_3" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" d="M0,1.732,4.684.171A1,1,0,0,1,6,1.119V6.345a1,1,0,0,1-1.316.949L0,5.732Z" data-name="Rectangle 3" transform="translate(16 10.268)"/><path id="Line" fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.5" d="M0,.75H7" transform="translate(5.5 4)"/></svg>
