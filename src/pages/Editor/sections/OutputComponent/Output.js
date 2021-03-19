@@ -38,6 +38,7 @@ const OutputComponent = () => {
               color: `${editContext.headValues.headColor}`,
               width: `${editContext.headValues.headWidth}pc`,
               letterSpacing: `${editContext.headValues.headLetterSpace}px`,
+              overflowY : 'scroll',
             }}
           />
           <textarea
