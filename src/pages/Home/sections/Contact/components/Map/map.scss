@@ -11,16 +11,16 @@
 }
 
 .leaflet-popup-content-wrapper {
-  background-color: colors.$black_0-8;
+  background-color: colors.$black-dark-tint;
   color: colors.$white;
 }
 
 .leaflet-popup-tip {
-  background-color: colors.$black_0-8;
+  background-color: colors.$black-dark-tint;
 }
 
 .leaflet-control-layers.leaflet-control {
-  background: colors.$black_0-8;
+  background: colors.$black-dark-tint;
 }
 
 .leaflet-control-layers-base {
@@ -56,7 +56,7 @@
   width: 230px;
   padding: 1.5rem;
   left: 10px;
-  background: colors.$black_0-8;
+  background: colors.$black-dark-tint;
   color: colors.$white;
   border-radius: 5px;
 
@@ -68,9 +68,9 @@
 .reCenter {
   border-radius: 100%;
   right: 10px;
-  background: colors.$white2;
+  background: colors.$light-grey;
   padding: 5px;
   border: none;
-  box-shadow: 2px 2px 3px colors.$black_0-8;
+  box-shadow: 2px 2px 3px colors.$black-dark-tint;
 }
 

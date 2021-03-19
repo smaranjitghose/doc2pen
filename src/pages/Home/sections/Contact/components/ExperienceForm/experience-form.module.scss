@@ -2,10 +2,10 @@
 @use './../../../../../../scss/colors';
 
 .info {
-  width: 350px;
+  width: 500px;
 
   .general_info {
-    background: colors.$blue3;
+    background: colors.$dark-blue;
     color: colors.$white;
     margin: 0.35rem 1rem;
     border-radius: 15px;
@@ -48,7 +48,7 @@
             height: 200px;
             top: -150px;
             left: -150px;
-            background-color: colors.$blue1;
+            background-color: colors.$royal-blue;
           }
         }
 
@@ -100,7 +100,7 @@
             border-radius: 8px;
             width: 100%;
             border: 0;
-            background: colors.$white2;
+            background: colors.$light-grey;
             font-size: 16px;
             outline: none;
             resize: none;
@@ -109,7 +109,7 @@
             color: colors.$grey;
           }
           .submit {
-            background: colors.$blue3;
+            background: colors.$dark-blue;
             font-size: 14px;
             letter-spacing: 4px;
             font-family: "Open Sans", sans-serif;
@@ -141,7 +141,7 @@
               top: 0;
               left: 0;
               border-radius: 0 50% 100% 0;
-              background-color: colors.$white2;
+              background-color: colors.$light-grey;
               width: 500px;
               height: 100%;
               transform: scale(0, 1);
@@ -155,7 +155,7 @@
                 height: 200%;
               }
               & .buttonText {
-                color: colors.$black_0-8;
+                color: colors.$black-dark-tint;
               }
             }
           }

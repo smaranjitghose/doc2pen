@@ -44,7 +44,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: colors.$black_0-8;
+    background: colors.$black-dark-tint;
   }
 
   .newsletter {
@@ -87,7 +87,7 @@
 
           .icon {
             padding: 10px;
-            color: colors.$blue1;
+            color: colors.$royal-blue;
             min-width: 40px;
           }
           input {
@@ -101,13 +101,13 @@
         .bsClass {
           border-radius: 0 30px 30px 0;
           padding: 6px 15px;
-          background-color: colors.$blue1;
-          border: 2px solid colors.$blue1;
+          background-color: colors.$royal-blue;
+          border: 2px solid colors.$royal-blue;
           color: colors.$white;
 
           &:hover {
-            background-color: colors.$blue2;
-            border: 2px solid colors.$blue2;
+            background-color: colors.$navy-blue;
+            border: 2px solid colors.$navy-blue;
           }
         }
       }
