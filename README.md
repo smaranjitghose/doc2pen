@@ -1,19 +1,19 @@
 # Doc2Pen
 
-<p align="center">Don't you find it boring and real burdensome task when it comes to finish the assignments???? and THAT TOO BY WRITING THEM IN A PIECE OF PAPER?!?!?! OH DEAR LORD.😩😵</p>
+<p align="center" color="orange">Don't you find it boring and real burdensome task when it comes to finish the assignments???? and THAT TOO BY WRITING THEM IN A PIECE OF PAPER?!?!?! OH DEAR LORD.😩😵</p>
 <p align="center"><img width=32% src="https://media.giphy.com/media/11BQtvA7R4qBk4/source.gif">
 <img width=20% src="https://media.giphy.com/media/2UIcmK4pn7rYNLRboG/giphy.gif"></p>
 
 
-<p align="center"><b>The truth is your assignments can be completed must faster by typing rather than writing,isn't it?😏🤓</b></p>
+<p align="center" color="green"><b>The truth is your assignments can be completed must faster by typing rather than writing,isn't it?😏🤓</b></p>
 <p align="center"><img width=30% src="https://media.giphy.com/media/N57KpqDb0tlWE/giphy.gif">
 <img width=22% src="https://media.giphy.com/media/11BbGyhVmk4iLS/giphy.gif">
 </p>
 <br>
 
-<p align="center">Just imagine</p>
-<p align="center">How cool it would be if your typed documents could be converted in handwritten documents!!!🤯😱</p>
-<p align="center"> And here we are .....</p>
+<p align="center" color="purple">Just imagine</p>
+<p align="center" color="blue">How cool it would be if your typed documents could be converted in handwritten documents!!!🤯😱</p>
+<p align="center" color="red"> And here we are .....</p>
 <p align="center"><img width=30% src="https://media.giphy.com/media/UT5KSLhKwItfq6Yv6q/giphy.gif"></p>
 
 ## About 🤔💭:
