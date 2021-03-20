@@ -10,14 +10,13 @@ const OutputComponent = () => {
   const pages = editContext.pages
   useEffect(() => {
     var count = 0;
-    pages.forEach(page=>{
-      count+=page.body.text.length;
-      count+=page.head.text.length;
-    })
+    pages.forEach((page) => {
+      count += page.body.text.length;
+      count += page.head.text.length;
+    });
     setWordCount(count);
-  },[pages]);
-
-  const displayPages = editContext.pages.map((page, index) => {
+  }, [wordCount, pages]);
+  const displayPages = pages.map((page, index) => {
     return (
       <Page
         visible={index === editContext.currentPage}

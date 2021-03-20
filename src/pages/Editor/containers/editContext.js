@@ -71,7 +71,7 @@ const EditContextProvider = (props) => {
   const prevPage = () =>
     currentPage > 0 && setCurrentPage((currentPage) => currentPage - 1);
 
-  const [headValues,] = useState({
+  const [headValues, ] = useState({
     headSize: null,
     headTop: 20,
     headLeft: 20,
@@ -82,7 +82,7 @@ const EditContextProvider = (props) => {
     headWidth: null,
     headLetterSpace: null,
   });
-  const [bodyValues, ] = useState({
+  const [bodyValues,] = useState({
     bodySize: null,
     bodyTop: 20,
     bodyLeft: 20,
