@@ -26,6 +26,21 @@
 
 .body {
     display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+}
+
+.colorPicker{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hexInput{
+    margin-left: 3px;
+    width:98px;
+    border-radius: 4px;
+    padding-left: 5px;
+    border: 0.5px solid #cccccc;
 }
 
 .feature_box{

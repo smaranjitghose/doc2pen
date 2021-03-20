@@ -14,6 +14,8 @@ import {BsDiamond} from 'react-icons/bs';
 function Toolbox({
         color,
         setColor,
+        background,
+        setBackground,
         width,
         setWidth,
         opacity,
@@ -68,13 +70,25 @@ function Toolbox({
                 </Shape>
             </Feature>
            
+           
 
-            <Feature title="Color">
-                <input type="color" name="canvas_pen_color"
-                    value={color} onChange={(e) => setColor(e.target.value)}
+            <Feature title="Canvas Color">
+                <div className={styles.colorPicker}>
+                <input type="color" name="canvas_bg_color"
+                    value={background} onChange={(e) => setBackground(e.target.value)}
                 />
+                <input className={styles.hexInput} placeholder="#"  type="text" value={background} onInput={e => setBackground(e.target.value)} />
+                </div>
             </Feature>
 
+            <Feature title="Color">
+                <div className={styles.colorPicker}>
+                    <input type="color" name="canvas_pen_color"
+                        value={color} onChange={(e) => setColor(e.target.value)}
+                    />
+                    <input className={styles.hexInput} placeholder="#"  type="text" value={color} onInput={e => setColor(e.target.value)} />
+                </div>
+            </Feature>           
             {
                 type !== 'text' &&
                 <Feature title="Stroke Width">
@@ -220,7 +234,7 @@ function Toolbox({
     
     function Shape({type_, id, label, children}) {
         return (
-            <label htmlFor={id} title={label}>
+            <label style={{'marginTop':'3px'}} htmlFor={id} title={label}>
                 <div className={`${stylesShapes.feature} ${type === type_ && stylesShapes.active_feature}`}
                 onClick={() => setType(type_)}
                 id={id}>
