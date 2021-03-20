@@ -41,16 +41,17 @@
     border-radius: 10px;
     margin-right: 10px;
     object-fit: fill;
-    box-shadow: 4px 4px 4px #000000;
+    box-shadow: 0.8px 2px 6px rgba(36, 34, 34, 0.507);
   }
 
   & > span {
     position: absolute;
     top: 8px;
     right: 18px;
+    color: white;
 
     &:hover {
-      color: white;
+        color: rgba(255, 255, 255, 0.589);
     }
   }
 }
