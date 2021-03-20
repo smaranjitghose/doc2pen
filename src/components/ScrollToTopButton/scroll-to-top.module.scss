@@ -1,0 +1,25 @@
+@use './../../scss/colors';
+
+.toTopButton {
+  z-index: 10000;
+  position: fixed !important;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 100%;
+  font-size: 23px;
+  width: 49px;
+  transition: all 300ms ease-in-out;
+  background-color: colors.$blue1 !important;
+  color: colors.$white !important;
+  box-shadow: 2px 2px 3px colors.$grey;
+  border: none !important;
+
+  &:hover {
+    background-color: colors.$blue1 !important;
+    transition: all 300ms ease-in-out;
+  }
+
+  svg {
+    margin: 0 0 4px 0px;
+  }
+}

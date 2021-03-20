@@ -3,7 +3,7 @@ textarea {
 }
 
 .info {
-  width: 350px;
+  width: 500px;
 }
 
 .general_info {
@@ -58,6 +58,11 @@ textarea {
   padding: 10px;
   height: 110px;
   color: #7b7474;
+}
+
+.contact_form textarea:focus{
+  border: 1px solid white;
+  border-radius: 20px;
 }
 
 .submit {
@@ -177,8 +182,9 @@ textarea {
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 890px) {
   .info {
-    min-width: 70%;
+    width: 450px;
   }
 }
+
