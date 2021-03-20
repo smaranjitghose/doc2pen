@@ -49,7 +49,7 @@
 
 /* ----- Mouse Position ----- */
 .mousePosition {
-  position: fixed;
+  position: absolute;
   bottom: 11px;
   right: 30px;
   font-size: 0.7rem;

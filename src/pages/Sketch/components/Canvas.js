@@ -413,7 +413,7 @@ function Canvas() {
     if (context) {
       context.beginPath();
       context.rect(0, 0, canvasWidth, canvasHeight);
-      context.fillStyle= background;
+      context.fillStyle = background;
       context.fill();
     }
 
