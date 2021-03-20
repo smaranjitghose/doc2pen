@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "./EmojiRating.module.css";
+import styles from "./emoji-rating.module.scss";
 
 function EmojiRating() {
   return (
