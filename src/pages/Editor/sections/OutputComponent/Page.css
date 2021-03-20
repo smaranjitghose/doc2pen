@@ -1,0 +1,53 @@
+.showPage{
+    display: block;
+}
+.controlButtons {
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .controlButtons span {
+      background: #2e3568;
+      padding: 2px 5px;
+      margin-right: 8px;
+      color: white;
+      border-radius: 3px;
+      cursor: pointer;
+      font-weight: 300;
+  }
+
+.downloadButtons {
+    position: absolute;
+    right: 0;
+    top: -28px;
+    font-size: 13px;
+}
+
+.downloadButtons span{
+    background: #2e684a;
+    padding: 2px 5px;
+    margin-right: 8px;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+.deleteButton{
+    position: absolute;
+    right: 1px;
+    font-size: 13px;
+    cursor: pointer;
+    background: #fd3e3e;
+    padding: 2px 5px;
+    color: white;
+    font-weight: 300;
+    border-radius: 3px;
+}
+
+.hideBtn{
+    display: none;
+}
