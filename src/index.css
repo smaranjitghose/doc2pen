@@ -42,7 +42,10 @@
   font-family: Luckiest Guy;
   src: url(./fonts/LuckiestGuy-Regular.ttf);
 }
-
+@font-face{
+  font-family: RGhandwritten;
+  src: url(./fonts/Rghandwritten-Regular.ttf);
+}
 * {
   margin: 0;
   padding: 0;
