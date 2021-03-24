@@ -9,7 +9,7 @@ function DropDown({type,onChange,value}) {
     return (
         <select value={value} name="dropdown" className={styles.dropDown} onChange={(e) => onChange(e.target.value)}>
             <option value={type}>{type}</option>
-            {dropDownItems.map(item => <option value={item}>{item}</option>)}
+            {dropDownItems.map(item => <option key={item} value={item}>{item}</option>)}
         </select>
     )
 }

@@ -26,17 +26,16 @@ function DragDrop() {
        
     return (
         <section className={styles.container}>
-            {files.length !== 0 ? 
+            {files.length !== 0 &&
             <div className={styles.container_image}>
-                {files?.map(file => (
+                {files.map(file => (
                 <div className={styles.image} >
                  <img key={file.path} src={file.preview} alt="doc2pen" />
                  <span onClick={() => deleteImage(file.path)}> <AiFillCloseCircle size={24} /></span>
-                </div>
-                
+                </div>         
                 ))}
             </div> 
-            : ''}
+            }
             <div {...getRootProps({className: 'dropzone'})} className={styles.container_upload}>
               <input {...getInputProps()} />
               {
