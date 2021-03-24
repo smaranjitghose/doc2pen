@@ -3,8 +3,7 @@ import { Fade } from "react-reveal";
 import emoji from "react-easy-emoji";
 import { Form } from "react-bootstrap";
 import {FaEnvelope} from "react-icons/fa";
-import styles from "./Footer.module.css";
-/* eslint-disable jsx-a11y/accessible-emoji */
+import styles from "./footer.module.scss";
 
 export default function Footer(props) {
   return (
@@ -28,7 +27,7 @@ export default function Footer(props) {
                 <FaEnvelope className={styles.icon} size={48} />
                 <input type="email" placeholder="Enter your email" required />
               </div>
-              <button className={styles.bsClass}>SUBSCRIBE</button>{" "}
+              <button className={styles.bsClass}>SUBSCRIBE</button>
             </div>
             <Form.Text className={styles.textMuted}>We'll never share your email with anyone else.</Form.Text>
           </Form.Group>

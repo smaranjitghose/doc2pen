@@ -1,7 +1,7 @@
 import React from "react";
 import EmojiRating from "./../EmojiRating/EmojiRating";
 
-import styles from "./ExpForm.module.css";
+import styles from "./experience-form.module.scss";
 
 function response() {
   alert("Thank You for your valuable input 😊");

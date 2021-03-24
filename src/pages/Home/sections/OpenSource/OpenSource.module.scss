@@ -25,7 +25,7 @@
       grid-template-rows: auto auto auto;
       grid-template-areas: "image" "text" "stats";
       border-radius: 18px;
-      box-shadow: 2px 2px 6px 0px colors.$black_0-3;
+      box-shadow: 2px 2px 6px 0px colors.$black-light-tint;
       text-align: center;
       overflow: hidden;
       position: relative;
@@ -37,7 +37,7 @@
 
       &:hover {
         transform: scale(1.15);
-        box-shadow: 2px 2px 6px 0px colors.$black_0-3;
+        box-shadow: 2px 2px 6px 0px colors.$black-light-tint;
       }
 
       &:before {
@@ -100,11 +100,11 @@
 
         .card_btn {
           background-color: colors.$steel-blue;
-          background: linear-gradient(to bottom, colors.$white1 10%, colors.$light-purple 100%);
+          background: linear-gradient(to bottom, colors.$bluish-white 10%, colors.$light-purple 100%);
           color: colors.$white;
           transition: 0.6s;
           border-radius: 5px;
-          box-shadow: 0 3px 14px colors.$black_0-3;
+          box-shadow: 0 3px 14px colors.$black-light-tint;
           letter-spacing: 0.2px;
           padding: 0.7rem 1rem;
           text-decoration: none;
@@ -113,8 +113,8 @@
         .card_btn:hover {
           color: colors.$light-purple;
           background-color: colors.$white;
-          background: linear-gradient(to bottom, colors.$white1 10%, colors.$white 100%);
-          box-shadow: 0px 0px 10px colors.$blue1;
+          background: linear-gradient(to bottom, colors.$bluish-white 10%, colors.$white 100%);
+          box-shadow: 0px 0px 10px colors.$royal-blue;
           text-decoration: none;
         }
       }
