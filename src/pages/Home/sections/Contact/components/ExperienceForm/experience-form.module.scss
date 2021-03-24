@@ -170,3 +170,63 @@
     min-width: 70%;
   }
 }
+	
+@media screen and (max-width: 750px) {
+	.goodbye-card {
+		width: 85%;
+	}
+	.card-heading {
+		font-size: 1.5rem;
+		margin-bottom: 3px;
+		padding: 7px 0;
+	}
+	.inside-card p {
+		font-size: 0.9rem;
+	}
+}
+textarea{
+	margin-bottom: -2%;
+}
+.validation {
+	font-size: 0.9rem;
+	font-weight: 500;
+	padding-top: 4px;
+	color: #f35243;
+	margin-top: -3%;
+	text-align: left;
+	margin-bottom: 3px;
+}
+.card-heading {
+	padding-top: 12px;
+	margin-bottom: 8px;
+	text-align: center;
+	font-size: 1.7rem;
+	color: #162c36;
+	text-transform: capitalize;
+}
+.inside-card p {
+	font-size: 1.1rem;
+	color: #162c36;
+}
+.inside-card {
+	width: 75%;
+	margin: 0 auto;
+	padding-bottom: 10px;
+}
+.card {
+	width: 80%;
+	height: auto;
+	margin: 10% auto;
+	background-color: #fafcff;
+	padding: 20px;
+	border-radius: 13px;
+}
+.goodbye-card {
+	width: 80%;
+	height: auto;
+	margin: 15% auto;
+	background-color: #f0f0f0;
+	padding-bottom: 20px;
+	border-radius: 10px;
+	box-shadow: 5px 5px 15px #adabab, -5px -5px 15px #ffffff;
+}
