@@ -4,22 +4,19 @@
 .imgContainer {
   position: relative;
 }
-.imgContainer {
-  position: relative;
-  height: 700px;
-  display: none;
+.imgContainer img {
+  height: 100%;
+  width: 100%;
 }
-
 
 .titleInput,
 .contentInput {
+  position: absolute;
   border: none;
   background-color: transparent;
+  overflow: hidden;
   z-index: 2;
-  line-height: 2rem;
   width: 100%;
-  color: rgba(2, 2, 66, 0.753);
-  padding: 2px 0px;
 }
 
 ::-webkit-scrollbar {
@@ -27,10 +24,14 @@
 }
 
 .titleInput {
+  top: 0;
   height: 10%;
 }
 
 .contentInput {
+  bottom: 0;
   height: 90%;
-  
+}
+textarea{
+  color: rgba(2, 2, 66, 0.753);
 }
