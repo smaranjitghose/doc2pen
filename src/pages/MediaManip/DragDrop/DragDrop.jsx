@@ -5,7 +5,7 @@ import {AiFillCloseCircle} from 'react-icons/ai'
 
 import styles from './DragDrop.module.scss'
 
-function DragDrop({setConvert,setDownload}) {
+function DragDrop({setConvert,setDownload,setInput}) {
 
     const [files,setFiles] = useState([])
 
@@ -18,9 +18,13 @@ function DragDrop({setConvert,setDownload}) {
     },[files,setConvert,setDownload])
 
     const onDrop = useCallback(acceptedFiles => {
-      const newFile = acceptedFiles.map(file => Object.assign(file, {
+      const newFile = acceptedFiles.map(file => {
+        setInput(file.type)
+        console.log(file.type)
+        return Object.assign(file, {
         preview: URL.createObjectURL(file)
-      }))
+      })
+    })
       setFiles(prevState => [...prevState,...newFile])
       }, [])
 

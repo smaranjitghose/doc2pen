@@ -37,11 +37,11 @@ function MediaManip() {
         <div className={styles.mediaManip}>
             <h1 className={styles.mediaManip_title}>Image Converter</h1>
             <div className={styles.mediaManip_dropDowns}>
-                <Dropdown type="Input"  value={input}  onChange={(v) => setInput(v)}  />
+                <Dropdown type="Input"  value={input} />
                 {!convert && <Progress progress={progress} />}
                 <Dropdown type="Output" value={output} onChange={(v) => setOutput(v)} />
             </div>
-            <DragDrop setConvert={setConvert} setDownload={setDownload} />
+            <DragDrop setConvert={setConvert} setDownload={setDownload} setInput={setInput} />
             <div className={styles.mediaManip_btn}>
                 <Button value="Convert" type="primary" onClick={onConvert} disabled={convert} />
                 {!convert && <Button value="Download" type="secondary" onClick={onDownload} disabled={download} />}

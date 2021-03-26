@@ -7,10 +7,15 @@ function DropDown({type,onChange,value}) {
     const dropDownItems = ['PNG','JPG','WEBP','JIFF']
 
     return (
-        <select value={value} name="dropdown" className={styles.dropDown} onChange={(e) => onChange(e.target.value)}>
+        <>
+        {type === 'Output' ? <select value={value} name="dropdown" className={styles.dropDown} onChange={(e) => onChange(e.target.value)}>
             <option value={type}>{type}</option>
             {dropDownItems.map(item => <option key={item} value={item}>{item}</option>)}
-        </select>
+        </select> : 
+        <div className={styles.input} >{value}</div>
+        }
+        </>
+
     )
 }
 
