@@ -52,6 +52,12 @@
   src:url(./fonts/Rghandwritten-Regular.ttf);
 }
 
+@font-face {
+  font-family: RayFont;
+  src: url(./fonts/RayFont-Regular.ttf);
+}
+
+
 * {
   margin: 0;
   padding: 0;
