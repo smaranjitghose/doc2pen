@@ -72,12 +72,13 @@ function Toolbox({
            
            
 
-            <Feature title="Color">
-                <input type="color" name="canvas_pen_color"
-                    value={color} onChange={(e) => setColor(e.target.value)}
-
+            <Feature title="Canvas Color">
+                <div className={styles.colorPicker}>
+                <input type="color" name="canvas_bg_color"
+                    value={background} onChange={(e) => setBackground(e.target.value)}
                 />
                 <input className={styles.hexInput} placeholder="#"  type="text" value={background} onInput={e => setBackground(e.target.value)} />
+                </div>
             </Feature>
 
             <Feature title="Color">

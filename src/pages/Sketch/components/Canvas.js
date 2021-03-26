@@ -375,6 +375,7 @@ function Canvas() {
     setCanvasStates([]);
     setcanvasStateAt(-1);
     setTypeState("");
+    setBackground("#ffffff")
   }
 
   function toggleIconLib() {
