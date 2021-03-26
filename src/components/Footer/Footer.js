@@ -4,8 +4,11 @@ import emoji from "react-easy-emoji";
 import { Form } from "react-bootstrap";
 import {FaEnvelope} from "react-icons/fa";
 import styles from "./footer.module.scss";
+import { GitHub } from 'react-feather';
+
 
 export default function Footer(props) {
+
   return (
     <div className={`${styles.footerDiv}`}>
       <div className={styles.topShape}>
@@ -32,7 +35,11 @@ export default function Footer(props) {
             <Form.Text className={styles.textMuted}>We'll never share your email with anyone else.</Form.Text>
           </Form.Group>
         </Form>
+        <div className={styles.githubLogo}>
+          <a href="https://github.com/smaranjitghose/doc2pen"><GitHub color = 'white' width={30} height={30} /></a>
+        </div>
       </div>
+
       <Fade>
         <p className={styles.footerText}>{emoji("Made with ❤️ in India for the students of the world.")}</p>
         {/* <ToggleSwitch theme={props.theme} onToggle={props.onToggle}/> */}

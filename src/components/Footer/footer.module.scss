@@ -126,6 +126,11 @@
     }
   }
 
+  .githubLogo {
+    padding-top: 20px;
+    margin-left: auto !important;
+  }
+
   .footerText {
     text-align: center;
     color: colors.$white;
@@ -134,4 +139,6 @@
     padding: 30px;
     padding-top: 0;
   }
+
+  
 }
