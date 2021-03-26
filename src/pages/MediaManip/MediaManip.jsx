@@ -1,5 +1,6 @@
 import React,{useState}  from 'react'
 
+import Progress from './Progress/Progress'
 import Dropdown from './DropDown/DropDown'
 import DragDrop from './DragDrop/DragDrop'
 import Button from './Button/Button'
@@ -24,6 +25,7 @@ function MediaManip() {
             <h1 className={styles.mediaManip_title}>Image Converter</h1>
             <div className={styles.mediaManip_dropDowns}>
                 <Dropdown type="Input"  value={input}  onChange={(v) => setInput(v)}  />
+                <Progress />
                 <Dropdown type="Output" value={output} onChange={(v) => setOutput(v)} />
             </div>
             <DragDrop />
