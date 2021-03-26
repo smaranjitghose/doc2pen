@@ -47,6 +47,10 @@
   font-family: Enola;
   src: url(./fonts/Enola-Regular.ttf);
 }
+@font-face{
+  font-family:RGhandwritten;
+  src:url(./fonts/Rghandwritten-Regular.ttf);
+}
 
 @font-face {
   font-family: RayFont;
