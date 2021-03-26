@@ -1,4 +1,4 @@
-import React, {useCallback,useEffect} from 'react'
+import React, {useCallback} from 'react'
 
 import {useDropzone} from 'react-dropzone';
 import {AiFillCloseCircle} from 'react-icons/ai'
@@ -15,7 +15,7 @@ function DragDrop({files,setFiles,setInput}) {
       })
     })
       setFiles(prevState => [...prevState,...newFile])
-      }, [])
+      }, [setFiles,setInput])
 
     const {getRootProps, getInputProps,isDragActive} = useDropzone({ accept: 'image/*',onDrop});
 
