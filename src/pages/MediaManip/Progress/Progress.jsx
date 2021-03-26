@@ -2,7 +2,7 @@ import React from 'react'
 import SemiCircleProgressBar from "react-progressbar-semicircle";
 
 
-const Progress = () => {
+const Progress = ({progress}) => {
 
     const options = {
         strokeWidth: 25,
@@ -10,8 +10,6 @@ const Progress = () => {
         stroke:'#4e89ae',
         showPercentValue:true,
     }
-
-    const [progress,setProgress] = React.useState(100)
 
 
     return (
