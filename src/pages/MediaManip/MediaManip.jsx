@@ -34,6 +34,9 @@ export default function MediaManip() {
           if(fileType === 'jpg' && output === 'webp') return jpgtowebp() 
           if(fileType === 'webp' && output === 'jpg') return webptojpg()
           if(fileType === 'webp' && output === 'png') return webptopng()
+          if(fileType === 'jpeg' && output === 'png') return jpegtopng()
+          if(fileType === 'jpeg' && output === 'webp') return jpegtowebp()
+
           if(output === 'Output' || output === fileType) return alert('Select a valid Output Format')
           else return alert('Input File Format Not Supported.')
         })
@@ -78,7 +81,17 @@ export default function MediaManip() {
     }
    
     const webptopng = () => {
-        alert('Converting Webp To PNg')
+        alert('Converting Webp To PNG')
+        startConversion()
+    }
+
+    const jpegtowebp = () => {
+        alert('Converting JPEG To WEBP')
+        startConversion()
+    }
+
+    const jpegtopng = () => {
+        alert('Converting JPEG To PNG')
         startConversion()
     }
 

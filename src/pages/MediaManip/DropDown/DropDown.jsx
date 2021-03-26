@@ -4,7 +4,7 @@ import styles from './DropDown.module.scss'
 
 function DropDown({type,onChange,value}) {
 
-    const dropDownItems = ['png','jpg','webp']
+    const dropDownItems = ['png','jpg','webp','jpeg']
 
     return (
         <>
