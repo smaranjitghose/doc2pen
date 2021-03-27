@@ -25,7 +25,7 @@
       grid-template-rows: auto auto auto;
       grid-template-areas: "image" "text" "stats";
       border-radius: 18px;
-      box-shadow: 2px 2px 6px 0px colors.$black-light-tint;
+      box-shadow: 1px 1px 3px 0px colors.$black-light-tint;
       text-align: center;
       overflow: hidden;
       position: relative;
@@ -36,7 +36,7 @@
       width: fit-content;
 
       &:hover {
-        transform: scale(1.15);
+        transform: scale(1.05);
         box-shadow: 2px 2px 6px 0px colors.$black-light-tint;
       }
 
@@ -104,7 +104,7 @@
           color: colors.$white;
           transition: 0.6s;
           border-radius: 5px;
-          box-shadow: 0 3px 14px colors.$black-light-tint;
+          box-shadow: 0 3px 8px colors.$black-light-tint;
           letter-spacing: 0.2px;
           padding: 0.7rem 1rem;
           text-decoration: none;
