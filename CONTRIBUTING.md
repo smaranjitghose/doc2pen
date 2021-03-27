@@ -42,6 +42,20 @@ git remote add upstream https://github.com/smaranjitghose/doc2pen.git
 ```
 npm start
 ```
+
+> ### Using Docker to run the web app
+> 
+> - Install [Docker](https://docs.docker.com/engine/install/) if you don't have it already.
+>  
+> - Build the project
+>  
+>  ``docker-compose build``
+>   
+> - Run the docker container
+>   
+>   ``docker compose up``
+
+
 - Open your favourite browser and navigate to `http://localhost:3000` to view the current version of the app
 
 
@@ -59,17 +73,10 @@ git pull upstream master
 
 - Comment on any existing [issue(s)](https://github.com/smaranjitghose/doc2pen/issues) raised by **project maintainers** [@smaranjitghose or @anushbhatia]. Otherwise raise a [new issue](https://github.com/smaranjitghose/doc2pen/issues/new).
 
-## Using Docker for Setup
 
-* Install [Docker](https://docs.docker.com/engine/install/), from the given link.
 
-* Once Docker is installed, use the following two commands to run the app in the root dicrectory:
-  * `docker-compose build` , This command will build the project
-  * `docker-compose up`, This command will run the container.
-  
-* You can open the project on `localhost:3000` on the machine.
 
-Note: If you are using docker-desktop on Windows Or WSL2 i.e Windows Subsystem For Linux, you can use the GUI Options to run the containers 
+
 
 > ## Guidelines for raising a new issue:
 >
