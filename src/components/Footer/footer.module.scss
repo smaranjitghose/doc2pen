@@ -46,7 +46,17 @@
     width: 100%;
     background: colors.$black-dark-tint;
   }
+  .githubLogoDiv {
+    position: relative;
+    margin-bottom: 50px;
+  }
 
+  .githubLogo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+
+  }  
   .footerText {
     text-align: center;
     color: colors.$white;

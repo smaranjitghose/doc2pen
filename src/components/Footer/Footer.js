@@ -17,13 +17,15 @@ export default function Footer(props) {
         </svg>
       </div>
       <div className={styles.tint}></div>
-      <div>
-        <a href="https://github.com/smaranjitghose/doc2pen"><UseAnimations animation={github} animationKey={JSONAnimation} size={50} loop={true} strokeColor='#ffffff'  speed={1} wrapperStyle={{ marginBottom: '20px' , marginLeft: '50%' }} /></a>
+      <div className={styles.githubLogoDiv}>
+        <a href="https://github.com/smaranjitghose/doc2pen"><UseAnimations className={styles.githubLogo} animation={github} animationKey={JSONAnimation} size={50} loop={true} strokeColor='#ffffff'  speed={1} /></a>
       </div>
+      <div>
       <Fade>
         <p className={styles.footerText}>{emoji("Made with ❤️ in India for the students of the world.")}</p>
         {/* <ToggleSwitch theme={props.theme} onToggle={props.onToggle}/> */}
       </Fade>
+      </div>
     </div>
   );
 }
