@@ -4,6 +4,9 @@ import emoji from "react-easy-emoji";
 import { Form } from "react-bootstrap";
 import {FaEnvelope} from "react-icons/fa";
 import styles from "./footer.module.scss";
+import UseAnimations from 'react-useanimations';
+import JSONAnimation from '../../assets/githublogo/github.json'
+import github from 'react-useanimations/lib/github'
 
 export default function Footer(props) {
   return (
@@ -32,6 +35,9 @@ export default function Footer(props) {
             <Form.Text className={styles.textMuted}>We'll never share your email with anyone else.</Form.Text>
           </Form.Group>
         </Form>
+        <div>
+          <a href="https://github.com/smaranjitghose/doc2pen"><UseAnimations animation={github} animationKey={JSONAnimation} size={60} loop={true} strokeColor='#ffffff'  speed={1} wrapperStyle={{ marginTop: '20px', marginLeft: '50%' }} /></a>
+        </div>
       </div>
       <Fade>
         <p className={styles.footerText}>{emoji("Made with ❤️ in India for the students of the world.")}</p>
