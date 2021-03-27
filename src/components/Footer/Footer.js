@@ -1,8 +1,8 @@
 import React from "react";
 import { Fade } from "react-reveal";
 import emoji from "react-easy-emoji";
-import { Form } from "react-bootstrap";
-import {FaEnvelope} from "react-icons/fa";
+// import { Form } from "react-bootstrap";
+// import {FaEnvelope} from "react-icons/fa";
 import styles from "./footer.module.scss";
 import UseAnimations from 'react-useanimations';
 import JSONAnimation from '../../assets/githublogo/github.json'
@@ -17,27 +17,8 @@ export default function Footer(props) {
         </svg>
       </div>
       <div className={styles.tint}></div>
-      <div className={styles.newsletter}>
-        <div className={styles.heading}>
-          <h5>Subscribe to our Newsletter!</h5>
-          <h6>Enter Your Email to get our news and updates.</h6>
-        </div>
-        <br></br>
-        <Form className={styles.emailField}>
-          <Form.Group controlId="formBasicEmail">
-            <div className={styles.form}>
-              <div className={styles.box}>
-                <FaEnvelope className={styles.icon} size={48} />
-                <input type="email" placeholder="Enter your email" required />
-              </div>
-              <button className={styles.bsClass}>SUBSCRIBE</button>
-            </div>
-            <Form.Text className={styles.textMuted}>We'll never share your email with anyone else.</Form.Text>
-          </Form.Group>
-        </Form>
-        <div>
-          <a href="https://github.com/smaranjitghose/doc2pen"><UseAnimations animation={github} animationKey={JSONAnimation} size={60} loop={true} strokeColor='#ffffff'  speed={1} wrapperStyle={{ marginTop: '20px', marginLeft: '50%' }} /></a>
-        </div>
+      <div>
+        <a href="https://github.com/smaranjitghose/doc2pen"><UseAnimations animation={github} animationKey={JSONAnimation} size={50} loop={true} strokeColor='#ffffff'  speed={1} wrapperStyle={{ marginBottom: '20px' , marginLeft: '50%' }} /></a>
       </div>
       <Fade>
         <p className={styles.footerText}>{emoji("Made with ❤️ in India for the students of the world.")}</p>
