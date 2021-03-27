@@ -47,3 +47,25 @@
     color: rgb(29, 28, 28) !important;
   background: rgb(191, 193, 196) !important ;
 }
+
+/* Download File Dialog Section */
+.modalLabel{
+  font-size: 19px;
+  letter-spacing: 1px;
+ 
+}
+.modalInput{
+  width: 70%;
+  outline: none;
+  margin:5px auto;  
+  padding: 5px;
+}
+.downloadLabelButton{
+  border: none;
+  outline: none;
+  color: white;
+  margin: 5px;
+  padding: 5px 30px;
+  border-radius: 20px;
+  box-shadow: 2px 1px 3px black;
+}
