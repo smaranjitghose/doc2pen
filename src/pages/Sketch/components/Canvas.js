@@ -375,7 +375,7 @@ function Canvas() {
     setCanvasStates([]);
     setcanvasStateAt(-1);
     setTypeState("");
-    setBackground("#ffffff")
+    setBackground("#ffffff");
   }
 
   function toggleIconLib() {
@@ -408,13 +408,8 @@ function Canvas() {
   }, [redo, undo]);
 
   useEffect(() => {
-    if (context) {
-      context.beginPath();
-      context.rect(0, 0, canvasWidth, canvasHeight);
-      context.fillStyle = background;
-      context.fill();
-    }
-  }, [background, context, canvasWidth, canvasHeight]);
+    canvasRef.current.style.background = background;
+  }, [background]);
 
   return (
     <>
@@ -508,8 +503,6 @@ function Canvas() {
       {/* icon library */}
     </>
   );
-
 }
-
 
 export default Canvas;
