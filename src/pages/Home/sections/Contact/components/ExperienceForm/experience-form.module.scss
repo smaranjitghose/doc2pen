@@ -2,10 +2,9 @@
 @use './../../../../../../scss/colors';
 
 .info {
-  width: 500px;
-
+  width: 470px;
   .general_info {
-    background: colors.$dark-blue;
+    background: colors.$midnight-blue;
     color: colors.$white;
     margin: 0.35rem 1rem;
     border-radius: 15px;
@@ -39,16 +38,16 @@
           height: 500px;
           bottom: -250px;
           right: -250px;
-          background-color: colors.$light-pink;
+          background-color: colors.$gray;
 
           .circle2 {
             position: absolute;
             border-radius: 100%;
             width: 200px;
             height: 200px;
-            top: -150px;
-            left: -150px;
-            background-color: colors.$royal-blue;
+            top: -50px;
+            left: -250px;
+            background-color:colors.$blue;
           }
         }
 
@@ -72,18 +71,21 @@
               background: colors.$light-grey;
               height: 43px;
               padding: 0 20px;
+              margin-bottom: 10px;
               font-size: 16px;
               outline: none;
               color: colors.$grey;
               border-radius: 5px;
               &:focus {
                 border: 1px solid colors.$white;
-                border-radius: 20px;
+                background: colors.$midnight-blue;
+                color: colors.$white;
               }
               &::placeholder {
                 font-size: 13px;
               }
             }
+            
           }
           .experience {
             display: flex;
@@ -107,9 +109,14 @@
             padding: 10px;
             height: 110px;
             color: colors.$grey;
+            &:focus {
+              
+              background: colors.$midnight-blue;
+              color: colors.$white;
+            }
           }
           .submit {
-            background: colors.$dark-blue;
+            background: colors.$midnight-blue;
             font-size: 14px;
             letter-spacing: 4px;
             font-family: "Open Sans", sans-serif;
@@ -122,17 +129,17 @@
             text-align: center;
             cursor: pointer;
             align-self: flex-end;
-            border: 1px colors.$white solid;
+            border: 2px colors.$white solid;
             position: relative;
             overflow: hidden;
-            box-shadow: inset 2px 0px 2px colors.$white;
             border-radius: 20px;
+            
 
             .buttonText {
               position: relative;
               z-index: 1;
               font-weight: bolder;
-              color: colors.$light-blue;
+              color: colors.$gray;
             }
 
             .hoverEffect {
@@ -141,11 +148,13 @@
               top: 0;
               left: 0;
               border-radius: 0 50% 100% 0;
-              background-color: colors.$light-grey;
+              background-color: colors.$blue;
               width: 500px;
               height: 100%;
               transform: scale(0, 1);
               transform-origin: top left;
+
+              
             }
 
             &:hover {

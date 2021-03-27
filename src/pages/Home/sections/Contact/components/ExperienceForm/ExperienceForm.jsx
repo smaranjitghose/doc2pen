@@ -10,7 +10,8 @@ function ExperienceForm() {
   return (
     <div id="info" className={styles.info}>
       <div className={styles.general_info}>
-        <h2>Contact us your query or just send a hello.</h2>
+      {/*<h2>Contact us your query or just send a hello.</h2>*/}
+        <h2>You've got questions? We've got answers</h2>
         <br />
         <div className={styles.contact_form}>
           <form
@@ -24,16 +25,16 @@ function ExperienceForm() {
 
             <div className={styles.fieldsWrap}>
               <div className={styles.inputDiv}>
-                <input type="text" pattern="[a-z]*" placeholder="Your Name (only text)" required />
-                <input type="email" placeholder="Email(eg : yourname@domain)" required />
+                <input type="text" pattern="[a-z]*" placeholder="Your good Name? (only text)" required />
+                <input type="email" placeholder="Email? (eg : yourname@domain)" required />
                {/* <input type="tel" placeholder="Phone (optional)" />*/}
-               <input type="text" pattern="[0-9]*" placeholder="Phone (only numeric)(optional)" />
+               <input type="text" pattern="[0-9]*" placeholder="Phone number? (only numeric)(optional)" />
               </div>
               <div className={styles.experience}>
                 <span>Rate your experience:</span>
                 <EmojiRating />
               </div>
-              <textarea placeholder="Message..."></textarea>
+              <textarea placeholder="Any message for us?.."></textarea>
               <button className={styles.submit} onSubmit={response} type="submit">
                 <span className={styles.hoverEffect}></span>
                 <span className={styles.buttonText}>Send</span>
