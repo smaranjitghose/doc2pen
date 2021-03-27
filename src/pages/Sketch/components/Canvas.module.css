@@ -1,73 +1,88 @@
 .canvas {
-    border-radius: 11px;
-    background-color: white;
-    cursor: crosshair;
-    width:99%;
+  border-radius: 11px;
+  background-color: white;
+  cursor: crosshair;
+  width: 99%;
 }
 
-.feature_container{
-    position: absolute;
-    display: flex;
-    padding: 0.3rem;
-    border-radius: 5px;
-    background-color: white;
-    box-shadow: 0 0 3px 0.3px gray;
+.feature_container {
+  position: absolute;
+  display: flex;
+  padding: 0.3rem;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 3px 0.3px gray;
 }
-.feature_container label{
-    display: flex;
-    padding: 0;
-    margin: 0;
+.feature_container label {
+  display: flex;
+  padding: 0;
+  margin: 0;
 }
 
-.feature{
-    padding: 0.7rem 0.5rem;
-    margin: 0 0.2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    background-color: #e9ecef;
-    color: black;
+.feature {
+  position: relative;
+  padding: 0.7rem 0.5rem;
+  margin: 0 0.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  background-color: #e9ecef;
+  color: black;
 }
 
 .active_feature {
-    background-color: #c7ccd1;
+  background-color: #c7ccd1;
 }
 
 /* ----- Download Clear Button ----- */
 .download_clear_container {
-    top: 0.75rem;
-    right: 30px;
+  top: 0.75rem;
+  right: 30px;
 }
 
 /* ----- Shapes ----- */
 .shapes {
-    top: 0.75rem;
-    left: 50%;
-    transform: translateX(-50%);
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* ----- Mouse Position ----- */
-.mousePosition{
-    position: absolute;
-    bottom: 11px;
-    left: 30px;
-    font-size: 0.7rem;
+.mousePosition {
+  position: absolute;
+  bottom: 11px;
+  right: 30px;
+  font-size: 0.7rem;
 }
 
 /* ----- Text Input ----- */
 .text_container {
-    position: absolute;
-    pointer-events: none;
-    overflow-x: hidden;
+  position: absolute;
+  pointer-events: none;
+  overflow-x: hidden;
 }
 .text {
-    position: absolute;
+  position: absolute;
 }
 
 .text input {
-    border: none;
-    padding: 0;
-    outline: none;
-    background-color: transparent;
-    width: fit-content;
+  border: none;
+  padding: 0;
+  outline: none;
+  background-color: transparent;
+  width: fit-content;
+}
+
+.iconLibContainer {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 100%;
+  right: -1px;
+  z-index: 99999999;
+}
+
+.iconLibContainer--open{
+  width: calc(100vw - 50px);
+  height: calc(100vh - 150px);
 }

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./squiggly-animation.css";
 import style from "./notFound.module.css";
-import sadImg from "./../../assets/images/404/sad404.svg";
+import pageNotFound from "./../../assets/images/404/404.gif";
 
 import MetaComponent from "../../seo/MetaComponent";
 import metaData from "../../seo/metaData";
@@ -25,14 +25,8 @@ function Hero() {
         keywords={metaData.notFound.keywords}
       />
       <div className={style.root}>
+        <div className={style.pageNotFound} style={{ backgroundImage: `url(${pageNotFound})` }} alt=""></div>
         <div className={`test`}>
-          <p className={style.smaller}>Uh ooh! 404 Not Found.</p>
-        </div>
-        <div className={style.sadImg} style={{ backgroundImage: `url(${sadImg})` }} alt="">
-          <div className={style.fours}></div>
-        </div>
-        <div className={`test`}>
-          {/* <p className={style.small}>– Hi there! – </p> */}
           You went too far buddy!
           <p className={style.small}>There's nothing Here :(</p>
         </div>
@@ -40,7 +34,6 @@ function Hero() {
           <span className={style.hoverEffect}></span>
           <span className={style.buttonText}>Go back</span>
         </a>
-
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
           <defs>
             <filter id="squiggly-0">
