@@ -1,17 +1,16 @@
+@use './../../../../scss/mixin';
+@use './../../../../scss/colors';
+
 .SupportUs {
   text-align: center;
   padding: 2rem;
 
   .titleMain {
-    font-family: "Poppins", sans-serif;
-    color: #4e89ae;
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 3px 4px 2px #0000002e;
+    @include mixin.section-title;
   }
 
   .SupportusQuote {
-    color: rgb(0, 153, 255);
+    color: colors.$royal-blue;
     font-size: 1.7rem;
     margin-bottom: 11px;
   }
