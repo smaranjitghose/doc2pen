@@ -4,7 +4,7 @@ import { EditContext } from "../../containers/editContext";
 import styles from "./Settings.module.css";
 import Dropdown from "../../../../components/Dropdown/Dropdown";
 import NumberSlider from "../../components/Slider/NumberSlider";
-import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 const Settings = () => {
   const editContext = useContext(EditContext);

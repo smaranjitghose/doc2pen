@@ -55,9 +55,9 @@ const DownloadFileModal = (props) => {
                         return (
                             <button
                                 onClick={() => setFileType(file)}
-                                style={{ backgroundColor: fileType == file ? "#103f5f" : "#6666FF" }}
+                                style={{ backgroundColor: fileType === file ? "#103f5f" : "#6666FF" }}
                                 className={styles.downloadLabelButton}
-                                key={Math.random()}>{file} {fileType == file ? '*' : null}</button>
+                                key={Math.random()}>{file} {fileType === file ? '*' : null}</button>
                         )
                     })
                 }
