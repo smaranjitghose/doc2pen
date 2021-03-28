@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './SupportUs.module.css';
+import styles from './SupportUs.module.scss';
 
 function SupportUs() {
     return (
