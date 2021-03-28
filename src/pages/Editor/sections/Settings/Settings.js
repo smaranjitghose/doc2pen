@@ -24,7 +24,7 @@ const Settings = () => {
             value={editContext.isBody}
             id="title-heading"
             onClick={editContext.isBodyHandler}
-            className={`id-title d-none`}
+            className={`d-none`}
           />
           <label for="title-heading" style={{ color: editContext.isBody && "#f0f7ff" }}>
             Title
