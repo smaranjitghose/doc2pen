@@ -13,8 +13,8 @@ const OutputComponent = () => {
   const [wordCount, setWordCount] = useState(0);
 
   useEffect(() => {
-    setWordCount(pageText.split(' ').filter(c => c !== '').length);
-  }, [pageText])
+    setWordCount(pageText.split(" ").filter(c => c !== "").length);
+  }, [pageText]);
 
   return (
     <>
@@ -25,36 +25,41 @@ const OutputComponent = () => {
           </div>
           <textarea
             type="text"
-            className={`${classes.titleInput} id-title`}
+            className={`${classes.titleInput}`}
             onClick={editContext.isBodyHandler}
             placeholder="Welcome to your Doc2Pen"
             style={{
               fontSize: `${editContext.headValues.headSize}px`,
               paddingTop: `${editContext.headValues.headTop}px`,
+              paddingRight: `${Number(editContext.headValues.headRight) + 3}px`,
               paddingLeft: `${Number(editContext.headValues.headLeft) + 3}px`,
               lineHeight: `${editContext.headValues.headLine}`,
               fontFamily: `${editContext.headValues.headFont}`,
               color: `${editContext.headValues.headColor}`,
               width: `${editContext.headValues.headWidth}pc`,
               letterSpacing: `${editContext.headValues.headLetterSpace}px`,
+              overflowY: "scroll",
             }}
           />
           <textarea
             type="text"
             value={editContext.bodyValues.textValue}
             onChange={e => setPageText(e.target.value)}
+            onClick={editContext.isBodyHandler}
             className={`${classes.contentInput} id-body`}
             id="show-text"
             placeholder="Paste your content here! You can type it too, but we know people."
             style={{
               fontSize: `${editContext.bodyValues.bodySize}px`,
               paddingTop: `${editContext.bodyValues.bodyTop}px`,
+              paddingRight: `${Number(editContext.bodyValues.bodyRight) + 3}px`,
               paddingLeft: `${Number(editContext.bodyValues.bodyLeft) + 3}px`,
               lineHeight: `${editContext.bodyValues.bodyLine}`,
               fontFamily: `${editContext.bodyValues.bodyFont}`,
               color: `${editContext.bodyValues.bodyColor}`,
               width: `${editContext.bodyValues.bodyWidth}pc`,
               letterSpacing: `${editContext.bodyValues.bodyLetterSpace}px`,
+              overflowY: "scroll",
             }}
           />
         </div>

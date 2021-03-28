@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DomToImage from "dom-to-image";
 import { jsPDF } from "jspdf";
 import ReactSnackBar from "react-js-snackbar";
-import checkBox from "./../../../assets/images/editor/checkmark.svg";
+import checkBox from "./../../../assets/images/checkmark.svg";
 
 export const EditContext = React.createContext();
 const svgStyles = {
@@ -16,10 +16,12 @@ const EditContextProvider = props => {
   const [pageSrc, setPageSrc] = useState(`${aImagePrefix}blank1.png`);
   const [isBody, setIsBody] = useState(true);
 
+
   const [headValues, setHeadValues] = useState({
     headSize: null,
-    headTop: null,
-    headLeft: 0,
+    headTop: 20,
+    headLeft: 20,
+    headRight: 20,
     headLine: null,
     headFont: "HomemadeApple",
     headColor: "black",
@@ -28,8 +30,9 @@ const EditContextProvider = props => {
   });
   const [bodyValues, setBodyValues] = useState({
     bodySize: null,
-    bodyTop: null,
-    bodyLeft: 0,
+    bodyTop: 20,
+    bodyLeft: 20,
+    bodyRight: 20,
     bodyLine: null,
     bodyFont: "HomemadeApple",
     bodyColor: "black",
@@ -155,7 +158,9 @@ const EditContextProvider = props => {
     e.preventDefault();
 
     if (window.File && window.FileReader && window.FileList && window.Blob) {
+
       let textarea = document.querySelector("#show-text");
+      textarea.value = "";
       var file = document.querySelector("input[type=file]").files[0];
       var reader = new FileReader();
 
@@ -168,7 +173,7 @@ const EditContextProvider = props => {
 
         }
       } else {
-        textarea.value += "<span class='error'>It doesn't seem to be a text file!</span>";
+        alert("Sorry, We cannot import the selected file. The file must be of type '.txt' ");
       }
       reader.readAsText(file);
     } else {
@@ -179,13 +184,10 @@ const EditContextProvider = props => {
 
   function convertToPlain(rtf) {
     rtf = rtf.replace(/\\par[d]?/g, "");
-    rtf = rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "");
-    // rtf = rtf.replace(/\n/ig, " ");
-    rtf = rtf.replace(/\\/gi, "");
-    rtf = rtf.replace(/\*/gi, "");
+    rtf = rtf.replace(/\{\*?\\[^{}]+}|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "");
     rtf = rtf.replace(/decimal.|tightenfactor0|eftab720|HYPERLINK|irnatural/gi, "");
     rtf = rtf.replace(/irnaturaltightenfactor0|000000/gi, "");
-    rtf = rtf.replace(/�|ࡱ|p#|#|,|%|@|\$|~/gi, "");
+    rtf = rtf.replace(/�|ࡱ|p#|/gi, "");
     return rtf.replace(/\\'[0-9a-zA-Z]{2}/g, "").trim();
   }
 
@@ -205,6 +207,7 @@ const EditContextProvider = props => {
       }}
     >
       {props.children}
+
       <ReactSnackBar Icon={<img style={svgStyles} src={checkBox} alt="" />} Show={show}>
         Generating PDF! Please wait...
       </ReactSnackBar>
