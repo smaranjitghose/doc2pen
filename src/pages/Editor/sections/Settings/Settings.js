@@ -10,34 +10,6 @@ const Settings = () => {
 
   return (
     <div className={styles.controlPanel}>
-      <div className={styles.selector}>
-        <div className={styles.selectOption}style={{backgroundColor: editContext.isBody ? "#1979CA" : "#f0f7ff"}}>
-          <input
-            type="checkbox"
-            name="heading"
-            value={editContext.isBody}
-            id="title-heading"
-            onClick={editContext.isBodyHandler}
-            className={`d-none`}
-          />
-          <label for="title-heading" style={{ color: editContext.isBody && "#f0f7ff" }}>
-            Title
-          </label>
-        </div>
-        <div className={styles.selectOption} style={{backgroundColor: editContext.isBody ? "#f0f7ff" : "#1979CA"}}>
-          <input
-            type="checkbox"
-            name="heading"
-            value={editContext.isBody}
-            id="body-heading"
-            onClick={editContext.isBodyHandler}
-            className={`id-body d-none `}
-          />
-          <label for="body-heading" style={{ color: !editContext.isBody && "#f0f7ff" }}>
-            Body
-          </label>
-        </div>
-      </div>
       <div className={styles.controls}>
         <div className={styles.group1}>
           <Dropdown name="Change Color" type="color" items={["black","red","orange","green","blue","dodgerblue","deeppink","darkviolet"]}/>
@@ -68,7 +40,7 @@ const Settings = () => {
         <NumberSlider
           label={"Adjust x-axis"}
           editContext={editContext}
-          name={editContext.isBody ? "bodyLeft" : "headLeft"}
+          name="bodyLeft"
           min="0"
           max="200"
           step={1}
@@ -79,7 +51,7 @@ const Settings = () => {
         <NumberSlider
           label={"Font size"}
           editContext={editContext}
-          name={editContext.isBody ? "bodySize" : "headSize"}
+          name="bodySize"
           min="5"
           max="50"
           step={1}
@@ -91,7 +63,7 @@ const Settings = () => {
         <NumberSlider
           label={"Adjust y-axis"}
           editContext={editContext}
-          name={editContext.isBody ? "bodyTop" : "headTop"}
+          name="bodyTop"
           min="0"
           max="100"
           step={1}
@@ -102,7 +74,7 @@ const Settings = () => {
         <NumberSlider
           label={"Line-spacing"}
           editContext={editContext}
-          name={editContext.isBody ? "bodyLine" : "headLine"}
+          name="bodyLine"
           min="1"
           max="5"
           step={1}
@@ -113,7 +85,7 @@ const Settings = () => {
         <NumberSlider
           label={"Width"}
           editContext={editContext}
-          name={editContext.isBody ? "bodyWidth" : "headWidth"}
+          name="bodyWidth"
           min="20"
           max="70"
           step={1}
@@ -125,7 +97,7 @@ const Settings = () => {
         <NumberSlider
           label={"Letter Spacing"}
           editContext={editContext}
-          name={editContext.isBody ? "bodyLetterSpace" : "headLetterSpace"}
+          name="bodyLetterSpace"
           min="0"
           max="10"
           step={0.5}

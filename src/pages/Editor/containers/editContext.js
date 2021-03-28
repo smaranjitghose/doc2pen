@@ -14,20 +14,7 @@ const svgStyles = {
 const EditContextProvider = props => {
   const aImagePrefix = "";
   const [pageSrc, setPageSrc] = useState(`${aImagePrefix}blank1.png`);
-  const [isBody, setIsBody] = useState(true);
 
-
-  const [headValues, setHeadValues] = useState({
-    headSize: null,
-    headTop: 20,
-    headLeft: 20,
-    headRight: 20,
-    headLine: null,
-    headFont: "HomemadeApple",
-    headColor: "black",
-    headWidth: null,
-    headLetterSpace: null,
-  });
   const [bodyValues, setBodyValues] = useState({
     bodySize: null,
     bodyTop: 20,
@@ -52,38 +39,16 @@ const EditContextProvider = props => {
     Blank2: "blank2.jpg",
   };
 
-  const isBodyHandler = e => {
-    if (e.target.classList.contains("id-body")) {
-      setIsBody(true);
-    } else {
-      setIsBody(false);
-    }
-  };
-
   const pageSrcHandler = e => {
     setPageSrc(`${ImageNameMap[e.target.value]}`);
   };
 
   const onValueChange = e => {
-    if (isBody) {
       setBodyValues({ ...bodyValues, [e.target.name]: e.target.value });
-    } else {
-      setHeadValues({
-        ...headValues,
-        [e.target.name]: e.target.value,
-      });
-    }
   };
 
   const onElementValueChange = e => {
-    if (isBody) {
       setBodyValues({ ...bodyValues, [e.name]: e.value });
-    } else {
-      setHeadValues({
-        ...headValues,
-        [e.name]: e.value,
-      });
-    }
   };
 
   const downloadAction = e => {
@@ -194,13 +159,10 @@ const EditContextProvider = props => {
   return (
     <EditContext.Provider
       value={{
-        isBody,
-        headValues,
         bodyValues,
         pageSrc,
         onValueChange,
         onElementValueChange,
-        isBodyHandler,
         downloadAction,
         pageSrcHandler,
         importTxt,
