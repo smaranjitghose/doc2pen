@@ -196,6 +196,8 @@
     .figure {
       box-shadow: 0 4px 8px 0 colors.$medium-dark-grey, 0 6px 20px 0 colors.$medium-dark-grey;
       width: 7%;
+      min-width: 48px;
+      min-height: 48px;
       overflow: hidden;
       img {
         -webkit-filter: contrast(125%) brightness(100%) grayscale(100%);
