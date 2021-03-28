@@ -32,10 +32,8 @@ const DownloadFileModal = (props) => {
         <Modal style={{ marginTop: "200px" }} isOpen={modal} toggle={toggle} >
 
             <ModalBody>
-                <label className={styles.modalLabel} htmlFor="name">Please Provide File name : </label>
-                <br />
                 <input
-                    placeholder="Enter file name"
+                    placeholder="What would you like to call the file?"
                     className={styles.modalInput}
                     type="text"
                     id="name"
@@ -48,14 +46,14 @@ const DownloadFileModal = (props) => {
                     ) : null
                 }
 
-                <label className={styles.modalLabel} > Select the file Type : </label>
+                <label className={styles.modalLabel} > Export as : </label>
                 <br />
                 {
                     files.map((file) => {
                         return (
                             <button
                                 onClick={() => setFileType(file)}
-                                style={{ backgroundColor: fileType === file ? "#103f5f" : "#6666FF" }}
+                                style={{ backgroundColor: fileType === file ? "#103f5f" : "#add8e6", color: fileType === file ? "white" : "black" }}
                                 className={styles.downloadLabelButton}
                                 key={Math.random()}>{file} {fileType === file ? '*' : null}</button>
                         )
@@ -63,8 +61,8 @@ const DownloadFileModal = (props) => {
                 }
             </ModalBody>
             <ModalFooter>
-                <Button color="primary" onClick={handleDownloadFile}>Download</Button>{' '}
-                <Button color="secondary" onClick={toggle}>Cancel</Button>
+                <Button className={styles.downloadButton} onClick={handleDownloadFile}>Download</Button>{' '}
+                <Button className={styles.closeModal} color="secondary" onClick={toggle}>X</Button>
             </ModalFooter>
         </Modal>
 
