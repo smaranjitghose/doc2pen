@@ -8,18 +8,6 @@
   .titleMain {
     @include mixin.section-title;
   }
-
-  .SupportusQuote {
-    color: colors.$royal-blue;
-    font-size: 1.7rem;
-    margin-bottom: 11px;
-  }
-
-  .quoteAuthor {
-    color: gray;
-    font-size: 20px;
-  }
-
   div .patreonAndCoffe {
     margin-top: 30px;
     margin-left: auto;
