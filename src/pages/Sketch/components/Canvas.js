@@ -17,7 +17,7 @@ function Canvas() {
   const [color, setColor] = useState("#000000");
   const [background, setBackground] = useState("#ffffff");
   const [width, setWidth] = useState("1");
-  const [opacity, setOpacity] = useState("1");
+  const [opacity, setOpacity] = useState(1.0);
   const [stroke, setStroke] = useState("none");
   const [fill, setFill] = useState("false");
   const [canvasStates, setCanvasStates] = useState([]);
