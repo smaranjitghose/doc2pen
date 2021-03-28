@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import styles from './Team.module.css';
+import styles from './Team.module.scss';
 import {FaGithub, FaLinkedinIn} from 'react-icons/fa';
 import smaranjitLarge from '../../../../assets/images/team/smaranjit_ghose_large.webp';
 import anushLarge from '../../../../assets/images/team/anush_bhatia_large.webp';
