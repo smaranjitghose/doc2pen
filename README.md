@@ -59,10 +59,15 @@ Add GIFs of the entire web app
 - HTML
 - SCSS
 - [React - Bootstrap](https://react-bootstrap.github.io/)
-- [React - Helmet](https://www.npmjs.com/package/react-helmet)
-- [React - Leaflet.js](https://react-leaflet.js.org/)
-- [Rough.js](https://roughjs.com/)
-- [Mousetrap](https://github.com/ccampbell/mousetrap)
+- [React - Helmet](https://www.npmjs.com/package/react-helmet): Document Head Management
+- [React - Leaflet.js](https://react-leaflet.js.org/): Interactive Maps
+- [React - Dropzone.js](https://react-dropzone.js.org/): Drag and drop file uploads
+- [Rough.js](https://roughjs.com/): Make sketchy, hand drawn figures
+- [Mousetrap](https://github.com/ccampbell/mousetrap): Handling Keyboard shortcuts
+- [ReactJS - Snackbar](https://www.npmjs.com/package/react-js-snackbar): Making snackbars to provide brief messages
+- [React Reveal](https://www.react-reveal.com/): Animations
+- [JSPDF](https://www.npmjs.com/package/jspdf): Generate PDFs
+
 
 
 
