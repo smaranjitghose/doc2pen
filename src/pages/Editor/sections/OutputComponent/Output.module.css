@@ -19,8 +19,20 @@
   width: 100%;
 }
 
-::-webkit-scrollbar {
-  display: none;
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 8px rgba(12, 11, 11, 0.7); 
+  box-shadow: inset 0 0 8px rgba(12, 11, 11, 0.7); 
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 13px rgba(31, 113, 180, 5); 
+  box-shadow: inset 0 0 13px rgba(31, 113, 180, 5); 
 }
 
 .titleInput {
