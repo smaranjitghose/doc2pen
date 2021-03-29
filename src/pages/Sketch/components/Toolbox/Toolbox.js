@@ -10,6 +10,7 @@ import { FaPencilAlt, FaRegCircle, FaSlash, FaFont } from "react-icons/fa";
 import { BsArrowUpRight } from "react-icons/bs";
 import { GiTriangleTarget } from "react-icons/gi";
 import { BsDiamond } from "react-icons/bs";
+import { BiShapeTriangle } from 'react-icons/bi';
 
 function Toolbox({
   color,
@@ -70,6 +71,9 @@ function Toolbox({
         </Shape>
         <Shape type_="text" id="sketch-shapes-text" label="Text">
           <FaFont size={15} />
+        </Shape>
+        <Shape type_="biShapeTriangle" id="sketch-shapes-biShapeTriangle" label="Bi Shape Triangle">
+          <BiShapeTriangle size={15} />
         </Shape>
       </Feature>
 

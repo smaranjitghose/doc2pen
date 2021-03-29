@@ -120,7 +120,7 @@ function Canvas() {
 
     if (type === "pen") {
       logicDown(point);
-    } else if (["line", "square", "circle", "triangle", "arrow", "diamond"].includes(type)) {
+    } else if (["line", "square", "circle", "triangle", "arrow", "diamond", "biShapeTriangle"].includes(type)) {
       setTypeState(context.getImageData(0, 0, canvasWidth, canvasHeight));
       logicDown(point);
       setDownPoint({ x: point.x, y: point.y });
@@ -182,6 +182,9 @@ function Canvas() {
         break;
       case "diamond":
         diamondMove(point);
+        break;
+      case "biShapeTriangle":
+        biShapeTriangleMove(point);
         break;
       default:
         break;
@@ -373,6 +376,36 @@ function Canvas() {
     }
     context.stroke();
   }
+
+
+  function biShapeTriangleMove(point) {
+    context.putImageData(typeState, 0, 0);
+    context.beginPath();
+    const center_x = (downPoint.x + point.x) / 2;
+
+    context.moveTo(center_x, downPoint.y);
+    context.lineTo(point.x, point.y);
+    context.lineTo(center_x, point.y);
+    context.lineTo(center_x, downPoint.y);
+    context.closePath();
+    if (fill === "true") {
+      const col = hexToRGB(fillColor);
+      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
+      context.fill();
+    } else if (fill === "pattern" && fillImage) {
+      let img = new Image();
+      img.onload = "start";
+      img.src = fillImage;
+
+      let pattern = context.createPattern(img, "repeat");
+      context.fillStyle = pattern;
+      context.fill();
+    }
+    context.stroke();
+  }
+
+
+  
 
   function download() {
     let link = document.createElement("a");
