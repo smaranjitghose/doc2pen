@@ -14,8 +14,6 @@ import { BsDiamond } from "react-icons/bs";
 function Toolbox({
   color,
   setColor,
-  // opacity,
-  // setOpacity,
   fillColor,
   setFillColor,
   fillOpacity,
