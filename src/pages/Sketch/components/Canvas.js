@@ -4,6 +4,7 @@ import Toolbox from "./Toolbox/Toolbox";
 import { FaDownload, FaStar } from "react-icons/fa";
 import { RiDeleteBinLine } from "react-icons/ri";
 import IconsLibrary from "./IconLibrary/IconsLibrary";
+import rough from "roughjs/bin/rough";
 
 const Mousetrap = require("mousetrap");
 
@@ -16,7 +17,6 @@ function Canvas() {
   /* ----- Feature State ----- */
   const [background, setBackground] = useState("#ffffff");
   const [strokeColor, setStrokeColor] = useState("#000000");
-  // const [strokeOpacity, setStrokeOpacity] = useState(1);
   const [fillColor, setFillColor] = useState(background);
   const [fillOpacity, setFillOpacity] = useState(0.3);
   const [width, setWidth] = useState("1");
@@ -26,6 +26,7 @@ function Canvas() {
   const [canvasStateAt, setcanvasStateAt] = useState(-1);
   const [fillImage, setFillImage] = useState(null);
   const [edge, setEdge] = useState("round");
+  const [roughness, setRoughness] = useState("0");
   // For Font
   const [text, setText] = useState("");
   const [isWriting, setIsWriting] = useState(false);
@@ -33,7 +34,9 @@ function Canvas() {
   const [fontStyle, setFontStyle] = useState("normal");
   const [fontFamily, setFontFamily] = useState("cursive");
 
+  const roughCanvas = useRef(null);
   useEffect(() => {
+    roughCanvas.current = rough.canvas(canvasRef.current);
     setContext(canvasRef.current.getContext("2d"));
   }, []);
 
@@ -46,7 +49,7 @@ function Canvas() {
 
   const [canvasWidth, setCanvasWidth] = useState(window.innerWidth - 50);
   const [canvasHeight, setCanvasHeight] = useState(window.innerHeight - 100);
-
+  const penPath = useRef([]);
   const handleResizeListener = () => {
     setCanvasWidth(window.innerWidth - 50);
     setCanvasHeight(window.innerHeight - 100);
@@ -101,7 +104,6 @@ function Canvas() {
     const point = relativeCoordinatesForEvent(event);
 
     const col = hexToRGB(strokeColor);
-    // context.strokeStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${strokeOpacity})`;
     context.strokeStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, 1)`;
 
     if (stroke === "small") {
@@ -197,7 +199,10 @@ function Canvas() {
 
     setCanvasStates(current => [...canvasStatesCopy, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
     setcanvasStateAt(current => current + 1);
-
+    if (type === "pen") {
+      roughCanvas.current.curve(penPath.current, { strokeWidth: width, roughness: roughness });
+      penPath.current = [];
+    }
     setIsDrawing(false);
     event.preventDefault();
     setTypeState(null);
@@ -218,15 +223,18 @@ function Canvas() {
     }
   }
   function logicDown(point) {
-    context.beginPath();
-    context.moveTo(point.x, point.y);
-    context.lineTo(point.x, point.y);
-    context.stroke();
+    if (type === "pen") {
+      penPath.current.push([point.x, point.y]);
+    } else {
+      context.beginPath();
+      context.moveTo(point.x, point.y);
+      context.lineTo(point.x, point.y);
+      context.stroke();
+    }
   }
 
   function penMove(point) {
-    context.lineTo(point.x, point.y);
-    context.stroke();
+    penPath.current.push([point.x, point.y]);
   }
 
   function lineMove(point) {
@@ -419,8 +427,6 @@ function Canvas() {
       <Toolbox
         color={strokeColor}
         setColor={setStrokeColor}
-        // opacity={strokeOpacity}
-        // setOpacity={setStrokeOpacity}
         fillColor={fillColor}
         setFillColor={setFillColor}
         fillOpacity={fillOpacity}
@@ -431,6 +437,8 @@ function Canvas() {
         setWidth={setWidth}
         stroke={stroke}
         setStroke={setStroke}
+        roughness={roughness}
+        setRoughness={setRoughness}
         fill={fill}
         setFill={setFill}
         undo={undo}
