@@ -13,8 +13,8 @@ const OutputComponent = () => {
   const [wordCount, setWordCount] = useState(0);
 
   useEffect(() => {
-    setWordCount(pageText.split(' ').filter(c => c !== '').length);
-  }, [pageText])
+    setWordCount(pageText.split(" ").filter(c => c !== "").length);
+  }, [pageText]);
 
   return (
     <>
@@ -25,7 +25,7 @@ const OutputComponent = () => {
           </div>
           <textarea
             type="text"
-            className={`${classes.titleInput} id-title`}
+            className={`${classes.titleInput}`}
             onClick={editContext.isBodyHandler}
             placeholder="Welcome to your Doc2Pen"
             style={{
@@ -38,13 +38,14 @@ const OutputComponent = () => {
               color: `${editContext.headValues.headColor}`,
               width: `${editContext.headValues.headWidth}pc`,
               letterSpacing: `${editContext.headValues.headLetterSpace}px`,
-              overflowY : 'scroll',
+              overflowY: "scroll",
             }}
           />
           <textarea
             type="text"
             value={editContext.bodyValues.textValue}
             onChange={e => setPageText(e.target.value)}
+            onClick={editContext.isBodyHandler}
             className={`${classes.contentInput} id-body`}
             id="show-text"
             placeholder="Paste your content here! You can type it too, but we know people."
@@ -58,7 +59,7 @@ const OutputComponent = () => {
               color: `${editContext.bodyValues.bodyColor}`,
               width: `${editContext.bodyValues.bodyWidth}pc`,
               letterSpacing: `${editContext.bodyValues.bodyLetterSpace}px`,
-              overflowY : 'scroll',
+              overflowY: "scroll",
             }}
           />
         </div>

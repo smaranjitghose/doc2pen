@@ -49,9 +49,9 @@
 
 /* ----- Mouse Position ----- */
 .mousePosition {
-  position: absolute;
-  bottom: 11px;
-  right: 30px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
   font-size: 0.7rem;
 }
 
@@ -82,7 +82,7 @@
   z-index: 99999999;
 }
 
-.iconLibContainer--open{
+.iconLibContainer--open {
   width: calc(100vw - 50px);
   height: calc(100vh - 150px);
 }

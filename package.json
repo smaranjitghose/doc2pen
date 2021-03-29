@@ -18,7 +18,7 @@
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
-    "react-dropzone": "^11.3.1",
+    "react-dropzone": "^11.3.2",
     "react-easy-emoji": "1.4.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.1.0",
@@ -29,7 +29,9 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-scroll": "^1.8.1",
+    "react-useanimations": "^2.0.6",
     "reactstrap": "^8.5.1",
+    "roughjs": "^4.3.1",
     "sass": "^1.32.8",
     "web-vitals": "^0.2.4"
   },
