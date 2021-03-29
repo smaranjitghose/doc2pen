@@ -1,17 +1,23 @@
 import React, { useContext } from "react";
-
+import DownloadFileModal from "./DownloadFileModal";
 import { EditContext } from "../../containers/editContext";
 import styles from "./Settings.module.css";
 import Dropdown from "../../../../components/Dropdown/Dropdown";
 import NumberSlider from "../../components/Slider/NumberSlider";
+import { Button } from 'reactstrap';
 
 const Settings = () => {
   const editContext = useContext(EditContext);
+  const [modal, setModal] = React.useState(false);
 
+  // Dialogue open
+  const handleopenModal = () => {
+    setModal(true);
+  }
   return (
     <div className={styles.controlPanel}>
       <div className={styles.selector}>
-        <div className={styles.selectOption}style={{backgroundColor: editContext.isBody ? "#1979CA" : "#f0f7ff"}}>
+        <div className={styles.selectOption} style={{ backgroundColor: editContext.isBody ? "#1979CA" : "#f0f7ff" }}>
           <input
             type="checkbox"
             name="heading"
@@ -24,7 +30,7 @@ const Settings = () => {
             Title
           </label>
         </div>
-        <div className={styles.selectOption} style={{backgroundColor: editContext.isBody ? "#f0f7ff" : "#1979CA"}}>
+        <div className={styles.selectOption} style={{ backgroundColor: editContext.isBody ? "#f0f7ff" : "#1979CA" }}>
           <input
             type="checkbox"
             name="heading"
@@ -40,15 +46,16 @@ const Settings = () => {
       </div>
       <div className={styles.controls}>
         <div className={styles.group1}>
-          <Dropdown name="Change Color" type="color" items={["black","red","orange","green","blue","dodgerblue","deeppink","darkviolet"]}/>
+          <Dropdown name="Change Color" type="color" items={["black", "red", "orange", "green", "blue", "dodgerblue", "deeppink", "darkviolet"]} />
           <div className={styles.vSeparator}></div>
           <Dropdown
             name="Change Style"
             type="font"
-            items={["HomemadeApple","Caveat","CedarvilleCursive","Dawning","IndieFlower","NothingYouCouldDo","Liu","LeagueScript", "Enola","RayFont","RGhandwritten"]}
+            items={["HomemadeApple", "Caveat", "CedarvilleCursive", "Dawning", "IndieFlower", "NothingYouCouldDo", "Liu", "LeagueScript", "Enola", "RayFont", "RGhandwritten"]}
+
           />
           <div className={styles.vSeparator}></div>
-          <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]}/>
+          <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]} />
 
           <div className={styles.vSeparator}></div>
 
@@ -57,12 +64,8 @@ const Settings = () => {
           </label>
           <input id="import" style={{ display: "none" }} type="file" onChange={editContext.importTxt} ></input>
           <div className={styles.vSeparator}></div>
-
-          <Dropdown
-            name="Download"
-            type="download"
-            items={["as PDF", "as PNG"]}
-          />
+          {/* Download functionality */}
+          <Button color="none" onClick={handleopenModal} >Download File</Button>
           <div className={styles.vSeparator}></div>
         </div>
         <NumberSlider
@@ -132,6 +135,9 @@ const Settings = () => {
           initialValue={0}
         />
       </div>
+      <DownloadFileModal
+        modal={modal}
+        setModal={setModal} />
     </div>
   );
 };
