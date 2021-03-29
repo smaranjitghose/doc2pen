@@ -53,6 +53,18 @@ Add GIFs of the entire web app
 ```
 
 
+## Under the hood:
+
+- React
+- HTML
+- SCSS
+- [React - Bootstrap](https://react-bootstrap.github.io/)
+- [React - Helmet](https://www.npmjs.com/package/react-helmet)
+- [React - Leaflet.js](https://react-leaflet.js.org/)
+- [Rough.js](https://roughjs.com/)
+- [Mousetrap](https://github.com/ccampbell/mousetrap)
+
+
 
 ## Wish to fix a bug or add a new feature?[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)🤝🏽🍀:
 
