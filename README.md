@@ -67,6 +67,7 @@ Add GIFs of the entire web app
 - [ReactJS - Snackbar](https://www.npmjs.com/package/react-js-snackbar): Making snackbars to provide brief messages
 - [React Reveal](https://www.react-reveal.com/): Animations
 - [JSPDF](https://www.npmjs.com/package/jspdf): Generate PDFs
+- [React Scroll](https://www.npmjs.com/package/react-scroll): Smooth Scrolling between sections
 
 
 
