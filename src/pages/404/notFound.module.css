@@ -3,7 +3,7 @@
 .root {
   font-family: "Amatic SC", sans-serif;
   font-size: 100px;
-  background: #111;
+  background:black;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -13,115 +13,83 @@
   padding-top: 30px;
 }
 
-.small {
-  font-size: 2.2rem;
-  margin-top: 10px;
+body{
+  background:black;
+}
+.st0{font-family:'FootlightMTLight';}
+.st1{font-size:83.0285px;}
+.st2{fill:gray;}
+
+svg{
+width: 500px;
+  height: 400px;
+  text-align: center;
+  fill: #16a085;
+}
+path#XMLID_5_ {
+ 
+  fill: #16a085;
+  filter: url(#blurFilter4);
+}
+path#XMLID_11_ ,path#XMLID_2_ {
+  fill: #16a085;
+}
+.circle{
+animation: out 2s infinite ease-out;
+fill: #16a085;
 }
 
-.smaller {
-  font-size: 2rem;
+.containerx{
+text-align:center;
+}
+.message{
+color:#16a085;
+}
+.message:after{
+content:"]";
+}
+.message:before{
+content:"[";
 }
 
-p {
-  margin: 0;
+.message:after, .message:before {
+
+color: #16a085;
+font-size: 100px;
+-webkit-animation-name: opacity;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-name: opacity;
+        animation-name: opacity;
+-webkit-animation-duration: 2s;
+        animation-duration: 2s;
+-webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        margin:0 50px;
 }
 
-.sadImg {
-  position: relative;
-  height: 200px;
-  width: 342px;
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  background-position:center;
-  margin-top: 30px;
+@-webkit-keyframes opacity {
+0%, 100% {
+  opacity: 0;
+}
+50% {
+  opacity: 1;
+}
 }
 
-.sadImg::after {
-  content: "";
-  display: block;
-  width: 125px;
-  border-radius: 100%;
-  filter: blur(2px);
-  background-color: #000;
-  height: 5px;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+@keyframes opacity {
+0%, 100% {
+  opacity: 0;
+}
+50% {
+  opacity: 1;
+}
 }
 
-.fours {
-  height: 100%;
-  width: 200px;
-  position: relative;
-}
-
-.fours::before,
-.fours::after {
-  content: "4";
-  position: absolute;
-  bottom: 0;
-
-  font-size: 14rem;
-  font-family: "Luckiest Guy";
-  line-height: 0.94;
-}
-.fours::before {
-  left: -140px;
-}
-
-.fours::after {
-  right: -140px;
-}
-
-.navlink {
-  color: rgb(202, 202, 202);
-  text-decoration: none;
-  font-size: 2rem;
-  box-shadow: 0 0 0 1.5px #fff;
-  border-radius: 25px;
-  padding: 5px 20px;
-  margin-top: 30px;
-  position: relative;
-  overflow: hidden;
-}
-.navlink:hover {
-  color: rgb(202, 202, 202);
-  background-color: #1e2836;
-  box-shadow: 0 0 0 1.5px #1e2836;
-}
-.buttonText {
-  position: relative;
-  z-index: 1;
-  color: #08fdd8;
-}
-.navlink:hover .buttonText {
-  color: #272727;
-}
-.hoverEffect {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  border-radius: 0 100% 100% 0;
-  background-color: #fcfcfc;
-  width: 500px;
-  height: 100%;
-  transform: scale(0, 1) translate(-10px, -10px);
-  transform-origin: top left;
-}
-
-.navlink:hover .hoverEffect {
-  transform: scale(1) translate(-10px, -10px);
-  height: 200%;
-}
-
-@media (max-width:570px){
-  .sadImg{
-    transform: scale(0.6);
-  }
-  .root{
-    font-size: 3.5rem;
-  }
+@keyframes out {
+0% {r:1;  opacity: 0.9 ;}
+25%{r:5;  opacity: 0.3 ;}
+50%{r:10; opacity: 0.2 ;}
+75%{r:15;opacity:0.1;}
+ 100% {r:20;opacity:0;}
 }
