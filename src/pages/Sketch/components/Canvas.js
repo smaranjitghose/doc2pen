@@ -14,10 +14,12 @@ function Canvas() {
   const [context, setContext] = useState();
 
   /* ----- Feature State ----- */
-  const [color, setColor] = useState("#000000");
   const [background, setBackground] = useState("#ffffff");
+  const [strokeColor, setStrokeColor] = useState("#000000");
+  // const [strokeOpacity, setStrokeOpacity] = useState(1);
+  const [fillColor, setFillColor] = useState(background);
+  const [fillOpacity, setFillOpacity] = useState(0.3);
   const [width, setWidth] = useState("1");
-  const [opacity, setOpacity] = useState(1.0);
   const [stroke, setStroke] = useState("none");
   const [fill, setFill] = useState("false");
   const [canvasStates, setCanvasStates] = useState([]);
@@ -98,7 +100,8 @@ function Canvas() {
 
     const point = relativeCoordinatesForEvent(event);
 
-    const col = hexToRGB(color);
+    const col = hexToRGB(strokeColor);
+    // context.strokeStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${strokeOpacity})`;
     context.strokeStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, 1)`;
 
     if (stroke === "small") {
@@ -125,7 +128,7 @@ function Canvas() {
       if (textRef.current) {
         if (isWriting) {
           context.font = `${fontStyle} ${fontSize}rem ${fontFamily}`;
-          context.fillStyle = color;
+          context.fillStyle = strokeColor;
           context.fillText(
             text,
             downPoint.x,
@@ -246,8 +249,8 @@ function Canvas() {
     context.lineTo(downPoint.x, point.y);
     context.closePath();
     if (fill === "true") {
-      const col = hexToRGB(color);
-      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+      const col = hexToRGB(fillColor);
+      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
       context.fill();
     } else if (fill === "pattern" && fillImage) {
       let img = new Image();
@@ -271,8 +274,8 @@ function Canvas() {
     context.arc(x, y, radius, 0, 2 * Math.PI);
     context.closePath();
     if (fill === "true") {
-      const col = hexToRGB(color);
-      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+      const col = hexToRGB(fillColor);
+      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
       context.fill();
     } else if (fill === "pattern" && fillImage) {
       let img = new Image();
@@ -295,8 +298,8 @@ function Canvas() {
     context.lineTo(downPoint.x, point.y);
     context.closePath();
     if (fill === "true") {
-      const col = hexToRGB(color);
-      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+      const col = hexToRGB(fillColor);
+      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
       context.fill();
     } else if (fill === "pattern" && fillImage) {
       let img = new Image();
@@ -348,8 +351,8 @@ function Canvas() {
     context.lineTo(center_x, downPoint.y);
     context.closePath();
     if (fill === "true") {
-      const col = hexToRGB(color);
-      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+      const col = hexToRGB(fillColor);
+      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
       context.fill();
     } else if (fill === "pattern" && fillImage) {
       let img = new Image();
@@ -414,14 +417,18 @@ function Canvas() {
   return (
     <>
       <Toolbox
-        color={color}
-        setColor={setColor}
+        color={strokeColor}
+        setColor={setStrokeColor}
+        // opacity={strokeOpacity}
+        // setOpacity={setStrokeOpacity}
+        fillColor={fillColor}
+        setFillColor={setFillColor}
+        fillOpacity={fillOpacity}
+        setFillOpacity={setFillOpacity}
         background={background}
         setBackground={setBackground}
         width={width}
         setWidth={setWidth}
-        opacity={opacity}
-        setOpacity={setOpacity}
         stroke={stroke}
         setStroke={setStroke}
         fill={fill}
@@ -490,7 +497,7 @@ function Canvas() {
               autoFocus
               id="canvas-text-input"
               style={{
-                color: color,
+                color: strokeColor,
                 fontSize: `${fontSize}rem`,
                 fontStyle: `${fontStyle === "bold" ? "normal" : fontStyle}`,
                 fontFamily: fontFamily,

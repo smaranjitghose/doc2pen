@@ -14,12 +14,14 @@ import { BsDiamond } from "react-icons/bs";
 function Toolbox({
   color,
   setColor,
+  fillColor,
+  setFillColor,
+  fillOpacity,
+  setFillOpacity,
   background,
   setBackground,
   width,
   setWidth,
-  opacity,
-  setOpacity,
   stroke,
   setStroke,
   fill,
@@ -82,7 +84,7 @@ function Toolbox({
         </div>
       </Feature>
 
-      <Feature title="Color">
+      <Feature title="Stroke Color">
         <div className={styles.colorPicker}>
           <input type="color" name="canvas_pen_color" value={color} onChange={e => setColor(e.target.value)} />
           <input
@@ -95,7 +97,7 @@ function Toolbox({
         </div>
       </Feature>
       {type !== "text" && (
-        <Feature title="Stroke Width">
+        <Feature title="Width">
           <select name="canvas_pen_width" value={width} onChange={e => setWidth(e.target.value)}>
             <option value="1">1px</option>
             <option value="2">2px</option>
@@ -112,8 +114,8 @@ function Toolbox({
         </Feature>
       )}
 
-      {type !== "text" && (
-        <Feature classname={styles.opacitySliderWrapper} title={`Opacity`}>
+      {/* {type !== "text" && ( //stroke opacity
+        <Feature classname={styles.opacitySliderWrapper} title={`Stroke Opacity`}>
           <input
             className={styles.opacitySlider}
             type="range"
@@ -123,8 +125,7 @@ function Toolbox({
             onChange={e => setOpacity(e.target.value / 10)}
           />
         </Feature>
-      )}
-
+      )} */}
       {type !== "text" && (
         <Feature title="Stroke Style">
           <div
@@ -145,6 +146,33 @@ function Toolbox({
           >
             <AiOutlineDash size={20} />
           </div>
+        </Feature>
+      )}
+      {type !== "text" && (
+        <Feature title="Fill Color">
+          <div className={styles.colorPicker}>
+            <input type="color" name="canvas_pen_color" value={fillColor} onChange={e => setFillColor(e.target.value)} />
+            <input
+              className={styles.hexInput}
+              placeholder="#"
+              type="text"
+              value={fillColor}
+              onInput={e => setFillColor(e.target.value)}
+            />
+          </div>
+        </Feature>
+      )}
+
+      {type !== "text" && (
+        <Feature classname={styles.opacitySliderWrapper} title={`Fill Opacity`}>
+          <input
+            className={styles.opacitySlider}
+            type="range"
+            min={0}
+            max={10}
+            value={fillOpacity * 10}
+            onChange={e => setFillOpacity(e.target.value / 10)}
+          />
         </Feature>
       )}
 
