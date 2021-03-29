@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MetaComponent from "../../seo/MetaComponent";
 import metaData from "../../seo/metaData";
 
@@ -9,8 +9,14 @@ import SupportUs from "./sections/SupportUs/SupportUs";
 import Team from "./sections/Team/Team";
 import ScrollToTop from "./../../components/ScrollToTopButton/ScrollToTopButton";
 import Contact from './sections/Contact/ContactUs'
+import style from './home.module.scss'
 
 function Home() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="HomePage">
       <MetaComponent
@@ -24,7 +30,9 @@ function Home() {
       <OpenSource />
       <SupportUs />
       <Contact />
-      <ScrollToTop />
+      <div className={style.btnWrapper}>
+        <ScrollToTop />
+      </div>
     </div>
   );
 }

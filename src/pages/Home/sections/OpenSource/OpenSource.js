@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./OpenSource.module.css";
+import styles from "./OpenSource.module.scss";
 
 import SLoP from "./../../../../assets/images/events/SLOP.webp";
 import hackinCodes from "./../../../../assets/images/events/hakin_codes.webp";
@@ -79,7 +79,6 @@ function OpenSource() {
   return (
     <div className={styles.OpenSource}>
       <div className={styles.title}>Open Source Programs</div>
-      <div className={styles.content}>"To do something really well, you have to get a lot of people involved."</div>
       <div className={styles.card_holder}>
         {recentEventsDetails.map(event => (
           <div className={`${styles.card} r-events-card`} key={event.eventName}>

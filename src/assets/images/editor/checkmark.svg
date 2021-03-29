@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
- <g>
-  <title>Layer 1</title>
-  <ellipse ry="23.02628" rx="25.78943" id="svg_6" cy="32.44737" cx="32.18421" opacity="undefined" stroke-dasharray="null" stroke-width="null" fill="#ffffff"/><path id="svg_1" fill="#7cb342" d="m32,2c-16.569,0 -30,13.432 -30,30c0,16.568 13.432,30 30,30c16.568,0 30,-13.432 30,-30c0,-16.568 -13.432,-30 -30,-30zm-6.975,48l-0.02,-0.02l-0.017,0.02l-13.988,-14.4l7.029,-7.164l6.977,7.184l21,-21.619l6.994,7.198l-27.975,28.801z" style="&#10;"/>
- </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><g><title>Layer 1</title><ellipse id="svg_6" cx="32.184" cy="32.447" fill="#fff" stroke-dasharray="null" stroke-width="null" opacity="undefined" rx="25.789" ry="23.026"/><path id="svg_1" fill="#7cb342" d="m32,2c-16.569,0 -30,13.432 -30,30c0,16.568 13.432,30 30,30c16.568,0 30,-13.432 30,-30c0,-16.568 -13.432,-30 -30,-30zm-6.975,48l-0.02,-0.02l-0.017,0.02l-13.988,-14.4l7.029,-7.164l6.977,7.184l21,-21.619l6.994,7.198l-27.975,28.801z"/></g></svg>

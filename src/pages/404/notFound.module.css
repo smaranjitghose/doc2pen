@@ -3,6 +3,7 @@
 .root {
   font-family: "Amatic SC", sans-serif;
   font-size: 100px;
+
   background:black;
   color: #fff;
   display: flex;
@@ -10,7 +11,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding-top: 30px;
+  padding-top: 0px;
 }
 
 body{
@@ -74,7 +75,6 @@ font-size: 100px;
 }
 50% {
   opacity: 1;
-}
 }
 
 @keyframes opacity {
