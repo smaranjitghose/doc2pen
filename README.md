@@ -1,9 +1,9 @@
-# Doc2Pen
+# Doc2Pen.
 
 An open source project aimed at making your student life easier!
 
 
-## DEMO
+## DEMO.
 
 <!-- 
 -----------
@@ -13,61 +13,61 @@ Add GIFs of the entire web app
 
 ## Features:
 
-- [ ] Type/Paste your assignments and get handwritten ones to download directly! Bye-Bye Pen&Paper
-- [ ] Make Sketches/Diagrams/Figures for your assignments/presentations
-- [ ] Media Manager
-  - [ ]  PDF Spliter
-  - [ ]  PDF Merger
-  - [ ]  PNG to JPG
-  - [ ]  JPG to PNG
-  - [ ]  PNG to WEBP
-  - [ ]  WEBP to PNG
-  - [ ]  JPG to WEBP
-  - [ ]  WEBP to PNG
-  - [ ]  JIFF to PNG
-  - [ ]  JIFF to JPG
-  - [ ]  PNG(multiple) to PDF
+- [ ] Type/Paste your assignments and get handwritten ones to download directly! Bye-Bye Pen&Paper.
+- [ ] Make Sketches/Diagrams/Figures for your assignments/presentations.
+- [ ] Media Manager.
+  - [ ]  PDF Spliter.
+  - [ ]  PDF Merger.
+  - [ ]  PNG to JPG.
+  - [ ]  JPG to PNG.
+  - [ ]  PNG to WEBP.
+  - [ ]  WEBP to PNG.
+  - [ ]  JPG to WEBP.
+  - [ ]  WEBP to PNG.
+  - [ ]  JIFF to PNG.
+  - [ ]  JIFF to JPG.
+  - [ ]  PNG(multiple) to PDF.
 
 
-## Basic structure of the project repository 🗃️📂
+## Basic structure of the project repository 🗃️📂.
 
 
 ```terminal
 |
-|- readme_assets   # Contains all the images used for the README.MD
+|- readme_assets   # Contains all the images used for the README.MD.
 |- public          # Contains the stylesheets, images and fonts. Any files within this directory will not be processed by Webpack but copied directly to the build folder.
 |- src:            # Contains all source code for the React application.
     |
     |- App.js
     |- index.css
     |- index.js
-    |-assets         # Contains all the community brand assets
+    |-assets         # Contains all the community brand assets.
     |-components     # Contains all the components used within the app.
-    |-fonts          # Contains all the fonts 
+    |-fonts          # Contains all the fonts.
     |-pages          # Contains all the sections of the page.
-          |- 404
-          |- Home
-          |- Editor
-          |- Sketch
-    |-seo # Contains code for meta tags using react-helmet
+          |- 404.
+          |- Home.
+          |- Editor.
+          |- Sketch.
+    |-seo # Contains code for meta tags using react-helmet.
 ```
 
 
 ## Under the hood:
 
-- React
-- HTML
-- SCSS
-- [React - Bootstrap](https://react-bootstrap.github.io/)
-- [React - Helmet](https://www.npmjs.com/package/react-helmet): Document Head Management
-- [React - Leaflet.js](https://react-leaflet.js.org/): Interactive Maps
-- [React - Dropzone.js](https://react-dropzone.js.org/): Drag and drop file uploads
-- [Rough.js](https://roughjs.com/): Make sketchy, hand drawn figures
-- [Mousetrap](https://github.com/ccampbell/mousetrap): Handling Keyboard shortcuts
-- [ReactJS - Snackbar](https://www.npmjs.com/package/react-js-snackbar): Making snackbars to provide brief messages
-- [React Reveal](https://www.react-reveal.com/): Animations
-- [JSPDF](https://www.npmjs.com/package/jspdf): Generate PDFs
-- [React Scroll](https://www.npmjs.com/package/react-scroll): Smooth Scrolling between sections
+- React.
+- HTML.
+- SCSS.
+- [React - Bootstrap](https://react-bootstrap.github.io/).
+- [React - Helmet](https://www.npmjs.com/package/react-helmet): Document Head Management.
+- [React - Leaflet.js](https://react-leaflet.js.org/): Interactive Maps.
+- [React - Dropzone.js](https://react-dropzone.js.org/): Drag and drop file uploads.
+- [Rough.js](https://roughjs.com/): Make sketchy, hand drawn figures.
+- [Mousetrap](https://github.com/ccampbell/mousetrap): Handling Keyboard shortcuts.
+- [ReactJS - Snackbar](https://www.npmjs.com/package/react-js-snackbar): Making snackbars to provide brief messages.
+- [React Reveal](https://www.react-reveal.com/): Animations.
+- [JSPDF](https://www.npmjs.com/package/jspdf): Generate PDFs.
+- [React Scroll](https://www.npmjs.com/package/react-scroll): Smooth Scrolling between sections.
 
 
 
@@ -77,7 +77,7 @@ Add GIFs of the entire web app
 
 <p align = "center"><img src = "https://media.giphy.com/media/1xOe0qgiYLYWE6pkki/giphy.gif"></p>
 
-Please check out our [contribution guidelines](./CONTRIBUTING.md)
+Please check out our [contribution guidelines](./CONTRIBUTING.md).
 
 ## The geeks🤓 behind this initiative:
 
@@ -93,7 +93,7 @@ Please check out our [contribution guidelines](./CONTRIBUTING.md)
 <h5 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
 <a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h5></a>
 
-**Our valuable Contributors👩‍💻👨‍💻**
+**Our valuable Contributors👩‍💻👨‍💻**.
 <a href="https://github.com/smaranjitghose/doc2pen/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=smaranjitghose/doc2pen" />
 </a>
@@ -112,10 +112,10 @@ Please check out our [contribution guidelines](./CONTRIBUTING.md)
 <a href="https://gssoc.girlscript.tech/"><img src="./readme_assets/gssoc.png" width= "25%"/></a>
 </p>
 
-## Code of Conduct
+## Code of Conduct.
 <p align="center"><img src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif" width=35%></p>
 
-## License 
+## License.
 <p align="center"><img src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif" width=35%></p>
 
 
