@@ -551,8 +551,9 @@ function Canvas() {
         Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y}){" "}
       </div>
 
-      
-      <img width="60%" height="90%" src={file} alt="" />
+      {file &&
+        <img width="60%" height="90%" src={file} alt="" />
+      }
 
       {/* ----- Text ----- */}
       <div style={{ height: canvasHeight, width: canvasWidth }} className={styles.text_container}>
