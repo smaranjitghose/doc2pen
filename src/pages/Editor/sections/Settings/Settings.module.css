@@ -1,19 +1,6 @@
 .controlPanel {
   display: block;
 }
-.selector {
-  display: flex;
-  margin-left: 11px;
-  width: fit-content;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-.selectOption {
-  width: 150px;
-}
-.selectOption label {
-  width: 100%;
-  text-align: center;
-}
 .controls, .group1 {
   background-color: #f0f7ff;
   display: flex;
