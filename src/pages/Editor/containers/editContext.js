@@ -51,9 +51,8 @@ const EditContextProvider = props => {
       setBodyValues({ ...bodyValues, [e.name]: e.value });
   };
 
-  const downloadAction = e => {
-    e !== undefined && e.preventDefault();
-    if (e !== undefined && e.target.name === "as PDF") {
+  const downloadAction = (name, type) => {
+    if (name && type === "PDF") {
       showToast();
     }
     const node = document.getElementById("outputPage");
@@ -73,11 +72,11 @@ const EditContextProvider = props => {
       .then(dataUrl => {
         const img = new Image();
         img.src = dataUrl;
-        console.log(e.target.name);
-        if (e !== undefined && e.target.name === "as PNG") {
-          downloadURI(dataUrl, "generatedDoc.png");
-        } else if (e !== undefined && e.target.name === "as PDF") {
-          downloadPdf(dataUrl);
+
+        if (type === "PNG") {
+          downloadURI(dataUrl, `${name}.png`);
+        } else if (type === "PDF") {
+          downloadPdf(dataUrl, name);
         }
       })
       .catch(error => {
@@ -102,7 +101,7 @@ const EditContextProvider = props => {
     //   setShowing(false);
     // }, 2000);
   };
-  const downloadPdf = async imgDataUri => {
+  const downloadPdf = async (imgDataUri, name) => {
     const doc = new jsPDF("p", "pt", "a4");
     const width = doc.internal.pageSize.width;
     const height = doc.internal.pageSize.height;
@@ -110,7 +109,7 @@ const EditContextProvider = props => {
     doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
 
     await new Promise((resolve, reject) => { // Wait for PDF download
-      doc.save(); //save PDF
+      doc.save(name + '.pdf'); //save PDF
       resolve(true);
     });
 
@@ -118,6 +117,8 @@ const EditContextProvider = props => {
     setShow(false);
     setShowing(false);
   };
+
+
 
   const importTxt = e => {
     e.preventDefault();

@@ -4,6 +4,7 @@ import Toolbox from "./Toolbox/Toolbox";
 import { FaDownload, FaStar } from "react-icons/fa";
 import { RiDeleteBinLine } from "react-icons/ri";
 import IconsLibrary from "./IconLibrary/IconsLibrary";
+import rough from "roughjs/bin/rough";
 
 const Mousetrap = require("mousetrap");
 
@@ -14,16 +15,18 @@ function Canvas() {
   const [context, setContext] = useState();
 
   /* ----- Feature State ----- */
-  const [color, setColor] = useState("#000000");
   const [background, setBackground] = useState("#ffffff");
+  const [strokeColor, setStrokeColor] = useState("#000000");
+  const [fillColor, setFillColor] = useState(background);
+  const [fillOpacity, setFillOpacity] = useState(0.3);
   const [width, setWidth] = useState("1");
-  const [opacity, setOpacity] = useState(1.0);
   const [stroke, setStroke] = useState("none");
   const [fill, setFill] = useState("false");
   const [canvasStates, setCanvasStates] = useState([]);
   const [canvasStateAt, setcanvasStateAt] = useState(-1);
   const [fillImage, setFillImage] = useState(null);
   const [edge, setEdge] = useState("round");
+  const [roughness, setRoughness] = useState("0");
   // For Font
   const [text, setText] = useState("");
   const [isWriting, setIsWriting] = useState(false);
@@ -31,7 +34,9 @@ function Canvas() {
   const [fontStyle, setFontStyle] = useState("normal");
   const [fontFamily, setFontFamily] = useState("cursive");
 
+  const roughCanvas = useRef(null);
   useEffect(() => {
+    roughCanvas.current = rough.canvas(canvasRef.current);
     setContext(canvasRef.current.getContext("2d"));
   }, []);
 
@@ -44,7 +49,7 @@ function Canvas() {
 
   const [canvasWidth, setCanvasWidth] = useState(window.innerWidth - 50);
   const [canvasHeight, setCanvasHeight] = useState(window.innerHeight - 100);
-
+  const penPath = useRef([]);
   const handleResizeListener = () => {
     setCanvasWidth(window.innerWidth - 50);
     setCanvasHeight(window.innerHeight - 100);
@@ -98,7 +103,7 @@ function Canvas() {
 
     const point = relativeCoordinatesForEvent(event);
 
-    const col = hexToRGB(color);
+    const col = hexToRGB(strokeColor);
     context.strokeStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, 1)`;
 
     if (stroke === "small") {
@@ -115,7 +120,7 @@ function Canvas() {
 
     if (type === "pen") {
       logicDown(point);
-    } else if (["line", "square", "circle", "triangle", "arrow", "diamond"].includes(type)) {
+    } else if (["line", "square", "circle", "triangle", "arrow", "diamond", "biShapeTriangle"].includes(type)) {
       setTypeState(context.getImageData(0, 0, canvasWidth, canvasHeight));
       logicDown(point);
       setDownPoint({ x: point.x, y: point.y });
@@ -125,7 +130,7 @@ function Canvas() {
       if (textRef.current) {
         if (isWriting) {
           context.font = `${fontStyle} ${fontSize}rem ${fontFamily}`;
-          context.fillStyle = color;
+          context.fillStyle = strokeColor;
           context.fillText(
             text,
             downPoint.x,
@@ -178,6 +183,9 @@ function Canvas() {
       case "diamond":
         diamondMove(point);
         break;
+      case "biShapeTriangle":
+        biShapeTriangleMove(point);
+        break;
       default:
         break;
     }
@@ -194,7 +202,10 @@ function Canvas() {
 
     setCanvasStates(current => [...canvasStatesCopy, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
     setcanvasStateAt(current => current + 1);
-
+    if (type === "pen") {
+      roughCanvas.current.curve(penPath.current, { strokeWidth: width, roughness: roughness });
+      penPath.current = [];
+    }
     setIsDrawing(false);
     event.preventDefault();
     setTypeState(null);
@@ -215,15 +226,18 @@ function Canvas() {
     }
   }
   function logicDown(point) {
-    context.beginPath();
-    context.moveTo(point.x, point.y);
-    context.lineTo(point.x, point.y);
-    context.stroke();
+    if (type === "pen") {
+      penPath.current.push([point.x, point.y]);
+    } else {
+      context.beginPath();
+      context.moveTo(point.x, point.y);
+      context.lineTo(point.x, point.y);
+      context.stroke();
+    }
   }
 
   function penMove(point) {
-    context.lineTo(point.x, point.y);
-    context.stroke();
+    penPath.current.push([point.x, point.y]);
   }
 
   function lineMove(point) {
@@ -246,8 +260,8 @@ function Canvas() {
     context.lineTo(downPoint.x, point.y);
     context.closePath();
     if (fill === "true") {
-      const col = hexToRGB(color);
-      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+      const col = hexToRGB(fillColor);
+      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
       context.fill();
     } else if (fill === "pattern" && fillImage) {
       let img = new Image();
@@ -271,8 +285,8 @@ function Canvas() {
     context.arc(x, y, radius, 0, 2 * Math.PI);
     context.closePath();
     if (fill === "true") {
-      const col = hexToRGB(color);
-      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+      const col = hexToRGB(fillColor);
+      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
       context.fill();
     } else if (fill === "pattern" && fillImage) {
       let img = new Image();
@@ -295,8 +309,8 @@ function Canvas() {
     context.lineTo(downPoint.x, point.y);
     context.closePath();
     if (fill === "true") {
-      const col = hexToRGB(color);
-      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+      const col = hexToRGB(fillColor);
+      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
       context.fill();
     } else if (fill === "pattern" && fillImage) {
       let img = new Image();
@@ -348,8 +362,8 @@ function Canvas() {
     context.lineTo(center_x, downPoint.y);
     context.closePath();
     if (fill === "true") {
-      const col = hexToRGB(color);
-      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${opacity})`;
+      const col = hexToRGB(fillColor);
+      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
       context.fill();
     } else if (fill === "pattern" && fillImage) {
       let img = new Image();
@@ -362,6 +376,36 @@ function Canvas() {
     }
     context.stroke();
   }
+
+
+  function biShapeTriangleMove(point) {
+    context.putImageData(typeState, 0, 0);
+    context.beginPath();
+    const center_x = (downPoint.x + point.x) / 2;
+
+    context.moveTo(center_x, downPoint.y);
+    context.lineTo(point.x, point.y);
+    context.lineTo(center_x, point.y);
+    context.lineTo(center_x, downPoint.y);
+    context.closePath();
+    if (fill === "true") {
+      const col = hexToRGB(fillColor);
+      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
+      context.fill();
+    } else if (fill === "pattern" && fillImage) {
+      let img = new Image();
+      img.onload = "start";
+      img.src = fillImage;
+
+      let pattern = context.createPattern(img, "repeat");
+      context.fillStyle = pattern;
+      context.fill();
+    }
+    context.stroke();
+  }
+
+
+  
 
   function download() {
     let link = document.createElement("a");
@@ -414,16 +458,20 @@ function Canvas() {
   return (
     <>
       <Toolbox
-        color={color}
-        setColor={setColor}
+        color={strokeColor}
+        setColor={setStrokeColor}
+        fillColor={fillColor}
+        setFillColor={setFillColor}
+        fillOpacity={fillOpacity}
+        setFillOpacity={setFillOpacity}
         background={background}
         setBackground={setBackground}
         width={width}
         setWidth={setWidth}
-        opacity={opacity}
-        setOpacity={setOpacity}
         stroke={stroke}
         setStroke={setStroke}
+        roughness={roughness}
+        setRoughness={setRoughness}
         fill={fill}
         setFill={setFill}
         undo={undo}
@@ -490,7 +538,7 @@ function Canvas() {
               autoFocus
               id="canvas-text-input"
               style={{
-                color: color,
+                color: strokeColor,
                 fontSize: `${fontSize}rem`,
                 fontStyle: `${fontStyle === "bold" ? "normal" : fontStyle}`,
                 fontFamily: fontFamily,

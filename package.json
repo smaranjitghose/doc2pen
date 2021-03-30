@@ -31,6 +31,7 @@
     "react-scroll": "^1.8.1",
     "react-useanimations": "^2.0.6",
     "reactstrap": "^8.5.1",
+    "roughjs": "^4.3.1",
     "sass": "^1.32.8",
     "web-vitals": "^0.2.4"
   },
