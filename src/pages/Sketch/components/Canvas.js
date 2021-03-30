@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import styles from "./Canvas.module.css";
 import Toolbox from "./Toolbox/Toolbox";
 import { FaDownload, FaStar } from "react-icons/fa";
-import { RiDeleteBinLine } from "react-icons/ri";
+import { RiDeleteBinLine, RiUploadCloud2Line } from "react-icons/ri";
 import IconsLibrary from "./IconLibrary/IconsLibrary";
 import rough from "roughjs/bin/rough";
 
@@ -455,6 +455,24 @@ function Canvas() {
     canvasRef.current.style.background = background;
   }, [background]);
 
+
+  // image upload
+  const [file, setFile] = useState(null)
+  let myref = null;
+
+  const fileUploadHandler = event => {
+    var binaryData = [];
+    binaryData.push(event.target.files[0]);
+    const newFile = window.URL.createObjectURL(new Blob(binaryData, { type: 'image/png' }))
+    setFile(newFile)
+    
+  }
+
+  const handleBrowse = function (e) {
+    myref.click();
+  };
+
+
   return (
     <>
       <Toolbox
@@ -493,6 +511,12 @@ function Canvas() {
 
       {/* ----- Download & Clear----- */}
       <div className={`${styles.feature_container} ${styles.download_clear_container}`}>
+        <label htmlFor="sketch-dcd-upload" title="Upload Sketch">
+          <input style={{display: "none"}} type="file" id="image_upload" ref={(r) => {myref=r}} onChange={fileUploadHandler} />
+          <div className={`${styles.feature}`} onClick={handleBrowse} id="sketch-dcd-download">
+            <RiUploadCloud2Line size={15} />
+          </div>
+        </label>
         <label htmlFor="sketch-dcd-download" title="Clear Sketch">
           <div className={`${styles.feature}`} onClick={clear} id="sketch-dcd-download">
             <RiDeleteBinLine size={15} />
@@ -526,6 +550,9 @@ function Canvas() {
       <div className={styles.mousePosition}>
         Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y}){" "}
       </div>
+
+      
+      <img width="60%" height="90%" src={file} alt="" />
 
       {/* ----- Text ----- */}
       <div style={{ height: canvasHeight, width: canvasWidth }} className={styles.text_container}>
