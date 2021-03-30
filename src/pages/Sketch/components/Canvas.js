@@ -24,7 +24,7 @@ function Canvas() {
   const [fill, setFill] = useState("false");
   const [canvasStates, setCanvasStates] = useState([]);
   const [canvasStateAt, setcanvasStateAt] = useState(-1);
-  const [fillImage, setFillImage] = useState(null);
+  // const [fillImage, setFillImage] = useState(null);
   const [edge, setEdge] = useState("round");
   const [roughness, setRoughness] = useState("0");
   // For Font
@@ -241,91 +241,47 @@ function Canvas() {
 
   function lineMove(point) {
     context.putImageData(typeState, 0, 0);
-    context.beginPath();
-    context.moveTo(downPoint.x, downPoint.y);
-    context.lineTo(point.x, point.y);
-    context.moveTo(downPoint.x, downPoint.y);
-    context.closePath();
-    context.stroke();
+    roughCanvas.current.line(downPoint.x, downPoint.y, point.x, point.y, { strokeWidth: width, roughness: roughness });
   }
 
   function squareMove(point) {
     context.putImageData(typeState, 0, 0);
-    context.beginPath();
-    context.moveTo(downPoint.x, downPoint.y);
-    context.lineTo(downPoint.x, downPoint.y);
-    context.lineTo(point.x, downPoint.y);
-    context.lineTo(point.x, point.y);
-    context.lineTo(downPoint.x, point.y);
-    context.closePath();
-    if (fill === "true") {
-      const col = hexToRGB(fillColor);
-      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
-      context.fill();
-    } else if (fill === "pattern" && fillImage) {
-      let img = new Image();
-      img.onload = "start";
-      img.src = fillImage;
-
-      let pattern = context.createPattern(img, "repeat");
-      context.fillStyle = pattern;
-      context.fill();
-    }
+    roughCanvas.current.polygon(
+      [
+        [downPoint.x, downPoint.y],
+        [point.x, downPoint.y],
+        [point.x, point.y],
+        [downPoint.x, point.y],
+      ],
+      { strokeWidth: width, roughness: roughness }
+    );
     context.stroke();
   }
 
   function circleMove(point) {
     context.putImageData(typeState, 0, 0);
-    context.beginPath();
     const x = (point.x + downPoint.x) / 2;
     const y = (point.y + downPoint.y) / 2;
     const radius = Math.sqrt(Math.pow(downPoint.x - point.x, 2) + Math.pow(downPoint.y - point.y, 2)) / 2;
 
-    context.arc(x, y, radius, 0, 2 * Math.PI);
-    context.closePath();
-    if (fill === "true") {
-      const col = hexToRGB(fillColor);
-      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
-      context.fill();
-    } else if (fill === "pattern" && fillImage) {
-      let img = new Image();
-      img.onload = "start";
-      img.src = fillImage;
-
-      let pattern = context.createPattern(img, "repeat");
-      context.fillStyle = pattern;
-      context.fill();
-    }
-    context.stroke();
+    roughCanvas.current.circle(x, y, radius, { strokeWidth: width, roughness: roughness });
   }
 
   function triangleMove(point) {
     context.putImageData(typeState, 0, 0);
-    context.beginPath();
     const center_x = (downPoint.x + point.x) / 2;
-    context.moveTo(center_x, downPoint.y);
-    context.lineTo(point.x, point.y);
-    context.lineTo(downPoint.x, point.y);
-    context.closePath();
-    if (fill === "true") {
-      const col = hexToRGB(fillColor);
-      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
-      context.fill();
-    } else if (fill === "pattern" && fillImage) {
-      let img = new Image();
-      img.onload = "start";
-      img.src = fillImage;
-
-      let pattern = context.createPattern(img, "repeat");
-      context.fillStyle = pattern;
-      context.fill();
-    }
-    context.stroke();
+    roughCanvas.current.polygon(
+      [
+        [center_x, downPoint.y],
+        [point.x, point.y],
+        [downPoint.x, point.y],
+      ],
+      { strokeWidth: width, roughness: roughness }
+    );
   }
 
   function arrow(point) {
     context.putImageData(typeState, 0, 0);
-    context.beginPath();
 
     function formula(head, ratio, one, two, three, four, theta) {
       return head + (1 / ratio) * ((one - two) * Math.cos(theta) + (three - four) * Math.sin(theta));
@@ -336,75 +292,40 @@ function Canvas() {
     const x2 = formula(point.x, 3, downPoint.x, point.x, point.y, downPoint.y, Math.PI / 4);
     const y2 = formula(point.y, 3, downPoint.y, point.y, downPoint.x, point.x, Math.PI / 4);
 
-    context.moveTo(downPoint.x, downPoint.y);
-    context.lineTo(downPoint.x, downPoint.y);
-    context.lineTo(point.x, point.y);
-    context.lineTo(x1, y1);
-    context.moveTo(point.x, point.y);
-    context.lineTo(x2, y2);
-    context.moveTo(point.x, point.y);
-    context.moveTo(downPoint.x, downPoint.y);
-    context.closePath();
-    context.stroke();
+    roughCanvas.current.line(downPoint.x, downPoint.y, point.x, point.y, { strokeWidth: width, roughness: roughness });
+    roughCanvas.current.line(point.x, point.y, x1, y1, { strokeWidth: width, roughness: roughness });
+    roughCanvas.current.line(point.x, point.y, x2, y2, { strokeWidth: width, roughness: roughness });
   }
 
   function diamondMove(point) {
     context.putImageData(typeState, 0, 0);
-    context.beginPath();
     const center_x = (downPoint.x + point.x) / 2;
     const center_y = (downPoint.y + point.y) / 2;
 
-    context.moveTo(center_x, downPoint.y);
-    context.lineTo(point.x, center_y);
-    context.lineTo(center_x, point.y);
-    context.lineTo(downPoint.x, center_y);
-    context.lineTo(center_x, downPoint.y);
-    context.closePath();
-    if (fill === "true") {
-      const col = hexToRGB(fillColor);
-      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
-      context.fill();
-    } else if (fill === "pattern" && fillImage) {
-      let img = new Image();
-      img.onload = "start";
-      img.src = fillImage;
-
-      let pattern = context.createPattern(img, "repeat");
-      context.fillStyle = pattern;
-      context.fill();
-    }
-    context.stroke();
+    roughCanvas.current.polygon(
+      [
+        [center_x, downPoint.y],
+        [point.x, center_y],
+        [center_x, point.y],
+        [downPoint.x, center_y],
+      ],
+      { strokeWidth: width, roughness: roughness }
+    );
   }
-
 
   function biShapeTriangleMove(point) {
     context.putImageData(typeState, 0, 0);
-    context.beginPath();
     const center_x = (downPoint.x + point.x) / 2;
 
-    context.moveTo(center_x, downPoint.y);
-    context.lineTo(point.x, point.y);
-    context.lineTo(center_x, point.y);
-    context.lineTo(center_x, downPoint.y);
-    context.closePath();
-    if (fill === "true") {
-      const col = hexToRGB(fillColor);
-      context.fillStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
-      context.fill();
-    } else if (fill === "pattern" && fillImage) {
-      let img = new Image();
-      img.onload = "start";
-      img.src = fillImage;
-
-      let pattern = context.createPattern(img, "repeat");
-      context.fillStyle = pattern;
-      context.fill();
-    }
-    context.stroke();
+    roughCanvas.current.polygon(
+      [
+        [center_x, downPoint.y],
+        [point.x, point.y],
+        [center_x, point.y],
+      ],
+      { strokeWidth: width, roughness: roughness }
+    );
   }
-
-
-  
 
   function download() {
     let link = document.createElement("a");
@@ -485,7 +406,7 @@ function Canvas() {
         setFontStyle={setFontStyle}
         fontFamily={fontFamily}
         setFontFamily={setFontFamily}
-        setFillImage={setFillImage}
+        // setFillImage={setFillImage}
         edge={edge}
         setEdge={setEdge}
       />
