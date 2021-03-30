@@ -118,9 +118,7 @@ function Canvas() {
     context.lineCap = "round";
     context.lineWidth = width;
 
-    if (type === "pen") {
-      logicDown(point);
-    } else if (["line", "square", "circle", "triangle", "arrow", "diamond", "biShapeTriangle"].includes(type)) {
+    if (["pen", "line", "square", "circle", "triangle", "arrow", "diamond", "biShapeTriangle"].includes(type)) {
       setTypeState(context.getImageData(0, 0, canvasWidth, canvasHeight));
       logicDown(point);
       setDownPoint({ x: point.x, y: point.y });
@@ -203,7 +201,6 @@ function Canvas() {
     setCanvasStates(current => [...canvasStatesCopy, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
     setcanvasStateAt(current => current + 1);
     if (type === "pen") {
-      roughCanvas.current.curve(penPath.current, { strokeWidth: width, roughness: roughness });
       penPath.current = [];
     }
     setIsDrawing(false);
@@ -237,7 +234,9 @@ function Canvas() {
   }
 
   function penMove(point) {
+    context.putImageData(typeState, 0, 0);
     penPath.current.push([point.x, point.y]);
+    roughCanvas.current.curve(penPath.current, { strokeWidth: width, roughness: roughness });
   }
 
   function lineMove(point) {
