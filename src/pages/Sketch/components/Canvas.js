@@ -12,6 +12,8 @@ function Canvas() {
   const canvasRef = useRef(null);
   const textRef = useRef(null);
   const iconLibRef = useRef(null);
+  const roughCanvas = useRef(null);
+  const penPath = useRef([]);
   const [context, setContext] = useState();
 
   /* ----- Feature State ----- */
@@ -34,12 +36,6 @@ function Canvas() {
   const [fontStyle, setFontStyle] = useState("normal");
   const [fontFamily, setFontFamily] = useState("cursive");
 
-  const roughCanvas = useRef(null);
-  useEffect(() => {
-    roughCanvas.current = rough.canvas(canvasRef.current);
-    setContext(canvasRef.current.getContext("2d"));
-  }, []);
-
   /* ----- Canvas State ----- */
   const [isDrawing, setIsDrawing] = useState(false);
   const [type, setType] = useState("pen");
@@ -49,11 +45,31 @@ function Canvas() {
 
   const [canvasWidth, setCanvasWidth] = useState(window.innerWidth - 50);
   const [canvasHeight, setCanvasHeight] = useState(window.innerHeight - 100);
-  const penPath = useRef([]);
+
   const handleResizeListener = () => {
     setCanvasWidth(window.innerWidth - 50);
     setCanvasHeight(window.innerHeight - 100);
   };
+
+  const getLastCanvasState = useCallback(
+    (dataURL, ctx) => {
+      const image = new Image();
+      image.src = dataURL;
+      image.onload = () => {
+        ctx.drawImage(image, 0, 0);
+        setCanvasStates(current => [ctx.getImageData(0, 0, canvasWidth, canvasHeight)]);
+        setcanvasStateAt(0);
+      };
+    },
+    [canvasHeight, canvasWidth]
+  );
+
+  useEffect(() => {
+    roughCanvas.current = rough.canvas(canvasRef.current);
+    setContext(canvasRef.current.getContext("2d"));
+    localStorage.getItem("canvasState") !== null &&
+      getLastCanvasState(localStorage.getItem("canvasState"), canvasRef.current.getContext("2d"));
+  }, [getLastCanvasState]);
 
   useEffect(() => {
     window.addEventListener("resize", handleResizeListener);
@@ -62,10 +78,9 @@ function Canvas() {
     };
   });
 
-  // useEffect(() => {
-  //     console.log("canvasStateAt: ", canvasStateAt);
-  //     console.log("canvasStates: ", canvasStates);
-  // }, [canvasStateAt, canvasStates])
+  useEffect(() => {
+    localStorage.setItem("canvasState", canvasRef.current.toDataURL());
+  }, [canvasStates]);
 
   function hexToRGB(hex) {
     let r = 0,
@@ -192,6 +207,7 @@ function Canvas() {
 
     event.preventDefault();
   }
+
   function handleMouseUp(event) {
     const canvasStatesCopy = [...canvasStates];
     if (canvasStateAt + 1 < canvasStatesCopy.length) {
@@ -225,6 +241,7 @@ function Canvas() {
       setcanvasStateAt(current => current + 1);
     }
   }
+
   function logicDown(point) {
     if (type === "pen") {
       penPath.current.push([point.x, point.y]);
@@ -377,7 +394,6 @@ function Canvas() {
     context.stroke();
   }
 
-
   function biShapeTriangleMove(point) {
     context.putImageData(typeState, 0, 0);
     context.beginPath();
@@ -403,9 +419,6 @@ function Canvas() {
     }
     context.stroke();
   }
-
-
-  
 
   function download() {
     let link = document.createElement("a");
