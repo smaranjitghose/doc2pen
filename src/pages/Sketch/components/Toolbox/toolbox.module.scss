@@ -82,12 +82,12 @@
   z-index: -1;
 }
 
-.opacitySliderWrapper {
+.sliderWrapper {
   display: grid;
   justify-items: left;
   width: 100%;
 
-  .opacitySlider {
+  .slider {
     outline: 0;
     border: 0;
     border-radius: 500px;
@@ -97,6 +97,7 @@
     height: 15px;
     -webkit-appearance: none;
     background-color: #ddd;
+    
     &::-webkit-slider-runnable-track {
       height: 15px;
       -webkit-appearance: none;
