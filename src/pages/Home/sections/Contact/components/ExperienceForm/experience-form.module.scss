@@ -2,15 +2,16 @@
 @use './../../../../../../scss/colors';
 
 .info {
-  width: 500px;
+  width: 470px;
 
   .general_info {
-    background: colors.$dark-blue;
+    background: colors.$blue;
     color: colors.$white;
     margin: 0.35rem 1rem;
     border-radius: 15px;
     & h2 {
       padding: 40px 20px 10px;
+      color: colors.$light-blue;
     }
     & p {
       margin-top: 5px;
@@ -31,27 +32,7 @@
         overflow: hidden;
         position: relative;
         border-radius: 15px;
-
-        .circle {
-          position: absolute;
-          border-radius: 100%;
-          width: 500px;
-          height: 500px;
-          bottom: -250px;
-          right: -250px;
-          background-color: colors.$light-pink;
-
-          .circle2 {
-            position: absolute;
-            border-radius: 100%;
-            width: 200px;
-            height: 200px;
-            top: -150px;
-            left: -150px;
-            background-color: colors.$royal-blue;
-          }
-        }
-
+        
         .fieldsWrap {
           display: flex;
           flex-direction: column;
@@ -66,25 +47,66 @@
             align-items: stretch;
             justify-content: center;
 
+            .field{
+              position: relative;
+              padding: 15px 0 0;
+              margin-top: 10px;
+              width: 100%;
+            }
             input {
               width: 100%;
               border: 0;
-              background: colors.$light-grey;
+              background: transparent;
+              border-bottom: 2px solid ;
+              transition: border-color 0.2s;
               height: 43px;
               padding: 0 20px;
+             
               font-size: 16px;
               outline: none;
-              color: colors.$grey;
-              border-radius: 5px;
-              &:focus {
-                border: 1px solid colors.$white;
-                border-radius: 20px;
-              }
+              color: colors.$white;
+             
               &::placeholder {
                 font-size: 13px;
+                  color: transparent;
+              }
+
+              &:placeholder-shown ~ .form__label {
+                font-size: 15px;
+                cursor: text;
+                top: 20px;
               }
             }
-          }
+
+                .form__label {
+                position: absolute;
+                top: -52px;
+                display: block;
+                transition: 0.2s;
+                font-size: 12px;
+                color: colors.$white;
+              }
+
+              input{ 
+              &:focus{
+                ~ .form__label {
+                  position: absolute;
+                  top: 0;
+                  display: block;
+                  transition: 0.2s;
+                  font-size: 15px;
+                  color: colors.$light-blue;
+                  font-weight:700;    
+                }
+                padding-bottom: 6px;  
+                font-weight: 700;
+                border-width: 3px;
+                border-image: linear-gradient(to right, colors.$steel-blue, colors.$light-blue);
+                border-image-slice: 1;
+              }
+            }
+            }
+
           .experience {
             display: flex;
             align-items: center;
@@ -97,22 +119,31 @@
             }
           }
           textarea {
-            border-radius: 8px;
+            
             width: 100%;
             border: 0;
-            background: colors.$light-grey;
+            border: 2px solid ;
+            background:transparent;
             font-size: 16px;
             outline: none;
             resize: none;
             padding: 10px;
             height: 110px;
-            color: colors.$grey;
+            color: colors.$bluish-white;
+            &::placeholder{
+              color: colors.$white;
+            }
+            &:focus{
+              &::placeholder{
+                color: transparent;
+              }
+            }
           }
           .submit {
-            background: colors.$dark-blue;
+            background-color: colors.$lime-blue;
+            background-image: linear-gradient(315deg, colors.$purple-blue 0%, colors.$snow-blue 74%);
             font-size: 14px;
-            letter-spacing: 4px;
-            font-family: "Open Sans", sans-serif;
+            letter-spacing: 2px;
             margin-top: 20px;
             width: 100%;
             max-width: 220px;
@@ -121,18 +152,16 @@
             display: block;
             text-align: center;
             cursor: pointer;
-            align-self: flex-end;
-            border: 1px colors.$white solid;
+            align-self: center;
             position: relative;
             overflow: hidden;
-            box-shadow: inset 2px 0px 2px colors.$white;
-            border-radius: 20px;
+            border-radius: 50px;
 
             .buttonText {
               position: relative;
               z-index: 1;
               font-weight: bolder;
-              color: colors.$light-blue;
+              color: colors.$white;
             }
 
             .hoverEffect {
@@ -141,7 +170,8 @@
               top: 0;
               left: 0;
               border-radius: 0 50% 100% 0;
-              background-color: colors.$light-grey;
+              background-color: colors.$water-blue;
+              background-image: linear-gradient(315deg, colors.$maroon 0%, colors.$water-blue 80%);
               width: 500px;
               height: 100%;
               transform: scale(0, 1);
