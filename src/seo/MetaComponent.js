@@ -2,7 +2,8 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 function MetaComponent({ title, description, keywords }) {
-  let attentionMessage = "Come back";
+  //THIS ARE THE CHANGES TO REMOVE THE TRANSITION EFFECT IN FAVICON.
+  /*let attentionMessage = "Come back";
   let blinkEvent = null;
 
   const favicon = document.getElementById("favicon");
@@ -28,7 +29,7 @@ function MetaComponent({ title, description, keywords }) {
         favicon.href = "folded.png";
       }
     }, 1000);
-  }
+  }*/
 
   return (
     <Helmet>
