@@ -9,7 +9,6 @@
   width: 100%;
 }
 
-.titleInput,
 .contentInput {
   position: absolute;
   border: none;
@@ -23,14 +22,9 @@
   display: none;
 }
 
-.titleInput {
-  top: 0;
-  height: 10%;
-}
-
 .contentInput {
   bottom: 0;
-  height: 90%;
+  height: 100%;
 }
 textarea{
   color: rgba(2, 2, 66, 0.753);

@@ -10,6 +10,7 @@ import { FaPencilAlt, FaRegCircle, FaSlash, FaFont } from "react-icons/fa";
 import { BsArrowUpRight } from "react-icons/bs";
 import { GiTriangleTarget } from "react-icons/gi";
 import { BsDiamond } from "react-icons/bs";
+import { BiShapeTriangle } from 'react-icons/bi';
 
 function Toolbox({
   color,
@@ -24,6 +25,8 @@ function Toolbox({
   setWidth,
   stroke,
   setStroke,
+  roughness,
+  setRoughness,
   fill,
   setFill,
   undo,
@@ -69,6 +72,9 @@ function Toolbox({
         <Shape type_="text" id="sketch-shapes-text" label="Text">
           <FaFont size={15} />
         </Shape>
+        <Shape type_="biShapeTriangle" id="sketch-shapes-biShapeTriangle" label="Bi Shape Triangle">
+          <BiShapeTriangle size={15} />
+        </Shape>
       </Feature>
 
       <Feature title="Canvas Color">
@@ -97,7 +103,19 @@ function Toolbox({
         </div>
       </Feature>
       {type !== "text" && (
-        <Feature title="Width">
+        <Feature classname={styles.sliderWrapper} title={`Stroke Roughness`}>
+          <input
+            className={styles.slider}
+            type="range"
+            min={0}
+            max={5}
+            value={roughness}
+            onChange={e => setRoughness(e.target.value)}
+          />
+        </Feature>
+      )}
+      {type !== "text" && (
+        <Feature title="Stroke Width">
           <select name="canvas_pen_width" value={width} onChange={e => setWidth(e.target.value)}>
             <option value="1">1px</option>
             <option value="2">2px</option>
@@ -114,18 +132,6 @@ function Toolbox({
         </Feature>
       )}
 
-      {/* {type !== "text" && ( //stroke opacity
-        <Feature classname={styles.opacitySliderWrapper} title={`Stroke Opacity`}>
-          <input
-            className={styles.opacitySlider}
-            type="range"
-            min={0}
-            max={10}
-            value={opacity * 10}
-            onChange={e => setOpacity(e.target.value / 10)}
-          />
-        </Feature>
-      )} */}
       {type !== "text" && (
         <Feature title="Stroke Style">
           <div
@@ -151,7 +157,12 @@ function Toolbox({
       {type !== "text" && (
         <Feature title="Fill Color">
           <div className={styles.colorPicker}>
-            <input type="color" name="canvas_pen_color" value={fillColor} onChange={e => setFillColor(e.target.value)} />
+            <input
+              type="color"
+              name="canvas_pen_color"
+              value={fillColor}
+              onChange={e => setFillColor(e.target.value)}
+            />
             <input
               className={styles.hexInput}
               placeholder="#"
@@ -164,9 +175,9 @@ function Toolbox({
       )}
 
       {type !== "text" && (
-        <Feature classname={styles.opacitySliderWrapper} title={`Fill Opacity`}>
+        <Feature classname={styles.sliderWrapper} title={`Fill Opacity`}>
           <input
-            className={styles.opacitySlider}
+            className={styles.slider}
             type="range"
             min={0}
             max={10}
