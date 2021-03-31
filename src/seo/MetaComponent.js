@@ -3,33 +3,33 @@ import { Helmet } from "react-helmet";
 
 function MetaComponent({ title, description, keywords }) {
   //THIS ARE THE CHANGES TO REMOVE THE TRANSITION EFFECT IN FAVICON.
-  /*let attentionMessage = "Come back";
-  let blinkEvent = null;
+//   let attentionMessage = "Come back";
+//   let blinkEvent = null;
 
-  const favicon = document.getElementById("favicon");
+//   const favicon = document.getElementById("favicon");
   
-  document.addEventListener("visibilitychange", e => {
-    var isPageActive = !document.hidden;
+//   document.addEventListener("visibilitychange", e => {
+//     var isPageActive = !document.hidden;
 
-    if (!isPageActive) {
-      blink();
-    } else {
-      document.title = title;
-      clearInterval(blinkEvent);
-    }
-  });
+//     if (!isPageActive) {
+//       blink();
+//     } else {
+//       document.title = title;
+//       clearInterval(blinkEvent);
+//     }
+//   });
 
-  function blink() {
-    blinkEvent = setInterval(() => {
-      if (document.title === attentionMessage) {
-        document.title = title;
-        favicon.href = "doc2penlogo.png";
-      } else {
-        document.title = attentionMessage;
-        favicon.href = "folded.png";
-      }
-    }, 1000);
-  }*/
+//   function blink() {
+//     blinkEvent = setInterval(() => {
+//       if (document.title === attentionMessage) {
+//         document.title = title;
+//         favicon.href = "doc2penlogo.png";
+//       } else {
+//         document.title = attentionMessage;
+//         favicon.href = "folded.png";
+//       }
+//     }, 1000);
+//   }
 
   return (
     <Helmet>
