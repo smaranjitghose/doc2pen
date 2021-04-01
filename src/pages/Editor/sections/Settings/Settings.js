@@ -80,7 +80,7 @@ const Settings = () => {
           name="bodyLine"
           min="1"
           max="5"
-          step={1}
+          step={0.1}
           initialValue={1}
         />
         <div className={styles.vSeparator}></div>
