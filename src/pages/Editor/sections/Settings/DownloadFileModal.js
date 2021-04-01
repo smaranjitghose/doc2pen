@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalBody, ModalFooter } from 'react-bootstrap';
 import { EditContext } from "../../containers/editContext";
 import styles from "./Settings.module.css";
 const DownloadFileModal = (props) => {
@@ -31,7 +31,7 @@ const DownloadFileModal = (props) => {
 
         <Modal style={{ marginTop: "200px" }} isOpen={modal} toggle={toggle} >
 
-            <ModalBody>
+            <Modal.Body>
                 <input
                     placeholder="What would you like to call the file?"
                     className={styles.modalInput}
@@ -59,11 +59,11 @@ const DownloadFileModal = (props) => {
                         )
                     })
                 }
-            </ModalBody>
-            <ModalFooter>
+            </Modal.Body>
+            <Modal.Footer>
                 <Button className={styles.downloadButton} onClick={handleDownloadFile}>Download</Button>{' '}
                 <Button className={styles.closeModal} color="secondary" onClick={toggle}>X</Button>
-            </ModalFooter>
+            </Modal.Footer>
         </Modal>
 
 

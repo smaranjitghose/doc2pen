@@ -4,7 +4,8 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-} from "reactstrap";
+} from "react-bootstrap";
+
 
 import styles from "./Dropdown.module.css";
 import { EditContext } from "../../pages/Editor/containers/editContext";
@@ -37,7 +38,7 @@ const DropdownComponent = (props) => {
     return (
       <div>
         {props.items.map((aItem, index) => (
-          <DropdownItem
+          <Dropdown.Item
             onClick={getTargetFunc()}
             name={props.type === "download" ? aItem : `body${ props.type === "font" ? "Font" : "Color" }`}
             value={aItem}
@@ -45,7 +46,7 @@ const DropdownComponent = (props) => {
             key={index}
           >
             {setValue(aItem)}
-          </DropdownItem>
+          </Dropdown.Item>
         ))}
       </div>
     );
@@ -60,12 +61,12 @@ const DropdownComponent = (props) => {
 
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle caret className={styles.drbtn}>
+      <Dropdown.Toggle caret className={styles.drbtn}>
         {props.name}
-      </DropdownToggle>
-      <DropdownMenu>
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
         <DropDownOptions />
-      </DropdownMenu>
+      </Dropdown.Menu>
     </Dropdown>
   );
 };
