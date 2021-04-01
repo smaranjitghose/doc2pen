@@ -2,14 +2,20 @@ import React from "react";
 import styles from "./toolbox.module.scss";
 import stylesShapes from "../Canvas.module.css";
 import { AiOutlineLine, AiOutlineSmallDash, AiOutlineDash } from "react-icons/ai";
-import { FaRegSquare, FaSquare, FaItalic, FaBold } from "react-icons/fa";
+import {
+  FaRegSquare,
+  FaSquare,
+  FaItalic,
+  FaBold,
+  FaPencilAlt,
+  FaRegCircle,
+  FaSlash,
+  FaFont,
+  FaImage,
+} from "react-icons/fa";
 import { MdUndo, MdRedo } from "react-icons/md";
-import { BsFonts } from "react-icons/bs";
-import { FaImage } from "react-icons/fa";
-import { FaPencilAlt, FaRegCircle, FaSlash, FaFont } from "react-icons/fa";
-import { BsArrowUpRight } from "react-icons/bs";
+import { BsFonts, BsArrowUpRight, BsDiamond } from "react-icons/bs";
 import { GiTriangleTarget } from "react-icons/gi";
-import { BsDiamond } from "react-icons/bs";
 import { BiShapeTriangle } from 'react-icons/bi';
 
 function Toolbox({

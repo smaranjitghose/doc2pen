@@ -2,13 +2,24 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import styles from "./Canvas.module.css";
 import Toolbox from "./Toolbox/Toolbox";
 import { FaDownload, FaStar } from "react-icons/fa";
+import { VscSaveAs } from "react-icons/vsc";
 import { RiDeleteBinLine } from "react-icons/ri";
+import { AiOutlineFolderOpen } from "react-icons/ai";
 import IconsLibrary from "./IconLibrary/IconsLibrary";
+import ReactSnackBar from "react-js-snackbar";
+import checkBox from "./../../../assets/images/checkmark.svg";
 import rough from "roughjs/bin/rough";
 
 const Mousetrap = require("mousetrap");
 
 function Canvas() {
+  const svgStyles = {
+    height: 50,
+    position: "absolute",
+    top: 0,
+    left: 0,
+  };
+
   const canvasRef = useRef(null);
   const textRef = useRef(null);
   const iconLibRef = useRef(null);
@@ -28,6 +39,8 @@ function Canvas() {
   const [canvasStateAt, setcanvasStateAt] = useState(-1);
   // const [fillImage, setFillImage] = useState(null);
   const [edge, setEdge] = useState("round");
+  const [show, setShow] = useState(false);
+  const [showing, setShowing] = useState(false);
   const [roughness, setRoughness] = useState("0");
   // For Font
   const [text, setText] = useState("");
@@ -80,7 +93,7 @@ function Canvas() {
 
   useEffect(() => {
     localStorage.setItem("canvasState", canvasRef.current.toDataURL());
-  }, [canvasStates]);
+  }, [canvasStates, canvasStateAt]);
 
   function hexToRGB(hex) {
     let r = 0,
@@ -392,6 +405,57 @@ function Canvas() {
     canvasRef.current.style.background = background;
   }, [background]);
 
+  const showToast = () => {
+    return new Promise((resolve, reject) => {
+      if (showing) {
+        resolve(true);
+        return;
+      }
+      setShow(true);
+      setShowing(true);
+
+      resolve(true);
+    });
+  };
+
+  const saveInstance = async (name, type) => {
+    await showToast()
+      .then(() => {
+        const link = document.createElement("a");
+        link.href = canvasRef.current.toDataURL();
+        link.download = name;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      })
+      .then(() => {
+        //close notif popup
+        setShow(false);
+        setShowing(false);
+      });
+  };
+
+  const initiateLoadSaved = () => document.getElementById("file-selector").click();
+  const loadLastState = e => {
+    let file = e.target.files[0];
+    if (!file) return;
+    let reader = new FileReader();
+    reader.addEventListener(
+      "load",
+      () => {
+        const image = new Image();
+
+        image.onload = () => {
+          context.drawImage(image, 0, 0);
+          setCanvasStates(current => [...canvasStates, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
+          setcanvasStateAt(current => current + 1);
+        };
+        image.src = reader.result;
+      },
+      false
+    );
+    reader.readAsDataURL(file);
+  };
   return (
     <>
       <Toolbox
@@ -440,11 +504,33 @@ function Canvas() {
             <FaDownload size={15} />
           </div>
         </label>
+        <label htmlFor="sketch-dcd-load" title="Load Previous Work">
+          <div className={`${styles.feature}`} onClick={() => initiateLoadSaved()} id="sketch-dcd-load">
+            <AiOutlineFolderOpen size={15} />
+            <input
+              type="file"
+              id="file-selector"
+              style={{ display: "none" }}
+              accept=".d2ps"
+              onChange={event => loadLastState(event)}
+            />
+          </div>
+        </label>
+        <label htmlFor="sketch-dcd-save" title="Download Progress">
+          <div
+            className={`${styles.feature}`}
+            onClick={() => saveInstance("savedProgress.d2ps", "application/d2ps+binary")}
+            id="sketch-dcd-save"
+          >
+            <VscSaveAs size={15} />
+          </div>
+        </label>
         <label htmlFor="sketch-dcd-addicon" title="Add Icon">
-          <div className={`${styles.feature}`} onClick={toggleIconLib} id="sketch-dcd-clear">
+          <div className={`${styles.feature}`} onClick={toggleIconLib} id="sketch-dcd-addicon">
             <FaStar size={15} />
           </div>
         </label>
+
         <div ref={iconLibRef} className={styles.iconLibContainer}>
           <IconsLibrary toggleOpen={toggleIconLib} />
         </div>
@@ -486,6 +572,10 @@ function Canvas() {
         </div>
       </div>
       {/* icon library */}
+
+      <ReactSnackBar Icon={<img style={svgStyles} src={checkBox} alt="" />} Show={show}>
+        Saving Progress! Please wait...
+      </ReactSnackBar>
     </>
   );
 }

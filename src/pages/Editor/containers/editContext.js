@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DomToImage from "dom-to-image";
 import { jsPDF } from "jspdf";
 import ReactSnackBar from "react-js-snackbar";
-import checkBox from "./../../../assets/images/editor/checkmark.svg";
+import checkBox from "./../../../assets/images/checkmark.svg";
 
 export const EditContext = React.createContext();
 const svgStyles = {
@@ -170,8 +170,6 @@ const EditContextProvider = props => {
       }}
     >
       {props.children}
-
-
 
       <ReactSnackBar Icon={<img style={svgStyles} src={checkBox} alt="" />} Show={show}>
         Generating PDF! Please wait...
