@@ -461,11 +461,11 @@ function Canvas() {
   let myref = null;
 
   const fileUploadHandler = event => {
-    var binaryData = [];
-    binaryData.push(event.target.files[0]);
-    const newFile = window.URL.createObjectURL(new Blob(binaryData, { type: 'image/png' }))
-    setFile(newFile)
-    
+    // console.log(event.target.files[0]);
+    const selectedFile = event.target.files[0]
+    if (selectedFile && selectedFile.type.includes("image")) {
+      setFile(window.URL.createObjectURL(event.target.files[0]))      
+    }
   }
 
   const handleBrowse = function (e) {
