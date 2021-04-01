@@ -211,8 +211,8 @@ When accepting the PR, add the following label before merging it. user=<username
 |------------|--------|-------|
 | Level0  | GSSOC Minor Documentation | 5 |
 | Level1  | GSSOC Major Documentation  | 10 |
-| Level2  | GSSOC Bug fixing, adding small features  | 15 |
-| Level3  | GSSOC New features, major bug fixing.  | 25 |
+| Level2  | GSSOC Bug fixing, adding small features  | 25 |
+| Level3  | GSSOC New features, major bug fixing.  | 45 |
 
 #### Allotment:
 
