@@ -13,7 +13,7 @@ const OutputComponent = () => {
   const [wordCount, setWordCount] = useState(0);
 
   useEffect(() => {
-    setWordCount(pageText.split(/[\n| ]/).filter(c => c !== "").length);
+    setWordCount(pageText.split(/[\n|\t| ]/).filter(c => c !== "").length);
   }, [pageText]);
 
   return (
