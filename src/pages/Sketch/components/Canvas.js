@@ -18,17 +18,22 @@ function Canvas() {
 
   /* ----- Feature State ----- */
   const [background, setBackground] = useState("#ffffff");
+  const [canvasStates, setCanvasStates] = useState([]);
+  const [canvasStateAt, setcanvasStateAt] = useState(-1);
+  const [stroke, setStroke] = useState("none");
   const [strokeColor, setStrokeColor] = useState("#000000");
   const [fillColor, setFillColor] = useState(background);
   const [fillOpacity, setFillOpacity] = useState(0.3);
-  const [width, setWidth] = useState("1");
-  const [stroke, setStroke] = useState("none");
+  const [strokeWidth, setStrokeWidth] = useState(1);
   const [fill, setFill] = useState("false");
-  const [canvasStates, setCanvasStates] = useState([]);
-  const [canvasStateAt, setcanvasStateAt] = useState(-1);
-  // const [fillImage, setFillImage] = useState(null);
   const [edge, setEdge] = useState("round");
-  const [roughness, setRoughness] = useState("0");
+  const [roughness, setRoughness] = useState(0);
+  const [bowing, setBowing] = useState(1);
+  const [fillStyle, setFillStyle] = useState("solid");
+  const [fillWeight, setFillWeight] = useState(parseInt(strokeWidth) / 2);
+  const [hachureAngle, setHachureAngle] = useState(-41);
+  const [hachureGap, setHachureGap] = useState(parseInt(strokeWidth) * 4);
+
   // For Font
   const [text, setText] = useState("");
   const [isWriting, setIsWriting] = useState(false);
@@ -122,16 +127,16 @@ function Canvas() {
     context.strokeStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, 1)`;
 
     if (stroke === "small") {
-      context.setLineDash([5, parseInt(width) + 3]);
+      context.setLineDash([5, parseInt(strokeWidth) + 3]);
     } else if (stroke === "big") {
-      context.setLineDash([5, parseInt(width) + 10]);
+      context.setLineDash([5, parseInt(strokeWidth) + 10]);
     } else {
       context.setLineDash([]);
     }
 
     context.lineJoin = edge;
     context.lineCap = "round";
-    context.lineWidth = width;
+    context.lineWidth = strokeWidth;
 
     if (["pen", "line", "square", "circle", "triangle", "arrow", "diamond", "biShapeTriangle"].includes(type)) {
       setTypeState(context.getImageData(0, 0, canvasWidth, canvasHeight));
@@ -250,15 +255,30 @@ function Canvas() {
     }
   }
 
+  const openShapeOptions = {
+    stroke: strokeColor,
+    strokeWidth: strokeWidth,
+    roughness: roughness,
+    bowing: bowing,
+  };
+
+  const closedShapeOptions = {
+    fill: fillColor,
+    fillStyle: fillStyle, // solid fill
+    fillWeight: fillWeight, // thicker lines for hachure
+    hachureAngle: hachureAngle, // angle of hachure,
+    hachureGap: hachureGap,
+  };
+
   function penMove(point) {
     context.putImageData(typeState, 0, 0);
     penPath.current.push([point.x, point.y]);
-    roughCanvas.current.curve(penPath.current, { strokeWidth: width, roughness: roughness });
+    roughCanvas.current.curve(penPath.current, { ...openShapeOptions });
   }
 
   function lineMove(point) {
     context.putImageData(typeState, 0, 0);
-    roughCanvas.current.line(downPoint.x, downPoint.y, point.x, point.y, { strokeWidth: width, roughness: roughness });
+    roughCanvas.current.line(downPoint.x, downPoint.y, point.x, point.y, { ...openShapeOptions });
   }
 
   function squareMove(point) {
@@ -270,7 +290,7 @@ function Canvas() {
         [point.x, point.y],
         [downPoint.x, point.y],
       ],
-      { strokeWidth: width, roughness: roughness }
+      fill === "true" ? { ...openShapeOptions, ...closedShapeOptions } : { ...openShapeOptions }
     );
     context.stroke();
   }
@@ -281,7 +301,12 @@ function Canvas() {
     const y = (point.y + downPoint.y) / 2;
     const radius = Math.sqrt(Math.pow(downPoint.x - point.x, 2) + Math.pow(downPoint.y - point.y, 2)) / 2;
 
-    roughCanvas.current.circle(x, y, radius, { strokeWidth: width, roughness: roughness });
+    roughCanvas.current.circle(
+      x,
+      y,
+      radius,
+      fill === "true" ? { ...openShapeOptions, ...closedShapeOptions } : { ...openShapeOptions }
+    );
   }
 
   function triangleMove(point) {
@@ -293,7 +318,7 @@ function Canvas() {
         [point.x, point.y],
         [downPoint.x, point.y],
       ],
-      { strokeWidth: width, roughness: roughness }
+      fill === "true" ? { ...openShapeOptions, ...closedShapeOptions } : { ...openShapeOptions }
     );
   }
 
@@ -309,9 +334,9 @@ function Canvas() {
     const x2 = formula(point.x, 3, downPoint.x, point.x, point.y, downPoint.y, Math.PI / 4);
     const y2 = formula(point.y, 3, downPoint.y, point.y, downPoint.x, point.x, Math.PI / 4);
 
-    roughCanvas.current.line(downPoint.x, downPoint.y, point.x, point.y, { strokeWidth: width, roughness: roughness });
-    roughCanvas.current.line(point.x, point.y, x1, y1, { strokeWidth: width, roughness: roughness });
-    roughCanvas.current.line(point.x, point.y, x2, y2, { strokeWidth: width, roughness: roughness });
+    roughCanvas.current.line(downPoint.x, downPoint.y, point.x, point.y, { ...openShapeOptions });
+    roughCanvas.current.line(point.x, point.y, x1, y1, { ...openShapeOptions });
+    roughCanvas.current.line(point.x, point.y, x2, y2, { ...openShapeOptions });
   }
 
   function diamondMove(point) {
@@ -326,7 +351,7 @@ function Canvas() {
         [center_x, point.y],
         [downPoint.x, center_y],
       ],
-      { strokeWidth: width, roughness: roughness }
+      fill === "true" ? { ...openShapeOptions, ...closedShapeOptions } : { ...openShapeOptions }
     );
   }
 
@@ -340,7 +365,7 @@ function Canvas() {
         [point.x, point.y],
         [center_x, point.y],
       ],
-      { strokeWidth: width, roughness: roughness }
+      fill === "true" ? { ...openShapeOptions, ...closedShapeOptions } : { ...openShapeOptions }
     );
   }
 
@@ -401,10 +426,20 @@ function Canvas() {
         setFillColor={setFillColor}
         fillOpacity={fillOpacity}
         setFillOpacity={setFillOpacity}
+        setBowing={setBowing}
+        setFillStyle={setFillStyle}
+        setFillWeight={setFillWeight}
+        setHachureAngle={setHachureAngle}
+        setHachureGap={setHachureGap}
+        bowing={bowing}
+        fillStyle={fillStyle}
+        fillWeight={fillWeight}
+        hachureAngle={hachureAngle}
+        hachureGap={hachureGap}
         background={background}
         setBackground={setBackground}
-        width={width}
-        setWidth={setWidth}
+        width={strokeWidth}
+        setWidth={setStrokeWidth}
         stroke={stroke}
         setStroke={setStroke}
         roughness={roughness}
@@ -423,7 +458,6 @@ function Canvas() {
         setFontStyle={setFontStyle}
         fontFamily={fontFamily}
         setFontFamily={setFontFamily}
-        // setFillImage={setFillImage}
         edge={edge}
         setEdge={setEdge}
       />

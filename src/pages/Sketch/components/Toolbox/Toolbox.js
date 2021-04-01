@@ -5,12 +5,11 @@ import { AiOutlineLine, AiOutlineSmallDash, AiOutlineDash } from "react-icons/ai
 import { FaRegSquare, FaSquare, FaItalic, FaBold } from "react-icons/fa";
 import { MdUndo, MdRedo } from "react-icons/md";
 import { BsFonts } from "react-icons/bs";
-import { FaImage } from "react-icons/fa";
 import { FaPencilAlt, FaRegCircle, FaSlash, FaFont } from "react-icons/fa";
 import { BsArrowUpRight } from "react-icons/bs";
 import { GiTriangleTarget } from "react-icons/gi";
 import { BsDiamond } from "react-icons/bs";
-import { BiShapeTriangle } from 'react-icons/bi';
+import { BiShapeTriangle } from "react-icons/bi";
 
 function Toolbox({
   color,
@@ -19,6 +18,16 @@ function Toolbox({
   setFillColor,
   fillOpacity,
   setFillOpacity,
+  setBowing,
+  setFillStyle,
+  setFillWeight,
+  setHachureAngle,
+  setHachureGap,
+  bowing,
+  fillStyle,
+  fillWeight,
+  hachureAngle,
+  hachureGap,
   background,
   setBackground,
   width,
@@ -41,7 +50,6 @@ function Toolbox({
   setFontStyle,
   fontFamily,
   setFontFamily,
-  setFillImage,
   edge,
   setEdge,
 }) {
@@ -102,18 +110,35 @@ function Toolbox({
           />
         </div>
       </Feature>
+
       {type !== "text" && (
-        <Feature classname={styles.sliderWrapper} title={`Stroke Roughness`}>
+        <Feature classname={styles.sliderWrapper} title={`Roughness`}>
           <input
             className={styles.slider}
             type="range"
             min={0}
             max={5}
+            step={0.1}
             value={roughness}
             onChange={e => setRoughness(e.target.value)}
           />
         </Feature>
       )}
+
+      {type !== "text" && (
+        <Feature classname={styles.sliderWrapper} title={`Stroke Bowing`}>
+          <input
+            className={styles.slider}
+            type="range"
+            min={0}
+            max={10}
+            step={0.1}
+            value={bowing}
+            onChange={e => setBowing(e.target.value)}
+          />
+        </Feature>
+      )}
+
       {type !== "text" && (
         <Feature title="Stroke Width">
           <select name="canvas_pen_width" value={width} onChange={e => setWidth(e.target.value)}>
@@ -154,6 +179,17 @@ function Toolbox({
           </div>
         </Feature>
       )}
+
+      {type !== "text" && (
+        <Feature title="Edge">
+          <select value={edge} onChange={e => setEdge(e.target.value)}>
+            <option value="round">Round</option>
+            <option value="bevel">Bevel</option>
+            <option value="miter">Miter</option>
+          </select>
+        </Feature>
+      )}
+
       {type !== "text" && (
         <Feature title="Fill Color">
           <div className={styles.colorPicker}>
@@ -181,6 +217,7 @@ function Toolbox({
             type="range"
             min={0}
             max={10}
+            step={0.1}
             value={fillOpacity * 10}
             onChange={e => setFillOpacity(e.target.value / 10)}
           />
@@ -201,33 +238,62 @@ function Toolbox({
           >
             <FaSquare size={20} />
           </div>
-          <div
-            className={`${styles.feature_box} ${fill === "pattern" && styles.active_feature_box} ${
-              styles.fill_image_container
-            }`}
-            onClick={() => {
-              setFill("pattern");
-              document.getElementById("sketch-fill-file-input").click();
-            }}
-          >
-            <FaImage size={20} />
-            <input
-              type="file"
-              accept=".png"
-              id="sketch-fill-file-input"
-              onChange={e => setFillImage(URL.createObjectURL(e.target.files[0]))}
-            />
-          </div>
         </Feature>
       )}
 
       {type !== "text" && (
-        <Feature title="Edge">
-          <select value={edge} onChange={e => setEdge(e.target.value)}>
-            <option value="round">Round</option>
-            <option value="bevel">Bevel</option>
-            <option value="miter">Miter</option>
+        <Feature title="Fill Style">
+          <select name="shape_fill_style" value={fillStyle} onChange={e => setFillStyle(e.target.value)}>
+            <option value="hachure">hachure</option>
+            <option value="solid">solid</option>
+            <option value="zigzag">zigzag</option>
+            <option value="cross-hatch">cross-hatch</option>
+            <option value="dots">dots</option>
+            <option value="dashed">dashed</option>
+            <option value="zigzag-line">zigzag-line</option>
           </select>
+        </Feature>
+      )}
+
+      {type !== "text" && (
+        <Feature classname={styles.sliderWrapper} title={`Fill Weight`}>
+          <input
+            className={styles.slider}
+            type="range"
+            min={1}
+            max={10}
+            step={0.1}
+            value={fillWeight}
+            onChange={e => setFillWeight(e.target.value)}
+          />
+        </Feature>
+      )}
+
+      {type !== "text" && (
+        <Feature classname={styles.sliderWrapper} title={`Fill Hachure Angle`}>
+          <input
+            className={styles.slider}
+            type="range"
+            min={0}
+            max={360}
+            step={1}
+            value={hachureAngle + 180}
+            onChange={e => setHachureAngle(e.target.value - 180)}
+          />
+        </Feature>
+      )}
+
+      {type !== "text" && (
+        <Feature classname={styles.sliderWrapper} title={`Fill Hachure Gap`}>
+          <input
+            className={styles.slider}
+            type="range"
+            min={1}
+            max={10}
+            step={0.1}
+            value={hachureGap}
+            onChange={e => setHachureGap(e.target.value)}
+          />
         </Feature>
       )}
 
