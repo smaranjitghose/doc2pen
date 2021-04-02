@@ -418,11 +418,45 @@ function Canvas() {
     });
   };
 
-  const saveInstance = async (name, type) => {
+  function getNewFileHandle() {
+    // For Chrome 86 and later...
+    if ("showSaveFilePicker" in window) {
+      const opts = {
+        types: [
+          {
+            description: "Doc2pen Sketch Save File",
+            accept: { "application/d2ps": [".d2ps"] },
+          },
+        ],
+      };
+      return window.showSaveFilePicker(opts);
+    }
+    // For Chrome 85 and earlier...
+    const opts = {
+      type: "save-file",
+      accepts: [
+        {
+          description: "Doc2pen Sketch Save File",
+          extensions: ["d2ps"],
+          mimeTypes: ["application/d2ps"],
+        },
+      ],
+    };
+    return window.chooseFileSystemEntries(opts);
+  }
+
+  const saveInstance = async name => {
+    try {
+      const result = await getNewFileHandle();
+      name = result.name;
+    } catch (err) {
+      console.error(err);
+    }
     await showToast()
       .then(() => {
         const link = document.createElement("a");
         link.href = canvasRef.current.toDataURL();
+
         link.download = name;
         document.body.appendChild(link);
         link.click();
@@ -517,11 +551,7 @@ function Canvas() {
           </div>
         </label>
         <label htmlFor="sketch-dcd-save" title="Download Progress">
-          <div
-            className={`${styles.feature}`}
-            onClick={() => saveInstance("savedProgress.d2ps", "application/d2ps+binary")}
-            id="sketch-dcd-save"
-          >
+          <div className={`${styles.feature}`} onClick={() => saveInstance("savedProgress.d2ps")} id="sketch-dcd-save">
             <VscSaveAs size={15} />
           </div>
         </label>
