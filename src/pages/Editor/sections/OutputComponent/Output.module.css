@@ -8,7 +8,12 @@
   height: 100%;
   width: 100%;
 }
-
+.activeConfiguration{
+  display: flex;
+  font-size: 16px;
+  color: grey;
+  justify-content: space-around;
+}
 .contentInput {
   position: absolute;
   border: none;

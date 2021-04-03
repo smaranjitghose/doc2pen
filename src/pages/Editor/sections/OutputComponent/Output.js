@@ -15,10 +15,16 @@ const OutputComponent = () => {
   useEffect(() => {
     setWordCount(pageText.split(/[\n|\t| ]/).filter(c => c !== "").length);
   }, [pageText]);
-
+  console.log(editContext)
   return (
     <>
       <div className={`${classes.wrapper} col-11 col-lg-8 mx-auto mt-4 p-2`}>
+        <div className={classes.activeConfiguration}>
+          <p>Color : <span style={{ color: editContext.bodyValues.bodyColor }}>{editContext.bodyValues.bodyColor}</span> </p>
+          <p>FontFamily : <span style={{ fontFamily: editContext.bodyValues.bodyFont }}>{editContext.bodyValues.bodyFont}</span> </p>
+          <p>PageType :<span>{editContext.pageSrc}</span> </p>
+        </div>
+
         <div id="outputPage" className={`col-12 mx-auto px-0`}>
           <div className={`${classes.imgContainer} col-12 mx-auto px-0`}>
             <img src={page.default} alt="editor" className="mx-auto px-0" Width="100%" Height="100%" />
