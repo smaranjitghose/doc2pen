@@ -1,10 +1,13 @@
 import React, { lazy, Suspense } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { withRouter } from "react-router";
-import Header from "./components/Header/Header";
+// import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import "./index.css";
 import Preloader from "./components/Preloader/Preloader";
+
+import Navbar from './components/Navbar/Navbar';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 const Home = lazy(() => import("./pages/Home/index"));
 const Editor = lazy(() => import("./pages/Editor/index"));
@@ -16,7 +19,9 @@ function App({ location }) {
   
   return (
     <Suspense fallback={<Preloader />}>
-      {location.pathname !== "/404" && <Header />}
+      {location.pathname !== "/404"} 
+      <Router>
+        <Navbar />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/editor" exact component={Editor} />
@@ -26,6 +31,7 @@ function App({ location }) {
         <Redirect to="/404" />
       </Switch>
       {location.pathname !== "/404" && location.pathname !== '/sketch' && <Footer />}
+      </Router>
     </Suspense>
   );
 }
