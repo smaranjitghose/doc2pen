@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, ModalBody, ModalFooter } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
 import { EditContext } from "../../containers/editContext";
 import styles from "./Settings.module.css";
 const DownloadFileModal = (props) => {
