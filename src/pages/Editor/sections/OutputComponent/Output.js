@@ -1,11 +1,10 @@
 import { useContext, useState, useEffect } from "react";
 
-import classes from "./Output.module.css";
+import classes from "./output.module.scss";
 import { EditContext } from "../../containers/editContext";
 
 const OutputComponent = () => {
   const editContext = useContext(EditContext);
-  // const page = require('./ruled1.png');
   const page = require(`./${editContext.pageSrc}`);
   console.log(`${editContext.pageSrc}`);
 
@@ -13,7 +12,7 @@ const OutputComponent = () => {
   const [wordCount, setWordCount] = useState(0);
 
   useEffect(() => {
-    setWordCount(pageText.split(" ").filter(c => c !== "").length);
+    setWordCount(pageText.split(/[\n|\t| ]/).filter(c => c !== "").length);
   }, [pageText]);
 
   return (

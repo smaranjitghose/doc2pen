@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import { EditContext } from "../../containers/editContext";
-import styles from "./Settings.module.css";
+import styles from "./dowload-file-modal.module.scss";
 const DownloadFileModal = (props) => {
     const { modal, setModal } = props;
 

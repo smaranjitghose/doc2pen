@@ -33,16 +33,16 @@ function Canvas() {
   const [canvasStateAt, setcanvasStateAt] = useState(-1);
   const [stroke, setStroke] = useState("none");
   const [strokeColor, setStrokeColor] = useState("#000000");
-  const [fillColor, setFillColor] = useState("#ffff00");
+  const [fillColor, setFillColor] = useState("#ff0000");
   const [fillOpacity, setFillOpacity] = useState(1);
   const [strokeWidth, setStrokeWidth] = useState(1);
   const [edge, setEdge] = useState("round");
-  const [roughness, setRoughness] = useState(0);
+  const [roughness, setRoughness] = useState(1);
   const [bowing, setBowing] = useState(1);
   const [fillStyle, setFillStyle] = useState("none");
-  const [fillWeight, setFillWeight] = useState(parseInt(strokeWidth) / 2);
+  const [fillWeight, setFillWeight] = useState(parseInt(strokeWidth) * 2);
   const [hachureAngle, setHachureAngle] = useState(-41);
-  const [hachureGap, setHachureGap] = useState(parseInt(strokeWidth) * 4);
+  const [hachureGap, setHachureGap] = useState(parseInt(strokeWidth) * 8);
   const [show, setShow] = useState(false);
   const [showing, setShowing] = useState(false);
   // For Font
@@ -442,11 +442,45 @@ function Canvas() {
     });
   };
 
-  const saveInstance = async (name, type) => {
+  function getNewFileHandle() {
+    // For Chrome 86 and later...
+    if ("showSaveFilePicker" in window) {
+      const opts = {
+        types: [
+          {
+            description: "Doc2pen Sketch Save File",
+            accept: { "application/d2ps": [".d2ps"] },
+          },
+        ],
+      };
+      return window.showSaveFilePicker(opts);
+    }
+    // For Chrome 85 and earlier...
+    const opts = {
+      type: "save-file",
+      accepts: [
+        {
+          description: "Doc2pen Sketch Save File",
+          extensions: ["d2ps"],
+          mimeTypes: ["application/d2ps"],
+        },
+      ],
+    };
+    return window.chooseFileSystemEntries(opts);
+  }
+
+  const saveInstance = async name => {
+    try {
+      const result = await getNewFileHandle();
+      name = result.name;
+    } catch (err) {
+      console.error(err);
+    }
     await showToast()
       .then(() => {
         const link = document.createElement("a");
         link.href = canvasRef.current.toDataURL();
+
         link.download = name;
         document.body.appendChild(link);
         link.click();
@@ -548,11 +582,7 @@ function Canvas() {
           </div>
         </label>
         <label htmlFor="sketch-dcd-save" title="Download Progress">
-          <div
-            className={`${styles.feature}`}
-            onClick={() => saveInstance("savedProgress.d2ps", "application/d2ps+binary")}
-            id="sketch-dcd-save"
-          >
+          <div className={`${styles.feature}`} onClick={() => saveInstance("savedProgress.d2ps")} id="sketch-dcd-save">
             <VscSaveAs size={15} />
           </div>
         </label>

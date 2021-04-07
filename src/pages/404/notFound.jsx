@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import "./squiggly-animation.css";
-import style from "./notFound.module.css";
+import "./squiggly-animation.scss";
+import style from "./notFound.module.scss";
 import pageNotFound from "./../../assets/images/404/404.gif";
 
 import MetaComponent from "../../seo/MetaComponent";
@@ -12,7 +12,6 @@ function getFaviconEl() {
 
 function Hero() {
   useEffect(() => {
-    // if (window.ParticleSlider !== undefined) window.initParticles();
     const favicon = getFaviconEl();
     favicon.href = "404browser_102160.png";
   }, []);

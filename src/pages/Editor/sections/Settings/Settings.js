@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import DownloadFileModal from "./DownloadFileModal";
+import DownloadFileModal from "../../components/DownloadFileModal/DownloadFileModal";
 import { EditContext } from "../../containers/editContext";
-import styles from "./Settings.module.css";
+import styles from "./settings.module.scss";
 import Dropdown from "../../../../components/Dropdown/Dropdown";
 import NumberSlider from "../../components/Slider/NumberSlider";
 import { Button } from 'reactstrap';

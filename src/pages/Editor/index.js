@@ -1,6 +1,6 @@
 import React,{ useEffect } from "react";
 
-import styles from "./style.module.css";
+import styles from "./style.module.scss";
 
 import MetaComponent from '../../seo/MetaComponent';
 import metaData from '../../seo/metaData';
