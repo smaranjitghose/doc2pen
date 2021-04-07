@@ -67,7 +67,6 @@
 }
 
 html {
-  --mainTheme: #007bff;
   height: 100%;
   width: 100%;
   scroll-behavior: smooth;

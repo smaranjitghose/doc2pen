@@ -1,4 +1,4 @@
-import styles from "./Slider.module.css";
+import styles from "./slider.module.scss";
 import React, { useState } from "react";
 
 const NumberSliders = props => {
