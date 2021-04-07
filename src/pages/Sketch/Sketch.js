@@ -2,7 +2,7 @@ import React from 'react';
 import MetaComponent from '../../seo/MetaComponent';
 import metaData from '../../seo/metaData';
 import Canvas from './components/Canvas';
-import styles from './Sketch.module.css';
+import styles from './sketch.module.scss';
 
 function Sketch() {
 

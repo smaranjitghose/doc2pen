@@ -1,5 +1,7 @@
+@use './../../scss/colors';
+
 .Sketch {
-    background-color: rgb(240, 255, 255);
+    background-color: colors.$light-grey;
     min-height: 89vh;
     display: flex;
     flex-direction: column;

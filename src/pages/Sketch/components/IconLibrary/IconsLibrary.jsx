@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import style from "./icon-lib.module.css";
+import style from "./icon-lib.module.scss";
 
 // Put you icon pack import here
 const iconPack1SVGs = importAll(require.context("./icon-pack1", false, /\.svg$/));

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import styles from "./Canvas.module.css";
+import styles from "./canvas.module.scss";
 import Toolbox from "./Toolbox/Toolbox";
 import { FaDownload, FaStar } from "react-icons/fa";
 import { VscSaveAs } from "react-icons/vsc";
@@ -577,7 +577,7 @@ function Canvas() {
         onMouseLeave={handleMouseLeave}
       />
       <div className={styles.mousePosition}>
-        Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y}){" "}
+        Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y})
       </div>
 
       {/* ----- Text ----- */}
