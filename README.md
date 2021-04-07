@@ -52,12 +52,13 @@ Add GIFs of the entire web app
     |-seo # Contains code for meta tags using react-helmet
 ```
 
+### 1.3. Tech Stack: 💻
+
+<img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>  <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>  <img alt="SCSS"  src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
+
 
 ## Under the hood:
 
-- React
-- HTML
-- SCSS
 - [React - Bootstrap](https://react-bootstrap.github.io/)
 - [React - Helmet](https://www.npmjs.com/package/react-helmet): Document Head Management
 - [React - Leaflet.js](https://react-leaflet.js.org/): Interactive Maps
