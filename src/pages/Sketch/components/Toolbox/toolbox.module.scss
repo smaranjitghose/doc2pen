@@ -4,11 +4,13 @@
   left: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: white;
   border-radius: 5px;
   padding: 0.5rem;
   box-shadow: 0 0 3px 0.3px gray;
+  height: 98%;
+  overflow-y: auto;
 }
 
 .feature {
