@@ -39,7 +39,7 @@ const OutputComponent = () => {
               color: `${editContext.bodyValues.bodyColor}`,
               width: `${editContext.bodyValues.bodyWidth}pc`,
               letterSpacing: `${editContext.bodyValues.bodyLetterSpace}px`,
-              overflowY: "scroll",
+              overflowY: "hidden",
             }}
           />
         </div>
