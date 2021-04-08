@@ -9,7 +9,7 @@ import { Button } from 'reactstrap';
 const Settings = () => {
   const editContext = useContext(EditContext);
   const [modal, setModal] = React.useState(false);
-
+  console.log(editContext)
   // Dialogue open
   const handleopenModal = () => {
     setModal(true);
@@ -18,16 +18,16 @@ const Settings = () => {
     <div className={styles.controlPanel}>
       <div className={styles.controls}>
         <div className={styles.group1}>
-          <Dropdown name="Change Color" type="color" items={["black", "red", "orange", "green", "blue", "dodgerblue", "deeppink", "darkviolet"]} />
+          <Dropdown name="Change Color" active={editContext.bodyValues.bodyColor} type="color" items={["black", "red", "orange", "green", "blue", "dodgerblue", "deeppink", "darkviolet"]} />
           <div className={styles.vSeparator}></div>
           <Dropdown
             name="Change Style"
             type="font"
             items={["HomemadeApple", "Caveat", "CedarvilleCursive", "Dawning", "IndieFlower", "NothingYouCouldDo", "Liu", "LeagueScript", "Enola", "RayFont", "RGhandwritten"]}
-
+            active={editContext.bodyValues.bodyFont}
           />
           <div className={styles.vSeparator}></div>
-          <Dropdown name="Change Sheet" type="page" items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]} />
+          <Dropdown name="Change Sheet" type="page" active={editContext.pageSrc} items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]} />
 
           <div className={styles.vSeparator}></div>
 
