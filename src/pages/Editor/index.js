@@ -24,20 +24,6 @@ function Editor() {
         keywords={metaData.editor.keywords}
       />
       <div className={styles.dscCommunity}>
-        <a
-          href="https://dscommunity.in"
-          target="_blank"
-          rel="noreferrer noopener"
-          style={{
-            position: "fixed",
-            zIndex: "1000",
-            right: "-1rem",
-            top: "1rem",
-          }}
-          className="col-2 col-md-1 d-none d-lg-block"
-        >
-          dscommunity
-        </a>
         <EditContextProvider>
           <Settings />
           <Output />
