@@ -37,7 +37,7 @@ const Settings = () => {
           <input id="import" style={{ display: "none" }} type="file" onChange={editContext.importTxt} ></input>
           <div className={styles.vSeparator}></div>
           {/* Download functionality */}
-          <Button color="none" onClick={handleopenModal} >Download File</Button>
+          <Button color="none" onClick={handleopenModal} className={styles.download} >Download File</Button>
           <div className={styles.vSeparator}></div>
         </div>
         <NumberSlider
