@@ -9,7 +9,6 @@ import { Button } from 'reactstrap';
 const Settings = () => {
   const editContext = useContext(EditContext);
   const [modal, setModal] = React.useState(false);
-  console.log(editContext)
   // Dialogue open
   const handleopenModal = () => {
     setModal(true);
