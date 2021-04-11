@@ -37,6 +37,11 @@
           background: colors.$light-grey !important;
         }
       }
+      .download{
+        &:hover{
+          background-color: rgb(189, 189, 189);
+        }
+      }
     }
   }
 }
