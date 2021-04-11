@@ -1,4 +1,6 @@
 import React,{useState,useEffect}  from 'react'
+import JSZip from "jszip"
+import { saveAs } from 'file-saver';
 
 import Progress from './Progress/Progress'
 import Dropdown from './DropDown/DropDown'
@@ -12,9 +14,11 @@ export default function MediaManip() {
     const [input,setInput] = useState('Input')
     const [output,setOutput] = useState('Output')
     const [files,setFiles] = useState([])
+    const [convertedFiles,setConvertedFiles] = useState([])
     const [progress,setProgress] = useState(0)
     const [download,setDownload] = useState(true) //true = disabled
     const [convert,setConvert] = useState(true)  //true = disabled
+    let zip = new JSZip()
 
     useEffect(() => {
         if(files.length === 0) {
@@ -26,20 +30,27 @@ export default function MediaManip() {
 
     const onConvert = () => {
         setProgress(0)
-        files.map(file => {
-          const fileType = file.name.split('.')[1]
-          if(fileType === 'png' && output === 'jpg') return pngtojpg()
-          if(fileType === 'png' && output === 'webp') return pngtowebp()
-          if(fileType === 'jpg' && output === 'png') return jpgtopng()
-          if(fileType === 'jpg' && output === 'webp') return jpgtowebp() 
-          if(fileType === 'webp' && output === 'jpg') return webptojpg()
-          if(fileType === 'webp' && output === 'png') return webptopng()
-          if(fileType === 'jpeg' && output === 'png') return jpegtopng()
-          if(fileType === 'jpeg' && output === 'webp') return jpegtowebp()
-
-          if(output === 'Output' || output === fileType) return alert('Select a valid Output Format')
-          else return alert('Input File Format Not Supported.')
-        })
+        setConvertedFiles([])
+        setDownload(true)
+        const availableFormats = ['jpg','webp','png','jiff','jpeg']
+        let i = 0
+        for(i=0; i<files.length; i++)
+        {   
+            const fileType = files[i].name.substr(files[i].name.lastIndexOf('.') + 1).toLowerCase()
+            if(!availableFormats.includes(fileType))
+               {console.log(fileType)
+                   break  } 
+        }
+        if(i !== files.length) return alert('Input File Format Not Supported.')
+            
+        const fileType = files[0].name.split('.')[1]
+        if(output === 'Output' || (files.length === 1 && output === fileType)) 
+            return alert('Select a valid Output Format')
+        if(output === 'jpg') return convertImage("jpg")
+        if(output === 'webp') return convertImage("webp")
+        if(output === 'png') return convertImage("png")
+        if(output === 'jpeg') return convertImage("jpeg")
+       
         
     }
 
@@ -52,51 +63,36 @@ export default function MediaManip() {
                     return 100
                 }else return prev +1            
             })       
-        },50)
+        },10)
     }
 
-    const pngtowebp = () => {
-        alert('Converting PNG To Webp')
+    const convertImage = (format) => {
         startConversion()
-    }
-   
-    const jpgtopng = () => {
-        alert('Converting JPG To PNG')
-        startConversion()
-    }
-   
-    const jpgtowebp = () => {
-        alert('Converting JPG To Webp')
-        startConversion()
-    }
-   
-    const webptojpg = () => {
-        alert('Converting Webp To JPG')
-        startConversion()
-    }
-   
-    const pngtojpg = () => {
-        alert('Converting PNG To JPG')
-        startConversion()
-    }
-   
-    const webptopng = () => {
-        alert('Converting Webp To PNG')
-        startConversion()
-    }
-
-    const jpegtowebp = () => {
-        alert('Converting JPEG To WEBP')
-        startConversion()
-    }
-
-    const jpegtopng = () => {
-        alert('Converting JPEG To PNG')
-        startConversion()
+        let img = new Image()
+        let canvas = document.createElement("canvas")
+        files.forEach(item =>{
+            img.src = item.preview
+            canvas.width = img.width
+            canvas.height = img.height
+            canvas.getContext("2d").drawImage(img,0,0)
+            setConvertedFiles(prev => {
+                return[...prev,
+                  {
+                      type : format, 
+                      data : canvas.toDataURL(`image/${format}`).split(',')[1]
+                  }
+                ]
+            })
+        })
     }
 
     const onDownload = () => {
-        alert(`Downloading Converted ${output} files.`)
+        convertedFiles.forEach((item,index)=>{
+            zip.file(`${index}.${item.type}`, item.data, {base64: true})
+        })
+        zip.generateAsync({type:"blob"}).then(function(content) {
+            saveAs(content, "converted files.zip")
+        });
         setProgress(0)
      }
 
@@ -114,7 +110,7 @@ export default function MediaManip() {
                 setInput={setInput} 
             />
             <div className={styles.mediaManip_btn}>
-                <Button value="Convert" type="primary" onClick={onConvert} disabled={convert} />
+                <Button value="Convert" type="primary" onClick={() => onConvert()} disabled={convert} />
                 {!convert && <Button value="Download" type="secondary" onClick={onDownload} disabled={download} />}
             </div>
         </div>

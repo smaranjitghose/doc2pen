@@ -9,7 +9,7 @@ function DragDrop({files,setFiles,setInput}) {
 
     const onDrop = useCallback(acceptedFiles => {
       const newFile = acceptedFiles.map(file => {
-        setInput(file.type.split('/')[1])
+        acceptedFiles.length > 1 ? setInput("Mix") : setInput(file.type.split('/')[1])
         return Object.assign(file, {
         preview: URL.createObjectURL(file)
       })
