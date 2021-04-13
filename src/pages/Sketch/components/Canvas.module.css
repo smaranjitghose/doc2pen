@@ -29,6 +29,9 @@
   background-color: #e9ecef;
   color: black;
 }
+.feature:hover{
+  background-color: rgb(189, 186, 186);
+}
 
 .active_feature {
   background-color: #c7ccd1;
@@ -37,7 +40,7 @@
 /* ----- Download Clear Button ----- */
 .download_clear_container {
   top: 0.75rem;
-  right: 30px;
+  right: 30px;;
 }
 
 /* ----- Shapes ----- */
