@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./toolbox.module.scss";
-import stylesShapes from "../Canvas.module.css";
 import { AiOutlineLine, AiOutlineSmallDash, AiOutlineDash } from "react-icons/ai";
 import { FaRegSquare, FaItalic, FaBold, FaPencilAlt, FaRegCircle, FaSlash, FaFont } from "react-icons/fa";
 import { MdUndo, MdRedo } from "react-icons/md";
@@ -325,7 +324,7 @@ function Toolbox({
     return (
       <label style={{ marginTop: "3px" }} htmlFor={id} title={label}>
         <div
-          className={`${stylesShapes.feature} ${type === type_ && stylesShapes.active_feature}`}
+          className={`${styles.feature} ${type === type_ && styles.active_feature}`}
           onClick={() => setType(type_)}
           id={id}
         >
