@@ -108,6 +108,7 @@ export default function MediaManip() {
                 files={files}
                 setFiles={setFiles}
                 setInput={setInput} 
+                setOutput={setOutput}
             />
             <div className={styles.mediaManip_btn}>
                 <Button value="Convert" type="primary" onClick={() => onConvert()} disabled={convert} />
