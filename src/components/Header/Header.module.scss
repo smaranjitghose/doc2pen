@@ -1,5 +1,4 @@
 @use './../../scss/colors';
-
 .Header {
   background-color: colors.$purple;
   display: flex;
@@ -110,16 +109,20 @@
 @media only screen and (max-width: 550px) {
   .HeaderDrop {
     flex-wrap: wrap;
-    gap: 2px;
+    gap: 30px;
   }
 
   .HeaderOpen {
-    gap: 20px;
+    gap: 30px;
   }
 
   .Header {
     .right {
-      height: 35px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.5s ease;
+      z-index: 1002;
+      height: 150px;
       padding-right: 20px;
       overflow: hidden;
       transform: translateY(0);
@@ -129,6 +132,16 @@
       height: 0px;
       transform: translateY(-5px);
       transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1);
+    }
+    .header_links{
+      transition: all 0.5s ease;
+      z-index: 1002;
+      padding: 0.1rem 0.5rem;
+      display: flex;
+      flex-direction: column;
+     
+      // flex-grow: 100%;
+      justify-content: stretch;
     }
     .hamburger {
       display: block;

@@ -31,6 +31,7 @@ const quickLinks = [
 ]
 
 function Header() {
+
     let navLinkRef = useRef(null);
     let headerRef = useRef(null);
     let btn1Ref = useRef(null);
@@ -52,6 +53,7 @@ function Header() {
         btn1Ref.current.classList.toggle(styles.btn1);
         btn2Ref.current.classList.toggle(styles.btn2);
         btn3Ref.current.classList.toggle(styles.btn3);
+
     }
 
     return (
@@ -95,6 +97,7 @@ function Header() {
                     ))
                 }
             </div>
+
         </>
     )
 }
