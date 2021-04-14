@@ -25,12 +25,12 @@
         padding: 5px 15px !important;
         border: none !important;
         border-radius: 4px !important;
-        background: transparent !important;
+        cursor: pointer;
         margin: 0;
         font-size: 16px;
         outline: none !important;
         &:hover {
-          background: colors.$light-grey !important;
+          background-color: rgb(189, 189, 189);
         }
         &:focus {
           color: colors.$dark-grey !important;
