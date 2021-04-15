@@ -57,6 +57,11 @@
   src: url(./fonts/RayFont-Regular.ttf);
 }
 
+@font-face {
+  font-family: Norm;
+  src: url(./fonts/Norm-Regular.ttf);
+}
+
 
 * {
   margin: 0;
