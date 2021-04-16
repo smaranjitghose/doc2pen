@@ -5,9 +5,25 @@
   width: 100%;
   height: 100%;
   z-index: 9999999;
-  background:#4285F4; /*#0000ff;*//*#44ce6f;*/
+  background: #4285f4; /*#0000ff;*/ /*#44ce6f;*/
   /* -webkit-animation: backgroundcolorchange 20s infinite alternate;
   animation: backgroundcolorchange 20s infinite alternate; */
+
+  .spinner {
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    -webkit-animation: sk-rotateplane 1.2s infinite alternate;
+    animation: sk-rotateplane 1.2s infinite alternate;
+    position: absolute;
+    right: 0;
+    left: 0;
+    -webkit-box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.4);
+    top: 50%;
+    margin-top: -75px;
+  }
 }
 
 @keyframes backgroundcolorchange {
@@ -54,22 +70,6 @@
   100% {
     background: pink;
   }
-}
-
-.preloader .spinner {
-  width: 60px;
-  height: 60px;
-  background-color: #ffffff;
-  margin: 0 auto;
-  -webkit-animation: sk-rotateplane 1.2s infinite alternate;
-  animation: sk-rotateplane 1.2s infinite alternate;
-  position: absolute;
-  right: 0;
-  left: 0;
-  -webkit-box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.4);
-  box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.4);
-  top: 50%;
-  margin-top: -75px;
 }
 
 @keyframes sk-rotateplane {

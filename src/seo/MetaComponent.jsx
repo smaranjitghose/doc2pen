@@ -6,7 +6,7 @@ function MetaComponent({ title, description, keywords }) {
   let blinkEvent = null;
 
   const favicon = document.getElementById("favicon");
-  
+
   document.addEventListener("visibilitychange", e => {
     var isPageActive = !document.hidden;
 
