@@ -1,17 +1,16 @@
-import React,{ useEffect } from "react";
+import React, { useEffect } from "react";
 
 import styles from "./style.module.scss";
 
-import MetaComponent from '../../seo/MetaComponent';
-import metaData from '../../seo/metaData';
+import MetaComponent from "../../seo/MetaComponent";
+import metaData from "../../seo/metaData";
 
 import EditContextProvider from "./containers/editContext";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Settings from "./sections/Settings/Settings";
+import Settings from "./sections/Settings/Settings.jsx";
 import Output from "./sections/OutputComponent/Output";
 
 function Editor() {
-  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

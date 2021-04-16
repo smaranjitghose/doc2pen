@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./OpenSource.module.scss";
+import styles from "./open-source.module.scss";
 
 import SLoP from "./../../../../assets/images/events/SLOP.webp";
 import hackinCodes from "./../../../../assets/images/events/hakin_codes.webp";
