@@ -6,11 +6,14 @@
   left: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: colors.$white;
   border-radius: 5px;
   padding: 0.5rem;
   box-shadow: 0 0 3px 0.3px colors.$grey;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 97%;
 
   .sliderWrapper {
     display: grid;
