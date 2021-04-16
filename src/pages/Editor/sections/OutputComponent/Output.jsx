@@ -37,7 +37,7 @@ const OutputComponent = () => {
               lineHeight: `${editContext.bodyValues.bodyLine}`,
               fontFamily: `${editContext.bodyValues.bodyFont}`,
               color: `${editContext.bodyValues.bodyColor}`,
-              width: `${100*(editContext.bodyValues.bodyWidth)/70}%`,
+              width: `${(100 * editContext.bodyValues.bodyWidth) / 70}%`,
               letterSpacing: `${editContext.bodyValues.bodyLetterSpace}px`,
               overflowY: "hidden",
             }}
