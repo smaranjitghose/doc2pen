@@ -1,23 +1,18 @@
 import { useState, useContext } from "react";
-import {
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from "reactstrap";
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 
-import styles from "./Dropdown.module.css";
+import styles from "./dropdown.module.scss";
 import { EditContext } from "../../pages/Editor/containers/editContext";
 
-const DropdownComponent = (props) => {
+const DropdownComponent = props => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
+  const toggle = () => setDropdownOpen(prevState => !prevState);
 
   const editContext = useContext(EditContext);
 
-  const colors = ["black", "red", "orange", "blue", "green", "deeppink", "darkviolet", "dodgerblue",];
+  const colors = ["black", "red", "orange", "blue", "green", "deeppink", "darkviolet", "dodgerblue"];
 
-  const setValue = (aItemValue) => {
+  const setValue = aItemValue => {
     if (colors.includes(aItemValue)) {
       if (aItemValue === "dodgerblue") {
         return "Light Blue";
@@ -52,8 +47,7 @@ const DropdownComponent = (props) => {
   };
 
   const getTargetFunc = () => {
-    if (props.type === "font" || props.type === "color")
-      return editContext.onValueChange;
+    if (props.type === "font" || props.type === "color") return editContext.onValueChange;
     else if (props.type === "download") return editContext.downloadAction;
     return editContext.pageSrcHandler;
   };

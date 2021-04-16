@@ -44,7 +44,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: colors.$black-dark-tint;
+    background: colors.$black-thick-tint;
   }
   .githubLogoDiv {
     position: relative;
@@ -55,8 +55,7 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-
-  }  
+  }
   .footerText {
     text-align: center;
     color: colors.$white;

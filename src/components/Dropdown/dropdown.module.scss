@@ -7,21 +7,20 @@
   margin: 0;
   font-size: 16px;
   outline: none !important;
-}
-.drbtn:hover {
-  background: rgb(218, 220, 224) !important ;
-}
-.drbtn:focus {
-  color: rgb(29, 28, 28) !important;
-  background: rgb(178, 179, 182) !important ;
-  outline: none !important;
-  box-shadow: none;
+  &:hover {
+    background: rgb(218, 220, 224) !important;
+  }
+  &:focus {
+    color: rgb(29, 28, 28) !important;
+    background: rgb(178, 179, 182) !important;
+    outline: none !important;
+    box-shadow: none;
+  }
 }
 .dropdown-menu.show {
   transition: none !important;
 }
-.btn-secondary:not(:disabled):not(.disabled).active:focus,
-.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.btn-secondary:not(:disabled):active:focus,
 .show > .btn-secondary.dropdown-toggle:focus {
   box-shadow: none !important;
 }

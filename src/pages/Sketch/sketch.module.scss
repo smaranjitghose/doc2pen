@@ -1,13 +1,13 @@
 @use './../../scss/colors';
 
 .Sketch {
-    background-color: colors.$light-grey;
-    min-height: 89vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: calc(100vh - 100px);
-    overflow: hidden;
+  background-color: colors.$light-grey;
+  min-height: 89vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: calc(100vh - 100px);
+  overflow: hidden;
 }
