@@ -44,11 +44,11 @@ const EditContextProvider = props => {
   };
 
   const onValueChange = e => {
-      setBodyValues({ ...bodyValues, [e.target.name]: e.target.value });
+    setBodyValues({ ...bodyValues, [e.target.name]: e.target.value });
   };
 
   const onElementValueChange = e => {
-      setBodyValues({ ...bodyValues, [e.name]: e.value });
+    setBodyValues({ ...bodyValues, [e.name]: e.value });
   };
 
   const downloadAction = (name, type) => {
@@ -108,8 +108,9 @@ const EditContextProvider = props => {
     doc.text(10, 20, "");
     doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
 
-    await new Promise((resolve, reject) => { // Wait for PDF download
-      doc.save(name + '.pdf'); //save PDF
+    await new Promise((resolve, reject) => {
+      // Wait for PDF download
+      doc.save(name + ".pdf"); //save PDF
       resolve(true);
     });
 
@@ -118,13 +119,10 @@ const EditContextProvider = props => {
     setShowing(false);
   };
 
-
-
   const importTxt = e => {
     e.preventDefault();
 
     if (window.File && window.FileReader && window.FileList && window.Blob) {
-
       let textarea = document.querySelector("#show-text");
       textarea.value = "";
       var file = document.querySelector("input[type=file]").files[0];
@@ -136,8 +134,7 @@ const EditContextProvider = props => {
         reader.onload = function (event) {
           let rtf = convertToPlain(event.target.result);
           textarea.value += rtf;
-
-        }
+        };
       } else {
         alert("Sorry, We cannot import the selected file. The file must be of type '.txt' ");
       }
@@ -145,8 +142,7 @@ const EditContextProvider = props => {
     } else {
       alert("Your browser is too old to support HTML5 File API");
     }
-  }
-
+  };
 
   function convertToPlain(rtf) {
     rtf = rtf.replace(/\\par[d]?/g, "");

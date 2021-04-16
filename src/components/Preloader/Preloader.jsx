@@ -1,5 +1,5 @@
-import React from 'react'
-import style from "./Preloader.module.css";
+import React from "react";
+import style from "./preloader.module.scss";
 
 function Preloader() {
   return (
@@ -9,4 +9,4 @@ function Preloader() {
   );
 }
 
-export default Preloader
+export default Preloader;
