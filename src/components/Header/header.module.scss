@@ -24,6 +24,7 @@
     justify-content: flex-end;
     align-items: center;
 
+
     .tagged {
       width: 96px;
       &::after {
@@ -44,7 +45,7 @@
       color: colors.$white;
       text-decoration: none;
       position: relative;
-
+    
       &:hover {
         background-color: colors.$white;
         color: colors.$purple;
@@ -109,11 +110,13 @@
 @media only screen and (max-width: 550px) {
   .HeaderDrop {
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 5px;
   }
 
   .HeaderOpen {
     gap: 30px;
+    // transform: translateX(-100%);
+    // transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
   }
 
   .Header {
@@ -123,25 +126,31 @@
       transition: all 0.5s ease;
       z-index: 1002;
       height: 150px;
-      padding-right: 20px;
+      // padding-right: 20px;
       overflow: hidden;
-      transform: translateY(0);
-      transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
+      left: -100%;
+      opacity: 1;
+      transition: all 0.6s ease;
+      transform: translateX(0);
+
+      .header_links{
+        transition: all 0.5s ease;
+        transform: translateX(0%);
+      }
+      // transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
     }
     .rightDrop {
       height: 0px;
-      transform: translateY(-5px);
-      transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1);
-    }
-    .header_links{
-      transition: all 0.5s ease;
-      z-index: 1002;
-      padding: 0.1rem 0.5rem;
-      display: flex;
-      flex-direction: column;
-     
-      // flex-grow: 100%;
-      justify-content: stretch;
+      left: -100%;
+      opacity: 1;
+      transition: all 0.6s ease;
+      transform: translateX(0);
+
+      .header_links{
+        transition: all 0.5s ease;
+        transform: translateX(-1000%);
+      }
+      // transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1);
     }
     .hamburger {
       display: block;
