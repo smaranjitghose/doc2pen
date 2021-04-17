@@ -101,7 +101,7 @@ export default function MediaManip() {
         {!convert && <Progress progress={progress} />}
         <Dropdown type="Output" value={output} onChange={v => setOutput(v)} />
       </div>
-      <DragDrop files={files} setFiles={setFiles} setInput={setInput} setOutput={setOutput} />
+      <DragDrop files={files} setFiles={setFiles} setInput={setInput} setOutput={setOutput} input={input} />
       <div className={styles.mediaManip_btn}>
         <Button value="Convert" type="primary" onClick={() => onConvert()} disabled={convert} />
         {!convert && <Button value="Download" type="secondary" onClick={onDownload} disabled={download} />}
