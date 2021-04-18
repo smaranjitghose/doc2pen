@@ -23,7 +23,7 @@ function DragDrop({ files, setFiles, setInput, setOutput, input }) {
 
   const deleteImage = path => {
     setFiles(prevState => prevState.filter(file => file.path !== path));
-    if(input != "Mix"){
+    if(input !== "Mix"){
       setInput("Input");
       setOutput("Output");
     }
