@@ -109,35 +109,30 @@
 }
 
 @media only screen and (max-width: 550px) {
-  
  .header_links{
-  margin: 4px 0.1rem !important;
+  margin: 0.6rem 0.1rem !important;
  }
   .HeaderDrop {
     flex-wrap: wrap;
     gap: 2px;
   }
-
   .HeaderOpen {
     gap: 25px;
+    height: 100vh;
+    align-items: flex-start;
   }
-
   .Header {
     .right {
-      height: 160px;
+      height:200px;
       padding-right: 20px;
       margin-bottom: 10px;
       overflow: hidden;
       transform: translateY(0);
-      transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
-      /***/
       flex-direction: column;
-      transition: height 500ms ease-in;
     }
     .rightDrop {
       height: 0px;
       transform: translateY(-5px);
-      transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1);
     }
     .hamburger {
       display: block;
