@@ -51,35 +51,35 @@ function Toolbox({
     <div className={styles.canvas_toolbox}>
       <Feature title="Shapes">
         <Shape type_="pen" id="sketch-shapes-pen" label="Pen">
-          <FaPencilAlt size={15} />
+          <FaPencilAlt size={12} />
         </Shape>
         <Shape type_="line" id="sketch-shapes-line" label="Line">
-          <FaSlash size={15} />
+          <FaSlash size={10} />
         </Shape>
         <Shape type_="square" id="sketch-shapes-square" label="Square">
-          <FaRegSquare size={15} />
+          <FaRegSquare size={10} />
         </Shape>
         <Shape type_="circle" id="sketch-shapes-circle" label="Circle">
-          <FaRegCircle size={15} />
+          <FaRegCircle size={10} />
         </Shape>
         <Shape type_="triangle" id="sketch-shapes-triangle" label="Triangle">
-          <GiTriangleTarget size={15} />
+          <GiTriangleTarget size={12} />
         </Shape>
         <Shape type_="arrow" id="sketch-shapes-arrow" label="Arrow">
-          <BsArrowUpRight size={15} />
+          <BsArrowUpRight size={12} />
         </Shape>
         <Shape type_="diamond" id="sketch-shapes-diamond" label="Diamond">
-          <BsDiamond size={15} />
+          <BsDiamond size={10} />
         </Shape>
         <Shape type_="text" id="sketch-shapes-text" label="Text">
-          <FaFont size={15} />
+          <FaFont size={10} />
         </Shape>
         <Shape type_="biShapeTriangle" id="sketch-shapes-biShapeTriangle" label="Bi Shape Triangle">
-          <BiShapeTriangle size={15} />
+          <BiShapeTriangle size={12} />
         </Shape>
       </Feature>
 
-      <Feature title="Canvas Color">
+      <Feature title="Canvas">
         <div className={styles.colorPicker}>
           <input type="color" name="canvas_bg_color" value={background} onChange={e => setBackground(e.target.value)} />
           <input
@@ -92,7 +92,7 @@ function Toolbox({
         </div>
       </Feature>
 
-      <Feature title="Stroke Color">
+      <Feature title="Stroke">
         <div className={styles.colorPicker}>
           <input type="color" name="canvas_pen_color" value={color} onChange={e => setColor(e.target.value)} />
           <input
@@ -210,8 +210,7 @@ function Toolbox({
               onChange={e => setBowing(e.target.value)}
             />
           </Feature>
-          <Feature title="Stroke Width">
-            <select name="canvas_pen_width" value={width} onChange={e => setWidth(e.target.value)}>
+          <Feature title="Stroke Width"> <select name="canvas_pen_width" value={width} onChange={e => setWidth(e.target.value)}>
               <option value="1">1px</option>
               <option value="2">2px</option>
               <option value="3">3px</option>
@@ -254,7 +253,7 @@ function Toolbox({
           </Feature>
         </>
       )}
-      <Feature classname={styles.sliderWrapper} title={`Font Size [ ${fontSize} ]`}>
+      <Feature classname={styles.sliderWrapper} title={`Font [ ${fontSize} ]`}>
         <input
           className={styles.slider}
           type="range"
@@ -275,13 +274,13 @@ function Toolbox({
           className={`${styles.feature_box} ${fontStyle === "italic" && styles.active_feature_box}`}
           onClick={() => setFontStyle("italic")}
         >
-          <FaItalic size={20} />
+          <FaItalic size={15} />
         </div>
         <div
           className={`${styles.feature_box} ${fontStyle === "bold" && styles.active_feature_box}`}
           onClick={() => setFontStyle("bold")}
         >
-          <FaBold size={20} />
+          <FaBold size={15} />
         </div>
       </Feature>
       <Feature title="Font Family">
@@ -292,7 +291,7 @@ function Toolbox({
         </select>
       </Feature>
 
-      <Feature title="Undo / Redo">
+      <Feature title="undo">
         <div
           className={styles.feature_box}
           onClick={() => undo()}

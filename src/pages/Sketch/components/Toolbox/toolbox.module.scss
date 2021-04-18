@@ -1,6 +1,7 @@
 @use './../../../../scss/colors';
 
 .canvas_toolbox {
+ 
   position: absolute;
   top: 0.75rem;
   left: 30px;
@@ -15,6 +16,7 @@
   overflow-y: auto;
   height: 97%;
 
+
   .sliderWrapper {
     display: grid;
     justify-items: left;
@@ -23,23 +25,23 @@
       outline: 0;
       border: 0;
       border-radius: 500px;
-      width: 100%;
+      width: 90%;
       transition: box-shadow 0.2s ease-in-out;
       overflow: hidden;
-      height: 15px;
+      height: 10px;
       -webkit-appearance: none;
       background-color: colors.$bluish-white;
       &::-webkit-slider-runnable-track {
-        height: 15px;
+        height: 10px;
         -webkit-appearance: none;
         color: colors.$medium-dark-grey;
         -webkit-transition: box-shadow 0.2s ease-in-out;
         transition: box-shadow 0.2s ease-in-out;
       }
       &::-webkit-slider-thumb {
-        width: 15px;
+        width: 10px;
         -webkit-appearance: none;
-        height: 15px;
+        height: 10px;
         cursor: pointer;
         background: colors.$white;
         border: colors.$light-grey solid 1px;
@@ -66,15 +68,15 @@
 }
 
 .feature {
-  padding: 0.5rem;
-  margin: 0.2rem 0;
+  padding: 0.15rem;
+  margin: 0.01rem 0;
   border-radius: 5px;
-  background-color: colors.$light-grey;
+  background-color: colors.$white;
 
   .title {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     font-weight: bold;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.2rem;
   }
   .body {
     display: flex;
@@ -86,20 +88,25 @@
       input[type="color"] {
         border: none;
         outline: none;
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
       }
       .hexInput {
-        margin-left: 3px;
-        width: 98px;
+        font-size: 80%;
+        height: 1em;
+        margin-top: 2px;
+        margin-left: 10px;
+        width: 90px;
         border-radius: 4px;
-        padding-left: 5px;
-        border: 0.5px solid colors.$bluish-white;
+        padding-left: 8px;
+        border: 0.02px solid colors.$bluish-white;
         outline: none;
       }
     }
 
     .feature_box {
+  
+      height: 1em;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -133,7 +140,12 @@
       background-color: colors.$bluish-white;
     }
     .active_feature {
+      
       background-color: colors.$light-blue !important;
     }
+  }
+  .fs{
+    margin:10px;
+    width: 100%;
   }
 }
