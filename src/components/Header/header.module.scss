@@ -117,7 +117,6 @@
     gap: 2px;
   }
   .HeaderOpen {
-    gap: 25px;
     height: 100vh;
     align-items: flex-start;
   }
@@ -129,10 +128,12 @@
       overflow: hidden;
       transform: translateY(0);
       flex-direction: column;
+      transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
     }
     .rightDrop {
       height: 0px;
       transform: translateY(-5px);
+      transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
     }
     .hamburger {
       display: block;
