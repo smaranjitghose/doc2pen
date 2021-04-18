@@ -20,6 +20,9 @@
       display: flex;
       background-color: colors.$bluish-white;
       color: black;
+      &:hover{
+        background-color: rgb(189, 186, 186);
+      }
     }
   }
   .iconLibContainer {
