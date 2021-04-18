@@ -8,7 +8,7 @@ function EmojiRating() {
     
     {/*MODIFIED the emojis in the experience form*/}
     	
-    	/*Triggers Tooltips on hover*/
+    	{/*Triggers Tooltips on hover*/}
 		<OverlayTrigger
 			placement="top"
 			delay={{ show: 200, hide: 200 }}
