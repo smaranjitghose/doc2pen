@@ -3,6 +3,15 @@
 An open source project aimed at making your student life easier!
 
 
+![Issues](https://img.shields.io/github/issues/smaranjitghose/doc2pen)
+![Pull Requests](https://img.shields.io/github/issues-pr/smaranjitghose/doc2pen)
+![Forks](https://img.shields.io/github/forks/smaranjitghose/doc2pen)
+![Stars](https://img.shields.io/github/stars/smaranjitghose/doc2pen)
+[![License](https://img.shields.io/github/license/smaranjitghose/doc2pen)](https://github.com/smaranjitghose/doc2pen/blob/master/LICENSE)
+![](https://img.shields.io/github/repo-size/smaranjitghose/doc2pen.svg?label=Repo%20size&style=flat-square)&nbsp;
+
+
+
 ## DEMO
 
 <!-- 
