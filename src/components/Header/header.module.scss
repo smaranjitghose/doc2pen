@@ -24,6 +24,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    height: auto;
 
     .tagged {
       width: 96px;
@@ -131,6 +132,7 @@
       transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
       /***/
       flex-direction: column;
+      transition: height 500ms ease-in;
     }
     .rightDrop {
       height: 0px;
