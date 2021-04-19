@@ -1,5 +1,4 @@
 @use './../../scss/colors';
-
 .Header {
   background-color: colors.$purple;
   display: flex;
@@ -25,6 +24,7 @@
     justify-content: flex-end;
     align-items: center;
 
+
     .tagged {
       width: 96px;
       &::after {
@@ -45,7 +45,7 @@
       color: colors.$white;
       text-decoration: none;
       position: relative;
-
+    
       &:hover {
         background-color: colors.$white;
         color: colors.$purple;
@@ -110,25 +110,47 @@
 @media only screen and (max-width: 550px) {
   .HeaderDrop {
     flex-wrap: wrap;
-    gap: 2px;
+    gap: 5px;
   }
 
   .HeaderOpen {
-    gap: 20px;
+    gap: 30px;
+    // transform: translateX(-100%);
+    // transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
   }
 
   .Header {
     .right {
-      height: 35px;
-      padding-right: 20px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.5s ease;
+      z-index: 1002;
+      height: 150px;
+      // padding-right: 20px;
       overflow: hidden;
-      transform: translateY(0);
-      transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
+      left: -100%;
+      opacity: 1;
+      transition: all 0.6s ease;
+      transform: translateX(0);
+
+      .header_links{
+        transition: all 0.5s ease;
+        transform: translateX(0%);
+      }
+      // transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
     }
     .rightDrop {
       height: 0px;
-      transform: translateY(-5px);
-      transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1);
+      left: -100%;
+      opacity: 1;
+      transition: all 0.6s ease;
+      transform: translateX(0);
+
+      .header_links{
+        transition: all 0.5s ease;
+        transform: translateX(-1000%);
+      }
+      // transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1);
     }
     .hamburger {
       display: block;
