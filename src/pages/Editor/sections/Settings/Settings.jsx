@@ -39,72 +39,75 @@ const Settings = () => {
           <Button color="none" onClick={handleopenModal} className={styles.download} >Download File</Button>
           <div className={styles.vSeparator}></div>
         </div>
-        <NumberSlider
-          label={"Adjust x-axis"}
-          editContext={editContext}
-          name="bodyLeft"
-          min="0"
-          max="200"
-          step={1}
-          initialValue={0}
-        />
+        <div className={styles.group2}>
+          <NumberSlider
+            label={"Adjust x-axis"}
+            editContext={editContext}
+            name="bodyLeft"
+            min="0"
+            max="200"
+            step={1}
+            initialValue={0}
+          />
 
-        <div className={styles.vSeparator}></div>
-        <NumberSlider
-          label={"Font size"}
-          editContext={editContext}
-          name="bodySize"
-          min="5"
-          max="50"
-          step={1}
-          initialValue={16}
-        />
+          <div className={styles.vSeparator}></div>
+          <NumberSlider
+            label={"Font size"}
+            editContext={editContext}
+            name="bodySize"
+            min="5"
+            max="50"
+            step={1}
+            initialValue={16}
+          />
 
-        <div className={styles.vSeparator}></div>
+          <div className={styles.vSeparator}></div>
 
-        <NumberSlider
-          label={"Adjust y-axis"}
-          editContext={editContext}
-          name="bodyTop"
-          min="0"
-          max="100"
-          step={1}
-          initialValue={5}
-        />
-        <div className={styles.vSeparator}></div>
+          <NumberSlider
+            label={"Adjust y-axis"}
+            editContext={editContext}
+            name="bodyTop"
+            min="0"
+            max="100"
+            step={1}
+            initialValue={5}
+          />
+          <div className={styles.vSeparator}></div>
 
-        <NumberSlider
-          label={"Line-spacing"}
-          editContext={editContext}
-          name="bodyLine"
-          min="1"
-          max="5"
-          step={0.1}
-          initialValue={1}
-        />
-        <div className={styles.vSeparator}></div>
+          <NumberSlider
+            label={"Line-spacing"}
+            editContext={editContext}
+            name="bodyLine"
+            min="1"
+            max="5"
+            step={0.1}
+            initialValue={1}
+          />
+          <div className={styles.vSeparator}></div>
 
-        <NumberSlider
-          label={"Width"}
-          editContext={editContext}
-          name="bodyWidth"
-          min="20"
-          max="70"
-          step={1}
-          initialValue={65}
-        />
+          <NumberSlider
+            label={"Width"}
+            editContext={editContext}
+            name="bodyWidth"
+            min="20"
+            max="70"
+            step={1}
+            initialValue={65}
+          />
 
-        <div className={styles.vSeparator}></div>
+          <div className={styles.vSeparator}></div>
 
-        <NumberSlider
-          label={"Letter Spacing"}
-          editContext={editContext}
-          name="bodyLetterSpace"
-          min="0"
-          max="10"
-          step={0.5}
-          initialValue={0}
-        />
+          <NumberSlider
+            label={"Letter Spacing"}
+            editContext={editContext}
+            name="bodyLetterSpace"
+            min="0"
+            max="10"
+            step={0.5}
+            initialValue={0}
+          />
+        </div>
+        
       </div>
       <DownloadFileModal
         modal={modal}

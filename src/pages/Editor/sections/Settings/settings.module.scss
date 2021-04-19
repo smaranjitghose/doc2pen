@@ -5,13 +5,16 @@
   .controls {
     background-color:colors.$white;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     padding-bottom: 10px;
     box-shadow: 0 0 5px colors.$black-light-tint;
     .group1 {
       background-color:colors.$white;
       display: flex;
+      justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       .vSeparator {
@@ -22,8 +25,9 @@
       }
       .downloadBtn {
         color: colors.$dark-grey !important;
-        padding: 5px 15px !important;
-        border: none !important;
+        margin: 5px 20px !important;
+        padding: 5px;
+        border: 2px solid lightblue !important;
         border-radius: 4px !important;
         cursor: pointer;
         margin: 0;
@@ -38,10 +42,19 @@
         }
       }
       .download{
+        margin: 5px 20px !important;       
+        border: 2px solid lightblue !important;
         &:hover{
           background-color: rgb(189, 189, 189);
         }
       }
+    }
+    .group2{
+      background-color:colors.$white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
     }
   }
 }
