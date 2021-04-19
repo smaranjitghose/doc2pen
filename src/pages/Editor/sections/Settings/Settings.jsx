@@ -22,7 +22,7 @@ const Settings = () => {
           <Dropdown
             name="Change Style"
             type="font"
-            items={["HomemadeApple", "Caveat", "CedarvilleCursive", "Dawning", "IndieFlower", "NothingYouCouldDo", "Liu", "LeagueScript", "Enola", "RayFont", "RGhandwritten"]}
+            items={["HomemadeApple", "Caveat", "CedarvilleCursive", "Dawning", "IndieFlower", "NothingYouCouldDo", "Liu", "LeagueScript", "Enola", "RayFont", "RGhandwritten","Moody","Norm"]}
             active={editContext.bodyValues.bodyFont}
           />
           <div className={styles.vSeparator}></div>

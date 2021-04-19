@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styles from "./team.module.scss";
 import { FaGithub } from "react-icons/fa";
-import smaranjit from "../../../../assets/images/team/smaranjit_ghose_large.png";
+import smaranjit0 from "../../../../assets/images/team/smaranjit0.png";
+import smaranjit1 from "../../../../assets/images/team/smaranjit1.png";
 import anush from "../../../../assets/images/team/anush0.png";
-import anush0 from "../../../../assets/images/team/anush2.png";
-import anush1 from "../../../../assets/images/team/anush3.png";
+import anush0 from "../../../../assets/images/team/anush1.png";
+import anush1 from "../../../../assets/images/team/anush2.png";
 import FluidCard from "./components/FluidCard/FluidCard";
 
 function Team() {
@@ -14,7 +15,7 @@ function Team() {
       title: "Lead Developer",
       githubLink: "https://github.com/smaranjitghose",
       linkedinLink: "https://www.linkedin.com/in/smaranjitghose/",
-      imgArray: [smaranjit],
+      imgArray: [smaranjit0, smaranjit1],
     },
     {
       name: "Anush Bhatia",

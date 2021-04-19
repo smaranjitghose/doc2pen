@@ -18,7 +18,7 @@ function FluidCard(props) {
     let pointsA = [],
       points = 8,
       viscosity = 300,
-      mouseDist = 70,
+      mouseDist = 100,
       damping = 0.08,
       mouseY = 0,
       mouseX = 0,
