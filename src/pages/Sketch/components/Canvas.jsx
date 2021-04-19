@@ -3,12 +3,15 @@ import styles from "./canvas.module.scss";
 import Toolbox from "./Toolbox/Toolbox";
 import { FaDownload, FaStar } from "react-icons/fa";
 import { VscSaveAs } from "react-icons/vsc";
+import { BsBoxArrowInDown } from "react-icons/bs";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { AiOutlineFolderOpen } from "react-icons/ai";
 import IconsLibrary from "./IconLibrary/IconsLibrary";
 import ReactSnackBar from "react-js-snackbar";
 import checkBox from "./../../../assets/images/checkmark.svg";
 import rough from "roughjs/bin/rough";
+
+
 
 const Mousetrap = require("mousetrap");
 
@@ -449,7 +452,7 @@ function Canvas() {
         types: [
           {
             description: "Doc2pen Sketch Save File",
-            accept: { "application/d2ps": [".d2ps"] },
+            accept: { "image/*": [".jpg .jpeg .png"] },
           },
         ],
       };
@@ -461,14 +464,16 @@ function Canvas() {
       accepts: [
         {
           description: "Doc2pen Sketch Save File",
-          extensions: ["d2ps"],
-          mimeTypes: ["application/d2ps"],
+          extensions: [".png"],
+          mimeTypes: ["image/*"],
         },
       ],
     };
+
     return window.chooseFileSystemEntries(opts);
   }
 
+   
   const saveInstance = async name => {
     try {
       const result = await getNewFileHandle();
@@ -493,11 +498,13 @@ function Canvas() {
       });
   };
 
-  const initiateLoadSaved = () => document.getElementById("file-selector").click();
-  const loadLastState = e => {
+
+  //const initiateLoadSaved = () => document.getElementById("file-selector").click();
+ /* const loadLastState = e => {
+  
     let file = e.target.files[0];
     if (!file) return;
-    let reader = new FileReader();
+    let reader =  new FileReader();
     reader.addEventListener(
       "load",
       () => {
@@ -513,7 +520,44 @@ function Canvas() {
       false
     );
     reader.readAsDataURL(file);
-  };
+  };*/
+ 
+  const initiateload = () => document.getElementById("file-selector").click();
+  const loadimport= e =>{   
+    let file = e.target.files[0];
+    var textFile = /image.*/;
+
+
+    if (!(file.type.match(textFile))) { 
+     alert("Sorry, We cannot import the selected file . File should be of type jpg/jpeg/png/webp");
+        file.value = '';
+        return false;
+            }
+            else
+            {
+    let reader =  new FileReader();
+    reader.addEventListener(
+      "load",
+      () => {
+        const image = new Image();
+
+        image.onload = () => { 
+          context.drawImage(image, 0, 0);
+          setCanvasStates(current => [...canvasStates, context.getImageData(0 , 0, canvasWidth, canvasHeight)]);
+          setcanvasStateAt(current => current + 1);
+        };
+        image.src = reader.result;
+      },
+      false
+    );
+    reader.readAsDataURL(file);
+    
+  }; 
+};
+
+    
+    
+
   return (
     <>
       <Toolbox
@@ -570,17 +614,31 @@ function Canvas() {
           </div>
         </label>
         <label htmlFor="sketch-dcd-load" title="Load Previous Work">
-          <div className={`${styles.feature}`} onClick={() => initiateLoadSaved()} id="sketch-dcd-load">
+          <div className={`${styles.feature}`} onClick={() => initiateload()} id="sketch-dcd-load">
             <AiOutlineFolderOpen size={15} />
             <input
               type="file"
               id="file-selector"
               style={{ display: "none" }}
-              accept=".d2ps"
-              onChange={event => loadLastState(event)}
+              accept="images/*"
+              onChange={event => loadimport(event)}
             />
           </div>
         </label>
+        <label htmlFor="sketch-dcd-load" title="Import File">
+          <div className={`${styles.feature}`} onClick={() => initiateload()} id="sketch-dcd-load">
+            <BsBoxArrowInDown size={15} />
+            <input
+              type="file"
+              id="file-selector"
+              style={{ display: "none" }}
+              accept=".images/*"
+              onChange={event => loadimport(event)}
+            />
+          </div>
+        </label>
+        
+
         <label htmlFor="sketch-dcd-save" title="Download Progress">
           <div className={`${styles.feature}`} onClick={() => saveInstance("savedProgress.d2ps")} id="sketch-dcd-save">
             <VscSaveAs size={15} />
@@ -641,4 +699,5 @@ function Canvas() {
   );
 }
 
-export default Canvas;
+
+export default Canvas
