@@ -89,7 +89,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 9999;
+  z-index: 999;
 
   .quick_links {
     padding: 7px;
@@ -108,6 +108,9 @@
 }
 
 @media only screen and (max-width: 550px) {
+  .header_links{
+    margin: 0.8rem 0.1rem 0.1rem !important;
+  }
   .HeaderDrop {
     flex-wrap: wrap;
     gap: 2px;
@@ -119,11 +122,13 @@
 
   .Header {
     .right {
-      height: 35px;
+      height: 100vh;
       padding-right: 20px;
       overflow: hidden;
       transform: translateY(0);
       transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
+      flex-direction:column;
+      justify-content:center;
     }
     .rightDrop {
       height: 0px;
