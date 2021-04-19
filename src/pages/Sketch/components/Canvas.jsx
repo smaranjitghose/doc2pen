@@ -508,7 +508,7 @@ function Canvas() {
 
 
     if (!(file.type.match(textFile))) { 
-     alert("Sorry, We cannot import the selected file . File should be of type jpg/jpeg/png/webp");
+     alert("OOPs! You didn't select an image. We only support jpg,png and webp");
         file.value = '';
         return false;
             }
