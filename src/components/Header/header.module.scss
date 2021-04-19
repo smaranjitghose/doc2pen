@@ -89,7 +89,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 9999;
+  z-index: 999;
 
   .quick_links {
     padding: 7px;
@@ -108,6 +108,9 @@
 }
 
 @media only screen and (max-width: 550px) {
+  .header_links{
+    margin: 0.8rem 0.1rem 0.1rem !important;
+  }
   .HeaderDrop {
     flex-wrap: wrap;
     gap: 5px;
@@ -123,16 +126,16 @@
     .right {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       transition: all 0.5s ease;
       z-index: 1002;
-      height: 150px;
+      height: 100vh;
       // padding-right: 20px;
       overflow: hidden;
       left: -100%;
       opacity: 1;
       transition: all 0.6s ease;
       transform: translateX(0);
-
       .header_links{
         transition: all 0.5s ease;
         transform: translateX(0%);
