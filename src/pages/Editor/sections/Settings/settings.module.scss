@@ -17,6 +17,8 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+      margin-top: 10px;
+      border-bottom: 0.5px solid lightblue;
       .vSeparator {
         display: inline-block;
         border-left: 1px solid colors.$light-grey;
@@ -27,7 +29,7 @@
         color: colors.$dark-grey !important;
         margin: 5px 20px !important;
         padding: 5px;
-        border: 2px solid lightblue !important;
+        border: 1.5px solid lightblue !important;
         border-radius: 4px !important;
         cursor: pointer;
         margin: 0;
@@ -43,7 +45,7 @@
       }
       .download{
         margin: 5px 20px !important;       
-        border: 2px solid lightblue !important;
+        border: 1.5px solid lightblue !important;
         &:hover{
           background-color: rgb(189, 189, 189);
         }
