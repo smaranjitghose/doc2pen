@@ -111,15 +111,16 @@
   .header_links{
     margin: 0.8rem 0.1rem 0.1rem !important;
     font-size:1.2rem;
+    border-radius:20px;
   }
 
   .HeaderDrop {
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 0px;
   }
 
   .HeaderOpen {
-    gap: 30px;
+    gap: 0px;
     // transform: translateX(-100%);
     // transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
   }
@@ -129,6 +130,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       transition: all 0.5s ease;
       z-index: 1002;
       height:100vh;

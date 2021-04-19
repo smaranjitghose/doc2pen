@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { withRouter } from "react-router";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import NotFound from "./pages/404/notFound";
+import NotFound from "./pages/404/NotFound";
 import "./index.scss";
 import Preloader from "./components/Preloader/Preloader";
 
