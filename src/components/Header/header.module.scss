@@ -13,6 +13,7 @@
   position: sticky;
   top: 0;
   box-shadow: 0px 1px 5px colors.$white;
+
   .left {
     object-fit: contain;
     width: 170px;
@@ -88,7 +89,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 999;
+  z-index: 9999;
 
   .quick_links {
     padding: 7px;
@@ -107,31 +108,27 @@
 }
 
 @media only screen and (max-width: 550px) {
-  .header_links{
-    margin: 1rem 0 0.1rem 0.1rem !important;
-  }
   .HeaderDrop {
     flex-wrap: wrap;
     gap: 2px;
   }
+
   .HeaderOpen {
     gap: 20px;
   }
+
   .Header {
-    align-items: flex-start;
     .right {
-      height: 100vh;
+      height: 35px;
       padding-right: 20px;
       overflow: hidden;
-      flex-direction: column;
-      justify-content: center;
       transform: translateY(0);
       transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
     }
     .rightDrop {
       height: 0px;
       transform: translateY(-5px);
-      transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
+      transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1);
     }
     .hamburger {
       display: block;
