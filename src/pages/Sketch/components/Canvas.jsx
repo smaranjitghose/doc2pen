@@ -499,28 +499,7 @@ function Canvas() {
   };
 
 
-  //const initiateLoadSaved = () => document.getElementById("file-selector").click();
- /* const loadLastState = e => {
   
-    let file = e.target.files[0];
-    if (!file) return;
-    let reader =  new FileReader();
-    reader.addEventListener(
-      "load",
-      () => {
-        const image = new Image();
-
-        image.onload = () => {
-          context.drawImage(image, 0, 0);
-          setCanvasStates(current => [...canvasStates, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
-          setcanvasStateAt(current => current + 1);
-        };
-        image.src = reader.result;
-      },
-      false
-    );
-    reader.readAsDataURL(file);
-  };*/
  
   const initiateload = () => document.getElementById("file-selector").click();
   const loadimport= e =>{   
