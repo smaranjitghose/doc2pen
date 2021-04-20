@@ -3,6 +3,19 @@ label {
   padding-top: 5px;
 }
 
+.btnWrapper {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+/*****remove scroll-to-top on small devices ***/
+@media (max-width: 768px) {
+  .btnWrapper {
+    display: none;
+  }
+}
+
 /* ----- Commenting this custom range as we are not using this any more, also it was affecting the range input in Sketch Section ----- */
 
 /* input[type="range"] {
