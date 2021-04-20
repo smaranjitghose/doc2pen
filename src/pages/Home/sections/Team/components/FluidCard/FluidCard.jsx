@@ -29,8 +29,9 @@ function FluidCard(props) {
       mouseDirectionX = 0,
       mouseDirectionY = 0,
       mouseSpeedX = 0,
-      mouseSpeedY = 0;
-    const canvasPadding = 10;
+      mouseSpeedY = 0,
+      radius = 100; // Radius of Repulsion
+    const canvasPadding = 0;
 
     // To watch and debug the drawn points, put showIndicators = true
     const showIndicators = false;
@@ -163,7 +164,7 @@ function FluidCard(props) {
         let relDist = 1 - Math.sqrt(dx * dx + dy * dy) / mouseDist;
 
         // Move x
-        if ((mouseDirectionX > 0 && relMouseX > this.x) || (mouseDirectionX < 0 && relMouseX < this.x)) {
+        if ((mouseDirectionX + radius > 0 && relMouseX > this.x) || (mouseDirectionX - radius < 0 && relMouseX < this.x)) {
           if (relDist > 0 && relDist < 1) {
             this.vx = (mouseSpeedX / 4) * relDist;
           }
@@ -172,7 +173,7 @@ function FluidCard(props) {
         this.x += this.vx;
 
         // Move y
-        if ((mouseDirectionY > 0 && relMouseY > this.y) || (mouseDirectionY < 0 && relMouseY < this.y)) {
+        if ((mouseDirectionY + radius > 0 && relMouseY > this.y) || (mouseDirectionY - radius < 0 && relMouseY < this.y)) {
           if (relDist > 0 && relDist < 1) {
             this.vy = (mouseSpeedY / 4) * relDist;
           }
