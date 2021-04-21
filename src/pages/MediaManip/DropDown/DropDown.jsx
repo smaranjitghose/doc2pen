@@ -2,15 +2,14 @@ import React from "react";
 
 import styles from "./drop-down.module.scss";
 
-function DropDown({ type, onChange, value }) {
-  const dropDownItems = ["png", "jpg", "webp", "jpeg"];
+function DropDown({ type, onChange, value, outputOptions }) {
 
   return (
     <>
       {type === "Output" ? (
         <select value={value} name="dropdown" className={styles.dropDown} onChange={e => onChange(e.target.value)}>
           <option value={type}>{type}</option>
-          {dropDownItems.map(item => (
+          {outputOptions.map(item => (
             <option key={item} value={item}>
               {item.toUpperCase()}
             </option>
