@@ -17,6 +17,7 @@ export default function MediaManip() {
   const [progress, setProgress] = useState(0);
   const [download, setDownload] = useState(true); //true = disabled
   const [convert, setConvert] = useState(true); //true = disabled
+  const [outputOptions, setOutputOptions] = useState(["png", "jpg", "webp", "jpeg"]);
   let zip = new JSZip();
 
   useEffect(() => {
@@ -99,9 +100,17 @@ export default function MediaManip() {
       <div className={styles.mediaManip_dropDowns}>
         <Dropdown type="Input" value={input} />
         {!convert && <Progress progress={progress} />}
-        <Dropdown type="Output" value={output} onChange={v => setOutput(v)} />
+        <Dropdown type="Output" value={output} onChange={v => setOutput(v)} outputOptions={outputOptions} />
       </div>
-      <DragDrop files={files} setFiles={setFiles} setInput={setInput} setOutput={setOutput} input={input} />
+      <DragDrop
+        files={files}
+        setFiles={setFiles}
+        setInput={setInput}
+        setOutput={setOutput}
+        input={input}
+        outputOptions={outputOptions}
+        setOutputOptions={setOutputOptions}
+      />
       <div className={styles.mediaManip_btn}>
         <Button value="Convert" type="primary" onClick={() => onConvert()} disabled={convert} />
         {!convert && <Button value="Download" type="secondary" onClick={onDownload} disabled={download} />}
