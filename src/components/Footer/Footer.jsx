@@ -24,7 +24,7 @@ export default function Footer(props) {
           <UseAnimations
             className={styles.githubLogo}
             animation={github}
-            animationKey={JSONAnimation}
+            animationkey={JSONAnimation}
             size={50}
             loop={true}
             strokeColor="#ffffff"
