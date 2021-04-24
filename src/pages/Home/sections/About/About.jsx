@@ -63,7 +63,7 @@ function About() {
             <img src={openSource} alt="Open Source" style={{width: "55vw"}}/>
             <div className={styles.open_source}>
                 <div>
-                    Now, as Doc2Pen saves a lot of your time, you can now spent your valuable time in learning some practical stuff.
+                    Now, as Doc2Pen saves a lot of your time, you can now spend your valuable time in learning some practical stuff.
                 </div>
                 <br />
                 <div>
