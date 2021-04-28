@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Button from "react-bootstrap/Button";
-import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/css/bootstrap.min.css";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import styles from "./scroll-to-top.module.scss";
 

@@ -6,7 +6,7 @@ import MetaComponent from '../../seo/MetaComponent';
 import metaData from '../../seo/metaData';
 
 import EditContextProvider from "./containers/editContext";
-import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/css/bootstrap.min.css";
 import Settings from "./sections/Settings/Settings";
 import Output from "./sections/OutputComponent/Output";
 

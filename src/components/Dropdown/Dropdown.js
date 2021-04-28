@@ -1,10 +1,5 @@
 import { useState, useContext } from "react";
-import {
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from "react-bootstrap";
+import {Dropdown} from "react-bootstrap";
 
 
 import styles from "./Dropdown.module.css";
