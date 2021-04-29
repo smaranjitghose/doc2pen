@@ -11,7 +11,7 @@ function Step(props) {
     return (
       <div className={`${styles.step} ${props.reverse && styles.step_reverse}`}>
         <div className={styles.illustration}>
-          <img src={props.img} alt="Page" />
+          <img className ={styles.image} src={props.img} alt="Page" />
         </div>
         <div className={styles.step_text}>
           <div className={styles.step_title}>{props.title}</div>
