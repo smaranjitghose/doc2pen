@@ -5,6 +5,7 @@ import { MdUndo, MdRedo } from "react-icons/md";
 import ReactSnackBar from "react-js-snackbar";
 import checkBox from "./../../../assets/images/checkmark.svg";
 import rough from "roughjs/bin/rough";
+import IconsLibrary from "./IconLibrary/IconsLibrary";
 
 const Mousetrap = require("mousetrap");
 
@@ -18,7 +19,6 @@ function Canvas() {
 
   const canvasRef = useRef(null);
   const textRef = useRef(null);
-  const iconLibRef = useRef(null);
   const roughCanvas = useRef(null);
   const penPath = useRef([]);
   const [context, setContext] = useState();
@@ -503,14 +503,14 @@ function Canvas() {
     });
   };
 
-  function getNewFileHandle() {
+  function getNewFileHandle(description, mimeType, fileType) {
     // For Chrome 86 and later...
     if ("showSaveFilePicker" in window) {
       const opts = {
         types: [
           {
-            description: "Doc2pen Sketch Save File",
-            accept: { "image/*": [".jpg .jpeg .png"] },
+            description: description,
+            accept: { mimeType: fileType },
           },
         ],
       };
@@ -521,9 +521,9 @@ function Canvas() {
       type: "save-file",
       accepts: [
         {
-          description: "Doc2pen Sketch Save File",
-          extensions: [".png"],
-          mimeTypes: ["image/*"],
+          description: description,
+          extensions: [fileType],
+          mimeTypes: [mimeType],
         },
       ],
     };
@@ -533,7 +533,11 @@ function Canvas() {
 
   const saveInstance = async name => {
     try {
-      const result = await getNewFileHandle();
+      const result = await getNewFileHandle(
+        "Doc2pen Sketch Save File",
+        "application/d2ps",
+        ".d2ps"
+      );
       name = result.name;
     } catch (err) {
       console.error(err);
@@ -555,38 +559,30 @@ function Canvas() {
       });
   };
 
-  const initiateload = () => document.getElementById("file-selector").click();
-  const loadimport = e => {
+  const initiateLoadSaved = inputElementID =>
+    document.getElementById(inputElementID).click();
+  const loadLastState = e => {
     let file = e.target.files[0];
-    var textFile = /image.*/;
+    if (!file) return;
+    let reader = new FileReader();
+    reader.addEventListener(
+      "load",
+      () => {
+        const image = new Image();
 
-    if (!file.type.match(textFile)) {
-      alert(
-        "OOPs! You didn't select an image. We only support jpg,png and webp"
-      );
-      file.value = "";
-      return false;
-    } else {
-      let reader = new FileReader();
-      reader.addEventListener(
-        "load",
-        () => {
-          const image = new Image();
-
-          image.onload = () => {
-            context.drawImage(image, 0, 0);
-            setCanvasStates(current => [
-              ...canvasStates,
-              context.getImageData(0, 0, canvasWidth, canvasHeight),
-            ]);
-            setcanvasStateAt(current => current + 1);
-          };
-          image.src = reader.result;
-        },
-        false
-      );
-      reader.readAsDataURL(file);
-    }
+        image.onload = () => {
+          context.drawImage(image, 0, 0);
+          setCanvasStates(current => [
+            ...canvasStates,
+            context.getImageData(0, 0, canvasWidth, canvasHeight),
+          ]);
+          setcanvasStateAt(current => current + 1);
+        };
+        image.src = reader.result;
+      },
+      false
+    );
+    reader.readAsDataURL(file);
   };
 
   return (
@@ -632,9 +628,10 @@ function Canvas() {
         setEdge={setEdge}
         clear={clear}
         download={download}
-        initiateload={initiateload}
-        loadimport={loadimport}
+        initiateLoadSaved={initiateLoadSaved}
+        loadLastState ={loadLastState }
         saveInstance={saveInstance}
+        IconsLibrary={<IconsLibrary/>}
       />
 
       {/* ----- Undo & Redo----- */}
@@ -709,7 +706,6 @@ function Canvas() {
           )}
         </div>
       </div>
-      {/* icon library */}
 
       <ReactSnackBar
         Icon={<img style={svgStyles} src={checkBox} alt="" />}

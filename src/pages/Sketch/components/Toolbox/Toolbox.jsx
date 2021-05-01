@@ -1,10 +1,10 @@
+// import React, {useState} from "react";
 import React from "react";
 import styles from "./toolbox.module.scss";
 import {
   AiOutlineLine,
   AiOutlineSmallDash,
   AiOutlineDash,
-  AiOutlineFolderOpen,
 } from "react-icons/ai";
 import {
   FaRegSquare,
@@ -13,27 +13,18 @@ import {
   FaPencilAlt,
   FaRegCircle,
   FaSlash,
-  // FaFont,
   FaShapes,
-  FaDownload,
 } from "react-icons/fa";
-import { VscSaveAs } from "react-icons/vsc";
-
 import { GiTriangleTarget } from "react-icons/gi";
 import { BiShapeTriangle } from "react-icons/bi";
-import {
-  BsFonts,
-  BsArrowUpRight,
-  BsDiamond,
-  BsBoxArrowInDown,
-} from "react-icons/bs";
+import { BsFonts, BsArrowUpRight, BsDiamond } from "react-icons/bs";
 import { RiFileSettingsLine } from "react-icons/ri";
+import { ReactComponent as D2psIcon } from "./../../../../assets/images/sketch/d2ps.svg";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Tabs,
   Tab,
   Typography,
-  Box,
   List,
   ListItem,
   ListItemText,
@@ -47,9 +38,10 @@ import {
   Close,
   Delete,
   SaveAlt,
-  SystemUpdateAlt,
-  FolderOpen
+  PhotoLibrary,
+  Save,
 } from "@material-ui/icons";
+import IconsLibrary from "./../IconLibrary/IconsLibrary";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -85,7 +77,7 @@ function TabPanel(props) {
   return (
     <div
       role="tabpanel"
-      hidden={value !== index}
+      style={{ width: value !== index && 0 }}
       id={`vertical-tabpanel-${index}`}
       className={classes.verticalTabPanel}
       aria-labelledby={`vertical-tab-${index}`}
@@ -141,10 +133,9 @@ function VerticalTabs(props) {
     setEdge,
     clear,
     download,
-    initiateload,
-    loadimport,
+    initiateLoadSaved,
+    loadLastState,
     saveInstance,
-    IconsLibrary,
   } = props;
 
   const classes = useStyles();
@@ -192,6 +183,7 @@ function VerticalTabs(props) {
           className={classes.tabs}
         >
           <Tab
+            onClick={() => setType("pen")}
             label={
               <label title="Project">
                 <AccountTree />
@@ -200,6 +192,7 @@ function VerticalTabs(props) {
             {...a11yProps(0)}
           />
           <Tab
+            onClick={() => setType("pen")}
             label={
               <label title="Canvas Setup">
                 <RiFileSettingsLine size={25} />
@@ -208,22 +201,27 @@ function VerticalTabs(props) {
             {...a11yProps(1)}
           />
           <Tab
+            onClick={() => setType("pen")}
             label={
               <label title="Shapes & Tools">
-                <FaShapes onClick={() => setType(null)} size={25} />
+                <FaShapes size={25} />
               </label>
             }
             {...a11yProps(2)}
           />
           <Tab
+            onClick={() => setType("text")}
             label={
               <label title="Text">
-                <TextFields onClick={() => setType("text")} size={25} />
+                <TextFields />
               </label>
             }
             {...a11yProps(3)}
           />
           <Tab
+            onClick={() => {
+              setType("pen");
+            }}
             label={
               <label title="Icon Library">
                 <Apps />
@@ -232,6 +230,7 @@ function VerticalTabs(props) {
             {...a11yProps(4)}
           />
           <Tab
+            onClick={() => setType("pen")}
             label={
               <label title="Minimize Sidebar">
                 <Close />
@@ -254,75 +253,67 @@ function VerticalTabs(props) {
               </ListItemIcon>
               <ListItemText primary="Download PNG" />
             </ListItem>
-            <ListItem button onClick={() => initiateload()}>
+            <ListItem
+              button
+              onClick={() => initiateLoadSaved("img-file-selector")}
+            >
               <ListItemIcon>
-                <FolderOpen />
+                <PhotoLibrary />
+                <input
+                  type="file"
+                  id="img-file-selector"
+                  style={{ display: "none" }}
+                  accept="image/*"
+                  onChange={event => loadLastState(event)}
+                />
+              </ListItemIcon>
+              <ListItemText primary="Place Image" />
+            </ListItem>
+            <ListItem button onClick={() => saveInstance("savedProgress.d2ps")}>
+              <ListItemIcon>
+                <Save />
+              </ListItemIcon>
+              <ListItemText primary="Save & download Progress" />
+            </ListItem>
+            <ListItem button onClick={() => initiateLoadSaved("file-selector")}>
+              <ListItemIcon style={{ width: 0 }}>
+                <D2psIcon
+                  style={{
+                    transform: "scale(0.6) translateX(-30px)",
+                  }}
+                />
                 <input
                   type="file"
                   id="file-selector"
                   style={{ display: "none" }}
-                  accept="images/*"
-                  onChange={event => loadimport(event)}
+                  accept=".d2ps"
+                  onChange={event => loadLastState(event)}
                 />
               </ListItemIcon>
-              <ListItemText primary="Load Image" />
+              <ListItemText primary="Load Previous Progress" />
             </ListItem>
           </List>
-
-          <label htmlFor="sketch-dcd-load" title="Load Previous Work">
-            <div
-              className={`${styles.feature}`}
-              onClick={() => initiateload()}
-              id="sketch-dcd-load"
-            >
-              <SystemUpdateAlt />
-            </div>
-          </label>
-          <label htmlFor="sketch-dcd-load" title="Import File">
-            <div
-              className={`${styles.feature}`}
-              onClick={() => initiateload()}
-              id="sketch-dcd-load"
-            >
-              <BsBoxArrowInDown size={15} />
-              <input
-                type="file"
-                id="file-selector"
-                style={{ display: "none" }}
-                accept=".images/*"
-                onChange={event => loadimport(event)}
-              />
-            </div>
-          </label>
-
-          <label htmlFor="sketch-dcd-save" title="Download Progress">
-            <div
-              className={`${styles.feature}`}
-              onClick={() => saveInstance("savedProgress.d2ps")}
-              id="sketch-dcd-save"
-            >
-              <VscSaveAs size={15} />
-            </div>
-          </label>
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <Feature title="Canvas">
-            <div className={styles.colorPicker}>
-              <input
-                type="color"
-                name="canvas_bg_color"
-                value={background}
-                onChange={e => setBackground(e.target.value)}
-              />
-              <input
-                className={styles.hexInput}
-                placeholder="#"
-                type="text"
-                value={background}
-                onInput={e => setBackground(e.target.value)}
-              />
-            </div>
-          </Feature>
+          <List component="div">
+            <Feature title="Canvas Setup">
+              <div className={styles.colorPicker}>
+                <input
+                  type="color"
+                  name="canvas_bg_color"
+                  value={background}
+                  onChange={e => setBackground(e.target.value)}
+                />
+                <input
+                  className={styles.hexInput}
+                  placeholder="#"
+                  type="text"
+                  value={background}
+                  onInput={e => setBackground(e.target.value)}
+                />
+              </div>
+            </Feature>
+          </List>
         </TabPanel>
         <TabPanel value={value} index={2}>
           <List component="div">
@@ -628,7 +619,9 @@ function VerticalTabs(props) {
           </List>
         </TabPanel>
         <TabPanel value={value} index={4}>
-          {IconsLibrary}
+          <List component="div">
+            <IconsLibrary />
+          </List>
         </TabPanel>
         <TabPanel
           className={classes.tabPanelClose}
