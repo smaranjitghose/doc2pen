@@ -11,8 +11,6 @@ import ReactSnackBar from "react-js-snackbar";
 import checkBox from "./../../../assets/images/checkmark.svg";
 import rough from "roughjs/bin/rough";
 
-
-
 const Mousetrap = require("mousetrap");
 
 function Canvas() {
@@ -76,7 +74,9 @@ function Canvas() {
       image.src = dataURL;
       image.onload = () => {
         ctx.drawImage(image, 0, 0);
-        setCanvasStates(current => [ctx.getImageData(0, 0, canvasWidth, canvasHeight)]);
+        setCanvasStates(current => [
+          ctx.getImageData(0, 0, canvasWidth, canvasHeight),
+        ]);
         setcanvasStateAt(0);
       };
     },
@@ -87,7 +87,10 @@ function Canvas() {
     roughCanvas.current = rough.canvas(canvasRef.current);
     setContext(canvasRef.current.getContext("2d"));
     localStorage.getItem("canvasState") !== null &&
-      getLastCanvasState(localStorage.getItem("canvasState"), canvasRef.current.getContext("2d"));
+      getLastCanvasState(
+        localStorage.getItem("canvasState"),
+        canvasRef.current.getContext("2d")
+      );
   }, [getLastCanvasState]);
 
   useEffect(() => {
@@ -151,7 +154,18 @@ function Canvas() {
     context.lineCap = "round";
     context.lineWidth = strokeWidth;
 
-    if (["pen", "line", "square", "circle", "triangle", "arrow", "diamond", "biShapeTriangle"].includes(type)) {
+    if (
+      [
+        "pen",
+        "line",
+        "square",
+        "circle",
+        "triangle",
+        "arrow",
+        "diamond",
+        "biShapeTriangle",
+      ].includes(type)
+    ) {
       setTypeState(context.getImageData(0, 0, canvasWidth, canvasHeight));
       logicDown(point);
       setDownPoint({ x: point.x, y: point.y });
@@ -165,7 +179,11 @@ function Canvas() {
           context.fillText(
             text,
             downPoint.x,
-            downPoint.y + parseInt(document.getElementById("canvas-text-input").offsetHeight) - 5
+            downPoint.y +
+              parseInt(
+                document.getElementById("canvas-text-input").offsetHeight
+              ) -
+              5
           );
           setIsWriting(false);
           setText("");
@@ -232,7 +250,10 @@ function Canvas() {
       }
     }
 
-    setCanvasStates(current => [...canvasStatesCopy, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
+    setCanvasStates(current => [
+      ...canvasStatesCopy,
+      context.getImageData(0, 0, canvasWidth, canvasHeight),
+    ]);
     setcanvasStateAt(current => current + 1);
     if (type === "pen") {
       penPath.current = [];
@@ -252,7 +273,10 @@ function Canvas() {
         }
       }
 
-      setCanvasStates(current => [...canvasStatesCopy, context.getImageData(0, 0, canvasWidth, canvasHeight)]);
+      setCanvasStates(current => [
+        ...canvasStatesCopy,
+        context.getImageData(0, 0, canvasWidth, canvasHeight),
+      ]);
       setcanvasStateAt(current => current + 1);
     }
   }
@@ -288,7 +312,10 @@ function Canvas() {
     return `rgba(${col.red}, ${col.green}, ${col.blue}, ${fillOpacity})`;
   }
 
-  const closedShapesOptions = fillStyle !== "none" ? { ...openShapeOptions, ...fillOptions } : { ...openShapeOptions };
+  const closedShapesOptions =
+    fillStyle !== "none"
+      ? { ...openShapeOptions, ...fillOptions }
+      : { ...openShapeOptions };
 
   function penMove(point) {
     context.putImageData(typeState, 0, 0);
@@ -298,7 +325,9 @@ function Canvas() {
 
   function lineMove(point) {
     context.putImageData(typeState, 0, 0);
-    roughCanvas.current.line(downPoint.x, downPoint.y, point.x, point.y, { ...openShapeOptions });
+    roughCanvas.current.line(downPoint.x, downPoint.y, point.x, point.y, {
+      ...openShapeOptions,
+    });
   }
 
   function squareMove(point) {
@@ -319,7 +348,10 @@ function Canvas() {
     context.putImageData(typeState, 0, 0);
     const x = (point.x + downPoint.x) / 2;
     const y = (point.y + downPoint.y) / 2;
-    const radius = Math.sqrt(Math.pow(downPoint.x - point.x, 2) + Math.pow(downPoint.y - point.y, 2)) / 2;
+    const radius =
+      Math.sqrt(
+        Math.pow(downPoint.x - point.x, 2) + Math.pow(downPoint.y - point.y, 2)
+      ) / 2;
 
     roughCanvas.current.circle(x, y, radius, { ...closedShapesOptions });
   }
@@ -341,15 +373,53 @@ function Canvas() {
     context.putImageData(typeState, 0, 0);
 
     function formula(head, ratio, one, two, three, four, theta) {
-      return head + (1 / ratio) * ((one - two) * Math.cos(theta) + (three - four) * Math.sin(theta));
+      return (
+        head +
+        (1 / ratio) *
+          ((one - two) * Math.cos(theta) + (three - four) * Math.sin(theta))
+      );
     }
 
-    const x1 = formula(point.x, 3, downPoint.x, point.x, downPoint.y, point.y, Math.PI / 4);
-    const y1 = formula(point.y, 3, downPoint.y, point.y, point.x, downPoint.x, Math.PI / 4);
-    const x2 = formula(point.x, 3, downPoint.x, point.x, point.y, downPoint.y, Math.PI / 4);
-    const y2 = formula(point.y, 3, downPoint.y, point.y, downPoint.x, point.x, Math.PI / 4);
+    const x1 = formula(
+      point.x,
+      3,
+      downPoint.x,
+      point.x,
+      downPoint.y,
+      point.y,
+      Math.PI / 4
+    );
+    const y1 = formula(
+      point.y,
+      3,
+      downPoint.y,
+      point.y,
+      point.x,
+      downPoint.x,
+      Math.PI / 4
+    );
+    const x2 = formula(
+      point.x,
+      3,
+      downPoint.x,
+      point.x,
+      point.y,
+      downPoint.y,
+      Math.PI / 4
+    );
+    const y2 = formula(
+      point.y,
+      3,
+      downPoint.y,
+      point.y,
+      downPoint.x,
+      point.x,
+      Math.PI / 4
+    );
 
-    roughCanvas.current.line(downPoint.x, downPoint.y, point.x, point.y, { ...openShapeOptions });
+    roughCanvas.current.line(downPoint.x, downPoint.y, point.x, point.y, {
+      ...openShapeOptions,
+    });
     roughCanvas.current.line(point.x, point.y, x1, y1, { ...openShapeOptions });
     roughCanvas.current.line(point.x, point.y, x2, y2, { ...openShapeOptions });
   }
@@ -402,7 +472,9 @@ function Canvas() {
   function toggleIconLib() {
     //.iconLibContainer--open
     if (iconLibRef.current) {
-      iconLibRef.current.classList.toggle(`${styles["iconLibContainer--open"]}`);
+      iconLibRef.current.classList.toggle(
+        `${styles["iconLibContainer--open"]}`
+      );
     }
   }
 
@@ -445,14 +517,14 @@ function Canvas() {
     });
   };
 
-  function getNewFileHandle() {
+  function getNewFileHandle(description, mimeType, fileType) {
     // For Chrome 86 and later...
     if ("showSaveFilePicker" in window) {
       const opts = {
         types: [
           {
-            description: "Doc2pen Sketch Save File",
-            accept: { "image/*": [".jpg .jpeg .png"] },
+            description: description,
+            accept: { mimeType: fileType },
           },
         ],
       };
@@ -463,9 +535,9 @@ function Canvas() {
       type: "save-file",
       accepts: [
         {
-          description: "Doc2pen Sketch Save File",
-          extensions: [".png"],
-          mimeTypes: ["image/*"],
+          description: description,
+          extensions: [fileType],
+          mimeTypes: [mimeType],
         },
       ],
     };
@@ -473,10 +545,13 @@ function Canvas() {
     return window.chooseFileSystemEntries(opts);
   }
 
-   
   const saveInstance = async name => {
     try {
-      const result = await getNewFileHandle();
+      const result = await getNewFileHandle(
+        "Doc2pen Sketch Save File",
+        "application/d2ps",
+        ".d2ps"
+      );
       name = result.name;
     } catch (err) {
       console.error(err);
@@ -498,31 +573,23 @@ function Canvas() {
       });
   };
 
-
-  
- 
-  const initiateload = () => document.getElementById("file-selector").click();
-  const loadimport= e =>{   
+  const initiateLoadSaved = inputElementID =>
+    document.getElementById(inputElementID).click();
+  const loadLastState = e => {
     let file = e.target.files[0];
-    var textFile = /image.*/;
-
-
-    if (!(file.type.match(textFile))) { 
-     alert("OOPs! You didn't select an image. We only support jpg,png and webp");
-        file.value = '';
-        return false;
-            }
-            else
-            {
-    let reader =  new FileReader();
+    if (!file) return;
+    let reader = new FileReader();
     reader.addEventListener(
       "load",
       () => {
         const image = new Image();
 
-        image.onload = () => { 
+        image.onload = () => {
           context.drawImage(image, 0, 0);
-          setCanvasStates(current => [...canvasStates, context.getImageData(0 , 0, canvasWidth, canvasHeight)]);
+          setCanvasStates(current => [
+            ...canvasStates,
+            context.getImageData(0, 0, canvasWidth, canvasHeight),
+          ]);
           setcanvasStateAt(current => current + 1);
         };
         image.src = reader.result;
@@ -530,12 +597,7 @@ function Canvas() {
       false
     );
     reader.readAsDataURL(file);
-    
-  }; 
-};
-
-    
-    
+  };
 
   return (
     <>
@@ -581,50 +643,75 @@ function Canvas() {
       />
 
       {/* ----- Download & Clear----- */}
-      <div className={`${styles.feature_container} ${styles.download_clear_container}`}>
+      <div
+        className={`${styles.feature_container} ${styles.download_clear_container}`}
+      >
         <label htmlFor="sketch-dcd-download" title="Clear Sketch">
-          <div className={`${styles.feature}`} onClick={clear} id="sketch-dcd-download">
+          <div
+            className={styles.feature}
+            onClick={clear}
+            id="sketch-dcd-download"
+          >
             <RiDeleteBinLine size={15} />
           </div>
         </label>
         <label htmlFor="sketch-dcd-clear" title="Download Sketch">
-          <div className={`${styles.feature}`} onClick={download} id="sketch-dcd-clear">
+          <div
+            className={styles.feature}
+            onClick={download}
+            id="sketch-dcd-clear"
+          >
             <FaDownload size={15} />
           </div>
         </label>
         <label htmlFor="sketch-dcd-load" title="Load Previous Work">
-          <div className={`${styles.feature}`} onClick={() => initiateload()} id="sketch-dcd-load">
+          <div
+            className={styles.feature}
+            onClick={() => initiateLoadSaved("file-selector")}
+            id="sketch-dcd-load"
+          >
             <AiOutlineFolderOpen size={15} />
             <input
               type="file"
               id="file-selector"
               style={{ display: "none" }}
-              accept="images/*"
-              onChange={event => loadimport(event)}
+              accept=".d2ps"
+              onChange={event => loadLastState(event)}
             />
           </div>
         </label>
-        <label htmlFor="sketch-dcd-load" title="Import File">
-          <div className={`${styles.feature}`} onClick={() => initiateload()} id="sketch-dcd-load">
+        <label htmlFor="sketch-dcd-load" title="Place Image">
+          <div
+            className={styles.feature}
+            onClick={() => initiateLoadSaved("img-file-selector")}
+            id="sketch-dcd-load"
+          >
             <BsBoxArrowInDown size={15} />
             <input
               type="file"
-              id="file-selector"
+              id="img-file-selector"
               style={{ display: "none" }}
-              accept=".images/*"
-              onChange={event => loadimport(event)}
+              accept="image/*"
+              onChange={event => loadLastState(event)}
             />
           </div>
         </label>
-        
 
         <label htmlFor="sketch-dcd-save" title="Download Progress">
-          <div className={`${styles.feature}`} onClick={() => saveInstance("savedProgress.d2ps")} id="sketch-dcd-save">
+          <div
+            className={styles.feature}
+            onClick={() => saveInstance("savedProgress.d2ps")}
+            id="sketch-dcd-save"
+          >
             <VscSaveAs size={15} />
           </div>
         </label>
         <label htmlFor="sketch-dcd-addicon" title="Add Icon">
-          <div className={`${styles.feature}`} onClick={toggleIconLib} id="sketch-dcd-addicon">
+          <div
+            className={styles.feature}
+            onClick={toggleIconLib}
+            id="sketch-dcd-addicon"
+          >
             <FaStar size={15} />
           </div>
         </label>
@@ -649,7 +736,10 @@ function Canvas() {
       </div>
 
       {/* ----- Text ----- */}
-      <div style={{ height: canvasHeight, width: canvasWidth }} className={styles.text_container}>
+      <div
+        style={{ height: canvasHeight, width: canvasWidth }}
+        className={styles.text_container}
+      >
         <div className={`${styles.text}`} ref={textRef}>
           {type === "text" && isWriting && (
             <input
@@ -671,12 +761,14 @@ function Canvas() {
       </div>
       {/* icon library */}
 
-      <ReactSnackBar Icon={<img style={svgStyles} src={checkBox} alt="" />} Show={show}>
+      <ReactSnackBar
+        Icon={<img style={svgStyles} src={checkBox} alt="" />}
+        Show={show}
+      >
         Saving Progress! Please wait...
       </ReactSnackBar>
     </>
   );
 }
 
-
-export default Canvas
+export default Canvas;
