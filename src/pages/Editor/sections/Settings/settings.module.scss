@@ -3,23 +3,19 @@
 .controlPanel {
   display: block;
   .controls {
-    background-color:colors.$white;
+    background-color: colors.$white;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     padding-bottom: 10px;
     box-shadow: 0 0 5px colors.$black-light-tint;
+    padding-top: 10px;
     .group1 {
-      background-color:colors.$white;
+      background-color: colors.$white;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      .vSeparator {
-        display: inline-block;
-        border-left: 1px solid colors.$light-grey;
-        margin: 9px 4px;
-        height: 45px;
-      }
+      gap: 10px;
       .downloadBtn {
         color: colors.$dark-grey !important;
         padding: 5px 15px !important;
@@ -30,16 +26,20 @@
         font-size: 16px;
         outline: none !important;
         &:hover {
-          background-color: rgb(189, 189, 189);
+          background-color: colors.$bluish-white;
         }
         &:focus {
           color: colors.$dark-grey !important;
           background: colors.$light-grey !important;
         }
       }
-      .download{
-        &:hover{
-          background-color: rgb(189, 189, 189);
+      .download {
+        &:hover {
+          background-color: colors.$bluish-white;
+        }
+        &:active,
+        &:focus {
+          box-shadow: none !important;
         }
       }
     }

@@ -25,7 +25,7 @@
       height: 26px;
       min-width: 23px;
       width: 23px;
-      border-color: colors.$light-grey;
+      border-color: colors.$bluish-white;
       color: colors.$black-thick-tint;
       background-color: colors.$white;
       outline: none !important;
@@ -41,7 +41,7 @@
       height: 26px;
       min-width: 23px;
       width: 23px;
-      border-color: colors.$light-grey;
+      border-color: colors.$bluish-white;
       color: colors.$black-thick-tint;
       background-color: colors.$white;
       outline: none !important;
@@ -57,7 +57,7 @@
       height: 26px;
       min-width: 23px;
       width: 23px;
-      border-color: colors.$light-grey;
+      border-color: colors.$bluish-white;
       color: colors.$black-thick-tint;
       background-color: colors.$white;
       outline: none !important;
@@ -67,6 +67,12 @@
       font-weight: bolder;
       font-size: 21px;
       border-radius: 2px 0 0 2px;
+    }
+    .increment,
+    .decrement {
+      &:hover {
+        background-color: colors.$bluish-white;
+      }
     }
     .message {
       background-color: colors.$medium-dark-grey;

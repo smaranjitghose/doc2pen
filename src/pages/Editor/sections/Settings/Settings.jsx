@@ -4,7 +4,8 @@ import { EditContext } from "../../containers/editContext";
 import styles from "./settings.module.scss";
 import Dropdown from "../../../../components/Dropdown/Dropdown";
 import NumberSlider from "../../components/Slider/NumberSlider";
-import { Button } from 'reactstrap';
+import { Button } from "reactstrap";
+import { Divider } from "@material-ui/core";
 
 const Settings = () => {
   const editContext = useContext(EditContext);
@@ -12,32 +13,76 @@ const Settings = () => {
   // Dialogue open
   const handleopenModal = () => {
     setModal(true);
-  }
+  };
   return (
     <div className={styles.controlPanel}>
       <div className={styles.controls}>
         <div className={styles.group1}>
-          <Dropdown name="Change Color" active={editContext.bodyValues.bodyColor} type="color" items={["black", "red", "orange", "green", "blue", "dodgerblue", "deeppink", "darkviolet"]} />
-          <div className={styles.vSeparator}></div>
+          <Dropdown
+            name="Change Color"
+            active={editContext.bodyValues.bodyColor}
+            type="color"
+            items={[
+              "black",
+              "red",
+              "orange",
+              "green",
+              "blue",
+              "dodgerblue",
+              "deeppink",
+              "darkviolet",
+            ]}
+          />
+          <Divider orientation="vertical" flexItem />
           <Dropdown
             name="Change Style"
             type="font"
-            items={["HomemadeApple", "Caveat", "CedarvilleCursive", "Dawning", "IndieFlower", "NothingYouCouldDo", "Liu", "LeagueScript", "Enola", "RayFont", "RGhandwritten","Moody","Norm"]}
+            items={[
+              "HomemadeApple",
+              "Caveat",
+              "CedarvilleCursive",
+              "Dawning",
+              "IndieFlower",
+              "NothingYouCouldDo",
+              "Liu",
+              "LeagueScript",
+              "Enola",
+              "RayFont",
+              "RGhandwritten",
+              "Moody",
+              "Norm",
+            ]}
             active={editContext.bodyValues.bodyFont}
           />
-          <div className={styles.vSeparator}></div>
-          <Dropdown name="Change Sheet" type="page" active={editContext.pageSrc} items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]} />
+          <Divider orientation="vertical" flexItem />
+          <Dropdown
+            name="Change Sheet"
+            type="page"
+            active={editContext.pageSrc}
+            items={["Ruled1", "Ruled2", "OnlyMargin", "Blank1", "Blank2"]}
+          />
 
-          <div className={styles.vSeparator}></div>
+          <Divider orientation="vertical" flexItem />
 
           <label className={styles.downloadBtn} htmlFor="import">
             Import File
           </label>
-          <input id="import" style={{ display: "none" }} type="file" onChange={editContext.importTxt} ></input>
-          <div className={styles.vSeparator}></div>
+          <input
+            id="import"
+            style={{ display: "none" }}
+            type="file"
+            onChange={editContext.importTxt}
+          ></input>
+          <Divider orientation="vertical" flexItem />
           {/* Download functionality */}
-          <Button color="none" onClick={handleopenModal} className={styles.download} >Download File</Button>
-          <div className={styles.vSeparator}></div>
+          <Button
+            color="none"
+            onClick={handleopenModal}
+            className={styles.download}
+          >
+            Download File
+          </Button>
+          <Divider orientation="vertical" flexItem />
         </div>
         <NumberSlider
           label={"Adjust x-axis"}
@@ -49,7 +94,7 @@ const Settings = () => {
           initialValue={0}
         />
 
-        <div className={styles.vSeparator}></div>
+        <Divider orientation="vertical" flexItem />
         <NumberSlider
           label={"Font size"}
           editContext={editContext}
@@ -60,7 +105,7 @@ const Settings = () => {
           initialValue={16}
         />
 
-        <div className={styles.vSeparator}></div>
+        <Divider orientation="vertical" flexItem />
 
         <NumberSlider
           label={"Adjust y-axis"}
@@ -71,7 +116,7 @@ const Settings = () => {
           step={1}
           initialValue={5}
         />
-        <div className={styles.vSeparator}></div>
+        <Divider orientation="vertical" flexItem />
 
         <NumberSlider
           label={"Line-spacing"}
@@ -82,7 +127,7 @@ const Settings = () => {
           step={0.1}
           initialValue={1}
         />
-        <div className={styles.vSeparator}></div>
+        <Divider orientation="vertical" flexItem />
 
         <NumberSlider
           label={"Width"}
@@ -94,7 +139,7 @@ const Settings = () => {
           initialValue={65}
         />
 
-        <div className={styles.vSeparator}></div>
+        <Divider orientation="vertical" flexItem />
 
         <NumberSlider
           label={"Letter Spacing"}
@@ -106,9 +151,7 @@ const Settings = () => {
           initialValue={0}
         />
       </div>
-      <DownloadFileModal
-        modal={modal}
-        setModal={setModal} />
+      <DownloadFileModal modal={modal} setModal={setModal} />
     </div>
   );
 };

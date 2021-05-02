@@ -1,5 +1,7 @@
+@use "./../../scss/colors";
+
 .drbtn {
-  color: rgb(29, 28, 28) !important;
+  color:  colors.$dark-grey !important;
   padding: 5px 15px !important;
   border: none !important;
   border-radius: 4px !important;
@@ -8,13 +10,11 @@
   font-size: 16px;
   outline: none !important;
   &:hover {
-    background: rgb(218, 220, 224) !important;
+    background: colors.$bluish-white !important;
   }
   &:focus {
-    color: rgb(29, 28, 28) !important;
-    background: rgb(178, 179, 182) !important;
     outline: none !important;
-    box-shadow: none;
+    box-shadow: none !important;
   }
 }
 .dropdown-menu.show {
