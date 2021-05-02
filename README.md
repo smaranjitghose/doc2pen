@@ -1,4 +1,4 @@
-# Doc2Pen
+<p align="center"><img src="readme_assets/doc2pen.gif"></p>
 
 An open source project aimed at making your student life easier!
 

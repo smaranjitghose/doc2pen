@@ -11,7 +11,7 @@ function Step(props) {
     return (
       <div className={`${styles.step} ${props.reverse && styles.step_reverse}`}>
         <div className={styles.illustration}>
-          <img src={props.img} alt="Page" />
+          <img className ={styles.image} src={props.img} alt="Page" />
         </div>
         <div className={styles.step_text}>
           <div className={styles.step_title}>{props.title}</div>
@@ -63,7 +63,7 @@ function About() {
             <img src={openSource} alt="Open Source" style={{width: "55vw"}}/>
             <div className={styles.open_source}>
                 <div>
-                    Now, as Doc2Pen saves a lot of your time, you can now spent your valuable time in learning some practical stuff.
+                    Now, as Doc2Pen saves a lot of your time, you can now spend your valuable time in learning some practical stuff.
                 </div>
                 <br />
                 <div>

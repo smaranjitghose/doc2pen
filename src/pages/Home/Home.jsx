@@ -2,13 +2,14 @@ import React, { useEffect } from "react";
 import MetaComponent from "../../seo/MetaComponent";
 import metaData from "../../seo/metaData";
 
-import About from "./sections/About/About";
 import Banner from "./sections/Banner/Banner";
+import About from "./sections/About/About";
 import OpenSource from "./sections/OpenSource/OpenSource";
-import SupportUs from "./sections/SupportUs/SupportUs";
 import Team from "./sections/Team/Team";
-import ScrollToTop from "../../components/ScrollToTopButton/ScrollToTopButton";
+import SupportUs from "./sections/SupportUs/SupportUs";
 import Contact from "./sections/Contact/ContactUs";
+import ScrollToTop from "../../components/ScrollToTopButton/ScrollToTopButton";
+
 import style from "./home.module.scss";
 
 function Home() {
@@ -25,8 +26,8 @@ function Home() {
       />
       <Banner />
       <About />
-      <Team />
       <OpenSource />
+      <Team />
       <SupportUs />
       <Contact />
       <div className={style.btnWrapper}>
