@@ -1,4 +1,5 @@
 @use './../../scss/colors';
+
 .Header {
   background-color: colors.$purple;
   display: flex;
@@ -6,7 +7,7 @@
   align-items: center;
   color: colors.$white;
   padding: 0.5rem 1rem;
-  z-index: 9999;
+  z-index: 999999;
   font-weight: bold;
   width: 100%;
   position: sticky;
@@ -23,7 +24,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
 
     .tagged {
       width: 96px;
@@ -45,7 +45,7 @@
       color: colors.$white;
       text-decoration: none;
       position: relative;
-    
+
       &:hover {
         background-color: colors.$white;
         color: colors.$purple;
@@ -89,7 +89,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 9999;
+  z-index: 999;
 
   .quick_links {
     padding: 7px;
@@ -108,13 +108,18 @@
 }
 
 @media only screen and (max-width: 550px) {
+  .header_links{
+    margin: 0.8rem 0.1rem 0.1rem !important;
+    font-size:1.2rem;
+    border-radius:20px;
+  }
   .HeaderDrop {
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 0px;
   }
 
   .HeaderOpen {
-    gap: 30px;
+    gap: 0px;
     // transform: translateX(-100%);
     // transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
   }
@@ -123,34 +128,20 @@
     .right {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       transition: all 0.5s ease;
       z-index: 1002;
-      height: 150px;
+      height: 100vh;
       // padding-right: 20px;
       overflow: hidden;
-      left: -100%;
-      opacity: 1;
-      transition: all 0.6s ease;
-      transform: translateX(0);
-
-      .header_links{
-        transition: all 0.5s ease;
-        transform: translateX(0%);
-      }
-      // transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
+      transform: translateY(0);
+      transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
     }
     .rightDrop {
       height: 0px;
-      left: -100%;
-      opacity: 1;
-      transition: all 0.6s ease;
-      transform: translateX(0);
-
-      .header_links{
-        transition: all 0.5s ease;
-        transform: translateX(-1000%);
-      }
-      // transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1);
+      transform: translateY(-5px);
+      transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1);
     }
     .hamburger {
       display: block;
