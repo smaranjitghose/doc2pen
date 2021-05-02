@@ -12,6 +12,8 @@ const Editor = lazy(() => import("./pages/Editor/Editor"));
 const Sketch = lazy(() => import("./pages/Sketch/Sketch"));
 const MediaManip = lazy(() => import("./pages/MediaManip/MediaManip"));
 
+window.isHome = true;
+
 function App({ location }) {
   return (
     <Suspense fallback={<Preloader />}>
