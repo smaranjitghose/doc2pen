@@ -56,17 +56,39 @@ function Header() {
 
   return (
     <>
-      <header ref={headerRef} className={`${styles.Header} ${styles.HeaderDrop}`}>
-        <NavLink to="/">
+      <header
+        ref={headerRef}
+        className={`${styles.Header} ${styles.HeaderDrop}`}
+      >
+        <NavLink
+          to="/"
+          onClick={() => {
+            window.isHome = false;
+          }}
+        >
           <img className={styles.left} src={logo} alt="Logo" />
         </NavLink>
         <div ref={navLinkRef} className={`${styles.right} ${styles.rightDrop}`}>
-          <Link to="home_banner" offset={-15}>
-            <NavLink className={styles.header_links} to="/" exact activeClassName={styles.header_active_links}>
-              Home
-            </NavLink>
-          </Link>
-          <NavLink className={styles.header_links} to="/editor" exact activeClassName={styles.header_active_links}>
+          <NavLink
+            className={styles.header_links}
+            to="/"
+            exact
+            activeClassName={styles.header_active_links}
+            onClick={() => {
+              window.isHome = false;
+            }}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={styles.header_links}
+            to="/editor"
+            exact
+            activeClassName={styles.header_active_links}
+            onClick={() => {
+              window.isHome = false;
+            }}
+          >
             Editor
           </NavLink>
           <NavLink
@@ -74,6 +96,9 @@ function Header() {
             to="/sketch"
             exact
             activeClassName={styles.header_active_links}
+            onClick={() => {
+              window.isHome = false;
+            }}
           >
             Sketch
           </NavLink>
@@ -82,6 +107,9 @@ function Header() {
             to="/mediamanip"
             exact
             activeClassName={styles.header_active_links}
+            onClick={() => {
+              window.isHome = false;
+            }}
           >
             Media Manip
           </NavLink>
@@ -97,7 +125,12 @@ function Header() {
       <div className={styles.quick_box}>
         {location === "/" &&
           quickLinks.map(link => (
-            <Link className={styles.quick_links} key={link.name} to={link.to} offset={-100}>
+            <Link
+              className={styles.quick_links}
+              key={link.name}
+              to={link.to}
+              offset={-100}
+            >
               {link.icon}
               &nbsp;&nbsp;&nbsp;
               {link.name}

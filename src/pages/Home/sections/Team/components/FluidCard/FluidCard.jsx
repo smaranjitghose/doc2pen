@@ -41,44 +41,52 @@ function FluidCard(props) {
     let divHeight = divElement.offsetHeight;
 
     function mouseDirection(e) {
-      const canvasRightX =
-        canvasRef.current.offsetParent.offsetLeft + canvasRef.current.offsetWidth - 2 * canvasPadding;
-      const canvasLeftX = canvasRef.current.offsetParent.offsetLeft;
+      if(window.isHome && canvasRef.current !== null){
+        const canvasRightX =
+          canvasRef.current.offsetParent.offsetLeft +
+          canvasRef.current.offsetWidth -
+          2 * canvasPadding;
+        const canvasLeftX = canvasRef.current.offsetParent.offsetLeft;
 
-      const canvasBottomY =
-        canvasRef.current.offsetParent.offsetTop + canvasRef.current.offsetHeight - 2 * canvasPadding;
-      const canvasTopY = canvasRef.current.offsetParent.offsetTop;
+        const canvasBottomY =
+          canvasRef.current.offsetParent.offsetTop +
+          canvasRef.current.offsetHeight -
+          2 * canvasPadding;
+        const canvasTopY = canvasRef.current.offsetParent.offsetTop;
 
-      const isWithinDiv =
-        e.pageX > canvasLeftX + mouseDist &&
-        e.pageX < canvasRightX - mouseDist &&
-        e.pageY > canvasTopY + mouseDist &&
-        e.pageY < canvasBottomY - mouseDist;
+        const isWithinDiv =
+          e.pageX > canvasLeftX + mouseDist &&
+          e.pageX < canvasRightX - mouseDist &&
+          e.pageY > canvasTopY + mouseDist &&
+          e.pageY < canvasBottomY - mouseDist;
 
-      if (e.pageX < canvasLeftX) {
-        if (mouseX < e.pageX && !isWithinDiv) mouseDirectionX = 1;
-        else mouseDirectionX = 0;
-      } else if (e.pageX > canvasRightX) {
-        if (mouseX > e.pageX && !isWithinDiv) mouseDirectionX = -1;
-        else mouseDirectionX = 0;
-      } else if (isWithinDiv) {
-        mouseDirectionX = 0;
+        if (e.pageX < canvasLeftX) {
+          if (mouseX < e.pageX && !isWithinDiv) mouseDirectionX = 1;
+          else mouseDirectionX = 0;
+        } else if (e.pageX > canvasRightX) {
+          if (mouseX > e.pageX && !isWithinDiv) mouseDirectionX = -1;
+          else mouseDirectionX = 0;
+        } else if (isWithinDiv) {
+          mouseDirectionX = 0;
+        }
+
+        if (e.pageY < canvasTopY) {
+          if (mouseY < e.pageY) mouseDirectionY = 1;
+          else mouseDirectionY = 0;
+        } else if (e.pageY > canvasBottomY) {
+          if (mouseY > e.pageY) mouseDirectionY = -1;
+          else mouseDirectionY = 0;
+        } else if (isWithinDiv) {
+          mouseDirectionY = 0;
+        }
+
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+        relMouseX =
+          mouseX - canvasRef.current.offsetParent.offsetLeft + canvasPadding;
+        relMouseY =
+          mouseY - canvasRef.current.offsetParent.offsetTop + canvasPadding;
       }
-
-      if (e.pageY < canvasTopY) {
-        if (mouseY < e.pageY) mouseDirectionY = 1;
-        else mouseDirectionY = 0;
-      } else if (e.pageY > canvasBottomY) {
-        if (mouseY > e.pageY) mouseDirectionY = -1;
-        else mouseDirectionY = 0;
-      } else if (isWithinDiv) {
-        mouseDirectionY = 0;
-      }
-
-      mouseX = e.pageX;
-      mouseY = e.pageY;
-      relMouseX = mouseX - canvasRef.current.offsetParent.offsetLeft + canvasPadding;
-      relMouseY = mouseY - canvasRef.current.offsetParent.offsetTop + canvasPadding;
     }
     document.addEventListener("mousemove", mouseDirection);
 
@@ -95,6 +103,7 @@ function FluidCard(props) {
 
     function initLiquidBackground() {
       // Create canvas
+      window.isHome = true;
 
       canvasRef.current.style.top = `-${canvasPadding}px`;
       canvasRef.current.style.left = `-${canvasPadding}px`;
@@ -187,68 +196,77 @@ function FluidCard(props) {
       // rAF
       requestAnimationFrame(renderCanvas);
 
-      // Clear scene
-      context.clearRect(0, 0, canvasRef.current.offsetWidth, canvasRef.current.offsetHeight);
+      if (window.isHome && canvasRef.current !== null) {
+        // Clear scene
+        context.clearRect(
+          0,
+          0,
+          canvasRef.current.offsetWidth,
+          canvasRef.current.offsetHeight
+        );
 
-      // Move points
-      for (let i = 0; i <= pointsA.length - 1; i++) {
-        pointsA[i].move();
-      }
-
-      // Draw image;
-      let img = new Image();
-      img.onload = "start";
-      img.src = imgArray[currentImageIndex.current];
-
-      let pattern = context.createPattern(img, "no-repeat");
-      context.fillStyle = pattern;
-      context.fill();
-
-      context.beginPath();
-      context.moveTo(pointsA[0].x, pointsA[0].y);
-
-      for (let i = 0; i < pointsA.length; i++) {
-        let p = pointsA[i];
-        let nextP = pointsA[i + 1];
-
-        if (nextP !== undefined) {
-          p.cx1 = (p.x + nextP.x) / 2;
-          p.cy1 = (p.y + nextP.y) / 2;
-          p.cx2 = (p.x + nextP.x) / 2;
-          p.cy2 = (p.y + nextP.y) / 2;
-
-          context.bezierCurveTo(p.x, p.y, p.cx1, p.cy1, p.cx1, p.cy1);
-        } else {
-          nextP = pointsA[0];
-          p.cx1 = (p.x + nextP.x) / 2;
-          p.cy1 = (p.y + nextP.y) / 2;
-
-          context.bezierCurveTo(p.x, p.y, p.cx1, p.cy1, p.cx1, p.cy1);
+        // Move points
+        for (let i = 0; i <= pointsA.length - 1; i++) {
+          pointsA[i].move();
         }
-      }
-      context.fill();
 
-      if (showIndicators) {
-        // Draw points
-        context.fillStyle = "#000";
+        // Draw image;
+        let img = new Image();
+        img.onload = "start";
+        img.src = imgArray[currentImageIndex.current];
+
+        let pattern = context.createPattern(img, "no-repeat");
+        context.fillStyle = pattern;
+        context.fill();
+
         context.beginPath();
+        context.moveTo(pointsA[0].x, pointsA[0].y);
+
         for (let i = 0; i < pointsA.length; i++) {
           let p = pointsA[i];
+          let nextP = pointsA[i + 1];
 
-          context.rect(p.x - 1, p.y - 1, 2, 2);
+          if (nextP !== undefined) {
+            p.cx1 = (p.x + nextP.x) / 2;
+            p.cy1 = (p.y + nextP.y) / 2;
+            p.cx2 = (p.x + nextP.x) / 2;
+            p.cy2 = (p.y + nextP.y) / 2;
+
+            context.bezierCurveTo(p.x, p.y, p.cx1, p.cy1, p.cx1, p.cy1);
+          } else {
+            nextP = pointsA[0];
+            p.cx1 = (p.x + nextP.x) / 2;
+            p.cy1 = (p.y + nextP.y) / 2;
+
+            context.bezierCurveTo(p.x, p.y, p.cx1, p.cy1, p.cx1, p.cy1);
+          }
         }
         context.fill();
 
-        // Draw controls
-        context.fillStyle = "#f00";
-        context.beginPath();
-        for (let i = 0; i < pointsA.length; i++) {
-          let p = pointsA[i];
+        if (showIndicators) {
+          // Draw points
+          context.fillStyle = "#000";
+          context.beginPath();
+          for (let i = 0; i < pointsA.length; i++) {
+            let p = pointsA[i];
 
-          context.rect(p.cx1 - 1, p.cy1 - 1, 2, 2);
-          context.rect(p.cx2 - 1, p.cy2 - 1, 2, 2);
+            context.rect(p.x - 1, p.y - 1, 2, 2);
+          }
+          context.fill();
+
+          // Draw controls
+          context.fillStyle = "#f00";
+          context.beginPath();
+          for (let i = 0; i < pointsA.length; i++) {
+            let p = pointsA[i];
+
+            context.rect(p.cx1 - 1, p.cy1 - 1, 2, 2);
+            context.rect(p.cx2 - 1, p.cy2 - 1, 2, 2);
+          }
+          context.fill();
         }
-        context.fill();
+      } else {
+        setContext(null);
       }
     }
 
