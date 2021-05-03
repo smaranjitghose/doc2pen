@@ -1,6 +1,6 @@
 <p align="center"><img src="readme_assets/doc2pen.gif"></p>
 
-An open source project aimed at making your student life easier!
+An open-source project aimed at making your student life easier!
 
 
 ![Issues](https://img.shields.io/github/issues/smaranjitghose/doc2pen)
@@ -44,7 +44,7 @@ Add GIFs of the entire web app
 ```terminal
 |
 |- readme_assets   # Contains all the images used for the README.MD
-|- public          # Contains the stylesheets, images and fonts. Any files within this directory will not be processed by Webpack but copied directly to the build folder.
+|- public          # Contains the stylesheets, images, and fonts. Any files within this directory will not be processed by Webpack but copied directly to the build folder.
 |- src:            # Contains all source code for the React application.
     |
     |- App.js
@@ -129,3 +129,5 @@ Please check out our [contribution guidelines](./CONTRIBUTING.md)
 
 
 ## Made with ♥ for the students of the world!
+
+
