@@ -55,7 +55,7 @@ const DropdownComponent = props => {
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
       <DropdownToggle caret className={styles.drbtn}>
-        {props.name} ({props.active})
+        {props.name}
       </DropdownToggle>
       <DropdownMenu>
         <DropDownOptions />
