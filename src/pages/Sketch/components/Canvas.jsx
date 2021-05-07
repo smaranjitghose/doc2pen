@@ -1,15 +1,11 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import styles from "./canvas.module.scss";
 import Toolbox from "./Toolbox/Toolbox";
-import { FaDownload, FaStar } from "react-icons/fa";
-import { VscSaveAs } from "react-icons/vsc";
-import { BsBoxArrowInDown } from "react-icons/bs";
-import { RiDeleteBinLine } from "react-icons/ri";
-import { AiOutlineFolderOpen } from "react-icons/ai";
-import IconsLibrary from "./IconLibrary/IconsLibrary";
+import { MdUndo, MdRedo } from "react-icons/md";
 import ReactSnackBar from "react-js-snackbar";
 import checkBox from "./../../../assets/images/checkmark.svg";
 import rough from "roughjs/bin/rough";
+import IconsLibrary from "./IconLibrary/IconsLibrary";
 
 const Mousetrap = require("mousetrap");
 
@@ -23,7 +19,6 @@ function Canvas() {
 
   const canvasRef = useRef(null);
   const textRef = useRef(null);
-  const iconLibRef = useRef(null);
   const roughCanvas = useRef(null);
   const penPath = useRef([]);
   const [context, setContext] = useState();
@@ -469,15 +464,6 @@ function Canvas() {
     setBackground("#ffffff");
   }
 
-  function toggleIconLib() {
-    //.iconLibContainer--open
-    if (iconLibRef.current) {
-      iconLibRef.current.classList.toggle(
-        `${styles["iconLibContainer--open"]}`
-      );
-    }
-  }
-
   const undo = useCallback(() => {
     if (canvasStateAt > 0) {
       context.putImageData(canvasStates[canvasStateAt - 1], 0, 0);
@@ -640,85 +626,46 @@ function Canvas() {
         setFontFamily={setFontFamily}
         edge={edge}
         setEdge={setEdge}
+        clear={clear}
+        download={download}
+        initiateLoadSaved={initiateLoadSaved}
+        loadLastState ={loadLastState }
+        saveInstance={saveInstance}
+        IconsLibrary={<IconsLibrary/>}
       />
 
-      {/* ----- Download & Clear----- */}
+      {/* ----- Undo & Redo----- */}
       <div
         className={`${styles.feature_container} ${styles.download_clear_container}`}
       >
-        <label htmlFor="sketch-dcd-download" title="Clear Sketch">
+        <label htmlFor="sketch-dcd-undo" title="Undo">
           <div
             className={styles.feature}
-            onClick={clear}
-            id="sketch-dcd-download"
+            onClick={() => undo()}
+            style={{
+              cursor: `${canvasStateAt === -1 ? "not-allowed" : "pointer"}`,
+            }}
+            id="sketch-dcd-undo"
           >
-            <RiDeleteBinLine size={15} />
+            <MdUndo size={20} />
           </div>
         </label>
-        <label htmlFor="sketch-dcd-clear" title="Download Sketch">
+        <label htmlFor="sketch-dcd-redo" title="Redo">
           <div
             className={styles.feature}
-            onClick={download}
-            id="sketch-dcd-clear"
+            onClick={() => redo()}
+            style={{
+              cursor: `${
+                canvasStateAt === canvasStates.length - 1
+                  ? "not-allowed"
+                  : "pointer"
+              }`,
+            }}
+            id="sketch-dcd-redo"
           >
-            <FaDownload size={15} />
+            <MdRedo size={20} />
           </div>
         </label>
-        <label htmlFor="sketch-dcd-load" title="Load Previous Work">
-          <div
-            className={styles.feature}
-            onClick={() => initiateLoadSaved("file-selector")}
-            id="sketch-dcd-load"
-          >
-            <AiOutlineFolderOpen size={15} />
-            <input
-              type="file"
-              id="file-selector"
-              style={{ display: "none" }}
-              accept=".d2ps"
-              onChange={event => loadLastState(event)}
-            />
-          </div>
-        </label>
-        <label htmlFor="sketch-dcd-load" title="Place Image">
-          <div
-            className={styles.feature}
-            onClick={() => initiateLoadSaved("img-file-selector")}
-            id="sketch-dcd-load"
-          >
-            <BsBoxArrowInDown size={15} />
-            <input
-              type="file"
-              id="img-file-selector"
-              style={{ display: "none" }}
-              accept="image/*"
-              onChange={event => loadLastState(event)}
-            />
-          </div>
-        </label>
-
-        <label htmlFor="sketch-dcd-save" title="Download Progress">
-          <div
-            className={styles.feature}
-            onClick={() => saveInstance("savedProgress.d2ps")}
-            id="sketch-dcd-save"
-          >
-            <VscSaveAs size={15} />
-          </div>
-        </label>
-        <label htmlFor="sketch-dcd-addicon" title="Add Icon">
-          <div
-            className={styles.feature}
-            onClick={toggleIconLib}
-            id="sketch-dcd-addicon"
-          >
-            <FaStar size={15} />
-          </div>
-        </label>
-
-        <div ref={iconLibRef} className={styles.iconLibContainer}>
-          <IconsLibrary toggleOpen={toggleIconLib} />
-        </div>
       </div>
 
       <canvas
@@ -759,7 +706,6 @@ function Canvas() {
           )}
         </div>
       </div>
-      {/* icon library */}
 
       <ReactSnackBar
         Icon={<img style={svgStyles} src={checkBox} alt="" />}

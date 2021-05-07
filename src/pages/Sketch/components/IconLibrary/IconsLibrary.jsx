@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import style from "./icon-lib.module.scss";
+import { Divider } from "@material-ui/core";
 
 // Put you icon pack import here
 const iconPack1SVGs = importAll(require.context("./icon-pack1", false, /\.svg$/));
@@ -36,6 +37,7 @@ function IconPreview(props) {
     <div className={style.iconCategory}>
       <h1 className={style.categoryHeading}>{categoryTitle}</h1>
       <div className={style.svgContainer}>{allSVGsRef.current}</div>
+      <Divider style={{margin: "40px 0"}}/>
     </div>
   );
 }
