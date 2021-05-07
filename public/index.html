@@ -45,50 +45,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  <script>
-    let isNotInitiated;
-    var initParticles = function () {
-      if(isNotInitiated){
-        var ps = new ParticleSlider({
-          ptlGap: 0,
-          ptlSize: 0,
-          width: 1e9,
-          height: 1e9,
-          mouseForce: 400,
-        });
-
-        window.addEventListener
-          ? window.addEventListener(
-            "click",
-            function () {
-              ps.init(true);
-            },
-            false
-          )
-          : (window.onclick = function () {
-            ps.init(true);
-          });
-
-
-        isNotInitiated = false;
-      }
-    };
-
-    var initParticleSlider = (function () {
-      var psScript = document.createElement("script");
-      psScript.addEventListener
-        ? psScript.addEventListener("load", initParticles, false)
-        : (psScript.onload = initParticles);
-      psScript.src = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/23500/ps-0.9.js';
-      psScript.setAttribute("type", "text/javascript");
-      document.body.appendChild(psScript);
-      isNotInitiated = true;
-    })(
-      window.addEventListener
-        ? window.addEventListener("load", initParticleSlider, false)
-        : (window.onload = initParticleSlider)
-    );
-  </script>
 </body>
 
 </html>
