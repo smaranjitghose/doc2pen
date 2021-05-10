@@ -14,7 +14,9 @@ const NumberSliders = props => {
 
   const handleClickValueChange = async event => {
     const isDecrement = event.target.classList.contains("decrement");
-    const inputElement = isDecrement ? event.target.nextSibling : event.target.previousSibling;
+    const inputElement = isDecrement
+      ? event.target.nextSibling
+      : event.target.previousSibling;
 
     const min = inputElement.min;
     const max = inputElement.max;
@@ -56,7 +58,10 @@ const NumberSliders = props => {
     <div className={styles.controlContainer}>
       <label for="left">{props.label}</label>
       <div className={styles.controlWrap}>
-        <button onClick={handleClickValueChange} className={`${styles.decrement} decrement`}>
+        <button
+          onClick={handleClickValueChange}
+          className={`${styles.decrement} decrement`}
+        >
           -
         </button>
 
@@ -70,11 +75,17 @@ const NumberSliders = props => {
           onChange={handleManualValueChange}
         />
 
-        <button onClick={handleClickValueChange} className={`${styles.increment} increment`}>
+        <button
+          onClick={handleClickValueChange}
+          className={`${styles.increment} increment`}
+        >
           +
         </button>
 
-        <div className={styles.message} style={{ display: isMsgDisplayed ? "block" : "none" }}>
+        <div
+          className={styles.message}
+          style={{ display: isMsgDisplayed ? "block" : "none" }}
+        >
           {`Min value: ${props.min}, max value: ${props.max}`}
         </div>
       </div>
