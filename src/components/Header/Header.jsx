@@ -63,6 +63,7 @@ function Header() {
         <NavLink
           to="/"
           onClick={() => {
+            if(headerRef.current.classList.contains(styles.HeaderOpen)) drop()
             window.isHome = false;
           }}
         >
@@ -75,6 +76,7 @@ function Header() {
             exact
             activeClassName={styles.header_active_links}
             onClick={() => {
+              if(headerRef.current.classList.contains(styles.HeaderOpen)) drop()
               window.isHome = false;
             }}
           >
@@ -86,6 +88,7 @@ function Header() {
             exact
             activeClassName={styles.header_active_links}
             onClick={() => {
+              if(headerRef.current.classList.contains(styles.HeaderOpen)) drop()
               window.isHome = false;
             }}
           >
@@ -97,6 +100,7 @@ function Header() {
             exact
             activeClassName={styles.header_active_links}
             onClick={() => {
+              if(headerRef.current.classList.contains(styles.HeaderOpen)) drop()
               window.isHome = false;
             }}
           >
@@ -108,6 +112,7 @@ function Header() {
             exact
             activeClassName={styles.header_active_links}
             onClick={() => {
+              if(headerRef.current.classList.contains(styles.HeaderOpen)) drop()
               window.isHome = false;
             }}
           >
