@@ -1,8 +1,6 @@
 import React, { useCallback } from "react";
-
 import { useDropzone } from "react-dropzone";
 import { AiFillCloseCircle } from "react-icons/ai";
-
 import styles from "./drag-drop.module.scss";
 
 function DragDrop(props) {

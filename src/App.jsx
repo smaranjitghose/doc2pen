@@ -13,7 +13,6 @@ const theme = createMuiTheme({
     fontFamily: "'Montserrat', sans-serif",
   },
 });
-
 const Home = lazy(() => import("./pages/Home/Home"));
 const Editor = lazy(() => import("./pages/Editor/Editor"));
 const Sketch = lazy(() => import("./pages/Sketch/Sketch"));
