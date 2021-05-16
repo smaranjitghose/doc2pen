@@ -32,7 +32,6 @@ function importAll(r) {
 
 function IconPreview(props) {
   const { iconPackSVGs, categoryTitle } = props;
-
   const allSVGsRef = useRef([]);
 
   allSVGsRef.current = Object.keys(iconPackSVGs).map(imgName => {

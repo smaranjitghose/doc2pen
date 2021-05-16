@@ -4,12 +4,10 @@ import { EditContext } from "../../containers/editContext";
 import styles from "./dowload-file-modal.module.scss";
 const DownloadFileModal = props => {
   const { modal, setModal } = props;
-
   const editContext = React.useContext(EditContext);
   const [fileType, setFileType] = React.useState("PNG");
   const [value, setValue] = React.useState("");
   const [valueError, setValueError] = React.useState(null);
-
   const handleDownloadFile = e => {
     if (!value) setValueError("please provide file name");
     else {

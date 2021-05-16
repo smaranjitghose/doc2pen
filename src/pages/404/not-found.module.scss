@@ -1,5 +1,4 @@
 @use "./../../scss/colors";
-
 @import "https://fonts.googleapis.com/css?family=Amatic+SC:400,700";
 
 .root {
@@ -12,6 +11,7 @@
   justify-content: center;
   min-height: 100vh;
   padding-top: 0px;
+
   .pageNotFound {
     position: relative;
     width: 600px;
@@ -27,6 +27,7 @@
       margin-top: 0px;
     }
   }
+
   .navlink {
     color: colors.$light-grey;
     text-decoration: none;
@@ -38,11 +39,13 @@
     margin-top: 30px;
     position: relative;
     overflow: hidden;
+
     .buttonText {
       position: relative;
       z-index: 1;
       color: colors.$purple;
     }
+
     .hoverEffect {
       position: absolute;
       display: block;
@@ -55,6 +58,7 @@
       transform: scale(0, 1) translate(-10px, -10px);
       transform-origin: top left;
     }
+    
     &:hover {
       color: colors.$light-grey;
       background-color: colors.$dark-grey;

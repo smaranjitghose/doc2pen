@@ -9,7 +9,6 @@ function MetaComponent({ title, description, keywords }) {
 
   document.addEventListener("visibilitychange", e => {
     var isPageActive = !document.hidden;
-
     if (!isPageActive) {
       blink();
     } else {

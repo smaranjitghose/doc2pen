@@ -23,7 +23,7 @@ function Canvas() {
   const penPath = useRef([]);
   const [context, setContext] = useState();
 
-  /* ----- Feature State ----- */
+  /* ----- Feature States ----- */
   const [background, setBackground] = useState("#ffffff");
   const [canvasStates, setCanvasStates] = useState([]);
   const [canvasStateAt, setcanvasStateAt] = useState(-1);
@@ -41,20 +41,20 @@ function Canvas() {
   const [hachureGap, setHachureGap] = useState(parseInt(strokeWidth) * 8);
   const [show, setShow] = useState(false);
   const [showing, setShowing] = useState(false);
-  // For Font
+
+  // variable states for Font
   const [text, setText] = useState("");
   const [isWriting, setIsWriting] = useState(false);
   const [fontSize, setFontSize] = useState("1");
   const [fontStyle, setFontStyle] = useState("normal");
   const [fontFamily, setFontFamily] = useState("cursive");
 
-  /* ----- Canvas State ----- */
+  /* ----- Canvas States ----- */
   const [isDrawing, setIsDrawing] = useState(false);
   const [type, setType] = useState("pen");
   const [typeState, setTypeState] = useState(null);
   const [downPoint, setDownPoint] = useState({ x: "", y: "" });
   const [mousePosition, setMousePosition] = useState({ x: "0", y: "0" });
-
   const [canvasWidth, setCanvasWidth] = useState(window.innerWidth - 50);
   const [canvasHeight, setCanvasHeight] = useState(window.innerHeight - 100);
 
@@ -131,9 +131,7 @@ function Canvas() {
     if (event.button !== 0) {
       return;
     }
-
     const point = relativeCoordinatesForEvent(event);
-
     const col = hexToRGB(strokeColor);
     context.strokeStyle = `rgba(${col.red}, ${col.green}, ${col.blue}, 1)`;
 
@@ -193,7 +191,6 @@ function Canvas() {
     }
 
     setIsDrawing(true);
-
     event.preventDefault();
   }
 
@@ -233,7 +230,6 @@ function Canvas() {
       default:
         break;
     }
-
     event.preventDefault();
   }
 
@@ -293,7 +289,6 @@ function Canvas() {
     roughness: roughness,
     bowing: bowing,
   };
-
   const fillOptions = {
     fill: fillColorRGB(),
     fillStyle: fillStyle, // solid fill

@@ -1,5 +1,4 @@
 import React from "react";
-
 import styles from "./drop-down.module.scss";
 
 function DropDown({ type, onChange, value, outputOptions }) {
