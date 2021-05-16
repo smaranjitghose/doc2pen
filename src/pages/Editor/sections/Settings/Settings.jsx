@@ -56,6 +56,16 @@ const Settings = () => {
           />
           <Divider orientation="vertical" flexItem />
           <Dropdown
+            name="Change Font Weight"
+            type="font-weight"
+            items={[
+              "normal",
+              "bold"
+            ]}
+            active={editContext.bodyValues.bodyFontWeight}
+          />
+          <Divider orientation="vertical" flexItem />
+          <Dropdown
             name="Change Sheet"
             type="page"
             active={editContext.pageSrc}

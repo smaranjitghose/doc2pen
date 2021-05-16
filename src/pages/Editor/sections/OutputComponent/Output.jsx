@@ -36,6 +36,7 @@ const OutputComponent = () => {
               paddingLeft: `${Number(editContext.bodyValues.bodyLeft) + 3}px`,
               lineHeight: `${editContext.bodyValues.bodyLine}`,
               fontFamily: `${editContext.bodyValues.bodyFont}`,
+              fontWeight: `${editContext.bodyValues.bodyFontWeight}`,
               color: `${editContext.bodyValues.bodyColor}`,
               width: `${(100 * editContext.bodyValues.bodyWidth) / 70}%`,
               letterSpacing: `${editContext.bodyValues.bodyLetterSpace}px`,
