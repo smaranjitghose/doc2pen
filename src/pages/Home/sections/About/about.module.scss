@@ -61,6 +61,11 @@
         img {
           width: 270px;
         }
+        @media (max-width: 480px) {
+          img{
+            width: 180px;
+          }
+        }
       }
 
       .step_text {
@@ -73,19 +78,34 @@
           text-align: left;
           padding-left: 3rem;
         }
+        @media (max-width: 480px) {
+          .step_title{
+            padding-left: 0;
+            font-size: 1.7rem;
+          }
+        }
 
         .step_content {
           font-size: 1.5rem;
           overflow-wrap: anywhere;
           padding-left: 3rem;
         }
+        @media (max-width: 480px) {
+          .step_content{
+            font-size: 1rem;
+            padding-left: 0;
+          }
+        }
       }
     }
+    
+    
 
     @media (max-width: 730px) {
       .step {
         flex-wrap: wrap;
       }
+
     }
   }
 
