@@ -22,6 +22,7 @@ const EditContextProvider = props => {
     bodyRight: 20,
     bodyLine: null,
     bodyFont: "HomemadeApple",
+    bodyFontWeight: "normal",
     bodyColor: "black",
     bodyWidth: 70,
     bodyLetterSpace: null,
