@@ -11,23 +11,23 @@ const quickLinks = [
   {
     name: "About",
     to: "home_about",
-    icon: <ImInfo />,
+    icon: <ImInfo />
   },
   {
     name: "Team",
     to: "home_team",
-    icon: <RiTeamLine />,
+    icon: <RiTeamLine />
   },
   {
     name: "Support Us",
     to: "home_support",
-    icon: <BiDonateHeart />,
+    icon: <BiDonateHeart />
   },
   {
     name: "Contact us",
     to: "home_contact",
-    icon: <RiContactsLine />,
-  },
+    icon: <RiContactsLine />
+  }
 ];
 
 function Header() {
@@ -41,7 +41,7 @@ function Header() {
   const [location, setLocation] = useState(window.location.pathname);
 
   useEffect(() => {
-    return history.listen(location => {
+    return history.listen((location) => {
       setLocation(location.pathname);
     });
   }, [history]);
@@ -63,7 +63,7 @@ function Header() {
         <NavLink
           to="/"
           onClick={() => {
-            if(headerRef.current.classList.contains(styles.HeaderOpen)) drop()
+            if (headerRef.current.classList.contains(styles.HeaderOpen)) drop();
             window.isHome = false;
           }}
         >
@@ -76,7 +76,8 @@ function Header() {
             exact
             activeClassName={styles.header_active_links}
             onClick={() => {
-              if(headerRef.current.classList.contains(styles.HeaderOpen)) drop()
+              if (headerRef.current.classList.contains(styles.HeaderOpen))
+                drop();
               window.isHome = false;
             }}
           >
@@ -88,7 +89,8 @@ function Header() {
             exact
             activeClassName={styles.header_active_links}
             onClick={() => {
-              if(headerRef.current.classList.contains(styles.HeaderOpen)) drop()
+              if (headerRef.current.classList.contains(styles.HeaderOpen))
+                drop();
               window.isHome = false;
             }}
           >
@@ -100,7 +102,8 @@ function Header() {
             exact
             activeClassName={styles.header_active_links}
             onClick={() => {
-              if(headerRef.current.classList.contains(styles.HeaderOpen)) drop()
+              if (headerRef.current.classList.contains(styles.HeaderOpen))
+                drop();
               window.isHome = false;
             }}
           >
@@ -112,7 +115,8 @@ function Header() {
             exact
             activeClassName={styles.header_active_links}
             onClick={() => {
-              if(headerRef.current.classList.contains(styles.HeaderOpen)) drop()
+              if (headerRef.current.classList.contains(styles.HeaderOpen))
+                drop();
               window.isHome = false;
             }}
           >
@@ -129,14 +133,14 @@ function Header() {
       </header>
       <div className={styles.quick_box}>
         {location === "/" &&
-          quickLinks.map(link => (
+          quickLinks.map((link) => (
             <Link
               className={styles.quick_links}
               key={link.name}
               to={link.to}
               offset={-100}
             >
-              {link.icon}
+              <span className="icon">{link.icon}</span>
               &nbsp;&nbsp;&nbsp;
               {link.name}
             </Link>

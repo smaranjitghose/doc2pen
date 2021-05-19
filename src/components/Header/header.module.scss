@@ -91,6 +91,10 @@
   justify-content: center;
   z-index: 999;
 
+  span {
+    font-size: 25px;
+  }
+
   .quick_links {
     padding: 7px;
     cursor: pointer;
@@ -108,10 +112,10 @@
 }
 
 @media only screen and (max-width: 550px) {
-  .header_links{
+  .header_links {
     margin: 0.8rem 0.1rem 0.1rem !important;
-    font-size:1.2rem;
-    border-radius:20px;
+    font-size: 1.2rem;
+    border-radius: 20px;
   }
   .HeaderDrop {
     flex-wrap: wrap;
