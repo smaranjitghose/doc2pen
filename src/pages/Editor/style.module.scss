@@ -16,6 +16,16 @@ label {
   }
 }
 
+.pageBtnsWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pageBtnsWrapper > * {
+  margin: 10px;
+}
+
 /* ----- Commenting this custom range as we are not using this any more, also it was affecting the range input in Sketch Section ----- */
 
 /* input[type="range"] {
