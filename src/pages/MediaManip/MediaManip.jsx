@@ -17,7 +17,7 @@ export default function MediaManip() {
   const [progress, setProgress] = useState(0);
   const [download, setDownload] = useState(true); //true = disabled
   const [convert, setConvert] = useState(true); //true = disabled
-  const [outputOptions, setOutputOptions] = useState(["png", "jpg", "webp", "jpeg"]);
+  const [outputOptions, setOutputOptions] = useState(["png", "jpg", "webp", "jpeg", "pdf"]);
   let zip = new JSZip();
 
   useEffect(() => {
@@ -49,6 +49,7 @@ export default function MediaManip() {
     if (output === "webp") return convertImage("webp");
     if (output === "png") return convertImage("png");
     if (output === "jpeg") return convertImage("jpeg");
+    if(output === "pdf") return convertImage("pdf");
   };
 
   const startConversion = () => {
@@ -83,7 +84,7 @@ export default function MediaManip() {
       });
     });
   };
-
+  
   const onDownload = () => {
     convertedFiles.forEach((item, index) => {
       zip.file(`${index}.${item.type}`, item.data, { base64: true });
