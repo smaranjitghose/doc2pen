@@ -3,7 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import classes from "./output.module.scss";
 import { EditContext } from "../../containers/editContext";
 
-const OutputComponent = () => {
+const OutputComponent = ({ pageNo }) => {
   const editContext = useContext(EditContext);
   const page = require(`./${editContext.pageSrc}`);
   console.log(`${editContext.pageSrc}`);
@@ -24,7 +24,6 @@ const OutputComponent = () => {
           </div>
           <textarea
             type="text"
-            value={editContext.bodyValues.textValue}
             onChange={e => setPageText(e.target.value)}
             className={`${classes.contentInput} id-body`}
             id="show-text"
@@ -44,9 +43,15 @@ const OutputComponent = () => {
             }}
           />
         </div>
-        <div style={{ fontSize: "0.75rem", marginTop: "11px", fontWeight: "bold" }}>
-          Word Count:&nbsp;
-          <span style={{ color: "#28b8c6", fontSize: "0.85rem" }}>{wordCount}</span>
+        <div style={{ fontSize: "0.75rem", marginTop: "11px", fontWeight: "bold", display: "flex", justifyContent: "space-between" }}>
+          <div>
+            Word Count:&nbsp;
+            <span style={{ color: "#28b8c6", fontSize: "0.85rem" }}>{wordCount}</span>
+          </div>
+          <div>
+            Page Number:&nbsp;
+            <span style={{ color: "#28b8c6", fontSize: "0.85rem" }}>{pageNo}</span>
+          </div>
         </div>
       </div>
     </>
