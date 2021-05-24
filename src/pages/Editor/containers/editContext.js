@@ -52,8 +52,8 @@ const EditContextProvider = props => {
     setBodyValues({ ...bodyValues, [e.name]: e.value });
   };
 
-  const downloadAction = (name, type) => {
-    if (name && type === "PDF") {
+  const downloadAction = (baseFileName, type) => {
+    if (baseFileName && type === "PDF") {
       showToast();
     }
     const node = document.getElementById("outputPage");
@@ -68,21 +68,26 @@ const EditContextProvider = props => {
         height: `${node.offsetHeight}px`,
       },
     };
-
-    DomToImage.toPng(node, options)
+    const nodes = document.querySelectorAll(".outputPage");
+    const dataUrls = [];
+    const multiple = nodes.length > 1;
+    nodes.forEach((node, index) => 
+      DomToImage.toPng(node, options)
       .then(dataUrl => {
         const img = new Image();
         img.src = dataUrl;
-
+        const fileName = multiple ? `${baseFileName}-${index}.png` : `${baseFileName}.png`
         if (type === "PNG") {
-          downloadURI(dataUrl, `${name}.png`);
+          downloadURI(dataUrl, fileName);
         } else if (type === "PDF") {
-          downloadPdf(dataUrl, name);
+          dataUrls.push(dataUrl);
+          if(index===nodes.length-1) downloadPdf(dataUrls, baseFileName);
         }
       })
       .catch(error => {
         console.error("oops,something went wrong", error);
-      });
+      })
+    );
   };
   const downloadURI = (uri, name) => {
     const link = document.createElement("a");
@@ -102,12 +107,19 @@ const EditContextProvider = props => {
     //   setShowing(false);
     // }, 2000);
   };
-  const downloadPdf = async (imgDataUri, name) => {
+  const downloadPdf = async (imgDataUris, name) => {
+    console.log(imgDataUris);
     const doc = new jsPDF("p", "pt", "a4");
     const width = doc.internal.pageSize.width;
     const height = doc.internal.pageSize.height;
     doc.text(10, 20, "");
-    doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
+    imgDataUris.forEach((imgDataUri, i) => {
+      if(i>0) {
+        doc.addPage();
+        doc.setPage(i+1);
+      }
+      doc.addImage(imgDataUri, "PNG", 0, 0, width, height)
+    });
 
     await new Promise((resolve, reject) => {
       // Wait for PDF download
