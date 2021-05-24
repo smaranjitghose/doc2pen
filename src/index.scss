@@ -127,12 +127,12 @@ body::-webkit-scrollbar-thumb {
   box-shadow: inset 0 0 13px rgba(31, 113, 180, 5);
 }
 
-::selection {
+::selection:not(textarea) {
   color: none;
   background: none;
 }
 
-::-moz-selection {
+::-moz-selection:not(textarea) {
   color: none;
   background: none;
 }
