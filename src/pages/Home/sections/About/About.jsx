@@ -3,7 +3,6 @@ import styles from './about.module.scss';
 import step1 from './../../../../assets/images/home-about/step1.svg';
 import step2 from './../../../../assets/images/home-about/step2.svg';
 import step3 from './../../../../assets/images/home-about/step3.svg';
-import step4 from './../../../../assets/images/home-about/step4.svg';
 import openSource from './../../../../assets/images/home-about/open-source.svg';
 
 
@@ -31,34 +30,25 @@ function About() {
             <div className={styles.line}>Does it seem <b><i>too much of a hassle</i></b> in this age of online education?</div>
             <div className={styles.line}>If your answer is <b><i>yes</i></b>, then you've come to the <b><i>right place!</i></b></div>            
             <div className={styles.line}><b><i>Doc2Pen</i></b> is the 1 stop shop for getting all your <b><i>"handmade" assignments ready for submission digitally</i></b>.</div>
-            <div className={styles.line}>Use the highly customisable <b><i>Editor page</i></b> to <b><i>type in text and get a handwritten document!</i></b></div>            
-            <div className={styles.line}>Use the <b><i>Sketch page</i></b> to <b><i>digitally draw in a handmade style</i></b>!</div> 
-            <div className={styles.line}>And in the end, use the <b><i>Media Manip page</i></b> to <b><i>convert your assignment into the appropriate format</i></b> for submission!</div> 
 
             <div className={styles.steps}>
                 <Step
                     img={step1}
-                    title="Step 1 : Pick a Page"
-                    content="Here, you can choose one either from the wide variety of pages available or you can upload your own institution's letterpad."
+                    title="Step 1 : Type"
+                    content="Use the highly customisable Editor page to type in text and get a handwritten document!"
                     reverse={false}
                 />
                 <Step
                     img={step2}
-                    title="Step 2 : Pick a Font"
-                    content="You can adjust the combination of font-style, font-color and font-size to the one which resembles your handwriting."
+                    title="Step 2 : Draw"
+                    content="Use the Sketch page to digitally draw in a handmade style!"
                     reverse={true}    
                 />
                 <Step
                     img={step3}
-                    title="Step 3 : Type it"
-                    content="Use your fast typing skill to type the assignment in the editor and get it in handwritten form."
+                    title="Step 3 : Format"
+                    content="And in the end, use the Media Manip page to convert your assignment into the appropriate format for submission!"
                     reverse={false}
-                />
-                <Step
-                    img={step4}
-                    title="Step 4 : Download it"
-                    content="You can now download/export it in the .png, .jpg, .jpeg or .pdf format and get it printed in order to submit in the college."
-                    reverse={true}    
                 />
             </div>
             <img src={openSource} alt="Open Source" style={{width: "55vw"}}/>
