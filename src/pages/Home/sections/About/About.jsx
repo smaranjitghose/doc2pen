@@ -27,13 +27,13 @@ function About() {
             <div className={styles.title}>
                 What are we about?
             </div>
-            <div className={styles.line}>Are you a <b><i>student</b></i> who is tired of having to <b><i>write out assignments on paper, draw sketches by hand, scan each page, convert it all to a PDF</b></i>, and finally submit?</div>
-            <div className={styles.line}>Does it seem <b><i>too much of a hassle</b></i> in this age of online education?</div>
-            <div className={styles.line}>If your answer is <b><i>yes</b></i>, then you've come to the <b><i>right place!</b></i></div>            
-            <div className={styles.line}><b><i>Doc2Pen</b></i> is the 1 stop shop for getting all your <b><i>"handmade" assignments ready for submission digitally</b></i>.</div>
-            <div className={styles.line}>Use the highly customisable <b><i>Editor page</b></i> to <b><i>type in text and get a handwritten document!</b></i></div>            
-            <div className={styles.line}>Use the <b><i>Sketch page</b></i> to <b><i>digitally draw in a handmade style</b></i>!</div> 
-            <div className={styles.line}>And in the end, use the <b><i>Media Manip page</b></i> to <b><i>convert your assignment into the appropriate format</b></i> for submission!</div> 
+            <div className={styles.line}>Are you a <b><i>student</i></b> who is tired of having to <b><i>write out assignments on paper, draw sketches by hand, scan each page, convert it all to a PDF</i></b>, and finally submit?</div>
+            <div className={styles.line}>Does it seem <b><i>too much of a hassle</i></b> in this age of online education?</div>
+            <div className={styles.line}>If your answer is <b><i>yes</i></b>, then you've come to the <b><i>right place!</i></b></div>            
+            <div className={styles.line}><b><i>Doc2Pen</i></b> is the 1 stop shop for getting all your <b><i>"handmade" assignments ready for submission digitally</i></b>.</div>
+            <div className={styles.line}>Use the highly customisable <b><i>Editor page</i></b> to <b><i>type in text and get a handwritten document!</i></b></div>            
+            <div className={styles.line}>Use the <b><i>Sketch page</i></b> to <b><i>digitally draw in a handmade style</i></b>!</div> 
+            <div className={styles.line}>And in the end, use the <b><i>Media Manip page</i></b> to <b><i>convert your assignment into the appropriate format</i></b> for submission!</div> 
 
             <div className={styles.steps}>
                 <Step
