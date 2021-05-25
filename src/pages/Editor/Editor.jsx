@@ -13,27 +13,27 @@ import Output from "./sections/OutputComponent/Output";
 import ScrollToTop from "../../components/ScrollToTopButton/ScrollToTopButton";
 
 function Editor() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
-  return (
-    <>
-      <MetaComponent
-        title={metaData.editor.title}
-        description={metaData.editor.description}
-        keywords={metaData.editor.keywords}
-      />
-      <div className={styles.dscCommunity}>
-        <EditContextProvider>
-          <Settings />
-          <Output />
-        </EditContextProvider>
-      </div>
-      <div className={styles.btnWrapper}>
-        <ScrollToTop />
-      </div>
-    </>
-  );
+	return (
+		<>
+			<MetaComponent
+				title={metaData.editor.title}
+				description={metaData.editor.description}
+				keywords={metaData.editor.keywords}
+			/>
+			<div className={styles.dscCommunity}>
+				<EditContextProvider>
+					<Settings />
+					<Output />
+				</EditContextProvider>
+			</div>
+			<div className={styles.btnWrapper}>
+				<ScrollToTop />
+			</div>
+		</>
+	);
 }
 export default Editor;
