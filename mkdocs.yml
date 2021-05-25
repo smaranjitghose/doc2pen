@@ -1,0 +1,48 @@
+site_name: Doc2Pen Guide
+repo_url: https://github.com/smaranjitghose/doc2pen
+
+nav:
+    - Home: index.md
+    - Getting Started: getting_started.md
+    - Setup: setup.md
+    - Deployment: deployment.md
+    - Hosting: hosting.md
+
+
+theme: 
+    name: 'material'
+    logo: 'images/favicon.png'
+    favicon: 'images/favicon.png'
+    palette:
+        scheme: default
+        primary: indigo
+        accent: green
+    font:
+        text: Poppins
+    features:
+        - navigation.expand
+        - searcn.highlight
+        - navigation.sections
+        - navigation.top
+        - toc.integrate
+
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
+
+google_analytics:
+  - UA-XXXXXXXX-X
+  - auto
+
+markdown_extensions:
+  - attr_list
+  - toc:
+      permalink: false
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/smaranjitghose
+    - icon: fontawesome/brands/github
+      link: https://github.com/smaranjitghose
