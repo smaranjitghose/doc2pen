@@ -1,6 +1,23 @@
+# Doc2Pen
+
 <p align="center"><img src="readme_assets/doc2pen.gif"></p>
 
-An open source project aimed at making your student life easier!
+Are you a student who is tired of having to write out assignments on paper, draw sketches by hand, scan each page, convert it all to a PDF, and finally submit? 😩
+
+Does it seem too much of a hassle in this age of online education? 😫
+
+
+If your answer is yes, then you've come to the right place! 😃
+
+### Doc2Pen is the 1 stop shop for getting all your "handmade" assignments ready for submission digitally. 🥳
+
+- Use the highly customisable Editor page to type in text and get a handwritten document! 📝
+- Use the Sketch page to digitally draw in a handmade style! 🎨
+- And in the end, use the Media Manip page to convert your assignment into the appropriate format for submission! 📚
+
+It really is that easy! 🎊
+
+And the best part of all? **Doc2Pen is open source!** 🤩
 
 
 ![Issues](https://img.shields.io/github/issues/smaranjitghose/doc2pen)
