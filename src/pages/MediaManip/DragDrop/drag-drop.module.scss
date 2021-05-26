@@ -1,0 +1,76 @@
+.container {
+  width: 70%;
+  min-height: 8rem;
+  height: max-content;
+  margin: 2rem auto;
+  border: 2px solid #cccccc;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 5px;
+
+  &_image {
+    width: 90%;
+    flex: 1 0 auto;
+    margin: 10px;
+    padding: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+  }
+
+  &_upload {
+    width: 100%;
+    margin: 16px;
+    border: 3px dashed #cccccc;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.image {
+  position: relative;
+
+  & > img {
+    display: "block";
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-right: 10px;
+    object-fit: fill;
+    box-shadow: 0.8px 2px 6px rgba(36, 34, 34, 0.507);
+  }
+
+  & > span {
+    position: absolute;
+    top: 8px;
+    right: 18px;
+    color: white;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.589);
+    }
+  }
+}
+
+.scroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}

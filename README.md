@@ -1,66 +1,114 @@
-<h1 align= "center"><b>Doc2Pen</b></h1>
+# Doc2Pen
+
+<p align="center"><img src="readme_assets/doc2pen.gif"></p>
+
+Are you a student who is tired of having to write out assignments on paper, draw sketches by hand, scan each page, convert it all to a PDF, and finally submit? 😩
+
+Does it seem too much of a hassle in this age of online education? 😫
+
+
+If your answer is yes, then you've come to the right place! 😃
+
+### Doc2Pen is the 1 stop shop for getting all your "handmade" assignments ready for submission digitally. 🥳
+
+- Use the highly customisable Editor page to type in text and get a handwritten document! 📝
+- Use the Sketch page to digitally draw in a handmade style! 🎨
+- And in the end, use the Media Manip page to convert your assignment into the appropriate format for submission! 📚
+
+It really is that easy! 🎊
+
+And the best part of all? **Doc2Pen is open source!** 🤩
+
 
 ![Issues](https://img.shields.io/github/issues/smaranjitghose/doc2pen)
-![Pull Requests](https://img.shields.io/github/issues-pr/smaranjitghose/doc2pen?)
+![Pull Requests](https://img.shields.io/github/issues-pr/smaranjitghose/doc2pen)
 ![Forks](https://img.shields.io/github/forks/smaranjitghose/doc2pen)
-![Stars](	https://img.shields.io/github/stars/smaranjitghose/doc2pen)
-![License](https://img.shields.io/github/license/smaranjitghose/doc2pen)
+![Stars](https://img.shields.io/github/stars/smaranjitghose/doc2pen)
+[![License](https://img.shields.io/github/license/smaranjitghose/doc2pen)](https://github.com/smaranjitghose/doc2pen/blob/master/LICENSE)
+![](https://img.shields.io/github/repo-size/smaranjitghose/doc2pen.svg?label=Repo%20size&style=flat-square)&nbsp;
 
 
-Are you a student burdened with writing assignments?
 
-<p align="center"><img width=50% src="https://media.giphy.com/media/l4EoOFliX6Vw4PD20/giphy.gif"></p>
+## DEMO
 
-And on the top of that your faculty won't accept printed ones? 
+<!-- 
+-----------
+Add GIFs of the entire web app
+-----------
+-->
 
-<p align="center"><img width=50% src="https://media.giphy.com/media/6k5aYgBKTxe3C/giphy.gif"></p>
+## Features:
 
-Don't have the time and energy to cope up with this?
+- [ ] Type/Paste your assignments and get handwritten ones to download directly! Bye-Bye Pen&Paper
+- [ ] Make Sketches/Diagrams/Figures for your assignments/presentations
+- [ ] Media Manager
+  - [ ]  PDF Spliter
+  - [ ]  PDF Merger
+  - [ ]  PNG to JPG
+  - [ ]  JPG to PNG
+  - [ ]  PNG to WEBP
+  - [ ]  WEBP to PNG
+  - [ ]  JPG to WEBP
+  - [ ]  WEBP to PNG
+  - [ ]  JIFF to PNG
+  - [ ]  JIFF to JPG
+  - [ ]  PNG(multiple) to PDF
 
-<p align="center"><img width=50% src="https://media.giphy.com/media/biQcYyVoNJoA0/giphy.gif"></p>
 
-Worry not! We are here to save you from your misery 🦸‍♂️. Doc2pen is your one stop solution to upload any document or write it yourself and get an handwritten assignment out instantly!
+## Basic structure of the project repository 🗃️📂
 
-<p align="center"><img width=50% src="https://media.giphy.com/media/Lo6LNpySgc0qlzoOKR/giphy.gif"></p>
 
-https://doc2pen-beta-1.netlify.app
+```terminal
+|
+|- readme_assets   # Contains all the images used for the README.MD
+|- public          # Contains the stylesheets, images and fonts. Any files within this directory will not be processed by Webpack but copied directly to the build folder.
+|- src:            # Contains all source code for the React application.
+    |
+    |- App.js
+    |- index.css
+    |- index.js
+    |-assets         # Contains all the community brand assets
+    |-components     # Contains all the components used within the app.
+    |-fonts          # Contains all the fonts 
+    |-pages          # Contains all the sections of the page.
+          |- 404
+          |- Home
+          |- Editor
+          |- Sketch
+    |-seo # Contains code for meta tags using react-helmet
+```
+### 1.3. Tech Stack: 💻
 
-# Tasks:
+<img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>   <img alt="React" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
 
-Features:
 
-- [ ] Font Size
-- [ ] Font Type
-- [ ] Font Color
-- [ ] Letter Spacing
-- [ ] Page Margins
-- [ ] Page Lines
-- [ ] Page Background
-- [ ] Adjust X Pos
-- [ ] Adjust Y Pos
-- [ ] Download Options: PNG,JPEG,JPEG,DOCX,PDF
-- [ ] New Page
-- [ ] Google Docs Integration
+## Under the hood:
 
-Addons:
+- [React - Bootstrap](https://react-bootstrap.github.io/)
+- [React - Helmet](https://www.npmjs.com/package/react-helmet): Document Head Management
+- [React - Leaflet.js](https://react-leaflet.js.org/): Interactive Maps
+- [React - Dropzone.js](https://react-dropzone.js.org/): Drag and drop file uploads
+- [Rough.js](https://roughjs.com/): Make sketchy, hand drawn figures
+- [Mousetrap](https://github.com/ccampbell/mousetrap): Handling Keyboard shortcuts
+- [ReactJS - Snackbar](https://www.npmjs.com/package/react-js-snackbar): Making snackbars to provide brief messages
+- [React Reveal](https://www.react-reveal.com/): Animations
+- [JSPDF](https://www.npmjs.com/package/jspdf): Generate PDFs
+- [React Scroll](https://www.npmjs.com/package/react-scroll): Smooth Scrolling between sections
 
-- Using GANS or Transformers to generate your homeworks!
 
-- [ ] Front End Development
-  - [ ] Revamp the UI
-  - [ ] Donation Page
-  - [ ] Menu Bar
-  - [ ] Footer
-  
-- [ ] Collection of Custom Fonts
 
-<h2 align="center"><b>Open Source Programs we have been a part of:</b></h2>
-<p align="center">
-<img width=20% src="assets/images/hakin_codes.png">&ensp;&ensp;&ensp;
-<img width=20% src="assets/images/psoc_logo.png">
-</p>
 
-<h2 align= "center"><b> Project Maintainers</b></h2>
+## Wish to fix a bug or add a new feature?[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)🤝🏽🍀:
+
+
+<p align = "center"><img src = "https://media.giphy.com/media/1xOe0qgiYLYWE6pkki/giphy.gif"></p>
+
+Please check out our [contribution guidelines](./CONTRIBUTING.md)
+
+## The geeks🤓 behind this initiative:
+
+
+**Our Project Maintainers👨‍🏫:**
 
 <p align="center">
 <img width=20% src="https://avatars2.githubusercontent.com/u/46641503?v=4">&ensp;&ensp;&ensp;
@@ -68,21 +116,33 @@ Addons:
 </p>
 
 <a href="https://github.com/smaranjitghose">
-<h4 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-<a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h4></a>
+<h5 align="center"><b>Smaranjit Ghose</b></a>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+<a href="https://github.com/anushbhatia"><b>Anush Bhatia</b></h5></a>
 
-<h2 align = "center">Current Contributors</h2>
+**Our valuable Contributors👩‍💻👨‍💻**
+<a href="https://github.com/smaranjitghose/doc2pen/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=smaranjitghose/doc2pen" />
+</a>
 
-<p align = "center"><a href="https://github.com/smaranjitghose/doc2pen/graphs/contributors"><img src="https://contributors-img.web.app/image?repo=smaranjitghose/doc2pen" />
-</a></p>
+## Open Source Programs we have been associated with: 
 
-<a href="./Code_of_conduct.md"><h2 align= "center"><b> Code of Conduct</b></h2></a> 
-<p align="center"><img width=35% src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif"></p>
+<p align="center">
+<a href="https://www.pclubsummerofcode.in/"><img src="./readme_assets/psoc.png" width="25%"></a>
+<a href="https://hakincodes.tech/"><img src="./readme_assets/ch.png" width="25%"></a>
+<a href="https://devscript.tech/woc/"><img src="./readme_assets/dwoc.png" width="25%"></a>
+</a>
+<a href="https://slop.dscdaiict.in/projects"><img src="./readme_assets/SLOP.webp" width= "25%"/></a>
+<a href="https://swoc.tech/"><img src="./readme_assets/SWOC-logo.webp" width= "25%" height= ""/></a>
+<a href="https://crosswoc.ieeedtu.in/"><img src="./readme_assets/crosswoc.png" width= "25%"/></a>
+<a href="https://mexili.github.io/winter_of_code/"><img src="./readme_assets/mwoc.png" width= "25%"/></a>
+<a href="https://gssoc.girlscript.tech/"><img src="./readme_assets/gssoc.png" width= "25%"/></a>
+</p>
 
-<a href="./License.md"><h2 align= "center"><b> License</b></h2></a> 
-<p align="center"><img width=35% src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif"></p>
+## Code of Conduct
+<p align="center"><img src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif" width=35%></p>
 
-### __Made with 💖 for open source__
+## License 
+<p align="center"><img src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif" width=35%></p>
 
 
-
+## Made with ♥ for the students of the world!
