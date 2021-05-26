@@ -31,11 +31,18 @@ And the best part of all? **Doc2Pen is open source!** 🤩
 
 ## DEMO
 
-<!-- 
------------
-Add GIFs of the entire web app
------------
--->
+### Home Page
+<img src="readme_assets/home.gif">
+
+### Editor Page
+<img src="readme_assets/editor.gif">
+
+### Sketch Page
+<img src="readme_assets/sketch.gif">
+
+### Media Manip Page
+<img src="readme_assets/mediaManip.gif">
+
 
 ## Features:
 
@@ -77,7 +84,7 @@ Add GIFs of the entire web app
           |- Sketch
     |-seo # Contains code for meta tags using react-helmet
 ```
-### 1.3. Tech Stack: 💻
+### Tech Stack: 💻
 
 <img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>   <img alt="React" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
 
