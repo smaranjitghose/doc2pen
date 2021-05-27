@@ -3,7 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import classes from "./output.module.scss";
 import { EditContext } from "../../containers/editContext";
 
-const OutputComponent = ({ pageNo }) => {
+const OutputComponent = ({ pageNo, show }) => {
   const editContext = useContext(EditContext);
   const page = require(`./${editContext.pageSrc}`);
   console.log(`${editContext.pageSrc}`);
@@ -17,7 +17,7 @@ const OutputComponent = ({ pageNo }) => {
 
   return (
     <>
-      <div className={`${classes.wrapper} col-11 col-lg-8 mx-auto mt-4 p-2`}>
+      <div className={`${classes.wrapper} col-11 col-lg-8 mx-auto mt-4 p-2`} style={{display: show ? "block" : "none"}}>
         <div id="outputPage" className={`outputPage col-12 mx-auto px-0`}>
           <div className={`${classes.imgContainer} col-12 mx-auto px-0`}>
             <img src={page.default} alt="editor" className="mx-auto px-0" Width="100%" Height="100%" />
