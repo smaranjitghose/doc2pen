@@ -19,7 +19,7 @@ function Editor() {
 
   useEffect(() => {
     if(currentPageNo > pageCount) setCurrentPageNo(prev => prev-1);
-  }, [pageCount])
+  }, [pageCount, currentPageNo])
 
   useEffect(() => {
     window.scrollTo(0, 0);
