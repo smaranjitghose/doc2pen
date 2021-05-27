@@ -66,8 +66,8 @@ export default function MediaManip() {
   const convertImage = format => {
     startConversion();
     let img = new Image();
-    let canvas = document.createElement("canvas");
     files.forEach(item => {
+      let canvas = document.createElement("canvas");
       img.src = item.preview;
       canvas.width = img.width;
       canvas.height = img.height;
