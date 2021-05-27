@@ -53,16 +53,14 @@ function DragDrop(props) {
           ))}
         </div>
       )}
-      {files.length === 0 && (
-        <div {...getRootProps({ className: "dropzone" })} className={styles.container_upload}>
-          <input {...getInputProps()} />
-          {isDragActive ? (
-            <p>Drop the files here ...</p>
-          ) : (
-            <p>Drag 'n' drop some files here, or click to select files</p>
-          )}
-        </div>
-      )}
+      <div {...getRootProps({ className: "dropzone" })} className={styles.container_upload}>
+        <input {...getInputProps()} />
+        {isDragActive ? (
+          <p>Drop the files here ...</p>
+        ) : (
+          <p>Drag 'n' drop some files here, or click to select files</p>
+        )}
+      </div>
     </section>
   );
 }
