@@ -11,13 +11,15 @@ const OutputComponent = ({ pageNo, show }) => {
   const [pageText, setPageText] = useState("");
   const [wordCount, setWordCount] = useState(0);
 
+  const { allPagesVisible } = editContext;
+
   useEffect(() => {
     setWordCount(pageText.split(/[\n|\t| ]/).filter(c => c !== "").length);
   }, [pageText]);
 
   return (
     <>
-      <div className={`${classes.wrapper} col-11 col-lg-8 mx-auto mt-4 p-2`} style={{display: show ? "block" : "none"}}>
+      <div className={`${classes.wrapper} col-11 col-lg-8 mx-auto mt-4 p-2`} style={{display: show || allPagesVisible ? "block" : "none"}}>
         <div id="outputPage" className={`outputPage col-12 mx-auto px-0`}>
           <div className={`${classes.imgContainer} col-12 mx-auto px-0`}>
             <img src={page.default} alt="editor" className="mx-auto px-0" Width="100%" Height="100%" />

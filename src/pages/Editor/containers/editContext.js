@@ -29,6 +29,8 @@ const EditContextProvider = props => {
     bodyText: "",
   });
 
+  const [allPagesVisible, setAllPagesVisible] = useState(false);
+
   const [show, setShow] = useState(false);
   const [showing, setShowing] = useState(false);
 
@@ -77,15 +79,21 @@ const EditContextProvider = props => {
         const img = new Image();
         img.src = dataUrl;
         const fileName = multiple ? `${baseFileName}-${index}.png` : `${baseFileName}.png`
+        dataUrls.push(dataUrl);
         if (type === "PNG") {
           downloadURI(dataUrl, fileName);
         } else if (type === "PDF") {
-          dataUrls.push(dataUrl);
-          if(index===nodes.length-1) downloadPdf(dataUrls, baseFileName);
+          if(dataUrls.length === nodes.length) downloadPdf(dataUrls, baseFileName);
         }
       })
       .catch(error => {
         console.error("oops,something went wrong", error);
+      })
+      .finally(() => {
+        if(dataUrls.length === nodes.length) {
+          console.log("converted")
+          setAllPagesVisible(false)
+        }
       })
     );
   };
@@ -108,7 +116,6 @@ const EditContextProvider = props => {
     // }, 2000);
   };
   const downloadPdf = async (imgDataUris, name) => {
-    console.log(imgDataUris);
     const doc = new jsPDF("p", "pt", "a4");
     const width = doc.internal.pageSize.width;
     const height = doc.internal.pageSize.height;
@@ -176,6 +183,8 @@ const EditContextProvider = props => {
         downloadAction,
         pageSrcHandler,
         importTxt,
+        allPagesVisible,
+        setAllPagesVisible
       }}
     >
       {props.children}
