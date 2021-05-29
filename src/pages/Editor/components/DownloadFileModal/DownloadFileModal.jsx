@@ -11,6 +11,7 @@ const DownloadFileModal = props => {
   const handleDownloadFile = e => {
     if (!value) setValueError("please provide file name");
     else {
+      editContext.setAllPagesVisible(true);
       editContext.downloadAction(value, fileType);
       setModal(false);
       setValue("");
