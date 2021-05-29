@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import DomToImage from "dom-to-image";
 import { jsPDF } from "jspdf";
+import JSZip from "jszip"
+import { saveAs } from "file-saver"
 import ReactSnackBar from "react-js-snackbar";
 import checkBox from "./../../../assets/images/checkmark.svg";
 
@@ -81,7 +83,8 @@ const EditContextProvider = props => {
         const fileName = multiple ? `${baseFileName}-${index}.png` : `${baseFileName}.png`
         dataUrls.push(dataUrl);
         if (type === "PNG") {
-          downloadURI(dataUrl, fileName);
+          if(nodes.length===1) downloadURI(dataUrl, fileName);
+          else if(dataUrls.length === nodes.length) downloadZip(dataUrls, baseFileName)
         } else if (type === "PDF") {
           if(dataUrls.length === nodes.length) downloadPdf(dataUrls, baseFileName);
         }
@@ -91,7 +94,7 @@ const EditContextProvider = props => {
       })
       .finally(() => {
         if(dataUrls.length === nodes.length) {
-          console.log("converted")
+          console.log("all converted")
           setAllPagesVisible(false)
         }
       })
@@ -105,6 +108,7 @@ const EditContextProvider = props => {
     link.click();
     document.body.removeChild(link);
   };
+
   const showToast = () => {
     if (showing) return;
 
@@ -115,6 +119,7 @@ const EditContextProvider = props => {
     //   setShowing(false);
     // }, 2000);
   };
+
   const downloadPdf = async (imgDataUris, name) => {
     const doc = new jsPDF("p", "pt", "a4");
     const width = doc.internal.pageSize.width;
@@ -138,6 +143,17 @@ const EditContextProvider = props => {
     setShow(false);
     setShowing(false);
   };
+
+  const downloadZip = (imgDataUris, name) => {
+    const zip = new JSZip();
+    imgDataUris.forEach((img, i) => {
+      const b64code = img.substring(22);
+      zip.file(`page-${i+1}.png`, b64code, { base64: true });
+    });
+    zip.generateAsync({ type: "blob" }).then(function (content) {
+      saveAs(content, `${name}.zip`);
+    });
+  }
 
   const importTxt = e => {
     e.preventDefault();
