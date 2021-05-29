@@ -6,6 +6,8 @@ import UseAnimations from "react-useanimations";
 import JSONAnimation from "../../assets/githublogo/github.json";
 import github from "react-useanimations/lib/github";
 
+const year = new Date().getFullYear(); 
+
 export default function Footer(props) {
   return (
     <div className={`${styles.footerDiv}`}>
@@ -35,6 +37,7 @@ export default function Footer(props) {
       <div>
         <Fade>
           <p className={styles.footerText}>{emoji("Made with ❤️ in India for the students of the world.")}</p>
+          <p className={styles.footerText}>Copyright @{year}</p>
         </Fade>
       </div>
     </div>
