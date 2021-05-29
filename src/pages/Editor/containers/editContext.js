@@ -78,8 +78,6 @@ const EditContextProvider = props => {
     nodes.forEach((node, index) => 
       DomToImage.toPng(node, options)
       .then(dataUrl => {
-        const img = new Image();
-        img.src = dataUrl;
         const fileName = multiple ? `${baseFileName}-${index}.png` : `${baseFileName}.png`
         dataUrls.push(dataUrl);
         if (type === "PNG") {
