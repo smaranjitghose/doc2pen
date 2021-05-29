@@ -83,7 +83,7 @@ export default function MediaManip() {
       });
     });
   };
-
+  
   const onDownload = () => {
     convertedFiles.forEach((item, index) => {
       zip.file(`${index}.${item.type}`, item.data, { base64: true });

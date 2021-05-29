@@ -5,12 +5,11 @@
   margin: 2rem auto;
   border: 2px solid #cccccc;
   display: flex;
-  justify-content: flex-start;
+  // justify-content: flex-start;
   border-radius: 5px;
 
   &_image {
-    width: 90%;
-    flex: 1 0 auto;
+    width: Min(Calc(100% - 150px), max-content);
     margin: 10px;
     padding: 8px;
     display: flex;
@@ -20,10 +19,12 @@
   }
 
   &_upload {
-    width: 100%;
     margin: 16px;
     border: 3px dashed #cccccc;
     padding: 10px;
+    min-width: 150px;
+    width: 150px;
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
