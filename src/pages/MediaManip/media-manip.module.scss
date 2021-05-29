@@ -27,3 +27,10 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 650px) {
+  .mediaManip_dropDowns {
+    flex-direction: column;
+    height: 40vh;
+  }
+}
