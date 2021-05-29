@@ -5,7 +5,6 @@
   margin: 2rem auto;
   border: 2px solid #cccccc;
   display: flex;
-  // justify-content: flex-start;
   border-radius: 5px;
 
   &_image {
@@ -74,4 +73,16 @@
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #555;
+}
+
+@media (max-width: 650px) {
+  .container {
+    flex-direction: column;
+    &_image {
+      width: 90%;
+    }    
+    &_upload {
+      width: 90%;
+    }
+  }  
 }
