@@ -5,7 +5,7 @@
   transform: translate(-50%, -50%);
   padding: 0;
   margin: 0;
-  background-color: #fcdc29;
+  background-color: #1F1939;
   text-align: center;
   height: 100vh;
   font-family: "lato";
@@ -19,7 +19,7 @@
     display: inline-block;
     width: 15px;
     height: 15px;
-    background-color: #fcdc29;
+    background-color: #1F1939;
     border-radius: 50%;
     animation: loading 1.5s cubic-bezier(0.8, 0.5, 0.2, 1.4) infinite;
     transform-origin: bottom center;
@@ -53,14 +53,14 @@
 @keyframes loading {
   0% {
     transform: translateY(0px);
-    background-color: #fcdc29;
+    background-color: #1F1939;
   }
   50% {
     transform: translateY(50px);
-    background-color: #ef584a;
+    background-color: #cccccc;
   }
   100% {
     transform: translateY(0px);
-    background-color: #fcdc29;
+    background-color: #1F1939;
   }
 }
