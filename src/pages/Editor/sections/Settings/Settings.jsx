@@ -51,6 +51,11 @@ const Settings = () => {
 							"RGhandwritten",
 							"Moody",
 							"Norm",
+						        "OverTheRainbow"
+						        "RustyColaPen"
+						        "Kalam"
+						        "DpDorkDiary"
+						        "Occupy"
 						]}
 						active={editContext.bodyValues.bodyFont}
 					/>
