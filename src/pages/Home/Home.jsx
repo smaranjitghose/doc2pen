@@ -11,28 +11,28 @@ import ScrollToTop from "../../components/ScrollToTopButton/ScrollToTopButton";
 import style from "./home.module.scss";
 
 function Home() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
-  return (
-    <div className="HomePage">
-      <MetaComponent
-        title={metaData.home.title}
-        description={metaData.home.description}
-        keywords={metaData.home.keywords}
-      />
-      <Banner />
-      <About />
-      <OpenSource />
-      <Team />
-      <SupportUs />
-      <Contact />
-      <div className={style.btnWrapper}>
-        <ScrollToTop />
-      </div>
-    </div>
-  );
+	return (
+		<div className="HomePage">
+			<MetaComponent
+				title={metaData.home.title}
+				description={metaData.home.description}
+				keywords={metaData.home.keywords}
+			/>
+			<Banner />
+			<About />
+			<OpenSource />
+			<Team />
+			<SupportUs />
+			<Contact />
+			<div className={style.btnWrapper}>
+				<ScrollToTop />
+			</div>
+		</div>
+	);
 }
 
 export default Home;

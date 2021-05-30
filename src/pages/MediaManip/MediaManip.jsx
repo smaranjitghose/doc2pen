@@ -20,12 +20,12 @@ export default function MediaManip() {
   const [outputOptions, setOutputOptions] = useState(["png", "jpg", "webp", "jpeg", "pdf"]);
   let zip = new JSZip();
 
-  useEffect(() => {
-    if (files.length === 0) {
-      setConvert(true);
-      setDownload(true);
-    } else setConvert(false);
-  }, [files, setConvert, setDownload]);
+	useEffect(() => {
+		if (files.length === 0) {
+			setConvert(true);
+			setDownload(true);
+		} else setConvert(false);
+	}, [files, setConvert, setDownload]);
 
   useEffect(() => {
     if (convertedFiles.length === 0) setDownload(true);
@@ -131,27 +131,54 @@ export default function MediaManip() {
     setProgress(0);
   };
 
-  return (
-    <div className={styles.mediaManip}>
-      <h1 className={styles.mediaManip_title}>Image Converter</h1>
-      <div className={styles.mediaManip_dropDowns}>
-        <Dropdown type="Input" value={input} />
-        {!convert && <Progress progress={progress} />}
-        <Dropdown type="Output" value={output} onChange={v => setOutput(v)} outputOptions={outputOptions} />
-      </div>
-      <DragDrop
-        files={files}
-        setFiles={setFiles}
-        setInput={setInput}
-        setOutput={setOutput}
-        input={input}
-        outputOptions={outputOptions}
-        setOutputOptions={setOutputOptions}
-      />
-      <div className={styles.mediaManip_btn}>
-        <Button value="Convert" type="primary" onClick={() => onConvert()} disabled={convert} />
-        {!convert && <Button value="Download" type="secondary" onClick={onDownload} disabled={download} />}
-      </div>
-    </div>
-  );
+	const onDownload = () => {
+		convertedFiles.forEach((item, index) => {
+			zip.file(`${index}.${item.type}`, item.data, { base64: true });
+		});
+		zip.generateAsync({ type: "blob" }).then(function (content) {
+			saveAs(content, "converted files.zip");
+		});
+		setProgress(0);
+	};
+
+	return (
+		<div className={styles.mediaManip}>
+			<h1 className={styles.mediaManip_title}>Image Converter</h1>
+			<div className={styles.mediaManip_dropDowns}>
+				<Dropdown type="Input" value={input} />
+				{!convert && <Progress progress={progress} />}
+				<Dropdown
+					type="Output"
+					value={output}
+					onChange={v => setOutput(v)}
+					outputOptions={outputOptions}
+				/>
+			</div>
+			<DragDrop
+				files={files}
+				setFiles={setFiles}
+				setInput={setInput}
+				setOutput={setOutput}
+				input={input}
+				outputOptions={outputOptions}
+				setOutputOptions={setOutputOptions}
+			/>
+			<div className={styles.mediaManip_btn}>
+				<Button
+					value="Convert"
+					type="primary"
+					onClick={() => onConvert()}
+					disabled={convert}
+				/>
+				{!convert && (
+					<Button
+						value="Download"
+						type="secondary"
+						onClick={onDownload}
+						disabled={download}
+					/>
+				)}
+			</div>
+		</div>
+	);
 }

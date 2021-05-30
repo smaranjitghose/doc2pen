@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import DomToImage from "dom-to-image";
 import { jsPDF } from "jspdf";
-import JSZip from "jszip"
-import { saveAs } from "file-saver"
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
 import ReactSnackBar from "react-js-snackbar";
 import checkBox from "./../../../assets/images/checkmark.svg";
 
 export const EditContext = React.createContext();
 const svgStyles = {
-  height: 50,
-  position: "absolute",
-  top: 0,
-  left: 0,
+	height: 50,
+	position: "absolute",
+	top: 0,
+	left: 0,
 };
 const EditContextProvider = props => {
   const aImagePrefix = "";
