@@ -1,4 +1,4 @@
-import React,{ useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 import classes from "./output.module.scss";
 import { EditContext } from "../../containers/editContext";
@@ -19,10 +19,19 @@ const OutputComponent = ({ pageNo, show }) => {
 
 	return (
 		<>
-			<div className={`${classes.wrapper} col-11 col-lg-8 mx-auto mt-4 p-2`} style={{display: show || allPagesVisible ? "block" : "none"}}>
+			<div
+				className={`${classes.wrapper} col-11 col-lg-8 mx-auto mt-4 p-2`}
+				style={{ display: show || allPagesVisible ? "block" : "none" }}
+			>
 				<div id="outputPage" className={"outputPage col-12 mx-auto px-0"}>
 					<div className={`${classes.imgContainer} col-12 mx-auto px-0`}>
-						<img src={page.default} alt="editor" className="mx-auto px-0" Width="100%" Height="100%" />
+						<img
+							src={page.default}
+							alt="editor"
+							className="mx-auto px-0"
+							Width="100%"
+							Height="100%"
+						/>
 					</div>
 					<textarea
 						type="text"
@@ -45,14 +54,26 @@ const OutputComponent = ({ pageNo, show }) => {
 						}}
 					/>
 				</div>
-				<div style={{ fontSize: "0.75rem", marginTop: "11px", fontWeight: "bold", display: "flex", justifyContent: "space-between" }}>
+				<div
+					style={{
+						fontSize: "0.75rem",
+						marginTop: "11px",
+						fontWeight: "bold",
+						display: "flex",
+						justifyContent: "space-between",
+					}}
+				>
 					<div>
-            Word Count:&nbsp;
-						<span style={{ color: "#28b8c6", fontSize: "0.85rem" }}>{wordCount}</span>
+						Word Count:&nbsp;
+						<span style={{ color: "#28b8c6", fontSize: "0.85rem" }}>
+							{wordCount}
+						</span>
 					</div>
 					<div>
-            Page Number:&nbsp;
-						<span style={{ color: "#28b8c6", fontSize: "0.85rem" }}>{pageNo}</span>
+						Page Number:&nbsp;
+						<span style={{ color: "#28b8c6", fontSize: "0.85rem" }}>
+							{pageNo}
+						</span>
 					</div>
 				</div>
 			</div>

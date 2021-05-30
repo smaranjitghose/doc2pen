@@ -4,7 +4,15 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import styles from "./drag-drop.module.scss";
 
 function DragDrop(props) {
-	const { files, setFiles, setInput, setOutput, input, outputOptions, setOutputOptions } = props;
+	const {
+		files,
+		setFiles,
+		setInput,
+		setOutput,
+		input,
+		outputOptions,
+		setOutputOptions,
+	} = props;
 	const onDrop = useCallback(
 		acceptedFiles => {
 			const newFile = acceptedFiles.map(file => {
@@ -28,7 +36,10 @@ function DragDrop(props) {
 		[setFiles, setInput, outputOptions, setOutputOptions]
 	);
 
-	const { getRootProps, getInputProps, isDragActive } = useDropzone({ accept: "image/*", onDrop });
+	const { getRootProps, getInputProps, isDragActive } = useDropzone({
+		accept: "image/*",
+		onDrop,
+	});
 
 	const deleteImage = path => {
 		setFiles(prevState => prevState.filter(file => file.path !== path));
@@ -53,7 +64,10 @@ function DragDrop(props) {
 					))}
 				</div>
 			)}
-			<div {...getRootProps({ className: "dropzone" })} className={styles.container_upload}>
+			<div
+				{...getRootProps({ className: "dropzone" })}
+				className={styles.container_upload}
+			>
 				<input {...getInputProps()} />
 				{isDragActive ? (
 					<p>Drop the files here ...</p>

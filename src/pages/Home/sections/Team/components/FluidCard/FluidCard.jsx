@@ -5,7 +5,8 @@ import github from "react-useanimations/lib/github";
 import linkedin from "react-useanimations/lib/linkedin";
 
 function FluidCard(props) {
-	const { name, title, githubLink, linkedinLink, imgArray } = props.content || "";
+	const { name, title, githubLink, linkedinLink, imgArray } =
+		props.content || "";
 
 	const currentImageIndex = useRef(0);
 	const liquidBG = useRef(null);
@@ -41,24 +42,24 @@ function FluidCard(props) {
 		let divHeight = divElement.offsetHeight;
 
 		function mouseDirection(e) {
-			if(window.isHome && canvasRef.current !== null){
+			if (window.isHome && canvasRef.current !== null) {
 				const canvasRightX =
-          canvasRef.current.offsetParent.offsetLeft +
-          canvasRef.current.offsetWidth -
-          2 * canvasPadding;
+					canvasRef.current.offsetParent.offsetLeft +
+					canvasRef.current.offsetWidth -
+					2 * canvasPadding;
 				const canvasLeftX = canvasRef.current.offsetParent.offsetLeft;
 
 				const canvasBottomY =
-          canvasRef.current.offsetParent.offsetTop +
-          canvasRef.current.offsetHeight -
-          2 * canvasPadding;
+					canvasRef.current.offsetParent.offsetTop +
+					canvasRef.current.offsetHeight -
+					2 * canvasPadding;
 				const canvasTopY = canvasRef.current.offsetParent.offsetTop;
 
 				const isWithinDiv =
-          e.pageX > canvasLeftX + mouseDist &&
-          e.pageX < canvasRightX - mouseDist &&
-          e.pageY > canvasTopY + mouseDist &&
-          e.pageY < canvasBottomY - mouseDist;
+					e.pageX > canvasLeftX + mouseDist &&
+					e.pageX < canvasRightX - mouseDist &&
+					e.pageY > canvasTopY + mouseDist &&
+					e.pageY < canvasBottomY - mouseDist;
 
 				if (e.pageX < canvasLeftX) {
 					if (mouseX < e.pageX && !isWithinDiv) mouseDirectionX = 1;
@@ -83,9 +84,9 @@ function FluidCard(props) {
 				mouseX = e.pageX;
 				mouseY = e.pageY;
 				relMouseX =
-          mouseX - canvasRef.current.offsetParent.offsetLeft + canvasPadding;
+					mouseX - canvasRef.current.offsetParent.offsetLeft + canvasPadding;
 				relMouseY =
-          mouseY - canvasRef.current.offsetParent.offsetTop + canvasPadding;
+					mouseY - canvasRef.current.offsetParent.offsetTop + canvasPadding;
 			}
 		}
 		document.addEventListener("mousemove", mouseDirection);
@@ -173,7 +174,10 @@ function FluidCard(props) {
 				let relDist = 1 - Math.sqrt(dx * dx + dy * dy) / mouseDist;
 
 				// Move x
-				if ((mouseDirectionX + radius > 0 && relMouseX > this.x) || (mouseDirectionX - radius < 0 && relMouseX < this.x)) {
+				if (
+					(mouseDirectionX + radius > 0 && relMouseX > this.x) ||
+					(mouseDirectionX - radius < 0 && relMouseX < this.x)
+				) {
 					if (relDist > 0 && relDist < 1) {
 						this.vx = (mouseSpeedX / 4) * relDist;
 					}
@@ -182,7 +186,10 @@ function FluidCard(props) {
 				this.x += this.vx;
 
 				// Move y
-				if ((mouseDirectionY + radius > 0 && relMouseY > this.y) || (mouseDirectionY - radius < 0 && relMouseY < this.y)) {
+				if (
+					(mouseDirectionY + radius > 0 && relMouseY > this.y) ||
+					(mouseDirectionY - radius < 0 && relMouseY < this.y)
+				) {
 					if (relDist > 0 && relDist < 1) {
 						this.vy = (mouseSpeedY / 4) * relDist;
 					}
@@ -292,7 +299,11 @@ function FluidCard(props) {
 
 	return (
 		<div className={styles["card-container"]}>
-			<div ref={liquidBG} className={styles["div-liquid"]} onClick={drawNextImage}>
+			<div
+				ref={liquidBG}
+				className={styles["div-liquid"]}
+				onClick={drawNextImage}
+			>
 				<canvas ref={canvasRef} />
 			</div>
 			<div className={styles.content}>
@@ -315,7 +326,11 @@ function FluidCard(props) {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<UseAnimations animation={linkedin} size={42} strokeColor={"#0e76a8"} />
+							<UseAnimations
+								animation={linkedin}
+								size={42}
+								strokeColor={"#0e76a8"}
+							/>
 						</a>
 					</div>
 				</div>

@@ -25,7 +25,6 @@ function SupportUs() {
 									width="25px"
 								/>
 							</div>
-            
 						</a>
 					</div>
 				</div>

@@ -3,12 +3,14 @@
 const data = {
 	home: {
 		title: "Doc2pen",
-		description: "A student's savior to submit those assignments by just typing them out and getting it handwritten on the go!",
+		description:
+			"A student's savior to submit those assignments by just typing them out and getting it handwritten on the go!",
 		keywords: "doc2pen, home, student",
 	},
 	editor: {
 		title: "Doc2pen - Editor",
-		description: "Editor is a tool to help you convert your typed documents into handwritten.",
+		description:
+			"Editor is a tool to help you convert your typed documents into handwritten.",
 		keywords: "doc2pen, editor",
 	},
 	sketch: {

@@ -24,17 +24,36 @@ function ExperienceForm() {
 
 						<div className={styles.fieldsWrap}>
 							<div className={styles.inputDiv}>
-								<input type="text" pattern="[a-z]*" placeholder="Your Name (only text)" required />
-								<input type="email" placeholder="Email(eg : yourname@domain)" required />
+								<input
+									type="text"
+									pattern="[a-z]*"
+									placeholder="Your Name (only text)"
+									required
+								/>
+								<input
+									type="email"
+									placeholder="Email(eg : yourname@domain)"
+									required
+								/>
 								{/* <input type="tel" placeholder="Phone (optional)" />*/}
-								<input type="text" pattern="[0-9]*" maxLength="15" minLength="7" placeholder="Phone (only numeric)(optional)" />
+								<input
+									type="text"
+									pattern="[0-9]*"
+									maxLength="15"
+									minLength="7"
+									placeholder="Phone (only numeric)(optional)"
+								/>
 							</div>
 							<div className={styles.experience}>
 								<span>Rate your experience:</span>
 								<EmojiRating />
 							</div>
 							<textarea placeholder="Message..."></textarea>
-							<button className={styles.submit} onSubmit={response} type="submit">
+							<button
+								className={styles.submit}
+								onSubmit={response}
+								type="submit"
+							>
 								<span className={styles.hoverEffect}></span>
 								<span className={styles.buttonText}>Send</span>
 							</button>

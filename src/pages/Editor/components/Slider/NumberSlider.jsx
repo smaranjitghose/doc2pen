@@ -6,7 +6,7 @@ const NumberSliders = props => {
 	const [isMsgDisplayed, setIsMsgDisplayed] = useState(false);
 
 	function setValuePromise(newValue) {
-		return new Promise((resolve) => {
+		return new Promise(resolve => {
 			setValue(newValue);
 			resolve(true);
 		});
@@ -62,7 +62,7 @@ const NumberSliders = props => {
 					onClick={handleClickValueChange}
 					className={`${styles.decrement} decrement`}
 				>
-          -
+					-
 				</button>
 
 				<input
@@ -79,7 +79,7 @@ const NumberSliders = props => {
 					onClick={handleClickValueChange}
 					className={`${styles.increment} increment`}
 				>
-          +
+					+
 				</button>
 
 				<div

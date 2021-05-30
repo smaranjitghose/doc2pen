@@ -29,12 +29,20 @@ function Team() {
 	const [contributors, setContributors] = useState([]);
 
 	useEffect(() => {
-		fetch("https://api.github.com/repos/smaranjitghose/doc2pen/contributors?per_page=1000")
+		fetch(
+			"https://api.github.com/repos/smaranjitghose/doc2pen/contributors?per_page=1000"
+		)
 			.then(res => res.json())
 			.then(data => {
 				// console.log(data);
 				setContributors(
-					data.filter(element => !(element.login === "smaranjitghose" || element.login === "anushbhatia"))
+					data.filter(
+						element =>
+							!(
+								element.login === "smaranjitghose" ||
+								element.login === "anushbhatia"
+							)
+					)
 				);
 			});
 	}, []);
@@ -48,7 +56,7 @@ function Team() {
 			<br />
 			<div className={styles.projectMaintainers}>
 				{maintainerSection.map((item, index) => (
-					<FluidCard content={item} key={index}/>
+					<FluidCard content={item} key={index} />
 				))}
 			</div>
 			{/* <!-- Contributora Sub Section --> */}
@@ -63,10 +71,21 @@ function Team() {
 						className={`${styles.position_relative} ${styles.d_inline_block} ${styles.text_center} ${styles.grid_wd_100} ${styles.figure}`}
 						key={c.login}
 					>
-						<img src={c.avatar_url} className={styles.grid_wd_100} alt="Profile" />
-						<figcaption className={`${styles.position_absolute} ${styles.grid_wd_100} ${styles.va_top}`}>
+						<img
+							src={c.avatar_url}
+							className={styles.grid_wd_100}
+							alt="Profile"
+						/>
+						<figcaption
+							className={`${styles.position_absolute} ${styles.grid_wd_100} ${styles.va_top}`}
+						>
 							<div className={styles.text}>
-								<a href={c.html_url} className={styles.social_icon} target="_blank" rel="noreferrer">
+								<a
+									href={c.html_url}
+									className={styles.social_icon}
+									target="_blank"
+									rel="noreferrer"
+								>
 									<FaGithub />
 								</a>
 							</div>

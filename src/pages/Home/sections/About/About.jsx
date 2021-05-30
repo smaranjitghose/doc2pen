@@ -5,12 +5,11 @@ import step2 from "./../../../../assets/images/home-about/step2.svg";
 import step3 from "./../../../../assets/images/home-about/step3.svg";
 import openSource from "./../../../../assets/images/home-about/open-source.svg";
 
-
 function Step(props) {
 	return (
 		<div className={`${styles.step} ${props.reverse && styles.step_reverse}`}>
 			<div className={styles.illustration}>
-				<img className ={styles.image} src={props.img} alt="Page" />
+				<img className={styles.image} src={props.img} alt="Page" />
 			</div>
 			<div className={styles.step_text}>
 				<div className={styles.step_title}>{props.title}</div>
@@ -23,13 +22,48 @@ function Step(props) {
 function About() {
 	return (
 		<div className={styles.About} id="home_about">
-			<div className={styles.title}>
-                What are we about?
+			<div className={styles.title}>What are we about?</div>
+			<div className={styles.line}>
+				Are you a{" "}
+				<b>
+					<i>student</i>
+				</b>{" "}
+				who is tired of having to{" "}
+				<b>
+					<i>
+						write out assignments on paper, draw sketches by hand, scan each
+						page, convert it all to a PDF
+					</i>
+				</b>
+				, and finally submit?
 			</div>
-			<div className={styles.line}>Are you a <b><i>student</i></b> who is tired of having to <b><i>write out assignments on paper, draw sketches by hand, scan each page, convert it all to a PDF</i></b>, and finally submit?</div>
-			<div className={styles.line}>Does it seem <b><i>too much of a hassle</i></b> in this age of online education?</div>
-			<div className={styles.line}>If your answer is <b><i>yes</i></b>, then you've come to the <b><i>right place!</i></b></div>            
-			<div className={styles.line}><b><i>Doc2Pen</i></b> is the 1 stop shop for getting all your <b><i>"handmade" assignments ready for submission digitally</i></b>.</div>
+			<div className={styles.line}>
+				Does it seem{" "}
+				<b>
+					<i>too much of a hassle</i>
+				</b>{" "}
+				in this age of online education?
+			</div>
+			<div className={styles.line}>
+				If your answer is{" "}
+				<b>
+					<i>yes</i>
+				</b>
+				, then you've come to the{" "}
+				<b>
+					<i>right place!</i>
+				</b>
+			</div>
+			<div className={styles.line}>
+				<b>
+					<i>Doc2Pen</i>
+				</b>{" "}
+				is the 1 stop shop for getting all your{" "}
+				<b>
+					<i>"handmade" assignments ready for submission digitally</i>
+				</b>
+				.
+			</div>
 
 			<div className={styles.steps}>
 				<Step
@@ -42,7 +76,7 @@ function About() {
 					img={step2}
 					title="Step 2 : Draw"
 					content="Use the Sketch page to digitally draw in a handmade style!"
-					reverse={true}    
+					reverse={true}
 				/>
 				<Step
 					img={step3}
@@ -51,14 +85,16 @@ function About() {
 					reverse={false}
 				/>
 			</div>
-			<img src={openSource} alt="Open Source" style={{width: "55vw"}}/>
+			<img src={openSource} alt="Open Source" style={{ width: "55vw" }} />
 			<div className={styles.open_source}>
 				<div>
-                    Now, as Doc2Pen saves a lot of your time, you can now spend your valuable time in learning some practical stuff.
+					Now, as Doc2Pen saves a lot of your time, you can now spend your
+					valuable time in learning some practical stuff.
 				</div>
 				<br />
 				<div>
-                    And So, here comes the Good News, Doc2pen is an Open Source Project, we welcome your contributions 🙂.
+					And So, here comes the Good News, Doc2pen is an Open Source Project,
+					we welcome your contributions 🙂.
 				</div>
 			</div>
 		</div>
