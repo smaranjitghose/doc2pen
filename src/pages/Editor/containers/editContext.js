@@ -8,10 +8,10 @@ import checkBox from "./../../../assets/images/checkmark.svg";
 
 export const EditContext = React.createContext();
 const svgStyles = {
-  height: 50,
-  position: "absolute",
-  top: 0,
-  left: 0,
+	height: 50,
+	position: "absolute",
+	top: 0,
+	left: 0,
 };
 const EditContextProvider = props => {
   const aImagePrefix = "";
@@ -207,9 +207,9 @@ const EditContextProvider = props => {
 
       <ReactSnackBar Icon={<img style={svgStyles} src={checkBox} alt="" />} Show={show}>
         Generating PDF! Please wait...
-      </ReactSnackBar>
-    </EditContext.Provider>
-  );
+			</ReactSnackBar>
+		</EditContext.Provider>
+	);
 };
 
 export default EditContextProvider;
