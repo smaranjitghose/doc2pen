@@ -23,14 +23,14 @@ module.exports = {
 		"react/prop-types": "off",
 		"no-mixed-spaces-and-tabs": 0,
 		"react/no-unescaped-entities": 0,
-		"indent": [
-			"error",
-			"tab"
-		],
-		"linebreak-style": [
-			"error",
-			"unix"
-		],
+		// "indent": [
+		// 	"error",
+		// 	"tab"
+		// ],
+		// "linebreak-style": [
+		// 	"error",
+		// 	"unix"
+		// ],
 		"quotes": [
 			"error",
 			"double"

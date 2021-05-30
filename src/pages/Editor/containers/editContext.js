@@ -78,11 +78,11 @@ const EditContextProvider = props => {
     nodes.forEach((node, index) => 
       DomToImage.toPng(node, options)
       .then(dataUrl => {
-        const fileName = multiple ? `${baseFileName}-${index}.png` : `${baseFileName}.png`
+        const fileName = multiple ? `${baseFileName}-${index}.png` : `${baseFileName}.png`;
         dataUrls.push(dataUrl);
         if (type === "PNG") {
           if(nodes.length===1) downloadURI(dataUrl, fileName);
-          else if(dataUrls.length === nodes.length) downloadZip(dataUrls, baseFileName)
+          else if(dataUrls.length === nodes.length) downloadZip(dataUrls, baseFileName);
         } else if (type === "PDF") {
           if(dataUrls.length === nodes.length) downloadPdf(dataUrls, baseFileName);
         }
@@ -92,8 +92,8 @@ const EditContextProvider = props => {
       })
       .finally(() => {
         if(dataUrls.length === nodes.length) {
-          console.log("all converted")
-          setAllPagesVisible(false)
+          console.log("all converted");
+          setAllPagesVisible(false);
         }
       })
     );
@@ -128,10 +128,10 @@ const EditContextProvider = props => {
         doc.addPage();
         doc.setPage(i+1);
       }
-      doc.addImage(imgDataUri, "PNG", 0, 0, width, height)
+      doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
     });
 
-    await new Promise((resolve, reject) => {
+    await new Promise((resolve) => {
       // Wait for PDF download
       doc.save(name + ".pdf"); //save PDF
       resolve(true);
@@ -151,7 +151,7 @@ const EditContextProvider = props => {
     zip.generateAsync({ type: "blob" }).then(function (content) {
       saveAs(content, `${name}.zip`);
     });
-  }
+  };
 
   const importTxt = e => {
     e.preventDefault();

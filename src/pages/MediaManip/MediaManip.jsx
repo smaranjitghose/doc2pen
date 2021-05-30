@@ -109,16 +109,16 @@ export default function MediaManip() {
         doc.addPage();
         doc.setPage(i+1);
       }
-      doc.addImage(imgDataUri, "PNG", 0, 0, width, height)
+      doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
     });
 
-    await new Promise((resolve, reject) => {
+    await new Promise((resolve) => {
       // Wait for PDF download
       doc.save("document.pdf"); //save PDF
       resolve(true);
       setConvertedFiles([]);
     });
-  }
+  };
   
   const onDownload = () => {
     if(convertedFiles.length===0) return;
@@ -130,16 +130,6 @@ export default function MediaManip() {
     });
     setProgress(0);
   };
-
-	const onDownload = () => {
-		convertedFiles.forEach((item, index) => {
-			zip.file(`${index}.${item.type}`, item.data, { base64: true });
-		});
-		zip.generateAsync({ type: "blob" }).then(function (content) {
-			saveAs(content, "converted files.zip");
-		});
-		setProgress(0);
-	};
 
 	return (
 		<div className={styles.mediaManip}>
