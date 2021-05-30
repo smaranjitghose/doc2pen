@@ -58,10 +58,7 @@ const Settings = () => {
 					<Dropdown
 						name="Change Font Weight"
 						type="font-weight"
-						items={[
-							"normal",
-							"bold"
-						]}
+						items={["normal", "bold"]}
 						active={editContext.bodyValues.bodyFontWeight}
 					/>
 					<Divider orientation="vertical" flexItem />
@@ -75,7 +72,7 @@ const Settings = () => {
 					<Divider orientation="vertical" flexItem />
 
 					<label className={styles.downloadBtn} htmlFor="import">
-            Import File
+						Import File
 					</label>
 					<input
 						id="import"
@@ -90,7 +87,7 @@ const Settings = () => {
 						onClick={handleopenModal}
 						className={styles.download}
 					>
-            Download File
+						Download File
 					</Button>
 					<Divider orientation="vertical" flexItem />
 				</div>

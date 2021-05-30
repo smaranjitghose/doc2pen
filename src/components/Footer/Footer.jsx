@@ -10,7 +10,11 @@ export default function Footer(props) {
 	return (
 		<div className={`${styles.footerDiv}`}>
 			<div className={styles.topShape}>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 1000 100"
+					preserveAspectRatio="none"
+				>
 					<path
 						style={{ fill: props.fill ? props.fill : "white" }}
 						className={styles.svgPath}
@@ -34,7 +38,9 @@ export default function Footer(props) {
 			</div>
 			<div>
 				<Fade>
-					<p className={styles.footerText}>{emoji("Made with ❤️ in India for the students of the world.")}</p>
+					<p className={styles.footerText}>
+						{emoji("Made with ❤️ in India for the students of the world.")}
+					</p>
 				</Fade>
 			</div>
 		</div>

@@ -1,5 +1,12 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap, LayersControl } from "react-leaflet";
+import {
+	MapContainer,
+	TileLayer,
+	Marker,
+	Popup,
+	useMap,
+	LayersControl,
+} from "react-leaflet";
 import "./map.scss";
 import { FiCrosshair } from "react-icons/fi";
 const position = [13.0827, 80.2707];
@@ -35,24 +42,16 @@ function Map() {
 					/>
 				</LayersControl.BaseLayer>
 				<LayersControl.BaseLayer checked name="Thunderfrost">
-					<TileLayer
-						url="https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png"
-					/>
+					<TileLayer url="https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png" />
 				</LayersControl.BaseLayer>
 				<LayersControl.BaseLayer name="Alidade Dark">
-					<TileLayer
-						url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
-					/>
+					<TileLayer url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" />
 				</LayersControl.BaseLayer>
 				<LayersControl.BaseLayer name="Stamen Dark">
-					<TileLayer
-						url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png"
-					/>
+					<TileLayer url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png" />
 				</LayersControl.BaseLayer>
 				<LayersControl.BaseLayer name="Carto Dark">
-					<TileLayer
-						url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-					/>
+					<TileLayer url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" />
 				</LayersControl.BaseLayer>
 				<Marker position={position}>
 					<Popup>

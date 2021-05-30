@@ -82,10 +82,10 @@ function Canvas() {
 		roughCanvas.current = rough.canvas(canvasRef.current);
 		setContext(canvasRef.current.getContext("2d"));
 		localStorage.getItem("canvasState") !== null &&
-      getLastCanvasState(
-      	localStorage.getItem("canvasState"),
-      	canvasRef.current.getContext("2d")
-      );
+			getLastCanvasState(
+				localStorage.getItem("canvasState"),
+				canvasRef.current.getContext("2d")
+			);
 	}, [getLastCanvasState]);
 
 	useEffect(() => {
@@ -173,10 +173,10 @@ function Canvas() {
 						text,
 						downPoint.x,
 						downPoint.y +
-              parseInt(
-              	document.getElementById("canvas-text-input").offsetHeight
-              ) -
-              5
+							parseInt(
+								document.getElementById("canvas-text-input").offsetHeight
+							) -
+							5
 					);
 					setIsWriting(false);
 					setText("");
@@ -303,9 +303,9 @@ function Canvas() {
 	}
 
 	const closedShapesOptions =
-    fillStyle !== "none"
-    	? { ...openShapeOptions, ...fillOptions }
-    	: { ...openShapeOptions };
+		fillStyle !== "none"
+			? { ...openShapeOptions, ...fillOptions }
+			: { ...openShapeOptions };
 
 	function penMove(point) {
 		context.putImageData(typeState, 0, 0);
@@ -339,9 +339,9 @@ function Canvas() {
 		const x = (point.x + downPoint.x) / 2;
 		const y = (point.y + downPoint.y) / 2;
 		const radius =
-      Math.sqrt(
-      	Math.pow(downPoint.x - point.x, 2) + Math.pow(downPoint.y - point.y, 2)
-      ) / 2;
+			Math.sqrt(
+				Math.pow(downPoint.x - point.x, 2) + Math.pow(downPoint.y - point.y, 2)
+			) / 2;
 
 		roughCanvas.current.circle(x, y, radius, { ...closedShapesOptions });
 	}
@@ -365,8 +365,8 @@ function Canvas() {
 		function formula(head, ratio, one, two, three, four, theta) {
 			return (
 				head +
-        (1 / ratio) *
-          ((one - two) * Math.cos(theta) + (three - four) * Math.sin(theta))
+				(1 / ratio) *
+					((one - two) * Math.cos(theta) + (three - four) * Math.sin(theta))
 			);
 		}
 
@@ -486,7 +486,7 @@ function Canvas() {
 	}, [background]);
 
 	const showToast = () => {
-		return new Promise((resolve) => {
+		return new Promise(resolve => {
 			if (showing) {
 				resolve(true);
 				return;
@@ -624,9 +624,9 @@ function Canvas() {
 				clear={clear}
 				download={download}
 				initiateLoadSaved={initiateLoadSaved}
-				loadLastState ={loadLastState }
+				loadLastState={loadLastState}
 				saveInstance={saveInstance}
-				IconsLibrary={<IconsLibrary/>}
+				IconsLibrary={<IconsLibrary />}
 			/>
 
 			{/* ----- Undo & Redo----- */}
@@ -674,7 +674,7 @@ function Canvas() {
 				onMouseLeave={handleMouseLeave}
 			/>
 			<div className={styles.mousePosition}>
-        Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y})
+				Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y})
 			</div>
 
 			{/* ----- Text ----- */}
@@ -706,7 +706,7 @@ function Canvas() {
 				Icon={<img style={svgStyles} src={checkBox} alt="" />}
 				Show={show}
 			>
-        Saving Progress! Please wait...
+				Saving Progress! Please wait...
 			</ReactSnackBar>
 		</>
 	);

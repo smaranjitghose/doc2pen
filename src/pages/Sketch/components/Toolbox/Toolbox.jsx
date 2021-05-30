@@ -1,16 +1,46 @@
 // import React, {useState} from "react";
 import React from "react";
 import styles from "./toolbox.module.scss";
-import { AiOutlineLine, AiOutlineSmallDash, AiOutlineDash, } from "react-icons/ai";
-import { FaRegSquare, FaItalic, FaBold, FaPencilAlt, FaRegCircle, FaSlash, FaShapes, } from "react-icons/fa";
+import {
+	AiOutlineLine,
+	AiOutlineSmallDash,
+	AiOutlineDash,
+} from "react-icons/ai";
+import {
+	FaRegSquare,
+	FaItalic,
+	FaBold,
+	FaPencilAlt,
+	FaRegCircle,
+	FaSlash,
+	FaShapes,
+} from "react-icons/fa";
 import { GiTriangleTarget } from "react-icons/gi";
 import { BiShapeTriangle } from "react-icons/bi";
 import { BsFonts, BsArrowUpRight, BsDiamond } from "react-icons/bs";
 import { RiFileSettingsLine } from "react-icons/ri";
 import { ReactComponent as D2psIcon } from "./../../../../assets/images/sketch/d2ps.svg";
 import { makeStyles } from "@material-ui/core/styles";
-import { Tabs, Tab, Typography, List, ListItem, ListItemText, ListItemIcon, Divider, } from "@material-ui/core";
-import { AccountTree, TextFields, Apps, Close, Delete, SaveAlt, PhotoLibrary, Save, } from "@material-ui/icons";
+import {
+	Tabs,
+	Tab,
+	Typography,
+	List,
+	ListItem,
+	ListItemText,
+	ListItemIcon,
+	Divider,
+} from "@material-ui/core";
+import {
+	AccountTree,
+	TextFields,
+	Apps,
+	Close,
+	Delete,
+	SaveAlt,
+	PhotoLibrary,
+	Save,
+} from "@material-ui/icons";
 import IconsLibrary from "./../IconLibrary/IconsLibrary";
 
 const useStyles = makeStyles(theme => ({

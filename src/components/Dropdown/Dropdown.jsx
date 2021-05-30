@@ -1,5 +1,10 @@
-import React,{ useState, useContext } from "react";
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import React, { useState, useContext } from "react";
+import {
+	Dropdown,
+	DropdownToggle,
+	DropdownMenu,
+	DropdownItem,
+} from "reactstrap";
 
 import styles from "./dropdown.module.scss";
 import { EditContext } from "../../pages/Editor/containers/editContext";
@@ -10,7 +15,16 @@ const DropdownComponent = props => {
 
 	const editContext = useContext(EditContext);
 
-	const colors = ["black", "red", "orange", "blue", "green", "deeppink", "darkviolet", "dodgerblue"];
+	const colors = [
+		"black",
+		"red",
+		"orange",
+		"blue",
+		"green",
+		"deeppink",
+		"darkviolet",
+		"dodgerblue",
+	];
 
 	const setValue = aItemValue => {
 		if (colors.includes(aItemValue)) {
@@ -34,9 +48,23 @@ const DropdownComponent = props => {
 				{props.items.map((aItem, index) => (
 					<DropdownItem
 						onClick={getTargetFunc()}
-						name={props.type === "download" ? aItem : `body${props.type === "font" ? "Font" : props.type === "font-weight" ? "FontWeight" : "Color"}`}
+						name={
+							props.type === "download"
+								? aItem
+								: `body${
+									props.type === "font"
+										? "Font"
+										: props.type === "font-weight"
+											? "FontWeight"
+											: "Color"
+								  }`
+						}
 						value={aItem}
-						style={{ "font-family": `${aItem}`, color: `${aItem}`, "font-weight": `${aItem}` }}
+						style={{
+							"font-family": `${aItem}`,
+							color: `${aItem}`,
+							"font-weight": `${aItem}`,
+						}}
 						key={index}
 					>
 						{setValue(aItem)}
@@ -47,7 +75,12 @@ const DropdownComponent = props => {
 	};
 
 	const getTargetFunc = () => {
-		if (props.type === "font" || props.type === "color" || props.type === "font-weight") return editContext.onValueChange;
+		if (
+			props.type === "font" ||
+			props.type === "color" ||
+			props.type === "font-weight"
+		)
+			return editContext.onValueChange;
 		else if (props.type === "download") return editContext.downloadAction;
 		return editContext.pageSrcHandler;
 	};

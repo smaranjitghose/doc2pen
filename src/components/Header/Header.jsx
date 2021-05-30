@@ -11,23 +11,23 @@ const quickLinks = [
 	{
 		name: "About",
 		to: "home_about",
-		icon: <ImInfo />
+		icon: <ImInfo />,
 	},
 	{
 		name: "Team",
 		to: "home_team",
-		icon: <RiTeamLine />
+		icon: <RiTeamLine />,
 	},
 	{
 		name: "Support Us",
 		to: "home_support",
-		icon: <BiDonateHeart />
+		icon: <BiDonateHeart />,
 	},
 	{
 		name: "Contact us",
 		to: "home_contact",
-		icon: <RiContactsLine />
-	}
+		icon: <RiContactsLine />,
+	},
 ];
 
 function Header() {
@@ -41,7 +41,7 @@ function Header() {
 	const [location, setLocation] = useState(window.location.pathname);
 
 	useEffect(() => {
-		return history.listen((location) => {
+		return history.listen(location => {
 			setLocation(location.pathname);
 		});
 	}, [history]);
@@ -81,7 +81,7 @@ function Header() {
 							window.isHome = false;
 						}}
 					>
-            Home
+						Home
 					</NavLink>
 					<NavLink
 						className={styles.header_links}
@@ -94,7 +94,7 @@ function Header() {
 							window.isHome = false;
 						}}
 					>
-            Editor
+						Editor
 					</NavLink>
 					<NavLink
 						className={`${styles.header_links} /*${styles.tagged}*/`}
@@ -107,7 +107,7 @@ function Header() {
 							window.isHome = false;
 						}}
 					>
-            Sketch
+						Sketch
 					</NavLink>
 					<NavLink
 						className={`${styles.header_links} /*${styles.tagged}*/`}
@@ -120,7 +120,7 @@ function Header() {
 							window.isHome = false;
 						}}
 					>
-            Media Manip
+						Media Manip
 					</NavLink>
 				</div>
 				<div className={styles.hamburger} onClick={() => drop()}>
@@ -133,18 +133,18 @@ function Header() {
 			</header>
 			<div className={styles.quick_box}>
 				{location === "/" &&
-          quickLinks.map((link) => (
-          	<Link
-          		className={styles.quick_links}
-          		key={link.name}
-          		to={link.to}
-          		offset={-100}
-          	>
-          		<span className="icon">{link.icon}</span>
-              &nbsp;&nbsp;&nbsp;
-          		{link.name}
-          	</Link>
-          ))}
+					quickLinks.map(link => (
+						<Link
+							className={styles.quick_links}
+							key={link.name}
+							to={link.to}
+							offset={-100}
+						>
+							<span className="icon">{link.icon}</span>
+							&nbsp;&nbsp;&nbsp;
+							{link.name}
+						</Link>
+					))}
 			</div>
 		</>
 	);

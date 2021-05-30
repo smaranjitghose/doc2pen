@@ -18,7 +18,7 @@ function Editor() {
 	const [currentPageNo, setCurrentPageNo] = useState(1);
 
 	useEffect(() => {
-		if(currentPageNo > pageCount) setCurrentPageNo(prev => prev-1);
+		if (currentPageNo > pageCount) setCurrentPageNo(prev => prev - 1);
 	}, [pageCount, currentPageNo]);
 
 	useEffect(() => {
@@ -36,18 +36,47 @@ function Editor() {
 				<EditContextProvider>
 					<Settings />
 					<div className={styles.pageBtnsWrapper}>
-						<Button outline color="primary" disabled={currentPageNo===1} onClick={() => setCurrentPageNo(prev => prev-1)}>Previous Page</Button>
-						<Button outline color="primary" disabled={currentPageNo===pageCount} onClick={() => setCurrentPageNo(prev => prev+1)}>Next Page</Button>
+						<Button
+							outline
+							color="primary"
+							disabled={currentPageNo === 1}
+							onClick={() => setCurrentPageNo(prev => prev - 1)}
+						>
+							Previous Page
+						</Button>
+						<Button
+							outline
+							color="primary"
+							disabled={currentPageNo === pageCount}
+							onClick={() => setCurrentPageNo(prev => prev + 1)}
+						>
+							Next Page
+						</Button>
 					</div>
-					{[...Array(pageCount)].map((e,i) => <Output key={i+1} pageNo={i+1} show={(i+1)===currentPageNo} />)}          
+					{[...Array(pageCount)].map((e, i) => (
+						<Output key={i + 1} pageNo={i + 1} show={i + 1 === currentPageNo} />
+					))}
 				</EditContextProvider>
 			</div>
 			<div className={styles.btnWrapper}>
 				<ScrollToTop />
 			</div>
 			<div className={styles.pageBtnsWrapper}>
-				<Button outline color="primary" onClick={() => setPageCount(prev => prev+1)}>Add Page at the End</Button>
-				<Button outline color="primary" disabled={pageCount===1} onClick={() => setPageCount(prev => prev-1)}>Remove Last Page</Button>
+				<Button
+					outline
+					color="primary"
+					onClick={() => setPageCount(prev => prev + 1)}
+				>
+					Add Page at the End
+				</Button>
+				<Button
+					outline
+					color="primary"
+					disabled={pageCount === 1}
+					onClick={() => setPageCount(prev => prev - 1)}
+				>
+					Remove Last Page
+				</Button>
 			</div>
 		</>
 	);
