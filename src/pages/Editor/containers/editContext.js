@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import DomToImage from "dom-to-image";
 import { jsPDF } from "jspdf";
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
 import ReactSnackBar from "react-js-snackbar";
 import checkBox from "./../../../assets/images/checkmark.svg";
 
 export const EditContext = React.createContext();
 const svgStyles = {
-  height: 50,
-  position: "absolute",
-  top: 0,
-  left: 0,
+	height: 50,
+	position: "absolute",
+	top: 0,
+	left: 0,
 };
 const EditContextProvider = props => {
   const aImagePrefix = "";
@@ -28,6 +30,8 @@ const EditContextProvider = props => {
     bodyLetterSpace: null,
     bodyText: "",
   });
+
+  const [allPagesVisible, setAllPagesVisible] = useState(false);
 
   const [show, setShow] = useState(false);
   const [showing, setShowing] = useState(false);
@@ -74,18 +78,23 @@ const EditContextProvider = props => {
     nodes.forEach((node, index) => 
       DomToImage.toPng(node, options)
       .then(dataUrl => {
-        const img = new Image();
-        img.src = dataUrl;
-        const fileName = multiple ? `${baseFileName}-${index}.png` : `${baseFileName}.png`
+        const fileName = multiple ? `${baseFileName}-${index}.png` : `${baseFileName}.png`;
+        dataUrls.push(dataUrl);
         if (type === "PNG") {
-          downloadURI(dataUrl, fileName);
+          if(nodes.length===1) downloadURI(dataUrl, fileName);
+          else if(dataUrls.length === nodes.length) downloadZip(dataUrls, baseFileName);
         } else if (type === "PDF") {
-          dataUrls.push(dataUrl);
-          if(index===nodes.length-1) downloadPdf(dataUrls, baseFileName);
+          if(dataUrls.length === nodes.length) downloadPdf(dataUrls, baseFileName);
         }
       })
       .catch(error => {
         console.error("oops,something went wrong", error);
+      })
+      .finally(() => {
+        if(dataUrls.length === nodes.length) {
+          console.log("all converted");
+          setAllPagesVisible(false);
+        }
       })
     );
   };
@@ -97,6 +106,7 @@ const EditContextProvider = props => {
     link.click();
     document.body.removeChild(link);
   };
+
   const showToast = () => {
     if (showing) return;
 
@@ -107,8 +117,8 @@ const EditContextProvider = props => {
     //   setShowing(false);
     // }, 2000);
   };
+
   const downloadPdf = async (imgDataUris, name) => {
-    console.log(imgDataUris);
     const doc = new jsPDF("p", "pt", "a4");
     const width = doc.internal.pageSize.width;
     const height = doc.internal.pageSize.height;
@@ -118,10 +128,10 @@ const EditContextProvider = props => {
         doc.addPage();
         doc.setPage(i+1);
       }
-      doc.addImage(imgDataUri, "PNG", 0, 0, width, height)
+      doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
     });
 
-    await new Promise((resolve, reject) => {
+    await new Promise((resolve) => {
       // Wait for PDF download
       doc.save(name + ".pdf"); //save PDF
       resolve(true);
@@ -130,6 +140,17 @@ const EditContextProvider = props => {
     //close notif popup
     setShow(false);
     setShowing(false);
+  };
+
+  const downloadZip = (imgDataUris, name) => {
+    const zip = new JSZip();
+    imgDataUris.forEach((img, i) => {
+      const b64code = img.substring(22);
+      zip.file(`page-${i+1}.png`, b64code, { base64: true });
+    });
+    zip.generateAsync({ type: "blob" }).then(function (content) {
+      saveAs(content, `${name}.zip`);
+    });
   };
 
   const importTxt = e => {
@@ -176,6 +197,8 @@ const EditContextProvider = props => {
         downloadAction,
         pageSrcHandler,
         importTxt,
+        allPagesVisible,
+        setAllPagesVisible
       }}
     >
       {props.children}
