@@ -11,7 +11,7 @@ import Settings from "./sections/Settings/Settings.jsx";
 import Output from "./sections/OutputComponent/Output";
 
 import ScrollToTop from "../../components/ScrollToTopButton/ScrollToTopButton";
-import { Button } from "reactstrap";
+import { Button, Input, Label } from "reactstrap";
 
 function Editor() {
 	const [pageCount, setPageCount] = useState(1);
@@ -44,6 +44,9 @@ function Editor() {
 						>
 							Previous Page
 						</Button>
+						<Label>Current Page No.
+							<Input type="number" max={pageCount} min="1" step="1" value={currentPageNo} onInput={(e)=>setCurrentPageNo(parseInt(e.target.value))}/>
+						</Label>
 						<Button
 							outline
 							color="primary"
