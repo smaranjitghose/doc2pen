@@ -31,8 +31,8 @@ function About() {
 				who is tired of{" "}
 				<b>
 					<i>
-						writing assignments on paper, drawing sketches by hand, scanning each
-						page, converting it all to a PDF
+						writing assignments on paper, drawing sketches by hand, scanning
+						each page, converting it all to a PDF
 					</i>
 				</b>
 				, and then finally submitting?
@@ -88,13 +88,13 @@ function About() {
 			<img src={openSource} alt="Open Source" style={{ width: "55vw" }} />
 			<div className={styles.open_source}>
 				<div>
-					As Doc2Pen helps save a lot of time, you can now invest your valuable time
-					towards learning some practical stuff.
+					As Doc2Pen helps save a lot of time, you can now invest your valuable
+					time towards learning some practical stuff.
 				</div>
 				<br />
 				<div>
-					And So, here comes the Good News! Doc2pen is an Open Source Project and we
-					welcome your contributions 🙂.
+					And So, here comes the Good News! Doc2pen is an Open Source Project
+					and we welcome your contributions 🙂.
 				</div>
 			</div>
 		</div>

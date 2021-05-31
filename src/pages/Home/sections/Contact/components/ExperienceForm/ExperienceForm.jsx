@@ -60,8 +60,16 @@ function ExperienceForm() {
 								<span>Rate your experience:</span>
 								<EmojiRating />
 							</div>
-							<textarea name="message" placeholder="Message..." required></textarea>
-							<button className={styles.submit} onSubmit={response} type="submit">
+							<textarea
+								name="message"
+								placeholder="Message..."
+								required
+							></textarea>
+							<button
+								className={styles.submit}
+								onSubmit={response}
+								type="submit"
+							>
 								<span className={styles.hoverEffect}></span>
 								<span className={styles.buttonText}>Send</span>
 							</button>

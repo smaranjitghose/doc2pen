@@ -82,7 +82,11 @@ const Settings = () => {
 					></input>
 					<Divider orientation="vertical" flexItem />
 					{/* Download functionality */}
-					<Button color="none" onClick={handleopenModal} className={styles.download}>
+					<Button
+						color="none"
+						onClick={handleopenModal}
+						className={styles.download}
+					>
 						Download File
 					</Button>
 					<Divider orientation="vertical" flexItem />

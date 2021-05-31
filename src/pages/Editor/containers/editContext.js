@@ -87,7 +87,8 @@ const EditContextProvider = props => {
 						else if (dataUrls.length === nodes.length)
 							downloadZip(dataUrls, baseFileName);
 					} else if (type === "PDF") {
-						if (dataUrls.length === nodes.length) downloadPdf(dataUrls, baseFileName);
+						if (dataUrls.length === nodes.length)
+							downloadPdf(dataUrls, baseFileName);
 					}
 				})
 				.catch(error => {

@@ -14,7 +14,12 @@ function EmojiRating() {
 				overlay={<Tooltip>Liked it</Tooltip>}
 			>
 				<label>
-					<input className={styles.radio} type="radio" value="1" name="feedback" />
+					<input
+						className={styles.radio}
+						type="radio"
+						value="1"
+						name="feedback"
+					/>
 					<span className={styles.emoji}>&#128077;</span>
 				</label>
 			</OverlayTrigger>
@@ -25,7 +30,12 @@ function EmojiRating() {
 				overlay={<Tooltip>Dislike</Tooltip>}
 			>
 				<label>
-					<input className={styles.radio} type="radio" value="2" name="feedback" />
+					<input
+						className={styles.radio}
+						type="radio"
+						value="2"
+						name="feedback"
+					/>
 					<span className={styles.emoji}>&#128078;</span>
 				</label>
 			</OverlayTrigger>
@@ -53,7 +63,12 @@ function EmojiRating() {
 				overlay={<Tooltip>Loved it</Tooltip>}
 			>
 				<label>
-					<input className={styles.radio} type="radio" value="4" name="feedback" />
+					<input
+						className={styles.radio}
+						type="radio"
+						value="4"
+						name="feedback"
+					/>
 					<span className={styles.emoji}>&#128147;</span>
 				</label>
 			</OverlayTrigger>
@@ -64,7 +79,12 @@ function EmojiRating() {
 				overlay={<Tooltip>Mind blowing</Tooltip>}
 			>
 				<label>
-					<input className={styles.radio} type="radio" value="5" name="feedback" />
+					<input
+						className={styles.radio}
+						type="radio"
+						value="5"
+						name="feedback"
+					/>
 					<span className={styles.emoji}>&#129327;</span>
 				</label>
 			</OverlayTrigger>

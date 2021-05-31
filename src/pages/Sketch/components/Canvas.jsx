@@ -69,7 +69,9 @@ function Canvas() {
 			image.src = dataURL;
 			image.onload = () => {
 				ctx.drawImage(image, 0, 0);
-				setCanvasStates(() => [ctx.getImageData(0, 0, canvasWidth, canvasHeight)]);
+				setCanvasStates(() => [
+					ctx.getImageData(0, 0, canvasWidth, canvasHeight),
+				]);
 				setcanvasStateAt(0);
 			};
 		},
@@ -171,7 +173,9 @@ function Canvas() {
 						text,
 						downPoint.x,
 						downPoint.y +
-							parseInt(document.getElementById("canvas-text-input").offsetHeight) -
+							parseInt(
+								document.getElementById("canvas-text-input").offsetHeight,
+							) -
 							5,
 					);
 					setIsWriting(false);
@@ -647,7 +651,9 @@ function Canvas() {
 						onClick={() => redo()}
 						style={{
 							cursor: `${
-								canvasStateAt === canvasStates.length - 1 ? "not-allowed" : "pointer"
+								canvasStateAt === canvasStates.length - 1
+									? "not-allowed"
+									: "pointer"
 							}`,
 						}}
 						id="sketch-dcd-redo"
