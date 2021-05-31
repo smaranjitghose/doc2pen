@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
 import { jsPDF } from "jspdf";
+import { PDFDocument } from "pdf-lib";
 import Progress from "./Progress/Progress";
 import Dropdown from "./DropDown/DropDown";
 import DragDrop from "./DragDrop/DragDrop";
@@ -41,7 +42,7 @@ export default function MediaManip() {
     setProgress(0);
     setConvertedFiles([]);
     setDownload(true);
-    const availableFormats = ["jpg", "webp", "png", "jiff", "jpeg"];
+    const availableFormats = ["jpg", "webp", "png", "jiff", "jpeg", "pdf"];
     let i = 0;
     for (i = 0; i < files.length; i++) {
       const fileType = files[i].name
@@ -55,7 +56,7 @@ export default function MediaManip() {
     if (i !== files.length) return alert("Input File Format Not Supported.");
 
     const fileType = files[0].name.split(".")[1];
-    if (output === "Output" || (files.length === 1 && output === fileType))
+    if (output === "Output" || (files.length === 1 && output === fileType && fileType !== "pdf"))
       return alert("Select a valid Output Format");
     if (output === "jpg") return convertImage("jpg");
     if (output === "webp") return convertImage("webp");
@@ -81,33 +82,45 @@ export default function MediaManip() {
     startConversion();
     let img = new Image();
     const dataUrls = [];
+		const inputFormat = files[0].name.split(".")[1];
+		const merge = inputFormat === "pdf" && format === "pdf";
     files.forEach((item) => {
-      let canvas = document.createElement("canvas");
-      img.src = item.preview;
-      canvas.width = img.width;
-      canvas.height = img.height;
-      canvas.getContext("2d").drawImage(img, 0, 0);
-      const dataUrl = canvas.toDataURL(
-        `image/${format !== "pdf" ? format : "png"}`
-      );
-      const width = img.width;
-      const height = img.height;
-      if (format === "pdf") {
-        dataUrls.push({ dataUrl, width, height });
-        if (dataUrls.length === files.length) {
-          downloadPdf(dataUrls);
+			console.log(item);
+			if(merge) {
+				dataUrls.push(item.preview);
+				if (dataUrls.length === files.length) {
+          mergeAllPDFs(dataUrls);
           return;
         }
-      }
-      setConvertedFiles((prev) => {
-        return [
-          ...prev,
-          {
-            type: format,
-            data: dataUrl.split(",")[1],
-          },
-        ];
-      });
+			}
+			else {
+				let canvas = document.createElement("canvas");
+				img.src = item.preview;
+				canvas.width = img.width;
+				canvas.height = img.height;
+				canvas.getContext("2d").drawImage(img, 0, 0);
+				const dataUrl = canvas.toDataURL(
+					`image/${format !== "pdf" ? format : "png"}`
+				);
+				const width = img.width;
+				const height = img.height;
+				if (format === "pdf") {
+					dataUrls.push({ dataUrl, width, height });
+					if (dataUrls.length === files.length) {
+						downloadPdf(dataUrls);
+						return;
+					}
+				}
+				setConvertedFiles((prev) => {
+					return [
+						...prev,
+						{
+							type: format,
+							data: dataUrl.split(",")[1],
+						},
+					];
+				});
+			}
     });
   };
 
@@ -125,6 +138,27 @@ export default function MediaManip() {
       }
     });
   };
+
+	async function mergeAllPDFs(urls) {    
+    const pdfDoc = await PDFDocument.create();
+    const numDocs = urls.length;    
+    for(var i = 0; i < numDocs; i++) {
+        const donorPdfBytes = await fetch(urls[i]).then(res => res.arrayBuffer());
+        const donorPdfDoc = await PDFDocument.load(donorPdfBytes);
+        const docLength = donorPdfDoc.getPageCount();
+        for(var k = 0; k < docLength; k++) {
+            const [donorPage] = await pdfDoc.copyPages(donorPdfDoc, [k]);
+            console.log("Doc " + i+ ", page " + k);
+            pdfDoc.addPage(donorPage);
+        }
+    }
+    const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
+		const link = document.createElement("a");
+		link.href = pdfDataUri;
+		link.download = "merged.pdf";
+		link.click();
+		setConvertedFiles([]);
+}
 
   const onDownload = () => {
     if (convertedFiles.length === 0) return;
