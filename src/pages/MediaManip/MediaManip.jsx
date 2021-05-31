@@ -173,7 +173,7 @@ export default function MediaManip() {
 
 	return (
 		<div className={styles.mediaManip}>
-			<h1 className={styles.mediaManip_title}>Image Converter</h1>
+			<h1 className={styles.mediaManip_title}>File Converter</h1>
 			<div className={styles.mediaManip_dropDowns}>
 				<Dropdown type="Input" value={input} />
 				{!convert && <Progress progress={progress} />}

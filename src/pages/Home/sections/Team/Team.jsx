@@ -30,7 +30,7 @@ function Team() {
 
 	useEffect(() => {
 		fetch(
-			"https://api.github.com/repos/smaranjitghose/doc2pen/contributors?per_page=1000"
+			"https://api.github.com/repos/smaranjitghose/doc2pen/contributors?per_page=1000",
 		)
 			.then(res => res.json())
 			.then(data => {
@@ -38,11 +38,8 @@ function Team() {
 				setContributors(
 					data.filter(
 						element =>
-							!(
-								element.login === "smaranjitghose" ||
-								element.login === "anushbhatia"
-							)
-					)
+							!(element.login === "smaranjitghose" || element.login === "anushbhatia"),
+					),
 				);
 			});
 	}, []);
@@ -71,11 +68,7 @@ function Team() {
 						className={`${styles.position_relative} ${styles.d_inline_block} ${styles.text_center} ${styles.grid_wd_100} ${styles.figure}`}
 						key={c.login}
 					>
-						<img
-							src={c.avatar_url}
-							className={styles.grid_wd_100}
-							alt="Profile"
-						/>
+						<img src={c.avatar_url} className={styles.grid_wd_100} alt="Profile" />
 						<figcaption
 							className={`${styles.position_absolute} ${styles.grid_wd_100} ${styles.va_top}`}
 						>

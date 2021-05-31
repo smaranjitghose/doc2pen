@@ -87,8 +87,7 @@ const EditContextProvider = props => {
 						else if (dataUrls.length === nodes.length)
 							downloadZip(dataUrls, baseFileName);
 					} else if (type === "PDF") {
-						if (dataUrls.length === nodes.length)
-							downloadPdf(dataUrls, baseFileName);
+						if (dataUrls.length === nodes.length) downloadPdf(dataUrls, baseFileName);
 					}
 				})
 				.catch(error => {
@@ -99,7 +98,7 @@ const EditContextProvider = props => {
 						console.log("all converted");
 						setAllPagesVisible(false);
 					}
-				})
+				}),
 		);
 	};
 	const downloadURI = (uri, name) => {
@@ -175,7 +174,7 @@ const EditContextProvider = props => {
 				};
 			} else {
 				alert(
-					"Sorry, We cannot import the selected file. The file must be of type '.txt' "
+					"Sorry, We cannot import the selected file. The file must be of type '.txt' ",
 				);
 			}
 			reader.readAsText(file);
@@ -189,7 +188,7 @@ const EditContextProvider = props => {
 		rtf = rtf.replace(/\{\*?\\[^{}]+}|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "");
 		rtf = rtf.replace(
 			/decimal.|tightenfactor0|eftab720|HYPERLINK|irnatural/gi,
-			""
+			"",
 		);
 		rtf = rtf.replace(/irnaturaltightenfactor0|000000/gi, "");
 		rtf = rtf.replace(/�|ࡱ|p#|/gi, "");
