@@ -1,0 +1,49 @@
+
+body{
+  background: linear-gradient(90deg,#0f2027,#2c5364,#203a43);
+}
+
+.img-pos{
+  padding-top: 15%;
+  width:90%;
+  position: absolute;
+  float: left;
+}
+
+p{
+  margin-top: 10%;
+  margin-left: 30%;
+  display: inline-block;
+  font-family: "Dancing Script",cursive;
+  font-size: 3rem;
+  color:white;
+}
+
+h1{
+  margin-top: 10%;
+  margin-left: 30%;
+  display: inline-block;
+  font-family: "Dancing Script",cursive;
+  font-size: 7rem;
+  font-weight: bold;
+  color: white;
+}
+
+.btn{
+  background-color: #0f2027;
+  font-family: inherit;
+  color: white;
+  margin-top: 10%;
+  margin-left: 30%;
+  border-radius: 2rem;
+}
+
+@media(max-width:1028px){
+  h1{
+    text-align: center;
+  }
+
+  .img-pos{
+    position: static;
+  }
+}
