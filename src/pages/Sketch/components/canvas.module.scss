@@ -3,7 +3,8 @@
 .feature_container {
 	position: absolute;
 	display: flex;
-	padding: 0.3rem;
+	align-items: center;
+	padding: 0.05rem;
 	border-radius: 5px;
 	background-color: colors.$white;
 	box-shadow: 0 0 3px 0.3px colors.$grey;
@@ -13,7 +14,7 @@
 		margin: 0;
 		.feature {
 			position: relative;
-			padding: 0.7rem 0.5rem;
+			padding: 0.3rem 0.2rem;
 			margin: 0 0.2rem;
 			border-radius: 5px;
 			cursor: pointer;
