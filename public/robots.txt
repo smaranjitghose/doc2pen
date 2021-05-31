@@ -1,4 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
 Disallow:
 sitemap: https://doc2pen.smaranjitghose.com/sitemap.xml
