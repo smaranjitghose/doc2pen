@@ -82,7 +82,7 @@ function TabPanel(props) {
 			aria-labelledby={`vertical-tab-${index}`}
 			{...other}
 		>
-			{value === index && <Typography>{children}</Typography>}
+			{value === index && <Typography component="div">{children}</Typography>}
 		</div>
 	);
 }
@@ -238,7 +238,7 @@ function VerticalTabs(props) {
 					/>
 				</Tabs>
 				<TabPanel value={value} index={0}>
-					<List>
+					<List component="div">
 						<ListItem button onClick={clear}>
 							<ListItemIcon>
 								<Delete />

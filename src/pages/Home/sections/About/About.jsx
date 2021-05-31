@@ -28,14 +28,14 @@ function About() {
 				<b>
 					<i>student</i>
 				</b>{" "}
-				who is tired of having to{" "}
+				who is tired of {" "}
 				<b>
 					<i>
-						write out assignments on paper, draw sketches by hand, scan each
-						page, convert it all to a PDF
+						writing assignments on paper, drawing sketches by hand, scanning each
+						page, converting it all to a PDF
 					</i>
 				</b>
-				, and finally submit?
+				, and then finally submitting?
 			</div>
 			<div className={styles.line}>
 				Does it seem{" "}
@@ -58,7 +58,7 @@ function About() {
 				<b>
 					<i>Doc2Pen</i>
 				</b>{" "}
-				is the 1 stop shop for getting all your{" "}
+				is the best online platform for getting all your{" "}
 				<b>
 					<i>"handmade" assignments ready for submission digitally</i>
 				</b>
@@ -69,7 +69,7 @@ function About() {
 				<Step
 					img={step1}
 					title="Step 1 : Type"
-					content="Use the highly customisable Editor page to type in text and get a handwritten document!"
+					content="Use our highly customisable Editor page to type in text and get a handwritten document!"
 					reverse={false}
 				/>
 				<Step
@@ -88,13 +88,13 @@ function About() {
 			<img src={openSource} alt="Open Source" style={{ width: "55vw" }} />
 			<div className={styles.open_source}>
 				<div>
-					Now, as Doc2Pen saves a lot of your time, you can now spend your
-					valuable time in learning some practical stuff.
+					As Doc2Pen helps save a lot of time, you can now invest your
+					valuable time towards learning some practical stuff.
 				</div>
 				<br />
 				<div>
-					And So, here comes the Good News, Doc2pen is an Open Source Project,
-					we welcome your contributions 🙂.
+					And So, here comes the Good News! Doc2pen is an Open Source Project
+					and we welcome your contributions 🙂.
 				</div>
 			</div>
 		</div>

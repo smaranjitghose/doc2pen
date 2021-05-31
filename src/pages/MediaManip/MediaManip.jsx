@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
-
+import { jsPDF } from "jspdf";
 import Progress from "./Progress/Progress";
 import Dropdown from "./DropDown/DropDown";
 import DragDrop from "./DragDrop/DragDrop";
@@ -22,6 +22,7 @@ export default function MediaManip() {
 		"jpg",
 		"webp",
 		"jpeg",
+		"pdf",
 	]);
 	let zip = new JSZip();
 
@@ -31,6 +32,10 @@ export default function MediaManip() {
 			setDownload(true);
 		} else setConvert(false);
 	}, [files, setConvert, setDownload]);
+
+	useEffect(() => {
+		if (convertedFiles.length === 0) setDownload(true);
+	}, [convertedFiles, download]);
 
 	const onConvert = () => {
 		setProgress(0);
@@ -56,6 +61,7 @@ export default function MediaManip() {
 		if (output === "webp") return convertImage("webp");
 		if (output === "png") return convertImage("png");
 		if (output === "jpeg") return convertImage("jpeg");
+		if (output === "pdf") return convertImage("pdf");
 	};
 
 	const startConversion = () => {
@@ -64,6 +70,7 @@ export default function MediaManip() {
 				if (prev === 100) {
 					clearInterval(progressTime);
 					setDownload(false);
+					if (convertedFiles.length === 0) return 0;
 					return 100;
 				} else return prev + 1;
 			});
@@ -73,25 +80,58 @@ export default function MediaManip() {
 	const convertImage = format => {
 		startConversion();
 		let img = new Image();
+		const dataUrls = [];
 		files.forEach(item => {
 			let canvas = document.createElement("canvas");
 			img.src = item.preview;
 			canvas.width = img.width;
 			canvas.height = img.height;
 			canvas.getContext("2d").drawImage(img, 0, 0);
+			const dataUrl = canvas.toDataURL(
+				`image/${format !== "pdf" ? format : "png"}`
+			);
+			if (format === "pdf") {
+				dataUrls.push(dataUrl);
+				if (dataUrls.length === files.length) {
+					downloadPdf(dataUrls);
+					return;
+				}
+			}
 			setConvertedFiles(prev => {
 				return [
 					...prev,
 					{
 						type: format,
-						data: canvas.toDataURL(`image/${format}`).split(",")[1],
+						data: dataUrl.split(",")[1],
 					},
 				];
 			});
 		});
 	};
 
+	const downloadPdf = async images => {
+		const doc = new jsPDF("p", "pt", "a4");
+		const width = doc.internal.pageSize.width;
+		const height = doc.internal.pageSize.height;
+		doc.text(10, 20, "");
+		images.forEach((imgDataUri, i) => {
+			if (i > 0) {
+				doc.addPage();
+				doc.setPage(i + 1);
+			}
+			doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
+		});
+
+		await new Promise(resolve => {
+			// Wait for PDF download
+			doc.save("document.pdf"); //save PDF
+			resolve(true);
+			setConvertedFiles([]);
+		});
+	};
+
 	const onDownload = () => {
+		if (convertedFiles.length === 0) return;
 		convertedFiles.forEach((item, index) => {
 			zip.file(`${index}.${item.type}`, item.data, { base64: true });
 		});

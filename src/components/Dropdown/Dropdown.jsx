@@ -61,9 +61,9 @@ const DropdownComponent = props => {
 						}
 						value={aItem}
 						style={{
-							"font-family": `${aItem}`,
+							fontFamily : `${aItem}`,
 							color: `${aItem}`,
-							"font-weight": `${aItem}`,
+							fontWeight: `${aItem}`,
 						}}
 						key={index}
 					>

@@ -1,27 +1,20 @@
 .preloader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 0;
-  margin: 0;
-  background-color: #1F1939;
-  text-align: center;
-  height: 100vh;
-  font-family: "lato";
-  font-weight: 100;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #1F1939;
+  height: 100vh;
+  width: 100%;
+  padding: 0;
   padding-bottom: 120px;
+
   .circle {
     display: inline-block;
     width: 15px;
     height: 15px;
     background-color: #1F1939;
     border-radius: 50%;
-    animation: loading 1.5s cubic-bezier(0.8, 0.5, 0.2, 1.4) infinite;
+    animation: loading 1s ease-in-out infinite;
     transform-origin: bottom center;
     position: relative;
   }
@@ -51,15 +44,19 @@
   }
 }
 @keyframes loading {
-  0% {
+  0%{
     transform: translateY(0px);
     background-color: #1F1939;
+  }
+  30% {
+    transform: translateY(50px);
+    background-color: #cccccc;
   }
   50% {
     transform: translateY(50px);
     background-color: #cccccc;
   }
-  100% {
+  100%{
     transform: translateY(0px);
     background-color: #1F1939;
   }
