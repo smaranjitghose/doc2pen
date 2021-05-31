@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1F1939;
+  background-color: #1f1939;
   height: 100vh;
   width: 100%;
   padding: 0;
@@ -12,7 +12,7 @@
     display: inline-block;
     width: 15px;
     height: 15px;
-    background-color: #1F1939;
+    background-color: #1f1939;
     border-radius: 50%;
     animation: loading 1s ease-in-out infinite;
     transform-origin: bottom center;
@@ -44,9 +44,9 @@
   }
 }
 @keyframes loading {
-  0%{
+  0% {
     transform: translateY(0px);
-    background-color: #1F1939;
+    background-color: #1f1939;
   }
   30% {
     transform: translateY(50px);
@@ -56,8 +56,8 @@
     transform: translateY(50px);
     background-color: #cccccc;
   }
-  100%{
+  100% {
     transform: translateY(0px);
-    background-color: #1F1939;
+    background-color: #1f1939;
   }
 }
