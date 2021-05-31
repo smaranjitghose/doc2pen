@@ -64,15 +64,11 @@ const OutputComponent = ({ pageNo, show }) => {
 				>
 					<div>
 						Word Count:&nbsp;
-						<span style={{ color: "#28b8c6", fontSize: "0.85rem" }}>
-							{wordCount}
-						</span>
+						<span style={{ color: "#28b8c6", fontSize: "0.85rem" }}>{wordCount}</span>
 					</div>
 					<div>
 						Page Number:&nbsp;
-						<span style={{ color: "#28b8c6", fontSize: "0.85rem" }}>
-							{pageNo}
-						</span>
+						<span style={{ color: "#28b8c6", fontSize: "0.85rem" }}>{pageNo}</span>
 					</div>
 				</div>
 			</div>

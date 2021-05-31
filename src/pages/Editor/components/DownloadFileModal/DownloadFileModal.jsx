@@ -60,11 +60,7 @@ const DownloadFileModal = props => {
 				<Button className={styles.downloadButton} onClick={handleDownloadFile}>
 					Download
 				</Button>
-				<Button
-					className={styles.closeModal}
-					color="secondary"
-					onClick={toggle}
-				>
+				<Button className={styles.closeModal} color="secondary" onClick={toggle}>
 					X
 				</Button>
 			</ModalFooter>

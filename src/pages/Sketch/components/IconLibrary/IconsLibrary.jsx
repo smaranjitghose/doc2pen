@@ -4,22 +4,22 @@ import { Divider } from "@material-ui/core";
 
 // Put you icon pack import here
 const iconPack1SVGs = importAll(
-	require.context("./icon-pack1", false, /\.svg$/)
+	require.context("./icon-pack1", false, /\.svg$/),
 );
 const iconPack21SVGs = importAll(
-	require.context("./icon-pack2.1", false, /\.svg$/)
+	require.context("./icon-pack2.1", false, /\.svg$/),
 );
 const iconPack22SVGs = importAll(
-	require.context("./icon-pack2.2", false, /\.svg$/)
+	require.context("./icon-pack2.2", false, /\.svg$/),
 );
 const iconPack3SVGs = importAll(
-	require.context("./icon-pack3", false, /\.svg$/)
+	require.context("./icon-pack3", false, /\.svg$/),
 );
 const iconPack41SVGs = importAll(
-	require.context("./icon-pack4.1", false, /\.svg$/)
+	require.context("./icon-pack4.1", false, /\.svg$/),
 );
 const iconPack42SVGs = importAll(
-	require.context("./icon-pack4.2", false, /\.svg$/)
+	require.context("./icon-pack4.2", false, /\.svg$/),
 );
 
 function importAll(r) {

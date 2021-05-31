@@ -15,9 +15,9 @@ For Optimizing Doc2pen we have always followed some key rules for better SEO and
 
   ```javascript
   <MetaComponent
-    title={metaData.home.title}
-    description={metaData.home.description}
-    keywords={metaData.home.keywords}
+  	title={metaData.home.title}
+  	description={metaData.home.description}
+  	keywords={metaData.home.keywords}
   />
   ```
 

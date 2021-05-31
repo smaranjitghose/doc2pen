@@ -88,7 +88,7 @@ export default function MediaManip() {
 			canvas.height = img.height;
 			canvas.getContext("2d").drawImage(img, 0, 0);
 			const dataUrl = canvas.toDataURL(
-				`image/${format !== "pdf" ? format : "png"}`
+				`image/${format !== "pdf" ? format : "png"}`,
 			);
 			const width = img.width;
 			const height = img.height;
