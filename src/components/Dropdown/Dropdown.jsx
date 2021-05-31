@@ -49,6 +49,7 @@ const DropdownComponent = props => {
 					<DropdownItem
 						onClick={getTargetFunc()}
 						name={
+							// prettier-ignore
 							props.type === "download"
 								? aItem
 								: `body${
