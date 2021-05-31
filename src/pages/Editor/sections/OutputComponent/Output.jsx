@@ -6,7 +6,6 @@ import { EditContext } from "../../containers/editContext";
 const OutputComponent = ({ pageNo, show }) => {
 	const editContext = useContext(EditContext);
 	const page = require(`./${editContext.pageSrc}`);
-	console.log(`${editContext.pageSrc}`);
 
 	const [pageText, setPageText] = useState("");
 	const [wordCount, setWordCount] = useState(0);
@@ -29,8 +28,8 @@ const OutputComponent = ({ pageNo, show }) => {
 							src={page.default}
 							alt="editor"
 							className="mx-auto px-0"
-							Width="100%"
-							Height="100%"
+							width="100%"
+							height="100%"
 						/>
 					</div>
 					<textarea

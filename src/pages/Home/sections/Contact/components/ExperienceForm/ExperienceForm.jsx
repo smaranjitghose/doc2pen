@@ -14,7 +14,11 @@ function ExperienceForm() {
 				<br />
 				<div className={styles.contact_form}>
 					<form
-						onSubmit="setTimeout(function(){window.location.reload();},10);"
+						onSubmit={() =>
+							setTimeout(function () {
+								window.location.reload();
+							}, 10)
+						}
 						className={styles.contact_form_container}
 					>
 						<div className={styles.circle}>

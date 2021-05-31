@@ -34,9 +34,9 @@ function IconPreview(props) {
 	const { iconPackSVGs, categoryTitle } = props;
 	const allSVGsRef = useRef([]);
 
-	allSVGsRef.current = Object.keys(iconPackSVGs).map(imgName => {
+	allSVGsRef.current = Object.keys(iconPackSVGs).map((imgName, index) => {
 		return (
-			<label key={"id"} htmlFor={`icon-${imgName}`} title={imgName}>
+			<label key={"id" + index} htmlFor={`icon-${imgName}`} title={imgName}>
 				<img
 					id={`icon-${imgName}`}
 					className={style.svgIcon}
