@@ -1,4 +1,4 @@
-name: 'Check for merge conflicts'
+name: "Check for merge conflicts"
 on:
   push:
     branches:
@@ -9,5 +9,5 @@ jobs:
     steps:
       - uses: mschilde/auto-label-merge-conflicts@master
         with:
-          CONFLICT_LABEL_NAME: 'merge-conflict'
+          CONFLICT_LABEL_NAME: "merge-conflict"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
