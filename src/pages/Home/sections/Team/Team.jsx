@@ -38,7 +38,10 @@ function Team() {
 				setContributors(
 					data.filter(
 						element =>
-							!(element.login === "smaranjitghose" || element.login === "anushbhatia"),
+							!(
+								element.login === "smaranjitghose" ||
+								element.login === "anushbhatia"
+							),
 					),
 				);
 			});
