@@ -6,7 +6,7 @@ import { PDFDocument } from "pdf-lib";
 import Progress from "./Progress/Progress";
 import Dropdown from "./DropDown/DropDown";
 import DragDrop from "./DragDrop/DragDrop";
-import Button from "./Button/Button";
+import MuiButton from "./Button/Button";
 
 import styles from "./media-manip.module.scss";
 
@@ -196,14 +196,14 @@ export default function MediaManip() {
 				setOutputOptions={setOutputOptions}
 			/>
 			<div className={styles.mediaManip_btn}>
-				<Button
+				<MuiButton
 					value="Convert"
 					type="primary"
 					onClick={() => onConvert()}
 					disabled={convert}
 				/>
 				{!convert && (
-					<Button
+					<MuiButton
 						value="Download"
 						type="secondary"
 						onClick={onDownload}
