@@ -23,18 +23,17 @@ function DragDrop(props) {
         if (index > -1 && fileType!=="pdf") {
           const outputOptionsTemp = outputOptions;
           outputOptionsTemp.splice(index, 1);
+					setOutputOptions(outputOptionsTemp);
+				}
 
-          setOutputOptions(outputOptionsTemp);
-        }
-
-        return Object.assign(file, {
-          preview: URL.createObjectURL(file),
-        });
-      });
-      setFiles((prevState) => [...prevState, ...newFile]);
-    },
-    [setFiles, setInput, outputOptions, setOutputOptions]
-  );
+				return Object.assign(file, {
+					preview: URL.createObjectURL(file),
+				});
+			});
+			setFiles(prevState => [...prevState, ...newFile]);
+		},
+		[setFiles, setInput, outputOptions, setOutputOptions]
+	);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     accept: "image/*, application/pdf",
@@ -50,33 +49,33 @@ function DragDrop(props) {
     }
   };
 
-  return (
-    <section className={styles.container}>
-      {files.length !== 0 && (
-        <div className={styles.container_image}>
-          {files.map((file) => (
-            <div key={file.path} className={`${styles.image} ${styles.scroll}`}>
-              <img src={file.preview} alt="doc2pen" />
-              <span onClick={() => deleteImage(file.path)}>
-                <AiFillCloseCircle size={24} />
-              </span>
-            </div>
-          ))}
-        </div>
-      )}
-      <div
-        {...getRootProps({ className: "dropzone" })}
-        className={styles.container_upload}
-      >
-        <input {...getInputProps()} />
-        {isDragActive ? (
-          <p>Drop the files here ...</p>
-        ) : (
-          <p>Drag 'n' drop some files here, or click to select files</p>
-        )}
-      </div>
-    </section>
-  );
+	return (
+		<section className={styles.container}>
+			{files.length !== 0 && (
+				<div className={styles.container_image}>
+					{files.map(file => (
+						<div key={file.path} className={`${styles.image} ${styles.scroll}`}>
+							<img src={file.preview} alt="doc2pen" />
+							<span onClick={() => deleteImage(file.path)}>
+								<AiFillCloseCircle size={24} />
+							</span>
+						</div>
+					))}
+				</div>
+			)}
+			<div
+				{...getRootProps({ className: "dropzone" })}
+				className={styles.container_upload}
+			>
+				<input {...getInputProps()} />
+				{isDragActive ? (
+					<p>Drop the files here ...</p>
+				) : (
+					<p>Drag 'n' drop some files here, or click to select files</p>
+				)}
+			</div>
+		</section>
+	);
 }
 
 export default DragDrop;
