@@ -88,13 +88,13 @@ export default function MediaManip() {
       canvas.height = img.height;
       canvas.getContext("2d").drawImage(img, 0, 0);
       const dataUrl = canvas.toDataURL(
-        `image/${format!=="pdf" ? format : "png"}`
+        `image/${format !== "pdf" ? format : "png"}`
       );
       const width = img.width;
       const height = img.height;
-      if(format === "pdf") {
+      if (format === "pdf") {
         dataUrls.push({ dataUrl, width, height });
-        if(dataUrls.length === files.length) {
+        if (dataUrls.length === files.length) {
           downloadPdf(dataUrls);
           return;
         }
@@ -110,7 +110,7 @@ export default function MediaManip() {
       });
     });
   };
-  
+
   const downloadPdf = (images) => {
     const doc = new jsPDF("l", "px", [images[0].width, images[0].height]);
     doc.deletePage(1);
@@ -119,15 +119,15 @@ export default function MediaManip() {
       doc.addPage([width, height]);
       doc.setPage(i + 1);
       doc.addImage(dataUrl, "PNG", 0, 0, width, height);
-      if(i === images.length - 1) {
+      if (i === images.length - 1) {
         doc.save("converted.pdf"); //save PDF
         setConvertedFiles([]);
       }
     });
   };
-  
+
   const onDownload = () => {
-    if(convertedFiles.length === 0) return;
+    if (convertedFiles.length === 0) return;
     convertedFiles.forEach((item, index) => {
       zip.file(`${index}.${item.type}`, item.data, { base64: true });
     });
