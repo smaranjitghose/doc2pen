@@ -75,7 +75,7 @@ function Canvas() {
 				setcanvasStateAt(0);
 			};
 		},
-		[canvasHeight, canvasWidth]
+		[canvasHeight, canvasWidth],
 	);
 
 	useEffect(() => {
@@ -84,7 +84,7 @@ function Canvas() {
 		localStorage.getItem("canvasState") !== null &&
 			getLastCanvasState(
 				localStorage.getItem("canvasState"),
-				canvasRef.current.getContext("2d")
+				canvasRef.current.getContext("2d"),
 			);
 	}, [getLastCanvasState]);
 
@@ -174,9 +174,9 @@ function Canvas() {
 						downPoint.x,
 						downPoint.y +
 							parseInt(
-								document.getElementById("canvas-text-input").offsetHeight
+								document.getElementById("canvas-text-input").offsetHeight,
 							) -
-							5
+							5,
 					);
 					setIsWriting(false);
 					setText("");
@@ -329,7 +329,7 @@ function Canvas() {
 				[point.x, point.y],
 				[downPoint.x, point.y],
 			],
-			{ ...closedShapesOptions }
+			{ ...closedShapesOptions },
 		);
 		context.stroke();
 	}
@@ -340,7 +340,7 @@ function Canvas() {
 		const y = (point.y + downPoint.y) / 2;
 		const radius =
 			Math.sqrt(
-				Math.pow(downPoint.x - point.x, 2) + Math.pow(downPoint.y - point.y, 2)
+				Math.pow(downPoint.x - point.x, 2) + Math.pow(downPoint.y - point.y, 2),
 			) / 2;
 
 		roughCanvas.current.circle(x, y, radius, { ...closedShapesOptions });
@@ -355,7 +355,7 @@ function Canvas() {
 				[point.x, point.y],
 				[downPoint.x, point.y],
 			],
-			{ ...closedShapesOptions }
+			{ ...closedShapesOptions },
 		);
 	}
 
@@ -377,7 +377,7 @@ function Canvas() {
 			point.x,
 			downPoint.y,
 			point.y,
-			Math.PI / 4
+			Math.PI / 4,
 		);
 		const y1 = formula(
 			point.y,
@@ -386,7 +386,7 @@ function Canvas() {
 			point.y,
 			point.x,
 			downPoint.x,
-			Math.PI / 4
+			Math.PI / 4,
 		);
 		const x2 = formula(
 			point.x,
@@ -395,7 +395,7 @@ function Canvas() {
 			point.x,
 			point.y,
 			downPoint.y,
-			Math.PI / 4
+			Math.PI / 4,
 		);
 		const y2 = formula(
 			point.y,
@@ -404,7 +404,7 @@ function Canvas() {
 			point.y,
 			downPoint.x,
 			point.x,
-			Math.PI / 4
+			Math.PI / 4,
 		);
 
 		roughCanvas.current.line(downPoint.x, downPoint.y, point.x, point.y, {
@@ -426,7 +426,7 @@ function Canvas() {
 				[center_x, point.y],
 				[downPoint.x, center_y],
 			],
-			{ ...closedShapesOptions }
+			{ ...closedShapesOptions },
 		);
 	}
 
@@ -440,7 +440,7 @@ function Canvas() {
 				[point.x, point.y],
 				[center_x, point.y],
 			],
-			{ ...closedShapesOptions }
+			{ ...closedShapesOptions },
 		);
 	}
 
@@ -531,7 +531,7 @@ function Canvas() {
 			const result = await getNewFileHandle(
 				"Doc2pen Sketch Save File",
 				"application/d2ps",
-				".d2ps"
+				".d2ps",
 			);
 			name = result.name;
 		} catch (err) {
@@ -575,7 +575,7 @@ function Canvas() {
 				};
 				image.src = reader.result;
 			},
-			false
+			false,
 		);
 		reader.readAsDataURL(file);
 	};

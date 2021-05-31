@@ -209,7 +209,7 @@ function FluidCard(props) {
 					0,
 					0,
 					canvasRef.current.offsetWidth,
-					canvasRef.current.offsetHeight
+					canvasRef.current.offsetHeight,
 				);
 
 				// Move points
