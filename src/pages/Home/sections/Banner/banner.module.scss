@@ -6,10 +6,13 @@ $bg-shade2: #2c5364;
 $bg-shade3: #203a43;
 $btn-hover-bg: #0d739eab;
 
-
 .Home {
-  background: -webkit-linear-gradient(to right, $bg-shade1 $bg-shade2,$bg-shade3);
-  background: linear-gradient(to right, $bg-shade1,$bg-shade2,$bg-shade3);
+  background: -webkit-linear-gradient(
+    to right,
+    $bg-shade1 $bg-shade2,
+    $bg-shade3
+  );
+  background: linear-gradient(to right, $bg-shade1, $bg-shade2, $bg-shade3);
   color: colors.$white;
   height: 89vh;
   padding: 1rem;

@@ -8,24 +8,22 @@
   margin-left: 10px;
   box-shadow: 2px 4px 5px #0000005b;
 
-  &:disabled{
-    cursor:not-allowed;
+  &:disabled {
+    cursor: not-allowed;
     background-color: #cccccc;
     color: #beb8b8;
     border: 3px solid transparent;
-    
 
-    &:hover{
+    &:hover {
       background-color: #cccccc;
       border: 3px solid transparent;
-      color: #b1afaf
+      color: #b1afaf;
     }
   }
-
 }
 
 .primary {
-  background: #ADD8E6;
+  background: #add8e6;
   color: black;
 
   &:hover {
@@ -35,12 +33,12 @@
   }
 }
 
-.secondary{
+.secondary {
   background: #4e89ae;
   border: 3px solid #4e89ae;
   color: white;
 
- &:hover {
+  &:hover {
     background: #5597c0a6;
     color: rgba(0, 0, 0, 0.651);
     border: 3px solid #4e89ae;
