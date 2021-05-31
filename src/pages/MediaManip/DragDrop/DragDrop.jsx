@@ -17,12 +17,14 @@ function DragDrop(props) {
 		acceptedFiles => {
 			const newFile = acceptedFiles.map(file => {
 				const fileType = file.type.split("/")[1];
-				acceptedFiles.length > 1 ? setInput("Mix") : setInput(fileType);
+				acceptedFiles.length > 1 || files.length > 0
+					? setInput("Mix")
+					: setInput(fileType);
 
-        const index = outputOptions.indexOf(fileType);
-        if (index > -1 && fileType !== "pdf") {
-          const outputOptionsTemp = outputOptions;
-          outputOptionsTemp.splice(index, 1);
+				const index = outputOptions.indexOf(fileType);
+				if (index > -1 && fileType !== "pdf") {
+					const outputOptionsTemp = outputOptions;
+					outputOptionsTemp.splice(index, 1);
 					setOutputOptions(outputOptionsTemp);
 				}
 
@@ -32,22 +34,22 @@ function DragDrop(props) {
 			});
 			setFiles(prevState => [...prevState, ...newFile]);
 		},
-		[setFiles, setInput, outputOptions, setOutputOptions]
+		[setFiles, setInput, outputOptions, setOutputOptions],
 	);
 
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({
-		accept: "image/*",
+		accept: "image/*, application/pdf",
 		onDrop,
 	});
 
-  const deleteImage = (path) => {
-    setFiles((prevState) => prevState.filter((file) => file.path !== path));
-    if (input !== "Mix") {
-      setInput("Input");
-      setOutput("Output");
-      setOutputOptions(["png", "jpg", "webp", "jpeg", "pdf"]);
-    }
-  };
+	const deleteImage = path => {
+		setFiles(prevState => prevState.filter(file => file.path !== path));
+		if (input !== "Mix") {
+			setInput("Input");
+			setOutput("Output");
+			setOutputOptions(["png", "jpg", "webp", "jpeg", "pdf"]);
+		}
+	};
 
 	return (
 		<section className={styles.container}>
