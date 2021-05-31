@@ -299,11 +299,7 @@ function FluidCard(props) {
 
 	return (
 		<div className={styles["card-container"]}>
-			<div
-				ref={liquidBG}
-				className={styles["div-liquid"]}
-				onClick={drawNextImage}
-			>
+			<div ref={liquidBG} className={styles["div-liquid"]} onClick={drawNextImage}>
 				<canvas ref={canvasRef} />
 			</div>
 			<div className={styles.content}>
@@ -326,11 +322,7 @@ function FluidCard(props) {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<UseAnimations
-								animation={linkedin}
-								size={42}
-								strokeColor={"#0e76a8"}
-							/>
+							<UseAnimations animation={linkedin} size={42} strokeColor={"#0e76a8"} />
 						</a>
 					</div>
 				</div>
