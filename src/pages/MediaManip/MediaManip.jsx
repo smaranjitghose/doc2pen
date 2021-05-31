@@ -90,8 +90,10 @@ export default function MediaManip() {
 			const dataUrl = canvas.toDataURL(
 				`image/${format !== "pdf" ? format : "png"}`
 			);
+			const width = img.width;
+			const height = img.height;
 			if (format === "pdf") {
-				dataUrls.push(dataUrl);
+				dataUrls.push({ dataUrl, width, height });
 				if (dataUrls.length === files.length) {
 					downloadPdf(dataUrls);
 					return;
@@ -109,24 +111,18 @@ export default function MediaManip() {
 		});
 	};
 
-	const downloadPdf = async images => {
-		const doc = new jsPDF("p", "pt", "a4");
-		const width = doc.internal.pageSize.width;
-		const height = doc.internal.pageSize.height;
+	const downloadPdf = images => {
+		const doc = new jsPDF("l", "px", [images[0].width, images[0].height]);
+		doc.deletePage(1);
 		doc.text(10, 20, "");
-		images.forEach((imgDataUri, i) => {
-			if (i > 0) {
-				doc.addPage();
-				doc.setPage(i + 1);
+		images.forEach(({ dataUrl, width, height }, i) => {
+			doc.addPage([width, height]);
+			doc.setPage(i + 1);
+			doc.addImage(dataUrl, "PNG", 0, 0, width, height);
+			if (i === images.length - 1) {
+				doc.save("converted.pdf"); //save PDF
+				setConvertedFiles([]);
 			}
-			doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
-		});
-
-		await new Promise(resolve => {
-			// Wait for PDF download
-			doc.save("document.pdf"); //save PDF
-			resolve(true);
-			setConvertedFiles([]);
 		});
 	};
 
