@@ -49,12 +49,13 @@ const DropdownComponent = props => {
 					<DropdownItem
 						onClick={getTargetFunc()}
 						name={
+							// prettier-ignore
 							props.type === "download"
 								? aItem
 								: `body${
-										props.type === "font"
-											? "Font"
-											: props.type === "font-weight"
+									props.type === "font"
+										? "Font"
+										: props.type === "font-weight"
 											? "FontWeight"
 											: "Color"
 								  }`
