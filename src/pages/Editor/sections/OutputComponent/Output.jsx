@@ -6,7 +6,6 @@ import { EditContext } from "../../containers/editContext";
 const OutputComponent = ({ pageNo, show }) => {
 	const editContext = useContext(EditContext);
 	const page = require(`./${editContext.pageSrc}`);
-	// console.log(`${editContext.pageSrc}`);
 
 	const [pageText, setPageText] = useState("");
 	const [wordCount, setWordCount] = useState(0);
