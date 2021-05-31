@@ -20,7 +20,7 @@ function DragDrop(props) {
         acceptedFiles.length > 1 ? setInput("Mix") : setInput(fileType);
 
         const index = outputOptions.indexOf(fileType);
-        if (index > -1) {
+        if (index > -1 && fileType !== "pdf") {
           const outputOptionsTemp = outputOptions;
           outputOptionsTemp.splice(index, 1);
 
@@ -46,7 +46,7 @@ function DragDrop(props) {
     if (input !== "Mix") {
       setInput("Input");
       setOutput("Output");
-      setOutputOptions(["png", "jpg", "webp", "jpeg"]);
+      setOutputOptions(["png", "jpg", "webp", "jpeg", "pdf"]);
     }
   };
 
