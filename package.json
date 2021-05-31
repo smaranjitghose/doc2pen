@@ -1,8 +1,18 @@
 {
+  "private": true,
   "name": "doc2pen",
   "version": "0.1.0",
   "homepage": ".",
-  "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "lint": "eslint --ext js,jsx src",
+    "lint:fix": "eslint --ext js,jsx src --fix"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
@@ -39,19 +49,13 @@
     "sass": "^1.32.8",
     "web-vitals": "^0.2.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-plugin-react": "^7.23.2",
+    "gh-pages": "^3.1.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0"
   },
   "browserslist": {
     "production": [
@@ -65,13 +69,25 @@
       "last 1 safari version"
     ]
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.json": "prettier-package-json --write",
-    "*.{js,css,md}": "prettier --write"
-  },
-  "devDependencies": {
-    "eslint": "^7.27.0",
-    "eslint-plugin-react": "^7.23.2",
-    "gh-pages": "^3.1.0"
+    "*./src/*.{js,jsx,ts,tsx}": [
+      "npx prettier --write",
+      "eslint --fix"
+    ],
+    "*.{md,mdx,json,css,scss,yaml,yml}": [
+      "npx prettier --write"
+    ]
   }
 }
