@@ -57,12 +57,12 @@
         justify-content: center;
         align-items: center;
       }
-      .linkedin{
+      .linkedin {
         &:hover {
           filter: invert(0.1);
         }
       }
-      .github{
+      .github {
         &:hover {
           filter: invert(1);
           box-shadow: 2px 5px 15px colors.$white-light-tint;
