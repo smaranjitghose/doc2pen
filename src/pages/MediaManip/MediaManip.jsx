@@ -104,16 +104,10 @@ export default function MediaManip() {
   const downloadPdf = images => {
     const doc = new jsPDF("l", "px", [images[0].width, images[0].height]);
     doc.deletePage(1);
-    // const pageWidth = doc.internal.pageSize.width;
-    // const pageHeight = doc.internal.pageSize.height;
     doc.text(10, 20, "");
     images.forEach(({ dataUrl, width, height }, i) => {
-      // if(i>0) {
-        doc.addPage([width, height]);
-        doc.setPage(i+1);
-      // }
-      // if(width<=pageWidth && height<=pageHeight)
-
+      doc.addPage([width, height]);
+      doc.setPage(i+1);
       doc.addImage(dataUrl, "PNG", 0, 0, width, height);
       if(i===images.length-1) {
         doc.save("converted.pdf"); //save PDF
