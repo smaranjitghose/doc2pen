@@ -1,0 +1,9 @@
+# Ignore:
+build
+/public/images
+/public/favicon
+/public/*.png
+/public/*.jpg
+src/fonts
+.gitignore
+.prettierignore
