@@ -6,7 +6,6 @@ Are you a student who is tired of having to write out assignments on paper, draw
 
 Does it seem too much of a hassle in this age of online education? 😫
 
-
 If your answer is yes, then you've come to the right place! 😃
 
 ### Doc2Pen is the 1 stop shop for getting all your "handmade" assignments ready for submission digitally. 🥳
@@ -19,7 +18,6 @@ It really is that easy! 🎊
 
 And the best part of all? **Doc2Pen is open source!** 🤩
 
-
 ![Issues](https://img.shields.io/github/issues/smaranjitghose/doc2pen)
 ![Pull Requests](https://img.shields.io/github/issues-pr/smaranjitghose/doc2pen)
 ![Forks](https://img.shields.io/github/forks/smaranjitghose/doc2pen)
@@ -27,43 +25,42 @@ And the best part of all? **Doc2Pen is open source!** 🤩
 [![License](https://img.shields.io/github/license/smaranjitghose/doc2pen)](https://github.com/smaranjitghose/doc2pen/blob/master/LICENSE)
 ![](https://img.shields.io/github/repo-size/smaranjitghose/doc2pen.svg?label=Repo%20size&style=flat-square)&nbsp;
 
-
-
 ## DEMO
 
 ### Home Page
+
 <img src="readme_assets/home.gif">
 
 ### Editor Page
+
 <img src="readme_assets/editor.gif">
 
 ### Sketch Page
+
 <img src="readme_assets/sketch.gif">
 
 ### Media Manip Page
-<img src="readme_assets/mediaManip.gif">
 
+<img src="readme_assets/mediaManip.gif">
 
 ## Features:
 
 - [ ] Type/Paste your assignments and get handwritten ones to download directly! Bye-Bye Pen&Paper
 - [ ] Make Sketches/Diagrams/Figures for your assignments/presentations
 - [ ] Media Manager
-  - [ ]  PDF Spliter
-  - [ ]  PDF Merger
-  - [ ]  PNG to JPG
-  - [ ]  JPG to PNG
-  - [ ]  PNG to WEBP
-  - [ ]  WEBP to PNG
-  - [ ]  JPG to WEBP
-  - [ ]  WEBP to PNG
-  - [ ]  JIFF to PNG
-  - [ ]  JIFF to JPG
-  - [ ]  PNG(multiple) to PDF
-
+  - [ ] PDF Spliter
+  - [ ] PDF Merger
+  - [ ] PNG to JPG
+  - [ ] JPG to PNG
+  - [ ] PNG to WEBP
+  - [ ] WEBP to PNG
+  - [ ] JPG to WEBP
+  - [ ] WEBP to PNG
+  - [ ] JIFF to PNG
+  - [ ] JIFF to JPG
+  - [ ] PNG(multiple) to PDF
 
 ## Basic structure of the project repository 🗃️📂
-
 
 ```terminal
 |
@@ -76,7 +73,7 @@ And the best part of all? **Doc2Pen is open source!** 🤩
     |- index.js
     |-assets         # Contains all the community brand assets
     |-components     # Contains all the components used within the app.
-    |-fonts          # Contains all the fonts 
+    |-fonts          # Contains all the fonts
     |-pages          # Contains all the sections of the page.
           |- 404
           |- Home
@@ -84,10 +81,10 @@ And the best part of all? **Doc2Pen is open source!** 🤩
           |- Sketch
     |-seo # Contains code for meta tags using react-helmet
 ```
+
 ### Tech Stack: 💻
 
-<img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>   <img alt="React" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
-
+<img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/> <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img alt="React" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
 
 ## Under the hood:
 
@@ -102,18 +99,13 @@ And the best part of all? **Doc2Pen is open source!** 🤩
 - [JSPDF](https://www.npmjs.com/package/jspdf): Generate PDFs
 - [React Scroll](https://www.npmjs.com/package/react-scroll): Smooth Scrolling between sections
 
-
-
-
 ## Wish to fix a bug or add a new feature?[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)🤝🏽🍀:
-
 
 <p align = "center"><img src = "https://media.giphy.com/media/1xOe0qgiYLYWE6pkki/giphy.gif"></p>
 
 Please check out our [contribution guidelines](./CONTRIBUTING.md)
 
 ## The geeks🤓 behind this initiative:
-
 
 **Our Project Maintainers👨‍🏫:**
 
@@ -128,10 +120,10 @@ Please check out our [contribution guidelines](./CONTRIBUTING.md)
 
 **Our valuable Contributors👩‍💻👨‍💻**
 <a href="https://github.com/smaranjitghose/doc2pen/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=smaranjitghose/doc2pen" />
+<img src="https://contributors-img.web.app/image?repo=smaranjitghose/doc2pen" />
 </a>
 
-## Open Source Programs we have been associated with: 
+## Open Source Programs we have been associated with:
 
 <p align="center">
 <a href="https://www.pclubsummerofcode.in/"><img src="./readme_assets/psoc.png" width="25%"></a>
@@ -146,10 +138,11 @@ Please check out our [contribution guidelines](./CONTRIBUTING.md)
 </p>
 
 ## Code of Conduct
+
 <p align="center"><img src="https://media.giphy.com/media/qHRwTyhWIj4UU/200w_d.gif" width=35%></p>
 
-## License 
-<p align="center"><img src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif" width=35%></p>
+## License
 
+<p align="center"><img src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif" width=35%></p>
 
 ## Made with ♥ for the students of the world!
