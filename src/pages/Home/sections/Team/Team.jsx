@@ -71,11 +71,7 @@ function Team() {
 						className={`${styles.position_relative} ${styles.d_inline_block} ${styles.text_center} ${styles.grid_wd_100} ${styles.figure}`}
 						key={c.login}
 					>
-						<img
-							src={c.avatar_url}
-							className={styles.grid_wd_100}
-							alt="Profile"
-						/>
+						<img src={c.avatar_url} className={styles.grid_wd_100} alt="Profile" />
 						<figcaption
 							className={`${styles.position_absolute} ${styles.grid_wd_100} ${styles.va_top}`}
 						>

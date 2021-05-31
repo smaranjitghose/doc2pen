@@ -158,9 +158,7 @@ function VerticalTabs(props) {
 		return (
 			<label style={{ marginTop: "3px" }} htmlFor={id} title={label}>
 				<div
-					className={`${styles.feature} ${
-						type === type_ && styles.active_feature
-					}`}
+					className={`${styles.feature} ${type === type_ && styles.active_feature}`}
 					onClick={() => setType(type_)}
 					id={id}
 				>
@@ -251,10 +249,7 @@ function VerticalTabs(props) {
 							</ListItemIcon>
 							<ListItemText primary="Download PNG" />
 						</ListItem>
-						<ListItem
-							button
-							onClick={() => initiateLoadSaved("img-file-selector")}
-						>
+						<ListItem button onClick={() => initiateLoadSaved("img-file-selector")}>
 							<ListItemIcon>
 								<PhotoLibrary />
 								<input
@@ -328,11 +323,7 @@ function VerticalTabs(props) {
 							<Shape type_="circle" id="sketch-shapes-circle" label="Circle">
 								<FaRegCircle size={10} />
 							</Shape>
-							<Shape
-								type_="triangle"
-								id="sketch-shapes-triangle"
-								label="Triangle"
-							>
+							<Shape type_="triangle" id="sketch-shapes-triangle" label="Triangle">
 								<GiTriangleTarget size={12} />
 							</Shape>
 							<Shape type_="arrow" id="sketch-shapes-arrow" label="Arrow">
@@ -387,10 +378,7 @@ function VerticalTabs(props) {
 												/>
 											</div>
 										</Feature>
-										<Feature
-											classname={styles.sliderWrapper}
-											title={"Fill Opacity"}
-										>
+										<Feature classname={styles.sliderWrapper} title={"Fill Opacity"}>
 											<input
 												className={styles.slider}
 												type="range"
@@ -405,10 +393,7 @@ function VerticalTabs(props) {
 								)}
 								{!["none", "solid"].includes(fillStyle) && (
 									<>
-										<Feature
-											classname={styles.sliderWrapper}
-											title={"Fill Weight"}
-										>
+										<Feature classname={styles.sliderWrapper} title={"Fill Weight"}>
 											<input
 												className={styles.slider}
 												type="range"
@@ -433,10 +418,7 @@ function VerticalTabs(props) {
 												onChange={e => setHachureAngle(e.target.value - 180)}
 											/>
 										</Feature>
-										<Feature
-											classname={styles.sliderWrapper}
-											title={"Fill Hachure Gap"}
-										>
+										<Feature classname={styles.sliderWrapper} title={"Fill Hachure Gap"}>
 											<input
 												className={styles.slider}
 												type="range"
@@ -565,10 +547,7 @@ function VerticalTabs(props) {
 								/>
 							</div>
 						</Feature>
-						<Feature
-							classname={styles.sliderWrapper}
-							title={`Font [ ${fontSize} ]`}
-						>
+						<Feature classname={styles.sliderWrapper} title={`Font [ ${fontSize} ]`}>
 							<input
 								className={styles.slider}
 								type="range"
@@ -605,10 +584,7 @@ function VerticalTabs(props) {
 							</div>
 						</Feature>
 						<Feature title="Font Family">
-							<select
-								value={fontFamily}
-								onChange={e => setFontFamily(e.target.value)}
-							>
+							<select value={fontFamily} onChange={e => setFontFamily(e.target.value)}>
 								<option value="cursive">Cursive</option>
 								<option value="Courier New">Courier New</option>
 								<option value="serif">Serif</option>

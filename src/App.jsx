@@ -3,7 +3,6 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { withRouter } from "react-router";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import NotFound from "./pages/404/NotFound";
 import "./index.scss";
 import Preloader from "./components/Preloader/Preloader";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
@@ -17,6 +16,7 @@ const Home = lazy(() => import("./pages/Home/Home"));
 const Editor = lazy(() => import("./pages/Editor/Editor"));
 const Sketch = lazy(() => import("./pages/Sketch/Sketch"));
 const MediaManip = lazy(() => import("./pages/MediaManip/MediaManip"));
+const NotFound = lazy(() => import("./pages/404/NotFound"));
 
 window.isHome = true;
 
