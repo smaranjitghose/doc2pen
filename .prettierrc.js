@@ -4,7 +4,6 @@ module.exports = {
   singleQuote: false,
   trailingComma: 'all',
   arrowParens: 'avoid',
-  parser: 'json5',
   endOfLine: 'lf',
   embeddedLanguageFormatting: 'auto',
   printWidth: 80,

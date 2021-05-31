@@ -30,7 +30,7 @@ function Team() {
 
 	useEffect(() => {
 		fetch(
-			"https://api.github.com/repos/smaranjitghose/doc2pen/contributors?per_page=1000"
+			"https://api.github.com/repos/smaranjitghose/doc2pen/contributors?per_page=1000",
 		)
 			.then(res => res.json())
 			.then(data => {
@@ -41,8 +41,8 @@ function Team() {
 							!(
 								element.login === "smaranjitghose" ||
 								element.login === "anushbhatia"
-							)
-					)
+							),
+					),
 				);
 			});
 	}, []);

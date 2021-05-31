@@ -66,6 +66,13 @@
           border-radius: 10px;
           margin-top: 10px;
         }
+        @media ( max-width: 300px ){
+          img{
+            width: 100%;
+            margin-top: 0;
+            height: unset;
+          }
+        }
       }
       .card_text {
         grid-area: text;
@@ -86,6 +93,7 @@
         }
       }
       .card_stats {
+        display: flex;
         grid-area: stats;
         padding: 17px 0 23px 0;
         margin-bottom: 5px;
@@ -133,6 +141,11 @@
           opacity: 1;
           right: 10px;
         }
+      }
+    }
+    @media ( max-width: 300px ){
+      .card{
+        grid-template-columns: 220px;
       }
     }
   }

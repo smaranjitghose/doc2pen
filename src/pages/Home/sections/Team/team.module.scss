@@ -5,6 +5,7 @@
   padding: 0 20px;
   text-align: center;
   font-size: 28px;
+  overflow: hidden;
 
   .titleMain {
     @include mixin.section-title;
