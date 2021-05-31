@@ -10,15 +10,21 @@ import Button from "./Button/Button";
 import styles from "./media-manip.module.scss";
 
 export default function MediaManip() {
-  const [input, setInput] = useState("Input");
-  const [output, setOutput] = useState("Output");
-  const [files, setFiles] = useState([]);
-  const [convertedFiles, setConvertedFiles] = useState([]);
-  const [progress, setProgress] = useState(0);
-  const [download, setDownload] = useState(true); //true = disabled
-  const [convert, setConvert] = useState(true); //true = disabled
-  const [outputOptions, setOutputOptions] = useState(["png", "jpg", "webp", "jpeg", "pdf"]);
-  let zip = new JSZip();
+	const [input, setInput] = useState("Input");
+	const [output, setOutput] = useState("Output");
+	const [files, setFiles] = useState([]);
+	const [convertedFiles, setConvertedFiles] = useState([]);
+	const [progress, setProgress] = useState(0);
+	const [download, setDownload] = useState(true); //true = disabled
+	const [convert, setConvert] = useState(true); //true = disabled
+	const [outputOptions, setOutputOptions] = useState([
+		"png",
+		"jpg",
+		"webp",
+		"jpeg",
+		"pdf",
+	]);
+	let zip = new JSZip();
 
 	useEffect(() => {
 		if (files.length === 0) {
@@ -27,109 +33,113 @@ export default function MediaManip() {
 		} else setConvert(false);
 	}, [files, setConvert, setDownload]);
 
-  useEffect(() => {
-    if (convertedFiles.length === 0) setDownload(true);
-  }, [convertedFiles, download]);
+	useEffect(() => {
+		if (convertedFiles.length === 0) setDownload(true);
+	}, [convertedFiles, download]);
 
-  const onConvert = () => {
-    setProgress(0);
-    setConvertedFiles([]);
-    setDownload(true);
-    const availableFormats = ["jpg", "webp", "png", "jiff", "jpeg"];
-    let i = 0;
-    for (i = 0; i < files.length; i++) {
-      const fileType = files[i].name.substr(files[i].name.lastIndexOf(".") + 1).toLowerCase();
-      if (!availableFormats.includes(fileType)) {
-        console.log(fileType);
-        break;
-      }
-    }
-    if (i !== files.length) return alert("Input File Format Not Supported.");
+	const onConvert = () => {
+		setProgress(0);
+		setConvertedFiles([]);
+		setDownload(true);
+		const availableFormats = ["jpg", "webp", "png", "jiff", "jpeg"];
+		let i = 0;
+		for (i = 0; i < files.length; i++) {
+			const fileType = files[i].name
+				.substr(files[i].name.lastIndexOf(".") + 1)
+				.toLowerCase();
+			if (!availableFormats.includes(fileType)) {
+				console.log(fileType);
+				break;
+			}
+		}
+		if (i !== files.length) return alert("Input File Format Not Supported.");
 
-    const fileType = files[0].name.split(".")[1];
-    if (output === "Output" || (files.length === 1 && output === fileType))
-      return alert("Select a valid Output Format");
-    if (output === "jpg") return convertImage("jpg");
-    if (output === "webp") return convertImage("webp");
-    if (output === "png") return convertImage("png");
-    if (output === "jpeg") return convertImage("jpeg");
-    if (output === "pdf") return convertImage("pdf");
-  };
+		const fileType = files[0].name.split(".")[1];
+		if (output === "Output" || (files.length === 1 && output === fileType))
+			return alert("Select a valid Output Format");
+		if (output === "jpg") return convertImage("jpg");
+		if (output === "webp") return convertImage("webp");
+		if (output === "png") return convertImage("png");
+		if (output === "jpeg") return convertImage("jpeg");
+		if (output === "pdf") return convertImage("pdf");
+	};
 
-  const startConversion = () => {
-    const progressTime = setInterval(() => {
-      setProgress(prev => {
-        if (prev === 100) {
-          clearInterval(progressTime);
-          setDownload(false);
-          if(convertedFiles.length===0) return 0;
-          return 100;
-        } else return prev + 1;
-      });
-    }, 10);
-  };
+	const startConversion = () => {
+		const progressTime = setInterval(() => {
+			setProgress(prev => {
+				if (prev === 100) {
+					clearInterval(progressTime);
+					setDownload(false);
+					if (convertedFiles.length === 0) return 0;
+					return 100;
+				} else return prev + 1;
+			});
+		}, 10);
+	};
 
-  const convertImage = format => {
-    startConversion();
-    let img = new Image();
-    const dataUrls = [];
-    files.forEach(item => {
-      let canvas = document.createElement("canvas");
-      img.src = item.preview;
-      canvas.width = img.width;
-      canvas.height = img.height;
-      canvas.getContext("2d").drawImage(img, 0, 0);
-      const dataUrl = canvas.toDataURL(`image/${format!=="pdf" ? format : "png"}`);
-      if(format==="pdf") {
-        dataUrls.push(dataUrl);
-        if(dataUrls.length===files.length) {
-          downloadPdf(dataUrls);
-          return;
-        }
-      }
-      setConvertedFiles(prev => {
-        return [
-          ...prev,
-          {
-            type: format,
-            data: dataUrl.split(",")[1]
-          },
-        ];
-      });
-    });
-  };
+	const convertImage = format => {
+		startConversion();
+		let img = new Image();
+		const dataUrls = [];
+		files.forEach(item => {
+			let canvas = document.createElement("canvas");
+			img.src = item.preview;
+			canvas.width = img.width;
+			canvas.height = img.height;
+			canvas.getContext("2d").drawImage(img, 0, 0);
+			const dataUrl = canvas.toDataURL(
+				`image/${format !== "pdf" ? format : "png"}`
+			);
+			if (format === "pdf") {
+				dataUrls.push(dataUrl);
+				if (dataUrls.length === files.length) {
+					downloadPdf(dataUrls);
+					return;
+				}
+			}
+			setConvertedFiles(prev => {
+				return [
+					...prev,
+					{
+						type: format,
+						data: dataUrl.split(",")[1],
+					},
+				];
+			});
+		});
+	};
 
-  const downloadPdf = async images => {
-    const doc = new jsPDF("p", "pt", "a4");
-    const width = doc.internal.pageSize.width;
-    const height = doc.internal.pageSize.height;
-    doc.text(10, 20, "");
-    images.forEach((imgDataUri, i) => {
-      if(i>0) {
-        doc.addPage();
-        doc.setPage(i+1);
-      }
-      doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
-    });
+	const downloadPdf = async images => {
+		const doc = new jsPDF("p", "pt", "a4");
+		const width = doc.internal.pageSize.width;
+		const height = doc.internal.pageSize.height;
+		doc.text(10, 20, "");
+		images.forEach((imgDataUri, i) => {
+			if (i > 0) {
+				doc.addPage();
+				doc.setPage(i + 1);
+			}
+			doc.addImage(imgDataUri, "PNG", 0, 0, width, height);
+		});
 
-    await new Promise((resolve) => {
-      // Wait for PDF download
-      doc.save("document.pdf"); //save PDF
-      resolve(true);
-      setConvertedFiles([]);
-    });
-  };
-  
-  const onDownload = () => {
-    if(convertedFiles.length===0) return;
-    convertedFiles.forEach((item, index) => {
-      zip.file(`${index}.${item.type}`, item.data, { base64: true });
-    });
-    zip.generateAsync({ type: "blob" }).then(function (content) {
-      saveAs(content, "converted files.zip");
-    });
-    setProgress(0);
-  };
+		await new Promise(resolve => {
+			// Wait for PDF download
+			doc.save("document.pdf"); //save PDF
+			resolve(true);
+			setConvertedFiles([]);
+		});
+	};
+
+	const onDownload = () => {
+		if (convertedFiles.length === 0) return;
+		convertedFiles.forEach((item, index) => {
+			zip.file(`${index}.${item.type}`, item.data, { base64: true });
+		});
+		zip.generateAsync({ type: "blob" }).then(function (content) {
+			saveAs(content, "converted files.zip");
+		});
+		setProgress(0);
+	};
 
 	return (
 		<div className={styles.mediaManip}>
