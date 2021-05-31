@@ -57,7 +57,7 @@ const DropdownComponent = props => {
 										: props.type === "font-weight"
 											? "FontWeight"
 											: "Color"
-								}`
+								  }`
 						}
 						value={aItem}
 						style={{

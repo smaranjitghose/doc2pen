@@ -33,7 +33,7 @@ function DragDrop(props) {
 			});
 			setFiles(prevState => [...prevState, ...newFile]);
 		},
-		[setFiles, setInput, outputOptions, setOutputOptions]
+		[setFiles, setInput, outputOptions, setOutputOptions],
 	);
 
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({

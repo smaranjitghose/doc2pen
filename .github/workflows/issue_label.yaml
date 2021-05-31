@@ -3,7 +3,7 @@ name: Labeling new issue
 # The event that triggers the workflow
 on:
   issues:
-    types: ['opened']
+    types: ["opened"]
 jobs:
   build:
     # The machine each job should run
