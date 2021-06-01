@@ -3,11 +3,23 @@
   [headers.values]
     Cache-Control = "public, max-age=34397077" # 1year 1month cache
 [[headers]]
+  for = "*.jsx"  # for caching jsx files
+  [headers.values]
+    Cache-Control = "public, max-age=34397077" # 1year 1month cache
+[[headers]]
   for = "*.css" # css files too
   [headers.values]
     Cache-Control = "public, max-age=34397077"
 [[headers]]
   for = "*.png" # png files too
+  [headers.values]
+    Cache-Control = "public, max-age=34397077"
+[[headers]]
+  for = "*.jpg" # jpg files too
+  [headers.values]
+    Cache-Control = "public, max-age=34397077"
+[[headers]]
+  for = "*.jpeg" # jpeg files too
   [headers.values]
     Cache-Control = "public, max-age=34397077"
 [[headers]]
