@@ -1,5 +1,4 @@
-// import React, {useState} from "react";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./toolbox.module.scss";
 import {
 	AiOutlineLine,
@@ -30,6 +29,7 @@ import {
 	ListItemText,
 	ListItemIcon,
 	Divider,
+	ClickAwayListener,
 } from "@material-ui/core";
 import {
 	AccountTree,
@@ -42,6 +42,7 @@ import {
 	Save,
 } from "@material-ui/icons";
 import IconsLibrary from "./../IconLibrary/IconsLibrary";
+import { ChromePicker } from "react-color";
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -136,6 +137,41 @@ function VerticalTabs(props) {
 		loadLastState,
 		saveInstance,
 	} = props;
+	const [displayColorPicker, setDisplayColorPicker] = useState(false);
+	const ColorPicker = props => {
+		const { width, name, color, onColorChange } = props;
+		return (
+			<div className={styles.root}>
+				<div className={styles.swatch}>
+					<div
+						className={styles.colorIndicator}
+						style={{
+							backgroundColor: props.color || "#fff",
+						}}
+						onMouseDown={() => {
+							setDisplayColorPicker(true);
+						}}
+					/>
+				</div>
+				{displayColorPicker ? (
+					<ClickAwayListener
+						onClickAway={() => {
+							setDisplayColorPicker(false);
+						}}
+					>
+						<div className={styles.popover}>
+							<ChromePicker
+								width={width}
+								name={name}
+								color={color}
+								onChangeComplete={color => onColorChange(color.hex)}
+							/>
+						</div>
+					</ClickAwayListener>
+				) : null}
+			</div>
+		);
+	};
 
 	const classes = useStyles();
 	const [value, setValue] = React.useState(0);
@@ -296,11 +332,11 @@ function VerticalTabs(props) {
 					<List component="div">
 						<Feature title="Canvas Setup">
 							<div className={styles.colorPicker}>
-								<input
-									type="color"
+								<ColorPicker
+									width={200}
 									name="canvas_bg_color"
-									value={background}
-									onChange={e => setBackground(e.target.value)}
+									color={background}
+									onColorChange={setBackground}
 								/>
 								<input
 									className={styles.hexInput}
@@ -372,11 +408,11 @@ function VerticalTabs(props) {
 									<>
 										<Feature title="Fill Color">
 											<div className={styles.colorPicker}>
-												<input
-													type="color"
+												<ColorPicker
+													width={200}
 													name="canvas_pen_color"
-													value={fillColor}
-													onChange={e => setFillColor(e.target.value)}
+													color={fillColor}
+													onColorChange={setFillColor}
 												/>
 												<input
 													className={styles.hexInput}
@@ -455,11 +491,11 @@ function VerticalTabs(props) {
 
 						<Feature title="Stroke">
 							<div className={styles.colorPicker}>
-								<input
-									type="color"
+								<ColorPicker
+									width={200}
 									name="canvas_pen_color"
-									value={color}
-									onChange={e => setColor(e.target.value)}
+									color={color}
+									onColorChange={setColor}
 								/>
 								<input
 									className={styles.hexInput}
@@ -550,11 +586,11 @@ function VerticalTabs(props) {
 					<List component="div">
 						<Feature title="Stroke">
 							<div className={styles.colorPicker}>
-								<input
-									type="color"
+								<ColorPicker
+									width={200}
 									name="canvas_pen_color"
-									value={color}
-									onChange={e => setColor(e.target.value)}
+									color={color}
+									onColorChange={setColor}
 								/>
 								<input
 									className={styles.hexInput}
