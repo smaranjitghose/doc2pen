@@ -1,8 +1,8 @@
 {
+  "private": true,
   "name": "doc2pen",
   "version": "0.1.0",
   "homepage": ".",
-  "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -60,12 +60,11 @@
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.0"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -79,18 +78,6 @@
     ],
     "*.{md,mdx,json,css,scss,yaml,yml}": [
       "npx prettier --write"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
     ]
   }
 }
