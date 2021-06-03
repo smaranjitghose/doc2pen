@@ -1,69 +1,71 @@
 @use './../../../../scss/colors';
 
-.canvas_toolbox {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	background-color: colors.$white;
-	box-shadow: 0 0 3px 0.3px colors.$grey;
-	overflow-x: hidden;
-	overflow-y: auto;
-	height: calc(100vh - 78px);
+.toolbox_root {
+	height: 100%;
+	z-index: 1;
+	min-width: 51px;
+	position: relative;
 
-	&::-webkit-scrollbar {
-		display: none;
-	}
+	.canvas_toolbox {
+		background-color: colors.$white;
+		box-shadow: 0 0 3px 0.3px colors.$grey;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
 
-	.sliderWrapper {
-		display: grid;
-		justify-items: left;
-		width: 100%;
-		.slider {
-			outline: 0;
-			border: 0;
-			border-radius: 500px;
-			width: 90%;
-			transition: box-shadow 0.2s ease-in-out;
-			overflow: hidden;
-			height: 12px;
-			-webkit-appearance: none;
-			background-color: colors.$bluish-white;
-			&::-webkit-slider-runnable-track {
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		.sliderWrapper {
+			display: grid;
+			justify-items: left;
+			width: 100%;
+			.slider {
+				outline: 0;
+				border: 0;
+				border-radius: 500px;
+				width: 90%;
+				transition: box-shadow 0.2s ease-in-out;
+				overflow: hidden;
 				height: 12px;
 				-webkit-appearance: none;
-				color: colors.$medium-dark-grey;
-				-webkit-transition: box-shadow 0.2s ease-in-out;
-				transition: box-shadow 0.2s ease-in-out;
-			}
-			&::-webkit-slider-thumb {
-				width: 12px;
-				-webkit-appearance: none;
-				height: 12px;
-				cursor: pointer;
-				background: colors.$white;
-				border: colors.$light-grey solid 1px;
-				box-shadow: -329px 0 0 320px colors.$royal-blue,
-					inset 0 0 0 20px colors.$navy-blue;
-				border-radius: 50%;
-				-webkit-transition: box-shadow 0.2s ease-in-out;
-				transition: box-shadow 0.2s ease-in-out;
-				position: relative;
-			}
-			&:active {
-				&::-webkit-slider-thumb {
-					background: colors.$white;
-					box-shadow: -330px 0 0 320px colors.$royal-blue,
-						inset 0 0 0 3px colors.$navy-blue;
+				background-color: colors.$bluish-white;
+				&::-webkit-slider-runnable-track {
+					height: 12px;
+					-webkit-appearance: none;
+					color: colors.$medium-dark-grey;
+					-webkit-transition: box-shadow 0.2s ease-in-out;
+					transition: box-shadow 0.2s ease-in-out;
 				}
-			}
-			&:hover {
 				&::-webkit-slider-thumb {
+					width: 12px;
+					-webkit-appearance: none;
+					height: 12px;
+					cursor: pointer;
 					background: colors.$white;
-					box-shadow: -330px 0 0 320px colors.$royal-blue,
-						inset 0 0 0 3px colors.$navy-blue;
+					border: colors.$light-grey solid 1px;
+					box-shadow: -329px 0 0 320px colors.$royal-blue,
+						inset 0 0 0 20px colors.$navy-blue;
+					border-radius: 50%;
+					-webkit-transition: box-shadow 0.2s ease-in-out;
+					transition: box-shadow 0.2s ease-in-out;
+					position: relative;
+				}
+				&:active {
+					&::-webkit-slider-thumb {
+						background: colors.$white;
+						box-shadow: -330px 0 0 320px colors.$royal-blue,
+							inset 0 0 0 3px colors.$navy-blue;
+					}
+				}
+				&:hover {
+					&::-webkit-slider-thumb {
+						background: colors.$white;
+						box-shadow: -330px 0 0 320px colors.$royal-blue,
+							inset 0 0 0 3px colors.$navy-blue;
+					}
 				}
 			}
 		}
@@ -92,7 +94,7 @@
 			.root {
 				position: relative;
 				.swatch {
-					box-shadow: 0px 0px 8px 5px #ede8e8;
+					box-shadow: 0px 0px 4px 5px #e8dada;
 					border-radius: 5px;
 					padding: 2px;
 					.colorIndicator {

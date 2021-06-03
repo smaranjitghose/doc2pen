@@ -55,12 +55,12 @@ function Canvas() {
 	const [typeState, setTypeState] = useState(null);
 	const [downPoint, setDownPoint] = useState({ x: "", y: "" });
 	const [mousePosition, setMousePosition] = useState({ x: "0", y: "0" });
-	const [canvasWidth, setCanvasWidth] = useState(window.innerWidth - 50);
-	const [canvasHeight, setCanvasHeight] = useState(window.innerHeight - 100);
+	const [canvasWidth, setCanvasWidth] = useState(window.innerWidth - 51);
+	const [canvasHeight, setCanvasHeight] = useState(window.innerHeight - 78);
 
 	const handleResizeListener = () => {
-		setCanvasWidth(window.innerWidth - 50);
-		setCanvasHeight(window.innerHeight - 100);
+		setCanvasWidth(window.innerWidth - 51);
+		setCanvasHeight(window.innerHeight - 78);
 	};
 
 	const getLastCanvasState = useCallback(
@@ -123,8 +123,8 @@ function Canvas() {
 
 	function relativeCoordinatesForEvent(event) {
 		return {
-			x: event.pageX - 25,
-			y: event.pageY - 82,
+			x: event.pageX - canvasRef.current.offsetLeft,
+			y: event.pageY - canvasRef.current.offsetParent.offsetTop,
 		};
 	}
 	function handleMouseDown(event) {
@@ -628,6 +628,17 @@ function Canvas() {
 				IconsLibrary={<IconsLibrary />}
 			/>
 
+			<canvas
+				ref={canvasRef}
+				className={styles.canvas}
+				width={canvasWidth}
+				height={canvasHeight}
+				onMouseDown={handleMouseDown}
+				onMouseMove={handleMouseMove}
+				onMouseUp={handleMouseUp}
+				onMouseLeave={handleMouseLeave}
+			/>
+
 			{/* ----- Undo & Redo----- */}
 			<div
 				className={`${styles.feature_container} ${styles.download_clear_container}`}
@@ -662,16 +673,6 @@ function Canvas() {
 				</label>
 			</div>
 
-			<canvas
-				ref={canvasRef}
-				width={`${canvasWidth}`}
-				height={`${canvasHeight}`}
-				className={styles.canvas}
-				onMouseDown={handleMouseDown}
-				onMouseMove={handleMouseMove}
-				onMouseUp={handleMouseUp}
-				onMouseLeave={handleMouseLeave}
-			/>
 			<div className={styles.mousePosition}>
 				Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y})
 			</div>
