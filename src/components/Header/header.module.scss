@@ -101,7 +101,7 @@
 		transform: translateX(89px);
 		color: colors.$light-blue;
 		border-radius: 5px 0 0 5px;
-
+		text-decoration: none;
 		&:hover {
 			color: aquamarine;
 			text-decoration: none;
@@ -124,8 +124,6 @@
 
 	.HeaderOpen {
 		gap: 0px;
-		// transform: translateX(-100%);
-		// transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
 	}
 
 	.Header {
@@ -137,7 +135,6 @@
 			transition: all 0.5s ease;
 			z-index: 1002;
 			height: 100vh;
-			// padding-right: 20px;
 			overflow: hidden;
 			transform: translateY(0);
 			transition: all 0.1s cubic-bezier(0.9, 0, 0.33, 1);
