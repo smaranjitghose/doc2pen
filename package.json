@@ -4,12 +4,12 @@
   "version": "0.1.0",
   "homepage": ".",
   "scripts": {
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "eject": "react-scripts eject",
-    "start": "react-scripts start",
     "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "lint": "eslint --ext js,jsx src",
     "lint:fix": "eslint --ext js,jsx src --fix"
   },
@@ -49,7 +49,8 @@
     "reactstrap": "^8.9.0",
     "roughjs": "^4.4.1",
     "sass": "^1.34.0",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "react-color": "^2.19.3"
   },
   "devDependencies": {
     "eslint": "^7.27.0",

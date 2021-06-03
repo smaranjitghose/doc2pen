@@ -253,7 +253,6 @@ function Canvas() {
 		setIsDrawing(false);
 		event.preventDefault();
 		setTypeState(null);
-		// console.log(context.getImageData(0, 0, canvasWidth, canvasHeight));
 	}
 
 	function handleMouseLeave() {
