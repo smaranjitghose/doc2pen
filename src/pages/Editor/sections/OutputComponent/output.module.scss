@@ -2,6 +2,9 @@
 
 .wrapper {
 	border: 3px solid colors.$royal-blue;
+	.outputBox {
+		position: relative;
+	}
 	.imgContainer {
 		position: relative;
 		img {

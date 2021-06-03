@@ -15,7 +15,6 @@ function FluidCard(props) {
 	const [context, setContext] = useState(null);
 
 	const fluidEffect = useCallback(() => {
-		// Vars
 		let pointsA = [],
 			points = 8,
 			viscosity = 300,

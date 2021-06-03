@@ -27,7 +27,7 @@ function DragDrop(props) {
 					outputOptionsTemp.splice(index, 1);
 					setOutputOptions(outputOptionsTemp);
 				}
-
+				if (fileType === "pdf") setOutputOptions(["pdf"]);
 				return Object.assign(file, {
 					preview: URL.createObjectURL(file),
 				});

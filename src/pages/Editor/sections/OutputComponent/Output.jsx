@@ -22,7 +22,10 @@ const OutputComponent = ({ pageNo, show }) => {
 				className={`${classes.wrapper} col-11 col-lg-8 mx-auto mt-4 p-2`}
 				style={{ display: show || allPagesVisible ? "block" : "none" }}
 			>
-				<div id="outputPage" className={"outputPage col-12 mx-auto px-0"}>
+				<div
+					id="outputPage"
+					className={classes.outputBox + " outputPage col-12 mx-auto px-0"}
+				>
 					<div className={`${classes.imgContainer} col-12 mx-auto px-0`}>
 						<img
 							src={page.default}
