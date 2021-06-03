@@ -116,10 +116,6 @@ const EditContextProvider = props => {
 
 		setShow(true);
 		setShowing(true);
-		// setTimeout(() => {
-		//   setShow(false);
-		//   setShowing(false);
-		// }, 2000);
 	};
 
 	const downloadPdf = async (imgDataUris, name) => {
