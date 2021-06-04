@@ -51,7 +51,7 @@ function EmojiRating() {
 						type="radio"
 						value="3"
 						name="feedback"
-						checked
+						defaultChecked
 					/>
 					<span className={styles.emoji}>&#128079;</span>
 				</label>

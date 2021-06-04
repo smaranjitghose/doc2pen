@@ -2,12 +2,14 @@
 
 .Sketch {
 	background-color: colors.$light-grey;
-	min-height: 89vh;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: relative;
+	justify-content: flex-start;
+	align-items: flex-start;
 	height: calc(100vh - 100px);
 	overflow: hidden;
+	min-height: calc(100vh - 78px);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
 }
