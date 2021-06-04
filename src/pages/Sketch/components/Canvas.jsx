@@ -676,16 +676,7 @@ function Canvas() {
 					<DragIndicator style={{ cursor: "grab" }} fontSize="large" />
 				</div>
 			</Draggable>
-			<canvas
-				ref={canvasRef}
-				width={`${canvasWidth}`}
-				height={`${canvasHeight}`}
-				className={styles.canvas}
-				onMouseDown={handleMouseDown}
-				onMouseMove={handleMouseMove}
-				onMouseUp={handleMouseUp}
-				onMouseLeave={handleMouseLeave}
-			/>
+
 			<div className={styles.mousePosition}>
 				Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y})
 			</div>
