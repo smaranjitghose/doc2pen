@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import styles from "./canvas.module.scss";
 import Toolbox from "./Toolbox/Toolbox";
-import { MdUndo, MdRedo } from "react-icons/md";
+import { DragIndicator, Undo, Redo } from "@material-ui/icons";
+import Draggable from "react-draggable";
 import ReactSnackBar from "react-js-snackbar";
 import checkBox from "./../../../assets/images/checkmark.svg";
 import rough from "roughjs/bin/rough";
@@ -640,44 +641,57 @@ function Canvas() {
 			/>
 
 			{/* ----- Undo & Redo----- */}
-			<div
-				className={`${styles.feature_container} ${styles.download_clear_container}`}
-			>
-				<label htmlFor="sketch-dcd-undo" title="Undo">
-					<div
-						className={styles.feature}
-						onClick={() => undo()}
-						style={{
-							cursor: `${canvasStateAt === -1 ? "not-allowed" : "pointer"}`,
-						}}
-						id="sketch-dcd-undo"
-					>
-						<MdUndo size={20} />
-					</div>
-				</label>
-				<label htmlFor="sketch-dcd-redo" title="Redo">
-					<div
-						className={styles.feature}
-						onClick={() => redo()}
-						style={{
-							cursor: `${
-								canvasStateAt === canvasStates.length - 1
-									? "not-allowed"
-									: "pointer"
-							}`,
-						}}
-						id="sketch-dcd-redo"
-					>
-						<MdRedo size={20} />
-					</div>
-				</label>
-			</div>
-
+			<Draggable>
+				<div
+					className={`${styles.feature_container} ${styles.download_clear_container}`}
+				>
+					<label htmlFor="sketch-dcd-undo" title="Undo">
+						<div
+							className={styles.feature}
+							onClick={() => undo()}
+							style={{
+								cursor: `${canvasStateAt === -1 ? "not-allowed" : "pointer"}`,
+							}}
+							id="sketch-dcd-undo"
+						>
+							<Undo fontSize="small" />
+						</div>
+					</label>
+					<label htmlFor="sketch-dcd-redo" title="Redo">
+						<div
+							className={styles.feature}
+							onClick={() => redo()}
+							style={{
+								cursor: `${
+									canvasStateAt === canvasStates.length - 1
+										? "not-allowed"
+										: "pointer"
+								}`,
+							}}
+							id="sketch-dcd-redo"
+						>
+							<Redo fontSize="small" />
+						</div>
+					</label>
+					<DragIndicator style={{ cursor: "grab" }} fontSize="large" />
+				</div>
+			</Draggable>
+			<canvas
+				ref={canvasRef}
+				width={`${canvasWidth}`}
+				height={`${canvasHeight}`}
+				className={styles.canvas}
+				onMouseDown={handleMouseDown}
+				onMouseMove={handleMouseMove}
+				onMouseUp={handleMouseUp}
+				onMouseLeave={handleMouseLeave}
+			/>
 			<div className={styles.mousePosition}>
 				Mouse Position: (x, y) = ({mousePosition.x}, {mousePosition.y})
 			</div>
 
 			{/* ----- Text ----- */}
+
 			<div
 				style={{ height: canvasHeight, width: canvasWidth }}
 				className={styles.text_container}
