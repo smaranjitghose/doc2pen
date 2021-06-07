@@ -92,7 +92,9 @@ function IconPreview(props) {
 				{allSVGsRef.current}
 			</div>
 			{svgContainer.current && svgContainer.current.offsetHeight === 0 && (
-				<Typography variant="subtitle1" align="center">Nothing Matched!</Typography>
+				<Typography variant="subtitle1" align="center">
+					Nothing Matched!
+				</Typography>
 			)}
 			<Divider style={{ margin: "40px 0" }} />
 		</div>
