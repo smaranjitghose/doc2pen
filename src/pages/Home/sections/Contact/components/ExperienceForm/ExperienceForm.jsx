@@ -13,12 +13,8 @@ function ExperienceForm() {
 				<h2>Contact us your query or just send a hello.</h2>
 				<br />
 				<div className={styles.contact_form}>
-					<form
-						onSubmit={() =>
-							setTimeout(function () {
-								window.location.reload();
-							}, 10)
-						}
+					<form action="https://formcarry.com/s/S2thQbCqEvW" method="POST" 
+						
 						className={styles.contact_form_container}
 					>
 						<div className={styles.circle}>
@@ -65,7 +61,7 @@ function ExperienceForm() {
 								placeholder="Message..."
 								required
 							></textarea>
-							<button
+							<button 
 								className={styles.submit}
 								onSubmit={response}
 								type="submit"
