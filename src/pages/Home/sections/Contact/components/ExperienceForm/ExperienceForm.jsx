@@ -3,9 +3,7 @@ import EmojiRating from "./../EmojiRating/EmojiRating";
 
 import styles from "./experience-form.module.scss";
 
-function response() {
-	alert("Thank You for your valuable input 😊");
-}
+
 function ExperienceForm() {
 	return (
 		<div id="info" className={styles.info}>
@@ -14,11 +12,7 @@ function ExperienceForm() {
 				<br />
 				<div className={styles.contact_form}>
 					<form
-						onSubmit={() =>
-							setTimeout(function () {
-								window.location.reload();
-							}, 10)
-						}
+						action="https://formcarry.com/s/S2thQbCqEvW" method="POST" 
 						className={styles.contact_form_container}
 					>
 						<div className={styles.circle}>
@@ -67,7 +61,6 @@ function ExperienceForm() {
 							></textarea>
 							<button
 								className={styles.submit}
-								onSubmit={response}
 								type="submit"
 							>
 								<span className={styles.hoverEffect}></span>
