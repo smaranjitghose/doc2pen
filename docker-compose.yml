@@ -1,0 +1,13 @@
+version: "3"
+services:
+  app:
+    container_name: app
+    build: ./
+    ports:
+      - "3000:3000"
+      - "35729:35729"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./:/app
+      - /app/node_modules

@@ -1,0 +1,12 @@
+.btnWrapper {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+@media (max-width: 768px) {
+	.btnWrapper {
+		display: none;
+	}
+}

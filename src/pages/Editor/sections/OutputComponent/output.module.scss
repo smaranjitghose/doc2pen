@@ -1,0 +1,25 @@
+@use './../../../../scss/colors';
+
+.wrapper {
+	border: 3px solid colors.$royal-blue;
+	.outputBox {
+		position: relative;
+	}
+	.imgContainer {
+		position: relative;
+		img {
+			height: 100%;
+			width: 100%;
+		}
+	}
+	.contentInput {
+		position: absolute;
+		border: none;
+		background-color: transparent;
+		overflow: hidden;
+		z-index: 2;
+		width: 100%;
+		bottom: 0;
+		height: 100%;
+	}
+}

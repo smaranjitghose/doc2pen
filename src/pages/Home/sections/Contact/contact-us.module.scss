@@ -1,0 +1,39 @@
+@use './../../../../scss/mixin';
+@use './../../../../scss/colors';
+
+.ContactUs {
+	text-align: center;
+	margin-top: 5rem;
+
+	.titleMain {
+		@include mixin.section-title;
+	}
+
+	.contact_and_info_container {
+		display: flex;
+		align-items: stretch;
+		justify-content: center;
+		flex-wrap: wrap;
+		background: colors.$white;
+		margin: 1rem 0 9rem;
+
+		.map {
+			min-height: 60vh;
+			min-width: 350px;
+			display: flex;
+			align-items: center;
+			flex: 1;
+			overflow: hidden;
+			@media (min-width: 769px) {
+				margin: 0px 20px 0px 0px;
+			}
+		}
+
+		@media (max-width: 418px) {
+			.map {
+				min-width: 100vw;
+				min-height: 67vh;
+			}
+		}
+	}
+}

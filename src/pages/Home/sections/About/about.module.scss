@@ -1,0 +1,117 @@
+@use './../../../../scss/mixin';
+@use './../../../../scss/colors';
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+
+.About {
+	margin-top: 3rem;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: left;
+
+	.title {
+		@include mixin.section-title;
+	}
+
+	.line {
+		font-size: 1.3rem;
+		width: 90%;
+		margin: 1rem;
+	}
+
+	.steps {
+		margin-top: 3rem;
+		width: 90%;
+
+		.image {
+			@keyframes float {
+				0% {
+					transform: translatey(0px);
+				}
+				50% {
+					transform: translatey(-20px);
+				}
+				100% {
+					transform: translatey(0px);
+				}
+			}
+			overflow: hidden;
+			transform: translatey(0px);
+			animation: float 3.4s ease-in-out infinite;
+		}
+
+		.step_reverse {
+			flex-direction: row-reverse;
+		}
+
+		.step {
+			display: flex;
+			justify-content: center;
+			margin: 5rem 3rem;
+			align-items: center;
+
+			.illustration {
+				padding: 0 1rem;
+				box-sizing: border-box;
+
+				img {
+					width: 270px;
+				}
+				@media (max-width: 480px) {
+					img {
+						width: 180px;
+					}
+				}
+			}
+
+			.step_text {
+				padding: 0 0.1rem;
+
+				.step_title {
+					font-size: 2.5rem;
+					color: colors.$steel-blue;
+					margin-bottom: 1rem;
+					text-align: left;
+					padding-left: 3rem;
+				}
+				@media (max-width: 480px) {
+					.step_title {
+						padding-left: 0;
+						font-size: 1.7rem;
+					}
+				}
+
+				.step_content {
+					font-size: 1.5rem;
+					overflow-wrap: anywhere;
+					padding-left: 3rem;
+				}
+				@media (max-width: 480px) {
+					.step_content {
+						font-size: 1rem;
+						padding-left: 0;
+					}
+				}
+			}
+		}
+
+		@media (max-width: 730px) {
+			.step {
+				flex-wrap: wrap;
+			}
+		}
+	}
+
+	.open_source {
+		text-align: center;
+		font-weight: bold;
+		color: colors.$steel-blue;
+		font-size: 1.5rem;
+		padding: 1rem;
+		margin: 3rem 0;
+	}
+}

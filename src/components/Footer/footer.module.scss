@@ -1,0 +1,67 @@
+@use './../../scss/colors';
+
+.footerDiv {
+	position: relative;
+	margin-top: 2rem;
+	background-image: url("./../../assets/images/footer/origami.webp");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	.topShape {
+		overflow: hidden;
+		position: relative;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		line-height: 0;
+		direction: ltr;
+
+		svg {
+			display: block;
+			width: calc(100% + 1.3px);
+			position: relative;
+			left: 50%;
+			-webkit-transform: translateX(-50%) rotateY(180deg);
+			-ms-transform: translateX(-50%) rotateY(180deg);
+			transform: translateX(-50%) rotateY(180deg);
+			overflow: hidden;
+
+			.svgPath {
+				fill: colors.$white;
+				-webkit-transform-origin: center;
+				-ms-transform-origin: center;
+				transform-origin: center;
+				-webkit-transform: rotateY(0deg);
+				transform: rotateY(0deg);
+			}
+		}
+	}
+	.tint {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: colors.$black-thick-tint;
+	}
+	.githubLogoDiv {
+		position: relative;
+		margin-bottom: 50px;
+	}
+
+	.githubLogo {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%);
+	}
+	.footerText {
+		text-align: center;
+		color: colors.$white;
+		font-weight: 400;
+		font-size: 1.2rem;
+		padding: 30px;
+		padding-top: 0;
+	}
+}

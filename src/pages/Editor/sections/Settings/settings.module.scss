@@ -1,0 +1,47 @@
+@use "./../../../../scss/colors";
+
+.controlPanel {
+	display: block;
+	.controls {
+		background-color: colors.$white;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		padding-bottom: 10px;
+		box-shadow: 0 0 5px colors.$black-light-tint;
+		padding-top: 10px;
+		.group1 {
+			background-color: colors.$white;
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 10px;
+			.downloadBtn {
+				color: colors.$dark-grey !important;
+				padding: 5px 15px !important;
+				border: none !important;
+				border-radius: 4px !important;
+				cursor: pointer;
+				margin: 0;
+				font-size: 16px;
+				outline: none !important;
+				&:hover {
+					background-color: colors.$bluish-white;
+				}
+				&:focus {
+					color: colors.$dark-grey !important;
+					background: colors.$light-grey !important;
+				}
+			}
+			.download {
+				&:hover {
+					background-color: colors.$bluish-white;
+				}
+				&:active,
+				&:focus {
+					box-shadow: none !important;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,49 @@
+@use "./../../../../scss/colors";
+
+.modalLabel {
+	font-size: 19px;
+	letter-spacing: 1px;
+}
+.modalInput {
+	width: 70%;
+	outline: none;
+	margin: 5px auto;
+	padding: 7px;
+}
+.downloadLabelButton {
+	border: none;
+	outline: none;
+	letter-spacing: 1px;
+	color: colors.$white;
+	margin: 5px;
+	font-size: 15px;
+	padding: 2px 25px;
+	border-radius: 20px;
+	box-shadow: 2px 1px 3px colors.$black;
+}
+.downloadButton {
+	background-color: colors.$purple;
+	border-radius: 5px;
+	width: 25%;
+	font-size: 15px;
+	padding: 5px 20px;
+	letter-spacing: 1px;
+	&:hover {
+		background-color: colors.$purple;
+	}
+}
+.closeModal {
+	background: none;
+	color: colors.$black;
+	border: none;
+	position: absolute;
+	right: 2%;
+	font-size: 20px;
+	transform: scaleX(1.4);
+	top: 0%;
+	&:hover {
+		background: none;
+		color: colors.$black;
+		outline: none;
+	}
+}

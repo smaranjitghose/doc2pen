@@ -1,0 +1,26 @@
+@use "./../../scss/colors";
+
+.drbtn {
+	color: colors.$dark-grey !important;
+	padding: 5px 15px !important;
+	border: none !important;
+	border-radius: 4px !important;
+	background: transparent !important;
+	margin: 0;
+	font-size: 16px;
+	outline: none !important;
+	&:hover {
+		background: colors.$bluish-white !important;
+	}
+	&:focus {
+		outline: none !important;
+		box-shadow: none !important;
+	}
+}
+.dropdown-menu.show {
+	transition: none !important;
+}
+.btn-secondary:not(:disabled):active:focus,
+.show > .btn-secondary.dropdown-toggle:focus {
+	box-shadow: none !important;
+}

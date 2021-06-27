@@ -1,0 +1,36 @@
+.mediaManip {
+	width: 80%;
+	margin: 40px auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&_title {
+		font-family: "Poppins", sans-serif;
+		color: #4e89ae;
+		font-size: 3rem;
+		font-weight: bold;
+		text-shadow: 3px 4px 2px #0000002e;
+	}
+
+	&_dropDowns {
+		margin-top: 3rem;
+		width: 70%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+
+	&_btn {
+		width: 70%;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 650px) {
+	.mediaManip_dropDowns {
+		flex-direction: column;
+		height: 40vh;
+	}
+}

@@ -1,0 +1,79 @@
+@use './../../../scss/colors';
+
+.feature_container {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	padding: 0.05rem;
+	border-radius: 5px;
+	background-color: colors.$white;
+	box-shadow: 0 0 3px 0.3px colors.$grey;
+	label {
+		display: flex;
+		padding: 0;
+		margin: 0;
+		.feature {
+			position: relative;
+			padding: 0.3rem 0.2rem;
+			margin: 0 0.2rem;
+			border-radius: 5px;
+			cursor: pointer;
+			display: flex;
+			background-color: colors.$bluish-white;
+			color: black;
+			&:hover {
+				background-color: rgb(189, 186, 186);
+			}
+		}
+	}
+	.iconLibContainer {
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 100%;
+		right: -1px;
+		z-index: 9998;
+	}
+	.iconLibContainer--open {
+		width: calc(100vw - 50px);
+		height: calc(100vh - 150px);
+	}
+}
+
+.download_clear_container {
+	top: 0.75rem;
+	right: 30px;
+	z-index: 1;
+}
+
+.canvas {
+	background-color: colors.$white;
+	cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADNklEQVRIS63UTWgUdxjH8e8zbvbFTXZ3dlXatLWHKoqhKFQpCD2UvpFKmsrGVYIoCoIoSsGT4EERz95z0IpU2mKlFltaWipF20MrscGmMVVjgtksJu1mM/v+MvMv89801dZosnFOc5hnPvz+z/N/5JW26DGBTCza8sPXhw/1y7sHyzzFRzasMQ9jGCd2drxZ2b7p9RFRXFI458LR8RvSdrSyUEu2dqzb0Nn+1pX329/w2elx7GLB/WfNn7/8u2/ykx2yjb6FIKJufeXDDP2KYrVj2xSSI9hWklD6OEJhDOiQOL2NIuIWqj9/PI5SR9x3p5Yn/9MBmPyDlggKuI9DpyT4uRGkDiSvrsLLb3bZ8jiTR2gyesmPgJOC5jAIpBA6Jc4v80XqgLrsIfntVcc6/WqmP0XwBfCGoTAKzig0N4MIaRza55tEAxq5ySoUl1C8lO5Hgs/XkWIKqkMQimjkLxSbZQtX5ppkBtBIPysw+Fw5tE3dAv8y8JtQGIfKMITdJIoJhG6J891ckIcAjQzyHA5fKsXazAAEngF/FAr3oToGoQCIjYVNQrbyzZOQ/wEa6aWVgD6udZlBxLcE/DEoTkA5CRE/iEMOxXbZwsXHIY8EpnvSClxUDuutIfCGILC0jpRGIeImqWEh7JYuPpsNmRXQyAAx4Aul2Oj2xBeBwLI6UnGPy6eRErBttiSPBR5ALgCvTd1GmhZD4Fkop6EwBGZQN97dL7uki0//m+SJwHTjl+DwkYK3c8NgeMAd45KL3AQzpEc4i8N+SXD2QWROgEausZggFxS8Y90BTwCCrXWkNABh98YbuKt+j8T/ReYMaKSPIF4+BjZN3UEWeetJKlOQvwGmqZO4yD7p4pRbMy9AI9eJ4OeMu2WzI/X6lhehnIF8H5gxjRQRPpA4PfMGNHKPAHnOoei0hhFjEXp/VVOQH4RwDAyDKrC7IWAGyXIaIeEmUQpalkNtEKwUmEs1crJhYKYnHnow6M4lwSlDKArVu5CdpBiN8fKCgOnpaiLIh0B37h4oG5pL5KTKLklwfsHA9Bb2YtCjFDsKSdK1MfZGdnK+oSmabefoxmd5jya+l5VM/PPd34paOjK8tyR0AAAAAElFTkSuQmCC")
+			0 0,
+		crosshair;
+	width: 100%;
+	height: 100%;
+}
+
+.mousePosition {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	font-size: 0.7rem;
+}
+
+.text_container {
+	position: absolute;
+	pointer-events: none;
+	overflow-x: hidden;
+	.text {
+		position: absolute;
+		input {
+			border: none;
+			padding: 0;
+			outline: none;
+			background-color: transparent;
+			width: fit-content;
+		}
+	}
+}

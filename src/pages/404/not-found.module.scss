@@ -1,0 +1,85 @@
+@use "./../../scss/colors";
+@import "https://fonts.googleapis.com/css?family=Amatic+SC:400,700";
+
+.root {
+	font-family: "Amatic SC", sans-serif;
+	font-size: 100px;
+	color: colors.$prussian-blue;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding-top: 0px;
+
+	.pageNotFound {
+		position: relative;
+		width: 600px;
+		height: 500px;
+		background-repeat: no-repeat;
+		margin-bottom: 10px;
+		display: flex;
+		justify-content: center;
+		background-position: center;
+		margin-top: 0px;
+		.small {
+			font-size: 2.2rem;
+			margin-top: 0px;
+		}
+	}
+
+	.navlink {
+		color: colors.$light-grey;
+		text-decoration: none;
+		font-size: 2rem;
+		box-shadow: 0 0 0 1.5px colors.$light-grey;
+		border-radius: 25px;
+		border: 1px solid colors.$dark-grey;
+		padding: 5px 20px;
+		margin-top: 30px;
+		position: relative;
+		overflow: hidden;
+
+		.buttonText {
+			position: relative;
+			z-index: 1;
+			color: colors.$purple;
+		}
+
+		.hoverEffect {
+			position: absolute;
+			display: block;
+			top: 0;
+			left: 0;
+			border-radius: 0 100% 100% 0;
+			background-color: colors.$light-grey;
+			width: 500px;
+			height: 100%;
+			transform: scale(0, 1) translate(-10px, -10px);
+			transform-origin: top left;
+		}
+
+		&:hover {
+			color: colors.$light-grey;
+			background-color: colors.$dark-grey;
+			box-shadow: 0 0 0 1.5px colors.$dark-grey;
+			border: none;
+			.buttonText {
+				color: colors.$dark-grey;
+			}
+			.hoverEffect {
+				transform: scale(1) translate(-10px, -10px);
+				height: 200%;
+			}
+		}
+	}
+}
+
+@media (max-width: 570px) {
+	.root {
+		font-size: 3.5rem;
+		.pageNotFound {
+			transform: scale(0.7);
+		}
+	}
+}

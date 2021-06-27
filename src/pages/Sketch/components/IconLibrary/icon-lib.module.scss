@@ -1,0 +1,34 @@
+@use './../../../../scss/colors';
+
+.root {
+	.panel {
+		padding: 20px 10px;
+	}
+	.iconLib {
+		overflow-y: scroll;
+		overflow-x: hidden;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		.iconCategory {
+			margin: 20px 10px;
+			.categoryHeading {
+				font-size: 1.4rem;
+				margin-bottom: 10px;
+				text-align: center;
+			}
+			.svgContainer {
+				display: grid;
+				grid-template-columns: 3fr 3fr 3fr;
+				justify-content: center;
+				align-items: center;
+				margin-left: 5px;
+				gap: 20px;
+				.svgIcon {
+					width: 50px;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

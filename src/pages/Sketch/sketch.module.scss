@@ -1,0 +1,15 @@
+@use './../../scss/colors';
+
+.Sketch {
+	background-color: colors.$light-grey;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	height: calc(100vh - 100px);
+	overflow: hidden;
+	min-height: calc(100vh - 78px);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+}

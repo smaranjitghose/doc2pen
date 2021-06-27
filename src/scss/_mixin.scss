@@ -1,0 +1,9 @@
+@use './colors';
+
+@mixin section-title {
+	font-family: "Poppins", sans-serif;
+	color: colors.$steel-blue;
+	font-size: 2rem;
+	font-weight: bold;
+	text-shadow: 3px 4px 2px #0000002e;
+}

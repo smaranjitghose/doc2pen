@@ -1,0 +1,120 @@
+label {
+	font-size: 16px;
+	padding-top: 5px;
+}
+
+.btnWrapper {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+/*****remove scroll-to-top on small devices ***/
+@media (max-width: 768px) {
+	.btnWrapper {
+		display: none;
+	}
+}
+
+.pageBtnsWrapper {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.pageBtnsWrapper > * {
+	margin: 10px;
+}
+
+/* ----- Commenting this custom range as we are not using this any more, also it was affecting the range input in Sketch Section ----- */
+
+/* input[type="range"] {
+  height: 0px;
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  cursor: pointer;
+  animation: 0.2s;
+  box-shadow: none;
+  background: colors.$royal-blue
+  border-radius: 5px;
+  border: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px colors.$royal-blue
+  border: 1px solid colors.$royal-blue
+  height: 45px;
+  width: 10px;
+  border-radius: 5px;
+  background: colors.$royal-blue
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -20px;
+}
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px colors.$royal-blue
+  border: 1px solid colors.$royal-blue
+  height: 45px;
+  width: 10px;
+  border-radius: 5px;
+  background: colors.$royal-blue
+  cursor: pointer;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: colors.$royal-blue
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  animation: 0.2s;
+  box-shadow: 0px 0px 0px colors.$royal-blue
+  background: colors.$royal-blue
+  border-radius: 5px;
+  border: 0px solid colors.$royal-blue
+}
+input[type="range"]::-ms-track {
+  width: 0%;
+  height: 0px;
+  cursor: pointer;
+  animation: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type="range"]::-ms-fill-lower {
+  background: colors.$royal-blue
+  border: 0px solid colors.$royal-blue
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px colors.$royal-blue
+}
+input[type="range"]::-ms-fill-upper {
+  background: colors.$royal-blue
+  border: 0px solid colors.$royal-blue
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px colors.$royal-blue
+}
+input[type="range"]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px colors.$royal-blue
+  border: 1px solid colors.$royal-blue
+  height: 45px;
+  width: 10px;
+  border-radius: 5px;
+  background: colors.$royal-blue
+  cursor: pointer;
+}
+input[type="range"]:focus::-ms-fill-lower {
+  background: colors.$royal-blue
+}
+input[type="range"]:focus::-ms-fill-upper {
+  background: colors.$royal-blue
+} */

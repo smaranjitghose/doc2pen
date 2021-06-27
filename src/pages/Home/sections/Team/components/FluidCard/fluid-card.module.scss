@@ -1,0 +1,73 @@
+@use './../../../../../../scss/colors';
+
+.card-container {
+	padding: 10px;
+
+	.div-liquid {
+		position: relative;
+		width: 290px;
+		height: 290px;
+		cursor: pointer;
+
+		canvas {
+			position: absolute;
+			z-index: 99999;
+		}
+	}
+
+	.content {
+		overflow: hidden;
+		position: relative;
+		z-index: 2;
+		display: grid;
+		align-items: center;
+		color: colors.$prussian-blue;
+		text-shadow: 1px 1px 15px colors.$black-light-tint;
+
+		.header {
+			position: relative;
+			z-index: 3;
+			.name {
+				font-weight: 500;
+			}
+			.title {
+				font-size: 1.2rem;
+				color: colors.$dark-blue;
+			}
+		}
+
+		.socialLinks {
+			display: flex;
+			align-items: flex-end;
+			height: 54px;
+			justify-content: center;
+			margin-top: 30px;
+			gap: 10px;
+
+			.socialicon {
+				display: flex;
+				position: relative;
+				overflow: hidden;
+				width: 64px;
+				height: 64px;
+				background-color: colors.$white;
+				margin: 8px;
+				border-radius: 100%;
+				box-shadow: 2px 5px 15px colors.$black-light-tint;
+				justify-content: center;
+				align-items: center;
+			}
+			.linkedin {
+				&:hover {
+					filter: invert(0.1);
+				}
+			}
+			.github {
+				&:hover {
+					filter: invert(1);
+					box-shadow: 2px 5px 15px colors.$white-light-tint;
+				}
+			}
+		}
+	}
+}

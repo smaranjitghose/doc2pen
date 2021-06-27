@@ -1,0 +1,133 @@
+@use './../../../../scss/mixin';
+@use './../../../../scss/colors';
+
+.Team {
+	padding: 0 20px;
+	text-align: center;
+	font-size: 28px;
+	overflow: hidden;
+	.titleMain {
+		@include mixin.section-title;
+	}
+
+	.projectMaintainers {
+		display: flex;
+		justify-content: center;
+		gap: 45px;
+		flex-wrap: wrap;
+	}
+
+	.team_container {
+		text-align: -webkit-center;
+		text-align: center;
+		margin: auto;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 0 4vw;
+		gap: 2rem;
+		.figure {
+			box-shadow: 0 4px 8px 0 colors.$medium-dark-grey,
+				0 6px 20px 0 colors.$medium-dark-grey;
+			width: 7%;
+			min-width: 48px;
+			min-height: 48px;
+			overflow: hidden;
+			img {
+				-webkit-filter: contrast(125%) brightness(100%) grayscale(100%);
+				-moz-filter: contrast(125%) brightness(100%) grayscale(100%);
+				-o-filter: contrast(125%) brightness(100%) grayscale(100%);
+				-ms-filter: contrast(125%) brightness(100%) grayscale(100%);
+				filter: contrast(125%) brightness(100%) grayscale(100%);
+				-ms-transition: filter 0.3s ease-in-out;
+				-o-transition: filter 0.3s ease-in-out;
+				-moz-transition: filter 0.3s ease-in-out;
+				-webkit-transition: filter 0.3s ease-in-out;
+				transition: filter 0.3s ease-in-out;
+			}
+			figcaption {
+				bottom: -100%;
+				opacity: 0;
+				background: colors.$light-green-tint;
+				text-shadow: 0 0 1px colors.$black;
+				-ms-transition: all 0.2s ease-in-out;
+				-o-transition: all 0.2s ease-in-out;
+				-moz-transition: all 0.2s ease-in-out;
+				-webkit-transition: all 0.2s ease-in-out;
+				transition: all 0.2s ease-in-out;
+
+				.text {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 10px;
+					font-size: 0.7rem !important;
+					&:first-child {
+						font-size: 120%;
+						text-transform: uppercase;
+					}
+					&:last-child {
+						font-size: 90%;
+						line-height: 110%;
+					}
+				}
+			}
+			&:hover {
+				img {
+					-webkit-filter: contrast(125%) brightness(100%) grayscale(0);
+					-moz-filter: contrast(125%) brightness(100%) grayscale(0);
+					-o-filter: contrast(125%) brightness(100%) grayscale(0);
+					-ms-filter: contrast(125%) brightness(100%) grayscale(0);
+					filter: contrast(125%) brightness(100%) grayscale(0);
+				}
+				figcaption {
+					bottom: 0;
+					opacity: 1;
+				}
+				.social_icon {
+					text-shadow: 0 0 1px colors.$black;
+					font-size: 1.2rem;
+					color: colors.$black;
+					cursor: pointer;
+
+					&:hover {
+						text-decoration: none;
+						color: colors.$black;
+						opacity: 0.8;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Profile Card */
+
+.position_relative {
+	position: relative;
+	border-radius: 50%;
+}
+
+.position_absolute {
+	position: absolute;
+}
+
+.display_inline_block {
+	display: inline-block;
+}
+
+.grid_wd_100 {
+	width: 100%;
+}
+
+.text_center {
+	text-align: center;
+}
+
+.va_top {
+	vertical-align: top;
+}
+
+.pad {
+	padding: 1em !important;
+}
