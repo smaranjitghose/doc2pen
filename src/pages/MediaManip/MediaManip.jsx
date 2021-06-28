@@ -3,6 +3,8 @@ import JSZip from "jszip";
 import { saveAs } from "file-saver";
 import { jsPDF } from "jspdf";
 import { PDFDocument } from "pdf-lib";
+import MetaComponent from "../../seo/MetaComponent";
+import metaData from "../../seo/metaData";
 import Progress from "./Progress/Progress";
 import Dropdown from "./DropDown/DropDown";
 import DragDrop from "./DragDrop/DragDrop";
@@ -175,6 +177,11 @@ export default function MediaManip() {
 
 	return (
 		<div className={styles.mediaManip}>
+			<MetaComponent
+				title={metaData.mediaManip.title}
+				description={metaData.mediaManip.description}
+				keywords={metaData.mediaManip.keywords}
+			/>
 			<h1 className={styles.mediaManip_title}>File Converter</h1>
 			<div className={styles.mediaManip_dropDowns}>
 				<Dropdown type="Input" value={input} />
