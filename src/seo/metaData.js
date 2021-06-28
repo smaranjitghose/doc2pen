@@ -18,6 +18,12 @@ const data = {
 		description: "Sketch is a tool to help you create your own art.",
 		keywords: "doc2pen, sketch",
 	},
+	mediaManip: {
+		title: "Doc2pen - Media Manip",
+		description:
+			"File converter is a tool to help you to convert files in specific formats.",
+		keywords: "doc2pen, mediaManip",
+	},
 	notFound: {
 		title: "Doc2pen - 404",
 		description: "Uh ohh Looks like you encountered a 404 not found error.",
