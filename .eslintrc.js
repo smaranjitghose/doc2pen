@@ -15,11 +15,11 @@ module.exports = {
 	},
 	plugins: ["react"],
 	rules: {
+		"linebreak-style": ["error", "windows"],
 		"react/prop-types": "off",
 		"no-mixed-spaces-and-tabs": 0,
 		"react/no-unescaped-entities": 0,
 		indent: ["error", "tab", { SwitchCase: 1 }],
-		"linebreak-style": ["error", "unix"],
 		quotes: ["error", "double"],
 		semi: ["error", "always"],
 	},

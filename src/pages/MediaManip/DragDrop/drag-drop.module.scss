@@ -1,6 +1,7 @@
 .container {
-	width: 70%;
-	min-height: 8rem;
+	width: 90%;
+	max-width: 400px;
+	min-height: 20rem;
 	height: max-content;
 	margin: 2rem auto;
 	border: 2px solid #cccccc;
@@ -19,8 +20,11 @@
 
 	&_upload {
 		margin: 16px;
-		border: 3px dashed #cccccc;
-		padding: 10px;
+		border: none;
+	background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23ccc' stroke-width='3' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+	background-color: transparent;
+	flex-direction: column;
+	padding: 10px;
 		min-width: 150px;
 		width: 150px;
 		flex-grow: 1;
@@ -28,6 +32,9 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
+		&:hover, &:focus {
+			background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%232e44ff' stroke-width='3' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+	}
 	}
 }
 
