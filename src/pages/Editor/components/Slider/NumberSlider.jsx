@@ -56,7 +56,10 @@ const NumberSliders = props => {
 
 	return (
 		<div className={styles.controlContainer}>
-			<label htmlFor="left">{props.label}</label>
+			<label htmlFor="left">
+				{props.label}
+				<img src={props.imgSrc} alt={"icon"} />
+			</label>
 			<div className={styles.controlWrap}>
 				<button
 					onClick={handleClickValueChange}

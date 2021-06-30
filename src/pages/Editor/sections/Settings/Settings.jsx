@@ -7,6 +7,14 @@ import NumberSlider from "../../components/Slider/NumberSlider";
 import { Button } from "reactstrap";
 import { Divider } from "@material-ui/core";
 
+// importing icons
+import FontSize from "./settingsIcons/font-size.png";
+import WidthAdjust from "./settingsIcons/width.png";
+import xAxis from "./settingsIcons/x-axis.png";
+import yAxis from "./settingsIcons/y-axis.png";
+import LineSpacing from "./settingsIcons/line-spacing.png";
+import LetterSpacing from "./settingsIcons/letter-space.png";
+
 const Settings = () => {
 	const editContext = useContext(EditContext);
 	const [modal, setModal] = React.useState(false);
@@ -91,72 +99,83 @@ const Settings = () => {
 					</Button>
 					<Divider orientation="vertical" flexItem />
 				</div>
-				<NumberSlider
-					label={"Adjust x-axis"}
-					editContext={editContext}
-					name="bodyLeft"
-					min="0"
-					max="200"
-					step={1}
-					initialValue={0}
-				/>
+				<div className={styles.group1}>
+					<NumberSlider
+						label={"Adjust x-axis"}
+						imgSrc={xAxis}
+						editContext={editContext}
+						name="bodyLeft"
+						min="0"
+						max="200"
+						step={1}
+						initialValue={0}
+					/>
 
-				<Divider orientation="vertical" flexItem />
-				<NumberSlider
-					label={"Font size"}
-					editContext={editContext}
-					name="bodySize"
-					min="5"
-					max="50"
-					step={1}
-					initialValue={16}
-				/>
+					<Divider orientation="vertical" flexItem />
 
-				<Divider orientation="vertical" flexItem />
+					<NumberSlider
+						label={"Adjust y-axis"}
+						imgSrc={yAxis}
+						editContext={editContext}
+						name="bodyTop"
+						min="0"
+						max="100"
+						step={1}
+						initialValue={5}
+					/>
 
-				<NumberSlider
-					label={"Adjust y-axis"}
-					editContext={editContext}
-					name="bodyTop"
-					min="0"
-					max="100"
-					step={1}
-					initialValue={5}
-				/>
-				<Divider orientation="vertical" flexItem />
+					<Divider orientation="vertical" flexItem />
 
-				<NumberSlider
-					label={"Line-spacing"}
-					editContext={editContext}
-					name="bodyLine"
-					min="1"
-					max="5"
-					step={0.1}
-					initialValue={1}
-				/>
-				<Divider orientation="vertical" flexItem />
+					<NumberSlider
+						label={"Width"}
+						imgSrc={WidthAdjust}
+						editContext={editContext}
+						name="bodyWidth"
+						min="20"
+						max="70"
+						step={1}
+						initialValue={65}
+					/>
 
-				<NumberSlider
-					label={"Width"}
-					editContext={editContext}
-					name="bodyWidth"
-					min="20"
-					max="70"
-					step={1}
-					initialValue={65}
-				/>
+					<Divider orientation="vertical" flexItem />
 
-				<Divider orientation="vertical" flexItem />
+					<NumberSlider
+						label={"Letter Spacing"}
+						imgSrc={LetterSpacing}
+						editContext={editContext}
+						name="bodyLetterSpace"
+						min="0"
+						max="10"
+						step={0.5}
+						initialValue={0}
+					/>
 
-				<NumberSlider
-					label={"Letter Spacing"}
-					editContext={editContext}
-					name="bodyLetterSpace"
-					min="0"
-					max="10"
-					step={0.5}
-					initialValue={0}
-				/>
+					<Divider orientation="vertical" flexItem />
+
+					<NumberSlider
+						label={"Font size"}
+						imgSrc={FontSize}
+						editContext={editContext}
+						name="bodySize"
+						min="5"
+						max="50"
+						step={1}
+						initialValue={16}
+					/>
+
+					<Divider orientation="vertical" flexItem />
+
+					<NumberSlider
+						label={"Line-spacing"}
+						imgSrc={LineSpacing}
+						editContext={editContext}
+						name="bodyLine"
+						min="1"
+						max="5"
+						step={0.1}
+						initialValue={1}
+					/>
+				</div>
 			</div>
 			<DownloadFileModal modal={modal} setModal={setModal} />
 		</div>

@@ -1,7 +1,17 @@
 @use "./../../../../scss/colors";
 
 .controlContainer {
-	margin: 5px 15px;
+	margin: 5px 10px;
+	label {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 14px;
+		img {
+			height: 22px;
+			width: 22px;
+		}
+	}
 	.controlWrap {
 		width: 100%;
 		display: flex;
@@ -32,7 +42,7 @@
 			line-height: 0;
 			box-sizing: border-box !important;
 			border-radius: 0;
-			font-size: 16px;
+			font-size: 14px;
 			width: 70px;
 			text-align: center;
 		}
