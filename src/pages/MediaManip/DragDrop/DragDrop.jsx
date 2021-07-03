@@ -73,7 +73,12 @@ function DragDrop(props) {
 				{isDragActive ? (
 					<p>Drop the files here ...</p>
 				) : (
-					<p>Drag 'n' drop some files here, or click to select files</p>
+					<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToxjkIyrVIMesRK1InjzUOSvXHZqSbnunTKw&usqp=CAU" width={60} height={60}></img>
+					 <p><span style={{ display:"block" ,fontWeight:"700", marginTop:"1rem"}}></span><strong>Drag file(s) here to upload.</strong></p> &nbsp;
+					 <span style={{color:"#6a6b76"}} >
+				Alternatively, you can select a file by <br/>  &nbsp;<span style={{color:"blue",}}><strong>clicking here</strong></span>
+			  </span>
+					 </p>
 				)}
 			</div>
 		</section>
