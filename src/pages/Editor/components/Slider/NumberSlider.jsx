@@ -1,9 +1,21 @@
 import styles from "./slider.module.scss";
 import React, { useState } from "react";
+import { Tooltip, Avatar } from "@material-ui/core";
+import { withStyles } from "@material-ui/core";
+
+const CustomTooltip = withStyles({
+	tooltip: {
+		color: "#fcfcfc",
+		fontSize: "15px",
+		fontWeight: "600",
+		backgroundColor: "#103f5f",
+	},
+})(Tooltip);
 
 const NumberSliders = props => {
 	const [Value, setValue] = useState(props.initialValue);
 	const [isMsgDisplayed, setIsMsgDisplayed] = useState(false);
+	const [options, setOptions] = useState(false);
 
 	function setValuePromise(newValue) {
 		return new Promise(resolve => {
@@ -56,42 +68,45 @@ const NumberSliders = props => {
 
 	return (
 		<div className={styles.controlContainer}>
-			<label htmlFor="left">
-				{props.label}
-				<img src={props.imgSrc} alt={"icon"} />
-			</label>
-			<div className={styles.controlWrap}>
-				<button
-					onClick={handleClickValueChange}
-					className={`${styles.decrement} decrement`}
-				>
-					-
-				</button>
-
-				<input
-					type="number"
-					name={props.name}
-					min={props.min}
-					max={props.max}
-					value={Value}
-					className={styles.formControl}
-					onChange={handleManualValueChange}
-				/>
-
-				<button
-					onClick={handleClickValueChange}
-					className={`${styles.increment} increment`}
-				>
-					+
-				</button>
-
-				<div
-					className={styles.message}
-					style={{ display: isMsgDisplayed ? "block" : "none" }}
-				>
-					{`Min value: ${props.min}, max value: ${props.max}`}
+			<CustomTooltip placement={"top"} title={props.label}>
+				<div onClick={() => setOptions(!options)}>
+					<Avatar alt={props.name} src={props.imgSrc} variant={"square"} />
 				</div>
-			</div>
+			</CustomTooltip>
+			{options ? (
+				<div className={styles.controlWrap}>
+					<button
+						onClick={handleClickValueChange}
+						className={`${styles.decrement} decrement`}
+					>
+						-
+					</button>
+
+					<input
+						type="number"
+						name={props.name}
+						min={props.min}
+						max={props.max}
+						value={Value}
+						className={styles.formControl}
+						onChange={handleManualValueChange}
+					/>
+
+					<button
+						onClick={handleClickValueChange}
+						className={`${styles.increment} increment`}
+					>
+						+
+					</button>
+
+					<div
+						className={styles.message}
+						style={{ display: isMsgDisplayed ? "block" : "none" }}
+					>
+						{`Min value: ${props.min}, max value: ${props.max}`}
+					</div>
+				</div>
+			) : null}
 		</div>
 	);
 };
