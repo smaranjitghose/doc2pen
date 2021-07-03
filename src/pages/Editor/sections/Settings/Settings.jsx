@@ -8,12 +8,12 @@ import { Button } from "reactstrap";
 import { Divider } from "@material-ui/core";
 
 // importing icons
-import FontSize from "./settingsIcons/font-size.png";
-import WidthAdjust from "./settingsIcons/width.png";
-import xAxis from "./settingsIcons/x-axis.png";
-import yAxis from "./settingsIcons/y-axis.png";
-import LineSpacing from "./settingsIcons/line-spacing.png";
-import LetterSpacing from "./settingsIcons/letter-space.png";
+import FontSize from "../../../../assets/images/settingsIcons/font-size.jpg";
+import WidthAdjust from "../../../../assets/images/settingsIcons//width.png";
+import xAxis from "../../../../assets/images/settingsIcons/x-axis.png";
+import yAxis from "../../../../assets/images/settingsIcons/y-axis.png";
+import LineSpacing from "../../../../assets/images/settingsIcons/line-spacing.png";
+import LetterSpacing from "../../../../assets/images/settingsIcons/letter-space.png";
 
 const Settings = () => {
 	const editContext = useContext(EditContext);
