@@ -1,7 +1,7 @@
 import styles from "./slider.module.scss";
 import React, { useState } from "react";
 import { Tooltip, Avatar } from "@material-ui/core";
-import { withStyles } from "@material-ui/core";
+import { withStyles, makeStyles } from "@material-ui/core";
 
 const CustomTooltip = withStyles({
 	tooltip: {
@@ -12,10 +12,17 @@ const CustomTooltip = withStyles({
 	},
 })(Tooltip);
 
+const useStyles = makeStyles({
+	lineSpaceStyle: {
+		padding: "6px",
+	},
+});
+
 const NumberSliders = props => {
 	const [Value, setValue] = useState(props.initialValue);
 	const [isMsgDisplayed, setIsMsgDisplayed] = useState(false);
 	const [options, setOptions] = useState(false);
+	const classes = useStyles();
 
 	function setValuePromise(newValue) {
 		return new Promise(resolve => {
@@ -70,7 +77,16 @@ const NumberSliders = props => {
 		<div className={styles.controlContainer}>
 			<CustomTooltip placement={"top"} title={props.label}>
 				<div onClick={() => setOptions(!options)}>
-					<Avatar alt={props.name} src={props.imgSrc} variant={"square"} />
+					{props.label === "Line-spacing" ? (
+						<Avatar
+							alt={props.name}
+							className={classes.lineSpaceStyle}
+							src={props.imgSrc}
+							variant={"square"}
+						/>
+					) : (
+						<Avatar alt={props.name} src={props.imgSrc} variant={"square"} />
+					)}
 				</div>
 			</CustomTooltip>
 			{options ? (
