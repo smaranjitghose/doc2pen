@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import { Link } from "react-scroll";
 import styles from "./header.module.scss";
-import logo from "./../../assets/logo/logo.webp";
+import logo from "./../../assets/logo/DOC2PEN-logo.svg";
 import { ImInfo } from "react-icons/im";
 import { RiTeamLine, RiContactsLine } from "react-icons/ri";
 import { BiDonateHeart } from "react-icons/bi";
@@ -67,7 +67,7 @@ function Header() {
 						window.isHome = false;
 					}}
 				>
-					<img className={styles.left} src={logo} alt="Logo" />
+					<img className={styles.left} src={logo} alt="Logo" height="100" width="100" />
 				</NavLink>
 				<div ref={navLinkRef} className={`${styles.right} ${styles.rightDrop}`}>
 					<NavLink

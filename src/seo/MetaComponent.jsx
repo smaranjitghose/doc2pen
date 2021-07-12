@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import logo from "../assets/logo/DOC2PEN-logo.gif";
 
 function MetaComponent({ title, description, keywords }) {
 	let attentionMessage = "Come back";
@@ -38,6 +39,7 @@ function MetaComponent({ title, description, keywords }) {
 			<meta property="og:title" content={title} />
 			<meta property="og:description" content={description} />
 			<meta property="og:url" content={window.location.href} />
+			<meta name="icon" content={logo} />
 		</Helmet>
 	);
 }
