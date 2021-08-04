@@ -30,13 +30,20 @@ const OutputComponent = ({ pageNo, show }) => {
 						<img
 							src={page.default}
 							alt="editor"
-							className="mx-auto px-0"
+							className="mx-auto px-0 "
 							width="100%"
 							height="100%"
 						/>
 					</div>
 					<textarea
 						type="text"
+						onKeyDown={e => {
+							if (e.key === "Tab" && !e.shiftKey) {
+								document.execCommand("insertText", false, "\t");
+								e.preventDefault();
+								return false;
+							}
+						}}
 						onChange={e => setPageText(e.target.value)}
 						className={`${classes.contentInput} id-body`}
 						id="show-text"
