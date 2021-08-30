@@ -46,6 +46,15 @@ const EditContextProvider = props => {
 
 	const pageSrcHandler = e => {
 		setPageSrc(`${ImageNameMap[e.target.value]}`);
+		if (e.target.value == "Ruled1"){
+			setBodyValues({ ...bodyValues, ["bodyLeft"]: 135,["bodyTop"]: 144 });
+		}
+		else if(e.target.value == "Ruled2"){
+			setBodyValues({ ...bodyValues, ["bodyLeft"]: 115,["bodyTop"]: 132 });
+		}
+		else if(e.target.value == "OnlyMargin"){
+			setBodyValues({ ...bodyValues, ["bodyLeft"]: 115,["bodyTop"]: 125 });
+		}
 	};
 
 	const onValueChange = e => {
