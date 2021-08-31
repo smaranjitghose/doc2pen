@@ -122,6 +122,19 @@ function Header() {
 					>
 						Media Manip
 					</NavLink>
+					<NavLink
+						className={`${styles.header_links} /*${styles.tagged}*/`}
+						to="/hashgen"
+						exact
+						activeClassName={styles.header_active_links}
+						onClick={() => {
+							if (headerRef.current.classList.contains(styles.HeaderOpen))
+								drop();
+							window.isHome = false;
+						}}
+					>
+						Hashtag Gen
+					</NavLink>
 				</div>
 				<div className={styles.hamburger} onClick={() => drop()}>
 					<div className={styles.menu_btn}>

@@ -16,6 +16,7 @@ const Home = lazy(() => import("./pages/Home/Home"));
 const Editor = lazy(() => import("./pages/Editor/Editor"));
 const Sketch = lazy(() => import("./pages/Sketch/Sketch"));
 const MediaManip = lazy(() => import("./pages/MediaManip/MediaManip"));
+const HashGen = lazy(() => import("./pages/HashGen/HashGen"));
 const NotFound = lazy(() => import("./pages/404/NotFound"));
 
 window.isHome = true;
@@ -30,6 +31,7 @@ function App({ location }) {
 					<Route path="/editor" exact component={Editor} />
 					<Route path="/sketch" exact component={Sketch} />
 					<Route path="/mediamanip" exact component={MediaManip} />
+					<Route path="/hashgen" exact component={HashGen} />
 					<Route path="/404" exact component={NotFound} />
 					<Redirect to="/404" />
 				</Switch>
