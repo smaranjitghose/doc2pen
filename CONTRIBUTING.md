@@ -36,7 +36,7 @@ cd doc2pen
 git remote --verbose
 ```
 
-- Add add a reference to the upstream(this repository which you clones) repository.
+- Add a reference to the upstream(this repository which you clones) repository.
 
 ```
 git remote add upstream https://github.com/smaranjitghose/doc2pen.git
