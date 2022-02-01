@@ -42,7 +42,7 @@ git remote --verbose
 git remote add upstream https://github.com/smaranjitghose/doc2pen.git
 ```
 
-- Install the dependencies and packages
+- Install the dependencies and packages.
 
 ```
 npm install
