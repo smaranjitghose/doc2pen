@@ -119,7 +119,7 @@ const Settings = () => {
 					editContext={editContext}
 					name="bodyTop"
 					min="0"
-					max="100"
+					max="200"
 					step={1}
 					initialValue={5}
 				/>
