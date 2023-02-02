@@ -26,7 +26,7 @@
     "dom-to-image": "^2.6.0",
     "file-saver": "^2.0.5",
     "jspdf": "^2.3.1",
-    "jszip": "^3.7.0",
+    "jszip": "^3.8.0",
     "leaflet": "^1.7.1",
     "mousetrap": "^1.6.5",
     "pdf-lib": "^1.16.0",
