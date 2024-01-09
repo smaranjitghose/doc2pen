@@ -45,7 +45,7 @@ And the best part of all? **Doc2Pen is open source!** 🤩
 
 ## Features:
 
-- [ ] Type/Paste your assignments and get handwritten ones to download directly! Bye-Bye Pen&Paper
+- [ ] Type/Paste your assignments and get handwritten ones to download directly! Bye-Bye Pen and Paper.
 - [ ] Make Sketches/Diagrams/Figures for your assignments/presentations
 - [ ] Media Manager
   - [ ] PDF Spliter
